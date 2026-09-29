@@ -1,0 +1,504 @@
+---
+import Base from "../layouts/Base.astro";
+
+const title = "AFTER — Log the night. Relive the story.";
+const description =
+  "A private app for your group of friends. Log the moments while the night happens, then wake up to the full story: “While you were gone…”";
+
+// The six MVP features, in the app's order (docs/product.md › MVP).
+const features = [
+  {
+    icon: "🎉",
+    name: "Start an event",
+    text: "Name the night, add a place, and invite your friends with a link, a code or a QR.",
+  },
+  {
+    icon: "👯",
+    name: "Keep your crew",
+    text: "Save the people from an event as a group and start the next one with them in one tap.",
+  },
+  {
+    icon: "📸",
+    name: "Log the moments",
+    text: "Pick a moment, add a comment and photos. It takes seconds, even three drinks in.",
+  },
+  {
+    icon: "🔥",
+    name: "Live feed",
+    text: "See what's happening across the night in real time, and react with 😂 🔥 💀 ❤️.",
+  },
+  {
+    icon: "🏠",
+    name: "I'm going home",
+    text: "Mark when you left. Everything after that becomes your story for tomorrow.",
+  },
+  {
+    icon: "☀️",
+    name: "The morning after",
+    text: "The full timeline, the photos, the stats, and the awards: MVP, Biggest Fail, Photo of the Event.",
+  },
+];
+
+// Moment tiles, with the app's locked tile colours.
+const tiles = [
+  { emoji: "🍹", label: "Drink", color: "var(--tile-drink)" },
+  { emoji: "🍑", label: "Scored", color: "var(--tile-scored)" },
+  { emoji: "🤢", label: "Puked", color: "var(--tile-puked)" },
+  { emoji: "🏠", label: "Went home", color: "var(--tile-went-home)" },
+  { emoji: "💃", label: "Went clubbing", color: "var(--tile-went-clubbing)" },
+  { emoji: "📸", label: "Photo", color: "var(--tile-photo)" },
+];
+
+const missed = [
+  { time: "02:41", who: "Jeppe", what: "went clubbing 💃" },
+  { time: "03:05", who: "Simon", what: "custom moment “Taxi karaoke” 🎤" },
+  { time: "03:22", who: "Thomas", what: "posted 4 photos 📸" },
+  { time: "04:10", who: "Mikkel", what: "drink 🍹" },
+];
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  name: "AFTER",
+  operatingSystem: "iOS",
+  applicationCategory: "SocialNetworkingApplication",
+  description,
+  url: "https://after-stories.com/",
+  publisher: { "@type": "Organization", name: "12f ApS", url: "https://12f.dk" },
+};
+---
+
+<Base title={title} description={description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <header class="topbar wrap">
+    <a class="brand" href="/" aria-label="AFTER home">
+      <img src="/apple-touch-icon.png" alt="" width="36" height="36" />
+      <span>AFTER</span>
+    </a>
+    <a class="topbar-link" href="#how">How it works</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Good nights · Better mornings</p>
+          <h1>Log the night.<br /><span class="accent">Relive the story.</span></h1>
+          <p class="lede">
+            A private app for your group of friends. Capture the night while it happens — then wake up to
+            everything you missed.
+          </p>
+          <div class="cta-row">
+            <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+          </div>
+          <p class="fineprint">For iPhone. No public feed, no followers, no strangers.</p>
+        </div>
+
+        <figure class="morning" aria-label="Example of the morning-after recap">
+          <div class="morning-head">
+            <span class="sun" aria-hidden="true">☀️</span>
+            <div>
+              <p class="morning-hello">Good morning, Martin</p>
+              <p class="morning-sub">You went home at 02:34</p>
+            </div>
+          </div>
+          <p class="morning-title">While you were gone…</p>
+          <ol class="missed">
+            {
+              missed.map((m) => (
+                <li>
+                  <time>{m.time}</time>
+                  <span>
+                    <strong>{m.who}</strong> {m.what}
+                  </span>
+                </li>
+              ))
+            }
+          </ol>
+          <p class="morning-more">And much more…</p>
+          <span class="pill pill-block" aria-hidden="true">See the whole story</span>
+        </figure>
+      </div>
+    </section>
+
+    <section class="insight wrap">
+      <p class="eyebrow">Why AFTER</p>
+      <h2>The best stories vanish in the haze.</h2>
+      <p>
+        What survives the night ends up scattered across Snapchat, the camera roll and the group chat.
+        AFTER keeps the whole night in one private place — made by your friends, while it happens, for
+        the morning after.
+      </p>
+    </section>
+
+    <section id="how" class="features wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Six things. Nothing else.</h2>
+      <ul class="feature-grid">
+        {
+          features.map((f, i) => (
+            <li class="feature">
+              <span class="feature-num">{String(i + 1).padStart(2, "0")}</span>
+              <span class="feature-icon" aria-hidden="true">{f.icon}</span>
+              <h3>{f.name}</h3>
+              <p>{f.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="moments wrap">
+      <div class="moments-copy">
+        <p class="eyebrow">Log a moment</p>
+        <h2>One tap. Then back to the night.</h2>
+        <p>
+          Big, bright tiles for the things that actually happen. Add a comment or a photo if you want —
+          or write your own custom moment.
+        </p>
+      </div>
+      <ul class="tiles" aria-label="Moment types">
+        {
+          tiles.map((t) => (
+            <li class="tile" style={`--tile:${t.color}`}>
+              <span aria-hidden="true">{t.emoji}</span>
+              {t.label}
+            </li>
+          ))
+        }
+        <li class="tile tile-custom"><span aria-hidden="true">＋</span>Custom moment</li>
+      </ul>
+    </section>
+
+    <section class="privacy wrap">
+      <p class="eyebrow">Private by design</p>
+      <h2>What happens at the event stays in the group.</h2>
+      <ul class="privacy-list">
+        <li><strong>Only your group sees it.</strong> No public feed, no followers, no discovery.</li>
+        <li><strong>No location in your photos.</strong> Every GPS tag and EXIF field is stripped before upload.</li>
+        <li><strong>Sign in with Apple.</strong> No passwords to remember or leak.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <p class="eyebrow">Private moments. Lasting stories.</p>
+      <p class="footer-meta">© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
+    </div>
+  </footer>
+</Base>
+
+<style>
+  .accent {
+    color: var(--accent);
+  }
+
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 800;
+    letter-spacing: 0.12em;
+  }
+
+  .brand img {
+    border-radius: 9px;
+  }
+
+  .topbar-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9375rem;
+  }
+
+  .topbar-link:hover {
+    color: var(--text-primary);
+  }
+
+  /* Hero — the background fades from night into the icon's dawn tint. */
+  .hero {
+    background: linear-gradient(180deg, var(--background) 0%, var(--dawn) 100%);
+    padding: 40px 0 72px;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1.15fr 1fr;
+    }
+    .hero {
+      padding: 72px 0 112px;
+    }
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    font-weight: 800;
+  }
+
+  .lede {
+    font-size: 1.1875rem;
+    color: var(--text-secondary);
+    max-width: 34ch;
+  }
+
+  .cta-row {
+    margin-top: 8px;
+  }
+
+  .fineprint {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+  }
+
+  /* The morning-after card: a quiet mock of screen 6. */
+  .morning {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 28px;
+    padding: 24px;
+    display: grid;
+    gap: 16px;
+    box-shadow: 0 30px 80px -30px rgba(255, 45, 111, 0.35);
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .morning-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .sun {
+    font-size: 2rem;
+  }
+
+  .morning-hello {
+    font-weight: 700;
+    font-size: 1.125rem;
+  }
+
+  .morning-sub {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .morning-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+
+  .missed {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  .missed li {
+    display: flex;
+    gap: 14px;
+    align-items: baseline;
+    background: var(--surface-elevated);
+    border-radius: 14px;
+    padding: 12px 14px;
+    font-size: 0.9375rem;
+  }
+
+  .missed time {
+    color: var(--accent);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+    flex: none;
+  }
+
+  .morning-more {
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+  }
+
+  .pill-block {
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Sections */
+  section:not(.hero) {
+    padding-top: 88px;
+  }
+
+  section h2 {
+    font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+    font-weight: 800;
+    margin: 12px 0 16px;
+    max-width: 22ch;
+  }
+
+  .insight p:not(.eyebrow),
+  .moments-copy p:not(.eyebrow) {
+    color: var(--text-secondary);
+    max-width: 58ch;
+    font-size: 1.125rem;
+  }
+
+  .feature-grid {
+    list-style: none;
+    padding: 0;
+    margin: 32px 0 0;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  }
+
+  .feature {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: grid;
+    gap: 8px;
+    align-content: start;
+  }
+
+  .feature-num {
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    color: var(--text-tertiary);
+    font-weight: 700;
+    font-size: 0.875rem;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .feature-icon {
+    font-size: 1.75rem;
+  }
+
+  .feature h3 {
+    font-size: 1.25rem;
+  }
+
+  .feature p {
+    color: var(--text-secondary);
+  }
+
+  .moments {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .moments {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .tiles {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .tile {
+    background: var(--tile);
+    color: var(--tile-ink);
+    border-radius: var(--radius-card);
+    padding: 18px;
+    min-height: 104px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 1.0625rem;
+  }
+
+  .tile span {
+    font-size: 1.75rem;
+  }
+
+  .tile-custom {
+    --tile: var(--tile-custom);
+    grid-column: 1 / -1;
+    min-height: 72px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+  }
+
+  .privacy-list {
+    list-style: none;
+    padding: 0;
+    margin: 28px 0 0;
+    display: grid;
+    gap: 12px;
+    max-width: 720px;
+  }
+
+  .privacy-list li {
+    background: var(--surface);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 16px 20px;
+    color: var(--text-secondary);
+  }
+
+  .privacy-list strong {
+    color: var(--text-primary);
+  }
+
+  .footer {
+    margin-top: 112px;
+    border-top: 1px solid var(--hairline);
+    padding: 32px 0 48px;
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-meta {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+  }
+
+  .footer-meta a {
+    color: var(--text-secondary);
+  }
+</style>

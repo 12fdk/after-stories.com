@@ -1,0 +1,31 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base title="Page not found — AFTER" description="This page went home early." noindex>
+  <main class="wrap lost">
+    <p class="eyebrow">404</p>
+    <h1>This page went home early.</h1>
+    <p>Whatever was here isn't anymore.</p>
+    <a class="pill" href="/">Back to AFTER</a>
+  </main>
+</Base>
+
+<style>
+  .lost {
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-items: start;
+    gap: 20px;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 6vw, 3.5rem);
+    font-weight: 800;
+  }
+
+  p:not(.eyebrow) {
+    color: var(--text-secondary);
+  }
+</style>
