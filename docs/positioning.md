@@ -144,7 +144,8 @@ No price line. English only. Keep IndexNow and the Umami tracking.
 
 ## Brand script (StoryBrand, 2026-10-03)
 
-The site copy follows this. When the copy changes, check it still tells this story.
+The site copy follows this. How it maps onto each page, the rules and the pre-PR check:
+[`messaging.md`](messaging.md).
 
 | SB7 | After Stories |
 | --- | --- |

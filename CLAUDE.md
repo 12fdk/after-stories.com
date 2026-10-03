@@ -1,6 +1,11 @@
 # after-stories.com
 
 The Astro landing site for the After Stories app. Copy and positioning: `docs/positioning.md`.
+
+**Every copy or layout change follows `docs/messaging.md` (StoryBrand).** Read it before you
+touch a page, run the `mcpmarket-me:storybrand-messaging` skill over the pages you changed, and put
+the score (before → after, at least 9/10) in the PR. The site must not drift from the brand script.
+
 Colours mirror the app's locked palette (`../after-stories/docs/design-system.md`).
 
 ## Commands
