@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import LaunchCta from "../components/LaunchCta.astro";
 import { events, eventHref } from "../data/events";
 
 // Copy and structure: docs/positioning.md › The landing page.
@@ -128,7 +129,7 @@ const jsonLd = [
             get every photo the morning after. Then it disappears.
           </p>
           <div class="cta">
-            <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+            <LaunchCta />
             <p class="fineprint">For iPhone. Friends without one join from the web.</p>
           </div>
         </div>
@@ -265,7 +266,7 @@ const jsonLd = [
     <section class="closer">
       <div class="wrap closer-inner">
         <h2>Your next plan deserves a better morning after.</h2>
-        <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+        <LaunchCta />
       </div>
     </section>
   </main>

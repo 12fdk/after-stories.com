@@ -1,0 +1,200 @@
+---
+// "Get notified when we launch": name and email, sent to the backend's waitlist (src/lib/waitlist.ts).
+// The page path goes along as the source, so we can see which use case people sign up from.
+const source = Astro.url.pathname;
+const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<form class="notify" data-notify data-source={source} novalidate aria-labelledby={`${id}-title`}>
+  <p class="notify-title" id={`${id}-title`}>Get an email when we launch</p>
+  <div class="notify-fields">
+    <div class="field">
+      <label for={`${id}-name`}>Name</label>
+      <input id={`${id}-name`} name="name" type="text" autocomplete="given-name" maxlength="80" required aria-describedby={`${id}-name-error`} />
+      <p class="field-error" id={`${id}-name-error`} hidden>Enter your name.</p>
+    </div>
+    <div class="field">
+      <label for={`${id}-email`}>Email</label>
+      <input id={`${id}-email`} name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby={`${id}-email-error`} />
+      <p class="field-error" id={`${id}-email-error`} hidden>Enter an email address like name@example.com.</p>
+    </div>
+    <!-- A honeypot for bots. People never see or reach it. -->
+    <div class="trap" aria-hidden="true">
+      <label for={`${id}-website`}>Website</label>
+      <input id={`${id}-website`} name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <button class="pill" type="submit">Notify me</button>
+  </div>
+  <p class="notify-error" data-status role="status"></p>
+  <p class="notify-note">We'll email you once, when After Stories is in the App Store. Nothing else.</p>
+</form>
+
+<script>
+  import { normalise, submit, validate, type Outcome } from "../lib/waitlist";
+
+  const messages: Record<Exclude<Outcome, "saved">, string> = {
+    invalid: "Check your name and email, then send it again.",
+    rate_limited: "Too many sign-ups right now. Try again in a few minutes.",
+    failed: "Couldn't save your email. Check your connection and try again.",
+  };
+
+  for (const form of document.querySelectorAll<HTMLFormElement>("form[data-notify]")) {
+    const status = form.querySelector<HTMLElement>("[data-status]")!;
+    const button = form.querySelector<HTMLButtonElement>("button[type=submit]")!;
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const signup = normalise({
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        website: String(data.get("website") ?? ""),
+        source: form.dataset.source ?? "/",
+      });
+
+      const errors = validate(signup);
+      for (const field of ["name", "email"] as const) {
+        const input = form.elements.namedItem(field) as HTMLInputElement;
+        const error = document.getElementById(input.getAttribute("aria-describedby")!)!;
+        const wrong = errors.includes(field);
+        input.toggleAttribute("aria-invalid", wrong);
+        error.hidden = !wrong;
+      }
+      if (errors.length) {
+        (form.elements.namedItem(errors[0]) as HTMLInputElement).focus();
+        return;
+      }
+
+      button.disabled = true;
+      button.textContent = "Sending…";
+      const outcome = await submit(signup);
+
+      if (outcome === "saved") {
+        form.classList.add("is-done");
+        form.replaceChildren(
+          Object.assign(document.createElement("p"), {
+            className: "notify-done",
+            textContent: `You're on the list. We'll email ${signup.email} when After Stories launches.`,
+          }),
+        );
+        form.setAttribute("role", "status");
+        return;
+      }
+      button.disabled = false;
+      button.textContent = "Notify me";
+      status.textContent = messages[outcome];
+    });
+  }
+</script>
+
+<style>
+  .notify {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    max-width: 560px;
+  }
+
+  .notify-title {
+    font-weight: 700;
+  }
+
+  .notify-fields {
+    display: grid;
+    gap: 10px;
+    align-items: start;
+  }
+
+  @media (min-width: 560px) {
+    .notify-fields {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr) auto;
+    }
+  }
+
+  .field {
+    display: grid;
+    gap: 4px;
+  }
+
+  label {
+    font-size: var(--step--1);
+    color: var(--text-secondary);
+  }
+
+  input {
+    width: 100%;
+    min-width: 0;
+    min-height: 52px;
+    padding: 0 16px;
+    border-radius: 14px;
+    border: 1px solid var(--text-tertiary);
+    background: var(--surface);
+    color: var(--text-primary);
+    font: inherit;
+  }
+
+  input:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 1px;
+  }
+
+  input[aria-invalid] {
+    border-color: var(--failure);
+  }
+
+  .field-error {
+    color: var(--failure);
+    font-size: var(--step--1);
+  }
+
+  /* The button lines up with the inputs, under the labels. */
+  button {
+    border: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    justify-content: center;
+    white-space: nowrap;
+  }
+
+  @media (min-width: 560px) {
+    button {
+      margin-top: calc(var(--step--1) * 1.55 + 4px);
+    }
+  }
+
+  button:disabled {
+    background: var(--accent-disabled);
+    color: var(--text-tertiary);
+    cursor: progress;
+  }
+
+  .trap {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .notify-note {
+    font-size: var(--step--1);
+    color: var(--text-secondary);
+  }
+
+  .notify-error {
+    color: var(--failure);
+    font-size: var(--step--1);
+  }
+
+  .notify-error:empty {
+    display: none;
+  }
+
+  /* Created by the script, so it carries no scoped attribute. */
+  .notify :global(.notify-done) {
+    font-weight: 700;
+    font-size: var(--step-1);
+    line-height: 1.4;
+  }
+</style>

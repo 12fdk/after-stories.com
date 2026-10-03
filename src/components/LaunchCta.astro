@@ -1,0 +1,10 @@
+---
+import NotifyForm from "./NotifyForm.astro";
+
+// The launch call to action on every page. Until the backend's waitlist endpoint exists
+// (12fdk/after-stories#271) it stays the "Coming soon" pill; PUBLIC_WAITLIST_ENABLED=true at
+// build time swaps in the "Get notified" form. NotifyForm's script only ships when it renders.
+const enabled = import.meta.env.PUBLIC_WAITLIST_ENABLED === "true";
+---
+
+{enabled ? <NotifyForm /> : <span class="pill" aria-disabled="true">Coming soon to the App Store</span>}
