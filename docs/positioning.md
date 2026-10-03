@@ -154,14 +154,14 @@ The site copy follows this. When the copy changes, check it still tells this sto
 | **External problem** | The plan is buried under hundreds of messages; the photos are stuck on six phones. |
 | **Internal problem** | *You're* always the one scrolling up, chasing replies and begging for the pictures. It feels like a second job. |
 | **Philosophical problem** | Getting your friends together shouldn't feel like a second job. |
-| **Guide: empathy** | "We've all been the one holding the group chat together." |
+| **Guide: empathy** | "We've all been the one holding the group chat together." Every event page opens its plan with its own "We've all…" line (`empathy` in `src/data/events.ts`), then what After Stories takes off the organiser's hands. |
 | **Guide: authority** | Honest only: the product's specifics and its promises. No testimonials, numbers or logos until real ones exist (after launch). |
 | **Plan (process)** | 1. Plan it together (create the event, send the link, vote). 2. Live it together (one stream). 3. Wake up to the story. |
 | **Plan (agreement)** | No feed, no followers, no strangers. Never your location. Gone 48 hours after, photos saved first. Nobody left out (web for non-iPhone friends). |
-| **Direct CTA** | Get notified at launch (hero button and after the plan both jump to the one form, at the end). |
+| **Direct CTA** | Get notified at launch: a small button in the header on every page, the hero button and one after the plan, all jumping to the one form at the end (privacy jumps to the home page's). |
 | **Transitional CTA** | "How it works" in the header. |
 | **Failure** | Another plan in the group chat, and photos that never come. Light, never fear. |
 | **Success** | Waking up the morning after to the whole story: the photo everyone loved, the line everyone's quoting, what you decided, every picture already on your phone. Nobody had to make it. |
 | **One-liner** | *Plan it together. Live it together. Wake up to the story.* Long form: "After Stories is the private app for your group's trip, party or night out: decide the plan together, live it in one place and wake up to everyone's photos, so nobody has to chase anyone." |
 
-Each event page tells the same story for its own hero: the problem line names how organising *that* event feels, and the closer paints that event's morning after (success) and the group-chat alternative (failure).
+Each event page tells the same story for its own hero (`src/data/events.test.ts` checks every part is there): the problem line names how organising *that* event feels, and the closer paints that event's morning after (success) and the group-chat alternative (failure).

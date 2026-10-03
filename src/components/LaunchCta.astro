@@ -6,19 +6,24 @@ import NotifyForm from "./NotifyForm.astro";
 // closing section, after the explanation.
 // PUBLIC_WAITLIST_ENABLED=true at build time (the deploy workflow sets it) turns the form on;
 // without it both places show the "Coming soon" pill. NotifyForm's script only ships when it renders.
+// The header carries a small copy of the link (size="small"); pages without the form (privacy)
+// point it at the home page's form with href="/#notify".
 interface Props {
   as: "link" | "form";
+  href?: string;
+  size?: "small";
 }
 
-const { as } = Astro.props;
+const { as, href = "#notify", size } = Astro.props;
+const pillClass = size === "small" ? "pill pill-small" : "pill";
 const enabled = import.meta.env.PUBLIC_WAITLIST_ENABLED === "true";
 ---
 
 {
   !enabled ? (
-    <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+    <span class={pillClass} aria-disabled="true">{size === "small" ? "Coming soon" : "Coming soon to the App Store"}</span>
   ) : as === "link" ? (
-    <a class="pill" href="#notify">Get notified at launch</a>
+    <a class={pillClass} href={href}>{size === "small" ? "Get notified" : "Get notified at launch"}</a>
   ) : (
     <div id="notify" class="notify-target" tabindex="-1">
       <NotifyForm />
