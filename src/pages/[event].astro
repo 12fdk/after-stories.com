@@ -1,0 +1,379 @@
+---
+import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+import { events, defaultPrivacy, eventHref, type EventType } from "../data/events";
+
+// One page per event type (src/data/events.ts), each built like the office page:
+// a planning-stage mock, today vs. one event, the three beats, the occasions, privacy, FAQ.
+export function getStaticPaths() {
+  return events.map((event) => ({ params: { event: event.slug }, props: { event } }));
+}
+
+const { event } = Astro.props as { event: EventType };
+const { mock } = event;
+const totalVotes = mock.options.reduce((sum, o) => sum + o.votes, 0);
+const options = mock.options.map((o, i) => ({
+  ...o,
+  share: Math.round((o.votes / totalVotes) * 100),
+  leading: i === 0,
+}));
+const privacy = event.privacy ?? defaultPrivacy;
+const others = events.filter((e) => e.slug !== event.slug);
+const url = new URL(eventHref(event), "https://after-stories.com").href;
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: event.title,
+    description: event.description,
+    url,
+    about: {
+      "@type": "MobileApplication",
+      name: "After Stories",
+      operatingSystem: "iOS",
+      applicationCategory: "SocialNetworkingApplication",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: event.faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+---
+
+<Base title={event.title} description={event.description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <SiteHeader />
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>
+            {
+              event.headline.map((line) => (
+                <span class="line">
+                  {line.split(/(\S+-\S+)/).map((part) => (part.includes("-") ? <span class="nowrap">{part}</span> : part))}
+                </span>
+              ))
+            }
+          </h1>
+          <p class="lede">{event.lede}</p>
+          <div class="cta">
+            <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+            <p class="fineprint">{event.fineprint}</p>
+          </div>
+        </div>
+
+        <figure class="event" aria-label={`Example of a ${event.name.toLowerCase()} event while it's being planned`}>
+          <div>
+            <p class="event-stage"><span>Planning</span><span>{mock.people} people</span></p>
+            <p class="event-title">{mock.title}</p>
+          </div>
+
+          <p class="next-step">Vote: {mock.question}</p>
+
+          <div class="poll">
+            <p class="poll-q">{mock.question}</p>
+            <ul class="poll-options">
+              {
+                options.map((o) => (
+                  <li class={o.leading ? "is-leading" : undefined} style={`--share:${o.share}%`}>
+                    <span>{o.label}</span>
+                    <span class="votes">{o.votes}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div>
+            <p class="mini-label">Decided</p>
+            <ol class="decided">
+              {mock.decided.map((d) => <li><span class="tick" aria-hidden="true">✓</span>{d}</li>)}
+            </ol>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{event.todayTitle}</h2>
+      <div class="today-grid">
+        <ul class="today-list" aria-label="How it's planned today">
+          {
+            event.today.map((t) => (
+              <li>
+                <span aria-hidden="true">{t.icon}</span>
+                <s>{t.text}</s>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="today-after">
+          <p class="today-with">With After Stories</p>
+          <p class="today-one">{event.todayOne}</p>
+          <p>{event.todayText}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{event.howTitle}</h2>
+      <ol class="steps">
+        {
+          event.beats.map((b) => (
+            <li class="step">
+              <p class="step-when">{b.when}</p>
+              <h3>{b.name}</h3>
+              <p>{b.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{event.occasionsTitle}</h2>
+      <ul class="tiles">
+        {
+          event.occasions.map((o) => (
+            <li>
+              <span class="tile">
+                <span class="tile-emoji" aria-hidden="true">{o.emoji}</span>
+                {o.name}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{event.privacyTitle}</h2>
+      <ul class="facts">
+        {privacy.map((f) => <li><strong>{f.title}</strong> {f.text}</li>)}
+      </ul>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">Good to know</h2>
+      <div class="faq-list">
+        {
+          event.faq.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">Planning something else?</h2>
+      <ul class="tiles">
+        {
+          others.map((o) => (
+            <li>
+              <a class="tile tile-link" href={eventHref(o)}>
+                <span class="tile-emoji" aria-hidden="true">{o.emoji}</span>
+                <span>{o.name}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="closer">
+      <div class="wrap closer-inner">
+        <h2>{event.closer}</h2>
+        <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Base>
+
+<style>
+  /* Headlines here run longer than the home page's, so a step smaller. */
+  h1 {
+    font-size: clamp(2.75rem, 6.6vw, 4.75rem);
+  }
+
+  /* Keeps a hyphenated word like "send-off" from breaking across headline lines. */
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  /* The event mock: an event of this type in the planning stage. */
+  .event {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 28px;
+    padding: 24px;
+    display: grid;
+    gap: 16px;
+    box-shadow: 0 30px 80px -30px rgba(255, 45, 111, 0.35);
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .event-stage {
+    display: flex;
+    gap: 12px;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .event-stage span:first-child {
+    color: var(--accent);
+  }
+
+  .event-title {
+    font-family: var(--display);
+    font-stretch: 85%;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+
+  .next-step {
+    background: var(--accent);
+    color: var(--on-accent);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 700;
+  }
+
+  .poll {
+    background: var(--surface-elevated);
+    border-radius: 16px;
+    padding: 16px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .poll-q {
+    font-weight: 700;
+  }
+
+  .poll-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  /* A result bar behind each option, as wide as its share. Track and leader as in the app (#147). */
+  .poll-options li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 0.9375rem;
+    background: linear-gradient(90deg, var(--hairline) var(--share), var(--background) var(--share));
+  }
+
+  .poll-options li.is-leading {
+    background: linear-gradient(90deg, var(--accent-disabled) var(--share), var(--background) var(--share));
+    font-weight: 700;
+  }
+
+  .votes {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+  }
+
+  .mini-label {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .decided {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    font-size: 0.9375rem;
+  }
+
+  .tick {
+    color: var(--accent);
+    font-weight: 800;
+    margin-right: 10px;
+  }
+
+  /* Today, crossed out, against one event. */
+  .today-grid {
+    display: grid;
+    gap: 16px 48px;
+    margin-top: 40px;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+
+  .today-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .today-list li {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    border-top: 1px solid var(--hairline);
+    padding: 16px 0;
+    color: var(--text-secondary);
+  }
+
+  .today-list s {
+    text-decoration-color: var(--text-tertiary);
+  }
+
+  .today-after {
+    display: grid;
+    gap: 8px;
+    align-content: center;
+  }
+
+  .today-with {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: var(--step--1);
+  }
+
+  .today-one {
+    font-family: var(--display);
+    font-stretch: 150%;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .today-after p:last-child {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    max-width: 36ch;
+  }
+</style>

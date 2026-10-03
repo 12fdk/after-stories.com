@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import { events, eventHref } from "../data/events";
 
 // Copy and structure: docs/positioning.md › The landing page.
 const title = "After Stories — Plan it together. Live it together. Wake up to the story.";
@@ -19,34 +20,48 @@ const decided = [
 const beats = [
   {
     key: "plan",
-    eyebrow: "Before",
+    when: "Before",
     name: "Plan it together",
     text: "Ask the group. Which weekend, which house, who drives. Every vote turns into a decision, and the decisions stay on top as a timeline. Nobody scrolls back to find them.",
   },
   {
     key: "live",
-    eyebrow: "During",
+    when: "During",
     name: "Live it together",
     text: "One stream for the whole event: “10 minutes late”, the photos, where to go next. Tap ❤️ on the ones that matter.",
   },
   {
     key: "after",
-    eyebrow: "The morning after",
+    when: "The morning after",
     name: "Wake up to the story",
     text: "Everyone gets the summary: the most-liked photo, the line of the night, what you decided. Then save every photo to your phone with one tap.",
   },
 ];
 
-// Use cases: the hero plus the ones that prove it (docs/positioning.md › The use cases).
-const useCases: { emoji: string; name: string; href?: string }[] = [
-  { emoji: "🏔️", name: "Weekend away" },
-  { emoji: "🌙", name: "Night out" },
-  { emoji: "🎂", name: "Birthday" },
-  { emoji: "💍", name: "Bachelor & bachelorette" },
-  { emoji: "🎪", name: "Festival" },
-  { emoji: "🍝", name: "Dinner night" },
-  { emoji: "🥂", name: "Office party", href: "/office-events/" },
+// The pain: two group chats that went nowhere. Avatars use the app's tile ramp, like its fallback.
+const chats = [
+  {
+    label: "A group chat where the plan gets lost",
+    meta: "312 unread",
+    messages: [
+      { who: "Maya", tile: "--tile-went-clubbing", text: "wait which weekend did we land on?" },
+      { who: "Jonas", tile: "--tile-puked", text: "did anyone actually book the house" },
+      { who: "Sara", tile: "--tile-drink", text: "scroll up, it's there somewhere" },
+    ],
+  },
+  {
+    label: "A group chat where nobody shares the photos",
+    meta: "Three weeks ago",
+    messages: [
+      { who: "Ali", tile: "--tile-went-home", text: "can someone send the pics??" },
+      { who: "Maya", tile: "--tile-went-clubbing", text: "yes!! pls send" },
+      { who: "Jonas", tile: "--tile-puked", text: "will do tonight" },
+    ],
+  },
 ];
+
+// Use cases: the hero plus the ones that prove it, each with its own page (src/data/events.ts).
+const useCases = events;
 
 const faq = [
   {
@@ -103,16 +118,19 @@ const jsonLd = [
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">For trips, parties and nights out</p>
-          <h1>Plan it together.<br />Live it together.<br /><span class="accent">Wake up to the story.</span></h1>
+          <h1>
+            <span class="line">Plan it together.</span>
+            <span class="line">Live it together.</span>
+            <span class="line">Wake up to the story.</span>
+          </h1>
           <p class="lede">
-            One private place for your group's next plan. Decide it, live it, and get every photo the
-            morning after. Then it disappears.
+            One private place for your group's next trip, party or night out. Decide it, live it, and
+            get every photo the morning after. Then it disappears.
           </p>
-          <div class="cta-row">
+          <div class="cta">
             <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+            <p class="fineprint">For iPhone. Friends without one join from the web.</p>
           </div>
-          <p class="fineprint">For iPhone. Friends without one join from the web.</p>
         </div>
 
         <figure class="summary" aria-label="Example of the morning-after summary for a weekend away">
@@ -125,12 +143,12 @@ const jsonLd = [
           </div>
 
           <div class="best-photo" role="img" aria-label="The most-liked photo: the group on the jetty at sunset">
-            <span class="best-badge">❤️ 9 · Photo of the trip</span>
+            <span class="best-badge">Photo of the trip <span aria-label="9 likes">❤️ 9</span></span>
           </div>
 
           <blockquote class="best-line">
             <p>“Who packed the fondue set but no cheese?”</p>
-            <footer>Jonas · ❤️ 7</footer>
+            <footer><span>Jonas</span><span aria-label="7 likes">❤️ 7</span></footer>
           </blockquote>
 
           <div>
@@ -153,34 +171,37 @@ const jsonLd = [
       </div>
     </section>
 
-    <section class="pain wrap">
-      <p class="eyebrow">Sound familiar?</p>
-      <h2>The plan got lost in the group chat. The photos never left everyone's phone.</h2>
+    <section class="section wrap">
+      <h2 class="section-title">The plan got lost in the group chat. The photos never left everyone's phone.</h2>
       <div class="pain-grid">
-        <figure class="chat" aria-label="A group chat where the plan gets lost">
-          <p class="bubble">wait which weekend did we land on?</p>
-          <p class="bubble">did anyone actually book the house</p>
-          <p class="bubble">scroll up, it's there somewhere</p>
-          <p class="chat-meta">312 unread</p>
-        </figure>
-        <figure class="chat" aria-label="A group chat where nobody shares the photos">
-          <p class="bubble">can someone send the pics??</p>
-          <p class="bubble">yes!! pls send</p>
-          <p class="bubble">will do tonight</p>
-          <p class="chat-meta">Three weeks ago</p>
-        </figure>
+        {
+          chats.map((c) => (
+            <figure class="chat" aria-label={c.label}>
+              {c.messages.map((m) => (
+                <div class="msg">
+                  <span class="avatar" style={`--tile:var(${m.tile})`} aria-hidden="true">
+                    {m.who[0]}
+                  </span>
+                  <div>
+                    <p class="msg-who">{m.who}</p>
+                    <p class="bubble">{m.text}</p>
+                  </div>
+                </div>
+              ))}
+              <figcaption class="chat-meta">{c.meta}</figcaption>
+            </figure>
+          ))
+        }
       </div>
     </section>
 
-    <section id="how" class="how wrap">
-      <p class="eyebrow">How it works</p>
-      <h2>One event. From the first idea to the morning after.</h2>
-      <ol class="beats">
+    <section id="how" class="section wrap">
+      <h2 class="section-title">One event. From the first idea to the morning after.</h2>
+      <ol class="steps">
         {
-          beats.map((b, i) => (
-            <li class={`beat beat-${b.key}`}>
-              <span class="beat-num">{String(i + 1).padStart(2, "0")}</span>
-              <p class="eyebrow">{b.eyebrow}</p>
+          beats.map((b) => (
+            <li class="step">
+              <p class="step-when">{b.when}</p>
               <h3>{b.name}</h3>
               <p>{b.text}</p>
             </li>
@@ -189,11 +210,10 @@ const jsonLd = [
       </ol>
     </section>
 
-    <section class="ends wrap">
-      <div class="ends-number" aria-hidden="true">48h</div>
+    <section class="section wrap ends">
+      <p class="ends-number" aria-hidden="true">48h</p>
       <div class="ends-copy">
-        <p class="eyebrow">Then it's gone</p>
-        <h2>What happens on the trip stays in the trip.</h2>
+        <h2 class="section-title">What happens on the trip stays in the trip.</h2>
         <p>
           48 hours after the event ends, it's deleted for everyone. The chat, the polls, the photos.
           Before that, you save every photo to your phone with one tap. You keep the memories. The app
@@ -202,34 +222,25 @@ const jsonLd = [
       </div>
     </section>
 
-    <section class="uses wrap">
-      <p class="eyebrow">Works for</p>
-      <h2>Anything you plan with more than one person.</h2>
-      <ul class="chips">
+    <section class="section wrap">
+      <h2 class="section-title">Anything you plan with more than one person.</h2>
+      <ul class="tiles">
         {
           useCases.map((u) => (
             <li>
-              {u.href ? (
-                <a class="chip" href={u.href}>
-                  <span aria-hidden="true">{u.emoji}</span>
-                  {u.name} →
-                </a>
-              ) : (
-                <span class="chip">
-                  <span aria-hidden="true">{u.emoji}</span>
-                  {u.name}
-                </span>
-              )}
+              <a class="tile tile-link" href={eventHref(u)}>
+                <span class="tile-emoji" aria-hidden="true">{u.emoji}</span>
+                <span>{u.name}</span>
+              </a>
             </li>
           ))
         }
       </ul>
     </section>
 
-    <section class="privacy wrap">
-      <p class="eyebrow">Private by design</p>
-      <h2>Only the people in the event. Nobody else.</h2>
-      <ul class="privacy-list">
+    <section class="section wrap">
+      <h2 class="section-title">Only the people in the event. Nobody else.</h2>
+      <ul class="facts">
         <li><strong>No feed, no followers, no strangers.</strong> Each event is its own private space.</li>
         <li><strong>Never your location.</strong> Places are venues you pick. Photos are stripped of GPS and camera data before upload.</li>
         <li><strong>Gone 48 hours after.</strong> Nothing lingers on a server for years.</li>
@@ -237,9 +248,8 @@ const jsonLd = [
       </ul>
     </section>
 
-    <section class="faq wrap">
-      <p class="eyebrow">Questions</p>
-      <h2>Good to know</h2>
+    <section class="section wrap">
+      <h2 class="section-title">Good to know</h2>
       <div class="faq-list">
         {
           faq.map((f) => (
@@ -252,9 +262,11 @@ const jsonLd = [
       </div>
     </section>
 
-    <section class="closer wrap">
-      <h2>Your next plan deserves a better morning after.</h2>
-      <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+    <section class="closer">
+      <div class="wrap closer-inner">
+        <h2>Your next plan deserves a better morning after.</h2>
+        <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+      </div>
     </section>
   </main>
 
@@ -294,6 +306,8 @@ const jsonLd = [
   }
 
   .summary-title {
+    font-family: var(--display);
+    font-stretch: 85%;
     font-weight: 800;
     font-size: 1.375rem;
     letter-spacing: -0.01em;
@@ -318,6 +332,8 @@ const jsonLd = [
   }
 
   .best-badge {
+    display: inline-flex;
+    gap: 8px;
     position: absolute;
     left: 12px;
     bottom: 12px;
@@ -341,6 +357,8 @@ const jsonLd = [
   }
 
   .best-line footer {
+    display: flex;
+    gap: 12px;
     color: var(--text-secondary);
     font-size: 0.875rem;
     margin-top: 4px;
@@ -387,19 +405,42 @@ const jsonLd = [
   .pain-grid {
     display: grid;
     gap: 16px;
-    margin-top: 32px;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   }
 
   .chat {
     margin: 0;
     background: var(--surface);
-    border: 1px solid var(--hairline);
     border-radius: var(--radius-card);
     padding: 20px;
     display: grid;
-    gap: 8px;
-    justify-items: start;
+    gap: 12px;
+  }
+
+  .msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  .avatar {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--tile);
+    color: var(--tile-ink);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .msg-who {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0 0 2px 14px;
   }
 
   .bubble {
@@ -407,19 +448,18 @@ const jsonLd = [
     border-radius: 18px 18px 18px 6px;
     padding: 8px 14px;
     font-size: 0.9375rem;
-    color: var(--text-secondary);
   }
 
   .chat-meta {
     color: var(--text-tertiary);
     font-size: 0.8125rem;
-    margin-top: 4px;
+    text-align: right;
   }
 
-  /* Then it's gone */
+  /* Then it's gone: the number is stretched as wide as the headlines are narrow. */
   .ends {
     display: grid;
-    gap: 16px 48px;
+    gap: 16px 56px;
     align-items: center;
   }
 
@@ -430,17 +470,19 @@ const jsonLd = [
   }
 
   .ends-number {
-    font-size: clamp(5rem, 18vw, 10rem);
-    font-weight: 800;
-    line-height: 1;
-    letter-spacing: -0.04em;
+    font-family: var(--display);
+    font-stretch: 150%;
+    font-weight: 900;
+    font-size: clamp(5.5rem, 20vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: -0.03em;
     color: var(--accent);
   }
 
-  .ends-copy p:not(.eyebrow) {
+  .ends-copy p {
+    margin-top: 20px;
     color: var(--text-secondary);
-    max-width: 58ch;
+    max-width: 52ch;
     font-size: 1.125rem;
   }
-
 </style>

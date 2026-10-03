@@ -1,10 +1,14 @@
+---
+import { events, eventHref } from "../data/events";
+---
+
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p class="eyebrow">Plan it. Live it. Wake up to the story.</p>
+    <p class="footer-tagline">Plan it. Live it. Wake up to the story.</p>
     <nav class="footer-nav" aria-label="Footer">
       <a href="/">Home</a>
-      <a href="/office-events/">Office events</a>
+      {events.map((e) => <a href={eventHref(e)}>{e.name}</a>)}
     </nav>
-    <p class="footer-meta">© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
+    <p>© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
   </div>
 </footer>

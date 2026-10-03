@@ -1,6 +1,8 @@
 /*
  * Tokens mirror the app's locked palette (after-stories/docs/design-system.md).
  * Dark only, like the app. onAccent is near-black: white on the pink fails contrast.
+ * The moment-tile fills are the one place colour runs free; here they colour the use cases
+ * and the chat avatars, always with tile ink.
  */
 :root {
   --background: #0b0c0e;
@@ -14,17 +16,36 @@
 
   --accent: #ff2d6f;
   --accent-pressed: #ea2a66;
+  --accent-disabled: #45202d;
   --on-accent: #0b0c0e;
 
+  --tile-drink: #4ca6ff;
+  --tile-scored: #ff6fa8;
+  --tile-puked: #4fd6ae;
+  --tile-went-home: #ff8a6b;
+  --tile-went-clubbing: #b98cff;
+  --tile-photo: #79d8f2;
+  --tile-custom: #ffffff;
+  --tile-ink: #101114;
 
   --dawn: #2a0f1c;
 
   --radius-card: 20px;
   --gutter: 16px;
-  --max: 1080px;
+  --max: 1120px;
 
   --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue",
     Helvetica, Arial, sans-serif;
+  /* Display: a condensed poster grotesk for headlines, stretched wide for numbers. */
+  --display: "Anybody", "Arial Narrow", var(--font);
+
+  /* Type scale, a fourth (1.333) from a 17px base. */
+  --step--1: 0.875rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.3125rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2.125rem, 5.5vw, 3.125rem);
+  --step-4: clamp(3rem, 8vw, 5.75rem);
 }
 
 *,
@@ -42,7 +63,7 @@ body {
   background: var(--background);
   color: var(--text-primary);
   font-family: var(--font);
-  font-size: 1.0625rem;
+  font-size: var(--step-0);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
 }
@@ -60,9 +81,13 @@ a {
 h1,
 h2,
 h3 {
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-family: var(--display);
+  font-stretch: 72%;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
   margin: 0;
+  text-wrap: balance;
 }
 
 p {
@@ -82,20 +107,12 @@ p {
   }
 }
 
-.eyebrow {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
-}
-
 .pill {
   display: inline-flex;
   align-items: center;
   gap: 0.5em;
-  min-height: 48px;
-  padding: 0 1.5em;
+  min-height: 52px;
+  padding: 0 1.6em;
   border-radius: 999px;
   background: var(--accent);
   color: var(--on-accent);
@@ -122,11 +139,7 @@ p {
   }
 }
 
-/* ---- Shared page sections (index, office-events) ---- */
-
-.accent {
-  color: var(--accent);
-}
+/* ---- Header and footer ---- */
 
 .topbar {
   display: flex;
@@ -142,8 +155,10 @@ p {
   gap: 10px;
   color: var(--text-primary);
   text-decoration: none;
+  font-family: var(--display);
+  font-stretch: 90%;
   font-weight: 800;
-  letter-spacing: 0.02em;
+  font-size: 1.125rem;
 }
 
 .brand img {
@@ -154,202 +169,14 @@ p {
   color: var(--text-secondary);
   text-decoration: none;
   font-size: 0.9375rem;
+  padding: 10px 0;
 }
 
 .topbar-link:hover {
   color: var(--text-primary);
 }
 
-/* Hero — the background fades from night into the icon's dawn tint. */
-.hero {
-  background: linear-gradient(180deg, var(--background) 0%, var(--dawn) 100%);
-  padding: 40px 0 72px;
-}
-
-.hero-grid {
-  display: grid;
-  gap: 48px;
-  align-items: center;
-}
-
-@media (min-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1.15fr 1fr;
-  }
-  .hero {
-    padding: 72px 0 112px;
-  }
-}
-
-.hero-copy {
-  display: grid;
-  gap: 20px;
-}
-
-h1 {
-  font-size: clamp(2.375rem, 6.5vw, 4rem);
-  font-weight: 800;
-}
-
-.lede {
-  font-size: 1.1875rem;
-  color: var(--text-secondary);
-  max-width: 36ch;
-}
-
-.cta-row {
-  margin-top: 8px;
-}
-
-.fineprint {
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
-
-.pill-block {
-  justify-content: center;
-  width: 100%;
-}
-
-/* Sections */
-section:not(.hero) {
-  padding-top: 88px;
-}
-
-section h2 {
-  font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-  font-weight: 800;
-  margin: 12px 0 16px;
-  max-width: 24ch;
-}
-
-/* How it works */
-.beats {
-  list-style: none;
-  padding: 0;
-  margin: 32px 0 0;
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-}
-
-.beat {
-  position: relative;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-card);
-  padding: 24px;
-  display: grid;
-  gap: 8px;
-  align-content: start;
-}
-
-.beat-after {
-  border-color: var(--accent);
-}
-
-.beat-num {
-  position: absolute;
-  top: 20px;
-  right: 22px;
-  color: var(--text-tertiary);
-  font-weight: 700;
-  font-size: 0.875rem;
-  font-variant-numeric: tabular-nums;
-}
-
-.beat h3 {
-  font-size: 1.375rem;
-}
-
-.beat p:not(.eyebrow) {
-  color: var(--text-secondary);
-}
-
-/* Works for */
-.chips {
-  list-style: none;
-  padding: 0;
-  margin: 28px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  font-weight: 600;
-}
-
-.chips li:first-child .chip {
-  border-color: var(--accent);
-}
-
-/* Privacy */
-.privacy-list {
-  list-style: none;
-  padding: 0;
-  margin: 28px 0 0;
-  display: grid;
-  gap: 12px;
-  max-width: 720px;
-}
-
-.privacy-list li {
-  background: var(--surface);
-  border-left: 3px solid var(--accent);
-  border-radius: 12px;
-  padding: 16px 20px;
-  color: var(--text-secondary);
-}
-
-.privacy-list strong {
-  color: var(--text-primary);
-}
-
-/* FAQ */
-.faq-list {
-  margin-top: 28px;
-  display: grid;
-  gap: 10px;
-  max-width: 760px;
-}
-
-details {
-  background: var(--surface);
-  border: 1px solid var(--hairline);
-  border-radius: 14px;
-  padding: 0 20px;
-}
-
-summary {
-  cursor: pointer;
-  font-weight: 700;
-  padding: 16px 0;
-  min-height: 44px;
-}
-
-details p {
-  color: var(--text-secondary);
-  padding-bottom: 18px;
-}
-
-/* Closer */
-.closer {
-  display: grid;
-  justify-items: start;
-  gap: 8px;
-}
-
 .footer {
-  margin-top: 112px;
   border-top: 1px solid var(--hairline);
   padding: 32px 0 48px;
 }
@@ -357,35 +184,388 @@ details p {
 .footer-inner {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 12px 32px;
   justify-content: space-between;
-  align-items: center;
+  align-items: baseline;
+  font-size: var(--step--1);
+  color: var(--text-secondary);
 }
 
-.footer-meta {
-  color: var(--text-secondary);
-  font-size: 0.875rem;
-}
-
-.footer-meta a {
-  color: var(--text-secondary);
+.footer-tagline {
+  font-family: var(--display);
+  font-stretch: 80%;
+  font-weight: 700;
+  font-size: 1.125rem;
+  color: var(--text-primary);
 }
 
 .footer-nav {
   display: flex;
-  gap: 20px;
-  font-size: 0.875rem;
+  flex-wrap: wrap;
+  gap: 8px 20px;
 }
 
-.footer-nav a {
+.footer-inner a {
   color: var(--text-secondary);
 }
 
-a.chip {
+.footer-inner a:hover {
   color: var(--text-primary);
+}
+
+/* ---- Hero ---- */
+
+.hero {
+  padding: 32px 0 80px;
+}
+
+.hero-grid {
+  display: grid;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1.4fr 1fr;
+  }
+  .hero {
+    padding: 64px 0 120px;
+  }
+}
+
+.hero-copy {
+  display: grid;
+  gap: 24px;
+  justify-items: start;
+}
+
+h1 {
+  font-size: var(--step-4);
+  font-stretch: 64%;
+  line-height: 0.9;
+}
+
+/* Each line of the hero headline is its own block, so the load sequence can play it in order. */
+h1 .line {
+  display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  h1 .line {
+    animation: line-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  h1 .line:nth-child(2) {
+    animation-delay: 0.35s;
+  }
+  h1 .line:nth-child(3) {
+    animation-delay: 0.7s;
+  }
+}
+
+@keyframes line-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.25em);
+  }
+}
+
+.lede {
+  font-size: var(--step-1);
+  line-height: 1.45;
+  color: var(--text-secondary);
+  max-width: 34ch;
+}
+
+.fineprint {
+  font-size: var(--step--1);
+  color: var(--text-secondary);
+}
+
+.cta {
+  display: grid;
+  gap: 12px;
+  justify-items: start;
+  margin-top: 8px;
+}
+
+.pill-block {
+  justify-content: center;
+  width: 100%;
+}
+
+/* ---- Sections ---- */
+
+.section {
+  padding-top: 112px;
+}
+
+.section-title {
+  font-size: var(--step-3);
+  max-width: 22ch;
+}
+
+.section-intro {
+  margin-top: 16px;
+  color: var(--text-secondary);
+  font-size: var(--step-1);
+  line-height: 1.45;
+  max-width: 40ch;
+}
+
+/* How it works: one event, drawn as a line that runs from night into the morning after. */
+.steps {
+  list-style: none;
+  padding: 0;
+  margin: 48px 0 0;
+  display: grid;
+  gap: 40px;
+  position: relative;
+}
+
+.steps::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--hairline), var(--accent));
+}
+
+.step {
+  position: relative;
+  padding-left: 40px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--background);
+  border: 2px solid var(--text-tertiary);
+}
+
+.step:last-child::before {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 6px rgba(255, 45, 111, 0.18), 0 0 32px 8px rgba(255, 45, 111, 0.35);
+}
+
+.step-when {
+  color: var(--text-secondary);
+  font-size: var(--step--1);
+  font-weight: 600;
+}
+
+.step:last-child .step-when {
+  color: var(--accent);
+}
+
+.step h3 {
+  font-size: var(--step-2);
+}
+
+.step p:last-child {
+  color: var(--text-secondary);
+  max-width: 34ch;
+}
+
+@media (min-width: 820px) {
+  .steps {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    padding-top: 40px;
+  }
+  .steps::before {
+    left: 8px;
+    right: 8px;
+    top: 7px;
+    bottom: auto;
+    width: auto;
+    height: 2px;
+    background: linear-gradient(90deg, var(--hairline), var(--accent));
+  }
+  .step {
+    padding-left: 0;
+  }
+  .step::before {
+    top: -40px;
+  }
+}
+
+/* Works for: the occasions wear the app's moment-tile colours. */
+.tiles {
+  list-style: none;
+  padding: 0;
+  margin: 36px 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tile {
+  --tile: var(--tile-drink);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 20px 0 16px;
+  border-radius: 16px;
+  background: var(--tile);
+  color: var(--tile-ink);
+  font-weight: 700;
   text-decoration: none;
 }
 
-a.chip:hover {
-  border-color: var(--text-secondary);
+.tiles li:nth-child(6n + 2) .tile {
+  --tile: var(--tile-scored);
+}
+.tiles li:nth-child(6n + 3) .tile {
+  --tile: var(--tile-puked);
+}
+.tiles li:nth-child(6n + 4) .tile {
+  --tile: var(--tile-went-home);
+}
+.tiles li:nth-child(6n + 5) .tile {
+  --tile: var(--tile-went-clubbing);
+}
+.tiles li:nth-child(6n) .tile {
+  --tile: var(--tile-photo);
+}
+
+.tile-link span:last-child {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tile-link:hover {
+  outline: 2px solid var(--tile-custom);
+  outline-offset: 3px;
+}
+
+.tile-emoji {
+  font-size: 1.25rem;
+}
+
+/* Privacy: plain statements in two columns, no boxes. */
+.facts {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0;
+  display: grid;
+  gap: 0 48px;
+  max-width: 920px;
+}
+
+@media (min-width: 720px) {
+  .facts {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.facts li {
+  border-top: 1px solid var(--hairline);
+  padding: 20px 0 28px;
+  color: var(--text-secondary);
+  max-width: 44ch;
+}
+
+.facts strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+  font-family: var(--display);
+  font-stretch: 85%;
+  font-weight: 700;
+  font-size: var(--step-1);
+}
+
+/* FAQ */
+.faq-list {
+  margin-top: 36px;
+  max-width: 760px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+details {
+  border-top: 1px solid var(--hairline);
+}
+
+summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  min-height: 64px;
+  padding: 16px 0;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+/* A plus that turns into a cross when the answer is open. */
+summary::after {
+  content: "+";
+  flex: none;
+  font-size: 1.75rem;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--accent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  summary::after {
+    transition: transform 0.2s ease;
+  }
+}
+
+details[open] summary::after {
+  transform: rotate(45deg);
+}
+
+summary:hover {
+  color: var(--text-secondary);
+}
+
+details p {
+  color: var(--text-secondary);
+  padding-bottom: 24px;
+  max-width: 62ch;
+}
+
+/* Closer: the page ends where the event does, at dawn. */
+.closer {
+  margin-top: 128px;
+  padding: 120px 0 112px;
+  background:
+    radial-gradient(60% 90% at 50% 100%, rgba(255, 45, 111, 0.28), transparent 70%),
+    linear-gradient(180deg, var(--background) 0%, var(--dawn) 100%);
+}
+
+.closer-inner {
+  display: grid;
+  justify-items: start;
+  gap: 32px;
+}
+
+.closer h2 {
+  font-size: var(--step-4);
+  max-width: 14ch;
+}
+
+.closer .fineprint a {
+  color: var(--text-secondary);
 }
