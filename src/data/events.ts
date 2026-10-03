@@ -40,7 +40,7 @@ export interface EventType {
   todayTitle: string;
   /** StoryBrand: how organising this feels (internal), and why it shouldn't (philosophical). */
   problem: string;
-  today: { icon: string; text: string }[];
+  today: { icon: IconName; text: string }[];
   todayOne: string;
   todayText: string;
   howTitle: string;
@@ -114,10 +114,10 @@ export const events: EventType[] = [
     problem:
       "And it's always the same person booking the house, chasing replies and asking for the photos afterwards. A weekend away should be the easy part of having friends.",
     today: [
-      { icon: "🗓️", text: "A weekend nobody actually confirmed" },
-      { icon: "🏠", text: "Three house links buried in the chat" },
-      { icon: "🚗", text: "Who's driving? Still unclear" },
-      { icon: "📸", text: "Hundreds of photos stuck on six phones" },
+      { icon: "CalendarX", text: "A weekend nobody actually confirmed" },
+      { icon: "Link", text: "Three house links buried in the chat" },
+      { icon: "Car", text: "Who's driving? Still unclear" },
+      { icon: "Images", text: "Hundreds of photos stuck on six phones" },
     ],
     todayOne: "One trip.",
     todayText:
@@ -190,10 +190,10 @@ export const events: EventType[] = [
     problem:
       "Someone always ends up as the night's coordinator, typing “where are you?” instead of being there. A night out shouldn't need a project manager.",
     today: [
-      { icon: "📍", text: "“where are you guys??”" },
-      { icon: "🔁", text: "A plan that changed four times" },
-      { icon: "🤳", text: "Photos on everyone's phone but yours" },
-      { icon: "🤔", text: "“What actually happened last night?”" },
+      { icon: "MessageCircleQuestion", text: "“where are you guys??”" },
+      { icon: "Repeat", text: "A plan that changed four times" },
+      { icon: "Smartphone", text: "Photos on everyone's phone but yours" },
+      { icon: "CircleHelp", text: "“What actually happened last night?”" },
     ],
     todayOne: "One night.",
     todayText:
@@ -266,10 +266,10 @@ export const events: EventType[] = [
     problem:
       "And whoever organises it does everything twice: once in the group chat, once in the secret chat about the gift. Celebrating someone should be fun for the people throwing it too.",
     today: [
-      { icon: "🗓️", text: "A date poll half the group ignored" },
-      { icon: "🎁", text: "A secret side chat about the gift" },
-      { icon: "📸", text: "The best photo of Sara, on Jonas's phone" },
-      { icon: "🔁", text: "“Can you send me that one?”" },
+      { icon: "CalendarX", text: "A date poll half the group ignored" },
+      { icon: "Gift", text: "A secret side chat about the gift" },
+      { icon: "Image", text: "The best photo of Sara, on Jonas's phone" },
+      { icon: "Send", text: "“Can you send me that one?”" },
     ],
     todayOne: "One party.",
     todayText:
@@ -345,10 +345,10 @@ export const events: EventType[] = [
     problem:
       "The organiser chases a dozen opinions and gets none back. It's a celebration, not a second job.",
     today: [
-      { icon: "🙋", text: "One person chasing everyone for replies" },
-      { icon: "📊", text: "A poll in one chat, the plan in another" },
-      { icon: "🗓️", text: "A date that's still not confirmed" },
-      { icon: "📸", text: "Photos that live in a group chat forever" },
+      { icon: "BellRing", text: "One person chasing everyone for replies" },
+      { icon: "MessagesSquare", text: "A poll in one chat, the plan in another" },
+      { icon: "CalendarX", text: "A date that's still not confirmed" },
+      { icon: "Infinity", text: "Photos that live in a group chat forever" },
     ],
     todayOne: "One event.",
     todayText:
@@ -421,10 +421,10 @@ export const events: EventType[] = [
     problem:
       "And someone always spends the weekend as the group's lost and found instead of watching the bands. A festival should be the one place you don't have to organise anything.",
     today: [
-      { icon: "🎟️", text: "Who has the tickets again?" },
-      { icon: "🗺️", text: "“meet at the… which stage?”" },
-      { icon: "⛺", text: "Where camp is, buried in the chat" },
-      { icon: "📸", text: "Photos you'll never see" },
+      { icon: "Ticket", text: "Who has the tickets again?" },
+      { icon: "Signpost", text: "“meet at the… which stage?”" },
+      { icon: "Tent", text: "Where camp is, buried in the chat" },
+      { icon: "ImageOff", text: "Photos you'll never see" },
     ],
     todayOne: "One festival.",
     todayText:
@@ -497,10 +497,10 @@ export const events: EventType[] = [
     problem:
       "Finding one free evening for six people shouldn't take two weeks of messages. Hosting should be about the food, not the logistics.",
     today: [
-      { icon: "📅", text: "“What about the 14th?” “Can't.”" },
-      { icon: "🎬", text: "Thirty film suggestions, no decision" },
-      { icon: "🍲", text: "Who's cooking? Who brings what?" },
-      { icon: "😴", text: "Everyone says “whatever works”" },
+      { icon: "CalendarX", text: "“What about the 14th?” “Can't.”" },
+      { icon: "Film", text: "Thirty film suggestions, no decision" },
+      { icon: "ChefHat", text: "Who's cooking? Who brings what?" },
+      { icon: "Meh", text: "Everyone says “whatever works”" },
     ],
     todayOne: "One night in.",
     todayText:
@@ -577,10 +577,10 @@ export const events: EventType[] = [
     problem:
       "And the colleague who always organises it spends a week answering the same three questions. A team event should bring people together, not fill inboxes.",
     today: [
-      { icon: "📅", text: "A calendar invite nobody can change" },
-      { icon: "🗳️", text: "A date poll in another tool" },
-      { icon: "✉️", text: "30 emails, half of them reply-all" },
-      { icon: "📁", text: "A shared folder nobody uploads to" },
+      { icon: "CalendarClock", text: "A calendar invite nobody can change" },
+      { icon: "Vote", text: "A date poll in another tool" },
+      { icon: "Mails", text: "30 emails, half of them reply-all" },
+      { icon: "FolderX", text: "A shared folder nobody uploads to" },
     ],
     todayOne: "One event.",
     todayText:

@@ -115,7 +115,7 @@ const jsonLd = [
           {
             event.today.map((t) => (
               <li>
-                <span aria-hidden="true">{t.icon}</span>
+                <Icon class="today-icon" name={t.icon} />
                 <s>{t.text}</s>
               </li>
             ))
@@ -354,6 +354,13 @@ const jsonLd = [
     border-top: 1px solid var(--hairline);
     padding: 16px 0;
     color: var(--text-secondary);
+  }
+
+  /* The icon is a child component, so the rule reaches it through the list. */
+  .today-list :global(.today-icon) {
+    width: 22px;
+    height: 22px;
+    color: var(--text-tertiary);
   }
 
   .today-list s {
