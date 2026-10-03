@@ -1,5 +1,7 @@
 ---
 import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
 
 // Copy and structure: docs/positioning.md › The landing page.
 const title = "After Stories — Plan it together. Live it together. Wake up to the story.";
@@ -36,14 +38,14 @@ const beats = [
 ];
 
 // Use cases: the hero plus the ones that prove it (docs/positioning.md › The use cases).
-const useCases = [
+const useCases: { emoji: string; name: string; href?: string }[] = [
   { emoji: "🏔️", name: "Weekend away" },
   { emoji: "🌙", name: "Night out" },
   { emoji: "🎂", name: "Birthday" },
   { emoji: "💍", name: "Bachelor & bachelorette" },
   { emoji: "🎪", name: "Festival" },
   { emoji: "🍝", name: "Dinner night" },
-  { emoji: "🥂", name: "Office party" },
+  { emoji: "🥂", name: "Office party", href: "/office-events/" },
 ];
 
 const faq = [
@@ -95,13 +97,7 @@ const jsonLd = [
 <Base title={title} description={description}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
 
-  <header class="topbar wrap">
-    <a class="brand" href="/" aria-label="After Stories home">
-      <img src="/apple-touch-icon.png" alt="" width="36" height="36" />
-      <span>After Stories</span>
-    </a>
-    <a class="topbar-link" href="#how">How it works</a>
-  </header>
+  <SiteHeader />
 
   <main>
     <section class="hero">
@@ -212,9 +208,18 @@ const jsonLd = [
       <ul class="chips">
         {
           useCases.map((u) => (
-            <li class="chip">
-              <span aria-hidden="true">{u.emoji}</span>
-              {u.name}
+            <li>
+              {u.href ? (
+                <a class="chip" href={u.href}>
+                  <span aria-hidden="true">{u.emoji}</span>
+                  {u.name} →
+                </a>
+              ) : (
+                <span class="chip">
+                  <span aria-hidden="true">{u.emoji}</span>
+                  {u.name}
+                </span>
+              )}
             </li>
           ))
         }
@@ -253,97 +258,10 @@ const jsonLd = [
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="wrap footer-inner">
-      <p class="eyebrow">Plan it. Live it. Wake up to the story.</p>
-      <p class="footer-meta">© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
-    </div>
-  </footer>
+  <SiteFooter />
 </Base>
 
 <style>
-  .accent {
-    color: var(--accent);
-  }
-
-  .topbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 20px;
-    padding-bottom: 20px;
-  }
-
-  .brand {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 800;
-    letter-spacing: 0.02em;
-  }
-
-  .brand img {
-    border-radius: 9px;
-  }
-
-  .topbar-link {
-    color: var(--text-secondary);
-    text-decoration: none;
-    font-size: 0.9375rem;
-  }
-
-  .topbar-link:hover {
-    color: var(--text-primary);
-  }
-
-  /* Hero — the background fades from night into the icon's dawn tint. */
-  .hero {
-    background: linear-gradient(180deg, var(--background) 0%, var(--dawn) 100%);
-    padding: 40px 0 72px;
-  }
-
-  .hero-grid {
-    display: grid;
-    gap: 48px;
-    align-items: center;
-  }
-
-  @media (min-width: 900px) {
-    .hero-grid {
-      grid-template-columns: 1.15fr 1fr;
-    }
-    .hero {
-      padding: 72px 0 112px;
-    }
-  }
-
-  .hero-copy {
-    display: grid;
-    gap: 20px;
-  }
-
-  h1 {
-    font-size: clamp(2.375rem, 6.5vw, 4rem);
-    font-weight: 800;
-  }
-
-  .lede {
-    font-size: 1.1875rem;
-    color: var(--text-secondary);
-    max-width: 36ch;
-  }
-
-  .cta-row {
-    margin-top: 8px;
-  }
-
-  .fineprint {
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-  }
-
   /* The morning-after summary: a quiet mock of the summary screen. */
   .summary {
     margin: 0;
@@ -458,28 +376,11 @@ const jsonLd = [
     min-width: 5.5ch;
   }
 
-  .pill-block {
-    justify-content: center;
-    width: 100%;
-  }
-
   .summary-foot {
     text-align: center;
     color: var(--text-tertiary);
     font-size: 0.8125rem;
     margin-top: -6px;
-  }
-
-  /* Sections */
-  section:not(.hero) {
-    padding-top: 88px;
-  }
-
-  section h2 {
-    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
-    font-weight: 800;
-    margin: 12px 0 16px;
-    max-width: 24ch;
   }
 
   /* The pain: two group chats that went nowhere. */
@@ -515,49 +416,6 @@ const jsonLd = [
     margin-top: 4px;
   }
 
-  /* How it works */
-  .beats {
-    list-style: none;
-    padding: 0;
-    margin: 32px 0 0;
-    display: grid;
-    gap: 16px;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
-  }
-
-  .beat {
-    position: relative;
-    background: var(--surface);
-    border: 1px solid var(--hairline);
-    border-radius: var(--radius-card);
-    padding: 24px;
-    display: grid;
-    gap: 8px;
-    align-content: start;
-  }
-
-  .beat-after {
-    border-color: var(--accent);
-  }
-
-  .beat-num {
-    position: absolute;
-    top: 20px;
-    right: 22px;
-    color: var(--text-tertiary);
-    font-weight: 700;
-    font-size: 0.875rem;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .beat h3 {
-    font-size: 1.375rem;
-  }
-
-  .beat p:not(.eyebrow) {
-    color: var(--text-secondary);
-  }
-
   /* Then it's gone */
   .ends {
     display: grid;
@@ -585,108 +443,4 @@ const jsonLd = [
     font-size: 1.125rem;
   }
 
-  /* Works for */
-  .chips {
-    list-style: none;
-    padding: 0;
-    margin: 28px 0 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  .chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    min-height: 44px;
-    padding: 0 18px;
-    border-radius: 999px;
-    background: var(--surface);
-    border: 1px solid var(--hairline);
-    font-weight: 600;
-  }
-
-  .chip:first-child {
-    border-color: var(--accent);
-  }
-
-  /* Privacy */
-  .privacy-list {
-    list-style: none;
-    padding: 0;
-    margin: 28px 0 0;
-    display: grid;
-    gap: 12px;
-    max-width: 720px;
-  }
-
-  .privacy-list li {
-    background: var(--surface);
-    border-left: 3px solid var(--accent);
-    border-radius: 12px;
-    padding: 16px 20px;
-    color: var(--text-secondary);
-  }
-
-  .privacy-list strong {
-    color: var(--text-primary);
-  }
-
-  /* FAQ */
-  .faq-list {
-    margin-top: 28px;
-    display: grid;
-    gap: 10px;
-    max-width: 760px;
-  }
-
-  details {
-    background: var(--surface);
-    border: 1px solid var(--hairline);
-    border-radius: 14px;
-    padding: 0 20px;
-  }
-
-  summary {
-    cursor: pointer;
-    font-weight: 700;
-    padding: 16px 0;
-    min-height: 44px;
-  }
-
-  details p {
-    color: var(--text-secondary);
-    padding-bottom: 18px;
-  }
-
-  /* Closer */
-  .closer {
-    display: grid;
-    justify-items: start;
-    gap: 8px;
-  }
-
-  .footer {
-    margin-top: 112px;
-    border-top: 1px solid var(--hairline);
-    padding: 32px 0 48px;
-  }
-
-  .footer-inner {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .footer-meta {
-    color: var(--text-secondary);
-    font-size: 0.875rem;
-  }
-
-  .footer-meta a {
-    color: var(--text-secondary);
-  }
 </style>
