@@ -456,7 +456,7 @@ const jsonLd = [
     text-align: right;
   }
 
-  /* Then it's gone: the number is stretched as wide as the headlines are narrow. */
+  /* Then it's gone: the number in the headline cut, at poster size. */
   .ends {
     display: grid;
     gap: 16px 56px;
@@ -471,11 +471,11 @@ const jsonLd = [
 
   .ends-number {
     font-family: var(--display);
-    font-stretch: 150%;
-    font-weight: 900;
+    font-stretch: 72%;
+    font-weight: 800;
     font-size: clamp(5.5rem, 20vw, 11rem);
     line-height: 0.85;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.01em;
     color: var(--accent);
   }
 
