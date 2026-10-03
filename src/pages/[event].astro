@@ -5,6 +5,7 @@ import SiteFooter from "../components/SiteFooter.astro";
 import LaunchCta from "../components/LaunchCta.astro";
 import Icon from "../components/Icon.astro";
 import { events, defaultPrivacy, eventHref, type EventType } from "../data/events";
+import { ogImagePath } from "../lib/og";
 
 // One page per event type (src/data/events.ts), each built like the office page:
 // a planning-stage mock, today vs. one event, the three beats, the occasions, privacy, FAQ.
@@ -22,36 +23,20 @@ const options = mock.options.map((o, i) => ({
 }));
 const privacy = event.privacy ?? defaultPrivacy;
 const others = events.filter((e) => e.slug !== event.slug);
-const url = new URL(eventHref(event), "https://after-stories.com").href;
-
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: event.title,
-    description: event.description,
-    url,
-    about: {
-      "@type": "MobileApplication",
-      name: "After Stories",
-      operatingSystem: "iOS",
-      applicationCategory: "SocialNetworkingApplication",
-    },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: event.faq.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  },
+const breadcrumb = [
+  { name: "After Stories", path: "/" },
+  { name: event.name, path: eventHref(event) },
 ];
 ---
 
-<Base title={event.title} description={event.description}>
-  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+<Base
+  title={event.title}
+  description={event.description}
+  image={ogImagePath(event.slug)}
+  imageAlt={event.headline.join(" ")}
+  breadcrumb={breadcrumb}
+  faq={event.faq}
+>
 
   <SiteHeader />
 

@@ -1,15 +1,35 @@
 ---
 import "../styles/global.css";
+import { absolute, jsonLd, pageGraph, type Crumb, type Question } from "../lib/seo";
+import { lastModified } from "../lib/lastmod";
+import { homeCard, ogImagePath } from "../lib/og";
 
 interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  /** The share image, a site path (src/lib/og.ts). Defaults to the home page's. */
+  image?: string;
+  /** What the share image says, for screen readers in the apps that show it. */
+  imageAlt?: string;
+  breadcrumb?: Crumb[];
+  faq?: Question[];
 }
 
-const { title, description, noindex = false } = Astro.props;
-const canonical = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL("/icon-512.png", Astro.site);
+const {
+  title,
+  description,
+  noindex = false,
+  image = ogImagePath(homeCard.slug),
+  imageAlt = homeCard.lines.join(" "),
+  breadcrumb,
+  faq,
+} = Astro.props;
+const path = Astro.url.pathname;
+const canonical = absolute(path);
+const ogImage = absolute(image);
+const modified = noindex ? undefined : lastModified(path);
+const graph = noindex ? undefined : pageGraph({ path, title, description, image, breadcrumb, faq, modified });
 ---
 
 <!doctype html>
@@ -29,22 +49,50 @@ const ogImage = new URL("/icon-512.png", Astro.site);
     </script>
     <title>{title}</title>
     <meta name="description" content={description} />
-    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    {
+      noindex ? (
+        <meta name="robots" content="noindex" />
+      ) : (
+        <>
+          <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+          <link rel="canonical" href={canonical} />
+        </>
+      )
+    }
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <!-- A plain-text summary of the site for AI assistants (llmstxt.org), src/pages/llms.txt.ts. -->
+    <link rel="alternate" type="text/plain" href="/llms.txt" title="After Stories for AI assistants" />
 
     <!-- Anybody is served from this site, not Google Fonts, so no visitor's IP goes to Google. -->
     <link rel="preload" href="/fonts/anybody-latin.woff2" as="font" type="font/woff2" crossorigin />
 
+    <meta name="application-name" content="After Stories" />
+    <meta name="apple-mobile-web-app-title" content="After Stories" />
+    <meta name="author" content="12f ApS" />
+
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="After Stories" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={ogImage} />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content={imageAlt} />
+    {modified && <meta property="og:updated_time" content={modified.toISOString()} />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image:alt" content={imageAlt} />
+
+    {graph && <script type="application/ld+json" set:html={jsonLd(graph)} />}
 
     <script is:inline defer src="https://umami.robert-jensen.dk/script.js" data-website-id="d3cff791-e5e1-4dde-a312-8714ddd1fa3d"></script>
 

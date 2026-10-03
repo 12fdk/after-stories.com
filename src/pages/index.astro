@@ -6,11 +6,11 @@ import LaunchCta from "../components/LaunchCta.astro";
 import Icon from "../components/Icon.astro";
 import LakePhoto from "../components/LakePhoto.astro";
 import { events, eventHref } from "../data/events";
+import { homeDescription, homeFaq as faq, homeTitle } from "../data/home";
 
 // Copy and structure: docs/positioning.md › The landing page.
-const title = "After Stories — Plan it together. Live it together. Wake up to the story.";
-const description =
-  "A private app for one trip, party or night out. Vote on the plan, share photos in one stream, and wake up to the morning-after story. Everything disappears 48 hours after.";
+const title = homeTitle;
+const description = homeDescription;
 
 // Hero: the morning-after summary of a weekend away (the hero use case).
 const decided = [
@@ -67,54 +67,9 @@ const chats = [
 // Use cases: the hero plus the ones that prove it, each with its own page (src/data/events.ts).
 const useCases = events;
 
-const faq = [
-  {
-    q: "How is it different from a group chat and a shared album?",
-    a: "A group chat buries the plan, and somebody has to run the album. In After Stories every poll becomes a decision you can see at a glance, everyone's photos land in the same event, and the morning after you get the story without anyone making it.",
-  },
-  {
-    q: "What happens after 48 hours?",
-    a: "The event is deleted for everyone: the chat, the polls and the photos. Before that, everyone gets a reminder and can save all the photos to their own phone with one tap.",
-  },
-  {
-    q: "Can friends without an iPhone join?",
-    a: "Yes. The invite link works for everyone. Friends without an iPhone join from the web.",
-  },
-  {
-    q: "Who can see what we share?",
-    a: "Only the people in the event. There is no public feed, no followers and no discovery. Photos are stripped of location and camera data before they're uploaded.",
-  },
-  {
-    q: "Can we use it for a work event?",
-    a: "Yes. Vote on the date, decide the place and share the photos from the team dinner or the summer party, instead of a calendar poll and a dozen emails. And there's no work chat left behind afterwards.",
-  },
-];
-
-const jsonLd = [
-  {
-    "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    name: "After Stories",
-    operatingSystem: "iOS",
-    applicationCategory: "SocialNetworkingApplication",
-    description,
-    url: "https://after-stories.com/",
-    publisher: { "@type": "Organization", name: "12f ApS", url: "https://12f.dk" },
-  },
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: faq.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  },
-];
 ---
 
-<Base title={title} description={description}>
-  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+<Base title={title} description={description} faq={faq}>
 
   <SiteHeader />
 

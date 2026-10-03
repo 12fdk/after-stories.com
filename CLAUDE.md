@@ -34,3 +34,25 @@ without it shows the pill. Sign-ups are double opt-in on the backend.
 `/privacy/` describes what the form collects. Change it (and its date) whenever the form, the
 backend's storage or the site's hosting or analytics change. Fonts are self-hosted in
 `public/fonts/`: don't add third-party font or script hosts without updating the policy.
+
+## Search and AI visibility (#30)
+
+Every page gets its search and share metadata from `src/layouts/Base.astro`; keep it there.
+
+- **Titles 30–60 characters, descriptions 110–160, unique per page.** `src/lib/seo.test.ts` fails
+  the build otherwise. The home page's live in `src/data/home.ts`, the event pages' in `events.ts`.
+- **JSON-LD** is one `@graph` per page from `src/lib/seo.ts`: Organization (12f ApS), WebSite,
+  MobileApplication, the WebPage (+ FAQPage when the page has questions) and a BreadcrumbList.
+  No rating, price, offers or App Store link until they're real (messaging rules 3 and 9); add
+  them there at launch, with `sameAs` for any social profiles.
+- **Share images** (`/og/<slug>.png`, 1200×630) are rendered at build time from each page's
+  headline by `src/pages/og/[card].png.ts`. The fonts in `src/assets/og/` are static instances of
+  Anybody for that renderer only; `display-widths.json` is their glyph widths, used to fit the
+  headline. Regenerate both with fontTools if the site's font changes.
+- **`/llms.txt` and `/llms-full.txt`** are built from the same data as the pages
+  (`src/lib/llms.ts`), so a new page or question shows up there by itself.
+- **Sitemap `lastmod`** and `dateModified` are each page's last commit (`src/lib/lastmod.ts`). A
+  new kind of page needs its source files added to `pageSources`. The deploy needs
+  `fetch-depth: 0` for this.
+- **`public/robots.txt`** allows everything and names the AI crawlers. The site sits behind
+  Cloudflare: if its "block AI bots" setting is ever turned on, it overrides this file.
