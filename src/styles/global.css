@@ -37,6 +37,7 @@
   --on-accent: #0b0c0e;
   --failure: #ff6b6b;
   --badge-ink: #f7f8f9;
+  --bubble-mine: #45202d;
 
   --tile-drink: #4ca6ff;
   --tile-scored: #ff6fa8;
@@ -88,6 +89,7 @@
     --accent-disabled: #ffd6e3;
     --failure: #c42b2b;
     --dawn: #ffe4ec;
+    --bubble-mine: #ffdce7;
     color-scheme: light;
   }
 }
@@ -104,6 +106,7 @@
   --accent-disabled: #ffd6e3;
   --failure: #c42b2b;
   --dawn: #ffe4ec;
+  --bubble-mine: #ffdce7;
   color-scheme: light;
 }
 
@@ -657,4 +660,17 @@ details p {
 
 .closer .fineprint a {
   color: var(--text-secondary);
+}
+
+/* Read by screen readers, not shown. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
