@@ -41,13 +41,14 @@ const beats = [
   },
 ];
 
-// The pain: two group chats that went nowhere. Avatars use the app's tile ramp, like its fallback.
+// The pain: two group chats that went nowhere, seen from the visitor's phone: their own message
+// on the right (mine), everyone else's on the left. Avatars use the app's tile ramp, like its fallback.
 const chats = [
   {
     label: "A group chat where the plan gets lost",
     meta: "312 unread",
     messages: [
-      { who: "Maya", tile: "--tile-went-clubbing", text: "wait which weekend did we land on?" },
+      { who: "You", mine: true, text: "wait which weekend did we land on?" },
       { who: "Jonas", tile: "--tile-puked", text: "did anyone actually book the house" },
       { who: "Sara", tile: "--tile-drink", text: "scroll up, it's there somewhere" },
     ],
@@ -56,7 +57,7 @@ const chats = [
     label: "A group chat where nobody shares the photos",
     meta: "Three weeks ago",
     messages: [
-      { who: "Ali", tile: "--tile-went-home", text: "can someone send the pics??" },
+      { who: "You", mine: true, text: "can someone send the pics??" },
       { who: "Maya", tile: "--tile-went-clubbing", text: "yes!! pls send" },
       { who: "Jonas", tile: "--tile-puked", text: "will do tonight" },
     ],
@@ -199,17 +200,26 @@ const jsonLd = [
         {
           chats.map((c) => (
             <figure class="chat" aria-label={c.label}>
-              {c.messages.map((m) => (
-                <div class="msg">
-                  <span class="avatar" style={`--tile:var(${m.tile})`} aria-hidden="true">
-                    {m.who[0]}
-                  </span>
-                  <div>
-                    <p class="msg-who">{m.who}</p>
-                    <p class="bubble">{m.text}</p>
+              {c.messages.map((m) =>
+                m.mine ? (
+                  <div class="msg msg-mine">
+                    <p class="bubble">
+                      <span class="visually-hidden">You: </span>
+                      {m.text}
+                    </p>
                   </div>
-                </div>
-              ))}
+                ) : (
+                  <div class="msg">
+                    <span class="avatar" style={`--tile:var(${m.tile})`} aria-hidden="true">
+                      {m.who[0]}
+                    </span>
+                    <div>
+                      <p class="msg-who">{m.who}</p>
+                      <p class="bubble">{m.text}</p>
+                    </div>
+                  </div>
+                ),
+              )}
               <figcaption class="chat-meta">{c.meta}</figcaption>
             </figure>
           ))
@@ -502,6 +512,16 @@ const jsonLd = [
     border-radius: 18px 18px 18px 6px;
     padding: 8px 14px;
     font-size: 0.9375rem;
+  }
+
+  /* Your own message: right-aligned in your bubble colour, tail on the right, no name or avatar. */
+  .msg-mine {
+    justify-content: flex-end;
+  }
+
+  .msg-mine .bubble {
+    background: var(--bubble-mine);
+    border-radius: 18px 18px 6px 18px;
   }
 
   .chat-meta {
