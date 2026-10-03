@@ -25,7 +25,7 @@ const beats = [
     key: "plan",
     when: "Before",
     name: "Plan it together",
-    text: "Ask the group. Which weekend, which house, who drives. Every vote turns into a decision, and the decisions stay on top as a timeline. Nobody scrolls back to find them.",
+    text: "Create the event and send the link. Ask which weekend, which house, who drives. Every vote turns into a decision, and the decisions stay on top as a timeline. Nobody scrolls back to find them.",
   },
   {
     key: "live",
@@ -127,11 +127,11 @@ const jsonLd = [
             <span class="line">Wake up to the story.</span>
           </h1>
           <p class="lede">
-            One private place for your group's next trip, party or night out. Decide it, live it, and
-            get every photo the morning after. Then it disappears.
+            The private app for your group's trip, party or night out. Decide the plan together, live it
+            in one place, and wake up to everyone's photos. Nobody has to chase anyone.
           </p>
           <div class="cta">
-            <LaunchCta place="hero" />
+            <LaunchCta as="link" />
             <p class="fineprint">For iPhone. Friends without one join from the web.</p>
           </div>
         </div>
@@ -189,7 +189,12 @@ const jsonLd = [
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">The plan got lost in the group chat. The photos never left everyone's phone.</h2>
+      <h2 class="section-title">Group chats are where plans go to die.</h2>
+      <p class="section-intro">
+        The plan sinks under 400 messages, the photos never leave everyone's phone, and somehow you're the
+        one scrolling up, chasing replies and begging for the pictures. Getting your friends together
+        shouldn't feel like a second job.
+      </p>
       <div class="pain-grid">
         {
           chats.map((c) => (
@@ -213,7 +218,11 @@ const jsonLd = [
     </section>
 
     <section id="how" class="section wrap">
-      <h2 class="section-title">One event. From the first idea to the morning after.</h2>
+      <h2 class="section-title">From “we should do something” to the morning after, in three steps.</h2>
+      <p class="section-intro">
+        We've all been the one holding the group chat together. After Stories does that job, so you get to
+        enjoy the plan you made.
+      </p>
       <ol class="steps">
         {
           beats.map((b) => (
@@ -225,6 +234,9 @@ const jsonLd = [
           ))
         }
       </ol>
+      <div class="section-cta">
+        <LaunchCta as="link" />
+      </div>
     </section>
 
     <section class="section wrap ends">
@@ -256,12 +268,12 @@ const jsonLd = [
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Only the people in the event. Nobody else.</h2>
+      <h2 class="section-title">Only the people in the event. That's a promise.</h2>
       <ul class="facts">
         <li><strong>No feed, no followers, no strangers.</strong> Each event is its own private space.</li>
         <li><strong>Never your location.</strong> Places are venues you pick. Photos are stripped of GPS and camera data before upload.</li>
-        <li><strong>Gone 48 hours after.</strong> Nothing lingers on a server for years.</li>
-        <li><strong>Sign in with Apple.</strong> No passwords to remember or leak.</li>
+        <li><strong>Gone 48 hours after.</strong> Everyone saves the photos first. Then nothing lingers on a server for years.</li>
+        <li><strong>Nobody left out.</strong> Friends without an iPhone join from the web. Sign in with Apple means no passwords.</li>
       </ul>
     </section>
 
@@ -281,8 +293,15 @@ const jsonLd = [
 
     <section class="closer">
       <div class="wrap closer-inner">
-        <h2>Your next plan deserves a better morning after.</h2>
-        <LaunchCta place="closer" />
+        <h2>Wake up to the whole story.</h2>
+        <div class="closer-story">
+          <p>
+            The morning after, it's all there: the photo everyone loved, the line everyone's still quoting,
+            what you decided, and every picture already on your phone. Nobody had to make it.
+          </p>
+          <p class="closer-stakes">Or plan the next one in the group chat, and wait three weeks for photos that never come.</p>
+        </div>
+        <LaunchCta as="form" />
       </div>
     </section>
   </main>

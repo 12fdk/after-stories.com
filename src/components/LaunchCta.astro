@@ -1,22 +1,23 @@
 ---
 import NotifyForm from "./NotifyForm.astro";
 
-// The launch call to action. The page earns the sign-up before asking for it: the hero only
-// links to the form, and the form itself sits in the closing section, after the explanation.
+// The launch call to action. The page earns the sign-up before asking for it: the hero and the
+// plan section only link to the form (as="link"), and the form itself (as="form") sits in the
+// closing section, after the explanation.
 // PUBLIC_WAITLIST_ENABLED=true at build time (the deploy workflow sets it) turns the form on;
 // without it both places show the "Coming soon" pill. NotifyForm's script only ships when it renders.
 interface Props {
-  place: "hero" | "closer";
+  as: "link" | "form";
 }
 
-const { place } = Astro.props;
+const { as } = Astro.props;
 const enabled = import.meta.env.PUBLIC_WAITLIST_ENABLED === "true";
 ---
 
 {
   !enabled ? (
     <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
-  ) : place === "hero" ? (
+  ) : as === "link" ? (
     <a class="pill" href="#notify">Get notified at launch</a>
   ) : (
     <div id="notify" class="notify-target" tabindex="-1">
