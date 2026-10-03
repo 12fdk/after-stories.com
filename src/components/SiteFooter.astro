@@ -1,5 +1,6 @@
 ---
 import { events, eventHref } from "../data/events";
+import ThemeSwitch from "./ThemeSwitch.astro";
 ---
 
 <footer class="footer">
@@ -9,6 +10,7 @@ import { events, eventHref } from "../data/events";
       <a href="/">Home</a>
       {events.map((e) => <a href={eventHref(e)}>{e.name}</a>)}
     </nav>
+    <ThemeSwitch />
     <p>© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
   </div>
 </footer>

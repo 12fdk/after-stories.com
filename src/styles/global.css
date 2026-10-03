@@ -1,6 +1,9 @@
 /*
- * Tokens mirror the app's locked palette (after-stories/docs/design-system.md).
- * Dark only, like the app. onAccent is near-black: white on the pink fails contrast.
+ * Dark tokens mirror the app's locked palette (after-stories/docs/design-system.md). The app is
+ * dark only; the light set below is the site's own, measured to the same WCAG targets.
+ * onAccent is near-black in both: white on the pink fails contrast.
+ * --accent is the pink as a FILL. Pink TEXT and icons use --accent-ink: in light mode the fill is
+ * only 3.3:1 on the background, so the ink is a darker pink.
  * The moment-tile fills are the one place colour runs free; here they colour the use cases
  * and the chat avatars, always with tile ink.
  */
@@ -17,8 +20,10 @@
   --accent: #ff2d6f;
   --accent-pressed: #ea2a66;
   --accent-disabled: #45202d;
+  --accent-ink: #ff2d6f;
   --on-accent: #0b0c0e;
   --failure: #ff6b6b;
+  --badge-ink: #f7f8f9;
 
   --tile-drink: #4ca6ff;
   --tile-scored: #ff6fa8;
@@ -47,6 +52,46 @@
   --step-2: 1.75rem;
   --step-3: clamp(2.125rem, 5.5vw, 3.125rem);
   --step-4: clamp(3rem, 8vw, 5.75rem);
+
+  color-scheme: dark;
+}
+
+/*
+ * Light: Auto follows the system (no data-theme), or the visitor picks it (data-theme="light").
+ * The two blocks must stay identical. Ratios, measured: text-primary 18.3:1 on background,
+ * text-secondary 7.4:1, text-tertiary 4.5:1, accent-ink 5.4:1 (4.8:1 on dawn), failure 5.3:1,
+ * on-accent on the accent fill 5.5:1, text-primary on the leader bar 14.9:1.
+ */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --background: #f6f7f9;
+    --surface: #ffffff;
+    --surface-elevated: #eceef1;
+    --hairline: #dadfe5;
+    --text-primary: #0b0c0e;
+    --text-secondary: #4a525c;
+    --text-tertiary: #6b737d;
+    --accent-ink: #c8114f;
+    --accent-disabled: #ffd6e3;
+    --failure: #c42b2b;
+    --dawn: #ffe4ec;
+    color-scheme: light;
+  }
+}
+
+:root[data-theme="light"] {
+  --background: #f6f7f9;
+  --surface: #ffffff;
+  --surface-elevated: #eceef1;
+  --hairline: #dadfe5;
+  --text-primary: #0b0c0e;
+  --text-secondary: #4a525c;
+  --text-tertiary: #6b737d;
+  --accent-ink: #c8114f;
+  --accent-disabled: #ffd6e3;
+  --failure: #c42b2b;
+  --dawn: #ffe4ec;
+  color-scheme: light;
 }
 
 *,
@@ -76,7 +121,7 @@ img {
 }
 
 a {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 h1,
@@ -368,7 +413,7 @@ h1 .line {
 }
 
 .step:last-child .step-when {
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 .step h3 {
@@ -525,7 +570,7 @@ summary::after {
   font-size: 1.75rem;
   font-weight: 400;
   line-height: 1;
-  color: var(--accent);
+  color: var(--accent-ink);
 }
 
 @media (prefers-reduced-motion: no-preference) {

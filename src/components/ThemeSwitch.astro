@@ -1,0 +1,101 @@
+---
+// Light / Dark / Auto, in the footer. src/lib/theme.ts holds the logic.
+const choices = [
+  { value: "auto", label: "Auto" },
+  { value: "light", label: "Light" },
+  { value: "dark", label: "Dark" },
+];
+---
+
+<fieldset class="theme-switch" data-theme-switch>
+  <legend>Theme</legend>
+  <div class="options">
+    {
+      choices.map((c) => (
+        <label>
+          <input type="radio" name="theme" value={c.value} checked={c.value === "auto"} />
+          <span>{c.label}</span>
+        </label>
+      ))
+    }
+  </div>
+</fieldset>
+
+<script>
+  import { applyChoice, readChoice, type ThemeChoice } from "../lib/theme";
+
+  const storage = (() => {
+    try {
+      return window.localStorage;
+    } catch {
+      return null;
+    }
+  })();
+
+  for (const group of document.querySelectorAll<HTMLFieldSetElement>("[data-theme-switch]")) {
+    const current = readChoice(storage);
+    const radio = group.querySelector<HTMLInputElement>(`input[value="${current}"]`);
+    if (radio) radio.checked = true;
+    group.addEventListener("change", (event) => {
+      const choice = (event.target as HTMLInputElement).value as ThemeChoice;
+      applyChoice(choice, document.documentElement, storage);
+    });
+  }
+</script>
+
+<style>
+  .theme-switch {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  legend {
+    float: left;
+    padding: 0;
+    margin-right: 12px;
+  }
+
+  .options {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+  }
+
+  label {
+    position: relative;
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 36px;
+    padding: 0 14px;
+    border-radius: 999px;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+
+  input:checked + span {
+    background: var(--surface-elevated);
+    color: var(--text-primary);
+  }
+
+  input:focus-visible + span {
+    outline: 3px solid var(--accent);
+    outline-offset: 1px;
+  }
+</style>
