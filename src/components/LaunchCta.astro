@@ -1,10 +1,38 @@
 ---
 import NotifyForm from "./NotifyForm.astro";
 
-// The launch call to action on every page. Until the backend's waitlist endpoint exists
-// (12fdk/after-stories#271) it stays the "Coming soon" pill; PUBLIC_WAITLIST_ENABLED=true at
-// build time swaps in the "Get notified" form. NotifyForm's script only ships when it renders.
+// The launch call to action. The page earns the sign-up before asking for it: the hero only
+// links to the form, and the form itself sits in the closing section, after the explanation.
+// PUBLIC_WAITLIST_ENABLED=true at build time (the deploy workflow sets it) turns the form on;
+// without it both places show the "Coming soon" pill. NotifyForm's script only ships when it renders.
+interface Props {
+  place: "hero" | "closer";
+}
+
+const { place } = Astro.props;
 const enabled = import.meta.env.PUBLIC_WAITLIST_ENABLED === "true";
 ---
 
-{enabled ? <NotifyForm /> : <span class="pill" aria-disabled="true">Coming soon to the App Store</span>}
+{
+  !enabled ? (
+    <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+  ) : place === "hero" ? (
+    <a class="pill" href="#notify">Get notified at launch</a>
+  ) : (
+    <div id="notify" class="notify-target" tabindex="-1">
+      <NotifyForm />
+    </div>
+  )
+}
+
+<style>
+  /* The hero's link lands here: a little air above, and no focus ring on the wrapper itself. */
+  .notify-target {
+    width: 100%;
+    scroll-margin-top: 32px;
+  }
+
+  .notify-target:focus {
+    outline: none;
+  }
+</style>
