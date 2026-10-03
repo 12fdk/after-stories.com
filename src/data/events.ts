@@ -44,6 +44,8 @@ export interface EventType {
   todayOne: string;
   todayText: string;
   howTitle: string;
+  /** StoryBrand: the guide's empathy, then what After Stories takes off the organiser's hands. */
+  empathy: string;
   beats: Beat[];
   occasionsTitle: string;
   occasions: { icon: IconName; name: string }[];
@@ -123,6 +125,8 @@ export const events: EventType[] = [
     todayText:
       "The dates, the house, the plan for the day and every photo, in one place that cleans itself up.",
     howTitle: "From which weekend to the photos.",
+    empathy:
+      "We've all been the one with the spreadsheet and the deposit. After Stories keeps the plan and collects the photos, so you get to enjoy the weekend you organised.",
     beats: [
       {
         when: "Before",
@@ -199,6 +203,8 @@ export const events: EventType[] = [
     todayText:
       "Where you meet, where you go next and every photo of the night, in one place that's gone 48 hours later.",
     howTitle: "From where do we meet to what happened.",
+    empathy:
+      "We've all been the friend on the pavement typing “where are you?”. After Stories keeps everyone on the same plan, so you get to be out instead of coordinating.",
     beats: [
       {
         when: "Before",
@@ -275,6 +281,8 @@ export const events: EventType[] = [
     todayText:
       "The date, the place, the plan and every photo of the night, in one place that's gone 48 hours later.",
     howTitle: "From which Saturday to the photos.",
+    empathy:
+      "We've all organised a birthday in two chats at once. After Stories keeps the plan in one place, so you get to enjoy the party you threw.",
     beats: [
       {
         when: "Before",
@@ -354,6 +362,8 @@ export const events: EventType[] = [
     todayText:
       "Every vote, the day itself and every photo, in one place that cleans itself up 48 hours later.",
     howTitle: "From the first poll to the morning after.",
+    empathy:
+      "We've all watched a send-off poll sit at two votes for a week. After Stories turns every answer into a decision, so the organiser gets to be a guest too.",
     beats: [
       {
         when: "Before",
@@ -430,6 +440,8 @@ export const events: EventType[] = [
     todayText:
       "The tickets, the meeting point, the line-up and every photo, in one place that's gone 48 hours later.",
     howTitle: "From the line-up to the photos.",
+    empathy:
+      "We've all lost a friend somewhere between two stages. After Stories keeps the meeting point and the plan one tap away, so you get to watch the bands.",
     beats: [
       {
         when: "Before",
@@ -506,6 +518,8 @@ export const events: EventType[] = [
     todayText:
       "The day, the menu, the film and who brings what, decided in one place that clears itself away.",
     howTitle: "From which night to the last slice.",
+    empathy:
+      "We've all sent “so… which night works?” three times. After Stories puts it to a vote, so you get to spend the evening hosting, not scheduling.",
     beats: [
       {
         when: "Before",
@@ -548,7 +562,7 @@ export const events: EventType[] = [
     ],
     closer: "The next night in, decided in minutes.",
     success:
-      "The night decided in minutes: the date, the film and who brings what, settled before anyone says “whatever works”.",
+      "A night that came together in minutes, a table full of people you like, and the next morning the photos of the food and the final score, on everyone's phone.",
     stakes: "Or keep throwing dates into the chat, and watch the plan fizzle out again.",
   },
   {
@@ -586,6 +600,8 @@ export const events: EventType[] = [
     todayText:
       "The votes, the decisions, the day itself and the photos, in one place that cleans itself up.",
     howTitle: "From the first date poll to the photos.",
+    empathy:
+      "We've all been the colleague who ends up organising the party. After Stories answers the same three questions for you, so you get to enjoy the evening with your team.",
     beats: [
       {
         when: "Before",

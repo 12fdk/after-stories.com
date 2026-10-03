@@ -1,7 +1,22 @@
+---
+import LaunchCta from "./LaunchCta.astro";
+
+// StoryBrand: the direct call to action in the header, next to the transitional "How it works".
+interface Props {
+  /** Where the header's "Get notified" goes. Pages without the form point at the home page's. */
+  notifyHref?: string;
+}
+
+const { notifyHref = "#notify" } = Astro.props;
+---
+
 <header class="topbar wrap">
   <a class="brand" href="/" aria-label="After Stories home">
     <img src="/apple-touch-icon.png" alt="" width="36" height="36" />
     <span>After Stories</span>
   </a>
-  <a class="topbar-link" href="/#how">How it works</a>
+  <nav class="topbar-nav" aria-label="Main">
+    <a class="topbar-link" href="/#how">How it works</a>
+    <LaunchCta as="link" size="small" href={notifyHref} />
+  </nav>
 </header>

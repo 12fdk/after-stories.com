@@ -227,6 +227,12 @@ p {
   border-radius: 9px;
 }
 
+.topbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
 .topbar-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -236,6 +242,13 @@ p {
 
 .topbar-link:hover {
   color: var(--text-primary);
+}
+
+/* At phone width the header keeps the logo and the direct call to action. */
+@media (max-width: 440px) {
+  .topbar-link {
+    display: none;
+  }
 }
 
 .footer {
@@ -350,6 +363,12 @@ h1 .line {
   gap: 12px;
   justify-items: start;
   margin-top: 8px;
+}
+
+.pill-small {
+  min-height: 44px;
+  padding: 0 1.1em;
+  font-size: 0.9375rem;
 }
 
 .pill-block {
