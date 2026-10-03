@@ -1,80 +1,104 @@
 ---
 import Base from "../layouts/Base.astro";
 
-const title = "AFTER — Log the night. Relive the story.";
+// Copy and structure: docs/positioning.md › The landing page.
+const title = "After Stories — Plan it together. Live it together. Wake up to the story.";
 const description =
-  "A private app for your group of friends. Log the moments while the night happens, then wake up to the full story: “While you were gone…”";
+  "A private app for one trip, party or night out. Vote on the plan, share photos in one stream, and wake up to the morning-after story. Everything disappears 48 hours after.";
 
-// The six MVP features, in the app's order (docs/product.md › MVP).
-const features = [
+// Hero: the morning-after summary of a weekend away (the hero use case).
+const decided = [
+  { when: "Fri", what: "Lake house, Hallstatt" },
+  { when: "Sat 13:00", what: "Hike to the waterfall" },
+  { when: "Sat 20:00", what: "Fondue at Maya's place" },
+];
+
+// The three beats (the eight steps, compressed for a first-time visitor).
+const beats = [
   {
-    icon: "🎉",
-    name: "Start an event",
-    text: "Name the night, add a place, and invite your friends with a link, a code or a QR.",
+    key: "plan",
+    eyebrow: "Before",
+    name: "Plan it together",
+    text: "Ask the group. Which weekend, which house, who drives. Every vote turns into a decision, and the decisions stay on top as a timeline. Nobody scrolls back to find them.",
   },
   {
-    icon: "👯",
-    name: "Keep your crew",
-    text: "Save the people from an event as a group and start the next one with them in one tap.",
+    key: "live",
+    eyebrow: "During",
+    name: "Live it together",
+    text: "One stream for the whole event: “10 minutes late”, the photos, where to go next. Tap ❤️ on the ones that matter.",
   },
   {
-    icon: "📸",
-    name: "Log the moments",
-    text: "Pick a moment, add a comment and photos. It takes seconds, even three drinks in.",
-  },
-  {
-    icon: "🔥",
-    name: "Live feed",
-    text: "See what's happening across the night in real time, and react with 😂 🔥 💀 ❤️.",
-  },
-  {
-    icon: "🏠",
-    name: "I'm going home",
-    text: "Mark when you left. Everything after that becomes your story for tomorrow.",
-  },
-  {
-    icon: "☀️",
-    name: "The morning after",
-    text: "The full timeline, the photos, the stats, and the awards: MVP, Biggest Fail, Photo of the Event.",
+    key: "after",
+    eyebrow: "The morning after",
+    name: "Wake up to the story",
+    text: "Everyone gets the summary: the most-liked photo, the line of the night, what you decided. Then save every photo to your phone with one tap.",
   },
 ];
 
-// Moment tiles, with the app's locked tile colours.
-const tiles = [
-  { emoji: "🍹", label: "Drink", color: "var(--tile-drink)" },
-  { emoji: "🍑", label: "Scored", color: "var(--tile-scored)" },
-  { emoji: "🤢", label: "Puked", color: "var(--tile-puked)" },
-  { emoji: "🏠", label: "Went home", color: "var(--tile-went-home)" },
-  { emoji: "💃", label: "Went clubbing", color: "var(--tile-went-clubbing)" },
-  { emoji: "📸", label: "Photo", color: "var(--tile-photo)" },
+// Use cases: the hero plus the ones that prove it (docs/positioning.md › The use cases).
+const useCases = [
+  { emoji: "🏔️", name: "Weekend away" },
+  { emoji: "🌙", name: "Night out" },
+  { emoji: "🎂", name: "Birthday" },
+  { emoji: "💍", name: "Bachelor & bachelorette" },
+  { emoji: "🎪", name: "Festival" },
+  { emoji: "🍝", name: "Dinner night" },
+  { emoji: "🥂", name: "Office party" },
 ];
 
-const missed = [
-  { time: "02:41", who: "Jeppe", what: "went clubbing 💃" },
-  { time: "03:05", who: "Simon", what: "custom moment “Taxi karaoke” 🎤" },
-  { time: "03:22", who: "Thomas", what: "posted 4 photos 📸" },
-  { time: "04:10", who: "Mikkel", what: "drink 🍹" },
+const faq = [
+  {
+    q: "How is it different from a group chat and a shared album?",
+    a: "A group chat buries the plan, and somebody has to run the album. In After Stories every poll becomes a decision you can see at a glance, everyone's photos land in the same event, and the morning after you get the story without anyone making it.",
+  },
+  {
+    q: "What happens after 48 hours?",
+    a: "The event is deleted for everyone: the chat, the polls and the photos. Before that, everyone gets a reminder and can save all the photos to their own phone with one tap.",
+  },
+  {
+    q: "Can friends without an iPhone join?",
+    a: "Yes. The invite link works for everyone. Friends without an iPhone join from the web.",
+  },
+  {
+    q: "Who can see what we share?",
+    a: "Only the people in the event. There is no public feed, no followers and no discovery. Photos are stripped of location and camera data before they're uploaded.",
+  },
+  {
+    q: "Can we use it for a work event?",
+    a: "Yes. Vote on the date, decide the place and share the photos from the team dinner or the summer party, instead of a calendar poll and a dozen emails. And there's no work chat left behind afterwards.",
+  },
 ];
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "MobileApplication",
-  name: "AFTER",
-  operatingSystem: "iOS",
-  applicationCategory: "SocialNetworkingApplication",
-  description,
-  url: "https://after-stories.com/",
-  publisher: { "@type": "Organization", name: "12f ApS", url: "https://12f.dk" },
-};
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    name: "After Stories",
+    operatingSystem: "iOS",
+    applicationCategory: "SocialNetworkingApplication",
+    description,
+    url: "https://after-stories.com/",
+    publisher: { "@type": "Organization", name: "12f ApS", url: "https://12f.dk" },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
 ---
 
 <Base title={title} description={description}>
   <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
 
   <header class="topbar wrap">
-    <a class="brand" href="/" aria-label="AFTER home">
+    <a class="brand" href="/" aria-label="After Stories home">
       <img src="/apple-touch-icon.png" alt="" width="36" height="36" />
-      <span>AFTER</span>
+      <span>After Stories</span>
     </a>
     <a class="topbar-link" href="#how">How it works</a>
   </header>
@@ -83,108 +107,155 @@ const jsonLd = {
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Good nights · Better mornings</p>
-          <h1>Log the night.<br /><span class="accent">Relive the story.</span></h1>
+          <p class="eyebrow">For trips, parties and nights out</p>
+          <h1>Plan it together.<br />Live it together.<br /><span class="accent">Wake up to the story.</span></h1>
           <p class="lede">
-            A private app for your group of friends. Capture the night while it happens — then wake up to
-            everything you missed.
+            One private place for your group's next plan. Decide it, live it, and get every photo the
+            morning after. Then it disappears.
           </p>
           <div class="cta-row">
             <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
           </div>
-          <p class="fineprint">For iPhone. No public feed, no followers, no strangers.</p>
+          <p class="fineprint">For iPhone. Friends without one join from the web.</p>
         </div>
 
-        <figure class="morning" aria-label="Example of the morning-after recap">
-          <div class="morning-head">
+        <figure class="summary" aria-label="Example of the morning-after summary for a weekend away">
+          <div class="summary-head">
             <span class="sun" aria-hidden="true">☀️</span>
             <div>
-              <p class="morning-hello">Good morning, Martin</p>
-              <p class="morning-sub">You went home at 02:34</p>
+              <p class="summary-kicker">The morning after</p>
+              <p class="summary-title">Lake house weekend</p>
             </div>
           </div>
-          <p class="morning-title">While you were gone…</p>
-          <ol class="missed">
-            {
-              missed.map((m) => (
-                <li>
-                  <time>{m.time}</time>
-                  <span>
-                    <strong>{m.who}</strong> {m.what}
-                  </span>
-                </li>
-              ))
-            }
-          </ol>
-          <p class="morning-more">And much more…</p>
-          <span class="pill pill-block" aria-hidden="true">See the whole story</span>
+
+          <div class="best-photo" role="img" aria-label="The most-liked photo: the group on the jetty at sunset">
+            <span class="best-badge">❤️ 9 · Photo of the trip</span>
+          </div>
+
+          <blockquote class="best-line">
+            <p>“Who packed the fondue set but no cheese?”</p>
+            <footer>Jonas · ❤️ 7</footer>
+          </blockquote>
+
+          <div>
+            <p class="mini-label">What you decided</p>
+            <ol class="timeline">
+              {
+                decided.map((d) => (
+                  <li>
+                    <time>{d.when}</time>
+                    <span>{d.what}</span>
+                  </li>
+                ))
+              }
+            </ol>
+          </div>
+
+          <span class="pill pill-block" aria-hidden="true">Save all 214 photos</span>
+          <p class="summary-foot">Disappears in 47 hours</p>
         </figure>
       </div>
     </section>
 
-    <section class="insight wrap">
-      <p class="eyebrow">Why AFTER</p>
-      <h2>The best stories vanish in the haze.</h2>
-      <p>
-        What survives the night ends up scattered across Snapchat, the camera roll and the group chat.
-        AFTER keeps the whole night in one private place — made by your friends, while it happens, for
-        the morning after.
-      </p>
+    <section class="pain wrap">
+      <p class="eyebrow">Sound familiar?</p>
+      <h2>The plan got lost in the group chat. The photos never left everyone's phone.</h2>
+      <div class="pain-grid">
+        <figure class="chat" aria-label="A group chat where the plan gets lost">
+          <p class="bubble">wait which weekend did we land on?</p>
+          <p class="bubble">did anyone actually book the house</p>
+          <p class="bubble">scroll up, it's there somewhere</p>
+          <p class="chat-meta">312 unread</p>
+        </figure>
+        <figure class="chat" aria-label="A group chat where nobody shares the photos">
+          <p class="bubble">can someone send the pics??</p>
+          <p class="bubble">yes!! pls send</p>
+          <p class="bubble">will do tonight</p>
+          <p class="chat-meta">Three weeks ago</p>
+        </figure>
+      </div>
     </section>
 
-    <section id="how" class="features wrap">
+    <section id="how" class="how wrap">
       <p class="eyebrow">How it works</p>
-      <h2>Six things. Nothing else.</h2>
-      <ul class="feature-grid">
+      <h2>One event. From the first idea to the morning after.</h2>
+      <ol class="beats">
         {
-          features.map((f, i) => (
-            <li class="feature">
-              <span class="feature-num">{String(i + 1).padStart(2, "0")}</span>
-              <span class="feature-icon" aria-hidden="true">{f.icon}</span>
-              <h3>{f.name}</h3>
-              <p>{f.text}</p>
+          beats.map((b, i) => (
+            <li class={`beat beat-${b.key}`}>
+              <span class="beat-num">{String(i + 1).padStart(2, "0")}</span>
+              <p class="eyebrow">{b.eyebrow}</p>
+              <h3>{b.name}</h3>
+              <p>{b.text}</p>
             </li>
           ))
         }
-      </ul>
+      </ol>
     </section>
 
-    <section class="moments wrap">
-      <div class="moments-copy">
-        <p class="eyebrow">Log a moment</p>
-        <h2>One tap. Then back to the night.</h2>
+    <section class="ends wrap">
+      <div class="ends-number" aria-hidden="true">48h</div>
+      <div class="ends-copy">
+        <p class="eyebrow">Then it's gone</p>
+        <h2>What happens on the trip stays in the trip.</h2>
         <p>
-          Big, bright tiles for the things that actually happen. Add a comment or a photo if you want —
-          or write your own custom moment.
+          48 hours after the event ends, it's deleted for everyone. The chat, the polls, the photos.
+          Before that, you save every photo to your phone with one tap. You keep the memories. The app
+          forgets the rest.
         </p>
       </div>
-      <ul class="tiles" aria-label="Moment types">
+    </section>
+
+    <section class="uses wrap">
+      <p class="eyebrow">Works for</p>
+      <h2>Anything you plan with more than one person.</h2>
+      <ul class="chips">
         {
-          tiles.map((t) => (
-            <li class="tile" style={`--tile:${t.color}`}>
-              <span aria-hidden="true">{t.emoji}</span>
-              {t.label}
+          useCases.map((u) => (
+            <li class="chip">
+              <span aria-hidden="true">{u.emoji}</span>
+              {u.name}
             </li>
           ))
         }
-        <li class="tile tile-custom"><span aria-hidden="true">＋</span>Custom moment</li>
       </ul>
     </section>
 
     <section class="privacy wrap">
       <p class="eyebrow">Private by design</p>
-      <h2>What happens at the event stays in the group.</h2>
+      <h2>Only the people in the event. Nobody else.</h2>
       <ul class="privacy-list">
-        <li><strong>Only your group sees it.</strong> No public feed, no followers, no discovery.</li>
-        <li><strong>No location in your photos.</strong> Every GPS tag and EXIF field is stripped before upload.</li>
+        <li><strong>No feed, no followers, no strangers.</strong> Each event is its own private space.</li>
+        <li><strong>Never your location.</strong> Places are venues you pick. Photos are stripped of GPS and camera data before upload.</li>
+        <li><strong>Gone 48 hours after.</strong> Nothing lingers on a server for years.</li>
         <li><strong>Sign in with Apple.</strong> No passwords to remember or leak.</li>
       </ul>
+    </section>
+
+    <section class="faq wrap">
+      <p class="eyebrow">Questions</p>
+      <h2>Good to know</h2>
+      <div class="faq-list">
+        {
+          faq.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="closer wrap">
+      <h2>Your next plan deserves a better morning after.</h2>
+      <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
     </section>
   </main>
 
   <footer class="footer">
     <div class="wrap footer-inner">
-      <p class="eyebrow">Private moments. Lasting stories.</p>
+      <p class="eyebrow">Plan it. Live it. Wake up to the story.</p>
       <p class="footer-meta">© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
     </div>
   </footer>
@@ -210,7 +281,7 @@ const jsonLd = {
     color: var(--text-primary);
     text-decoration: none;
     font-weight: 800;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.02em;
   }
 
   .brand img {
@@ -254,14 +325,14 @@ const jsonLd = {
   }
 
   h1 {
-    font-size: clamp(2.5rem, 7vw, 4.25rem);
+    font-size: clamp(2.375rem, 6.5vw, 4rem);
     font-weight: 800;
   }
 
   .lede {
     font-size: 1.1875rem;
     color: var(--text-secondary);
-    max-width: 34ch;
+    max-width: 36ch;
   }
 
   .cta-row {
@@ -273,8 +344,8 @@ const jsonLd = {
     color: var(--text-secondary);
   }
 
-  /* The morning-after card: a quiet mock of screen 6. */
-  .morning {
+  /* The morning-after summary: a quiet mock of the summary screen. */
+  .summary {
     margin: 0;
     background: var(--surface);
     border: 1px solid var(--hairline);
@@ -288,7 +359,7 @@ const jsonLd = {
     justify-self: center;
   }
 
-  .morning-head {
+  .summary-head {
     display: flex;
     align-items: center;
     gap: 14px;
@@ -298,55 +369,105 @@ const jsonLd = {
     font-size: 2rem;
   }
 
-  .morning-hello {
+  .summary-kicker {
+    color: var(--accent);
     font-weight: 700;
-    font-size: 1.125rem;
-  }
-
-  .morning-sub {
-    color: var(--text-secondary);
     font-size: 0.875rem;
   }
 
-  .morning-title {
-    font-size: 1.5rem;
+  .summary-title {
     font-weight: 800;
+    font-size: 1.375rem;
     letter-spacing: -0.01em;
   }
 
-  .missed {
+  /* A drawn stand-in for the most-liked photo: a lake at sunset. */
+  .best-photo {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 70% 58%, #ffd29a 0 7%, transparent 8%),
+      linear-gradient(180deg, #ff8a6b 0%, #ff2d6f 38%, #3b1530 58%, #1a2a44 59%, #0e1626 100%);
+    overflow: hidden;
+  }
+
+  .best-photo::after {
+    content: "";
+    position: absolute;
+    inset: 54% 0 0 0;
+    background: repeating-linear-gradient(180deg, rgba(255, 210, 154, 0.18) 0 2px, transparent 2px 9px);
+  }
+
+  .best-badge {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    z-index: 1;
+    background: rgba(11, 12, 14, 0.75);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .best-line {
+    margin: 0;
+    background: var(--surface-elevated);
+    border-radius: 14px;
+    padding: 12px 14px;
+  }
+
+  .best-line p {
+    font-weight: 600;
+  }
+
+  .best-line footer {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 4px;
+  }
+
+  .mini-label {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .timeline {
     list-style: none;
     margin: 0;
     padding: 0;
     display: grid;
-    gap: 8px;
+    gap: 6px;
   }
 
-  .missed li {
+  .timeline li {
     display: flex;
     gap: 14px;
     align-items: baseline;
-    background: var(--surface-elevated);
-    border-radius: 14px;
-    padding: 12px 14px;
     font-size: 0.9375rem;
   }
 
-  .missed time {
+  .timeline time {
     color: var(--accent);
     font-weight: 700;
     font-variant-numeric: tabular-nums;
     flex: none;
-  }
-
-  .morning-more {
-    color: var(--text-secondary);
-    font-size: 0.9375rem;
+    min-width: 5.5ch;
   }
 
   .pill-block {
     justify-content: center;
     width: 100%;
+  }
+
+  .summary-foot {
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 0.8125rem;
+    margin-top: -6px;
   }
 
   /* Sections */
@@ -355,29 +476,56 @@ const jsonLd = {
   }
 
   section h2 {
-    font-size: clamp(1.875rem, 4.5vw, 2.75rem);
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
     font-weight: 800;
     margin: 12px 0 16px;
-    max-width: 22ch;
+    max-width: 24ch;
   }
 
-  .insight p:not(.eyebrow),
-  .moments-copy p:not(.eyebrow) {
+  /* The pain: two group chats that went nowhere. */
+  .pain-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  .chat {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: var(--radius-card);
+    padding: 20px;
+    display: grid;
+    gap: 8px;
+    justify-items: start;
+  }
+
+  .bubble {
+    background: var(--surface-elevated);
+    border-radius: 18px 18px 18px 6px;
+    padding: 8px 14px;
+    font-size: 0.9375rem;
     color: var(--text-secondary);
-    max-width: 58ch;
-    font-size: 1.125rem;
   }
 
-  .feature-grid {
+  .chat-meta {
+    color: var(--text-tertiary);
+    font-size: 0.8125rem;
+    margin-top: 4px;
+  }
+
+  /* How it works */
+  .beats {
     list-style: none;
     padding: 0;
     margin: 32px 0 0;
     display: grid;
     gap: 16px;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   }
 
-  .feature {
+  .beat {
     position: relative;
     background: var(--surface);
     border: 1px solid var(--hairline);
@@ -388,7 +536,11 @@ const jsonLd = {
     align-content: start;
   }
 
-  .feature-num {
+  .beat-after {
+    border-color: var(--accent);
+  }
+
+  .beat-num {
     position: absolute;
     top: 20px;
     right: 22px;
@@ -398,66 +550,68 @@ const jsonLd = {
     font-variant-numeric: tabular-nums;
   }
 
-  .feature-icon {
-    font-size: 1.75rem;
+  .beat h3 {
+    font-size: 1.375rem;
   }
 
-  .feature h3 {
-    font-size: 1.25rem;
-  }
-
-  .feature p {
+  .beat p:not(.eyebrow) {
     color: var(--text-secondary);
   }
 
-  .moments {
+  /* Then it's gone */
+  .ends {
     display: grid;
-    gap: 32px;
+    gap: 16px 48px;
     align-items: center;
   }
 
   @media (min-width: 900px) {
-    .moments {
-      grid-template-columns: 1fr 1fr;
+    .ends {
+      grid-template-columns: auto 1fr;
     }
   }
 
-  .tiles {
+  .ends-number {
+    font-size: clamp(5rem, 18vw, 10rem);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    color: var(--accent);
+  }
+
+  .ends-copy p:not(.eyebrow) {
+    color: var(--text-secondary);
+    max-width: 58ch;
+    font-size: 1.125rem;
+  }
+
+  /* Works for */
+  .chips {
     list-style: none;
     padding: 0;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .tile {
-    background: var(--tile);
-    color: var(--tile-ink);
-    border-radius: var(--radius-card);
-    padding: 18px;
-    min-height: 104px;
+    margin: 28px 0 0;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    font-weight: 700;
-    font-size: 1.0625rem;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
-  .tile span {
-    font-size: 1.75rem;
-  }
-
-  .tile-custom {
-    --tile: var(--tile-custom);
-    grid-column: 1 / -1;
-    min-height: 72px;
-    flex-direction: row;
+  .chip {
+    display: inline-flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 12px;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 18px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    font-weight: 600;
   }
 
+  .chip:first-child {
+    border-color: var(--accent);
+  }
+
+  /* Privacy */
   .privacy-list {
     list-style: none;
     padding: 0;
@@ -477,6 +631,40 @@ const jsonLd = {
 
   .privacy-list strong {
     color: var(--text-primary);
+  }
+
+  /* FAQ */
+  .faq-list {
+    margin-top: 28px;
+    display: grid;
+    gap: 10px;
+    max-width: 760px;
+  }
+
+  details {
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 0 20px;
+  }
+
+  summary {
+    cursor: pointer;
+    font-weight: 700;
+    padding: 16px 0;
+    min-height: 44px;
+  }
+
+  details p {
+    color: var(--text-secondary);
+    padding-bottom: 18px;
+  }
+
+  /* Closer */
+  .closer {
+    display: grid;
+    justify-items: start;
+    gap: 8px;
   }
 
   .footer {

@@ -1,6 +1,6 @@
 # after-stories.com
 
-Landing page for **AFTER** — *Log the night. Relive the story.* The iOS app lives in `../after-stories`.
+Landing page for **After Stories** — *Plan it together. Live it together. Wake up to the story.* Copy comes from `docs/positioning.md`. The iOS app lives in `../after-stories`.
 
 Built with [Astro](https://astro.build), deployed to GitHub Pages on every push to `main`.
 
