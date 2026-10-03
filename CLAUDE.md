@@ -19,8 +19,13 @@ can be tested without a browser.
 - `src/pages/index.astro`: the home page.
 - `src/pages/[event].astro`: one page per event type, filled from `src/data/events.ts`.
 
-## The waitlist form (off)
+## The waitlist form (live)
 
-`LaunchCta` renders the "Coming soon" pill unless `PUBLIC_WAITLIST_ENABLED=true` at build time,
-in which case it renders `NotifyForm` (name + email to the backend's `waitlist-signup` function,
-`src/lib/waitlist.ts`). Turn it on only once 12fdk/after-stories#271 is done.
+`LaunchCta` renders `NotifyForm` (name + email to the backend's `waitlist-signup` function,
+`src/lib/waitlist.ts`, contract in 12fdk/after-stories#271) when `PUBLIC_WAITLIST_ENABLED=true` at
+build time, otherwise the "Coming soon" pill. The deploy workflow sets it; a local `pnpm build`
+without it shows the pill. Sign-ups are double opt-in on the backend.
+
+`/privacy/` describes what the form collects. Change it (and its date) whenever the form, the
+backend's storage or the site's hosting or analytics change. Fonts are self-hosted in
+`public/fonts/`: don't add third-party font or script hosts without updating the policy.
