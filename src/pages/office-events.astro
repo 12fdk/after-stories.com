@@ -1,0 +1,408 @@
+---
+import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SiteFooter from "../components/SiteFooter.astro";
+
+// Copy: docs/positioning.md › The office event. Calmer than the home page: warm, still witty,
+// no nightlife jokes.
+const title = "Office Party & Team Event Planner — After Stories";
+const description =
+  "Plan the team dinner, holiday party or offsite in one private event: vote on the date, decide the place, share the photos. No calendar polls, no 30-email threads. Gone 48 hours after.";
+
+// The hero mock: an office event in planning, with the next step on top.
+const options = [
+  { label: "Fri 5 Dec", votes: 11, share: 85 },
+  { label: "Fri 12 Dec", votes: 6, share: 46 },
+  { label: "Thu 18 Dec", votes: 2, share: 15 },
+];
+
+const today = [
+  { icon: "📅", text: "A calendar invite nobody can change" },
+  { icon: "🗳️", text: "A date poll in another tool" },
+  { icon: "✉️", text: "30 emails, half of them reply-all" },
+  { icon: "📁", text: "A shared folder nobody uploads to" },
+];
+
+const beats = [
+  {
+    key: "plan",
+    eyebrow: "Before",
+    name: "Decide it in one place",
+    text: "Ask the team: which Friday, which restaurant, who books the table. Every vote turns into a decision, and the decisions sit on top of the event, in order. No one has to chase the replies.",
+  },
+  {
+    key: "live",
+    eyebrow: "On the day",
+    name: "One stream for the event",
+    text: "“Running 10 minutes late”, the table photos, where everyone is heading after. One private stream for the people who are there, nothing else.",
+  },
+  {
+    key: "after",
+    eyebrow: "The morning after",
+    name: "Everyone gets the photos",
+    text: "A summary of the event and every photo, saved to each person's phone with one tap. Then the event is deleted. No work chat left behind.",
+  },
+];
+
+const occasions = [
+  { emoji: "🍽️", name: "Team dinner" },
+  { emoji: "🍻", name: "Friday bar" },
+  { emoji: "☀️", name: "Summer party" },
+  { emoji: "🎄", name: "Christmas party" },
+  { emoji: "🧭", name: "Offsite" },
+  { emoji: "👋", name: "Leaving do" },
+  { emoji: "🚀", name: "Kick-off" },
+];
+
+const faq = [
+  {
+    q: "Do my colleagues need an iPhone?",
+    a: "No. Anyone with the invite link can join. Colleagues with an iPhone use the app, everyone else joins from the web.",
+  },
+  {
+    q: "Does IT need to set anything up?",
+    a: "No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. Sign in with Apple means nobody makes a new password.",
+  },
+  {
+    q: "How many people can join one event?",
+    a: "Up to 50. That fits a team, a department or a small company.",
+  },
+  {
+    q: "Who can see what's shared?",
+    a: "Only the people in the event. There are no admins, no public profiles and no feed, and 48 hours after the event ends everything is deleted for everyone.",
+  },
+  {
+    q: "How is this better than a calendar poll?",
+    a: "A calendar poll answers one question. An event answers all of them: the date, the place, the menu. Then it holds the day itself, and gives everyone the photos afterwards.",
+  },
+];
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: "https://after-stories.com/office-events/",
+    about: {
+      "@type": "MobileApplication",
+      name: "After Stories",
+      operatingSystem: "iOS",
+      applicationCategory: "SocialNetworkingApplication",
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+---
+
+<Base title={title} description={description}>
+  <script type="application/ld+json" slot="head" set:html={JSON.stringify(jsonLd)} />
+
+  <SiteHeader />
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">For office events</p>
+          <h1>Plan the team event.<br /><span class="accent">Skip the 30 emails.</span></h1>
+          <p class="lede">
+            Vote on the date, decide the place, share the photos. One private event for the whole
+            team, instead of a calendar poll, an email thread and a shared folder. Gone 48 hours after.
+          </p>
+          <div class="cta-row">
+            <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+          </div>
+          <p class="fineprint">Colleagues without an iPhone join from the web.</p>
+        </div>
+
+        <figure class="event" aria-label="Example of an office event while it's being planned">
+          <div class="event-head">
+            <p class="event-stage">Planning · 23 people</p>
+            <p class="event-title">Team holiday party</p>
+          </div>
+
+          <p class="next-step">Vote: Which Friday?</p>
+
+          <div class="poll">
+            <p class="poll-q">Which Friday?</p>
+            <ul class="poll-options">
+              {
+                options.map((o, i) => (
+                  <li class={i === 0 ? "is-leading" : ""} style={`--share:${o.share}%`}>
+                    <span>{o.label}</span>
+                    <span class="votes">{o.votes}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div>
+            <p class="mini-label">Decided</p>
+            <ol class="decided">
+              <li><span class="tick" aria-hidden="true">✓</span>Dinner at The Old Brewery</li>
+              <li><span class="tick" aria-hidden="true">✓</span>Secret Santa, one gift each</li>
+            </ol>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="today wrap">
+      <p class="eyebrow">How it's planned today</p>
+      <h2>Four tools, one party, and nobody knows what was decided.</h2>
+      <div class="today-grid">
+        <ul class="today-list" aria-label="Today">
+          {
+            today.map((t) => (
+              <li>
+                <span aria-hidden="true">{t.icon}</span>
+                {t.text}
+              </li>
+            ))
+          }
+        </ul>
+        <div class="today-after">
+          <p class="eyebrow">With After Stories</p>
+          <p class="today-one">One event.</p>
+          <p>The votes, the decisions, the day itself and the photos, in one place that cleans itself up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="how wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>From the first date poll to the photos.</h2>
+      <ol class="beats">
+        {
+          beats.map((b, i) => (
+            <li class={`beat beat-${b.key}`}>
+              <span class="beat-num">{String(i + 1).padStart(2, "0")}</span>
+              <p class="eyebrow">{b.eyebrow}</p>
+              <h3>{b.name}</h3>
+              <p>{b.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <section class="uses wrap">
+      <p class="eyebrow">Works for</p>
+      <h2>Every event on the team calendar.</h2>
+      <ul class="chips">
+        {
+          occasions.map((o) => (
+            <li>
+              <span class="chip">
+                <span aria-hidden="true">{o.emoji}</span>
+                {o.name}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <section class="privacy wrap">
+      <p class="eyebrow">Private by design</p>
+      <h2>Nothing left on a work drive.</h2>
+      <ul class="privacy-list">
+        <li><strong>Only the people in the event.</strong> No admins, no profiles, no feed.</li>
+        <li><strong>Gone 48 hours after.</strong> The chat, the polls and the photos are deleted for everyone.</li>
+        <li><strong>Never your location.</strong> Places are venues you pick. Photos are stripped of GPS and camera data before upload.</li>
+        <li><strong>Sign in with Apple.</strong> No new password, no company account.</li>
+      </ul>
+    </section>
+
+    <section class="faq wrap">
+      <p class="eyebrow">Questions</p>
+      <h2>Good to know</h2>
+      <div class="faq-list">
+        {
+          faq.map((f) => (
+            <details>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </section>
+
+    <section class="closer wrap">
+      <h2>The next team event, without the email thread.</h2>
+      <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+      <p class="fineprint">Planning with friends instead? <a href="/">See After Stories for trips and nights out</a>.</p>
+    </section>
+  </main>
+
+  <SiteFooter />
+</Base>
+
+<style>
+  /* A longer headline than the home page's, so a step smaller to keep "team event" on one line. */
+  h1 {
+    font-size: clamp(2.25rem, 5.2vw, 3.5rem);
+  }
+
+  /* The event mock: an office event in the planning stage. */
+  .event {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 28px;
+    padding: 24px;
+    display: grid;
+    gap: 16px;
+    box-shadow: 0 30px 80px -30px rgba(255, 45, 111, 0.35);
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .event-stage {
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .event-title {
+    font-weight: 800;
+    font-size: 1.375rem;
+    letter-spacing: -0.01em;
+  }
+
+  .next-step {
+    background: var(--accent);
+    color: var(--on-accent);
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 700;
+  }
+
+  .poll {
+    background: var(--surface-elevated);
+    border-radius: 16px;
+    padding: 16px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .poll-q {
+    font-weight: 700;
+  }
+
+  .poll-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  /* A vote bar drawn behind each option, as wide as its share. */
+  .poll-options li {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 0.9375rem;
+    background: linear-gradient(90deg, var(--hairline) var(--share), transparent var(--share));
+  }
+
+  .poll-options li.is-leading {
+    background: linear-gradient(90deg, rgba(255, 45, 111, 0.35) var(--share), transparent var(--share));
+    font-weight: 700;
+  }
+
+  .votes {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+  }
+
+  .mini-label {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .decided {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 6px;
+    font-size: 0.9375rem;
+  }
+
+  .tick {
+    color: var(--accent);
+    font-weight: 800;
+    margin-right: 10px;
+  }
+
+  /* Today vs. one event */
+  .today-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  }
+
+  .today-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+  }
+
+  .today-list li {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 14px 18px;
+    color: var(--text-secondary);
+    text-decoration: line-through;
+    text-decoration-color: var(--text-tertiary);
+  }
+
+  .today-after {
+    background: var(--surface);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    display: grid;
+    gap: 8px;
+    align-content: center;
+  }
+
+  .today-one {
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1.1;
+  }
+
+  .today-after p:last-child {
+    color: var(--text-secondary);
+  }
+
+  .closer .fineprint a {
+    color: var(--text-secondary);
+  }
+</style>
