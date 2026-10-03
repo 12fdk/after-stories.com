@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import LaunchCta from "../components/LaunchCta.astro";
+import Icon from "../components/Icon.astro";
 import { events, defaultPrivacy, eventHref, type EventType } from "../data/events";
 
 // One page per event type (src/data/events.ts), each built like the office page:
@@ -149,7 +150,7 @@ const jsonLd = [
           event.occasions.map((o) => (
             <li>
               <span class="tile">
-                <span class="tile-emoji" aria-hidden="true">{o.emoji}</span>
+                <Icon class="tile-icon" name={o.icon} />
                 {o.name}
               </span>
             </li>
@@ -186,7 +187,7 @@ const jsonLd = [
           others.map((o) => (
             <li>
               <a class="tile tile-link" href={eventHref(o)}>
-                <span class="tile-emoji" aria-hidden="true">{o.emoji}</span>
+                <Icon class="tile-icon" name={o.icon} />
                 <span>{o.name}</span>
               </a>
             </li>

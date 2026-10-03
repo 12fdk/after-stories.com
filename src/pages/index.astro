@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import LaunchCta from "../components/LaunchCta.astro";
+import Icon from "../components/Icon.astro";
 import LakePhoto from "../components/LakePhoto.astro";
 import { events, eventHref } from "../data/events";
 
@@ -245,7 +246,7 @@ const jsonLd = [
           useCases.map((u) => (
             <li>
               <a class="tile tile-link" href={eventHref(u)}>
-                <span class="tile-emoji" aria-hidden="true">{u.emoji}</span>
+                <Icon class="tile-icon" name={u.icon} />
                 <span>{u.name}</span>
               </a>
             </li>
