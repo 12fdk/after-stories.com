@@ -38,6 +38,8 @@ export interface EventType {
     decided: string[];
   };
   todayTitle: string;
+  /** StoryBrand: how organising this feels (internal), and why it shouldn't (philosophical). */
+  problem: string;
   today: { icon: string; text: string }[];
   todayOne: string;
   todayText: string;
@@ -49,6 +51,10 @@ export interface EventType {
   privacy?: Fact[];
   faq: { q: string; a: string }[];
   closer: string;
+  /** StoryBrand: the morning after, when it went right. */
+  success: string;
+  /** StoryBrand: the group-chat alternative. A taste, never fear. */
+  stakes: string;
 }
 
 export const defaultPrivacy: Fact[] = [
@@ -61,7 +67,10 @@ export const defaultPrivacy: Fact[] = [
     title: "Gone 48 hours after.",
     text: "Save every photo with one tap first. Then the chat, the polls and the photos are deleted for everyone.",
   },
-  { title: "Sign in with Apple.", text: "No passwords to remember or leak." },
+  {
+    title: "Nobody left out.",
+    text: "Friends without an iPhone join from the web. Sign in with Apple means no passwords.",
+  },
 ];
 
 const nonIphone = {
@@ -102,6 +111,8 @@ export const events: EventType[] = [
       decided: ["Weekend of 14 March", "Jonas and Maya drive"],
     },
     todayTitle: "Six phones, one trip, and nobody has all the photos.",
+    problem:
+      "And it's always the same person booking the house, chasing replies and asking for the photos afterwards. A weekend away should be the easy part of having friends.",
     today: [
       { icon: "🗓️", text: "A weekend nobody actually confirmed" },
       { icon: "🏠", text: "Three house links buried in the chat" },
@@ -150,6 +161,9 @@ export const events: EventType[] = [
       groupSize,
     ],
     closer: "The next trip, without the 300 messages.",
+    success:
+      "Come home with every photo from every phone, the photo of the trip and the line of the weekend, without anyone making an album.",
+    stakes: "Or plan it in the group chat again, and keep asking for those photos for the rest of the year.",
   },
   {
     slug: "nights-out",
@@ -173,6 +187,8 @@ export const events: EventType[] = [
       decided: ["Meet at 21:00", "Then dancing at The Basement"],
     },
     todayTitle: "The plan changed four times. The chat has 400 messages.",
+    problem:
+      "Someone always ends up as the night's coordinator, typing “where are you?” instead of being there. A night out shouldn't need a project manager.",
     today: [
       { icon: "📍", text: "“where are you guys??”" },
       { icon: "🔁", text: "A plan that changed four times" },
@@ -221,6 +237,9 @@ export const events: EventType[] = [
       groupSize,
     ],
     closer: "Make tonight easy to plan, and tomorrow easy to remember.",
+    success:
+      "Wake up to the story of last night: the best photo, the quote everyone's repeating, where you ended up. All of it already on your phone.",
+    stakes: "Or piece it together from six camera rolls and a chat nobody wants to scroll.",
   },
   {
     slug: "birthdays",
@@ -244,6 +263,8 @@ export const events: EventType[] = [
       decided: ["Saturday 12 April", "Everyone chips in for one gift"],
     },
     todayTitle: "One birthday, three chats, and the best photo is on someone else's phone.",
+    problem:
+      "And whoever organises it does everything twice: once in the group chat, once in the secret chat about the gift. Celebrating someone should be fun for the people throwing it too.",
     today: [
       { icon: "🗓️", text: "A date poll half the group ignored" },
       { icon: "🎁", text: "A secret side chat about the gift" },
@@ -295,6 +316,9 @@ export const events: EventType[] = [
       after48,
     ],
     closer: "The next birthday, planned in one place.",
+    success:
+      "The morning after, every photo of the guest of honour is in one place, from every phone, saved with one tap.",
+    stakes: "Or ask around for weeks, and still miss the best photo of the night.",
   },
   {
     slug: "bachelor-parties",
@@ -318,6 +342,8 @@ export const events: EventType[] = [
       decided: ["Saturday 3 May", "Matching T-shirts, sadly"],
     },
     todayTitle: "One organiser. Forty decisions. Nobody answering.",
+    problem:
+      "The organiser chases a dozen opinions and gets none back. It's a celebration, not a second job.",
     today: [
       { icon: "🙋", text: "One person chasing everyone for replies" },
       { icon: "📊", text: "A poll in one chat, the plan in another" },
@@ -366,6 +392,9 @@ export const events: EventType[] = [
       nonIphone,
     ],
     closer: "Make the organiser's job the easy part.",
+    success:
+      "A send-off where the plan just happened, everyone got the photos, and 48 hours later the chat quietly disappeared.",
+    stakes: "Or run it from a group chat that lives on in everyone's phone, forever.",
   },
   {
     slug: "festivals",
@@ -389,6 +418,8 @@ export const events: EventType[] = [
       decided: ["Camp in area C", "Lost? Meet at the big flag by the bar"],
     },
     todayTitle: "Five phones on 4%, and nobody remembers where camp is.",
+    problem:
+      "And someone always spends the weekend as the group's lost and found instead of watching the bands. A festival should be the one place you don't have to organise anything.",
     today: [
       { icon: "🎟️", text: "Who has the tickets again?" },
       { icon: "🗺️", text: "“meet at the… which stage?”" },
@@ -437,6 +468,9 @@ export const events: EventType[] = [
       nonIphone,
     ],
     closer: "The next festival, sorted before you get there.",
+    success:
+      "Get home with the sets you saw, the sunrise everyone shot and every photo from the whole crew, in one place.",
+    stakes: "Or come home with your own blurry photos, and never see anyone else's.",
   },
   {
     slug: "dinner-nights",
@@ -460,6 +494,8 @@ export const events: EventType[] = [
       decided: ["Friday at Maya's", "Ali brings the pizza"],
     },
     todayTitle: "Six people, one free evening, and the date still isn't set.",
+    problem:
+      "Finding one free evening for six people shouldn't take two weeks of messages. Hosting should be about the food, not the logistics.",
     today: [
       { icon: "📅", text: "“What about the 14th?” “Can't.”" },
       { icon: "🎬", text: "Thirty film suggestions, no decision" },
@@ -511,6 +547,9 @@ export const events: EventType[] = [
       after48,
     ],
     closer: "The next night in, decided in minutes.",
+    success:
+      "The night decided in minutes: the date, the film and who brings what, settled before anyone says “whatever works”.",
+    stakes: "Or keep throwing dates into the chat, and watch the plan fizzle out again.",
   },
   {
     // Calmer than the friend pages: warm, still witty, no nightlife jokes (positioning.md › The office event).
@@ -535,6 +574,8 @@ export const events: EventType[] = [
       decided: ["Dinner at The Old Brewery", "Secret Santa, one gift each"],
     },
     todayTitle: "Four tools, one party, and nobody knows what was decided.",
+    problem:
+      "And the colleague who always organises it spends a week answering the same three questions. A team event should bring people together, not fill inboxes.",
     today: [
       { icon: "📅", text: "A calendar invite nobody can change" },
       { icon: "🗳️", text: "A date poll in another tool" },
@@ -608,6 +649,9 @@ export const events: EventType[] = [
       },
     ],
     closer: "The next team event, without the email thread.",
+    success:
+      "The date decided in a day, the evening running itself, and the next morning everyone has the photos. No work chat left behind.",
+    stakes: "Or start the 30-email thread again, and find out on the day who never saw the invite.",
   },
 ];
 

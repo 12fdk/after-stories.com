@@ -70,7 +70,7 @@ const jsonLd = [
           </h1>
           <p class="lede">{event.lede}</p>
           <div class="cta">
-            <LaunchCta place="hero" />
+            <LaunchCta as="link" />
             <p class="fineprint">{event.fineprint}</p>
           </div>
         </div>
@@ -109,6 +109,7 @@ const jsonLd = [
 
     <section class="section wrap">
       <h2 class="section-title">{event.todayTitle}</h2>
+      <p class="section-intro">{event.problem}</p>
       <div class="today-grid">
         <ul class="today-list" aria-label="How it's planned today">
           {
@@ -141,6 +142,9 @@ const jsonLd = [
           ))
         }
       </ol>
+      <div class="section-cta">
+        <LaunchCta as="link" />
+      </div>
     </section>
 
     <section class="section wrap">
@@ -199,7 +203,11 @@ const jsonLd = [
     <section class="closer">
       <div class="wrap closer-inner">
         <h2>{event.closer}</h2>
-        <LaunchCta place="closer" />
+        <div class="closer-story">
+          <p>{event.success}</p>
+          <p class="closer-stakes">{event.stakes}</p>
+        </div>
+        <LaunchCta as="form" />
       </div>
     </section>
   </main>
