@@ -1,0 +1,30 @@
+---
+// A Lucide line icon (ISC licence), inlined at build time so no icon code ships to the browser.
+// It draws in currentColor; size it with the parent's font size or width/height.
+import * as icons from "lucide-static";
+import type { IconName } from "../data/events";
+
+interface Props {
+  name: IconName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props;
+const svg = icons[name].replace("<svg", '<svg aria-hidden="true" focusable="false"');
+---
+
+<span class:list={["icon", className]} set:html={svg} />
+
+<style>
+  .icon {
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+  }
+
+  .icon :global(svg) {
+    width: 100%;
+    height: 100%;
+    stroke-width: 2;
+  }
+</style>

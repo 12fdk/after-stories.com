@@ -2,6 +2,11 @@
 // Copy and use cases: docs/positioning.md › The use cases. Voice: warm and witty, cheeky, never
 // laddish. Never mention price. Never mention deletion without saving the photos first.
 
+import type * as Lucide from "lucide-static";
+
+/** A Lucide icon, by its export name (https://lucide.dev/icons). */
+export type IconName = Exclude<keyof typeof Lucide, "default">;
+
 export interface Beat {
   when: string;
   name: string;
@@ -17,7 +22,7 @@ export interface EventType {
   slug: string;
   /** Name on the tiles that link here. */
   name: string;
-  emoji: string;
+  icon: IconName;
   title: string;
   description: string;
   /** Each string is one line of the hero headline. */
@@ -39,7 +44,7 @@ export interface EventType {
   howTitle: string;
   beats: Beat[];
   occasionsTitle: string;
-  occasions: { emoji: string; name: string }[];
+  occasions: { icon: IconName; name: string }[];
   privacyTitle: string;
   privacy?: Fact[];
   faq: { q: string; a: string }[];
@@ -78,7 +83,7 @@ export const events: EventType[] = [
   {
     slug: "trips",
     name: "Weekend away",
-    emoji: "🏔️",
+    icon: "MountainSnow",
     title: "Group Trip Planner — Plan a Weekend Away with Friends | After Stories",
     description:
       "Plan the weekend away together: vote on the dates and the house, keep every decision in one timeline, and get everyone's photos the morning after. Gone 48 hours after.",
@@ -126,13 +131,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every kind of weekend away.",
     occasions: [
-      { emoji: "🏡", name: "Cabin weekend" },
-      { emoji: "🏙️", name: "City break" },
-      { emoji: "⛷️", name: "Ski trip" },
-      { emoji: "🏖️", name: "Beach house" },
-      { emoji: "🚗", name: "Road trip" },
-      { emoji: "⛺", name: "Camping" },
-      { emoji: "🫂", name: "Reunion weekend" },
+      { icon: "House", name: "Cabin weekend" },
+      { icon: "Building2", name: "City break" },
+      { icon: "CableCar", name: "Ski trip" },
+      { icon: "Umbrella", name: "Beach house" },
+      { icon: "Car", name: "Road trip" },
+      { icon: "Tent", name: "Camping" },
+      { icon: "Users", name: "Reunion weekend" },
     ],
     privacyTitle: "What happens on the trip stays in the trip.",
     faq: [
@@ -149,7 +154,7 @@ export const events: EventType[] = [
   {
     slug: "nights-out",
     name: "Night out",
-    emoji: "🌙",
+    icon: "MoonStar",
     title: "Night Out Planner for Friends — After Stories",
     description:
       "Plan the night out together: vote on where to meet and where to go next, share it in one private stream, and wake up to the story of last night. Gone 48 hours after.",
@@ -197,13 +202,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every kind of night out.",
     occasions: [
-      { emoji: "🍸", name: "Friday drinks" },
-      { emoji: "🪩", name: "Club night" },
-      { emoji: "🧠", name: "Pub quiz" },
-      { emoji: "🎤", name: "Karaoke" },
-      { emoji: "🍺", name: "Bar crawl" },
-      { emoji: "🎸", name: "Gig night" },
-      { emoji: "🎆", name: "New Year's Eve" },
+      { icon: "Martini", name: "Friday drinks" },
+      { icon: "Disc3", name: "Club night" },
+      { icon: "CircleHelp", name: "Pub quiz" },
+      { icon: "MicVocal", name: "Karaoke" },
+      { icon: "Beer", name: "Bar crawl" },
+      { icon: "Guitar", name: "Gig night" },
+      { icon: "Sparkles", name: "New Year's Eve" },
     ],
     privacyTitle: "Last night stays with the people who were there.",
     faq: [
@@ -220,7 +225,7 @@ export const events: EventType[] = [
   {
     slug: "birthdays",
     name: "Birthday",
-    emoji: "🎂",
+    icon: "Cake",
     title: "Birthday Party Planner — Plan It with Friends | After Stories",
     description:
       "Plan the birthday with the group: vote on the date and the venue, share the party in one stream, and give everyone the photos of the guest of honour. Gone 48 hours after.",
@@ -268,13 +273,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every kind of celebration.",
     occasions: [
-      { emoji: "🎂", name: "Milestone birthday" },
-      { emoji: "🤫", name: "Surprise party" },
-      { emoji: "🍽️", name: "Birthday dinner" },
-      { emoji: "🏠", name: "Housewarming" },
-      { emoji: "🎓", name: "Graduation" },
-      { emoji: "🥂", name: "Anniversary" },
-      { emoji: "👋", name: "Farewell party" },
+      { icon: "Cake", name: "Milestone birthday" },
+      { icon: "Gift", name: "Surprise party" },
+      { icon: "Utensils", name: "Birthday dinner" },
+      { icon: "KeyRound", name: "Housewarming" },
+      { icon: "GraduationCap", name: "Graduation" },
+      { icon: "Heart", name: "Anniversary" },
+      { icon: "Hand", name: "Farewell party" },
     ],
     privacyTitle: "Only the guests. Nobody else.",
     faq: [
@@ -294,7 +299,7 @@ export const events: EventType[] = [
   {
     slug: "bachelor-parties",
     name: "Bachelor & bachelorette",
-    emoji: "💍",
+    icon: "Gem",
     title: "Bachelor & Bachelorette Party Planner — After Stories",
     description:
       "Plan the bachelor or bachelorette party in one private event: vote on the plan, keep the decisions in one place, save the photos, and know it's all gone 48 hours later.",
@@ -342,13 +347,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every kind of send-off.",
     occasions: [
-      { emoji: "🤵", name: "Bachelor party" },
-      { emoji: "👰", name: "Bachelorette party" },
-      { emoji: "👑", name: "Hen do" },
-      { emoji: "🦌", name: "Stag do" },
-      { emoji: "🧖", name: "Spa day" },
-      { emoji: "🏎️", name: "Activity day" },
-      { emoji: "🏙️", name: "City weekend" },
+      { icon: "PartyPopper", name: "Bachelor party" },
+      { icon: "Gem", name: "Bachelorette party" },
+      { icon: "Crown", name: "Hen do" },
+      { icon: "Beer", name: "Stag do" },
+      { icon: "Bath", name: "Spa day" },
+      { icon: "Flag", name: "Activity day" },
+      { icon: "Building2", name: "City weekend" },
     ],
     privacyTitle: "What happens at the send-off stays at the send-off.",
     faq: [
@@ -365,7 +370,7 @@ export const events: EventType[] = [
   {
     slug: "festivals",
     name: "Festival",
-    emoji: "🎪",
+    icon: "Tent",
     title: "Festival Planner for Friends — Plan It, Share the Photos | After Stories",
     description:
       "Plan the festival with your group: vote on the acts, settle the meeting point, share it in one stream, and get everyone's photos when it's over. Gone 48 hours after.",
@@ -413,13 +418,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every kind of live event.",
     occasions: [
-      { emoji: "🎪", name: "Music festival" },
-      { emoji: "🎸", name: "Concert" },
-      { emoji: "🌮", name: "Food festival" },
-      { emoji: "🪩", name: "Club weekender" },
-      { emoji: "🎬", name: "Open-air cinema" },
-      { emoji: "⚽", name: "Big match" },
-      { emoji: "🦸", name: "Comic con" },
+      { icon: "Tent", name: "Music festival" },
+      { icon: "Music", name: "Concert" },
+      { icon: "Sandwich", name: "Food festival" },
+      { icon: "Disc3", name: "Club weekender" },
+      { icon: "Clapperboard", name: "Open-air cinema" },
+      { icon: "Trophy", name: "Big match" },
+      { icon: "Drama", name: "Comic con" },
     ],
     privacyTitle: "Only your crew. Not the whole festival.",
     faq: [
@@ -436,7 +441,7 @@ export const events: EventType[] = [
   {
     slug: "dinner-nights",
     name: "Dinner night",
-    emoji: "🍝",
+    icon: "UtensilsCrossed",
     title: "Dinner Party, Game & Movie Night Planner — After Stories",
     description:
       "Plan the dinner, game or movie night with friends: vote on the day, the film and who cooks, then share the night in one stream. Gone 48 hours after.",
@@ -484,13 +489,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every kind of night in.",
     occasions: [
-      { emoji: "🍝", name: "Dinner party" },
-      { emoji: "🎲", name: "Game night" },
-      { emoji: "🍿", name: "Movie night" },
-      { emoji: "📚", name: "Book club" },
-      { emoji: "🥘", name: "Potluck" },
-      { emoji: "📺", name: "Watch party" },
-      { emoji: "🔥", name: "Barbecue" },
+      { icon: "UtensilsCrossed", name: "Dinner party" },
+      { icon: "Dice5", name: "Game night" },
+      { icon: "Popcorn", name: "Movie night" },
+      { icon: "BookOpen", name: "Book club" },
+      { icon: "Soup", name: "Potluck" },
+      { icon: "Tv", name: "Watch party" },
+      { icon: "Flame", name: "Barbecue" },
     ],
     privacyTitle: "Only the people at the table.",
     faq: [
@@ -511,7 +516,7 @@ export const events: EventType[] = [
     // Calmer than the friend pages: warm, still witty, no nightlife jokes (positioning.md › The office event).
     slug: "office-events",
     name: "Office party",
-    emoji: "🥂",
+    icon: "Briefcase",
     title: "Office Party & Team Event Planner — After Stories",
     description:
       "Plan the team dinner, holiday party or offsite in one private event: vote on the date, decide the place, share the photos. No calendar polls, no 30-email threads. Gone 48 hours after.",
@@ -559,13 +564,13 @@ export const events: EventType[] = [
     ],
     occasionsTitle: "Every event on the team calendar.",
     occasions: [
-      { emoji: "🍽️", name: "Team dinner" },
-      { emoji: "🍻", name: "Friday bar" },
-      { emoji: "☀️", name: "Summer party" },
-      { emoji: "🎄", name: "Christmas party" },
-      { emoji: "🧭", name: "Offsite" },
-      { emoji: "👋", name: "Leaving do" },
-      { emoji: "🚀", name: "Kick-off" },
+      { icon: "Utensils", name: "Team dinner" },
+      { icon: "Beer", name: "Friday bar" },
+      { icon: "Sun", name: "Summer party" },
+      { icon: "TreePine", name: "Christmas party" },
+      { icon: "Compass", name: "Offsite" },
+      { icon: "Hand", name: "Leaving do" },
+      { icon: "Rocket", name: "Kick-off" },
     ],
     privacyTitle: "Nothing left on a work drive.",
     privacy: [

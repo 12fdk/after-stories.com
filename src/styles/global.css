@@ -462,9 +462,9 @@ h1 .line {
   --tile: var(--tile-drink);
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   min-height: 52px;
-  padding: 0 20px 0 16px;
+  padding: 0 20px 0 8px;
   border-radius: 16px;
   background: var(--tile);
   color: var(--tile-ink);
@@ -488,18 +488,28 @@ h1 .line {
   --tile: var(--tile-photo);
 }
 
-.tile-link span:last-child {
-  text-decoration: underline;
-  text-underline-offset: 3px;
+/* The icon sits in a darker disc of the tile's own colour, drawn in the tile ink. */
+.tile-icon {
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border-radius: 11px;
+  background: rgba(16, 17, 20, 0.12);
 }
 
+/* A linked tile: no underline (the tile is the affordance), a ring on hover, and the press. */
 .tile-link:hover {
-  outline: 2px solid var(--tile-custom);
+  outline: 2px solid var(--tile);
   outline-offset: 3px;
 }
 
-.tile-emoji {
-  font-size: 1.25rem;
+@media (prefers-reduced-motion: no-preference) {
+  .tile-link {
+    transition: transform 0.12s ease;
+  }
+  .tile-link:active {
+    transform: scale(0.97);
+  }
 }
 
 /* Privacy: plain statements in two columns, no boxes. */
