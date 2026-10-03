@@ -18,6 +18,7 @@
   --accent-pressed: #ea2a66;
   --accent-disabled: #45202d;
   --on-accent: #0b0c0e;
+  --failure: #ff6b6b;
 
   --tile-drink: #4ca6ff;
   --tile-scored: #ff6fa8;
@@ -243,6 +244,7 @@ p {
 h1 {
   font-size: var(--step-4);
   font-stretch: 64%;
+  text-wrap: pretty;
   line-height: 0.9;
 }
 

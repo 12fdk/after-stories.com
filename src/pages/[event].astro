@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
+import LaunchCta from "../components/LaunchCta.astro";
 import { events, defaultPrivacy, eventHref, type EventType } from "../data/events";
 
 // One page per event type (src/data/events.ts), each built like the office page:
@@ -68,7 +69,7 @@ const jsonLd = [
           </h1>
           <p class="lede">{event.lede}</p>
           <div class="cta">
-            <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+            <LaunchCta />
             <p class="fineprint">{event.fineprint}</p>
           </div>
         </div>
@@ -197,7 +198,7 @@ const jsonLd = [
     <section class="closer">
       <div class="wrap closer-inner">
         <h2>{event.closer}</h2>
-        <span class="pill" aria-disabled="true">Coming soon to the App Store</span>
+        <LaunchCta />
       </div>
     </section>
   </main>
