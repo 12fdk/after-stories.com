@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { events } from "../data/events";
+import { legalPages } from "../data/legal";
 import { homeDescription, homeFaq, homeTitle } from "../data/home";
 import { DEFINITION, DESCRIPTION_LENGTH, TITLE_LENGTH, ids, jsonLd, pageGraph } from "./seo";
 
@@ -14,6 +15,7 @@ describe("search snippets", () => {
   const pages = [
     { path: "/", title: homeTitle, description: homeDescription },
     ...events.map((e) => ({ path: `/${e.slug}/`, title: e.title, description: e.description })),
+    ...Object.values(legalPages),
   ];
 
   it.each(pages.map((p) => [p.path, p] as const))("%s has a title that fits a search result", (_, p) => {

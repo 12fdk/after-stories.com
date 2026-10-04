@@ -23,6 +23,17 @@ can be tested without a browser.
 
 - `src/pages/index.astro`: the home page.
 - `src/pages/[event].astro`: one page per event type, filled from `src/data/events.ts`.
+- `src/pages/privacy.astro` and `src/pages/terms.astro`: **the app's legal pages** (12fdk/after-stories#337).
+  One privacy policy for the app AFTER and this website, and the app's terms of use, each Danish
+  then English. The text is HTML in `src/data/privacy.ts` and `src/data/terms.ts`, rendered by
+  `src/components/LegalDocument.astro`; `src/lib/legal.test.ts` checks its shape.
+  - **The app, App Store Connect (app 6815212070's Privacy Policy URL) and after.12f.dk's 301s
+    point at `/privacy/` and `/terms/`. Never move or rename them.**
+  - They're legal text, not marketing: the StoryBrand pass doesn't apply to them.
+  - The app part of the policy must stay true of the app as built. When the app changes what
+    it collects, the change lands here (see the header of `privacy.ts` for the triggers).
+  - `TERMS_VERSION` in `terms.ts` and the app's `Terms.version` move together: a change people
+    must accept again bumps both, and the app then asks everyone once more.
 
 ## The waitlist form (live)
 
@@ -31,8 +42,9 @@ can be tested without a browser.
 build time, otherwise the "Coming soon" pill. The deploy workflow sets it; a local `pnpm build`
 without it shows the pill. Sign-ups are double opt-in on the backend.
 
-`/privacy/` describes what the form collects. Change it (and its date) whenever the form, the
-backend's storage or the site's hosting or analytics change. Fonts are self-hosted in
+`/privacy/` describes what the form collects, in its website part (`src/data/privacy.ts`). Change
+it (and its date) whenever the form, the backend's storage or the site's hosting or analytics
+change. Fonts are self-hosted in
 `public/fonts/`: don't add third-party font or script hosts without updating the policy.
 
 ## Search and AI visibility (#30)

@@ -35,7 +35,8 @@ ${pages().join("\n")}
 ## Optional
 
 - [Full text of every page](${SITE_URL}/llms-full.txt): each use case, how it works, and every question answered on the site
-- [Privacy policy for this website](${SITE_URL}/privacy/)
+- [Privacy policy for the app and this website](${SITE_URL}/privacy/)
+- [Terms of use for the app](${SITE_URL}/terms/)
 `;
 }
 
