@@ -3,24 +3,23 @@ import Base from "../layouts/Base.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SiteFooter from "../components/SiteFooter.astro";
 import LegalDocument from "../components/LegalDocument.astro";
-import { PRIVACY_HTML } from "../data/privacy";
+import { TERMS_HTML } from "../data/terms";
 import { legalPages } from "../data/legal";
 
-// The one privacy policy for the app AFTER and this website (12fdk/after-stories#337). The text
-// and when to change it: src/data/privacy.ts. after.12f.dk/privacy 301s here, and App Store
-// Connect's Privacy Policy URL points here.
-const { title, description } = legalPages.privacy;
+// The app's terms of use (12fdk/after-stories#337), the page the app links and asks everyone to
+// accept. The text and when to bump its version: src/data/terms.ts. after.12f.dk/terms 301s here.
+const { title, description } = legalPages.terms;
 ---
 
 <Base
   title={title}
   breadcrumb={[
     { name: "After Stories", path: "/" },
-    { name: "Privacy policy", path: "/privacy/" },
+    { name: "Terms of use", path: "/terms/" },
   ]}
   description={description}
 >
   <SiteHeader notifyHref="/#notify" />
-  <LegalDocument html={PRIVACY_HTML} />
+  <LegalDocument html={TERMS_HTML} />
   <SiteFooter />
 </Base>

@@ -5,7 +5,8 @@ describe("pageSources", () => {
   it("knows the files each page is written in", () => {
     expect(pageSources("/")).toContain("src/pages/index.astro");
     expect(pageSources("/trips/")).toEqual(["src/pages/[event].astro", "src/data/events.ts"]);
-    expect(pageSources("/privacy/")).toEqual(["src/pages/privacy.astro"]);
+    expect(pageSources("/privacy/")).toEqual(["src/pages/privacy.astro", "src/data/privacy.ts"]);
+    expect(pageSources("/terms/")).toEqual(["src/pages/terms.astro", "src/data/terms.ts"]);
   });
 
   it("has nothing for a page it doesn't know", () => {

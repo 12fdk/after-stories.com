@@ -9,7 +9,8 @@ import { events } from "../data/events";
 /** The files a page's content is written in, by its path. */
 export function pageSources(path: string): string[] {
   if (path === "/") return ["src/pages/index.astro", "src/data/events.ts"];
-  if (path === "/privacy/") return ["src/pages/privacy.astro"];
+  if (path === "/privacy/") return ["src/pages/privacy.astro", "src/data/privacy.ts"];
+  if (path === "/terms/") return ["src/pages/terms.astro", "src/data/terms.ts"];
   const slug = path.replace(/^\/|\/$/g, "");
   if (events.some((e) => e.slug === slug)) return ["src/pages/[event].astro", "src/data/events.ts"];
   return [];
