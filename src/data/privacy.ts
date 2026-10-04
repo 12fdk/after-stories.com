@@ -121,7 +121,7 @@ export const PRIVACY_HTML = `
 <p>Dette afsnit gælder kun hjemmesiden.</p>
 
 <h3>Besked, når vi lancerer</h3>
-<p>Udfylder du formularen “Få en e-mail, når vi lancerer”, gemmer vi:</p>
+<p>Udfylder du formularen “Get an email when we launch” (få en e-mail, når vi lancerer), gemmer vi:</p>
 <ul>
   <li>dit <strong>navn</strong> og din <strong>e-mailadresse</strong>;</li>
   <li>den <strong>side</strong>, du tilmeldte dig fra, så vi kan se, hvilken slags event der bragte dig hertil.</li>
@@ -134,17 +134,17 @@ export const PRIVACY_HTML = `
   <li>Din tilmelding gemmes på <strong>vores egen server i EU</strong>, i en tabel, som ingen besøgende kan læse.</li>
   <li>Bekræftelses-e-mailen sendes via <strong>Brevo</strong>, en e-mailtjeneste i EU.</li>
   <li>Vi gemmer din tilmelding i <strong>højst et år</strong> og sletter den derefter.</li>
-  <li>Som enhver webserver fører vores en <strong>log over forespørgsler</strong>, også med din IP-adresse, i kort tid, for at holde tjenesten kørende og stoppe misbrug.</li>
+  <li>Som enhver webserver fører vores server en <strong>log over forespørgsler</strong>, også med din IP-adresse, i kort tid, for at holde tjenesten kørende og stoppe misbrug.</li>
 </ul>
 
-<h3>At blive fjernet</h3>
+<h3>Sådan bliver du fjernet</h3>
 <p>Skriv til <a href="mailto:support@12f.dk">support@12f.dk</a> fra den adresse, du tilmeldte dig med, så sletter vi din tilmelding.</p>
 
 <h3>Når du besøger hjemmesiden</h3>
 <ul>
   <li>Hjemmesiden ligger hos <strong>GitHub Pages</strong>. GitHub behandler din IP-adresse for at levere siderne; se <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs privatlivserklæring</a>.</li>
   <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig.</li>
-  <li>Skrifttyperne hentes fra denne side, ikke fra en skrifttjeneste.</li>
+  <li>Skrifttyperne hentes fra denne hjemmeside, ikke fra en skrifttjeneste.</li>
   <li>Dit valg af lyst eller mørkt tema huskes i din egen browser og sendes aldrig til os.</li>
 </ul>
 
