@@ -7,8 +7,11 @@ import { DEFINITION, FEATURES, SITE_URL, absolute, type Question } from "./seo";
 // llms-full.txt adds each page's story and questions, so an assistant can answer from one file.
 // Both are built from the data the pages are built from, so they can't drift from the site.
 
-const status =
-  "Status: coming soon to the App Store for iPhone, with a web version for friends without an iPhone. English. Made by 12f ApS, Denmark (https://12f.dk). Contact: support@12f.dk.";
+/** Launch posture, without a contact address (that @ belongs only in llms.txt, as plain text). */
+export const LAUNCH_STATUS =
+  "Status: coming soon to the App Store for iPhone, with a web version for friends without an iPhone. English. Made by 12f ApS, Denmark (https://12f.dk).";
+
+const status = `${LAUNCH_STATUS} Contact: support@12f.dk.`;
 
 const pages = () => [
   `- [After Stories](${SITE_URL}/): ${homeDescription}`,

@@ -1,6 +1,10 @@
 ---
 // "Get notified when we launch": name and email, sent to the backend's waitlist (src/lib/waitlist.ts).
 // The page path goes along as the source, so we can see which use case people sign up from.
+// Field copy lives in waitlist.ts so it can be tested, and so it never includes an @ (Cloudflare
+// email obfuscation rewrites those strings in the HTML).
+import { FIELD_ERRORS } from "../lib/waitlist";
+
 const source = Astro.url.pathname;
 const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
 ---
@@ -11,12 +15,12 @@ const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
     <div class="field">
       <label for={`${id}-name`}>Name</label>
       <input id={`${id}-name`} name="name" type="text" autocomplete="given-name" maxlength="80" required aria-describedby={`${id}-name-error`} />
-      <p class="field-error" id={`${id}-name-error`} hidden>Enter your name.</p>
+      <p class="field-error" id={`${id}-name-error`} hidden>{FIELD_ERRORS.name}</p>
     </div>
     <div class="field">
       <label for={`${id}-email`}>Email</label>
       <input id={`${id}-email`} name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby={`${id}-email-error`} />
-      <p class="field-error" id={`${id}-email-error`} hidden>Enter an email address like name@example.com.</p>
+      <p class="field-error" id={`${id}-email-error`} hidden>{FIELD_ERRORS.email}</p>
     </div>
     <!-- A honeypot for bots. People never see or reach it. -->
     <div class="trap" aria-hidden="true">
@@ -33,13 +37,9 @@ const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
 </form>
 
 <script>
-  import { normalise, submit, validate, type Outcome } from "../lib/waitlist";
+  import { normalise, OUTCOME_MESSAGES, submit, validate, type Outcome } from "../lib/waitlist";
 
-  const messages: Record<Exclude<Outcome, "saved">, string> = {
-    invalid: "Check your name and email, then send it again.",
-    rate_limited: "Too many sign-ups right now. Try again in a few minutes.",
-    failed: "Couldn't save your email. Check your connection and try again.",
-  };
+  const messages: Record<Exclude<Outcome, "saved">, string> = OUTCOME_MESSAGES;
 
   for (const form of document.querySelectorAll<HTMLFormElement>("form[data-notify]")) {
     const status = form.querySelector<HTMLElement>("[data-status]")!;

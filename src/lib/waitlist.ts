@@ -57,6 +57,22 @@ export function buildRequest(signup: Signup): { url: string; init: RequestInit }
 export type Outcome = "saved" | "invalid" | "rate_limited" | "failed";
 
 /**
+ * Copy under the fields and after a failed submit. No example address: Cloudflare's email
+ * obfuscation rewrites any HTML string that contains an @, which garbled the old example
+ * address on the live page.
+ */
+export const FIELD_ERRORS = {
+  name: "Enter your name.",
+  email: "Enter a valid email address.",
+} as const;
+
+export const OUTCOME_MESSAGES: Record<Exclude<Outcome, "saved">, string> = {
+  invalid: "Check your name and email, then send it again.",
+  rate_limited: "Too many sign-ups right now. Try again in a few minutes.",
+  failed: "Couldn't save your email. Check your connection and try again.",
+};
+
+/**
  * Reads what came back. The HTTP status is Appwrite's (did the execution run); the function's
  * own answer is in responseStatusCode and responseBody.
  */

@@ -11,9 +11,11 @@ const { notifyHref = "#notify" } = Astro.props;
 ---
 
 <header class="topbar wrap">
+  <!-- The icon is the logo, so it needs the brand name. The wordmark is hidden from
+       assistive tech so the link is announced once: "After Stories home". -->
   <a class="brand" href="/" aria-label="After Stories home">
-    <img src="/apple-touch-icon.png" alt="" width="36" height="36" />
-    <span>After Stories</span>
+    <img src="/apple-touch-icon.png" alt="After Stories" width="36" height="36" />
+    <span aria-hidden="true">After Stories</span>
   </a>
   <nav class="topbar-nav" aria-label="Main">
     <a class="topbar-link" href="/#how">How it works</a>
