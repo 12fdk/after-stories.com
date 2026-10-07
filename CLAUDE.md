@@ -63,6 +63,7 @@ Every page gets its search and share metadata from `src/layouts/Base.astro`; kee
   headline. Regenerate both with fontTools if the site's font changes.
 - **`/llms.txt` and `/llms-full.txt`** are built from the same data as the pages
   (`src/lib/llms.ts`), so a new page or question shows up there by itself.
+  **`/ai.txt`** (`src/lib/ai.ts`) points AI crawlers at those two files. `public/robots.txt` names it.
 - **Sitemap `lastmod`** and `dateModified` are each page's last commit (`src/lib/lastmod.ts`). A
   new kind of page needs its source files added to `pageSources`. The deploy needs
   `fetch-depth: 0` for this.

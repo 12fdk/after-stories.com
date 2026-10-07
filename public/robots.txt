@@ -1,5 +1,6 @@
 # after-stories.com: every page is public and may be crawled, indexed and quoted, by search
-# engines and by AI search and answer engines alike (#30). A summary for AI assistants: /llms.txt
+# engines and by AI search and answer engines alike (#30).
+# AI crawlers: /ai.txt points at the summaries in /llms.txt and /llms-full.txt.
 
 User-agent: *
 Allow: /

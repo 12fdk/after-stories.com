@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 import {
   buildRequest,
   EMAIL_MAX,
+  FIELD_ERRORS,
   NAME_MAX,
   normalise,
+  OUTCOME_MESSAGES,
   readOutcome,
   submit,
   validate,
@@ -21,6 +23,18 @@ const signup = (over: Partial<Signup> = {}): Signup => ({
 const execution = (status: number, body: unknown) => ({
   responseStatusCode: status,
   responseBody: JSON.stringify(body),
+});
+
+describe("visitor copy", () => {
+  it("asks for a valid email without an example address", () => {
+    expect(FIELD_ERRORS.email).toBe("Enter a valid email address.");
+    expect(FIELD_ERRORS.name).toBe("Enter your name.");
+  });
+
+  it("keeps @ out of every message Cloudflare would obfuscate", () => {
+    const copy = [FIELD_ERRORS.name, FIELD_ERRORS.email, ...Object.values(OUTCOME_MESSAGES)].join("\n");
+    expect(copy).not.toMatch(/@/);
+  });
 });
 
 describe("normalise", () => {

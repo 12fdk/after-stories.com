@@ -66,6 +66,8 @@ const graph = noindex ? undefined : pageGraph({ path, title, description, image,
     <link rel="sitemap" href="/sitemap-index.xml" />
     <!-- A plain-text summary of the site for AI assistants (llmstxt.org), src/pages/llms.txt.ts. -->
     <link rel="alternate" type="text/plain" href="/llms.txt" title="After Stories for AI assistants" />
+    <!-- Where to start: /ai.txt points crawlers at llms.txt and llms-full.txt (src/pages/ai.txt.ts). -->
+    <link rel="alternate" type="text/plain" href="/ai.txt" title="AI crawler notes for After Stories" />
 
     <!-- Anybody is served from this site, not Google Fonts, so no visitor's IP goes to Google. -->
     <link rel="preload" href="/fonts/anybody-latin.woff2" as="font" type="font/woff2" crossorigin />
