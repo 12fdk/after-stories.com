@@ -40,6 +40,18 @@ describe("the privacy policy", () => {
     }
   });
 
+  it("names the app's anonymous analytics, its processor and the off switch (#373)", () => {
+    expect(da).toContain("PostHog");
+    expect(en).toContain("PostHog");
+    expect(da).toContain("Del anonym brugsstatistik");
+    expect(en).toContain("Share anonymous usage statistics");
+    // Never content, never linked, no screen recording: the app's analytics rule.
+    expect(da).toMatch(/Aldrig indhold/);
+    expect(en).toMatch(/Never content/);
+    expect(da).toContain('href="#da-statistik"');
+    expect(en).toContain('href="#en-statistics"');
+  });
+
   it("links the terms on this site and the suspension page on after.12f.dk", () => {
     const links = hrefs(PRIVACY_HTML);
     expect(links.filter((h) => h === "/terms/")).toHaveLength(2);
