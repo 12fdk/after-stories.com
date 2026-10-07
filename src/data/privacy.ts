@@ -21,9 +21,15 @@
 // Hosting: app.12f.dk resolves to Oracle Cloud, Stockholm (checked 2026-09-30).
 // (Issue numbers above are 12fdk/after-stories issues.)
 //
-// **Keep it true.** It changes in the same PR as any of: product analytics (#33 — decided
-// 2026-10-04: server-side aggregate counts only, no SDK; an SDK or any per-person measuring
-// changes this page *first*), report retention (#170), the SIWA token revoke on deletion (#173),
+// Product analytics (#373, owner 2026-10-07, superseding #33's "no SDK"): the app sends
+// anonymous usage events and crash reports to PostHog (EU cloud, Frankfurt). Never identify()d,
+// never the user id, a name or anything a member wrote; no session replay; the project discards
+// IP addresses and the app disables GeoIP; on by default with an off switch in Profil › Konto
+// (app repo docs/backend.md, CLAUDE.md › Analytics). The server-side daily totals stay.
+//
+// **Keep it true.** It changes in the same PR as any of: product analytics (#373 — anything
+// beyond anonymous events and crashes, e.g. identifying people or session replay, changes this
+// page *first*), report retention (#170), the SIWA token revoke on deletion (#173),
 // the day-after photo window (#284), Add to calendar (#268). None of those four is described
 // here, because none has landed (re-reviewed 2026-10-04, #32). The terms acceptance (#167:
 // version + time in the account prefs) is listed under "your settings" and links /terms/.
@@ -42,8 +48,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "4. oktober 2026";
-export const PRIVACY_UPDATED_EN = "4 October 2026";
+export const PRIVACY_UPDATED_DA = "7. oktober 2026";
+export const PRIVACY_UPDATED_EN = "7 October 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -58,7 +64,7 @@ export const PRIVACY_HTML = `
   <li>AFTER er en privat app til ét event med en vennegruppe — en bytur, en tur, en fest. Det, du lægger op, kan kun ses af dem, der er med i eventet — ingen offentlig feed, ingen følgere, ingen søgning.</li>
   <li>Et event slettes for alle 48 timer efter, det er slut.</li>
   <li>Dine data ligger på vores egen server i EU (Stockholm, Sverige).</li>
-  <li>Vi bruger aldrig din placering, dine kontakter eller reklame-id'er. Vi sælger ikke data, vi sporer dig ikke på tværs af apps, og appen holder ikke øje med, hvad du gør i den.</li>
+  <li>Vi bruger aldrig din placering, dine kontakter eller reklame-id'er. Vi sælger ikke data, og vi sporer dig ikke på tværs af apps. Appen sender anonym brugsstatistik, som ikke kan føres tilbage til dig, og du kan slå den fra.</li>
   <li>Du kan slette din konto og dine beskeder, billeder og likes direkte i appen.</li>
 </ul>
 
@@ -90,18 +96,25 @@ export const PRIVACY_HTML = `
   <li><strong>Apple</strong> står for login (Log ind med Apple) og leverer notifikationer (Apple Push Notification service). Søger du efter et sted, sendes din søgetekst til Apple Kort — uden din placering.</li>
   <li><strong>Cloudflare</strong> leverer invitationssiden på after.12f.dk og står foran hjemmesiden after-stories.com, hvor denne side ligger, og behandler din IP-adresse for at kunne vise dem. Vi logger intet om dig der.</li>
   <li><strong>Brevo</strong> (Frankrig, EU) sender e-mailen, hvis din konto bliver suspenderet eller åbnet igen.</li>
+  <li><strong>PostHog</strong> modtager appens anonyme brugsstatistik og fejlrapporter og opbevarer dem i sin EU-sky (Frankfurt, Tyskland). Se <a href="#da-statistik">Statistik</a>.</li>
 </ul>
 <p>Alt, hvad du lægger op, opbevares i EU. Login, notifikationer og søgning efter steder går gennem Apple, som behandler dem efter sine egne regler og også uden for EU.</p>
 
-<h2>Statistik</h2>
-<p>Appen indeholder ingen værktøjer til statistik, reklame eller sporing, og den sender ingen oplysninger om, hvad du gør i den. Vi måler ikke, hvordan den enkelte bruger appen. Ændrer vi det, opdaterer vi denne side først — med hvad der måles, hvem der modtager det, og hvordan du siger nej.</p>
+<h2 id="da-statistik">Statistik</h2>
+<p>For at se, hvad der virker, og rette fejl, sender appen <strong>anonym brugsstatistik</strong> til PostHog: hvilke trin der bliver brugt (fx at et event er oprettet, at der er stemt, at en besked er sendt med eller uden billede), og <strong>fejlrapporter</strong>, når appen går ned. Med følger appens version, telefonens model, iOS-version og sprog og et tilfældigt id, som appen laver på din telefon.</p>
+<ul>
+  <li><strong>Aldrig indhold.</strong> Ingen tekst, ingen billeder, ingen navne, intet events-navn, intet steds-navn og intet andet, nogen har skrevet. Ingen skærmoptagelse.</li>
+  <li><strong>Ikke knyttet til dig.</strong> Det tilfældige id er ikke dit bruger-id, og vi forbinder det aldrig med din konto, dit navn eller din e-mail. Din IP-adresse når PostHog som en del af forbindelsen, men gemmes ikke, og der udledes ingen placering af den.</li>
+  <li><strong>Du kan sige nej.</strong> Slå <em>Del anonym brugsstatistik</em> fra under Profil → Konto. Så sender appen intet mere. Fordi oplysningerne ikke er knyttet til dig, kan vi ikke finde dem frem eller slette dem for den enkelte — og de slettes ikke med din konto.</li>
+  <li>Det sker på grundlag af vores legitime interesse i at forbedre appen og rette fejl (art. 6, stk. 1, litra f). Det bruges ikke til reklame og deles ikke med andre.</li>
+</ul>
 <p>På vores egen server tæller vi en gang i døgnet, hvor meget AFTER bruges — fx antal nye konti, events, beskeder, billeder og afstemninger. Det er kun tal for hele appen: intet indhold, ingen navne og intet om, hvem der gjorde hvad. Tallene slettes ikke med events.</p>
 
 <h2>Hvad vi aldrig gør</h2>
 <ul>
   <li>Ingen placering — appen spørger aldrig om adgang til din placering, og der gemmes ingen koordinater.</li>
   <li>Ingen adgang til dine kontakter.</li>
-  <li>Ingen reklame, ingen reklame-id'er, ingen sporing på tværs af apps og websteder.</li>
+  <li>Ingen reklame, ingen reklame-id'er, ingen sporing på tværs af apps og websteder, ingen skærmoptagelse.</li>
   <li>Intet salg eller udlån af data.</li>
   <li>Ingen offentlige profiler, følgere eller søgning efter andre brugere.</li>
 </ul>
@@ -115,7 +128,7 @@ export const PRIVACY_HTML = `
 </ul>
 
 <h2>Retsgrundlag</h2>
-<p>Vi behandler dine data for at levere den tjeneste, du har bedt om (GDPR art. 6, stk. 1, litra b). Beskyttelse mod misbrug, behandling af rapporter og tekniske logfiler sker på grundlag af vores legitime interesse i en sikker app, der virker (art. 6, stk. 1, litra f).</p>
+<p>Vi behandler dine data for at levere den tjeneste, du har bedt om (GDPR art. 6, stk. 1, litra b). Beskyttelse mod misbrug, behandling af rapporter, tekniske logfiler og den anonyme brugsstatistik sker på grundlag af vores legitime interesse i en sikker app, der virker (art. 6, stk. 1, litra f).</p>
 
 <h2 id="da-web">Hjemmesiden after-stories.com</h2>
 <p>Dette afsnit gælder kun hjemmesiden.</p>
@@ -170,7 +183,7 @@ export const PRIVACY_HTML = `
   <li>AFTER is a private app for one event with a group of friends — a night out, a trip, a party. What you post can only be seen by the people in the event — no public feed, no followers, no search.</li>
   <li>An event is deleted for everyone 48 hours after it ends.</li>
   <li>Your data lives on our own server in the EU (Stockholm, Sweden).</li>
-  <li>We never use your location, your contacts or advertising identifiers. We don't sell data, we don't track you across apps, and the app doesn't watch what you do in it.</li>
+  <li>We never use your location, your contacts or advertising identifiers. We don't sell data, and we don't track you across apps. The app sends anonymous usage statistics that can't be traced back to you, and you can turn them off.</li>
   <li>You can delete your account and your messages, photos and likes right in the app.</li>
 </ul>
 
@@ -202,18 +215,25 @@ export const PRIVACY_HTML = `
   <li><strong>Apple</strong> provides sign-in (Sign in with Apple) and delivers notifications (Apple Push Notification service). If you search for a place, your search text goes to Apple Maps — without your location.</li>
   <li><strong>Cloudflare</strong> serves the invite page on after.12f.dk and sits in front of the website after-stories.com, where this page lives, and processes your IP address to deliver them. We log nothing about you there.</li>
   <li><strong>Brevo</strong> (France, EU) sends the email if your account is suspended or opened again.</li>
+  <li><strong>PostHog</strong> receives the app's anonymous usage statistics and crash reports and stores them in its EU cloud (Frankfurt, Germany). See <a href="#en-statistics">Statistics</a>.</li>
 </ul>
 <p>Everything you post is stored in the EU. Sign-in, notifications and place search go through Apple, which handles them under its own terms, also outside the EU.</p>
 
-<h2>Statistics</h2>
-<p>The app contains no analytics, advertising or tracking tools, and it sends nothing about what you do in it. We don't measure how any one person uses the app. If that changes, we'll update this page first — with what is measured, who receives it, and how you say no.</p>
+<h2 id="en-statistics">Statistics</h2>
+<p>To see what works and to fix bugs, the app sends <strong>anonymous usage statistics</strong> to PostHog: which steps are used (for example that an event was created, that someone voted, that a message was sent with or without a photo), and <strong>crash reports</strong> when the app fails. With them go the app version, the phone model, the iOS version and language, and a random id the app makes on your phone.</p>
+<ul>
+  <li><strong>Never content.</strong> No text, no photos, no names, no event name, no place name and nothing anyone wrote. No screen recording.</li>
+  <li><strong>Not linked to you.</strong> The random id is not your user id, and we never connect it to your account, your name or your email. Your IP address reaches PostHog as part of the connection, but it is not stored, and no location is derived from it.</li>
+  <li><strong>You can say no.</strong> Turn off <em>Share anonymous usage statistics</em> under Profile → Account. The app then sends nothing more. Because the data isn't linked to you, we can't look it up or delete it for one person — and it isn't deleted with your account.</li>
+  <li>This rests on our legitimate interest in improving the app and fixing bugs (Art. 6(1)(f)). It isn't used for advertising and isn't shared with anyone else.</li>
+</ul>
 <p>On our own server we count, once a day, how much AFTER is used — for example the number of new accounts, events, messages, photos and polls. These are only totals for the whole app: no content, no names and nothing about who did what. The totals are not deleted with events.</p>
 
 <h2>What we never do</h2>
 <ul>
   <li>No location — the app never asks for your location, and no coordinates are stored.</li>
   <li>No access to your contacts.</li>
-  <li>No advertising, no advertising identifiers, no tracking across apps and websites.</li>
+  <li>No advertising, no advertising identifiers, no tracking across apps and websites, no screen recording.</li>
   <li>No selling or lending of data.</li>
   <li>No public profiles, followers or searching for other users.</li>
 </ul>
@@ -227,7 +247,7 @@ export const PRIVACY_HTML = `
 </ul>
 
 <h2>Legal basis</h2>
-<p>We process your data to provide the service you asked for (GDPR Art. 6(1)(b)). Abuse protection, handling reports and technical logs rest on our legitimate interest in a safe app that works (Art. 6(1)(f)).</p>
+<p>We process your data to provide the service you asked for (GDPR Art. 6(1)(b)). Abuse protection, handling reports, technical logs and the anonymous usage statistics rest on our legitimate interest in a safe app that works (Art. 6(1)(f)).</p>
 
 <h2 id="en-web">The website after-stories.com</h2>
 <p>This part covers only the website.</p>
