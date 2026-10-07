@@ -68,8 +68,17 @@ describe("the terms", () => {
     expect(en).toContain("<h1>Terms of use for AFTER</h1>");
     expect(da).toContain(`Senest opdateret ${TERMS_UPDATED_DA} · version ${TERMS_VERSION}</p>`);
     expect(en).toContain(`Last updated ${TERMS_UPDATED_EN} · version ${TERMS_VERSION}</p>`);
-    // The app's Terms.version is 1 too (after-stories/Features/Terms/Terms.swift): bump together.
-    expect(TERMS_VERSION).toBe(1);
+    // The app's Terms.version is 2 too (after-stories/Features/Terms/Terms.swift): bump together.
+    expect(TERMS_VERSION).toBe(2);
+  });
+
+  it("ask for 18, the App Store age rating, and describe the one-event app (after-stories#378)", () => {
+    expect(da).toContain("mindst 18 år");
+    expect(en).toContain("at least 18");
+    for (const text of [da, en]) {
+      expect(text).not.toMatch(/\b17\b/);
+      expect(text.toLowerCase()).not.toMatch(/øjeblik|moment|planchat|plan's chat/);
+    }
   });
 
   it("keep App Store guideline 1.2's promises", () => {
