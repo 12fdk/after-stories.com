@@ -252,15 +252,19 @@ const breadcrumb = [
     background: linear-gradient(180deg, rgba(11, 12, 14, var(--scrim-dark, 0.82)) 0%, rgba(11, 12, 14, calc(var(--scrim-dark, 0.82) * 0.62)) 55%, rgba(11, 12, 14, 0) 100%);
   }
 
-  /* The photo is behind everything; the header, scrim and copy sit above it. */
+  /* The photo is behind everything; the scrim and copy sit above it. The header comes
+     from SiteHeader.astro (its own scope), so it's targeted with :global. */
   .hero-photo {
     z-index: 0;
   }
   .hero-scrim {
     z-index: 1;
   }
-  .site-hero > .topbar,
   .site-hero > .wrap {
+    position: relative;
+    z-index: 2;
+  }
+  .site-hero :global(header.topbar) {
     position: relative;
     z-index: 2;
   }
@@ -276,17 +280,7 @@ const breadcrumb = [
     }
   }
 
-  /* The header's brand and links read on the photo. */
-  .site-hero .topbar {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-  .site-hero .topbar .brand {
-    color: var(--text-primary);
-  }
-  .site-hero .topbar .topbar-link {
-    color: var(--text-secondary);
-  }
+  /* The header's brand and links keep their global.css colours; nothing to override. */
 
   /* The mock card keeps its solid surface so it reads on the photo in either theme. */
   .event {
