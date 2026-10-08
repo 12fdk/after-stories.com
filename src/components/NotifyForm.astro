@@ -73,6 +73,11 @@ const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
       const outcome = await submit(signup);
 
       if (outcome === "saved") {
+        // Umami: the waitlist is the site's only conversion, so a goal can count it
+        // (event "waitlist-signup", property "source" = page). Only the page path goes
+        // along — never the name or the email (privacy.ts › visiting the website).
+        const umami = (window as { umami?: { track?: (name: string, data?: object) => void } }).umami;
+        umami?.track?.("waitlist-signup", { source: form.dataset.source ?? "/" });
         form.classList.add("is-done");
         form.replaceChildren(
           Object.assign(document.createElement("p"), {

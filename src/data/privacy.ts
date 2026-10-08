@@ -48,8 +48,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "7. oktober 2026";
-export const PRIVACY_UPDATED_EN = "7 October 2026";
+export const PRIVACY_UPDATED_DA = "8. oktober 2026";
+export const PRIVACY_UPDATED_EN = "8 October 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -156,7 +156,7 @@ export const PRIVACY_HTML = `
 <h3>Når du besøger hjemmesiden</h3>
 <ul>
   <li>Hjemmesiden ligger hos <strong>GitHub Pages</strong>. GitHub behandler din IP-adresse for at levere siderne; se <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs privatlivserklæring</a>.</li>
-  <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig.</li>
+  <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig. Tilmeldings-formularen sender også et anonymt hændelsestræk hertil, som kun indeholder, hvilken side, du tilmeldte dig fra.</li>
   <li>Skrifttyperne hentes fra denne hjemmeside, ikke fra en skrifttjeneste.</li>
   <li>Dit valg af lyst eller mørkt tema huskes i din egen browser og sendes aldrig til os.</li>
 </ul>
@@ -275,7 +275,7 @@ export const PRIVACY_HTML = `
 <h3>Visiting the website</h3>
 <ul>
   <li>The site is hosted on <strong>GitHub Pages</strong>. GitHub processes your IP address to deliver the pages; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
-  <li>We count visits with <strong>Umami</strong>, which we run ourselves. It sets no cookies and doesn't store your IP address or anything that identifies you.</li>
+  <li>We count visits with <strong>Umami</strong>, which we run ourselves. It sets no cookies and doesn't store your IP address or anything that identifies you. The waitlist form also sends it one anonymous event that contains only which page you signed up from.</li>
   <li>The fonts are served from this site, not from a font service.</li>
   <li>Your choice of light or dark theme is remembered in your own browser and never sent to us.</li>
 </ul>
