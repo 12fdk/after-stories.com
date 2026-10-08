@@ -29,6 +29,8 @@ export interface EventType {
   headline: string[];
   lede: string;
   fineprint: string;
+  /** The hero photo, one per page (public/). Warm, event-lit, candid — the opposite of stock. */
+  hero: { src: string; alt: string };
   /** The hero mock: an event of this type while it's being planned. */
   mock: {
     title: string;
@@ -101,6 +103,10 @@ export const events: EventType[] = [
     headline: ["Plan the trip together.", "Bring every photo home."],
     lede: "Vote on the dates, the house and who drives. Share the trip in one stream. Then get everyone's photos in one place, before the whole thing disappears.",
     fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-trips.webp",
+      alt: "Five friends on a lake house deck at golden hour, one holding a phone up to take the photo",
+    },
     mock: {
       title: "Lake house weekend",
       people: 8,
@@ -179,6 +185,10 @@ export const events: EventType[] = [
     headline: ["Plan the night out.", "Piece it together tomorrow."],
     lede: "Vote on where to meet and where to go next. Share the night in one private stream. The morning after, get the story: the best photo, the line of the night, every picture. Then it disappears.",
     fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-nights-out.webp",
+      alt: "A group of friends laughing on a city street at night, warm shop lights behind them",
+    },
     mock: {
       title: "Saturday night",
       people: 6,
@@ -257,6 +267,10 @@ export const events: EventType[] = [
     headline: ["Plan the birthday together.", "Everyone gets the photos."],
     lede: "Vote on the date, the venue and what to bring. Share the party in one private stream. The morning after, everyone gets the photos of the guest of honour, not just whoever took them.",
     fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-birthdays.webp",
+      alt: "Friends around a table at night with a birthday cake with lit candles and string lights",
+    },
     mock: {
       title: "Sara turns 30",
       people: 14,
@@ -338,6 +352,10 @@ export const events: EventType[] = [
     headline: ["Plan the send-off together.", "Keep the photos. Lose the chat."],
     lede: "One organiser, a dozen decisions and a group that won't answer. Put every vote in one private event, share the day in one stream, and save the photos before everything disappears 48 hours later.",
     fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-bachelor-parties.webp",
+      alt: "A friend group in matching T-shirts celebrating in a go-kart arena",
+    },
     mock: {
       title: "Jonas's send-off",
       people: 11,
@@ -416,6 +434,10 @@ export const events: EventType[] = [
     headline: ["Plan the festival together.", "Keep every photo of the chaos."],
     lede: "Vote on which acts to see and where to meet when someone gets lost. Share the festival in one stream, and get everyone's photos in one place before it all disappears.",
     fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-festivals.webp",
+      alt: "Friends in front of a festival crowd at dusk, stage lights and tents behind them",
+    },
     mock: {
       title: "Summer festival",
       people: 7,
@@ -494,6 +516,10 @@ export const events: EventType[] = [
     headline: ["Which night?", "Which film?", "Who's cooking?"],
     lede: "Put the questions to a vote and get the answers in one place. Plan the dinner, game or movie night, share it in one stream, and save the photos before it all disappears.",
     fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-dinner-nights.webp",
+      alt: "Friends around a candlelit dinner table at home, food on the table and a film playing",
+    },
     mock: {
       title: "Movie night",
       people: 6,
@@ -576,6 +602,10 @@ export const events: EventType[] = [
     headline: ["Plan the team event.", "Skip the 30 emails."],
     lede: "Vote on the date, decide the place, share the photos. One private event for the whole team, instead of a calendar poll, an email thread and a shared folder. Gone 48 hours after.",
     fineprint: "Colleagues without an iPhone join from the web.",
+    hero: {
+      src: "/hero-office-events.webp",
+      alt: "A team of colleagues at a holiday party, raising glasses in a warm restaurant room",
+    },
     mock: {
       title: "Team holiday party",
       people: 23,

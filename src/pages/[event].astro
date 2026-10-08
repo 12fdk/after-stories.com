@@ -14,7 +14,7 @@ export function getStaticPaths() {
 }
 
 const { event } = Astro.props as { event: EventType };
-const { mock } = event;
+const { mock, hero } = event;
 const totalVotes = mock.options.reduce((sum, o) => sum + o.votes, 0);
 const options = mock.options.map((o, i) => ({
   ...o,
@@ -38,10 +38,15 @@ const breadcrumb = [
   faq={event.faq}
 >
 
-  <SiteHeader />
-
   <main>
-    <section class="hero">
+    <section class="hero site-hero">
+      <!-- The themed hero photo, one per event type (src/data/events.ts): warm, candid,
+           event-lit — the opposite of stock. The header sits over it; a theme-aware scrim
+           keeps the copy readable in light and dark, and the mock card is opaque so it
+           reads on the photo either way. -->
+      <img class="hero-photo" src={hero.src} alt={hero.alt} width="1344" height="756" fetchpriority="high" decoding="async" />
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <SiteHeader />
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1>
@@ -210,6 +215,78 @@ const breadcrumb = [
   /* Keeps a hyphenated word like "send-off" from breaking across headline lines. */
   .nowrap {
     white-space: nowrap;
+  }
+
+  /* ---- The themed hero: a full-bleed photo behind the header and copy ---- */
+  .hero-photo {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* The scrim: a near-opaque veil over the photo so the copy reads in both themes.
+     Dark: a dark veil (the page is near-black, so it blends). Light: a light veil so the
+     photo warms the top of the page while black text stays clear. */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(246, 247, 249, 0.88) 0%, rgba(246, 247, 249, 0.62) 55%, rgba(246, 247, 249, 0) 100%);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .hero-scrim {
+      background: linear-gradient(180deg, rgba(11, 12, 14, 0.82) 0%, rgba(11, 12, 14, 0.5) 55%, rgba(11, 12, 14, 0) 100%);
+    }
+  }
+
+  :root[data-theme="dark"] .hero-scrim {
+    background: linear-gradient(180deg, rgba(11, 12, 14, 0.82) 0%, rgba(11, 12, 14, 0.5) 55%, rgba(11, 12, 14, 0) 100%);
+  }
+
+  /* The photo is behind everything; the header, scrim and copy sit above it. */
+  .hero-photo {
+    z-index: 0;
+  }
+  .hero-scrim {
+    z-index: 1;
+  }
+  .site-hero > .topbar,
+  .site-hero > .wrap {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Room for the header above the copy; the photo fills the whole band. */
+  .site-hero {
+    padding-top: 0;
+    padding-bottom: 64px;
+  }
+  @media (min-width: 900px) {
+    .site-hero {
+      padding-bottom: 88px;
+    }
+  }
+
+  /* The header's brand and links read on the photo. */
+  .site-hero .topbar {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .site-hero .topbar .brand {
+    color: var(--text-primary);
+  }
+  .site-hero .topbar .topbar-link {
+    color: var(--text-secondary);
+  }
+
+  /* The mock card keeps its solid surface so it reads on the photo in either theme. */
+  .event {
+    position: relative;
+    z-index: 2;
+    backdrop-filter: none;
   }
 
   /* The event mock: an event of this type in the planning stage. */
