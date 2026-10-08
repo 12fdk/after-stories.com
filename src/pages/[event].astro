@@ -246,14 +246,28 @@ const breadcrumb = [
     background: linear-gradient(180deg, rgba(11, 12, 14, 0.82) 0%, rgba(11, 12, 14, 0.5) 55%, rgba(11, 12, 14, 0) 100%);
   }
 
-  /* The photo is behind everything; the header, scrim and copy sit above it. */
+  /* The photo is behind everything; the header, scrim and copy sit above it.
+     The section itself is positioned so the absolute photo and scrim are
+     contained by the hero band instead of the page's top (the initial
+     containing block) — that would cover the header and the first section
+     below the hero. */
+  .site-hero {
+    position: relative;
+  }
   .hero-photo {
     z-index: 0;
   }
   .hero-scrim {
     z-index: 1;
   }
-  .site-hero > .topbar,
+  /* The header comes from SiteHeader (a separate component), so its elements
+     don't carry this component's scope hash — reach it via :global. Without
+     this the topbar stays static and paints under the z-0 photo, hiding the
+     logo and nav on every event page. */
+  .site-hero :global(.topbar) {
+    position: relative;
+    z-index: 2;
+  }
   .site-hero > .wrap {
     position: relative;
     z-index: 2;
