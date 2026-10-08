@@ -30,7 +30,12 @@ export interface EventType {
   lede: string;
   fineprint: string;
   /** The hero photo, one per page (public/). Warm, event-lit, candid — the opposite of stock. */
-  hero: { src: string; alt: string };
+  hero: {
+    src: string;
+    alt: string;
+    /** Scrim strength over the photo (0–1, higher = more veil). The photo's own light wins. */
+    scrim?: { light?: number; dark?: number };
+  };
   /** The hero mock: an event of this type while it's being planned. */
   mock: {
     title: string;
