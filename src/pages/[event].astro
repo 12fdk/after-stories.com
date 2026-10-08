@@ -260,6 +260,14 @@ const breadcrumb = [
   .hero-scrim {
     z-index: 1;
   }
+  /* The section is positioned so the absolute photo and scrim are contained by the
+     hero band instead of the page's top (the initial containing block) — that would
+     cover the header and the first section below the hero. */
+  .site-hero {
+    position: relative;
+  }
+
+  /* The copy sits above the photo. */
   .site-hero > .wrap {
     position: relative;
     z-index: 2;
