@@ -15,6 +15,10 @@ export function getStaticPaths() {
 
 const { event } = Astro.props as { event: EventType };
 const { mock, hero } = event;
+// The scrim is a little stronger where the photo runs bright, so the headline reads in
+// both themes (defaults here: 0.9 light / 0.82 dark, matching the verified set).
+const scrimLight = hero.scrim?.light ?? 0.9;
+const scrimDark = hero.scrim?.dark ?? 0.82;
 const totalVotes = mock.options.reduce((sum, o) => sum + o.votes, 0);
 const options = mock.options.map((o, i) => ({
   ...o,
@@ -45,7 +49,7 @@ const breadcrumb = [
            keeps the copy readable in light and dark, and the mock card is opaque so it
            reads on the photo either way. -->
       <img class="hero-photo" src={hero.src} alt={hero.alt} width="1344" height="756" fetchpriority="high" decoding="async" />
-      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-scrim" style={`--scrim-light:${scrimLight};--scrim-dark:${scrimDark}`} aria-hidden="true"></div>
       <SiteHeader />
       <div class="wrap hero-grid">
         <div class="hero-copy">
@@ -233,42 +237,42 @@ const breadcrumb = [
   .hero-scrim {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(246, 247, 249, 0.88) 0%, rgba(246, 247, 249, 0.62) 55%, rgba(246, 247, 249, 0) 100%);
+    /* Strength comes from the event's data (inline --scrim-light / --scrim-dark): a bright
+       photo asks for a heavier veil so the headline reads. */
+    background: linear-gradient(180deg, rgba(246, 247, 249, var(--scrim-light, 0.9)) 0%, rgba(246, 247, 249, calc(var(--scrim-light, 0.9) * 0.7)) 55%, rgba(246, 247, 249, 0) 100%);
   }
 
   @media (prefers-color-scheme: dark) {
     :root:not([data-theme="light"]) .hero-scrim {
-      background: linear-gradient(180deg, rgba(11, 12, 14, 0.82) 0%, rgba(11, 12, 14, 0.5) 55%, rgba(11, 12, 14, 0) 100%);
+      background: linear-gradient(180deg, rgba(11, 12, 14, var(--scrim-dark, 0.82)) 0%, rgba(11, 12, 14, calc(var(--scrim-dark, 0.82) * 0.62)) 55%, rgba(11, 12, 14, 0) 100%);
     }
   }
 
   :root[data-theme="dark"] .hero-scrim {
-    background: linear-gradient(180deg, rgba(11, 12, 14, 0.82) 0%, rgba(11, 12, 14, 0.5) 55%, rgba(11, 12, 14, 0) 100%);
+    background: linear-gradient(180deg, rgba(11, 12, 14, var(--scrim-dark, 0.82)) 0%, rgba(11, 12, 14, calc(var(--scrim-dark, 0.82) * 0.62)) 55%, rgba(11, 12, 14, 0) 100%);
   }
 
-  /* The photo is behind everything; the header, scrim and copy sit above it.
-     The section itself is positioned so the absolute photo and scrim are
-     contained by the hero band instead of the page's top (the initial
-     containing block) — that would cover the header and the first section
-     below the hero. */
-  .site-hero {
-    position: relative;
-  }
+  /* The photo is behind everything; the scrim and copy sit above it. The header comes
+     from SiteHeader.astro (its own scope), so it's targeted with :global. */
   .hero-photo {
     z-index: 0;
   }
   .hero-scrim {
     z-index: 1;
   }
-  /* The header comes from SiteHeader (a separate component), so its elements
-     don't carry this component's scope hash — reach it via :global. Without
-     this the topbar stays static and paints under the z-0 photo, hiding the
-     logo and nav on every event page. */
-  .site-hero :global(.topbar) {
+  /* The section is positioned so the absolute photo and scrim are contained by the
+     hero band instead of the page's top (the initial containing block) — that would
+     cover the header and the first section below the hero. */
+  .site-hero {
+    position: relative;
+  }
+
+  /* The copy sits above the photo. */
+  .site-hero > .wrap {
     position: relative;
     z-index: 2;
   }
-  .site-hero > .wrap {
+  .site-hero :global(header.topbar) {
     position: relative;
     z-index: 2;
   }
@@ -284,17 +288,7 @@ const breadcrumb = [
     }
   }
 
-  /* The header's brand and links read on the photo. */
-  .site-hero .topbar {
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-  .site-hero .topbar .brand {
-    color: var(--text-primary);
-  }
-  .site-hero .topbar .topbar-link {
-    color: var(--text-secondary);
-  }
+  /* The header's brand and links keep their global.css colours; nothing to override. */
 
   /* The mock card keeps its solid surface so it reads on the photo in either theme. */
   .event {
