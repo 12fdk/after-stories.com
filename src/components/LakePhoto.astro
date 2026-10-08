@@ -1,158 +1,26 @@
 ---
-// The "photo of the trip" in the morning-after mock: friends on a jetty at Hallstatt at sunset.
-// Drawn, not photographed (the image server was offline), but built like a photo: warm, low
-// sun, haze between the ridges, grain and a vignette. Fixed colours: it's a photo in both themes.
-// Sun reflection: short strokes down the water, narrowing and fading with distance from shore.
-const glints = Array.from({ length: 13 }, (_, i) => {
-  const y = 133 + i * 4.2;
-  const width = 30 - i * 1.9 + (i % 3) * 3;
-  const shift = (i % 2 ? 1 : -1) * (i % 4);
-  return { x1: 198 - width / 2 + shift, x2: 198 + width / 2 + shift, y, opacity: 0.95 - i * 0.06 };
-});
-const houses = [
-  { x: 252, w: 7, h: 6 },
-  { x: 261, w: 6, h: 8 },
-  { x: 269, w: 8, h: 6 },
-  { x: 280, w: 6, h: 9 },
-  { x: 288, w: 9, h: 6 },
-  { x: 300, w: 7, h: 7 },
-];
+// The "photo of the trip" in the morning-after mock: the group on the jetty at sunset.
+// A real photo (generated for the site), cropped to the card's 16/11 in public/.
+// Serves public/lakehouse.webp directly — the <img> below is its only presentation,
+// so the page's role="img" + aria-label keeps the accessible name in index.astro.
 ---
 
-<svg viewBox="0 0 320 200" preserveAspectRatio="xMidYMid slice" aria-hidden="true" class="lake-photo">
-  <defs>
-    <linearGradient id="lake-sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#2b1446" />
-      <stop offset="0.35" stop-color="#8a2f6e" />
-      <stop offset="0.62" stop-color="#ff4f7b" />
-      <stop offset="0.82" stop-color="#ff9a6b" />
-      <stop offset="1" stop-color="#ffd29a" />
-    </linearGradient>
-    <radialGradient id="lake-glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0" stop-color="#ffe7bd" stop-opacity="0.9" />
-      <stop offset="0.25" stop-color="#ffb37a" stop-opacity="0.5" />
-      <stop offset="1" stop-color="#ff4f7b" stop-opacity="0" />
-    </radialGradient>
-    <linearGradient id="lake-water" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#6b2654" />
-      <stop offset="0.4" stop-color="#2f1438" />
-      <stop offset="1" stop-color="#0f0a19" />
-    </linearGradient>
-    <radialGradient id="lake-vignette" cx="0.55" cy="0.55" r="0.75">
-      <stop offset="0.55" stop-color="#000" stop-opacity="0" />
-      <stop offset="1" stop-color="#000" stop-opacity="0.32" />
-    </radialGradient>
-    <filter id="lake-soft" x="-5%" y="-5%" width="110%" height="110%">
-      <feGaussianBlur stdDeviation="1.1" />
-    </filter>
-    <filter id="lake-haze">
-      <feGaussianBlur stdDeviation="0.6" />
-    </filter>
-    <filter id="lake-grain" x="0" y="0" width="100%" height="100%">
-      <feTurbulence type="fractalNoise" baseFrequency="0.95" numOctaves="2" stitchTiles="stitch" />
-      <feColorMatrix type="saturate" values="0" />
-    </filter>
-    <clipPath id="lake-below">
-      <rect x="0" y="130" width="320" height="70" />
-    </clipPath>
-  </defs>
-
-  <!-- Sky. -->
-  <rect width="320" height="130" fill="url(#lake-sky)" />
-
-  <!-- Birds. -->
-  <g fill="none" stroke="#3a1838" stroke-width="0.9" stroke-linecap="round" opacity="0.8">
-    <path d="M70 38 q3 -3 6 0 q3 -3 6 0" />
-    <path d="M86 30 q2 -2 4 0 q2 -2 4 0" />
-    <path d="M58 46 q2 -2 4 0 q2 -2 4 0" />
-  </g>
-
-  <!-- Ridges: far and hazy, then near and dark. -->
-  <path
-    d="M0 130 L0 92 L22 78 L38 86 L60 56 L78 72 L96 64 L118 88 L140 80 L170 100 L196 86 L214 94 L236 62 L254 48 L272 68 L290 58 L320 80 L320 130 Z"
-    fill="#b2507e"
-    opacity="0.55"
-    filter="url(#lake-haze)"
-  />
-  <!-- The sun going down behind the near ridge, its glow over the haze. -->
-  <circle cx="198" cy="112" r="80" fill="url(#lake-glow)" />
-  <circle cx="198" cy="114" r="12.5" fill="#fff1d6" />
-  <path
-    d="M0 130 L0 106 L30 97 L52 108 L80 90 L104 106 L126 100 L150 116 L176 113 L190 121 L210 120 L232 104 L262 96 L290 108 L320 100 L320 130 Z"
-    fill="#4a1c45"
-  />
-
-  <!-- Hallstatt: a row of houses on the far shore, a few windows lit. -->
-  <g fill="#2a1030">
-    {houses.map((h) => <rect x={h.x} y={130 - h.h} width={h.w} height={h.h} />)}
-    <path d="M276 121 L278 108 L280 121 Z" />
-  </g>
-  <g fill="#ffd29a">
-    <rect x="254" y="126" width="1.3" height="1.3" />
-    <rect x="263.5" y="124" width="1.3" height="1.3" />
-    <rect x="282" y="125" width="1.3" height="1.3" />
-    <rect x="291" y="126" width="1.3" height="1.3" />
-    <rect x="303" y="125.5" width="1.3" height="1.3" />
-  </g>
-
-  <!-- The lake, with the ridge mirrored and blurred in it. -->
-  <rect y="130" width="320" height="70" fill="url(#lake-water)" />
-  <g clip-path="url(#lake-below)" opacity="0.4" filter="url(#lake-soft)">
-    <path
-      transform="translate(0 260) scale(1 -1)"
-      d="M0 130 L0 106 L30 97 L52 108 L80 90 L104 106 L126 100 L150 116 L176 113 L190 121 L210 120 L232 104 L262 96 L290 108 L320 100 L320 130 Z"
-      fill="#1a0b22"
-    />
-  </g>
-  <g stroke="#ffd8a0" stroke-linecap="round" stroke-width="1.5">
-    {glints.map((g) => <line x1={g.x1} x2={g.x2} y1={g.y} y2={g.y} opacity={g.opacity} />)}
-  </g>
-  <g stroke="#ff8fb0" stroke-linecap="round" stroke-width="0.6" opacity="0.3">
-    <line x1="20" x2="70" y1="140" y2="140" />
-    <line x1="236" x2="300" y1="146" y2="146" />
-    <line x1="150" x2="176" y1="158" y2="158" />
-  </g>
-
-  <!-- The jetty, running out from the bottom left, lit along its edge. -->
-  <path d="M-10 200 L118 147 L134 149 L70 200 Z" fill="#170c1a" />
-  <path d="M134 149 L70 200" stroke="#ff9a6b" stroke-width="0.8" opacity="0.55" />
-  <g fill="#120914">
-    <rect x="131" y="149" width="2" height="7" />
-    <rect x="112" y="163" width="2.4" height="9" />
-    <rect x="88" y="182" width="3" height="12" />
-  </g>
-
-  <!-- The friends at the end of the jetty: three sitting, one standing with a raised glass. -->
-  <g transform="translate(118 149) scale(1.35) translate(-118 -149)">
-  <g fill="#120914">
-    <circle cx="111" cy="135.5" r="3.1" />
-    <path d="M107 148 Q107 139.5 111 139 Q115 139.5 115 148 Z" />
-    <circle cx="119.5" cy="134" r="3.2" />
-    <path d="M115.5 147.5 Q115.5 138 119.5 137.6 Q123.5 138 123.5 147.5 Z" />
-    <path d="M122 140 L126.5 131" stroke="#120914" stroke-width="1.8" stroke-linecap="round" />
-    <rect x="125.4" y="128" width="2.2" height="3.4" rx="0.5" />
-    <circle cx="127.6" cy="137" r="2.9" />
-    <path d="M124 148.5 Q124 140.5 127.6 140 Q131.2 140.5 131.2 148.5 Z" />
-    <circle cx="101" cy="128.5" r="3.1" />
-    <path d="M97.6 150 L97.6 136 Q97.6 132 101 131.8 Q104.4 132 104.4 136 L104.4 150 Z" />
-  </g>
-  <g fill="none" stroke="#ffb37a" stroke-width="0.6" opacity="0.7">
-    <path d="M113.8 134 a3.1 3.1 0 0 1 0 3" />
-    <path d="M122.5 132.5 a3.2 3.2 0 0 1 0 3" />
-    <path d="M130.3 135.6 a2.9 2.9 0 0 1 0 2.8" />
-    <path d="M103.9 127 a3.1 3.1 0 0 1 0 3" />
-  </g>
-  </g>
-
-  <!-- Film: grain and a vignette. -->
-  <rect width="320" height="200" filter="url(#lake-grain)" opacity="0.12" style="mix-blend-mode: overlay" />
-  <rect width="320" height="200" fill="url(#lake-vignette)" />
-</svg>
+<img
+  class="lake-photo"
+  src="/lakehouse.webp"
+  width="1344"
+  height="924"
+  alt=""
+  aria-hidden="true"
+  fetchpriority="high"
+  decoding="async"
+/>
 
 <style>
   .lake-photo {
     display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
   }
 </style>
