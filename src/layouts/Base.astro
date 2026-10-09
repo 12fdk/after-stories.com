@@ -96,7 +96,7 @@ const graph = noindex ? undefined : pageGraph({ path, title, description, image,
 
     {graph && <script type="application/ld+json" set:html={jsonLd(graph)} />}
 
-    <script is:inline defer src="https://umami.robert-jensen.dk/script.js" data-website-id="d3cff791-e5e1-4dde-a312-8714ddd1fa3d"></script>
+    <script is:inline defer src="https://umami.robert-jensen.dk/script.js" data-website-id="d3cff791-e5e1-4dde-a312-8714ddd1fa3d" data-performance="true"></script>
 
     <slot name="head" />
   </head>
