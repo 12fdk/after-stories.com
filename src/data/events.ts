@@ -704,6 +704,254 @@ export const events: EventType[] = [
       "The date decided in a day, the evening running itself, and the next morning everyone has the photos. No work chat left behind.",
     stakes: "Or start the 30-email thread again, and find out on the day who never saw the invite.",
   },
+  {
+    slug: "match-day",
+    name: "Match day",
+    icon: "Trophy",
+    title: 'Match Day Planner for Friends | After Stories',
+    description:
+      "Plan match day together: vote on who watches and where, share the game in one private stream, and save everyone's photos. Gone 48 hours after.",
+    headline: ["Watch it together.", "Keep every photo of the goal."],
+    lede: "Vote on who's watching, where and who brings what. Share the match in one private stream. The next day, everyone gets the photo of the goal and every picture from the whole group. Then it disappears.",
+    fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-match-day.webp",
+      alt: "A group of friends seen from behind on a sofa watching a match on a large glowing TV, snacks on the table",
+    },
+    mock: {
+      title: "Final day",
+      people: 9,
+      question: "Who's hosting?",
+      options: [
+        { label: "Maya's place", votes: 5 },
+        { label: "The sports bar", votes: 3 },
+        { label: "Jonas's terrace", votes: 1 },
+      ],
+      decided: ["Kick-off 21:00", "Ali and Jonas bring the food"],
+    },
+    todayTitle: "Nine people, one match, and the plan is in three chats.",
+    problem:
+      "And someone always ends up the one checking who's bringing what and where everyone is watching, instead of watching the game. Match day should be about the match.",
+    today: [
+      { icon: "MessageCircle", text: "“who's watching?” in three chats" },
+      { icon: "CupSoda", text: "Who's bringing snacks? Buried" },
+      { icon: "CalendarX", text: "A kick-off nobody confirmed" },
+      { icon: "ImageOff", text: "The photo of the goal, on someone else's phone" },
+    ],
+    todayOne: "One match.",
+    todayText:
+      "Where you watch, who brings what and every photo of the game, in one place that's gone 48 hours later.",
+    howTitle: "From where to the goal.",
+    empathy:
+      "We've all been the friend typing “who's watching” while the match is about to start. After Stories keeps the plan in one place, so you get to watch the game you organised.",
+    beats: [
+      {
+        when: "Before",
+        name: "Pick the plan",
+        text: "Who's hosting, what time, who brings the food. Every vote becomes a decision on top of the event, so nobody has to ask again when kick-off is.",
+      },
+      {
+        when: "During",
+        name: "One stream for the match",
+        text: "“Running 10 minutes late”, the goal photo, the reaction shot. Everyone in the group sees it as it happens, no matter where they are.",
+      },
+      {
+        when: "The next day",
+        name: "Keep the goal, let the chat go",
+        text: "Everyone gets the photo of the goal, the line of the match and every picture, saved to their phone with one tap. 48 hours after, the event is deleted for everyone.",
+      },
+    ],
+    occasionsTitle: "Every kind of match day.",
+    occasions: [
+      { icon: "Trophy", name: "The final" },
+      { icon: "Volleyball", name: "The big match" },
+      { icon: "Tv", name: "Watch party" },
+      { icon: "Beer", name: "Sports bar night" },
+      { icon: "Popcorn", name: "Terrace view" },
+      { icon: "Flag", name: "Cup final" },
+      { icon: "Medal", name: "Championship day" },
+    ],
+    privacyTitle: "Only the people who were watching.",
+    faq: [
+      {
+        q: "Can friends watch from different places?",
+        a: "Yes. Everyone in the event joins from their own sofa, the pub or the terrace. The one stream keeps you together even when you're not in the same room.",
+      },
+      after48,
+      nonIphone,
+      groupSize,
+    ],
+    closer: "The next match, planned in minutes.",
+    success:
+      "A match day where the plan just happened, everyone was where they said, and the next morning the photo of the goal is on everyone's phone.",
+    stakes: "Or plan it in three chats, and never see the goal photo that's on someone else's phone.",
+  },
+  {
+    slug: "graduation",
+    name: "Graduation",
+    icon: "GraduationCap",
+    title: 'Graduation Party Planner for Friends | After Stories',
+    description:
+      "Plan the graduation party together: vote on the date and the venue, share the celebration in one stream, and save everyone's photos. Gone 48 hours after.",
+    headline: ["Plan the celebration together.", "Everyone gets the photos."],
+    lede: "Vote on the date, the venue and the gift. Share the party in one private stream. The morning after, everyone gets the photos of the graduate, not just whoever took them. Then it disappears.",
+    fineprint: "For iPhone. Friends without one join from the web.",
+    hero: {
+      src: "/hero-graduation.webp",
+      alt: "A graduation celebration set up in a sunny park at golden hour, string lights, balloons, a cake and a banner on a long table",
+    },
+    mock: {
+      title: "Priya graduates",
+      people: 16,
+      question: "Where do we celebrate?",
+      options: [
+        { label: "The park pavilion", votes: 9 },
+        { label: "Rooftop bar", votes: 4 },
+        { label: "A backyard", votes: 3 },
+      ],
+      decided: ["Saturday 16 May", "Everyone chips in for one gift"],
+    },
+    todayTitle: "One graduation, two chats, and the best photo is on a stranger's phone.",
+    problem:
+      "And the friends who organise it do everything twice: once in the group chat, once in the chat about the gift. Celebrating someone's big day should be a joy, not a second job.",
+    today: [
+      { icon: "CalendarX", text: "A date poll the graduate can't see" },
+      { icon: "Gift", text: "A secret side chat about the gift" },
+      { icon: "Image", text: "The photo of the cap toss, on Jonas's phone" },
+      { icon: "Send", text: "“Can you send me that one?”" },
+    ],
+    todayOne: "One celebration.",
+    todayText:
+      "The date, the place, the gift and every photo of the day, in one place that's gone 48 hours later.",
+    howTitle: "From which weekend to the cap toss.",
+    empathy:
+      "We've all planned a big celebration while the plan is scattered across chats. After Stories keeps it in one place, so you get to celebrate the graduate instead of running the logistics.",
+    beats: [
+      {
+        when: "Before",
+        name: "Decide it together",
+        text: "Which date, which venue, what the group buys. Every vote turns into a decision on top of the event, so nobody has to ask again in the chat.",
+      },
+      {
+        when: "During",
+        name: "One stream for the party",
+        text: "The toasts, the cake, the cap toss. Everyone's photos land in the same place as they're taken, from the whole group.",
+      },
+      {
+        when: "The morning after",
+        name: "Everyone gets the photos",
+        text: "A summary of the day and every photo of the graduate, saved to each person's phone with one tap.",
+      },
+    ],
+    occasionsTitle: "Every kind of big day.",
+    occasions: [
+      { icon: "GraduationCap", name: "Graduation" },
+      { icon: "Cake", name: "Milestone birthday" },
+      { icon: "Gift", name: "Surprise party" },
+      { icon: "KeyRound", name: "Housewarming" },
+      { icon: "Heart", name: "Anniversary" },
+      { icon: "PartyPopper", name: "Engagement" },
+      { icon: "Sparkles", name: "Promotion" },
+    ],
+    privacyTitle: "Only the guests. Nobody else.",
+    faq: [
+      {
+        q: "Can we plan a surprise for the graduate?",
+        a: "Yes. Only the people you invite can see the event, so plan it without the graduate and send them the invite link on the day. They'll get the photos too.",
+      },
+      {
+        q: "How many people can join?",
+        a: "Up to 50 per event. That fits most graduations and celebration parties, though not a 200-person event.",
+      },
+      nonIphone,
+      after48,
+    ],
+    closer: "The next big day, planned in one place.",
+    success:
+      "The morning after, every photo of the graduate is in one place, from every phone, the cap toss included, saved with one tap.",
+    stakes: "Or ask around for weeks, and still miss the photo of the cap toss.",
+  },
+  {
+    slug: "family-reunion",
+    name: "Family reunion",
+    icon: "Users",
+    title: 'Family Reunion Planner for Groups | After Stories',
+    description:
+      "Plan the family reunion together: vote on the dates and the place, keep every decision in one timeline, and save everyone's photos. Gone 48 hours after.",
+    headline: ["Plan the reunion together.", "Bring every photo home."],
+    lede: "Vote on the dates, the place and who drives. Keep every decision in one timeline, share the whole weekend in one stream, and save everyone's photos before the whole thing disappears.",
+    fineprint: "For iPhone. Family without one joins from the web.",
+    hero: {
+      src: "/hero-family-reunion.webp",
+      alt: "An empty wooden lakeside deck and dock at golden hour with warm string lights, a picnic table set with plates, a calm lake behind",
+    },
+    mock: {
+      title: "The Halden reunion",
+      people: 24,
+      question: "Which weekend?",
+      options: [
+        { label: "Weekend of 21 June", votes: 12 },
+        { label: "Weekend of 28 June", votes: 7 },
+        { label: "A long Friday", votes: 5 },
+      ],
+      decided: ["The lake house, 48 beds", "Cousins A–F drive"],
+    },
+    todayTitle: "Twenty-four people, one lake, and the plan is in a family group chat.",
+    problem:
+      "Aunts, cousins and three generations all arguing about the dates, the house and who drives, across a group chat nobody can scroll. Planning a reunion shouldn't be the family's least favourite part.",
+    today: [
+      { icon: "CalendarX", text: "A date that suits nobody, confirmed by no one" },
+      { icon: "Link", text: "Four house listings, half the family lost" },
+      { icon: "Car", text: "Who drives, who brings the grill? Unclear" },
+      { icon: "Images", text: "Hundreds of photos stuck on twenty-four phones" },
+    ],
+    todayOne: "One weekend.",
+    todayText:
+      "The dates, the house, the plan and every photo, in one place that cleans itself up.",
+    howTitle: "From which weekend to the photos.",
+    empathy:
+      "We've all been the cousin with the spreadsheet and the deposit, chasing replies from three generations. After Stories keeps the plan and collects the photos, so you get to enjoy the reunion you organised.",
+    beats: [
+      {
+        when: "Before",
+        name: "Decide the reunion",
+        text: "Which weekend, which house, who brings what. Every vote becomes a decision, and the decisions stay on top in order. Aunts and cousins alike can see the plan without scrolling.",
+      },
+      {
+        when: "During",
+        name: "One stream for the weekend",
+        text: "“Where's the grill?”, the lake photos, who's coming for dinner. Everyone sees it, and nobody has to forward anything.",
+      },
+      {
+        when: "The morning after",
+        name: "Bring every photo home",
+        text: "Everyone gets the summary: the photo of the weekend, the line of the reunion, what you decided. Then save every photo to your phone with one tap.",
+      },
+    ],
+    occasionsTitle: "Every kind of family get-together.",
+    occasions: [
+      { icon: "Users", name: "Family reunion" },
+      { icon: "Mountain", name: "Multi-generational trip" },
+      { icon: "CableCar", name: "Ski weekend" },
+      { icon: "Umbrella", name: "Beach house" },
+      { icon: "Car", name: "Road trip" },
+      { icon: "Hand", name: "Farewell weekend" },
+      { icon: "Heart", name: "Anniversary weekend" },
+    ],
+    privacyTitle: "What happens on the weekend stays in the family.",
+    faq: [
+      {
+        q: "Can a big family join one event?",
+        a: "Up to 50 people per event. That fits most family reunions, from a handful of cousins to a whole extended family.",
+      },
+      after48,
+      nonIphone,
+    ],
+    closer: "The next reunion, without the family group chat.",
+    success:
+      "Come home with every photo from every phone, the photo of the weekend and the line of the reunion, without anyone making an album.",
+    stakes: "Or plan it in the family group chat again, and keep asking for those photos all year.",
+  },
 ];
 
 export const eventHref = (e: EventType) => `/${e.slug}/`;
