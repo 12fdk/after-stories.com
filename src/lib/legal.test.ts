@@ -18,7 +18,8 @@ describe("the privacy policy", () => {
 
   it("is in Danish and English, each dated", () => {
     expect(da).toContain("<h1>Privatlivspolitik for AFTER</h1>");
-    expect(en).toContain("<h1>AFTER privacy policy</h1>");
+    // The English section takes a step down, so the page has one H1 (SEO).
+    expect(en).toContain("<h2>AFTER privacy policy</h2>");
     expect(da).toContain(`Senest opdateret ${PRIVACY_UPDATED_DA}`);
     expect(en).toContain(`Last updated ${PRIVACY_UPDATED_EN}`);
     expect(PRIVACY_UPDATED_DA).toMatch(/^\d{1,2}\. \p{L}+ \d{4}$/u);
@@ -65,7 +66,8 @@ describe("the terms", () => {
 
   it("are in Danish and English, each dated and naming the version the app asks for", () => {
     expect(da).toContain("<h1>Vilkår for AFTER</h1>");
-    expect(en).toContain("<h1>Terms of use for AFTER</h1>");
+    // The English section takes a step down, so the page has one H1 (SEO).
+    expect(en).toContain("<h2>Terms of use for AFTER</h2>");
     expect(da).toContain(`Senest opdateret ${TERMS_UPDATED_DA} · version ${TERMS_VERSION}</p>`);
     expect(en).toContain(`Last updated ${TERMS_UPDATED_EN} · version ${TERMS_VERSION}</p>`);
     // The app's Terms.version is 2 too (after-stories/Features/Terms/Terms.swift): bump together.
@@ -104,6 +106,14 @@ describe("both pages", () => {
         if (href.startsWith("/")) expect(["/privacy/", "/terms/"]).toContain(href);
       }
       expect(html).not.toMatch(/<script|<iframe|<img/i);
+    },
+  );
+
+  // One H1 per legal page: the Danish heading is the page title, the English one steps down.
+  it.each([["privacy", PRIVACY_HTML], ["terms", TERMS_HTML]])(
+    "%s has exactly one h1",
+    (_, html) => {
+      expect(html.match(/<h1>/g)).toHaveLength(1);
     },
   );
 });

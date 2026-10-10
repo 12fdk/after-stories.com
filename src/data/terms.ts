@@ -59,7 +59,7 @@ export const TERMS_HTML = `
 </article>
 
 <article id="en" lang="en">
-<h1>Terms of use for AFTER</h1>
+<h2>Terms of use for AFTER</h2>
 <p class="meta">Last updated ${TERMS_UPDATED_EN} · version ${TERMS_VERSION}</p>
 
 <h2>In short</h2>
