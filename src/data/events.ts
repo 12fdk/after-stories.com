@@ -959,7 +959,7 @@ export const events: EventType[] = [
     slug: "youth-sports",
     name: "Youth sports",
     icon: "Goal",
-    title: "Youth Sports & Team Planner | After Stories",
+    title: "Youth Sports Carpool & Team Planner | After Stories",
     description:
       "Plan the team season together: vote on the carpool and the game day, share it in one private stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the team season.", "Sort the carpool for good."],
