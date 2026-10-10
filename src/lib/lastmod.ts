@@ -1,5 +1,6 @@
 import { execFileSync } from "node:child_process";
 import { events } from "../data/events";
+import { locales, basePath, DEFAULT_LOCALE, type Locale } from "./i18n";
 
 // When each page's content last changed: the last commit that touched the files it is written
 // in. Used for the sitemap's <lastmod> and the page's dateModified (#30). The build time would

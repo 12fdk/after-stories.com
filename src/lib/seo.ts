@@ -54,6 +54,8 @@ export interface PageMeta {
   breadcrumb?: Crumb[];
   faq?: Question[];
   modified?: Date;
+  /** BCP-47 tag for the page's inLanguage (default "en" for the base locale). */
+  inLanguage?: string;
 }
 
 type Node = Record<string, unknown>;
@@ -105,7 +107,7 @@ export function pageGraph(page: PageMeta): Node {
     url,
     name: page.title,
     description: page.description,
-    inLanguage: "en",
+    inLanguage: page.inLanguage ?? "en",
     isPartOf: { "@id": ids.website },
     about: { "@id": ids.app },
     primaryImageOfPage: { "@type": "ImageObject", url: absolute(page.image), width: 1200, height: 630 },

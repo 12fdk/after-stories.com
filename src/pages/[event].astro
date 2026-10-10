@@ -6,6 +6,8 @@ import LaunchCta from "../components/LaunchCta.astro";
 import Icon from "../components/Icon.astro";
 import { events, defaultPrivacy, eventHref, type EventType } from "../data/events";
 import { ogImagePath } from "../lib/og";
+import { hreflangAlternates } from "../lib/i18n";
+import { SITE_URL } from "../lib/seo";
 
 // One page per event type (src/data/events.ts), each built like the office page:
 // a planning-stage mock, today vs. one event, the three beats, the occasions, privacy, FAQ.
@@ -40,6 +42,7 @@ const breadcrumb = [
   imageAlt={event.headline.join(" ")}
   breadcrumb={breadcrumb}
   faq={event.faq}
+  hreflang={hreflangAlternates(SITE_URL, `/${event.slug}/`, true)}
 >
 
   <main>
@@ -207,7 +210,7 @@ const breadcrumb = [
     </section>
   </main>
 
-  <SiteFooter />
+  <SiteFooter base={`/${event.slug}/`} />
 </Base>
 
 <style>
