@@ -1,5 +1,6 @@
 ---
 import NotifyForm from "./NotifyForm.astro";
+import { uiCopy, type Locale } from "../lib/i18n";
 
 // The launch call to action. The page earns the sign-up before asking for it: the hero and the
 // plan section only link to the form (as="link"), and the form itself (as="form") sits in the
@@ -12,21 +13,23 @@ interface Props {
   as: "link" | "form";
   href?: string;
   size?: "small";
+  locale?: Locale;
 }
 
-const { as, href = "#notify", size } = Astro.props;
+const { as, href = "#notify", size, locale = "en" } = Astro.props;
+const ui = uiCopy(locale);
 const pillClass = size === "small" ? "pill pill-small" : "pill";
 const enabled = import.meta.env.PUBLIC_WAITLIST_ENABLED === "true";
 ---
 
 {
   !enabled ? (
-    <span class={pillClass} aria-disabled="true">{size === "small" ? "Coming soon" : "Coming soon to the App Store"}</span>
+    <span class={pillClass} aria-disabled="true">{ui.ctaPillComingSoon}</span>
   ) : as === "link" ? (
-    <a class={pillClass} href={href}>{size === "small" ? "Get notified" : "Get notified at launch"}</a>
+    <a class={pillClass} href={href}>{size === "small" ? ui.ctaSmall : ui.ctaHero}</a>
   ) : (
     <div id="notify" class="notify-target" tabindex="-1">
-      <NotifyForm />
+      <NotifyForm locale={locale} />
     </div>
   )
 }

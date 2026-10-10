@@ -1,18 +1,69 @@
 ---
-import { events, eventHref } from "../data/events";
 import ThemeSwitch from "./ThemeSwitch.astro";
+import {
+  localEvents,
+  localEventHref,
+  locales,
+  localeName,
+  uiCopy,
+  localizedPath,
+  type Locale,
+} from "../lib/i18n";
+
+interface Props {
+  locale?: Locale;
+  /** The page's base (English) path — the language switch targets the same page in other locales. */
+  base?: string;
+}
+
+const { locale = "en", base = "/" } = Astro.props;
+const ui = uiCopy(locale);
+const list = localEvents(locale);
+const privacyHref = localizedPath(locale, "/privacy/");
+const termsHref = localizedPath(locale, "/terms/");
 ---
 
 <footer class="footer">
   <div class="wrap footer-inner">
-    <p class="footer-tagline">Plan it together. Live it together. Wake up to the story.</p>
+    <p class="footer-tagline">{ui.footerTagline}</p>
     <nav class="footer-nav" aria-label="Footer">
-      <a href="/">Home</a>
-      {events.map((e) => <a href={eventHref(e)}>{e.name}</a>)}
-      <a href="/privacy/">Privacy</a>
-      <a href="/terms/">Terms</a>
+      <a href={localizedPath(locale, "/")}>{ui.footerHome}</a>
+      {list.map((e) => <a href={localEventHref(locale, e.slug)}>{e.name}</a>)}
+      <a href={privacyHref}>{ui.footerPrivacy}</a>
+      <a href={termsHref}>{ui.footerTerms}</a>
+    </nav>
+    <nav class="footer-lang" aria-label="Language">
+      {locales.map((l) => (
+        <a
+          href={localizedPath(l, base)}
+          hreflang={l}
+          aria-current={l === locale ? "true" : undefined}
+        >
+          {localeName[l]}
+        </a>
+      ))}
     </nav>
     <ThemeSwitch />
     <p>© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
   </div>
 </footer>
+
+<style>
+  .footer-lang {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin: 4px 0;
+  }
+
+  .footer-lang a {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+  }
+
+  .footer-lang a[aria-current="true"] {
+    color: var(--accent-ink);
+    text-decoration: underline;
+  }
+</style>

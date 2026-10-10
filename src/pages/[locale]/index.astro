@@ -1,96 +1,63 @@
 ---
-import Base from "../layouts/Base.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import SiteFooter from "../components/SiteFooter.astro";
-import LaunchCta from "../components/LaunchCta.astro";
-import Icon from "../components/Icon.astro";
-import LakePhoto from "../components/LakePhoto.astro";
-import { events, eventHref } from "../data/events";
-import { homeDescription, homeFaq as faq, homeTitle } from "../data/home";
-import { hreflangAlternates } from "../lib/i18n";
-import { SITE_URL } from "../lib/seo";
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import LaunchCta from "../../components/LaunchCta.astro";
+import Icon from "../../components/Icon.astro";
+import LakePhoto from "../../components/LakePhoto.astro";
+import {
+  locales,
+  localeTag,
+  localEvents,
+  localEventHref,
+  hreflangAlternates,
+  homeCopy,
+  uiCopy,
+  defaultPrivacyFor,
+  type Locale,
+} from "../../lib/i18n";
+import { SITE_URL } from "../../lib/seo";
 
-// Copy and structure: docs/positioning.md › The landing page.
-const title = homeTitle;
-const description = homeDescription;
+export function getStaticPaths() {
+  return locales
+    .filter((l) => l !== "en")
+    .map((locale) => ({ params: { locale }, props: { locale: locale as Locale } }));
+}
 
-// Hero: the morning-after summary of a weekend away (the hero use case).
+const { locale } = Astro.props as { locale: Locale };
+const h = homeCopy(locale);
+const ui = uiCopy(locale);
+const events = localEvents(locale);
+
+// The morning-after summary is an app-UI demo (structural, English in every locale).
 const decided = [
   { when: "Fri", what: "Lake house, Hallstatt" },
   { when: "Sat 13:00", what: "Hike to the waterfall" },
   { when: "Sat 20:00", what: "Fondue at Maya's place" },
 ];
-
-// The three beats (the eight steps, compressed for a first-time visitor).
-const beats = [
-  {
-    key: "plan",
-    when: "Before",
-    name: "Plan it together",
-    text: "Create the event and send the link. Ask which weekend, which house, who drives. Every vote turns into a decision, and the decisions stay on top as a timeline. Nobody scrolls back to find them.",
-  },
-  {
-    key: "live",
-    when: "During",
-    name: "Live it together",
-    text: "One stream for the whole event: “10 minutes late”, the photos, where to go next. Tap ❤️ on the ones that matter.",
-  },
-  {
-    key: "after",
-    when: "The morning after",
-    name: "Wake up to the story",
-    text: "Everyone gets the summary: the most-liked photo, the line of the night, what you decided. Then save every photo to your phone with one tap.",
-  },
-];
-
-// The pain: two group chats that went nowhere, seen from the visitor's phone: their own message
-// on the right (mine), everyone else's on the left. Avatars use the app's tile ramp, like its fallback.
-const chats = [
-  {
-    label: "A group chat where the plan gets lost",
-    meta: "312 unread",
-    messages: [
-      { who: "You", mine: true, text: "wait which weekend did we land on?" },
-      { who: "Jonas", tile: "--tile-puked", text: "did anyone actually book the house" },
-      { who: "Sara", tile: "--tile-drink", text: "scroll up, it's there somewhere" },
-    ],
-  },
-  {
-    label: "A group chat where nobody shares the photos",
-    meta: "Three weeks ago",
-    messages: [
-      { who: "You", mine: true, text: "can someone send the pics??" },
-      { who: "Maya", tile: "--tile-went-clubbing", text: "yes!! pls send" },
-      { who: "Jonas", tile: "--tile-puked", text: "will do tonight" },
-    ],
-  },
-];
-
-// Use cases: the hero plus the ones that prove it, each with its own page (src/data/events.ts).
-const useCases = events;
-
+const chats = h.chats ?? [];
+const path = `/${locale}/`;
 ---
 
-<Base title={title} description={description} faq={faq}>
-
-  <SiteHeader />
-
+<Base
+  locale={locale}
+  title={h.title}
+  description={h.description}
+  imageAlt={h.hero.h1.join(" ")}
+  hreflang={hreflangAlternates(SITE_URL, "/", true)}
+>
+  <SiteHeader locale={locale} />
   <main>
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1>
-            <span class="line">Plan it together.</span>
-            <span class="line">Live it together.</span>
-            <span class="line">Wake up to the story.</span>
+            {h.hero.h1.map((line) => <span class="line">{line}</span>)}
           </h1>
-          <p class="lede">
-            The private app for your group's trip, party or night out. Decide the plan together, live it
-            in one place, and wake up to everyone's photos. Nobody has to chase anyone.
-          </p>
+          <p class="lede">{h.hero.lede}</p>
           <div class="cta">
-            <LaunchCta as="link" />
-            <p class="fineprint">For iPhone. Friends without one join from the web.</p>
+            <LaunchCta as="link" locale={locale} />
+            <p class="fineprint">{h.hero.fineprint}</p>
           </div>
         </div>
 
@@ -124,14 +91,9 @@ const useCases = events;
           <div>
             <p class="mini-label">What you decided</p>
             <ol class="timeline">
-              {
-                decided.map((d) => (
-                  <li>
-                    <time>{d.when}</time>
-                    <span>{d.what}</span>
-                  </li>
-                ))
-              }
+              {decided.map((d) => (
+                <li><time>{d.when}</time><span>{d.what}</span></li>
+              ))}
             </ol>
           </div>
 
@@ -147,133 +109,109 @@ const useCases = events;
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Group chats are where plans go to die.</h2>
-      <p class="section-intro">
-        The plan sinks under 400 messages, the photos never leave everyone's phone, and somehow you're the
-        one scrolling up, chasing replies and begging for the pictures. Getting your friends together
-        shouldn't feel like a second job.
-      </p>
+      <h2 class="section-title">{h.pain.title}</h2>
+      <p class="section-intro">{h.pain.intro}</p>
       <div class="pain-grid">
-        {
-          chats.map((c) => (
-            <figure class="chat" aria-label={c.label}>
-              {c.messages.map((m) =>
-                m.mine ? (
-                  <div class="msg msg-mine">
-                    <p class="bubble">
-                      <span class="visually-hidden">You: </span>
-                      {m.text}
-                    </p>
+        {chats.map((c) => (
+          <figure class="chat" aria-label={c.label}>
+            {c.messages.map((m, i) =>
+              i === 0 ? (
+                <div class="msg msg-mine">
+                  <p class="bubble">
+                    <span class="visually-hidden">{m.who}: </span>
+                    {m.text}
+                  </p>
+                </div>
+              ) : (
+                <div class="msg">
+                  <span class="avatar" style={`--tile:var(--tile-${i === 1 ? "puked" : "drink"})`} aria-hidden="true">
+                    {m.who[0]}
+                  </span>
+                  <div>
+                    <p class="msg-who">{m.who}</p>
+                    <p class="bubble">{m.text}</p>
                   </div>
-                ) : (
-                  <div class="msg">
-                    <span class="avatar" style={`--tile:var(${m.tile})`} aria-hidden="true">
-                      {m.who[0]}
-                    </span>
-                    <div>
-                      <p class="msg-who">{m.who}</p>
-                      <p class="bubble">{m.text}</p>
-                    </div>
-                  </div>
-                ),
-              )}
-              <figcaption class="chat-meta">{c.meta}</figcaption>
-            </figure>
-          ))
-        }
+                </div>
+              )
+            )}
+            <figcaption class="chat-meta">{c.meta}</figcaption>
+          </figure>
+        ))}
       </div>
     </section>
 
     <section id="how" class="section wrap">
-      <h2 class="section-title">From “we should do something” to the morning after, in three steps.</h2>
-      <p class="section-intro">
-        We've all been the one holding the group chat together. After Stories holds it for you, so you
-        get to be at the party instead of running it.
-      </p>
+      <h2 class="section-title">{h.how.title}</h2>
+      <p class="section-intro">{h.how.intro}</p>
       <ol class="steps">
-        {
-          beats.map((b) => (
-            <li class="step">
-              <p class="step-when">{b.when}</p>
-              <h3>{b.name}</h3>
-              <p>{b.text}</p>
-            </li>
-          ))
-        }
+        {h.how.beats.map((b) => (
+          <li class="step">
+            <p class="step-when">{b.when}</p>
+            <h3>{b.name}</h3>
+            <p>{b.text}</p>
+          </li>
+        ))}
       </ol>
       <div class="section-cta">
-        <LaunchCta as="link" />
+        <LaunchCta as="link" locale={locale} />
       </div>
     </section>
 
     <section class="section wrap ends">
       <p class="ends-number" aria-hidden="true">48h</p>
       <div class="ends-copy">
-        <h2 class="section-title">What happens on the trip stays in the trip.</h2>
-        <p>
-          48 hours after the event ends, it's deleted for everyone. The chat, the polls, the photos.
-          Before that, you save every photo to your phone with one tap. You keep the memories. The app
-          forgets the rest.
-        </p>
+        <h2 class="section-title">{h.ends.title}</h2>
+        <p>{h.ends.text}</p>
       </div>
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Anything you plan with more than one person.</h2>
+      <h2 class="section-title">{h.useCases}</h2>
       <ul class="tiles">
-        {
-          useCases.map((u) => (
-            <li>
-              <a class="tile tile-link" href={eventHref(u)}>
-                <Icon class="tile-icon" name={u.icon} />
-                <span>{u.name}</span>
-              </a>
-            </li>
-          ))
-        }
+        {events.map((u) => (
+          <li>
+            <a class="tile tile-link" href={localEventHref(locale, u.slug)}>
+              <Icon class="tile-icon" name={u.icon} />
+              <span>{u.name}</span>
+            </a>
+          </li>
+        ))}
       </ul>
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Only the people in the event. That's a promise.</h2>
+      <h2 class="section-title">{h.promise}</h2>
       <ul class="facts">
-        <li><strong>No feed, no followers, no strangers.</strong> Each event is its own private space.</li>
-        <li><strong>Never your location.</strong> Places are venues you pick. Photos are stripped of GPS and camera data before upload.</li>
-        <li><strong>Gone 48 hours after.</strong> Everyone saves the photos first. Then nothing lingers on a server for years.</li>
-        <li><strong>Nobody left out.</strong> Friends without an iPhone join from the web. Sign in with Apple means no passwords.</li>
+        {defaultPrivacyFor(locale).map((f) => (
+          <li><strong>{f.title}</strong> {f.text}</li>
+        ))}
       </ul>
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Good to know</h2>
+      <h2 class="section-title">{h.goodToKnow}</h2>
       <div class="faq-list">
-        {
-          faq.map((f) => (
-            <details>
-              <summary>{f.q}</summary>
-              <p>{f.a}</p>
-            </details>
-          ))
-        }
+        {h.faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
       </div>
     </section>
 
     <section class="closer">
       <div class="wrap closer-inner">
-        <h2>Wake up to the whole story.</h2>
+        <h2>{h.closer.title}</h2>
         <div class="closer-story">
-          <p>
-            The morning after, it's all there: the photo everyone loved, the line everyone's still quoting,
-            what you decided, and every picture already on your phone. Nobody had to make it.
-          </p>
-          <p class="closer-stakes">Or plan the next one in the group chat, and wait three weeks for photos that never come.</p>
+          <p>{h.closer.story}</p>
+          <p class="closer-stakes">{h.closer.stakes}</p>
         </div>
-        <LaunchCta as="form" />
+        <LaunchCta as="form" locale={locale} />
       </div>
     </section>
   </main>
-
-  <SiteFooter base="/" />
+  <SiteFooter locale={locale} />
 </Base>
 
 <style>

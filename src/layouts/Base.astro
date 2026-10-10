@@ -3,37 +3,46 @@ import "../styles/global.css";
 import { absolute, jsonLd, pageGraph, type Crumb, type Question } from "../lib/seo";
 import { lastModified } from "../lib/lastmod";
 import { homeCard, ogImagePath } from "../lib/og";
+import { localeTag, ogLocale, type Locale } from "../lib/i18n";
 
 interface Props {
   title: string;
   description: string;
   noindex?: boolean;
+  /** The locale of this page. Defaults to English (the base, unprefixed URLs). */
+  locale?: Locale;
   /** The share image, a site path (src/lib/og.ts). Defaults to the home page's. */
   image?: string;
-  /** What the share image says, for screen readers in the apps that show it. */
+  /** What the share image says, for screen readers. Localized headline on localized pages. */
   imageAlt?: string;
   breadcrumb?: Crumb[];
   faq?: Question[];
+  /** hreflang alternates (one per locale + x-default). Omit to emit none. */
+  hreflang?: { hreflang: string; url: string }[];
 }
 
 const {
   title,
   description,
   noindex = false,
+  locale = "en",
   image = ogImagePath(homeCard.slug),
   imageAlt = homeCard.lines.join(" "),
   breadcrumb,
   faq,
+  hreflang,
 } = Astro.props;
 const path = Astro.url.pathname;
 const canonical = absolute(path);
 const ogImage = absolute(image);
 const modified = noindex ? undefined : lastModified(path);
-const graph = noindex ? undefined : pageGraph({ path, title, description, image, breadcrumb, faq, modified });
+const graph = noindex
+  ? undefined
+  : pageGraph({ path, title, description, image, breadcrumb, faq, modified, inLanguage: localeTag[locale] });
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={localeTag[locale]}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -69,8 +78,15 @@ const graph = noindex ? undefined : pageGraph({ path, title, description, image,
     <!-- Where to start: /ai.txt points crawlers at llms.txt and llms-full.txt (src/pages/ai.txt.ts). -->
     <link rel="alternate" type="text/plain" href="/ai.txt" title="AI crawler notes for After Stories" />
 
+    {
+      hreflang &&
+        hreflang.map((a) => (
+          <link rel="alternate" hreflang={a.hreflang} href={a.url} />
+        ))
+    }
+
     <!-- Anybody is served from this site, not Google Fonts, so no visitor's IP goes to Google. -->
-    <link rel="preload" href="/fonts/anybody-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/anybody-latin.woff2" as="font" type="font" crossorigin />
 
     <meta name="application-name" content="After Stories" />
     <meta name="apple-mobile-web-app-title" content="After Stories" />
@@ -78,7 +94,7 @@ const graph = noindex ? undefined : pageGraph({ path, title, description, image,
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="After Stories" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content={ogLocale[locale]} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />

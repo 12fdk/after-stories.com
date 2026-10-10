@@ -1,24 +1,40 @@
 ---
-import Base from "../layouts/Base.astro";
-import SiteHeader from "../components/SiteHeader.astro";
-import SiteFooter from "../components/SiteFooter.astro";
-import LaunchCta from "../components/LaunchCta.astro";
-import Icon from "../components/Icon.astro";
-import { events, defaultPrivacy, eventHref, type EventType } from "../data/events";
-import { ogImagePath } from "../lib/og";
-import { hreflangAlternates } from "../lib/i18n";
-import { SITE_URL } from "../lib/seo";
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import LaunchCta from "../../components/LaunchCta.astro";
+import Icon from "../../components/Icon.astro";
+import {
+  locales,
+  localeTag,
+  localEvents,
+  localEventHref,
+  basePath,
+  eventCopy,
+  uiCopy,
+  hreflangAlternates,
+  localizedPath,
+  type Locale,
+} from "../../lib/i18n";
+import { SITE_URL } from "../../lib/seo";
+import { ogImagePath } from "../../lib/og";
 
-// One page per event type (src/data/events.ts), each built like the office page:
-// a planning-stage mock, today vs. one event, the three beats, the occasions, privacy, FAQ.
+// One localized page per event type (non-English locales), filled from the localized copy
+// (src/data/copy/<locale>.ts) over the structural event data. Mirrors src/pages/[event].astro.
 export function getStaticPaths() {
-  return events.map((event) => ({ params: { event: event.slug }, props: { event } }));
+  const paths = [];
+  for (const locale of locales) {
+    if (locale === "en") continue;
+    for (const event of localEvents(locale)) {
+      paths.push({ params: { locale: locale, event: event.slug }, props: { locale, event } });
+    }
+  }
+  return paths;
 }
 
-const { event } = Astro.props as { event: EventType };
+const { locale, event } = Astro.props as { locale: Locale; event: (typeof localEvents)[number][number] };
 const { mock, hero } = event;
-// The scrim is a little stronger where the photo runs bright, so the headline reads in
-// both themes (defaults here: 0.9 light / 0.82 dark, matching the verified set).
+const ui = uiCopy(locale);
 const scrimLight = hero.scrim?.light ?? 0.9;
 const scrimDark = hero.scrim?.dark ?? 0.82;
 const totalVotes = mock.options.reduce((sum, o) => sum + o.votes, 0);
@@ -27,33 +43,30 @@ const options = mock.options.map((o, i) => ({
   share: Math.round((o.votes / totalVotes) * 100),
   leading: i === 0,
 }));
-const privacy = event.privacy ?? defaultPrivacy;
-const others = events.filter((e) => e.slug !== event.slug);
+const privacy = event.privacy;
+const others = localEvents(locale).filter((e) => e.slug !== event.slug);
+const base = `/${event.slug}/`;
 const breadcrumb = [
-  { name: "After Stories", path: "/" },
-  { name: event.name, path: eventHref(event) },
+  { name: "After Stories", path: localizedPath(locale, "/") },
+  { name: event.name, path: localEventHref(locale, event.slug) },
 ];
 ---
 
 <Base
+  locale={locale}
   title={event.title}
   description={event.description}
   image={ogImagePath(event.slug)}
   imageAlt={event.headline.join(" ")}
   breadcrumb={breadcrumb}
   faq={event.faq}
-  hreflang={hreflangAlternates(SITE_URL, `/${event.slug}/`, true)}
+  hreflang={hreflangAlternates(SITE_URL, base, true)}
 >
-
+  <SiteHeader locale={locale} />
   <main>
     <section class="hero site-hero">
-      <!-- The themed hero photo, one per event type (src/data/events.ts): warm, candid,
-           event-lit — the opposite of stock. The header sits over it; a theme-aware scrim
-           keeps the copy readable in light and dark, and the mock card is opaque so it
-           reads on the photo either way. -->
       <img class="hero-photo" src={hero.src} alt={hero.alt} width="1344" height="756" fetchpriority="high" decoding="async" />
       <div class="hero-scrim" style={`--scrim-light:${scrimLight};--scrim-dark:${scrimDark}`} aria-hidden="true"></div>
-      <SiteHeader />
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <h1>
@@ -67,18 +80,18 @@ const breadcrumb = [
           </h1>
           <p class="lede">{event.lede}</p>
           <div class="cta">
-            <LaunchCta as="link" />
+            <LaunchCta as="link" locale={locale} />
             <p class="fineprint">{event.fineprint}</p>
           </div>
         </div>
 
         <figure class="event" aria-label={`Example of a ${event.name.toLowerCase()} event while it's being planned`}>
           <div>
-            <p class="event-stage"><span>Planning</span><span>{mock.people} people</span></p>
+            <p class="event-stage"><span>{ui.planning}</span><span>{mock.people} {ui.peopleWord}</span></p>
             <p class="event-title">{mock.title}</p>
           </div>
 
-          <p class="next-step">Vote: {mock.question}</p>
+          <p class="next-step">{ui.votePrefix}: {mock.question}</p>
 
           <div class="poll">
             <p class="poll-q">{mock.question}</p>
@@ -95,7 +108,7 @@ const breadcrumb = [
           </div>
 
           <div>
-            <p class="mini-label">Decided</p>
+            <p class="mini-label">{ui.decided}</p>
             <ol class="decided">
               {mock.decided.map((d) => <li><span class="tick" aria-hidden="true">✓</span>{d}</li>)}
             </ol>
@@ -119,7 +132,7 @@ const breadcrumb = [
           }
         </ul>
         <div class="today-after">
-          <p class="today-with">With After Stories</p>
+          <p class="today-with">{ui.withApp}</p>
           <p class="today-one">{event.todayOne}</p>
           <p>{event.todayText}</p>
         </div>
@@ -141,7 +154,7 @@ const breadcrumb = [
         }
       </ol>
       <div class="section-cta">
-        <LaunchCta as="link" />
+        <LaunchCta as="link" locale={locale} />
       </div>
     </section>
 
@@ -169,7 +182,7 @@ const breadcrumb = [
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Good to know</h2>
+      <h2 class="section-title">{ui.goodToKnow}</h2>
       <div class="faq-list">
         {
           event.faq.map((f) => (
@@ -183,12 +196,12 @@ const breadcrumb = [
     </section>
 
     <section class="section wrap">
-      <h2 class="section-title">Planning something else?</h2>
+      <h2 class="section-title">{ui.planningSomethingElse}</h2>
       <ul class="tiles">
         {
           others.map((o) => (
             <li>
-              <a class="tile tile-link" href={eventHref(o)}>
+              <a class="tile tile-link" href={localEventHref(locale, o.slug)}>
                 <Icon class="tile-icon" name={o.icon} />
                 <span>{o.name}</span>
               </a>
@@ -205,26 +218,22 @@ const breadcrumb = [
           <p>{event.success}</p>
           <p class="closer-stakes">{event.stakes}</p>
         </div>
-        <LaunchCta as="form" />
+        <LaunchCta as="form" locale={locale} />
       </div>
     </section>
   </main>
-
-  <SiteFooter base={`/${event.slug}/`} />
+  <SiteFooter locale={locale} base={base} />
 </Base>
 
 <style>
-  /* Headlines here run longer than the home page's, so a step smaller. */
   h1 {
     font-size: clamp(2.75rem, 6.6vw, 4.75rem);
   }
 
-  /* Keeps a hyphenated word like "send-off" from breaking across headline lines. */
   .nowrap {
     white-space: nowrap;
   }
 
-  /* ---- The themed hero: a full-bleed photo behind the header and copy ---- */
   .hero-photo {
     position: absolute;
     inset: 0;
@@ -232,16 +241,13 @@ const breadcrumb = [
     height: 100%;
     object-fit: cover;
     object-position: center;
+    z-index: 0;
   }
 
-  /* The scrim: a near-opaque veil over the photo so the copy reads in both themes.
-     Dark: a dark veil (the page is near-black, so it blends). Light: a light veil so the
-     photo warms the top of the page while black text stays clear. */
   .hero-scrim {
     position: absolute;
     inset: 0;
-    /* Strength comes from the event's data (inline --scrim-light / --scrim-dark): a bright
-       photo asks for a heavier veil so the headline reads. */
+    z-index: 1;
     background: linear-gradient(180deg, rgba(246, 247, 249, var(--scrim-light, 0.9)) 0%, rgba(246, 247, 249, calc(var(--scrim-light, 0.9) * 0.7)) 55%, rgba(246, 247, 249, 0) 100%);
   }
 
@@ -255,53 +261,31 @@ const breadcrumb = [
     background: linear-gradient(180deg, rgba(11, 12, 14, var(--scrim-dark, 0.82)) 0%, rgba(11, 12, 14, calc(var(--scrim-dark, 0.82) * 0.62)) 55%, rgba(11, 12, 14, 0) 100%);
   }
 
-  /* The photo is behind everything; the scrim and copy sit above it. The header comes
-     from SiteHeader.astro (its own scope), so it's targeted with :global. */
-  .hero-photo {
-    z-index: 0;
-  }
-  .hero-scrim {
-    z-index: 1;
-  }
-  /* The section is positioned so the absolute photo and scrim are contained by the
-     hero band instead of the page's top (the initial containing block) — that would
-     cover the header and the first section below the hero. */
   .site-hero {
     position: relative;
-  }
-
-  /* The copy sits above the photo. */
-  .site-hero > .wrap {
-    position: relative;
-    z-index: 2;
-  }
-  .site-hero :global(header.topbar) {
-    position: relative;
-    z-index: 2;
-  }
-
-  /* Room for the header above the copy; the photo fills the whole band. */
-  .site-hero {
     padding-top: 0;
     padding-bottom: 64px;
   }
+
   @media (min-width: 900px) {
     .site-hero {
       padding-bottom: 88px;
     }
   }
 
-  /* The header's brand and links keep their global.css colours; nothing to override. */
+  .site-hero > .wrap {
+    position: relative;
+    z-index: 2;
+  }
 
-  /* The mock card keeps its solid surface so it reads on the photo in either theme. */
+  .site-hero :global(header.topbar) {
+    position: relative;
+    z-index: 2;
+  }
+
   .event {
     position: relative;
     z-index: 2;
-    backdrop-filter: none;
-  }
-
-  /* The event mock: an event of this type in the planning stage. */
-  .event {
     margin: 0;
     background: var(--surface);
     border: 1px solid var(--hairline);
@@ -363,7 +347,6 @@ const breadcrumb = [
     gap: 8px;
   }
 
-  /* A result bar behind each option, as wide as its share. Track and leader as in the app (#147). */
   .poll-options li {
     display: flex;
     justify-content: space-between;
@@ -406,7 +389,6 @@ const breadcrumb = [
     margin-right: 10px;
   }
 
-  /* Today, crossed out, against one event. */
   .today-grid {
     display: grid;
     gap: 16px 48px;
@@ -430,7 +412,6 @@ const breadcrumb = [
     color: var(--text-secondary);
   }
 
-  /* The icon is a child component, so the rule reaches it through the list. */
   .today-list :global(.today-icon) {
     width: 22px;
     height: 22px;
