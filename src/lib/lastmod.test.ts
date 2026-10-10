@@ -9,6 +9,12 @@ describe("pageSources", () => {
     expect(pageSources("/terms/")).toEqual(["src/pages/terms.astro", "src/data/terms.ts"]);
   });
 
+  it("knows the files a localized page is written in", () => {
+    expect(pageSources("/fr/trips/")).toEqual(["src/pages/[locale]/[event].astro", "src/data/events.ts", "src/data/copy/fr.ts"]);
+    expect(pageSources("/da/")).toEqual(["src/pages/index.astro", "src/data/events.ts", "src/data/copy/da.ts"]);
+    expect(pageSources("/fr/privacy/")).toEqual(["src/pages/privacy.astro", "src/data/privacy.ts", "src/data/copy/fr.ts"]);
+  });
+
   it("has nothing for a page it doesn't know", () => {
     expect(pageSources("/nope/")).toEqual([]);
   });

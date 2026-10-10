@@ -19,8 +19,9 @@ interface Props {
 const { locale = "en", base = "/" } = Astro.props;
 const ui = uiCopy(locale);
 const list = localEvents(locale);
-const privacyHref = localizedPath(locale, "/privacy/");
-const termsHref = localizedPath(locale, "/terms/");
+// The legal pages are English-only, so the footer always links to the English versions.
+const privacyHref = "/privacy/";
+const termsHref = "/terms/";
 ---
 
 <footer class="footer">
