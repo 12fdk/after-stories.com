@@ -174,7 +174,7 @@ export const PRIVACY_HTML = `
 <hr>
 
 <article id="en" lang="en">
-<h1>AFTER privacy policy</h1>
+<h2>AFTER privacy policy</h2>
 <p class="meta">Last updated ${PRIVACY_UPDATED_EN}</p>
 <p>It covers the app AFTER and the website after-stories.com. What applies only to the website is under <a href="#en-web">The website after-stories.com</a>.</p>
 
