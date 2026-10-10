@@ -899,7 +899,7 @@ const copy: Copy = {
       },
       "youth-sports": {
         name: 'Deportes juveniles',
-        title: 'Planificador de temporada y equipo juvenil | After Stories',
+        title: 'Carpool y planificador de equipo juvenil | After Stories',
         description: 'Planifiquen la temporada del equipo: voten el carpool y el día de partido, compártanlo en un hilo privado y guarden las fotos de todos. Se elimina en 48 horas.',
         headline: [
           'Planifiquen la temporada.',

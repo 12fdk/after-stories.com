@@ -899,7 +899,7 @@ const copy: Copy = {
       },
       "youth-sports": {
         name: 'Jugendsport',
-        title: 'Jugendsport-Planer | After Stories',
+        title: 'Jugendsport-Fahrgemeinschaft & Team-Planer | After Stories',
         description: 'Plant die Teamsaison: Stimm über Fahrgemeinschaft und Spieltag ab, teilt alles in einem Stream und speichert die Fotos – nach 48 Stunden ist alles weg.',
         headline: [
           'Plant die Teamsaison.',

@@ -899,7 +899,7 @@ const copy: Copy = {
       },
       "youth-sports": {
         name: 'Sport des jeunes',
-        title: 'Planificateur d\'équipe de jeunes | After Stories',
+        title: 'Covoiturage et plan d\'équipe de jeunes | After Stories',
         description: 'Planifiez la saison de l\'équipe ensemble : votez sur le covoiturage et le jour de match, partagez dans un seul fil privé et sauvegardez les photos de tous.',
         headline: [
           'Organisez la saison.',

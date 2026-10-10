@@ -899,7 +899,7 @@ const copy: Copy = {
       },
       "youth-sports": {
         name: 'Hold­sport',
-        title: 'Planlægger til ungdomsfodbold og hold | After Stories',
+        title: 'Fælleskørsel og planlægger til ungdomshold | After Stories',
         description: 'Planlæg sæsonen med holdet: stem om sælgekørsel og kampdag, del den i én privat strøm og gem alle billeder. Væk 48 timer efter.',
         headline: [
           'Planlæg holdsæsonen.',
