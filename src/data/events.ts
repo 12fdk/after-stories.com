@@ -952,6 +952,253 @@ export const events: EventType[] = [
       "Come home with every photo from every phone, the photo of the weekend and the line of the reunion, without anyone making an album.",
     stakes: "Or plan it in the family group chat again, and keep asking for those photos all year.",
   },
+  {
+    slug: "youth-sports",
+    name: "Youth sports",
+    icon: "Goal",
+    title: "Youth Sports & Team Planner | After Stories",
+    description:
+      "Plan the team season together: vote on the carpool and the game day, share it in one private stream, and save everyone's photos. Gone 48 hours after.",
+    headline: ["Plan the team season.", "Sort the carpool for good."],
+    lede: "Parents of twelve players, one carpool that won't fit and a season of game days. Put the plan in one private event: who drives with who, which pitch, who brings what. Save the photos before the whole thing disappears.",
+    fineprint: "For iPhone. Parents without one join from the web.",
+    hero: {
+      src: "/hero-youth-sports.webp",
+      alt: "An empty youth soccer field at golden hour with a goal and training cones on the grass, team bags on the sideline",
+    },
+    mock: {
+      title: "U10 Saturday match",
+      people: 18,
+      question: "Who drives the carpool?",
+      options: [
+        { label: "Two cars, split 6 and 6", votes: 9 },
+        { label: "One van, 12 in", votes: 5 },
+        { label: "Three cars", votes: 4 },
+      ],
+      decided: ["Saturday 10:30, pitch 3", "Coaches bring the cones"],
+    },
+    todayTitle: "Eighteen parents, one carpool, and the plan is in a team chat.",
+    problem:
+      "Who drives with who, who's forgotten the kit, who has the spare keys — all buried in a team chat with a hundred messages. Planning a game day shouldn't be the second job nobody signed up for.",
+    today: [
+      { icon: "Car", text: "A carpool that doesn't fit twelve" },
+      { icon: "CalendarX", text: "A game day nobody confirmed" },
+      { icon: "MessageCircle", text: "“who's bringing the cones?” buried" },
+      { icon: "ImageOff", text: "The photo of the match, on a parent's phone" },
+    ],
+    todayOne: "One game.",
+    todayText:
+      "The carpool, the pitch and every photo of the match, in one place that's gone 48 hours later.",
+    howTitle: "From the carpool to the final whistle.",
+    empathy:
+      "We've all been the parent chasing who's driving and who's forgotten the kit. After Stories keeps the plan in one place, so you get to be at the sideline instead of running the carpool.",
+    beats: [
+      {
+        when: "Before",
+        name: "Sort the carpool",
+        text: "Who drives with who, which pitch, who brings what. Every vote becomes a decision on top of the event, so nobody scrolls back to find who's picking up.",
+      },
+      {
+        when: "During",
+        name: "One stream for the match",
+        text: "“Two minutes late”, the warm-up photos, who's on the field. Everyone in the group sees it, and nobody has to forward anything.",
+      },
+      {
+        when: "The next day",
+        name: "Save the photos, let the chat go",
+        text: "Everyone gets the story of the match and saves every photo with one tap. 48 hours after, the event is deleted for everyone.",
+      },
+    ],
+    occasionsTitle: "Every kind of team day.",
+    occasions: [
+      { icon: "Goal", name: "Weekend match" },
+      { icon: "Volleyball", name: "Practice" },
+      { icon: "RugbyBall", name: "Tournament day" },
+      { icon: "Trophy", name: "Season opener" },
+      { icon: "Medal", name: "Season finale" },
+      { icon: "Flag", name: "Tournament weekend" },
+      { icon: "SportShoe", name: "Friendly" },
+    ],
+    privacyTitle: "Only the parents and coaches who are there.",
+    faq: [
+      {
+        q: "Can a whole team join one event?",
+        a: "Up to 50 people per event. That fits most teams and their parents, from a youth squad to a club's home fixture.",
+      },
+      after48,
+      nonIphone,
+    ],
+    closer: "The next match, with the carpool sorted.",
+    success:
+      "A game day where the carpool just worked, the plan sat on top of one event, and the next morning every photo of the match is on everyone's phone.",
+    stakes: "Or plan it in the team chat again, and keep asking who's driving all season.",
+  },
+  {
+    slug: "recital",
+    name: "School recital",
+    icon: "Music",
+    title: "School Recital & Show Planner | After Stories",
+    description:
+      "Plan the recital or show night together: vote on seats and who brings what, share it in one stream, and save everyone's photos. Gone 48 hours after.",
+    headline: ["Plan the show night together.", "Everyone gets the photos."],
+    lede: "Parents, grandparents and a dozen people who can't all fit. Vote on seats and who brings what, share the show in one private stream, and get every photo of the performance before it disappears.",
+    fineprint: "For iPhone. Family without one joins from the web.",
+    hero: {
+      src: "/hero-show-night.webp",
+      alt: "An empty stage in a warm community hall with a microphone and a music stand under a soft spotlight, rows of empty seats behind",
+    },
+    mock: {
+      title: "Spring recital",
+      people: 15,
+      question: "Where do we sit?",
+      options: [
+        { label: "Two front rows", votes: 8 },
+        { label: "The back, closer to the door", votes: 4 },
+        { label: "One table", votes: 3 },
+      ],
+      decided: ["Friday 18:00", "Grandma and uncle drive"],
+    },
+    todayTitle: "Fifteen people, one show, and the seats are still undecided.",
+    problem:
+      "Who's driving grandma, who has the spare ticket, who's taking photos of who, all across the family group chat. Show night should be about the performance, not the logistics.",
+    today: [
+      { icon: "CalendarX", text: "A date half the family can't make" },
+      { icon: "Ticket", text: "Who has the spare seats?" },
+      { icon: "Image", text: "The best photo, on someone else's phone" },
+      { icon: "Car", text: "Who's driving grandma?" },
+    ],
+    todayOne: "One show.",
+    todayText:
+      "The seats, the carpool and every photo of the performance, in one place that's gone 48 hours later.",
+    howTitle: "From the seats to the bow.",
+    empathy:
+      "We've all been the parent who ends up the show-night coordinator. After Stories keeps the plan in one place, so you get to enjoy the performance you arranged.",
+    beats: [
+      {
+        when: "Before",
+        name: "Pick the seats",
+        text: "Where to sit, who drives, who brings what. Every vote becomes a decision on top of the event, so the family can stop asking the same question.",
+      },
+      {
+        when: "During",
+        name: "One stream for the show",
+        text: "“Two rows back”, the curtain-up photo, the bows. Everyone's photos land in the same place as they're taken.",
+      },
+      {
+        when: "The next day",
+        name: "Everyone gets the photos",
+        text: "A summary of the night and every photo of the performance, saved to each person's phone with one tap.",
+      },
+    ],
+    occasionsTitle: "Every kind of performance night.",
+    occasions: [
+      { icon: "Music", name: "Music recital" },
+      { icon: "Guitar", name: "School concert" },
+      { icon: "Drama", name: "Drama production" },
+      { icon: "MicVocal", name: "Dance showcase" },
+      { icon: "Sparkles", name: "Choir concert" },
+      { icon: "Clapperboard", name: "Theatre night" },
+      { icon: "Award", name: "Prize giving" },
+    ],
+    privacyTitle: "Only the family who came.",
+    faq: [
+      {
+        q: "Can grandparents and other family join?",
+        a: "Yes. Anyone with the invite link can join. Family with an iPhone use the app, everyone else joins from the web.",
+      },
+      {
+        q: "How many people can join?",
+        a: "Up to 50 per event. That fits most families and the grandparents who come to watch.",
+      },
+      nonIphone,
+      after48,
+    ],
+    closer: "The next show, planned in minutes.",
+    success:
+      "A show night where the seats and the carpool just worked, and the next morning every photo of the performance is on everyone's phone.",
+    stakes: "Or plan it in the family chat again, and miss the photo of the bows.",
+  },
+  {
+    slug: "fundraiser",
+    name: "Charity event",
+    icon: "Flag",
+    title: "Charity & Fundraiser Event Planner | After Stories",
+    description:
+      "Plan the charity event or 5k together: vote on the shifts and the tables, share the day in one stream, and save everyone's photos. Gone 48 hours after.",
+    headline: ["Plan the fundraiser together.", "Save the photos, drop the chat."],
+    lede: "A start line, a dozen volunteers and a hundred things to sort. Put the plan in one private event: the shifts, the tables, the route. Save the photos before the whole thing disappears.",
+    fineprint: "For iPhone. Volunteers without one join from the web.",
+    hero: {
+      src: "/hero-fundraiser.webp",
+      alt: "The start line of an outdoor charity 5k in a park, a start arch and a timing scoreboard, cones and a banner on the grass",
+    },
+    mock: {
+      title: "The 5k fundraiser",
+      people: 22,
+      question: "Who runs the aid station?",
+      options: [
+        { label: "Volunteers A", votes: 8 },
+        { label: "Volunteers B", votes: 6 },
+        { label: "Rotating teams", votes: 5 },
+      ],
+      decided: ["Saturday 9:00", "Route checked, 5k"],
+    },
+    todayTitle: "Twenty-two volunteers, one event, and the plan is in a group chat.",
+    problem:
+      "Who's on which shift, who's bringing the water, where the start line is, all scattered across a group chat nobody has time to scroll. A fundraiser should be about the cause, not the coordination.",
+    today: [
+      { icon: "CalendarX", text: "A start time nobody confirmed" },
+      { icon: "Users", text: "A volunteer list that's out of date" },
+      { icon: "MapPin", text: "The route and start line, buried" },
+      { icon: "ImageOff", text: "The photos of the day, on nobody's phone" },
+    ],
+    todayOne: "One event.",
+    todayText:
+      "The shifts, the route and every photo of the day, in one place that's gone 48 hours later.",
+    howTitle: "From the first shift to the photos.",
+    empathy:
+      "We've all been the one sorting volunteers and chasing who's on which shift. After Stories keeps the plan in one place, so you get to spend the day on the cause.",
+    beats: [
+      {
+        when: "Before",
+        name: "Sort the shifts",
+        text: "Who's on which table, who's bringing what, where the start line is. Every vote becomes a decision on top of the event, so the volunteers can stop asking.",
+      },
+      {
+        when: "During",
+        name: "One stream for the day",
+        text: "“Two more minutes”, the start-line photos, where the next table is. Everyone in the group sees it as it happens.",
+      },
+      {
+        when: "The next day",
+        name: "Save the photos, let the chat go",
+        text: "Everyone gets the story of the day and saves every photo with one tap. 48 hours after, the event is deleted for everyone.",
+      },
+    ],
+    occasionsTitle: "Every kind of community event.",
+    occasions: [
+      { icon: "Flag", name: "The 5k" },
+      { icon: "Heart", name: "Fundraiser" },
+      { icon: "Users", name: "Community clean-up" },
+      { icon: "Sun", name: "Open day" },
+      { icon: "Music", name: "Charity concert" },
+      { icon: "Star", name: "Awareness walk" },
+      { icon: "Coffee", name: "Market morning" },
+    ],
+    privacyTitle: "Only the people who helped.",
+    faq: [
+      {
+        q: "Can a big group of volunteers join?",
+        a: "Up to 50 people per event. That fits most charity events and volunteer teams, from a 5k to a community clean-up.",
+      },
+      after48,
+      nonIphone,
+    ],
+    closer: "The next fundraiser, without the group chat.",
+    success:
+      "A day where the shifts just worked, the plan sat on top of one event, and the next morning every photo of the event is on everyone's phone.",
+    stakes: "Or plan it in the group chat again, and keep chasing the volunteers all year.",
+  },
 ];
 
 export const eventHref = (e: EventType) => `/${e.slug}/`;
