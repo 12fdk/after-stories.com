@@ -16,6 +16,14 @@ describe("event pages", () => {
     expect(e.beats).toHaveLength(3);
   });
 
+  // The hero mock shows a poll still open. Every poll is single-choice, and one that everyone
+  // has voted in decides itself and leaves the stream (app repo, product.md › Polls), so the
+  // votes must add up to fewer than the people in the event (#53).
+  it.each(events.map((e) => [e.slug, e] as const))("%s shows a poll that can still be open", (_, e) => {
+    const votes = e.mock.options.reduce((sum, o) => sum + o.votes, 0);
+    expect(votes).toBeLessThan(e.mock.people);
+  });
+
   it.each(events.map((e) => [e.slug, e] as const))("%s speaks as the guide", (_, e) => {
     expect(e.empathy).toMatch(/^We've all /);
     expect(e.empathy).toContain("After Stories");
