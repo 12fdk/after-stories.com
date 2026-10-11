@@ -4,35 +4,42 @@
 // Field copy lives in waitlist.ts so it can be tested, and so it never includes an @ (Cloudflare
 // email obfuscation rewrites those strings in the HTML).
 import { FIELD_ERRORS } from "../lib/waitlist";
+import { uiCopy, type Locale } from "../lib/i18n";
 
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+const ui = uiCopy(locale);
 const source = Astro.url.pathname;
 const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
 <form class="notify" data-notify data-source={source} novalidate aria-labelledby={`${id}-title`}>
-  <p class="notify-title" id={`${id}-title`}>Get an email when we launch</p>
+  <p class="notify-title" id={`${id}-title`}>{ui.formTitle}</p>
   <div class="notify-fields">
     <div class="field">
-      <label for={`${id}-name`}>Name</label>
+      <label for={`${id}-name`}>{ui.formName}</label>
       <input id={`${id}-name`} name="name" type="text" autocomplete="given-name" maxlength="80" required aria-describedby={`${id}-name-error`} />
       <p class="field-error" id={`${id}-name-error`} hidden>{FIELD_ERRORS.name}</p>
     </div>
     <div class="field">
-      <label for={`${id}-email`}>Email</label>
+      <label for={`${id}-email`}>{ui.formEmail}</label>
       <input id={`${id}-email`} name="email" type="email" autocomplete="email" inputmode="email" maxlength="254" required aria-describedby={`${id}-email-error`} />
       <p class="field-error" id={`${id}-email-error`} hidden>{FIELD_ERRORS.email}</p>
     </div>
     <!-- A honeypot for bots. People never see or reach it. -->
     <div class="trap" aria-hidden="true">
-      <label for={`${id}-website`}>Website</label>
+      <label for={`${id}-website`}>{ui.formWebsite}</label>
       <input id={`${id}-website`} name="website" type="text" tabindex="-1" autocomplete="off" />
     </div>
-    <button class="pill" type="submit">Notify me</button>
+    <button class="pill" type="submit">{ui.formSubmit}</button>
   </div>
   <p class="notify-error" data-status role="status"></p>
   <p class="notify-note">
-    We'll email you to confirm, then once when After Stories is in the App Store. Nothing else.{" "}
-    <a href="/privacy/">Privacy policy</a>
+    {ui.formNote}{" "}
+    <a href="/privacy/">{ui.formNoteLink}</a>
   </p>
 </form>
 
@@ -69,7 +76,7 @@ const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
       }
 
       button.disabled = true;
-      button.textContent = "Sending…";
+      button.textContent = ui.formSending;
       const outcome = await submit(signup);
 
       if (outcome === "saved") {
@@ -82,14 +89,14 @@ const id = `notify-${Math.random().toString(36).slice(2, 8)}`;
         form.replaceChildren(
           Object.assign(document.createElement("p"), {
             className: "notify-done",
-            textContent: `You're on the list. We'll send ${signup.email} an email to confirm, and one more when After Stories launches.`,
+            textContent: ui.formDone.replace("{email}", signup.email),
           }),
         );
         form.setAttribute("role", "status");
         return;
       }
       button.disabled = false;
-      button.textContent = "Notify me";
+      button.textContent = ui.formSubmit;
       status.textContent = messages[outcome];
     });
   }

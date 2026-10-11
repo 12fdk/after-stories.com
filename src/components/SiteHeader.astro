@@ -1,24 +1,29 @@
 ---
 import LaunchCta from "./LaunchCta.astro";
+import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 
 // StoryBrand: the direct call to action in the header, next to the transitional "How it works".
 interface Props {
+  /** The page's locale; defaults to English (the base, unprefixed pages). */
+  locale?: Locale;
   /** Where the header's "Get notified" goes. Pages without the form point at the home page's. */
   notifyHref?: string;
 }
 
-const { notifyHref = "#notify" } = Astro.props;
+const { locale = "en", notifyHref = "#notify" } = Astro.props;
+const ui = uiCopy(locale);
+const homeHref = localizedPath(locale, "/");
 ---
 
 <header class="topbar wrap">
   <!-- The icon is the logo, so it needs the brand name. The wordmark is hidden from
        assistive tech so the link is announced once: "After Stories home". -->
-  <a class="brand" href="/" aria-label="After Stories home">
+  <a class="brand" href={homeHref} aria-label="After Stories home">
     <img src="/apple-touch-icon.png" alt="After Stories" width="36" height="36" />
     <span aria-hidden="true">After Stories</span>
   </a>
   <nav class="topbar-nav" aria-label="Main">
-    <a class="topbar-link" href="/#how">How it works</a>
-    <LaunchCta as="link" size="small" href={notifyHref} />
+    <a class="topbar-link" href={`${homeHref}#how`}>{ui.navHowItWorks}</a>
+    <LaunchCta as="link" size="small" href={notifyHref} locale={locale} />
   </nav>
 </header>

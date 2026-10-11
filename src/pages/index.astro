@@ -7,6 +7,8 @@ import Icon from "../components/Icon.astro";
 import LakePhoto from "../components/LakePhoto.astro";
 import { events, eventHref } from "../data/events";
 import { homeDescription, homeFaq as faq, homeTitle } from "../data/home";
+import { hreflangAlternates } from "../lib/i18n";
+import { SITE_URL } from "../lib/seo";
 
 // Copy and structure: docs/positioning.md › The landing page.
 const title = homeTitle;
@@ -271,7 +273,7 @@ const useCases = events;
     </section>
   </main>
 
-  <SiteFooter />
+  <SiteFooter base="/" />
 </Base>
 
 <style>

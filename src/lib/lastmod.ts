@@ -1,18 +1,31 @@
 import { execFileSync } from "node:child_process";
 import { events } from "../data/events";
+import { basePath, DEFAULT_LOCALE, locales, type Locale } from "./i18n";
 
 // When each page's content last changed: the last commit that touched the files it is written
 // in. Used for the sitemap's <lastmod> and the page's dateModified (#30). The build time would
 // mark every page as changed on every deploy, and search engines learn to ignore a lastmod
 // like that. The deploy checks out the full history so `git log` can see it.
 
-/** The files a page's content is written in, by its path. */
+/** The locale a path lives in (/fr/trips/ -> "fr"); English for everything else. */
+function localeOf(path: string): Locale {
+  const seg = path.split("/")[1];
+  return (locales as string[]).includes(seg) ? (seg as Locale) : DEFAULT_LOCALE;
+}
+
+/** The files a page's content is written in, by its path (locale-aware). */
 export function pageSources(path: string): string[] {
-  if (path === "/") return ["src/pages/index.astro", "src/data/events.ts"];
-  if (path === "/privacy/") return ["src/pages/privacy.astro", "src/data/privacy.ts"];
-  if (path === "/terms/") return ["src/pages/terms.astro", "src/data/terms.ts"];
-  const slug = path.replace(/^\/|\/$/g, "");
-  if (events.some((e) => e.slug === slug)) return ["src/pages/[event].astro", "src/data/events.ts"];
+  const locale = localeOf(path);
+  const copy = locale === DEFAULT_LOCALE ? [] : [`src/data/copy/${locale}.ts`];
+  // Strip the locale prefix: /fr/trips/ -> /trips/
+  const bare = basePath(path);
+  if (bare === "/") return ["src/pages/index.astro", "src/data/events.ts", ...copy];
+  if (bare === "/privacy/") return ["src/pages/privacy.astro", "src/data/privacy.ts", ...copy];
+  if (bare === "/terms/") return ["src/pages/terms.astro", "src/data/terms.ts", ...copy];
+  const slug = bare.replace(/^\/|\/$/g, "");
+  const eventPage =
+    locale === DEFAULT_LOCALE ? "src/pages/[event].astro" : "src/pages/[locale]/[event].astro";
+  if (events.some((e) => e.slug === slug)) return [eventPage, "src/data/events.ts", ...copy];
   return [];
 }
 

@@ -1,0 +1,458 @@
+---
+import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
+import LaunchCta from "../../components/LaunchCta.astro";
+import Icon from "../../components/Icon.astro";
+import LakePhoto from "../../components/LakePhoto.astro";
+import {
+  locales,
+  localeTag,
+  localEvents,
+  localEventHref,
+  hreflangAlternates,
+  homeCopy,
+  uiCopy,
+  defaultPrivacyFor,
+  type Locale,
+} from "../../lib/i18n";
+import { SITE_URL } from "../../lib/seo";
+
+export function getStaticPaths() {
+  return locales
+    .filter((l) => l !== "en")
+    .map((locale) => ({ params: { locale }, props: { locale: locale as Locale } }));
+}
+
+const { locale } = Astro.props as { locale: Locale };
+const h = homeCopy(locale);
+const ui = uiCopy(locale);
+const events = localEvents(locale);
+
+// The morning-after summary is an app-UI demo (structural, English in every locale).
+const decided = [
+  { when: "Fri", what: "Lake house, Hallstatt" },
+  { when: "Sat 13:00", what: "Hike to the waterfall" },
+  { when: "Sat 20:00", what: "Fondue at Maya's place" },
+];
+const chats = h.chats ?? [];
+const path = `/${locale}/`;
+---
+
+<Base
+  locale={locale}
+  title={h.title}
+  description={h.description}
+  imageAlt={h.hero.h1.join(" ")}
+  hreflang={hreflangAlternates(SITE_URL, "/", true)}
+>
+  <SiteHeader locale={locale} />
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>
+            {h.hero.h1.map((line) => <span class="line">{line}</span>)}
+          </h1>
+          <p class="lede">{h.hero.lede}</p>
+          <div class="cta">
+            <LaunchCta as="link" locale={locale} />
+            <p class="fineprint">{h.hero.fineprint}</p>
+          </div>
+        </div>
+
+        <figure class="summary" aria-label="Example of the morning-after summary for a weekend away">
+          <div class="summary-head">
+            <svg class="sun" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="4.5" />
+              <g stroke-width="2" stroke-linecap="round">
+                <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" />
+              </g>
+            </svg>
+            <div>
+              <p class="summary-kicker">The morning after</p>
+              <p class="summary-title">Lake house weekend</p>
+            </div>
+          </div>
+
+          <div class="best-photo" role="img" aria-label="The most-liked photo: the group on the jetty at sunset">
+            <LakePhoto />
+            <span class="best-badge">Photo of the trip <span aria-label="9 likes">❤️ 9</span></span>
+          </div>
+
+          <blockquote class="best-line">
+            <p>“Who packed the fondue set but no cheese?”</p>
+            <footer>
+              <span class="who"><span class="avatar" style="--tile:var(--tile-puked)" aria-hidden="true">J</span>Jonas</span>
+              <span aria-label="7 likes">❤️ 7</span>
+            </footer>
+          </blockquote>
+
+          <div>
+            <p class="mini-label">What you decided</p>
+            <ol class="timeline">
+              {decided.map((d) => (
+                <li><time>{d.when}</time><span>{d.what}</span></li>
+              ))}
+            </ol>
+          </div>
+
+          <span class="pill pill-block" aria-hidden="true">
+            <svg class="save-icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19.5h14" />
+            </svg>
+            Save all 214 photos
+          </span>
+          <p class="summary-foot">Disappears in 47 hours</p>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{h.pain.title}</h2>
+      <p class="section-intro">{h.pain.intro}</p>
+      <div class="pain-grid">
+        {chats.map((c) => (
+          <figure class="chat" aria-label={c.label}>
+            {c.messages.map((m, i) =>
+              i === 0 ? (
+                <div class="msg msg-mine">
+                  <p class="bubble">
+                    <span class="visually-hidden">{m.who}: </span>
+                    {m.text}
+                  </p>
+                </div>
+              ) : (
+                <div class="msg">
+                  <span class="avatar" style={`--tile:var(--tile-${i === 1 ? "puked" : "drink"})`} aria-hidden="true">
+                    {m.who[0]}
+                  </span>
+                  <div>
+                    <p class="msg-who">{m.who}</p>
+                    <p class="bubble">{m.text}</p>
+                  </div>
+                </div>
+              )
+            )}
+            <figcaption class="chat-meta">{c.meta}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+    <section id="how" class="section wrap">
+      <h2 class="section-title">{h.how.title}</h2>
+      <p class="section-intro">{h.how.intro}</p>
+      <ol class="steps">
+        {h.how.beats.map((b) => (
+          <li class="step">
+            <p class="step-when">{b.when}</p>
+            <h3>{b.name}</h3>
+            <p>{b.text}</p>
+          </li>
+        ))}
+      </ol>
+      <div class="section-cta">
+        <LaunchCta as="link" locale={locale} />
+      </div>
+    </section>
+
+    <section class="section wrap ends">
+      <p class="ends-number" aria-hidden="true">48h</p>
+      <div class="ends-copy">
+        <h2 class="section-title">{h.ends.title}</h2>
+        <p>{h.ends.text}</p>
+      </div>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{h.useCases}</h2>
+      <ul class="tiles">
+        {events.map((u) => (
+          <li>
+            <a class="tile tile-link" href={localEventHref(locale, u.slug)}>
+              <Icon class="tile-icon" name={u.icon} />
+              <span>{u.name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{h.promise}</h2>
+      <ul class="facts">
+        {defaultPrivacyFor(locale).map((f) => (
+          <li><strong>{f.title}</strong> {f.text}</li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="section wrap">
+      <h2 class="section-title">{h.goodToKnow}</h2>
+      <div class="faq-list">
+        {h.faq.map((f) => (
+          <details>
+            <summary>{f.q}</summary>
+            <p>{f.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+
+    <section class="closer">
+      <div class="wrap closer-inner">
+        <h2>{h.closer.title}</h2>
+        <div class="closer-story">
+          <p>{h.closer.story}</p>
+          <p class="closer-stakes">{h.closer.stakes}</p>
+        </div>
+        <LaunchCta as="form" locale={locale} />
+      </div>
+    </section>
+  </main>
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  /* The morning-after summary: a mock of the summary screen. */
+  .summary {
+    margin: 0;
+    background: var(--surface);
+    border: 1px solid var(--hairline);
+    border-radius: 32px;
+    padding: 20px;
+    display: grid;
+    gap: 18px;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.04) inset,
+      0 40px 90px -40px rgba(255, 45, 111, 0.45);
+    max-width: 420px;
+    width: 100%;
+    justify-self: center;
+  }
+
+  .summary-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 4px 4px 0;
+  }
+
+  .sun {
+    flex: none;
+    width: 34px;
+    height: 34px;
+    fill: var(--pending, #ffb340);
+    stroke: var(--pending, #ffb340);
+  }
+
+  .summary-kicker {
+    color: var(--accent-ink);
+    font-weight: 700;
+    font-size: 0.8125rem;
+  }
+
+  .summary-title {
+    font-family: var(--display);
+    font-stretch: 85%;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1.05;
+  }
+
+  .best-photo {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    border-radius: 20px;
+    overflow: hidden;
+    /* Under the photo while it loads: the corner tone of /lakehouse.webp. */
+    background: #394655;
+  }
+
+  .best-badge {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(11, 12, 14, 0.55);
+    -webkit-backdrop-filter: blur(10px) saturate(1.4);
+    backdrop-filter: blur(10px) saturate(1.4);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--badge-ink);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .best-line {
+    margin: 0;
+    background: var(--surface-elevated);
+    border-radius: 18px 18px 18px 6px;
+    padding: 14px 16px;
+  }
+
+  .best-line p {
+    font-weight: 600;
+    font-size: 1.0625rem;
+    line-height: 1.4;
+  }
+
+  .best-line footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+    margin-top: 10px;
+  }
+
+  .who {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .mini-label {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    margin: 0 4px 8px;
+  }
+
+  /* Time and decision in two columns, so every row lines up. */
+  .timeline {
+    list-style: none;
+    margin: 0;
+    padding: 0 4px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 8px 16px;
+    font-size: 0.9375rem;
+  }
+
+  .timeline li {
+    display: contents;
+  }
+
+  .timeline time {
+    color: var(--accent-ink);
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .save-icon {
+    width: 20px;
+    height: 20px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .summary-foot {
+    text-align: center;
+    color: var(--text-tertiary);
+    font-size: 0.8125rem;
+    margin-top: -8px;
+  }
+
+  /* The pain: two group chats that went nowhere. */
+  .pain-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  }
+
+  .chat {
+    margin: 0;
+    background: var(--surface);
+    border-radius: var(--radius-card);
+    padding: 20px;
+    display: grid;
+    gap: 12px;
+  }
+
+  .msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  .avatar {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--tile);
+    color: var(--tile-ink);
+    font-size: 0.8125rem;
+    font-weight: 700;
+  }
+
+  .msg-who {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0 0 2px 14px;
+  }
+
+  .bubble {
+    background: var(--surface-elevated);
+    border-radius: 18px 18px 18px 6px;
+    padding: 8px 14px;
+    font-size: 0.9375rem;
+  }
+
+  /* Your own message: right-aligned in your bubble colour, tail on the right, no name or avatar. */
+  .msg-mine {
+    justify-content: flex-end;
+  }
+
+  .msg-mine .bubble {
+    background: var(--bubble-mine);
+    border-radius: 18px 18px 6px 18px;
+  }
+
+  .chat-meta {
+    color: var(--text-tertiary);
+    font-size: 0.8125rem;
+    text-align: right;
+  }
+
+  /* Then it's gone: the number in the headline cut, at poster size. */
+  .ends {
+    display: grid;
+    gap: 16px 56px;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .ends {
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  .ends-number {
+    font-family: var(--display);
+    font-stretch: 72%;
+    font-weight: 800;
+    font-size: clamp(5.5rem, 20vw, 11rem);
+    line-height: 0.85;
+    letter-spacing: -0.01em;
+    color: var(--accent-ink);
+  }
+
+  .ends-copy p {
+    margin-top: 20px;
+    color: var(--text-secondary);
+    max-width: 52ch;
+    font-size: 1.125rem;
+  }
+</style>
