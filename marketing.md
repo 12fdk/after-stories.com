@@ -35,19 +35,7 @@ Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 
   the decisions marked *Robert* in §9.
 - Moved here on 2026-10-15 from the app repo (`12fdk/after-stories/marketing.md`,
   now a pointer) so all three social apps keep their plan in the landing-page
-  repo, in the same sections (spark#136). Nothing was dropped. References like
-  "§5.6" in the text below use the OLD numbers; they map like this:
-
-  | Old | New |
-  |---|---|
-  | §0 Launch status | §2 |
-  | §1 The engine | §5 (format) and §3 (the non-negotiable rules) |
-  | §2 Series, §4 Production pipeline | §5 |
-  | §2.5 Look and sound, §3 Hashtags, §7 Guardrails | §3 |
-  | §5 Calendar and cadence | §4 |
-  | §5.5 Calendar hooks, §5.6 Episode queue | §6 |
-  | §6 Measurement | §7 (review) and §8 (post log) |
-
+  repo, in the same sections (spark#136). Nothing was dropped.
 - Pipeline: the nightly Hermes job `after-stories-social-content` (shared
   `social-post` template, channel **manual**) builds the next due §6 episode
   each night in the motion repo, checks its look with `marketing-post
@@ -85,11 +73,11 @@ Three rules that are not negotiable:
 - **New content, always (Robert, 2026-10-11):** every episode is a fresh shoot. Never reuse
   footage from a video that has been posted — a feed of reordered old clips reads as "the
   same content" and kills organic reach. Vary the film between episodes (place, light,
-  season, props, a different story beat) AND the music bed (§2.5) so each one reads as brand
-  new; the type stays the brand.
+  season, props, a different story beat) AND the music bed (§3 "Look, style and sound") so
+  each one reads as brand new; the type stays the brand.
 - **One video per episode (Robert, 2026-10-13):** make a single video per episode, not an
   A/B pair. Two cuts of one shoot may still exist as an A/B test, but the default — and the
-  nightly build (§5.6) — is one video.
+  nightly build (§6) — is one video.
 - **Truth (motion guideline §4):** every line on screen and in the post comes from the brand
   sources, verbatim or clearly paraphrased. No invented numbers, features, prices, dates or
   testimonials. `aiMedia: true` on every spec (the post file then starts with the AI-label
@@ -174,19 +162,22 @@ two of the same series back to back.
 #### Phase 1 — waitlist phase (now → launch)
 Goal: waitlist sign-ups + a recognizable presence, so launch day is not cold.
 
-**Production is queue-driven (since 2026-10-13):** one fresh episode per night, built by the
-nightly job (§5.6), ready by morning. Robert posts when he wants — the queue (§5.6) is the
-plan: series rotation (A → C → D → B → C → D …), fresh shoot per episode, music bed rotating
-(§4), all pre-launch ("Get notified") until launch is announced.
+**Production follows the dated plan (since 2026-10-15; queue-driven 2026-10-13 – 10-15):**
+the §6 plan has 3–4 rows per week. The nightly job builds the next DUE row — the first
+`queued` row whose week starts within 7 days — at most one per night, ready by morning.
+Robert posts when he wants; built episodes wait for him. The plan keeps the series
+rotation (two builds in a row never the same series), a fresh shoot per episode, the
+music bed rotating (§5), all pre-launch ("Get notified") until launch is announced.
 
-- **Calendar beats inside the queue:** office-events with the Christmas party hook posts by
-  ~Nov 14 (§5.5); family-reunion with the US Thanksgiving hook posts by ~Nov 22. The queue
-  keeps those in their right windows.
+- **Calendar beats are in the plan:** each row sits in the week before its moment (§6
+  calendar hooks) — e.g. office-events with the Christmas party hook in the week of Nov 2
+  (post by ~Nov 14), family-reunion with the US Thanksgiving hook in the week of Nov 16
+  (post by ~Nov 22).
 - **Re-check the CTA status weekly** — it flips to "Available on the App Store" the day
-  Robert says launch (§0 / Phase 2).
-- **Posted so far:** `as-moments` + corporate pair (Oct 8) · `as-trips-a` (Oct 12, posted) ·
-  `as-halloween-a/b` + `as-gone-a/b` (built Oct 12–13, ready to post). Nothing from any
-  posted shoot may be reused (§1 "New content, always").
+  Robert says launch (§2 / Phase 2).
+- **Posted so far:** see the §8 post log. Built but not yet posted episodes stay in §6 with
+  their `built …, ready` status until Robert posts them. Nothing from any posted shoot may
+  be reused (§3 "New content, always").
 
 #### Phase 2 — launch (App Store live)
 - Flip every end card to the download CTA the same day.
@@ -270,6 +261,34 @@ same, the subject changes.
 - Anything that implies a social network, a feed, or a following. We are a private app per event.
 - Hangover-porn content as a brand: light humour yes, "cheeky, never laddish".
 
+### Claim sheet — what each §6 feature may say (added 2026-10-15)
+
+Verbatim from the live site (home page, the use-case pages and `llms-full.txt`, read
+2026-10-15). Use these lines, not paraphrased numbers or promises. If a line here and the
+site disagree, the site wins.
+
+| Feature | Verbatim line(s) |
+|---|---|
+| Polls → decisions | "Polls that turn into decisions" · "Polls become decisions, jobs get a name, and it all stays on top in order." · "Put three evenings to a vote and the group picks one." |
+| Timeline | "A timeline of everything the group decided" · "It all sits on top of the event, so nobody asks again." |
+| One stream | "One private stream for messages and photos" · "One stream for the whole event" · "Tap ❤️ on the ones that matter." |
+| The morning after | "The morning-after summary: the most-liked photo, the line of the night, the decisions" · "Wake up to the story." · "Nobody had to make it." |
+| Save all photos | "Save every photo to your phone with one tap" · "Save every photo with one tap first." |
+| 48 h deletion (always after the save line) | "Deleted for everyone 48 hours after the event" · "Before that, everyone gets a reminder and can save all the photos to their own phone with one tap." · "You keep the memories. The app forgets the rest." · "What happens on the trip stays in the trip." |
+| Group size | "Up to 50 people per event" · "Up to 50. That fits most groups, from a handful of friends to a big party." |
+| Friends without an iPhone | "Friends without an iPhone join from the web." · "The invite link works for everyone." |
+| Privacy | "No feed, no followers, no strangers." · "Each event is its own private space." · "Never your location." · "Photos are stripped of GPS and camera data before upload." · "Sign in with Apple means no passwords." |
+| Office events | "Skip the 30 emails." · "No admins, no profiles, no feed." · "No work chat left behind." · "There are no company accounts, licences or admin settings." |
+| One event = one day | "One event covers one day and its night, until 6 the next morning." · "For a weekend away, make one event per day." |
+| Launch status | "Coming soon to the App Store for iPhone" · CTA "Get notified" (§2) |
+
+**Never claim:** a weekend or a whole festival in ONE event (multi-day is "not yet" —
+one event per day); an Android app (non-iPhone friends use the web); location sharing,
+maps or "find your friends"; a public feed, sharing out or a share of the summary to other
+apps; more than 50 people; that it works for weddings, big or public events; an "Add to
+calendar"; that photos are kept or backed up after 48 h; a launch date; any price ("free"
+included); any user count, rating, review or testimonial; a competitor by name.
+
 ### Production pipeline (per video)
 
 All production lives in the motion repo (`/workspace/motion`), via the `social-video` and
@@ -282,7 +301,7 @@ All production lives in the motion repo (`/workspace/motion`), via the `social-v
 2. **Shotlist** → `docs/<slug>.md` in the motion repo: platform, angle, hook (verbatim line +
    source), 4–6 shots of 2–4 s, which shots move (clip) and which are stills, and the fresh
    shoot's style line (which place/light/season/props this episode uses — different from the
-   last episode's, §1 "New content, always").
+   last episode's, §3 "New content, always").
 3. **Stills** (one per shot, one shared style, 9:16): `comfy-gen --aspect 9:16 --prompt "…"
    --prefix <slug>-s1 --copy-to /workspace/motion/assets/<slug>/` (~40 s each).
 4. **Clips** (only the moving shots, ≤ 5 per video): `comfy-gen --model ltx --image …
@@ -290,7 +309,7 @@ All production lives in the motion repo (`/workspace/motion`), via the `social-v
 5. **Spec** → `reels/<slug>.json`: brand skin (Anybody 800 @ 75 % width, accent `#FF2D6F` on
    `#0B0C0E`), `aiMedia: true`, `end.image` = the icon, `post` caption without hashtags,
    `hashtags` list, audio `bed: 'music'` (the warm groove; never the clicky `beat` bed) with
-   `clips: false` unless the clip sound is the idea (§2.5).
+   `clips: false` unless the clip sound is the idea (§3).
 6. **Render:** `motion-render -- npm --prefix remotion run --silent reel -- reels/<slug>.json`
    (~1 min). Fix ERROR lines; fix WARN lines where possible.
 7. **Verify** with ffprobe (1080×1920, 30 fps, h264, yuv420p) — never trust the renderer's PASS
@@ -303,10 +322,10 @@ All production lives in the motion repo (`/workspace/motion`), via the `social-v
 **One video per episode (since 2026-10-13):** the default is a single spec — the angle
 that fits the episode (problem-first, payoff-first or feature-twist), not a mandatory A/B
 pair. Two cuts of one shoot remain available as a deliberate A/B test when a hook is worth
-testing; the nightly build (§5.6) always makes one.
+testing; the nightly build (§6) always makes one.
 
 **The music bed rotates (since 2026-10-13):** set `audio.variant` (0–5) in the spec so no
-two episodes share a bed. Pick the next unused variant from the episode queue (§5.6); a
+two episodes share a bed. Take it from the Music variant column of the §6 plan; a
 variant may repeat only ≥ 6 episodes later. `bed` stays `music`, never `beat`.
 
 **Time budget:** ~45 s per still, 2–6 min per clip, ~1 min per cut. A full episode (6 shots,
@@ -314,94 +333,186 @@ variant may repeat only ≥ 6 episodes later. `bed` stays `music`, never `beat`.
 
 ## 6. Content plan
 
-### Calendar hooks — plan episodes against the calendar (added 2026-10-12)
+Plan period: week of Oct 19, 2026 – week of Feb 22, 2027 (next extension due by ~Feb 8, 2027).
+
+### Calendar hooks — the moments this plan piggybacks on (added 2026-10-12, rebuilt 2026-10-15)
 
 The calendar is the reach engine: a video posted into a real planning moment (people
-actually planning THAT event) outperforms a video about an event in general. Plan each
-episode ~1–3 weeks before the moment, post in the audience's evening, and let the hook
-name the moment in the site's own voice (the event-page lines already carry most of it —
-check the live page before writing).
+actually planning THAT get-together) outperforms a video about an event in general. Post
+~1–3 weeks before the group starts planning (often well before the date), post in the
+audience's evening, and let the hook name the moment in the site's own voice (the
+event-page lines already carry most of it — check the live page before writing).
 
-The app's use cases map to these moments (site pages in parentheses; multi-day moments
-work one event per day, per the site's FAQ):
+**The lens is the friend group** (and, second, colleagues): moments when a small group
+plans a get-together and then wants everyone's photos — up to 50 people, one day and its
+night per event. Moments that are about couples, weddings, big public crowds or one
+family's private ritual are left out or demoted (list below, and §9).
 
-| When (2026–27) | Moment | Episode (use case) | Angle |
-|---|---|---|---|
-| Now (late Oct) | Autumn day trips | trips | "A day away should be the easy part of having friends." (already live as as-trips) |
-| ~Oct 24 (post by Oct 28) | **Halloween** | nights-out | the costume party: where to meet, where next — "Piece it together tomorrow." |
-| ~Nov 10 (post by Nov 14) | **Office Christmas party planning** | office-events | "Stop planning the team party in Outlook, Doodle and 30 emails." (its own page, calmer register) |
-| ~Nov 19 (post by Nov 22) | **US Thanksgiving long weekend** (Thu Nov 26 + Black Friday) | family-reunion | the whole family, the photos on twelve phones; save every photo with one tap |
-| ~Nov 26 (post by Nov 29) | Ski season starts | trips | "Ski day" (site's trips page lists it); cold light, new film style |
-| ~Dec 24 (post by Dec 28) | **New Year's Eve** | nights-out | the night out with the biggest stakes of the year; the morning after carries it |
-| ~Dec 28–31 | New Year, winter trips | trips / dinner-nights | the easy January day away |
-| ~Feb 7 (post by Feb 11) | **Super Bowl LXI** watch party (Sun Feb 14, 2027) | dinners/party | friends planning the watch party: where, who brings what; "A poll becomes a decision." |
-| ~Feb 2 (post by Feb 5) | **Mardi Gras** (Tue Feb 9, 2027; niche, US) | nights-out / trips | optional; strong only for US audience data |
-| ~March 10 (post by March 13) | **St. Patrick's Day** (March 17, 2027) | nights-out | "The night out shouldn't need a project manager." (nights-out page) |
-| ~March 20 (post by March 24) | **Spring break** (Mar–Apr 2027) + Easter (Sat March 28, 2027; Denmark school week off) | trips / family-reunion | the spring weekend away; long weekend = one event per day |
-| ~May 3 (post by May 7) | **Graduation season** (May–June 2027) | graduation (own page) | the party of the year, the photos of the grad, the venue poll |
-| ~May 24 (post by May 28) | **Summer vacation starts** (Denmark schools out late May; US June) | trips | the summer day trip: beach day, boat trip (site chips) |
-| ~June 7 (post by June 11) | **Festival season** (June–July 2027) | festivals (own page) | tickets, meeting point, camp — "the chaos, the photos everywhere" |
-| ~August (before mid-August) | Football season kicks off (European + NFL 2027, Sep 2027) | match-day (own page) | "Plan match day with your teammates: sort the carpool." |
-| ~Oct 2027 | Halloween, autumn trips | nights-out / trips | the loop repeats every year |
+| Moment | Date | Post by | Use case (site page) | Angle | §6 rows |
+|---|---|---|---|---|---|
+| **Halloween** | Sat Oct 31, 2026 | Oct 28 | nights-out (costume party / house party) | where to meet, where next; "Piece it together tomorrow." | Oct 19 #1, Oct 26 #3 |
+| **Friendsgiving** | no fixed date; usually the days before Thanksgiving (~Nov 19–25) | Nov 15 | dinner-nights (Potluck) | picking the evening and who brings what — friends, not family | Nov 2 #4, Nov 9 #1 |
+| **Office Christmas party** (second audience) | late Nov – mid Dec; the organiser starts in early Nov | Nov 14 (first row) | office-events (own page, calmer register) | "Skip the 30 emails."; four tools, one party; the morning after with no work chat left behind | Nov 2 #3, Nov 16 #3, Dec 14 #1 (Jan 11 #3: the January kick-off) |
+| **US Thanksgiving long weekend** | Thu Nov 26, 2026 (+ Fri–Sun) | Nov 22 | family-reunion | the whole family in one plan; the photo of the day afterwards | Nov 16 #1, Nov 23 #1 |
+| **Ski season opens** | late Nov – Dec (resort opening dates vary) | Nov 29 | trips (Ski day chip) | which day, where to, who brings what | Nov 23 #2 |
+| **Christmas with friends** (friends' Christmas dinner, Christmas drinks) | December; Christmas is Fri Dec 25, 2026 | Dec 5 | dinner-nights; nights-out (Friday drinks) | picking one December evening for six people | Nov 23 #3, Nov 30 #1, Dec 7 #3 |
+| Christmas concerts (choir, school, amateur shows) | December (pattern) | Dec 6 | recital | friends and family who come to watch; every photo of the performance | Nov 30 #3 |
+| Christmas-break day trips | Dec 24, 2026 – Jan 3, 2027 (pattern) | Dec 20 | trips (Lake day) | the easy day away between the holidays | Dec 14 #4 |
+| **New Year's Eve** | Thu Dec 31, 2026 | Dec 28 | nights-out (New Year's Eve chip) | where to start, where next; the night's coordinator; New Year's Day morning after | Dec 14 #2, Dec 21 #1, #3 |
+| New Year trips / January weekends away | Jan 2027 (pattern) | Jan 8 | trips (hero) | "The next trip, without the 300 messages." | Dec 28 #2, Jan 4 #1 |
+| **Hen & stag / bachelor(ette) planning** | send-offs for spring–summer get planned in winter (pattern, no figure claimed) | from Dec 28 | bachelor-parties | one organiser, a dozen decisions; keep the photos, lose the chat | Dec 28 #1, Jan 18 #4 |
+| **MLK Day long weekend** (US) | Mon Jan 18, 2027 | Jan 13 | trips (weekend away = one event per day) | vote on the day, the place and who drives | Jan 11 #1 |
+| **Burns Night** (UK, niche) | Mon Jan 25, 2027 | Jan 21 | dinner-nights | supper with friends: the food, not the logistics | Jan 18 #1 |
+| **Lunar New Year** | Sat Feb 6, 2027 (Year of the Goat) | Feb 1 | family-reunion | the reunion dinner: plan it together, bring every photo home | Jan 25 #1 |
+| **Six Nations opening weekend** (rugby, UK/IE/FR/IT) | Fri Feb 5 – Sat Feb 6, 2027 | Feb 3 | dinner-nights (Watch party chip) | friends round for the match: who brings what | Jan 25 #3 |
+| **Galentine's Day** | Sat Feb 13, 2027 | Feb 8 | birthdays (celebrating someone) / brunch with friends | the friends' version of Valentine's — the friend group is the whole point | Feb 1 #1 |
+| **Super Bowl LXI** watch party | Sun Feb 14, 2027 (SoFi Stadium) | Feb 10 | dinner-nights (Watch party chip) | put the questions to a vote: where, who brings what | Feb 8 #1 |
+| **Presidents' Day + UK February half-term** | Mon Feb 15, 2027 (US); half-term mostly Feb 15–19 in England (some areas Feb 8–12) | Feb 10 | trips (Ski day) | the winter long weekend away | Feb 1 #3 |
+| Festival season | summer 2027 (e.g. Glastonbury Jun 23–27); groups plan in winter–spring | — (no date in the post) | festivals (own page) | plan the festival together; every photo of the chaos | Feb 15 #2 |
+| **St. Patrick's Day** | Wed Mar 17, 2027 | Mar 13 | nights-out (Pub quiz, Bar crawl) | where to meet and where to go next | Feb 22 #2 |
+| **Spring break + Easter** | Mar–Apr 2027; Easter Sun Mar 28, 2027 | Mar 21 | trips (Road trip) | the spring day away; long weekend = one event per day | Feb 22 #4 |
+| **Graduation season** | May–June 2027 | from Feb 22; peak in the next plan | graduation (own page) | three chats and the best photo on someone else's phone | Feb 22 #1 |
+| Summer holidays | late May (DK schools) – Aug 2027 | ~May 28 | trips (Beach day, Boat trip) | the summer day trip | next plan |
+| Festival season peak | June–July 2027 | ~June 11 | festivals | tickets, meeting point, camp | next plan |
+| Football season kicks off | Aug–Sep 2027 | mid-Aug | match-day | "The carpool, sorted." | next plan |
+| Halloween 2027 | Sun Oct 31, 2027 | Oct 27 | nights-out | the loop repeats every year | next plan |
+| Milestone birthdays | all year | — | birthdays | fills weeks without a big moment | Oct 19 #3, Jan 11 #2, Feb 15 #4 |
+
+**Left out on purpose** (see §9): **weddings and engagement season** (not marketed:
+the 50-member cap and the 48 h deletion), **Valentine's Day** (Sun Feb 14 — couples, not
+groups; Galentine's covers the friend angle), **Mardi Gras** (Tue Feb 9, 2027 — a US public
+street event, niche), **Diwali** (Sun Nov 8, 2026) and **Hanukkah** (Dec 4–12, 2026) — no
+audience data for them and no use-case page; **Black Friday** (shopping, not a get-together).
 
 Standing rules for calendar episodes:
-- **Fresh shoot per moment** (§1 "New content, always") — the film's light and props match
-  the moment (Halloween = candlelight and pumpkins, NYE = confetti light at midnight from
+- **Fresh shoot per moment** (§3 "New content, always") — the film's light and props match
+  the moment (Halloween = candlelight and capes, NYE = confetti light at midnight from
   outside, winter = cold blue light). The moment gives the episode its look for free.
-- Hook in the first frame names the moment ("Halloween planning" energy) without inventing
-  facts; the CTA and the 48 h beat stay standard.
-- 5 hashtags max (§3): one broad (#friends), 2–3 niche tied to the moment (#halloween #partyplanner),
-  and #afterstories.
-- Log each posting and the 48 h numbers in the post log (§6) — the calendar doubles as the
-  A/B archive of what each moment earned.
+- The hook names the moment with a short prefix ("Halloween:", "Burns Night:") and then a
+  site line, verbatim or clearly paraphrased; never invent facts about the moment (no
+  dates, statistics or "everyone is…" claims). The CTA and the 48 h beat stay standard.
+- 5 hashtags max (§3): one broad (#friends), 2–3 niche tied to the moment (#halloween
+  #partyplanner), and #afterstories.
+- Log each posting and the 48 h numbers in the §8 post log — the calendar doubles as the
+  archive of what each moment earned.
 
-Date notes: 2027 dates above are fixed or near-fixed (Easter March 28, Mardi Gras Feb 9,
-Super Bowl Feb 14, St. Patrick's March 17 — checked 2026-10-12); re-verify the moving ones
-(Spring break, festival dates, league openers) ~2 weeks before shooting.
+Dates checked 2026-10-15 by web search: Super Bowl LXI (Sun Feb 14, 2027 — the NFL called
+it "tentative" when it awarded the game; re-check before the Feb 8 row is built), Lunar New
+Year 2027 (Sat Feb 6), Mardi Gras / Easter 2027 (Feb 9 / Mar 28), Six Nations 2027 opening
+weekend (Feb 5–6), UK February half-term 2027 (varies by council; Feb 15–19 is the common
+week), Glastonbury 2027 (Jun 23–27), Friendsgiving (no fixed date). Fixed or rule-based:
+Halloween, Christmas, NYE, Burns Night (Jan 25), Galentine's (Feb 13), St. Patrick's (Mar 17),
+US Thanksgiving (4th Thu of Nov), MLK Day (3rd Mon of Jan), Presidents' Day (3rd Mon of Feb).
+**Not verified (patterns, not dates):** Friendsgiving, office-party season, ski-resort
+openings, Christmas concerts, hen/stag planning season, spring break, graduation and
+festival planning — never state a date or a statistic for them in a post.
 
-### Episode queue — the plan the nightly job reads (added 2026-10-13)
+### The plan — what the nightly job reads (episode queue until 2026-10-15)
 
-Every night one fresh episode is built and delivered by morning, ready to post. The job
-reads this section: take the first row that is not `posted`, build exactly that episode,
-mark it `built <date>`, and leave the rest. Rules that hold for every row:
+One row = one TikTok episode: a 15–20 s vertical reel (no carousels on this channel),
+built by the nightly job and posted by hand by Robert. Rules for every row:
 
-- **Pre-launch only:** CTA is "Get notified" / "Coming soon · after-stories.com" until Robert
-  announces launch (§0). If he says it's released, flip the CTA before building the next one.
-- **One video per episode.** Fresh shoot (new place, light, season, props, story beat).
-- **Music bed varies:** the `variant` column picks `audio.variant` (0–5) in the spec; no
-  variant repeats within 6 episodes.
+- **Which row is built:** each night the job builds at most one row: the first row whose
+  Status is `queued` and whose week starts within 7 days of today. Rows are built in table
+  order. When it is built, the job sets Status to `built <yyyy-mm-dd> <reel slug>`. When
+  Robert tells it an episode is posted, the Status becomes `posted <yyyy-mm-dd>`; the next
+  prune removes the row, and the history lives in the §8 post log, not here.
+- **Posting is Robert's call:** 3–4 rows per week are planned (§4). The `built …, ready`
+  rows at the top are his posting backlog; built episodes wait until he posts them.
+- **Pre-launch CTA:** "Get notified" · "Coming soon · after-stories.com" until Robert
+  announces launch (§2). If he says it's released, flip the CTA before building the next
+  row.
+- **One video per episode.** Fresh shoot: the Look / scene column is the start point and
+  must differ from the last episodes (§3).
+- **Music bed varies:** the Music variant column is `audio.variant` (0–5) in the spec; no
+  variant repeats within 6 episodes (the column already follows the rotation).
+- **Series rotate:** two rows in a row never have the same series (A problem-first,
+  B payoff-first, C "Gone in 48 hours" / feature spotlight, D "Works for this too", §5).
 - **Copy is verbatim** from the live site (re-check `llms-full.txt` the night of the build —
-  the table is checked 2026-10-13). The hook is the frame-0 line.
+  the table was checked 2026-10-15). The hook is the frame-0 line; "(para.)" marks a
+  paraphrase. Claims only from the §5 claim sheet.
 - **Phone rule:** never a visible phone screen (face-down / back-to-camera, camera module lit).
-- If a row's calendar window (§5.5) opens before its turn, it jumps to the front of the queue.
+- **Deletion only after the save beat**, in every row that mentions 48 h (§3).
+- If a calendar window opens earlier than planned, its row may move up; note it in §8.
 
-| # | slug | series | hook (verbatim, checked 10-13) | fresh-shoot style | variant | status |
-|---|------|--------|--------------------------------|-------------------|---------|--------|
-| — | as-moments | A | (group chats) | — | 0 | posted 10-08 |
-| — | corporate a/b | D | (team event) | — | 0 | posted 10-08 |
-| — | as-trips-a | A | Group chats are where plans go to die. | summer day trip | 0 | posted 10-12 |
-| — | as-halloween-a/b | D | A night out shouldn't need a project manager. | halloween night out | 0 | built 10-12, ready |
-| — | as-gone-a/b | C | 48 hours later, it's gone. | dusk rooftop → morning | 0 | built 10-13, ready |
-| 1 | as-birthday | D | Plan the birthday together. Everyone gets the photos. | evening, indoor party, balloons + candlelight, confetti | 1 | built 2026-10-13, ready |
-| 2 | as-one-stream | C | One private stream. | blue hour, friends' backs, city lights, one shared view | 2 | built 2026-10-14, ready |
-| 3 | as-festival | D | Plan the festival together. Keep every photo of the chaos. | festival field, golden hour, flags and haze, hands not faces | 3 | queued |
-| 4 | as-morning-after | B | Wake up to the story. | pale morning, coffee on the table, window light, the night's photos | 4 | queued |
-| 5 | as-dinner | D | Plan the dinner, game or movie night. | warm kitchen, tungsten, table set for six, steam and plates | 5 | queued |
-| 6 | as-polls | C | Polls that turn into decisions. | three options on the table as physical cards → one card wins | 0 | queued |
-| 7 | as-office-xmas | D | Skip the 30 emails. | office after hours, Christmas lights on, one team table | 1 | queued (calendar: by ~Nov 14) |
-| 8 | as-nobody-left-out | C | Friends without an iPhone join from the web. | mixed group from behind, one person with a laptop, all in the loop | 2 | queued |
-| 9 | as-match-day | D | The carpool, sorted. | match-day street, stadium glow, boots and flasks, no faces | 3 | queued |
-| 10 | as-private-by-design | C | No feed, no followers, no strangers. | empty private room at dusk, a circle of chairs, no screens at all | 4 | queued |
-| 11 | as-bachelor | D | Keep the photos. Lose the chat. | send-off morning, beach, from behind, long shadows | 5 | queued |
-| 12 | as-trips-bring | B | Bring every photo home. | airport → car → home: one day, three lights, the box of photos grows | 0 | queued |
-| 13 | as-reunion | D | Plan the family reunion together. | long table, three generations' hands, late-afternoon sun (calendar: by ~Nov 22) | 1 | queued |
-| 14 | as-save-first | C | Save every photo. Then it's gone. | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | queued |
+| Week of | # | Slug | Series | Use case / feature (· moment) | Hook (frame 0) | Look / scene (fresh shoot; differs from the last) | Music variant | Status |
+|---|---|---|---|---|---|---|---|---|
+| Oct 19 | 1 | as-halloween-a/b | D | nights-out · Halloween | “A night out shouldn't need a project manager.” | halloween night out (built) | 0 | built 10-12, ready |
+| Oct 19 | 2 | as-gone-a/b | C | 48 h, photos saved first | “48 hours later, it's gone.” | dusk rooftop → morning (built) | 0 | built 10-13, ready |
+| Oct 19 | 3 | as-birthday | D | birthdays | “Plan the birthday together. Everyone gets the photos.” | evening, indoor party, balloons + candlelight, confetti (built) | 1 | built 2026-10-13, ready |
+| Oct 26 | 1 | as-one-stream | C | one stream | “One private stream.” | blue hour, friends' backs, city lights, one shared view (built) | 2 | built 2026-10-14, ready |
+| Oct 26 | 2 | as-match-day | D | match-day | “The carpool, sorted.” | match-day street, stadium glow, boots and flasks, no faces | 3 | queued |
+| Oct 26 | 3 | as-halloween-chat | A | nights-out · Halloween | “Halloween: The plan changed four times. The chat has 400 messages.” | costume rail and hallway mirror at blue hour, capes on hooks, glitter on the floorboards, backs only | 4 | queued |
+| Nov 2 | 1 | as-dinner | D | dinner-nights | “Plan the dinner, game or movie night.” | warm kitchen, tungsten, table set for six, steam and plates | 5 | queued |
+| Nov 2 | 2 | as-polls | C | polls → decisions | “Polls that turn into decisions.” | three options on the table as physical cards → one card wins | 0 | queued |
+| Nov 2 | 3 | as-office-xmas | D | office-events · Christmas party | “Skip the 30 emails.” | office after hours, Christmas lights on, one team table | 1 | queued |
+| Nov 2 | 4 | as-friendsgiving-date | A | dinner-nights · Friendsgiving | “Friendsgiving: Six people, three possible evenings, and the date still isn't set.” | rainy apartment window, a stack of mismatched borrowed chairs, wet autumn leaves on the sill, grey-violet dusk | 2 | queued |
+| Nov 9 | 1 | as-friendsgiving | D | dinner-nights (Potluck) · Friendsgiving | “Friendsgiving: Put three evenings to a vote and the group picks one.” | potluck table from above, mismatched dishes arriving in hands, amber lamps, rust and cream | 3 | queued |
+| Nov 9 | 2 | as-morning-after | B | the morning after | “Wake up to the story.” | pale morning, coffee on the table, window light, the night's photos | 4 | queued |
+| Nov 9 | 3 | as-photos-stuck | A | photos stuck on phones | “Hundreds of photos stuck on six phones” | six phones face-down on a wooden bench after a hike (camera modules lit), muddy boots, cold golden hour | 5 | queued |
+| Nov 9 | 4 | as-likes | C | likes → the most-liked photo | “Tap ❤️ on the ones that matter.” | winter market at night, mulled-wine steam, mittened hands, string lights | 0 | queued |
+| Nov 16 | 1 | as-reunion | D | family-reunion · US Thanksgiving | “Plan the family reunion together.” | long table, three generations' hands, late-afternoon sun | 1 | queued |
+| Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | queued |
+| Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | queued |
+| Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | queued |
+| Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | queued |
+| Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | queued |
+| Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | queued |
+| Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | queued |
+| Nov 30 | 1 | as-friends-xmas | D | dinner-nights · Christmas with friends | “Christmas with friends: Which night? Who's cooking?” (para.) | candlelit long table in a small flat, paper crowns, clementines, fogged window | 3 | queued |
+| Nov 30 | 2 | as-timeline | C | timeline of decisions | “A timeline of everything the group decided.” | blank paper tickets pinned left to right along a string in warm lamp light, the decisions in order | 4 | queued |
+| Nov 30 | 3 | as-show-night | D | recital (Choir concert) · Christmas concerts | “Plan the show night together. Everyone gets the photos.” | church hall from the back row, folding chairs, fairy lights, sheet music on a stand | 5 | queued |
+| Dec 7 | 1 | as-trips-bring | B | trips · the morning after | “Bring every photo home.” | airport → car → home: one day, three lights, the box of photos grows | 0 | queued |
+| Dec 7 | 2 | as-fresh-event | C | one event per night (Book club) | “Each night is its own event. Last week's chat doesn't pile up.” | a stack of books, tea, a low lamp, a fresh empty table each week (match cut) | 1 | queued |
+| Dec 7 | 3 | as-xmas-drinks | D | nights-out (Friday drinks) · Christmas drinks | “Christmas drinks: Plan the night out. Piece it together tomorrow.” | pub doorway at blue hour from outside, a wreath, breath in the cold, backs in wool coats | 2 | queued |
+| Dec 7 | 4 | as-send-the-pics | A | photos never come | “can someone send the pics??” | the boot of a car after a weekend away, six bags and a cool box, frost on the rear window, morning sun | 3 | queued |
+| Dec 14 | 1 | as-office-after | B | office-events · the morning after | “Everyone gets the photos. No work chat left behind.” | office the morning after the party: paper crowns on desks, chairs stacked, grey-pink daylight | 4 | queued |
+| Dec 14 | 2 | as-nye-plan | D | nights-out (New Year's Eve) | “New Year's Eve: Ask the group where to start and where to go next.” | city street at 11 pm, sparklers in gloved hands, gold confetti in wet-asphalt reflections | 5 | queued |
+| Dec 14 | 3 | as-keep-memories | C | 48 h, photos saved first | “You keep the memories. The app forgets the rest.” | cabin table cleared at dawn: candles out, a box of prints, the lid closing | 0 | queued |
+| Dec 14 | 4 | as-winter-day-trip | D | trips (Lake day) · Christmas break | “A day away should be the easy part of having friends.” | frozen lake at golden hour, a thermos, skates on the ice, long shadows | 1 | queued |
+| Dec 21 | 1 | as-nye-chat | A | nights-out · New Year's Eve | “New Year's Eve: someone always ends up as the night's coordinator.” | stairwell of a party building, coats piled on the banister, a door of warm light and muffled bass | 2 | queued |
+| Dec 21 | 2 | as-never-location | C | never your location | “Never your location.” | ski-lodge window at night, a paper trail map with a pencil circle round the hut, no screens | 3 | queued |
+| Dec 21 | 3 | as-nye-morning | B | nights-out · the morning after NYE | “New Year's Day: Piece it together tomorrow.” (para.) | Jan 1 morning, streamers on a balcony rail, pale gold light, two cold glasses and a coffee | 4 | queued |
+| Dec 28 | 1 | as-bachelor | D | bachelor-parties · send-off planning season | “Keep the photos. Lose the chat.” | send-off morning, beach, from behind, long shadows | 5 | queued |
+| Dec 28 | 2 | as-which-weekend | A | trips · the plan gets lost | “wait which weekend did we land on?” | wall calendar with three weekends circled in three pens, a cabin key on a hook, low winter sun | 0 | queued |
+| Dec 28 | 3 | as-fifty | C | up to 50 people | “Up to 50. That fits most groups, from a handful of friends to a big party.” | a long hallway lined with coats and boots, from the doorway, warm party glow at the far end | 1 | queued |
+| Jan 4 | 1 | as-new-year-trip | D | trips · New Year getaway | “The next trip, without the 300 messages.” | empty train platform at dawn in snow, backpacks, steam from the engine | 2 | queued |
+| Jan 4 | 2 | as-jobs | C | jobs get a name | “Who brings the cake, who books the table.” | blank paper tags tied to a cake box, a speaker and car keys on a hall table, soft daylight | 3 | queued |
+| Jan 4 | 3 | as-second-job | A | the organiser's second job | “Getting your friends together shouldn't feel like a second job.” | Sunday-night desk lamp, sticky notes curling, a cold tea, rain on the window | 4 | queued |
+| Jan 4 | 4 | as-night-in | B | dinner-nights (Game night) · the morning after | “The story of a good night.” | game pieces on a rug the morning after, low winter sun, an empty pizza board | 5 | queued |
+| Jan 11 | 1 | as-mlk-weekend | D | trips · US MLK long weekend (one event per day) | “Long weekend: Vote on the day, the place and who drives.” | snowy cabin porch at blue hour, firewood stack, boots in a row, a lit window | 0 | queued |
+| Jan 11 | 2 | as-birthday-chats | A | birthdays · three chats | “One birthday, three chats, and the best photo is on someone else's phone.” | an unlit birthday cake on a kitchen counter, three coats on three chairs, tungsten and pink fairy lights | 1 | queued |
+| Jan 11 | 3 | as-kickoff | D | office-events (Kick-off) | “Kick-off: Plan the team event.” | meeting room turned into a dinner table, kraft-paper runner, January daylight to candlelight | 2 | queued |
+| Jan 11 | 4 | as-reminder | C | the 48 h reminder, save all first | “Everyone gets a reminder and can save all the photos with one tap.” (para.) | a darkroom-red hallway clock at 47:59 on a paper card, then dawn light through blinds | 3 | queued |
+| Jan 18 | 1 | as-burns-night | D | dinner-nights · Burns Night | “Burns Night: Hosting should be about the food, not the logistics.” | tartan blanket, candlelit supper table, small glasses, peat fire, dark wood | 4 | queued |
+| Jan 18 | 2 | as-one-tap | C | save every photo with one tap | “Save every photo to your phone with one tap.” | darkroom red light, prints drying on a line, one becomes many | 5 | queued |
+| Jan 18 | 3 | as-every-phone | B | trips · the morning after | “Come home with every photo from every phone.” | car boot unloaded at dusk, sleeping bags, a dog's lead, porch light coming on | 0 | queued |
+| Jan 18 | 4 | as-hen-chat | A | bachelor-parties · the organiser | “One organiser. A dozen decisions. Nobody answering.” | spa robes on hooks, an empty pool at dawn, steam on tiles | 1 | queued |
+| Jan 25 | 1 | as-lunar-reunion | D | family-reunion · Lunar New Year | “Lunar New Year: Plan the reunion together. Bring every photo home.” | red lanterns, a round table from above, dumplings, hands of three generations, red-gold light | 2 | queued |
+| Jan 25 | 2 | as-on-top | C | decisions on top of the event | “It all sits on top of the event, so nobody asks again.” | a fridge door with three paper slips under magnets → one remains, morning kitchen light | 3 | queued |
+| Jan 25 | 3 | as-six-nations | D | dinner-nights (Watch party) · Six Nations opening weekend | “Six Nations weekend: put a name on who brings what.” | living room with scarves over the sofa back, a rugby ball on the rug, TV glow from behind (screen out of frame) | 4 | queued |
+| Jan 25 | 4 | as-family-chat | A | family-reunion · the family group chat | “Twenty-four people, one lake, and the plan is in a family group chat.” | a winter lake jetty in fog, a row of wellies, a picnic basket under snow | 5 | queued |
+| Feb 1 | 1 | as-galentines | D | birthdays · Galentine's | “Galentine's: Celebrating someone should be fun for the people throwing it too.” | pink-lit brunch table, coupe glasses, carnations, bright window light | 0 | queued |
+| Feb 1 | 2 | as-no-gps | C | photos stripped of GPS and camera data | “Photos are stripped of GPS and camera data before upload.” | blank-backed prints slid into plain paper sleeves on a sunlit desk, a strip of masking tape, no writing | 1 | queued |
+| Feb 1 | 3 | as-half-term-ski | D | trips (Ski day) · Presidents' Day / UK half-term | “Ski day: The day, the place, the plan and every photo, in one place.” | chairlift at noon, hard sun on snow, gloves and goggles on a bench, deep blue sky | 2 | queued |
+| Feb 1 | 4 | as-book-the-house | A | trips · nobody booked | “did anyone actually book the house” | a dark holiday-cottage doorway, a key safe, suitcases on the step, cold dusk | 3 | queued |
+| Feb 8 | 1 | as-super-bowl | D | dinner-nights (Watch party) · Super Bowl LXI | “Watch party: Put the questions to a vote and get the answers in one place.” | game-day snacks on a coffee table, plain foam fingers (no logos), lamp light, backs on a sofa | 4 | queued |
+| Feb 8 | 2 | as-tonight-tomorrow | B | nights-out · the morning after | “Make tonight easy to plan, and tomorrow easy to remember.” | Sunday-night street after rain, neon-pink reflections, takeaway boxes on a step | 5 | queued |
+| Feb 8 | 3 | as-no-admins | C | office: private by design | “No admins, no profiles, no feed.” | an empty open-plan office at night, chairs pushed in, one desk lamp left on | 0 | queued |
+| Feb 8 | 4 | as-trip-links | A | trips · the plan is buried | “Three links to places, buried in the chat” | a paper map with three coffee-cup rings, a pin, a dark café table, rain outside | 1 | queued |
+| Feb 15 | 1 | as-match-photo | B | match-day · the photo of the match | “The photo of the match, saved.” | floodlit winter pitch from the sideline, steam off a thermos, muddy studs | 2 | queued |
+| Feb 15 | 2 | as-festival | D | festivals · summer plans start | “Plan the festival together. Keep every photo of the chaos.” | festival field, golden hour, flags and haze, hands not faces | 3 | queued |
+| Feb 15 | 3 | as-one-day | C | one event = one day (weekends: one per day) | “One event covers one day and its night, until 6 the next morning.” | a 24-hour time-lapse of a cottage window: noon, dusk, night, 6 am | 4 | queued |
+| Feb 15 | 4 | as-milestone | D | birthdays (Milestone birthday) | “Milestone birthday: Vote on the date and the venue.” | a rented hall being dressed, gold number balloons (no number readable), ladders, afternoon light | 5 | queued |
+| Feb 22 | 1 | as-graduation-chats | A | graduation · three chats | “One graduation, three chats, and the best photo is on someone else's phone.” | an empty mortarboard on a chair, garden bunting, late-spring light | 0 | queued |
+| Feb 22 | 2 | as-st-patricks | D | nights-out (Pub quiz) · St. Patrick's Day | “St. Patrick's Day: Vote on where to meet and where to go next.” | green-lit pub window from the street, a chalkboard (no words), umbrellas, blue hour | 1 | queued |
+| Feb 22 | 3 | as-stays-in-trip | C | 48 h, photos saved first | “What happens on the trip stays in the trip.” | a beach house at dawn: towels on a rail, a box of prints carried out, then an empty deck | 2 | queued |
+| Feb 22 | 4 | as-spring-break | D | trips · spring break / Easter | “Spring break: Plan the trip together. Bring every photo home.” | road trip in spring: blossom over a lay-by, an open van door, bright pastel morning | 3 | queued |
 
-**Rotation:** the series column alternates D (use case) and C (feature spotlight) with a B
-(payoff) in between, so no two builds in a row are the same shape; D rotates the use case
-(birthday → festival → dinner → office → match → reunion …). When the queue runs short, the
-job generates more rows from the site's use-case pages + the Series C feature list, same
-format, same verbatim check, same variant rotation.
+**When the plan runs short** (fewer than two weeks of `queued` rows), the job adds rows
+from the site's use-case pages, the Series C feature list and the next calendar hooks —
+same columns, same verbatim check, the series and variant rotations kept, a new slug and a
+new look per row — and logs it in §8.
 
 ## 7. Review procedure
 
@@ -432,6 +543,26 @@ format, same verbatim check, same variant rotation.
 | ready 2026-10-13 | **as-birthday** (fresh indoor night-party shoot) — queue row #1 (Series D) | Plan the birthday together. Everyone gets the photos. | due on post | post tomorrow evening (audience 18:00–21:00); AI label on |
 | ready 2026-10-14 | **as-one-stream** (fresh blue-hour city shoot) — queue row #2 (Series C, one stream), music variant 2 | One private stream. | due on post | post tomorrow evening (audience 18:00–21:00); AI label on |
 
+- 2026-10-15 (Robert's request: "do the same for after-stories. Take the different types of
+  apps into account"): §6 converted from the numbered episode queue to a dated plan — 71
+  rows from the week of Oct 19, 2026 to the week of Feb 22, 2027 (Oct 6 · Nov 19 · Dec 14 ·
+  Jan 16 · Feb 16 by week-of), 3–4 per week, columns Week of / # / Slug / Series / Use case /
+  Hook / Look / scene / Music variant / Status. Posted rows (as-moments, corporate a/b,
+  as-trips-a) left out (they are in the post log above); the four built rows (six videos) kept with their
+  status verbatim at the top (Robert's posting backlog). The 12 queued rows kept slug,
+  series, hook, look and variant; moved into dated weeks so the variant rotation holds:
+  as-match-day Oct 26, as-dinner/as-polls/as-office-xmas Nov 2 (office by ~Nov 14),
+  as-morning-after Nov 9 (no longer framed as the Halloween morning after),
+  as-reunion/as-nobody-left-out/as-private-by-design Nov 16 (reunion by ~Nov 22),
+  as-save-first Nov 23, as-trips-bring Dec 7, as-bachelor Dec 28, as-festival Feb 15.
+  53 new rows, each with a new slug and look. Calendar hooks rebuilt for friend groups
+  (added Friendsgiving, Christmas with friends, Christmas concerts, MLK weekend, Burns Night,
+  Lunar New Year, Six Nations, Galentine's, Presidents' Day / half-term, hen & stag planning;
+  dropped Mardi Gras to "left out"; dates web-checked). §5: claim sheet + never-claim list.
+  §4: production wording now follows the dated plan. §1: the old-to-new section map removed
+  and every reference in the body updated to the new numbers. Channel unchanged: TikTok
+  only, posted by hand.
+
 ## 9. Open questions & watch items
 
 - *Robert:* TikTok upload API — paused on the TikTok developer account (spark#118);
@@ -440,3 +571,16 @@ format, same verbatim check, same variant rotation.
 - `ct=tiktok` App Store token — add when the tracking supports it (§7).
 - after-stories.com has no `/go/?src=` hop yet (travel/event have one); until it
   does, TikTok traffic shows only as the `tiktok` referrer in Umami.
+- Audience markets are unknown (no TikTok data yet). The plan leans US/UK (Thanksgiving,
+  MLK, Super Bowl, Burns Night, Six Nations, half-term); re-weight once the §7 reviews show
+  where viewers are.
+- Super Bowl LXI date was "tentative" when the NFL awarded it — re-check before the Feb 8
+  row is built. UK half-term varies by council (Feb 15–19 is the common week).
+- Left out on purpose (re-open only on Robert's say-so): weddings / engagement season
+  (not marketed), Valentine's Day (couples), Mardi Gras (US public event), Diwali and
+  Hanukkah (no audience data, no use-case page).
+- `as-reunion` keeps its queue hook "Plan the family reunion together."; the live page says
+  "Plan the reunion together." — the build-night verbatim check should use the site's line.
+- Posting backlog: four built rows (six videos) wait in §6 (`as-halloween-a/b` must go out before
+  Oct 31). The job only builds `queued` rows, so a large backlog does not stop it; Robert
+  tells it which ones are posted.
