@@ -58,7 +58,7 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
       <div class="stage">
         <div class="sun"></div>
         <div class="stage-screen">
-          <img src={`/app/${locale}/summary.webp`} alt={h.how.beats[2]?.name ?? wakeLine} width="660" height="1434" fetchpriority="high" decoding="async" />
+          <img src={`/app/${locale}/summary-phone.webp`} alt={h.how.beats[2]?.name ?? wakeLine} width="760" height="1534" fetchpriority="high" decoding="async" />
         </div>
       </div>
     </section>
@@ -189,18 +189,14 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
     position: absolute;
     left: 50%;
     top: 0;
-    width: 250px;
-    margin-left: -125px;
-    padding: 10px 10px 0;
-    border-radius: 44px 44px 0 0;
-    overflow: hidden;
-    /* The phone's edge: the app is dark in both themes. */
-    background: #2e343b;
+    width: 290px;
+    margin-left: -145px;
   }
 
+  /* The app's real morning-after screen in an iPhone 17 Pro Max frame
+     (github.com/jamesjingyi/mockup-device-frames), cropped by the hero's bottom edge. */
   .stage-screen img {
     width: 100%;
-    border-radius: 34px 34px 0 0;
   }
 
   @media (min-width: 900px) {
@@ -233,9 +229,9 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
 
     .stage-screen {
       left: auto;
-      right: calc(43vh - 170px);
-      top: max(26vh, 200px);
-      width: 340px;
+      right: calc(43vh - 195px);
+      top: max(24vh, 190px);
+      width: 390px;
       margin: 0;
     }
   }
