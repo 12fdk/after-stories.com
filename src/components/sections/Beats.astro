@@ -85,10 +85,10 @@ for (let r = 0; r < 6; r++) {
           ) : (
             <div class="screen arch">
               <img
-                src={`/app/${locale}/${screens[i]}.webp`}
+                src={`/app/${locale}/${screens[i]}-phone.webp`}
                 alt={b.name}
-                width="660"
-                height="1434"
+                width="760"
+                height="1534"
                 loading="lazy"
                 decoding="async"
               />
@@ -199,9 +199,9 @@ for (let r = 0; r < 6; r++) {
     background: var(--accent);
   }
 
+  /* The real screen in an iPhone 17 Pro Max frame (public/app/<locale>/*-phone.webp). */
   .screen img {
     width: 100%;
-    border-radius: 28px 28px 0 0;
   }
 
   .beat :global(.poll-card) {

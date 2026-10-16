@@ -16,7 +16,7 @@ const { title, facts, locale = "en" } = Astro.props;
 <section id="privacy" class="section promise">
   <div class="wrap promise-inner">
     <div class="promise-screen arch">
-      <img src={`/app/${locale}/private.webp`} alt={facts[2]?.title ?? title} width="660" height="1434" loading="lazy" decoding="async" />
+      <img src={`/app/${locale}/private-phone.webp`} alt={facts[2]?.title ?? title} width="760" height="1534" loading="lazy" decoding="async" />
     </div>
     <div class="promise-copy" data-reveal>
       <h2>{title}</h2>
@@ -62,7 +62,6 @@ const { title, facts, locale = "en" } = Astro.props;
 
   .promise-screen img {
     width: 100%;
-    border-radius: 28px 28px 0 0;
   }
 
   .promise-copy {
