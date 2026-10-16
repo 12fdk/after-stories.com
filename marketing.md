@@ -444,7 +444,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Oct 19 | 2 | as-gone-a/b | C | 48 h, photos saved first | “48 hours later, it's gone.” | dusk rooftop → morning (built) | 0 | built 10-13, ready |
 | Oct 19 | 3 | as-birthday | D | birthdays | “Plan the birthday together. Everyone gets the photos.” | evening, indoor party, balloons + candlelight, confetti (built) | 1 | built 2026-10-13, ready |
 | Oct 26 | 1 | as-one-stream | C | one stream | “One private stream.” | blue hour, friends' backs, city lights, one shared view (built) | 2 | built 2026-10-14, ready |
-| Oct 26 | 2 | as-match-day | D | match-day | “The carpool, sorted.” | match-day street, stadium glow, boots and flasks, no faces | 3 | queued |
+| Oct 26 | 2 | as-match-day | D | match-day | “The carpool, sorted.” | match-day street, stadium glow, boots and flasks, no faces | 3 | built 2026-10-16 as-match-day |
 | Oct 26 | 3 | as-halloween-chat | A | nights-out · Halloween | “Halloween: The plan changed four times. The chat has 400 messages.” | costume rail and hallway mirror at blue hour, capes on hooks, glitter on the floorboards, backs only | 4 | queued |
 | Nov 2 | 1 | as-dinner | D | dinner-nights | “Plan the dinner, game or movie night.” | warm kitchen, tungsten, table set for six, steam and plates | 5 | queued |
 | Nov 2 | 2 | as-polls | C | polls → decisions | “Polls that turn into decisions.” | three options on the table as physical cards → one card wins | 0 | queued |
@@ -545,6 +545,7 @@ new look per row — and logs it in §8.
 | ready 2026-10-13 | **as-gone-a/b** (fresh day/night shoot) — first Series C "Gone in 48 hours" | 48 hours later, it's gone. | due on post | A/B vs as-gone-b; post A ~2026-10-14, B ~2026-10-16 |
 | ready 2026-10-13 | **as-birthday** (fresh indoor night-party shoot) — queue row #1 (Series D) | Plan the birthday together. Everyone gets the photos. | due on post | post tomorrow evening (audience 18:00–21:00); AI label on |
 | ready 2026-10-14 | **as-one-stream** (fresh blue-hour city shoot) — queue row #2 (Series C, one stream), music variant 2 | One private stream. | due on post | post tomorrow evening (audience 18:00–21:00); AI label on |
+| built 2026-10-16 | **as-match-day** (fresh match-day night shoot — stadium floodlight glow, boots/flasks, from behind) — queue row Oct 26 #2 (Series D), music v3 | The carpool, sorted. | due on post | daily one-per-night cadence (Robert 2026-10-16); AI label on |
 
 - 2026-10-16 (Robert's rule: "Change that to automated. So I have a new video for
   after stories once a day."): production cadence changed from 3–4/week to **one
