@@ -162,12 +162,14 @@ two of the same series back to back.
 #### Phase 1 — waitlist phase (now → launch)
 Goal: waitlist sign-ups + a recognizable presence, so launch day is not cold.
 
-**Production follows the dated plan (since 2026-10-15; queue-driven 2026-10-13 – 10-15):**
-the §6 plan has 3–4 rows per week. The nightly job builds the next DUE row — the first
-`queued` row whose week starts within 7 days — at most one per night, ready by morning.
-Robert posts when he wants; built episodes wait for him. The plan keeps the series
-rotation (two builds in a row never the same series), a fresh shoot per episode, the
-music bed rotating (§5), all pre-launch ("Get notified") until launch is announced.
+**Production is one video per night (Robert's rule 2026-10-16, supersedes the 3–4/week
+cadence):** the nightly job builds the first `queued` row in table order EVERY night —
+no due-date gate — and hands it over, so Robert always has a fresh episode to post.
+Built episodes wait in his posting backlog until he posts them. The plan keeps the
+series rotation (two builds in a row never the same series), a fresh shoot per episode,
+the music bed rotating (§5), all pre-launch ("Get notified") until launch is announced.
+The "week of" column is now a calendar anchor for the moment's timing (post by that
+week's deadline), not a production gate.
 
 - **Calendar beats are in the plan:** each row sits in the week before its moment (§6
   calendar hooks) — e.g. office-events with the Christmas party hook in the week of Nov 2
@@ -412,11 +414,12 @@ festival planning — never state a date or a statistic for them in a post.
 One row = one TikTok episode: a 15–20 s vertical reel (no carousels on this channel),
 built by the nightly job and posted by hand by Robert. Rules for every row:
 
-- **Which row is built:** each night the job builds at most one row: the first row whose
-  Status is `queued` and whose week starts within 7 days of today. Rows are built in table
-  order. When it is built, the job sets Status to `built <yyyy-mm-dd> <reel slug>`. When
-  Robert tells it an episode is posted, the Status becomes `posted <yyyy-mm-dd>`; the next
-  prune removes the row, and the history lives in the §8 post log, not here.
+- **Which row is built:** each night the job builds one row: the first row in table order
+  whose Status is `queued` (or empty) — **every night, no due-date gate** (Robert's
+  2026-10-16 rule: one new video per day). When it is built, the job sets Status to
+  `built <yyyy-mm-dd> <reel slug>`. When Robert tells it an episode is posted, the Status
+  becomes `posted <yyyy-mm-dd>`; the next prune removes the row, and the history lives in
+  the §8 post log, not here.
 - **Posting is Robert's call:** 3–4 rows per week are planned (§4). The `built …, ready`
   rows at the top are his posting backlog; built episodes wait until he posts them.
 - **Pre-launch CTA:** "Get notified" · "Coming soon · after-stories.com" until Robert
@@ -509,7 +512,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Feb 22 | 3 | as-stays-in-trip | C | 48 h, photos saved first | “What happens on the trip stays in the trip.” | a beach house at dawn: towels on a rail, a box of prints carried out, then an empty deck | 2 | queued |
 | Feb 22 | 4 | as-spring-break | D | trips · spring break / Easter | “Spring break: Plan the trip together. Bring every photo home.” | road trip in spring: blossom over a lay-by, an open van door, bright pastel morning | 3 | queued |
 
-**When the plan runs short** (fewer than two weeks of `queued` rows), the job adds rows
+**When the plan runs short** (fewer than 7 `queued` rows — a week at one per day), the job adds rows
 from the site's use-case pages, the Series C feature list and the next calendar hooks —
 same columns, same verbatim check, the series and variant rotations kept, a new slug and a
 new look per row — and logs it in §8.
@@ -543,6 +546,13 @@ new look per row — and logs it in §8.
 | ready 2026-10-13 | **as-birthday** (fresh indoor night-party shoot) — queue row #1 (Series D) | Plan the birthday together. Everyone gets the photos. | due on post | post tomorrow evening (audience 18:00–21:00); AI label on |
 | ready 2026-10-14 | **as-one-stream** (fresh blue-hour city shoot) — queue row #2 (Series C, one stream), music variant 2 | One private stream. | due on post | post tomorrow evening (audience 18:00–21:00); AI label on |
 
+- 2026-10-16 (Robert's rule: "Change that to automated. So I have a new video for
+  after stories once a day."): production cadence changed from 3–4/week to **one
+  video per night** — the nightly job now builds the first `queued` row in table
+  order every night, no due-date gate (§4 Phase 1, §6 which-row-is-built). The
+  "week of" column stays as the moment's calendar anchor (post by its deadline),
+  not a production gate. "Runs short" threshold: 7 rows. The cron job prompt was
+  updated to match (job after-stories-social-content).
 - 2026-10-15 (Robert's request: "do the same for after-stories. Take the different types of
   apps into account"): §6 converted from the numbered episode queue to a dated plan — 71
   rows from the week of Oct 19, 2026 to the week of Feb 22, 2027 (Oct 6 · Nov 19 · Dec 14 ·
