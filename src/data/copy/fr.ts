@@ -123,6 +123,12 @@ const copy: Copy = {
     },
     ui: {
       navHowItWorks: 'Comment ça marche',
+      navOccasions: 'Occasions',
+      navPrivacy: 'Confidentialité',
+      navFaq: 'Questions',
+      votePrompt: 'Touchez une réponse pour voter.',
+      figureMorning: "L'événement se termine à 6 h le lendemain matin. Puis le récit commence.",
+      figurePeople: "Jusqu'à 50 personnes par événement.",
       ctaSmall: 'Être prévenu',
       ctaHero: 'Prévenez-moi au lancement',
       ctaPillComingSoon: 'Bientôt disponible',

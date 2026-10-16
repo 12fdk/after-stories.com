@@ -1,39 +1,54 @@
 ---
 import Base from "../layouts/Base.astro";
+import SiteHeader from "../components/SiteHeader.astro";
 ---
 
 <Base title="Page not found — After Stories" description="This page went home early." noindex>
+  <SiteHeader notifyHref="/#notify" />
   <main class="wrap lost">
-    <p class="code">404</p>
     <h1>This page went home early.</h1>
-    <p>Whatever was here isn't anymore.</p>
+    <p class="lead">Whatever was here isn't anymore. The rest of the night is still on.</p>
     <a class="pill" href="/">Back to After Stories</a>
+    <div class="sun" aria-hidden="true"></div>
   </main>
 </Base>
 
 <style>
   .lost {
-    min-height: 100vh;
+    position: relative;
+    min-height: calc(100svh - 92px);
     display: grid;
-    align-content: center;
+    align-content: start;
     justify-items: start;
-    gap: 20px;
-  }
-
-  .code {
-    font-family: var(--display);
-    font-stretch: 72%;
-    font-weight: 800;
-    font-size: clamp(4rem, 14vw, 8rem);
-    line-height: 0.85;
-    color: var(--accent-ink);
+    gap: 28px;
+    padding-top: 12vh;
+    overflow: hidden;
   }
 
   h1 {
-    font-size: var(--step-3);
+    max-width: 10ch;
   }
 
-  p:not(.code) {
-    color: var(--text-secondary);
+  /* The sun, half set: the night's over for this page. */
+  .sun {
+    position: absolute;
+    right: -10vw;
+    bottom: 0;
+    width: min(70vw, 760px);
+    aspect-ratio: 2 / 1;
+    border-radius: 999px 999px 0 0;
+    background: var(--accent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .sun {
+      animation: set 1.6s cubic-bezier(0.16, 0.8, 0.2, 1) both;
+    }
+  }
+
+  @keyframes set {
+    from {
+      transform: translateY(-30%);
+    }
   }
 </style>

@@ -107,6 +107,12 @@ const copy: Copy = {
     },
     ui: {
       navHowItWorks: 'How it works',
+      navOccasions: 'Occasions',
+      navPrivacy: 'Privacy',
+      navFaq: 'Questions',
+      votePrompt: 'Tap an answer to vote.',
+      figureMorning: 'The event ends at 6 the next morning. Then the story starts.',
+      figurePeople: 'Up to 50 people in one event.',
       ctaSmall: 'Get notified',
       ctaHero: 'Get notified at launch',
       ctaPillComingSoon: 'Coming soon',

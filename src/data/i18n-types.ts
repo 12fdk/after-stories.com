@@ -63,6 +63,15 @@ export interface HomeCopy {
 /** The fixed interface strings, localized per locale (header, footer, form, event page labels). */
 export interface UiCopy {
   navHowItWorks: string;
+  /** The header's other jump links on the home page. */
+  navOccasions: string;
+  navPrivacy: string;
+  navFaq: string;
+  /** Under the live poll: how to use it. */
+  votePrompt: string;
+  /** Captions of the home page's figures: 06:00 and 50. */
+  figureMorning: string;
+  figurePeople: string;
   ctaSmall: string;
   ctaHero: string;
   ctaPillComingSoon: string;

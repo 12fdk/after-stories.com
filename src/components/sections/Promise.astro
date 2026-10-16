@@ -1,0 +1,92 @@
+---
+import type { Locale } from "../../lib/i18n";
+import type { Fact } from "../../data/events";
+
+// The agreement plan: what the app promises. The real "deleted in 14 hours" screen sits in the
+// sun's shape on a dawn field; the promises are marked with small suns.
+interface Props {
+  title: string;
+  facts: Fact[];
+  locale?: Locale;
+}
+
+const { title, facts, locale = "en" } = Astro.props;
+---
+
+<section id="privacy" class="section promise">
+  <div class="wrap promise-inner">
+    <div class="promise-screen arch">
+      <img src={`/app/${locale}/private.webp`} alt={facts[2]?.title ?? title} width="660" height="1434" loading="lazy" decoding="async" />
+    </div>
+    <div class="promise-copy" data-reveal>
+      <h2>{title}</h2>
+      <ul class="suns facts">
+        {
+          facts.map((f) => (
+            <li>
+              <strong>{f.title}</strong> {f.text}
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</section>
+
+<style>
+  .promise-inner {
+    display: grid;
+    gap: 56px;
+    align-items: center;
+    padding-top: 96px;
+    padding-bottom: 96px;
+    background: var(--dawn);
+    border-radius: var(--radius);
+  }
+
+  @media (min-width: 900px) {
+    .promise-inner {
+      grid-template-columns: 5fr 7fr;
+      gap: 64px;
+      padding: 112px 64px;
+    }
+  }
+
+  .promise-screen {
+    width: min(100%, 420px);
+    justify-self: center;
+    aspect-ratio: 1 / 1.3;
+    background: var(--accent);
+    padding: 21% 12% 0;
+  }
+
+  .promise-screen img {
+    width: 100%;
+    border-radius: 28px 28px 0 0;
+  }
+
+  .promise-copy {
+    display: grid;
+    gap: 40px;
+  }
+
+  .facts {
+    display: grid;
+    gap: 24px;
+    font-size: var(--t-body);
+  }
+
+  .facts li {
+    max-width: 52ch;
+  }
+
+  .facts strong {
+    display: block;
+    font-family: var(--display);
+    font-stretch: 85%;
+    font-weight: 800;
+    font-size: var(--t-lead);
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+</style>

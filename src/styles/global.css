@@ -110,6 +110,31 @@
   color-scheme: light;
 }
 
+/*
+ * The design (#design-taste): one motif, the sun of the morning after. The accent pink is the
+ * sun; it rises in the hero, its half-disc masks the pictures (the .arch shape) and marks the
+ * lists, and it sets again in the footer. No rules, gradients or resting shadows: surfaces are
+ * separated by a step in tone. Five type sizes: --t-display, --t-head, --t-lead, --t-body,
+ * --t-small.
+ */
+:root {
+  --t-display: clamp(3.25rem, 7.2vw, 7.25rem);
+  --t-head: clamp(2.125rem, 3.7vw, 3.625rem);
+  --t-lead: 1.3125rem;
+  --t-body: 1.0625rem;
+  --t-small: 0.875rem;
+
+  --section: 96px;
+  --wide: 1376px;
+  --radius: 28px;
+}
+
+@media (min-width: 900px) {
+  :root {
+    --section: 176px;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -125,12 +150,14 @@ body {
   background: var(--background);
   color: var(--text-primary);
   font-family: var(--font);
-  font-size: var(--step-0);
+  font-size: var(--t-body);
   line-height: 1.55;
   -webkit-font-smoothing: antialiased;
+  overflow-x: clip;
 }
 
-img {
+img,
+video {
   display: block;
   max-width: 100%;
   height: auto;
@@ -144,12 +171,35 @@ h1,
 h2,
 h3 {
   font-family: var(--display);
-  font-stretch: 72%;
+  font-stretch: 68%;
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.01em;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
   margin: 0;
   text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--t-display);
+}
+
+h2 {
+  font-size: var(--t-head);
+}
+
+/* On a phone the display face runs narrower, so a long headline keeps to two lines. */
+@media (max-width: 520px) {
+  h1,
+  h2 {
+    font-stretch: 58%;
+  }
+}
+
+h3 {
+  font-size: var(--t-lead);
+  font-stretch: 85%;
+  line-height: 1.1;
+  letter-spacing: 0;
 }
 
 p {
@@ -158,7 +208,7 @@ p {
 
 .wrap {
   width: 100%;
-  max-width: var(--max);
+  max-width: var(--wide);
   margin: 0 auto;
   padding: 0 var(--gutter);
 }
@@ -169,9 +219,55 @@ p {
   }
 }
 
+.section {
+  padding-top: var(--section);
+}
+
+.lead {
+  font-size: var(--t-lead);
+  line-height: 1.45;
+  max-width: 40ch;
+}
+
+.small {
+  font-size: var(--t-small);
+  color: var(--text-secondary);
+}
+
+/* The motif: the sun's half-disc. Pictures take it as their top edge. */
+.arch {
+  border-radius: 999px 999px 0 0;
+  overflow: hidden;
+}
+
+/* A list marked with small rising suns instead of bullets. */
+.suns {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.suns > li {
+  position: relative;
+  padding-left: 1.6em;
+}
+
+.suns > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.9em;
+  height: 0.45em;
+  border-radius: 999px 999px 0 0;
+  background: var(--accent);
+}
+
+/* The one button shape: fully round, like the sun. */
 .pill {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5em;
   min-height: 52px;
   padding: 0 1.6em;
@@ -179,6 +275,7 @@ p {
   background: var(--accent);
   color: var(--on-accent);
   font-weight: 700;
+  font-size: var(--t-body);
   text-decoration: none;
 }
 
@@ -188,6 +285,29 @@ p {
 
 .pill[aria-disabled="true"] {
   cursor: default;
+}
+
+.pill-small {
+  min-height: 44px;
+  padding: 0 1.1em;
+  font-size: var(--t-small);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pill,
+  .press {
+    transition:
+      transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1),
+      background-color 0.16s ease;
+  }
+  .pill:hover,
+  .press:hover {
+    transform: translateY(-2px);
+  }
+  .pill:active,
+  .press:active {
+    transform: scale(0.97);
+  }
 }
 
 :focus-visible {
@@ -201,484 +321,29 @@ p {
   }
 }
 
-/* ---- Header and footer ---- */
-
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-top: 20px;
-  padding-bottom: 20px;
+/* Inline heart: the app's like, drawn instead of an emoji. */
+.heart {
+  display: inline-block;
+  width: 0.95em;
+  height: 0.95em;
+  vertical-align: -0.12em;
+  fill: var(--accent);
 }
 
-.brand {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--text-primary);
-  text-decoration: none;
-  font-family: var(--display);
-  font-stretch: 90%;
-  font-weight: 800;
-  font-size: 1.125rem;
-}
-
-.brand img {
-  border-radius: 9px;
-}
-
-.topbar-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-}
-
-.topbar-link {
-  color: var(--text-secondary);
-  text-decoration: none;
-  font-size: 0.9375rem;
-  padding: 10px 0;
-}
-
-.topbar-link:hover {
-  color: var(--text-primary);
-}
-
-/* At phone width the header keeps the logo and the direct call to action. */
-@media (max-width: 440px) {
-  .topbar-link {
-    display: none;
-  }
-}
-
-.footer {
-  border-top: 1px solid var(--hairline);
-  padding: 32px 0 48px;
-}
-
-.footer-inner {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 32px;
-  justify-content: space-between;
-  align-items: baseline;
-  font-size: var(--step--1);
-  color: var(--text-secondary);
-}
-
-.footer-tagline {
-  font-family: var(--display);
-  font-stretch: 80%;
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--text-primary);
-}
-
-.footer-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 20px;
-}
-
-.footer-inner a {
-  color: var(--text-secondary);
-}
-
-.footer-inner a:hover {
-  color: var(--text-primary);
-}
-
-/* ---- Hero ---- */
-
-.hero {
-  padding: 32px 0 80px;
-}
-
-.hero-grid {
-  display: grid;
-  gap: 56px;
-  align-items: center;
-}
-
-@media (min-width: 900px) {
-  .hero-grid {
-    grid-template-columns: 1.4fr 1fr;
-  }
-  .hero {
-    padding: 64px 0 120px;
-  }
-}
-
-.hero-copy {
-  display: grid;
-  gap: 24px;
-  justify-items: start;
-}
-
-h1 {
-  font-size: var(--step-4);
-  font-stretch: 64%;
-  text-wrap: pretty;
-  line-height: 0.9;
-}
-
-/* Each line of the hero headline is its own block, so the load sequence can play it in order. */
-h1 .line {
-  display: block;
-}
-
+/* ---- Entrances: the parts of each section rise in turn, once (src/scripts/motion.ts) ---- */
 @media (prefers-reduced-motion: no-preference) {
-  h1 .line {
-    animation: line-in 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
-  }
-  h1 .line:nth-child(2) {
-    animation-delay: 0.35s;
-  }
-  h1 .line:nth-child(3) {
-    animation-delay: 0.7s;
-  }
-}
-
-@keyframes line-in {
-  from {
+  .js [data-reveal] > * {
     opacity: 0;
-    transform: translateY(0.25em);
+    transform: translateY(24px);
+    transition:
+      opacity 0.7s cubic-bezier(0.2, 0.7, 0.2, 1),
+      transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+    transition-delay: calc(var(--i, 0) * 80ms);
   }
-}
-
-.lede {
-  font-size: var(--step-1);
-  line-height: 1.45;
-  color: var(--text-secondary);
-  max-width: 34ch;
-}
-
-.fineprint {
-  font-size: var(--step--1);
-  color: var(--text-secondary);
-}
-
-.cta {
-  display: grid;
-  gap: 12px;
-  justify-items: start;
-  margin-top: 8px;
-}
-
-.pill-small {
-  min-height: 44px;
-  padding: 0 1.1em;
-  font-size: 0.9375rem;
-}
-
-.pill-block {
-  justify-content: center;
-  width: 100%;
-}
-
-/* ---- Sections ---- */
-
-.section {
-  padding-top: 112px;
-}
-
-.section-title {
-  font-size: var(--step-3);
-  max-width: 22ch;
-}
-
-.section-intro {
-  margin-top: 16px;
-  color: var(--text-secondary);
-  font-size: var(--step-1);
-  line-height: 1.45;
-  max-width: 40ch;
-}
-
-/* How it works: one event, drawn as a line that runs from night into the morning after. */
-.steps {
-  list-style: none;
-  padding: 0;
-  margin: 48px 0 0;
-  display: grid;
-  gap: 40px;
-  position: relative;
-}
-
-.steps::before {
-  content: "";
-  position: absolute;
-  left: 7px;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(180deg, var(--hairline), var(--accent));
-}
-
-.step {
-  position: relative;
-  padding-left: 40px;
-  display: grid;
-  gap: 8px;
-  align-content: start;
-}
-
-.step::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 4px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--background);
-  border: 2px solid var(--text-tertiary);
-}
-
-.step:last-child::before {
-  background: var(--accent);
-  border-color: var(--accent);
-  box-shadow: 0 0 0 6px rgba(255, 45, 111, 0.18), 0 0 32px 8px rgba(255, 45, 111, 0.35);
-}
-
-.step-when {
-  color: var(--text-secondary);
-  font-size: var(--step--1);
-  font-weight: 600;
-}
-
-.step:last-child .step-when {
-  color: var(--accent-ink);
-}
-
-.step h3 {
-  font-size: var(--step-2);
-}
-
-.step p:last-child {
-  color: var(--text-secondary);
-  max-width: 34ch;
-}
-
-@media (min-width: 820px) {
-  .steps {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-    padding-top: 40px;
+  .js [data-reveal].is-in > * {
+    opacity: 1;
+    transform: none;
   }
-  .steps::before {
-    left: 8px;
-    right: 8px;
-    top: 7px;
-    bottom: auto;
-    width: auto;
-    height: 2px;
-    background: linear-gradient(90deg, var(--hairline), var(--accent));
-  }
-  .step {
-    padding-left: 0;
-  }
-  .step::before {
-    top: -40px;
-  }
-}
-
-/* Works for: the occasions wear the app's moment-tile colours. */
-.tiles {
-  list-style: none;
-  padding: 0;
-  margin: 36px 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.tile {
-  --tile: var(--tile-drink);
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 52px;
-  padding: 0 20px 0 8px;
-  border-radius: 16px;
-  background: var(--tile);
-  color: var(--tile-ink);
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.tiles li:nth-child(6n + 2) .tile {
-  --tile: var(--tile-scored);
-}
-.tiles li:nth-child(6n + 3) .tile {
-  --tile: var(--tile-puked);
-}
-.tiles li:nth-child(6n + 4) .tile {
-  --tile: var(--tile-went-home);
-}
-.tiles li:nth-child(6n + 5) .tile {
-  --tile: var(--tile-went-clubbing);
-}
-.tiles li:nth-child(6n) .tile {
-  --tile: var(--tile-photo);
-}
-
-/* The icon sits in a darker disc of the tile's own colour, drawn in the tile ink. */
-.tile-icon {
-  width: 36px;
-  height: 36px;
-  padding: 8px;
-  border-radius: 11px;
-  background: rgba(16, 17, 20, 0.12);
-}
-
-/* A linked tile: no underline (the tile is the affordance), a ring on hover, and the press. */
-.tile-link:hover {
-  outline: 2px solid var(--tile);
-  outline-offset: 3px;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .tile-link {
-    transition: transform 0.12s ease;
-  }
-  .tile-link:active {
-    transform: scale(0.97);
-  }
-}
-
-/* Privacy: plain statements in two columns, no boxes. */
-.facts {
-  list-style: none;
-  padding: 0;
-  margin: 40px 0 0;
-  display: grid;
-  gap: 0 48px;
-  max-width: 920px;
-}
-
-@media (min-width: 720px) {
-  .facts {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.facts li {
-  border-top: 1px solid var(--hairline);
-  padding: 20px 0 28px;
-  color: var(--text-secondary);
-  max-width: 44ch;
-}
-
-.facts strong {
-  display: block;
-  margin-bottom: 4px;
-  color: var(--text-primary);
-  font-family: var(--display);
-  font-stretch: 85%;
-  font-weight: 700;
-  font-size: var(--step-1);
-}
-
-/* FAQ */
-.faq-list {
-  margin-top: 36px;
-  max-width: 760px;
-  border-bottom: 1px solid var(--hairline);
-}
-
-details {
-  border-top: 1px solid var(--hairline);
-}
-
-summary {
-  cursor: pointer;
-  list-style: none;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 24px;
-  min-height: 64px;
-  padding: 16px 0;
-  font-weight: 700;
-  font-size: 1.125rem;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-/* A plus that turns into a cross when the answer is open. */
-summary::after {
-  content: "+";
-  flex: none;
-  font-size: 1.75rem;
-  font-weight: 400;
-  line-height: 1;
-  color: var(--accent-ink);
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  summary::after {
-    transition: transform 0.2s ease;
-  }
-}
-
-details[open] summary::after {
-  transform: rotate(45deg);
-}
-
-summary:hover {
-  color: var(--text-secondary);
-}
-
-details p {
-  color: var(--text-secondary);
-  padding-bottom: 24px;
-  max-width: 62ch;
-}
-
-/* Closer: the page ends where the event does, at dawn. */
-.closer {
-  margin-top: 128px;
-  padding: 120px 0 112px;
-  background:
-    radial-gradient(60% 90% at 50% 100%, rgba(255, 45, 111, 0.28), transparent 70%),
-    linear-gradient(180deg, var(--background) 0%, var(--dawn) 100%);
-}
-
-.closer-inner {
-  display: grid;
-  justify-items: start;
-  gap: 32px;
-}
-
-.closer h2 {
-  font-size: var(--step-4);
-  max-width: 14ch;
-}
-
-/* The success picture, then the alternative, before the form. */
-.closer-story {
-  display: grid;
-  gap: 12px;
-  max-width: 48ch;
-  font-size: var(--step-1);
-  line-height: 1.45;
-}
-
-.closer-stakes {
-  color: var(--text-secondary);
-  font-size: var(--step-0);
-}
-
-/* The plan section's repeat of the call to action. */
-.section-cta {
-  margin-top: 48px;
-}
-
-.closer .fineprint a {
-  color: var(--text-secondary);
 }
 
 /* Read by screen readers, not shown. */

@@ -1,0 +1,243 @@
+---
+import { uiCopy, type Locale } from "../../lib/i18n";
+import type { EventType } from "../../data/events";
+import { shares } from "../../lib/poll";
+
+// The live thing: an event of this type while it's being planned, with a poll the visitor can
+// vote in. The vote turns into a decision and joins the "Decided" list, as in the app. Without
+// the script the poll still shows its results. The mock's own words are app UI, the same in every
+// locale (src/lib/i18n.ts); the labels around them are translated.
+interface Props {
+  mock: EventType["mock"];
+  locale?: Locale;
+  /** The event type's name, for the label read by screen readers. */
+  name: string;
+}
+
+const { mock, locale = "en", name } = Astro.props;
+const ui = uiCopy(locale);
+const share = shares(mock.options);
+---
+
+<figure class="poll-card" data-ui data-poll aria-label={name}>
+  <div class="poll-head">
+    <p class="poll-title">{mock.title}</p>
+    <p class="poll-meta"><span>{ui.planning}</span> · {mock.people} {ui.peopleWord}</p>
+  </div>
+
+  <div class="poll" role="group" aria-label={mock.question}>
+    <p class="poll-q">{ui.votePrefix}: {mock.question}</p>
+    <ul class="poll-options">
+      {
+        mock.options.map((o, i) => (
+          <li>
+            <button
+              type="button"
+              class:list={["option", { "is-leading": i === 0 }]}
+              data-votes={o.votes}
+              style={`--share:${share[i]}%`}
+              aria-pressed="false"
+            >
+              <span class="option-label">{o.label}</span>
+              <span class="votes">{o.votes}</span>
+            </button>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="poll-hint" data-hint>{ui.votePrompt}</p>
+  </div>
+
+  <div>
+    <p class="poll-decided-title">{ui.decided}</p>
+    <ul class="decided suns" data-decided aria-live="polite">
+      {mock.decided.map((d) => <li>{d}</li>)}
+    </ul>
+  </div>
+</figure>
+
+<script>
+  import { vote } from "../../lib/poll";
+
+  // One vote per poll: it counts, the bars move, and the chosen answer becomes a decision.
+  for (const poll of document.querySelectorAll<HTMLElement>("[data-poll]")) {
+    const buttons = Array.from(poll.querySelectorAll<HTMLButtonElement>(".option"));
+    const decided = poll.querySelector<HTMLUListElement>("[data-decided]")!;
+    const hint = poll.querySelector<HTMLElement>("[data-hint]")!;
+    const options = buttons.map((b) => ({
+      label: b.querySelector(".option-label")!.textContent ?? "",
+      votes: Number(b.dataset.votes),
+    }));
+
+    buttons.forEach((button, index) => {
+      button.addEventListener("click", () => {
+        if (poll.dataset.voted) return;
+        poll.dataset.voted = "true";
+        const result = vote(options, index);
+        result.options.forEach((o, i) => {
+          const b = buttons[i];
+          b.style.setProperty("--share", `${o.share}%`);
+          b.querySelector(".votes")!.textContent = String(o.votes);
+          b.classList.toggle("is-leading", o.chosen);
+          b.setAttribute("aria-pressed", String(o.chosen));
+          b.disabled = true;
+        });
+        const item = document.createElement("li");
+        item.className = "is-new";
+        item.textContent = result.decided;
+        decided.prepend(item);
+        hint.hidden = true;
+      });
+    });
+  }
+</script>
+
+<style>
+  .poll-card {
+    margin: 0;
+    width: 100%;
+    max-width: 400px;
+    display: grid;
+    gap: 18px;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--surface);
+    color: var(--text-primary);
+  }
+
+  .poll-title {
+    font-family: var(--display);
+    font-stretch: 80%;
+    font-weight: 800;
+    font-size: var(--t-lead);
+    line-height: 1.05;
+  }
+
+  .poll-meta {
+    margin-top: 4px;
+    font-size: var(--t-small);
+    color: var(--text-secondary);
+  }
+
+  .poll-meta span {
+    color: var(--accent-ink);
+    font-weight: 700;
+  }
+
+  .poll {
+    display: grid;
+    gap: 10px;
+  }
+
+  .poll-q {
+    font-weight: 700;
+  }
+
+  .poll-options {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+  }
+
+  /* Each answer is a button; its result bar is a fill behind the words, as wide as its share. */
+  .option {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    min-height: 48px;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 14px;
+    background: var(--surface-elevated);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: var(--t-small);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .option::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    z-index: -1;
+    width: var(--share);
+    background: var(--hairline);
+  }
+
+  .option.is-leading {
+    font-weight: 700;
+  }
+
+  .option.is-leading::before {
+    background: var(--accent-disabled);
+  }
+
+  .option:disabled {
+    cursor: default;
+  }
+
+  .option[aria-pressed="true"] .votes {
+    color: var(--accent-ink);
+    font-weight: 800;
+  }
+
+  .option:not(:disabled):hover {
+    background: var(--hairline);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .option::before {
+      transition: width 0.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .option:not(:disabled):active {
+      transform: scale(0.98);
+    }
+  }
+
+  .votes {
+    font-variant-numeric: tabular-nums;
+    color: var(--text-secondary);
+  }
+
+  .poll-hint {
+    font-size: var(--t-small);
+    color: var(--text-secondary);
+  }
+
+  .poll-decided-title {
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .decided {
+    display: grid;
+    gap: 6px;
+    font-size: var(--t-small);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .decided :global(.is-new) {
+      animation: decided-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+  }
+
+  @keyframes decided-in {
+    from {
+      opacity: 0;
+      transform: translateY(-12px);
+    }
+  }
+
+  .decided :global(.is-new) {
+    color: var(--accent-ink);
+    font-weight: 700;
+  }
+</style>
