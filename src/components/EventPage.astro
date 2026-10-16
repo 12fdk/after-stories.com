@@ -1,0 +1,384 @@
+---
+import Base from "../layouts/Base.astro";
+import SiteHeader from "./SiteHeader.astro";
+import SiteFooter from "./SiteFooter.astro";
+import LaunchCta from "./LaunchCta.astro";
+import Icon from "./Icon.astro";
+import Poll from "./sections/Poll.astro";
+import PhoneFrame from "./PhoneFrame.astro";
+import Beats from "./sections/Beats.astro";
+import Gallery from "./sections/Gallery.astro";
+import Pledge from "./sections/Promise.astro";
+import Faq from "./sections/Faq.astro";
+import Closer from "./sections/Closer.astro";
+import { events as englishEvents, defaultPrivacy, type EventType } from "../data/events";
+import { ogImagePath } from "../lib/og";
+import { hreflangAlternates, localEvents, localEventHref, localizedPath, uiCopy, type Locale } from "../lib/i18n";
+import { SITE_URL } from "../lib/seo";
+
+// One page per event type and locale (src/pages/[event].astro, src/pages/[locale]/[event].astro).
+// English reads src/data/events.ts as it always has; the other locales their copy file.
+// The same story as the home page (docs/messaging.md › Event pages), told for this event.
+interface Props {
+  locale: Locale;
+  slug: string;
+}
+
+const { locale, slug } = Astro.props;
+const ui = uiCopy(locale);
+const list: EventType[] = locale === "en" ? englishEvents : localEvents(locale);
+const event = list.find((e) => e.slug === slug)!;
+const { mock, hero } = event;
+const privacy = event.privacy ?? defaultPrivacy;
+const others = list.filter((e) => e.slug !== event.slug);
+const href = (e: EventType) => localEventHref(locale, e.slug);
+const breadcrumb = [
+  { name: "After Stories", path: localizedPath(locale, "/") },
+  { name: event.name, path: href(event) },
+];
+---
+
+<Base
+  locale={locale}
+  title={event.title}
+  description={event.description}
+  image={ogImagePath(event.slug)}
+  imageAlt={event.headline.join(" ")}
+  breadcrumb={breadcrumb}
+  faq={event.faq}
+  hreflang={hreflangAlternates(SITE_URL, `/${event.slug}/`, true)}
+>
+  <main>
+    <section class="hero">
+      <SiteHeader locale={locale} onPage />
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <h1>
+            {
+              event.headline.map((line) => (
+                <span class="line">{" "}
+                  {line.split(/(\S+-\S+)/).map((part) => (part.includes("-") ? <span class="nowrap">{part}</span> : part))}
+                </span>
+              ))
+            }
+          </h1>
+          <p class="lead">{event.lede}</p>
+          <div class="cta">
+            <LaunchCta as="link" locale={locale} />
+            <p class="small">{event.fineprint}</p>
+          </div>
+        </div>
+
+        <!-- The stage: the event's photo in the sun's shape, and the live poll in front of it. -->
+        <div class="stage">
+          <div class="hero-photo arch">
+            <img src={hero.src} alt={hero.alt} width="1600" height="900" fetchpriority="high" decoding="async" />
+          </div>
+          <div class="hero-poll">
+            <PhoneFrame>
+              <Poll mock={mock} locale={locale} name={event.name} inPhone />
+            </PhoneFrame>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap today">
+      <div class="today-head" data-reveal>
+        <h2>{event.todayTitle}</h2>
+        <p class="lead">{event.problem}</p>
+      </div>
+      <ul class="today-list" aria-label={event.todayTitle}>
+        {
+          event.today.map((t) => (
+            <li>
+              <Icon class="today-icon" name={t.icon} />
+              <s>{t.text}</s>
+            </li>
+          ))
+        }
+      </ul>
+      <div class="today-one">
+        <p class="visually-hidden">{ui.withApp}</p>
+        <p class="one">{event.todayOne}</p>
+        <p class="lead">{event.todayText}</p>
+      </div>
+    </section>
+
+    <Beats title={event.howTitle} intro={event.empathy} beats={event.beats} locale={locale} />
+
+    <section id="occasions" class="section wrap occasions">
+      <h2>{event.occasionsTitle}</h2>
+      <ul class="occasion-list" data-reveal>
+        {event.occasions.map((o) => <li>{o.name}</li>)}
+      </ul>
+    </section>
+
+    <Pledge title={event.privacyTitle} facts={privacy} locale={locale} />
+
+    <Faq title={ui.goodToKnow} faq={event.faq} />
+
+    <Gallery
+      id="more"
+      title={ui.planningSomethingElse}
+      items={others.map((e) => ({ name: e.name, href: href(e), src: e.hero.src, alt: e.hero.alt }))}
+    />
+
+    <Closer
+      title={event.closer}
+      success={event.success}
+      stakes={event.stakes}
+      locale={locale}
+      photo={{ src: hero.src, alt: hero.alt, width: 1600, height: 900 }}
+    />
+  </main>
+
+  <SiteFooter locale={locale} base={`/${event.slug}/`} />
+</Base>
+
+<style>
+  /* ---- The hero: the headline on the ground, the photo in the sun's shape ---- */
+  .hero {
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    gap: 48px;
+    padding-top: 40px;
+  }
+
+  @media (min-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 7fr 5fr;
+      gap: 48px;
+      align-items: center;
+      padding-top: 6vh;
+    }
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+  }
+
+  /* The headline's sentences run on as one text, balanced over its lines. */
+  .hero h1 {
+    font-size: clamp(2.25rem, 4.2vw, 4.25rem);
+  }
+
+  .nowrap {
+    white-space: nowrap;
+  }
+
+  .cta {
+    display: grid;
+    gap: 12px;
+    justify-items: start;
+    margin-top: 8px;
+  }
+
+  .stage {
+    position: relative;
+  }
+
+  .hero-photo {
+    height: 460px;
+    background: var(--surface);
+  }
+
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* The live poll in the phone, coming up from the photo's bottom edge. */
+  .hero-poll {
+    position: relative;
+    height: 540px;
+    width: 290px;
+    margin: -380px auto 0;
+    overflow: hidden;
+  }
+
+  @media (min-width: 900px) {
+    .stage {
+      margin-right: calc(var(--gutter) * -1);
+    }
+
+    .hero-photo {
+      height: min(88vh, 860px);
+    }
+
+    .hero-poll {
+      position: absolute;
+      left: -40px;
+      bottom: 0;
+      width: 320px;
+      height: min(600px, 74%);
+      margin: 0;
+    }
+  }
+
+  /* The signature move: the photo opens from the bottom edge and settles. */
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-photo {
+      animation: shutter 1.1s cubic-bezier(0.7, 0, 0.2, 1) both;
+    }
+    .hero-photo img {
+      animation:
+        settle 1.6s cubic-bezier(0.2, 0.7, 0.2, 1) both,
+        drift 24s ease-in-out 1.6s infinite alternate;
+    }
+    .hero-poll {
+      animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) 0.7s both;
+    }
+  }
+
+  @keyframes shutter {
+    from {
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes settle {
+    from {
+      transform: scale(1.12);
+    }
+  }
+
+  @keyframes drift {
+    to {
+      transform: scale(1.06) translateX(-1.5%);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+  }
+
+  /* ---- Today, crossed out, against one event ---- */
+  .today {
+    display: grid;
+    gap: 8px;
+  }
+
+  .today-head {
+    display: grid;
+    gap: 24px;
+    max-width: 900px;
+    margin-bottom: 48px;
+  }
+
+  @media (min-width: 900px) {
+    .today {
+      grid-template-columns: 5fr 7fr;
+    }
+    .today-head {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .today-list {
+    list-style: none;
+    margin: 0;
+    padding: 40px 32px;
+    display: grid;
+    gap: 22px;
+    align-content: center;
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .today-list li {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    color: var(--text-secondary);
+    font-size: var(--t-lead);
+    line-height: 1.3;
+  }
+
+  .today-list :global(.today-icon) {
+    width: 24px;
+    height: 24px;
+    color: var(--text-secondary);
+  }
+
+  .today-list s {
+    text-decoration-thickness: 2px;
+  }
+
+  .today-one {
+    display: grid;
+    gap: 20px;
+    align-content: end;
+    min-height: 420px;
+    padding: 40px 32px;
+    border-radius: 999px 999px var(--radius) var(--radius);
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+
+  @media (min-width: 900px) {
+    .today-one {
+      padding: 48px;
+      min-height: 560px;
+    }
+  }
+
+  .one {
+    font-family: var(--display);
+    font-stretch: 68%;
+    font-weight: 800;
+    font-size: var(--t-display);
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+
+  /* ---- The occasions: the words alone, the page's one rest ---- */
+  .occasions {
+    display: grid;
+    gap: 40px;
+  }
+
+  .occasion-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 0;
+    font-family: var(--display);
+    font-stretch: 72%;
+    font-weight: 800;
+    font-size: var(--t-head);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--text-secondary);
+  }
+
+  .occasion-list li {
+    display: inline-flex;
+    align-items: baseline;
+  }
+
+  /* A small sun between the words. */
+  .occasion-list li:not(:last-child)::after {
+    content: "";
+    display: inline-block;
+    width: 0.5em;
+    height: 0.25em;
+    margin: 0 0.35em;
+    border-radius: 999px 999px 0 0;
+    background: var(--accent);
+  }
+</style>

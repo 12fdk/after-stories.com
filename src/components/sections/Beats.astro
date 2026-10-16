@@ -1,0 +1,219 @@
+---
+import LaunchCta from "../LaunchCta.astro";
+import Rich from "../Rich.astro";
+import type { Locale } from "../../lib/i18n";
+import type { Beat } from "../../data/events";
+
+// How it works: "many into one". A diagram of dots runs from the group chat's mess (scattered),
+// through one event (a tight ribbon), into the morning after (ordered rows, in the sun's pink).
+// Under each third, its beat and the real app screen for it (public/app/<locale>/).
+interface Props {
+  title: string;
+  /** The guide's empathy line (StoryBrand). */
+  intro: string;
+  beats: Beat[];
+  locale?: Locale;
+  /** The three app screens, one per beat (file names in public/app/<locale>/). */
+  screens?: [string, string, string];
+}
+
+const { title, intro, beats, locale = "en", screens = ["plan", "live", "summary"] } = Astro.props;
+
+// A seeded random, so the diagram is the same on every build.
+let seed = 7;
+const rand = () => {
+  seed = (seed * 16807) % 2147483647;
+  return (seed - 1) / 2147483646;
+};
+
+type Dot = { x: number; y: number; dx: number; dy: number; tone: "a" | "b" | "c"; d: number };
+const dots: Dot[] = [];
+// The mess: scattered in the left third.
+for (let i = 0; i < 46; i++) {
+  const x = 12 + rand() * 270;
+  const y = 14 + rand() * 232;
+  dots.push({ x, y, dx: (rand() - 0.5) * 60, dy: (rand() - 0.5) * 60, tone: rand() > 0.5 ? "a" : "b", d: rand() * 400 });
+}
+// One event: a ribbon three dots high in the middle third.
+for (let r = 0; r < 3; r++) {
+  for (let c = 0; c < 18; c++) {
+    const x = 318 + c * 15 + (r % 2) * 7;
+    const y = 115 + r * 15;
+    dots.push({ x, y, dx: -40 - rand() * 120, dy: (rand() - 0.5) * 160, tone: "b", d: 200 + c * 25 });
+  }
+}
+// The morning after: neat rows in the right third.
+for (let r = 0; r < 6; r++) {
+  for (let c = 0; c < 9; c++) {
+    const x = 640 + c * 30;
+    const y = 55 + r * 30;
+    dots.push({ x, y, dx: -150 + c * 6, dy: 130 - r * 30 - 75 + 75 - (r - 2.5) * 22, tone: "c", d: 700 + (r * 9 + c) * 14 });
+  }
+}
+---
+
+<section id="how" class="section wrap beats">
+  <div class="beats-head" data-reveal>
+    <h2>{title}</h2>
+    <p class="lead">{intro}</p>
+  </div>
+
+  <svg class="flow" data-flow viewBox="0 0 920 260" role="img" aria-label={beats.map((b) => b.name).join(" → ")}>
+    {
+      dots.map((d) => (
+        <circle
+          class={`tone-${d.tone}`}
+          cx={d.x.toFixed(1)}
+          cy={d.y.toFixed(1)}
+          r={d.tone === "c" ? 7 : 5}
+          style={`--dx:${d.dx.toFixed(0)}px;--dy:${d.dy.toFixed(0)}px;--d:${d.d.toFixed(0)}ms`}
+        />
+      ))
+    }
+  </svg>
+
+  <ol class="beat-list">
+    {
+      beats.map((b, i) => (
+        <li class="beat" data-reveal>
+          <h3>{b.name}</h3>
+          <p>
+            <strong>{b.when}.</strong> <Rich text={b.text} />
+          </p>
+          {screens[i] === "poll" ? (
+            <div class="screen screen-live arch">
+              <slot name="poll" />
+            </div>
+          ) : (
+            <div class="screen arch">
+              <img
+                src={`/app/${locale}/${screens[i]}-phone.webp`}
+                alt={b.name}
+                width="760"
+                height="1534"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ol>
+
+  <div class="beats-cta">
+    <LaunchCta as="link" locale={locale} />
+  </div>
+</section>
+
+<style>
+  .beats-head {
+    display: grid;
+    gap: 24px;
+    max-width: 880px;
+  }
+
+  .flow {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 64px;
+    overflow: visible;
+  }
+
+  .tone-a {
+    fill: var(--text-tertiary);
+  }
+
+  .tone-b {
+    fill: var(--text-secondary);
+  }
+
+  .tone-c {
+    fill: var(--accent);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .js .flow circle {
+      transform: translate(var(--dx), var(--dy));
+      opacity: 0;
+      transition:
+        transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1),
+        opacity 0.8s ease;
+      transition-delay: var(--d);
+    }
+    .js .flow.is-in circle {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .beat-list {
+    list-style: none;
+    margin: 48px 0 0;
+    padding: 0;
+    display: grid;
+    gap: 72px 32px;
+  }
+
+  @media (min-width: 900px) {
+    .beat-list {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+
+  .beat {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+
+  .beat h3 {
+    font-size: var(--t-head);
+    font-stretch: 68%;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+  }
+
+  .beat p {
+    max-width: 38ch;
+  }
+
+  .beat strong {
+    color: var(--accent-ink);
+  }
+
+  /* The app screen, cut to the sun's half-disc at the top, on a step of tone. */
+  .screen {
+    margin-top: 18px;
+    max-width: 400px;
+    aspect-ratio: 4 / 5;
+    background: var(--surface);
+    /* Deep enough that the half-disc frames the screen instead of cutting it. */
+    padding: min(19%, 76px) min(11%, 44px) 0;
+  }
+
+  /* The live poll needs the whole of its screen down to the decisions. */
+  @media (max-width: 899px) {
+    .screen-live {
+      aspect-ratio: 4 / 5.6;
+    }
+  }
+
+  .beat:nth-child(2) .screen {
+    background: var(--dawn);
+  }
+
+  .beat:nth-child(3) .screen {
+    background: var(--accent);
+  }
+
+  /* The real screen in an iPhone 17 Pro Max frame (public/app/<locale>/*-phone.webp). */
+  .screen img {
+    width: 100%;
+  }
+
+  .beats-cta {
+    margin-top: 72px;
+  }
+</style>

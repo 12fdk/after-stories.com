@@ -19,7 +19,8 @@ export function pageSources(path: string): string[] {
   const copy = locale === DEFAULT_LOCALE ? [] : [`src/data/copy/${locale}.ts`];
   // Strip the locale prefix: /fr/trips/ -> /trips/
   const bare = basePath(path);
-  if (bare === "/") return ["src/pages/index.astro", "src/data/events.ts", ...copy];
+  // The home page's English copy lives in its locale file too (src/components/HomePage.astro).
+  if (bare === "/") return ["src/pages/index.astro", "src/data/events.ts", ...(copy.length ? copy : ["src/data/copy/en.ts"])];
   if (bare === "/privacy/") return ["src/pages/privacy.astro", "src/data/privacy.ts", ...copy];
   if (bare === "/terms/") return ["src/pages/terms.astro", "src/data/terms.ts", ...copy];
   const slug = bare.replace(/^\/|\/$/g, "");

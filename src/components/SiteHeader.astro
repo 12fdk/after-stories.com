@@ -3,16 +3,27 @@ import LaunchCta from "./LaunchCta.astro";
 import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 
 // StoryBrand: the direct call to action in the header, next to the transitional "How it works".
+// The home page and the event pages have the same four sections (how, occasions, privacy, faq),
+// so their links jump on the page. Pages without them (privacy, terms) jump to the home page's.
 interface Props {
   /** The page's locale; defaults to English (the base, unprefixed pages). */
   locale?: Locale;
   /** Where the header's "Get notified" goes. Pages without the form point at the home page's. */
   notifyHref?: string;
+  /** True when this page has the four sections the links point at. */
+  onPage?: boolean;
 }
 
-const { locale = "en", notifyHref = "#notify" } = Astro.props;
+const { locale = "en", notifyHref = "#notify", onPage = false } = Astro.props;
 const ui = uiCopy(locale);
 const homeHref = localizedPath(locale, "/");
+const at = onPage ? "" : homeHref;
+const links = [
+  { href: `${at}#how`, label: ui.navHowItWorks, keep: true },
+  { href: `${at}#occasions`, label: ui.navOccasions },
+  { href: `${at}#privacy`, label: ui.navPrivacy },
+  { href: `${at}#faq`, label: ui.navFaq },
+];
 ---
 
 <header class="topbar wrap">
@@ -23,7 +34,79 @@ const homeHref = localizedPath(locale, "/");
     <span aria-hidden="true">After Stories</span>
   </a>
   <nav class="topbar-nav" aria-label="Main">
-    <a class="topbar-link" href={`${homeHref}#how`}>{ui.navHowItWorks}</a>
+    {links.map((l) => <a class:list={["topbar-link", { keep: l.keep }]} href={l.href}>{l.label}</a>)}
     <LaunchCta as="link" size="small" href={notifyHref} locale={locale} />
   </nav>
 </header>
+
+<style>
+  .topbar {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--display);
+    font-stretch: 90%;
+    font-weight: 800;
+    font-size: var(--t-lead);
+    white-space: nowrap;
+  }
+
+  .brand img {
+    border-radius: 9px;
+  }
+
+  .topbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .topbar-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: var(--t-small);
+    font-weight: 600;
+    padding: 12px 0;
+    text-decoration: underline 2px transparent;
+    text-underline-offset: 6px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .topbar-link {
+      transition: text-decoration-color 0.2s ease;
+    }
+  }
+
+  .topbar-link:hover {
+    text-decoration-color: var(--accent);
+  }
+
+  /* Tablet keeps "How it works"; a phone keeps only the logo and the direct call to action. */
+  @media (max-width: 960px) {
+    .topbar-link:not(.keep) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .topbar-link {
+      display: none;
+    }
+    .brand span {
+      font-size: var(--t-body);
+    }
+  }
+</style>

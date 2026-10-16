@@ -132,4 +132,14 @@ describe("copy fallback", () => {
     expect(home.hero.lede).not.toEqual(enCopy.home.hero.lede);
     expect(uiCopy(locale as "fr").navHowItWorks).not.toEqual(enCopy.ui.navHowItWorks);
   });
+
+  it.each(locales.filter((l) => l !== "en").map((l) => [l] as const))("[%s] translates the redesign's strings", (locale) => {
+    const ui = uiCopy(locale as "fr");
+    for (const key of ["navPrivacy", "votePrompt", "figureMorning", "figurePeople"] as const) {
+      expect(ui[key], key).not.toEqual(enCopy.ui[key]);
+    }
+    // The 06:00 and 50 tiles state the app's real limits; the captions must say the same numbers.
+    expect(ui.figureMorning).toMatch(/6/);
+    expect(ui.figurePeople).toMatch(/50/);
+  });
 });

@@ -1,0 +1,50 @@
+---
+// A live piece of the app (the poll) shown in the same iPhone 17 Pro Max frame as the app's
+// screenshots (public/app/<locale>/*-phone.webp): the HTML sits in the screen opening and the
+// frame image lies on top of it. The frame comes from github.com/jamesjingyi/mockup-device-frames
+// (1520 × 3068, the screen 100 px in on every side).
+---
+
+<div class="phone">
+  <div class="phone-screen">
+    <slot />
+  </div>
+  <img class="phone-frame" src="/app/iphone-frame.webp" alt="" width="760" height="1534" loading="lazy" decoding="async" />
+</div>
+
+<style>
+  .phone {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1520 / 3068;
+    container-type: inline-size;
+  }
+
+  /* The app is dark in both themes, so the screen keeps the dark tokens. */
+  .phone-screen {
+    position: absolute;
+    inset: 3.26% 6.58%;
+    overflow: hidden;
+    border-radius: 13.6% / 6.3%;
+    padding: 14cqw 6cqw 0;
+    background: #0b0c0e;
+    color: #f7f8f9;
+    --background: #0b0c0e;
+    --surface: #0b0c0e;
+    --surface-elevated: #1f2328;
+    --hairline: #2e343b;
+    --text-primary: #f7f8f9;
+    --text-secondary: #a2aab3;
+    --text-tertiary: #767e88;
+    --accent-ink: #ff2d6f;
+    --accent-disabled: #45202d;
+  }
+
+  .phone-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>

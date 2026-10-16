@@ -1,0 +1,198 @@
+---
+// The occasions: one frame in the sun's shape, and its photo changes. It runs through the event
+// pages by itself; pointing at (or focusing) a name shows that event's photo. Without the script
+// the first photo stays. With reduced motion it doesn't run by itself; a tap on the frame advances.
+interface Item {
+  name: string;
+  href: string;
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  title: string;
+  items: Item[];
+  id?: string;
+}
+
+const { title, items, id = "occasions" } = Astro.props;
+---
+
+<section id={id} class="section wrap gallery" data-gallery>
+  <div class="gallery-copy" data-reveal>
+    <h2>{title}</h2>
+    <ul class="gallery-list">
+      {
+        items.map((item, i) => (
+          <li>
+            <a href={item.href} data-index={i} class="press">
+              {item.name}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <figure class="gallery-frame">
+    <button type="button" class="frame arch" data-frame aria-label={title}>
+      {
+        items.map((item, i) => (
+          <img
+            src={item.src}
+            alt={item.alt}
+            width="1600"
+            height="900"
+            loading="lazy"
+            decoding="async"
+            class:list={{ "is-on": i === 0 }}
+          />
+        ))
+      }
+    </button>
+    <figcaption data-caption>{items[0]?.name}</figcaption>
+  </figure>
+</section>
+
+<script>
+  for (const gallery of document.querySelectorAll<HTMLElement>("[data-gallery]")) {
+    const frame = gallery.querySelector<HTMLButtonElement>("[data-frame]")!;
+    const images = Array.from(frame.querySelectorAll("img"));
+    const caption = gallery.querySelector<HTMLElement>("[data-caption]")!;
+    const links = Array.from(gallery.querySelectorAll<HTMLAnchorElement>("a[data-index]"));
+    const still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let current = 0;
+    let held = false;
+
+    const show = (i: number) => {
+      current = (i + images.length) % images.length;
+      images.forEach((img, j) => img.classList.toggle("is-on", j === current));
+      caption.textContent = links[current]?.textContent ?? "";
+      links.forEach((a, j) => a.classList.toggle("is-current", j === current));
+    };
+
+    show(0);
+    frame.addEventListener("click", () => show(current + 1));
+    for (const link of links) {
+      const i = Number(link.dataset.index);
+      link.addEventListener("pointerenter", () => ((held = true), show(i)));
+      link.addEventListener("focus", () => ((held = true), show(i)));
+      link.addEventListener("pointerleave", () => (held = false));
+      link.addEventListener("blur", () => (held = false));
+    }
+    if (!still) {
+      setInterval(() => {
+        if (!held && !document.hidden) show(current + 1);
+      }, 2600);
+    }
+  }
+</script>
+
+<style>
+  .gallery {
+    display: grid;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (min-width: 900px) {
+    .gallery {
+      grid-template-columns: 7fr 5fr;
+      gap: 64px;
+    }
+  }
+
+  .gallery-copy {
+    display: grid;
+    gap: 40px;
+  }
+
+  .gallery-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 24px;
+  }
+
+  .gallery-list a {
+    display: inline-block;
+    padding: 8px 0;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-family: var(--display);
+    font-stretch: 80%;
+    font-weight: 800;
+    font-size: var(--t-lead);
+    line-height: 1.1;
+  }
+
+  /* On a wide screen the names are one column at heading size, as tall as the frame. */
+  @media (min-width: 900px) {
+    .gallery-list {
+      grid-template-columns: 1fr;
+    }
+    .gallery-list a {
+      padding: 2px 0;
+      font-stretch: 68%;
+      font-size: var(--t-head);
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+    }
+  }
+
+  .gallery-list a:hover,
+  .gallery-list a:focus-visible,
+  .gallery-list a.is-current {
+    color: var(--accent-ink);
+  }
+
+  .gallery-frame {
+    margin: 0;
+    display: grid;
+    gap: 16px;
+    justify-items: center;
+  }
+
+  .frame {
+    position: relative;
+    display: block;
+    width: min(100%, 520px);
+    aspect-ratio: 4 / 5;
+    padding: 0;
+    border: 0;
+    background: var(--surface);
+    cursor: pointer;
+  }
+
+  .frame img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+  }
+
+  .frame img.is-on {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .frame img {
+      transition:
+        opacity 0.6s ease,
+        transform 3.2s ease-out;
+      transform: scale(1.08);
+    }
+    .frame img.is-on {
+      transform: scale(1);
+    }
+  }
+
+  figcaption {
+    font-size: var(--t-small);
+    color: var(--text-secondary);
+  }
+</style>

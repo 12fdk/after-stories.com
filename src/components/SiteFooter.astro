@@ -25,46 +25,146 @@ const termsHref = "/terms/";
 ---
 
 <footer class="footer">
-  <div class="wrap footer-inner">
+  <div class="wrap footer-grid">
     <p class="footer-tagline">{ui.footerTagline}</p>
-    <nav class="footer-nav" aria-label="Footer">
+    <nav class="footer-events" aria-label="Footer">
       <a href={localizedPath(locale, "/")}>{ui.footerHome}</a>
       {list.map((e) => <a href={localEventHref(locale, e.slug)}>{e.name}</a>)}
-      <a href={privacyHref}>{ui.footerPrivacy}</a>
-      <a href={termsHref}>{ui.footerTerms}</a>
     </nav>
-    <nav class="footer-lang" aria-label="Language">
-      {locales.map((l) => (
-        <a
-          href={localizedPath(l, base)}
-          hreflang={l}
-          aria-current={l === locale ? "true" : undefined}
-        >
-          {localeName[l]}
-        </a>
-      ))}
-    </nav>
-    <ThemeSwitch />
-    <p>© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
+    <div class="footer-side">
+      <nav class="footer-lang" aria-label="Language">
+        {
+          locales.map((l) => (
+            <a href={localizedPath(l, base)} hreflang={l} aria-current={l === locale ? "true" : undefined}>
+              {localeName[l]}
+            </a>
+          ))
+        }
+      </nav>
+      <ThemeSwitch />
+      <p>
+        <a href={privacyHref}>{ui.footerPrivacy}</a> · <a href={termsHref}>{ui.footerTerms}</a>
+      </p>
+      <p class="credit">
+        Dawn footage: <a href="https://commons.wikimedia.org/wiki/File:Morgenstimmung_am_Drachenberg_01.webm">“Morgenstimmung am Drachenberg 01”</a> by NutzerAusBerlin, CC0, via Wikimedia Commons.
+      </p>
+    </div>
   </div>
+
+  <!-- The close: the name at full width, and the sun of the morning after next to it. -->
+  <div class="wrap mark" aria-hidden="true">
+    <span class="mark-name">After Stories</span><span class="mark-sun"></span>
+  </div>
+  <p class="wrap copyright">© {new Date().getFullYear()} <a href="https://12f.dk">12f ApS</a></p>
 </footer>
 
 <style>
+  .footer {
+    margin-top: 96px;
+    padding: 96px 0 32px;
+    background: var(--surface);
+    color: var(--text-primary);
+    overflow: hidden;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 48px 32px;
+  }
+
+  @media (min-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 4fr 5fr 3fr;
+    }
+  }
+
+  .footer-tagline {
+    font-family: var(--display);
+    font-stretch: 72%;
+    font-weight: 800;
+    font-size: clamp(var(--t-lead), 2.4vw, 2.25rem);
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    max-width: 26ch;
+  }
+
+  .footer-events {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 24px;
+    align-content: start;
+  }
+
+  .footer a {
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+
+  .footer a:hover {
+    color: var(--accent-ink);
+  }
+
+  .footer-events a {
+    padding: 6px 0;
+  }
+
+  .footer-side {
+    display: grid;
+    gap: 20px;
+    align-content: start;
+    font-size: var(--t-small);
+  }
+
   .footer-lang {
     display: flex;
-    gap: 16px;
     flex-wrap: wrap;
-    margin: 4px 0;
+    gap: 6px 16px;
   }
 
   .footer-lang a {
-    font-size: 0.8125rem;
     font-weight: 600;
-    color: var(--text-secondary);
+    padding: 4px 0;
   }
 
   .footer-lang a[aria-current="true"] {
     color: var(--accent-ink);
+  }
+
+  .credit {
+    color: var(--text-secondary);
+  }
+
+  .footer .credit a {
+    color: var(--text-secondary);
     text-decoration: underline;
+  }
+
+  .mark {
+    display: flex;
+    align-items: flex-end;
+    gap: 0.06em;
+    margin-top: 96px;
+    font-family: var(--display);
+    font-stretch: 62%;
+    font-weight: 800;
+    font-size: clamp(4.5rem, 17.5vw, 16rem);
+    line-height: 0.8;
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+
+  .mark-sun {
+    flex: none;
+    width: 0.62em;
+    height: 0.31em;
+    margin-bottom: 0.02em;
+    border-radius: 999px 999px 0 0;
+    background: var(--accent);
+  }
+
+  .copyright {
+    margin-top: 24px;
+    font-size: var(--t-small);
+    color: var(--text-secondary);
   }
 </style>

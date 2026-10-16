@@ -51,6 +51,7 @@ const graph = noindex
     <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" />
     <!-- Applies a stored Light/Dark choice before first paint (src/lib/theme.ts). -->
     <script is:inline>
+      document.documentElement.classList.add("js");
       try {
         var t = localStorage.getItem("theme");
         if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
@@ -118,5 +119,8 @@ const graph = noindex
   </head>
   <body>
     <slot />
+    <script>
+      import "../scripts/motion";
+    </script>
   </body>
 </html>

@@ -1,0 +1,360 @@
+---
+import Base from "../layouts/Base.astro";
+import SiteHeader from "./SiteHeader.astro";
+import SiteFooter from "./SiteFooter.astro";
+import LaunchCta from "./LaunchCta.astro";
+import Poll from "./sections/Poll.astro";
+import PhoneFrame from "./PhoneFrame.astro";
+import Beats from "./sections/Beats.astro";
+import Figures from "./sections/Figures.astro";
+import Gallery from "./sections/Gallery.astro";
+import Pledge from "./sections/Promise.astro";
+import Faq from "./sections/Faq.astro";
+import Closer from "./sections/Closer.astro";
+import { homeFaq } from "../data/home";
+import { homeCopy, uiCopy, localEvents, localEventHref, defaultPrivacyFor, hreflangAlternates, type Locale } from "../lib/i18n";
+import { SITE_URL } from "../lib/seo";
+
+// The home page in every locale (src/pages/index.astro and src/pages/[locale]/index.astro).
+// Copy: src/data/copy/<locale>.ts; the story it tells: docs/messaging.md.
+// The design: one motif, the sun of the morning after (src/styles/global.css).
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const h = homeCopy(locale);
+const ui = uiCopy(locale);
+const events = localEvents(locale);
+const chats = h.chats ?? [];
+const trip = events[0];
+// The one-liner, word for word: its last sentence is the headline, the first two lead into it.
+const [planLine, liveLine, wakeLine] = h.hero.h1;
+const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
+---
+
+<Base
+  locale={locale}
+  title={h.title}
+  description={h.description}
+  imageAlt={h.hero.h1.join(" ")}
+  faq={locale === "en" ? homeFaq : undefined}
+  hreflang={locale === "en" ? undefined : hreflangAlternates(SITE_URL, "/", true)}
+>
+  <main>
+    <section class="hero">
+      <SiteHeader locale={locale} onPage />
+      <div class="wrap hero-copy">
+        <p class="prelude">{planLine} {liveLine}</p>
+        <h1>{wakeLine}</h1>
+        <p class="lead">{h.hero.lede}</p>
+        <div class="cta">
+          <LaunchCta as="link" locale={locale} />
+          <p class="small">{h.hero.fineprint}</p>
+        </div>
+      </div>
+
+      <!-- The stage: the sun of the morning after comes up, with the app's real morning-after
+           screen standing in front of it. -->
+      <div class="stage">
+        <div class="sun"></div>
+        <div class="stage-screen">
+          <img src={`/app/${locale}/summary-phone.webp`} alt={h.how.beats[2]?.name ?? wakeLine} width="760" height="1534" fetchpriority="high" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section wrap pain">
+      <div class="pain-copy" data-reveal>
+        <h2>{h.pain.title}</h2>
+        <p class="lead">{h.pain.intro}</p>
+      </div>
+      <div class="chats">
+        {
+          chats.map((c) => (
+            <figure class="chat" data-ui aria-label={c.label} data-reveal>
+              {c.messages.map((m, i) =>
+                i === 0 ? (
+                  <div class="msg msg-mine">
+                    <p class="bubble">
+                      <span class="visually-hidden">{m.who}: </span>
+                      {m.text}
+                    </p>
+                  </div>
+                ) : (
+                  <div class="msg">
+                    <span class="avatar" style={`--tile:var(${tiles[(i - 1) % tiles.length]})`} aria-hidden="true">
+                      {m.who[0]}
+                    </span>
+                    <div>
+                      <p class="msg-who">{m.who}</p>
+                      <p class="bubble">{m.text}</p>
+                    </div>
+                  </div>
+                ),
+              )}
+              <figcaption class="chat-meta">{c.meta}</figcaption>
+            </figure>
+          ))
+        }
+      </div>
+    </section>
+
+    <Beats title={h.how.title} intro={h.how.intro} beats={h.how.beats} locale={locale} screens={["poll", "live", "save"]}>
+      <PhoneFrame slot="poll">
+        <Poll mock={trip.mock} locale={locale} name={trip.name} inPhone />
+      </PhoneFrame>
+    </Beats>
+
+    <Figures title={h.ends.title} text={h.ends.text} morning={ui.figureMorning} people={ui.figurePeople} />
+
+    <Gallery
+      title={h.useCases}
+      items={events.map((e) => ({ name: e.name, href: localEventHref(locale, e.slug), src: e.hero.src, alt: e.hero.alt }))}
+    />
+
+    <Pledge title={h.promise} facts={defaultPrivacyFor(locale)} locale={locale} />
+
+    <Faq title={h.goodToKnow} faq={h.faq} />
+
+    <Closer
+      title={h.closer.title}
+      success={h.closer.story}
+      stakes={h.closer.stakes}
+      locale={locale}
+      photo={{ src: "/lakehouse.webp", alt: trip.hero.alt, width: 1344, height: 924 }}
+    />
+  </main>
+
+  <SiteFooter locale={locale} />
+</Base>
+
+<style>
+  /* ---- The hero: the headline on the night ground, the sun coming up on the right ---- */
+  .hero {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+    padding-top: 48px;
+  }
+
+  /* The one-liner's first two sentences, leading into the headline. */
+  .prelude {
+    font-family: var(--display);
+    font-stretch: 85%;
+    font-weight: 800;
+    font-size: var(--t-lead);
+    line-height: 1.2;
+    color: var(--accent-ink);
+  }
+
+  .hero h1 {
+    max-width: 9ch;
+    margin-top: -8px;
+  }
+
+  .hero .lead {
+    max-width: 36ch;
+  }
+
+  .cta {
+    display: grid;
+    gap: 12px;
+    justify-items: start;
+    margin-top: 8px;
+  }
+
+  .stage {
+    position: relative;
+    height: 540px;
+    margin-top: 56px;
+  }
+
+  .sun {
+    position: absolute;
+    left: 50%;
+    top: 70px;
+    width: 150vw;
+    aspect-ratio: 1;
+    margin-left: -75vw;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .stage-screen {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 290px;
+    margin-left: -145px;
+  }
+
+  /* The app's real morning-after screen in an iPhone 17 Pro Max frame
+     (github.com/jamesjingyi/mockup-device-frames), cropped by the hero's bottom edge. */
+  .stage-screen img {
+    width: 100%;
+  }
+
+  @media (min-width: 900px) {
+    .hero {
+      min-height: max(100svh, 780px);
+    }
+
+    .hero-copy {
+      padding-top: 10vh;
+      padding-bottom: 96px;
+    }
+
+    .stage {
+      position: absolute;
+      inset: 0;
+      height: auto;
+      margin: 0;
+      z-index: 1;
+    }
+
+    .sun {
+      left: auto;
+      right: -16vh;
+      top: auto;
+      bottom: -60vh;
+      width: 118vh;
+      min-width: 900px;
+      margin: 0;
+    }
+
+    .stage-screen {
+      left: auto;
+      right: calc(43vh - 195px);
+      top: max(24vh, 190px);
+      width: 390px;
+      margin: 0;
+    }
+  }
+
+  /* The signature move: the sun comes up, and the screen opens from the bottom edge. */
+  @media (prefers-reduced-motion: no-preference) {
+    .sun {
+      animation: sun-up 1.8s cubic-bezier(0.16, 0.8, 0.2, 1) both;
+    }
+    .stage-screen {
+      animation: shutter 1.1s cubic-bezier(0.7, 0, 0.2, 1) 0.5s both;
+    }
+    .stage-screen img {
+      animation: settle 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.5s both;
+    }
+  }
+
+  @keyframes sun-up {
+    from {
+      transform: translateY(28%);
+    }
+  }
+
+  @keyframes shutter {
+    from {
+      clip-path: inset(100% 0 0 0);
+    }
+    to {
+      clip-path: inset(0 0 0 0);
+    }
+  }
+
+  @keyframes settle {
+    from {
+      transform: scale(1.12);
+    }
+  }
+
+  /* ---- The pain: the group chat, twice ---- */
+  .pain {
+    display: grid;
+    gap: 56px;
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .pain {
+      grid-template-columns: 6fr 5fr;
+      gap: 64px;
+    }
+  }
+
+  .pain-copy {
+    display: grid;
+    gap: 28px;
+  }
+
+  .chats {
+    display: grid;
+    gap: 16px;
+  }
+
+  @media (min-width: 900px) {
+    .chats .chat:nth-child(2) {
+      margin-left: 64px;
+    }
+  }
+
+  .chat {
+    margin: 0;
+    display: grid;
+    gap: 12px;
+    padding: 24px;
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  .msg {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+  }
+
+  .avatar {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--tile);
+    color: var(--tile-ink);
+    font-size: var(--t-small);
+    font-weight: 700;
+  }
+
+  .msg-who {
+    font-size: var(--t-small);
+    color: var(--text-secondary);
+    margin: 0 0 2px 14px;
+  }
+
+  .bubble {
+    background: var(--surface-elevated);
+    border-radius: 18px 18px 18px 6px;
+    padding: 9px 14px;
+  }
+
+  .msg-mine {
+    justify-content: flex-end;
+  }
+
+  .msg-mine .bubble {
+    background: var(--bubble-mine);
+    border-radius: 18px 18px 6px 18px;
+  }
+
+  .chat-meta {
+    font-size: var(--t-small);
+    color: var(--text-secondary);
+    text-align: right;
+  }
+</style>
