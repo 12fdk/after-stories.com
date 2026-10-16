@@ -5,6 +5,7 @@ import SiteFooter from "./SiteFooter.astro";
 import LaunchCta from "./LaunchCta.astro";
 import Icon from "./Icon.astro";
 import Poll from "./sections/Poll.astro";
+import PhoneFrame from "./PhoneFrame.astro";
 import Beats from "./sections/Beats.astro";
 import Gallery from "./sections/Gallery.astro";
 import Pledge from "./sections/Promise.astro";
@@ -74,7 +75,9 @@ const breadcrumb = [
             <img src={hero.src} alt={hero.alt} width="1600" height="900" fetchpriority="high" decoding="async" />
           </div>
           <div class="hero-poll">
-            <Poll mock={mock} locale={locale} name={event.name} />
+            <PhoneFrame>
+              <Poll mock={mock} locale={locale} name={event.name} inPhone />
+            </PhoneFrame>
           </div>
         </div>
       </div>
@@ -191,11 +194,13 @@ const breadcrumb = [
     object-fit: cover;
   }
 
+  /* The live poll in the phone, coming up from the photo's bottom edge. */
   .hero-poll {
     position: relative;
-    margin: -140px auto 0;
-    width: calc(100% - 24px);
-    max-width: 400px;
+    height: 540px;
+    width: 290px;
+    margin: -380px auto 0;
+    overflow: hidden;
   }
 
   @media (min-width: 900px) {
@@ -209,9 +214,10 @@ const breadcrumb = [
 
     .hero-poll {
       position: absolute;
-      left: 24px;
-      bottom: 24px;
-      width: 380px;
+      left: -40px;
+      bottom: 0;
+      width: 320px;
+      height: min(600px, 74%);
       margin: 0;
     }
   }

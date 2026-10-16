@@ -4,6 +4,7 @@ import SiteHeader from "./SiteHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
 import LaunchCta from "./LaunchCta.astro";
 import Poll from "./sections/Poll.astro";
+import PhoneFrame from "./PhoneFrame.astro";
 import Beats from "./sections/Beats.astro";
 import Figures from "./sections/Figures.astro";
 import Gallery from "./sections/Gallery.astro";
@@ -100,7 +101,9 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
     </section>
 
     <Beats title={h.how.title} intro={h.how.intro} beats={h.how.beats} locale={locale} screens={["poll", "live", "save"]}>
-      <Poll slot="poll" mock={trip.mock} locale={locale} name={trip.name} />
+      <PhoneFrame slot="poll">
+        <Poll mock={trip.mock} locale={locale} name={trip.name} inPhone />
+      </PhoneFrame>
     </Beats>
 
     <Figures title={h.ends.title} text={h.ends.text} morning={ui.figureMorning} people={ui.figurePeople} />

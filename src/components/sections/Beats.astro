@@ -81,7 +81,9 @@ for (let r = 0; r < 6; r++) {
             <strong>{b.when}.</strong> <Rich text={b.text} />
           </p>
           {screens[i] === "poll" ? (
-            <slot name="poll" />
+            <div class="screen screen-live arch">
+              <slot name="poll" />
+            </div>
           ) : (
             <div class="screen arch">
               <img
@@ -188,7 +190,14 @@ for (let r = 0; r < 6; r++) {
     aspect-ratio: 4 / 5;
     background: var(--surface);
     /* Deep enough that the half-disc frames the screen instead of cutting it. */
-    padding: 19% 11% 0;
+    padding: min(19%, 76px) min(11%, 44px) 0;
+  }
+
+  /* The live poll needs the whole of its screen down to the decisions. */
+  @media (max-width: 899px) {
+    .screen-live {
+      aspect-ratio: 4 / 5.6;
+    }
   }
 
   .beat:nth-child(2) .screen {
@@ -202,10 +211,6 @@ for (let r = 0; r < 6; r++) {
   /* The real screen in an iPhone 17 Pro Max frame (public/app/<locale>/*-phone.webp). */
   .screen img {
     width: 100%;
-  }
-
-  .beat :global(.poll-card) {
-    margin-top: 18px;
   }
 
   .beats-cta {

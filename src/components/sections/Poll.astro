@@ -12,14 +12,16 @@ interface Props {
   locale?: Locale;
   /** The event type's name, for the label read by screen readers. */
   name: string;
+  /** True inside PhoneFrame: the screen is the card, so it drops its own surface. */
+  inPhone?: boolean;
 }
 
-const { mock, locale = "en", name } = Astro.props;
+const { mock, locale = "en", name, inPhone = false } = Astro.props;
 const ui = uiCopy(locale);
 const share = shares(mock.options);
 ---
 
-<figure class="poll-card" data-ui data-poll aria-label={name}>
+<figure class:list={["poll-card", { "in-phone": inPhone }]} data-ui data-poll aria-label={name}>
   <div class="poll-head">
     <p class="poll-title">{mock.title}</p>
     <p class="poll-meta"><span>{ui.planning}</span> · {mock.people} {ui.peopleWord}</p>
@@ -103,6 +105,27 @@ const share = shares(mock.options);
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--text-primary);
+  }
+
+  .poll-card.in-phone {
+    max-width: none;
+    padding: 0;
+    gap: 12px;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .in-phone .option {
+    min-height: 40px;
+    padding: 7px 12px;
+  }
+
+  .in-phone .poll {
+    gap: 8px;
+  }
+
+  .in-phone .poll-options {
+    gap: 6px;
   }
 
   .poll-title {
