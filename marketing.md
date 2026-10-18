@@ -1,6 +1,6 @@
 # After Stories — Marketing Plan (living doc)
 
-Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-17
+Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-18
 
 > Plan for a TikTok content program built to grow organic awareness and installs of the
 > **After Stories** app. Every word of copy in this plan must come from the brand sources named
@@ -55,8 +55,12 @@ Pull the current status from `site-brief https://after-stories.com` (it records 
 
 | Status | End card / CTA | Post text |
 | --- | --- | --- |
-| Coming soon / waitlist (today) | **Get notified** · Coming soon · after-stories.com | after-stories.com (link in bio) |
-| Live on the App Store | **Available on the App Store** | after-stories.com (link in bio) |
+| Coming soon / waitlist | ~~**Get notified**~~ · Coming soon · after-stories.com | after-stories.com (link in bio) |
+| Live on the App Store (today, since 2026-10-18) | **Download on the App Store** · after-stories.com | after-stories.com (link in bio) |
+
+> CTA wording follows `docs/messaging.md` (the CTA-wording rulebook): Apple's official
+> "Download on the App Store" badge words, the same everywhere, no form, no "free"
+> (§5 never-claim). Verified live 2026-10-18.
 
 TikTok URLs in post text are not clickable — the end card carries the destination, the post
 text says "link in bio".
@@ -278,14 +282,14 @@ site disagree, the site wins.
 | Save all photos | "Save every photo to your phone with one tap" · "Save every photo with one tap first." |
 | 48 h deletion (always after the save line) | "Deleted for everyone 48 hours after the event" · "Before that, everyone gets a reminder and can save all the photos to their own phone with one tap." · "You keep the memories. The app forgets the rest." · "What happens on the trip stays in the trip." |
 | Group size | "Up to 50 people per event" · "Up to 50. That fits most groups, from a handful of friends to a big party." |
-| Friends without an iPhone | "Friends without an iPhone join from the web." · "The invite link works for everyone." |
+| Friends without an iPhone | **STALE since launch 2026-10-18** — the web version is gone (docs/messaging.md rule 11): never claim friends without an iPhone can join. The as-nobody-left-out row (Nov 16 #2) needs a rework before build. |
 | Privacy | "No feed, no followers, no strangers." · "Each event is its own private space." · "Never your location." · "Photos are stripped of GPS and camera data before upload." · "Sign in with Apple means no passwords." |
 | Office events | "Skip the 30 emails." · "No admins, no profiles, no feed." · "No work chat left behind." · "There are no company accounts, licences or admin settings." |
 | One event = one day | "One event covers one day and its night, until 6 the next morning." · "For a weekend away, make one event per day." |
-| Launch status | "Coming soon to the App Store for iPhone" · CTA "Get notified" (§2) |
+| Launch status | **LAUNCHED 2026-10-18** (App Store app 6815212070, iPhone only, iOS 27+). CTA: "Download on the App Store" (§2). The deployed `llms-full.txt` still shows the pre-launch status line — the live site + `docs/messaging.md` + `docs/positioning.md` are the current sources of truth. |
 
 **Never claim:** a weekend or a whole festival in ONE event (multi-day is "not yet" —
-one event per day); an Android app (non-iPhone friends use the web); location sharing,
+one event per day); an Android app **or a web version** (none exists since launch 2026-10-18 — docs/messaging.md rule 11); location sharing,
 maps or "find your friends"; a public feed, sharing out or a share of the summary to other
 apps; more than 50 people; that it works for weddings, big or public events; an "Add to
 calendar"; that photos are kept or backed up after 48 h; a launch date; any price ("free"
@@ -447,7 +451,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Oct 26 | 2 | as-match-day | D | match-day | “The carpool, sorted.” | match-day street, stadium glow, boots and flasks, no faces | 3 | built 2026-10-16 as-match-day |
 | Oct 26 | 3 | as-halloween-chat | A | nights-out · Halloween | “Halloween: The plan changed four times. The chat has 400 messages.” | costume rail and hallway mirror at blue hour, capes on hooks, glitter on the floorboards, backs only | 4 | built 2026-10-16 as-halloween-chat |
 | Nov 2 | 1 | as-dinner | D | dinner-nights | “Plan the dinner, game or movie night.” | warm kitchen, tungsten, table set for six, steam and plates | 5 | built 2026-10-17 as-dinner |
-| Nov 2 | 2 | as-polls | C | polls → decisions | “Polls that turn into decisions.” | three options on the table as physical cards → one card wins | 0 | queued |
+| Nov 2 | 2 | as-polls | C | polls → decisions | “Polls that turn into decisions.” | three options on the table as physical cards → one card wins | 0 | built 2026-10-18 as-polls |
 | Nov 2 | 3 | as-office-xmas | D | office-events · Christmas party | “Skip the 30 emails.” | office after hours, Christmas lights on, one team table | 1 | queued |
 | Nov 2 | 4 | as-friendsgiving-date | A | dinner-nights · Friendsgiving | “Friendsgiving: Six people, three possible evenings, and the date still isn't set.” | rainy apartment window, a stack of mismatched borrowed chairs, wet autumn leaves on the sill, grey-violet dusk | 2 | queued |
 | Nov 9 | 1 | as-friendsgiving | D | dinner-nights (Potluck) · Friendsgiving | “Friendsgiving: Put three evenings to a vote and the group picks one.” | potluck table from above, mismatched dishes arriving in hands, amber lamps, rust and cream | 3 | queued |
@@ -548,7 +552,9 @@ new look per row — and logs it in §8.
 | built 2026-10-16 | **as-match-day** (fresh match-day night shoot — stadium floodlight glow, boots/flasks, from behind) — queue row Oct 26 #2 (Series D), music v3 | The carpool, sorted. | due on post | daily one-per-night cadence (Robert 2026-10-16); AI label on |
 | built 2026-10-16 | **as-halloween-chat** (fresh interior costume-prep hallway shoot — capes on a rail, hallway mirror, glitter, tungsten vs dusk-violet) — queue row Oct 26 #3 (Series A), music v4 | Halloween: A night out shouldn't need a project manager. | due on post | post by Oct 28 (Halloween); AI label on; hook swapped from the table line — see §8 2026-10-16 |
 | built 2026-10-17 | **as-dinner** (fresh warm-kitchen shoot — one low tungsten pendant over a table set for six, steam, candle stubs, face-down cards, morning-after table) — queue row Nov 2 #1 (Series D), music v5 | Picking one evening for six people shouldn't take two weeks of messages. | due on post | frame-0 hook is the site's pain line; the row's headline “Plan the dinner, game or movie night.” runs mid-deck (Series D shape); AI label on |
+| built 2026-10-18 | **as-polls** (fresh attic games-room shoot — blank cards on an oak table under golden-hour dormer light, overnight into pale blue morning, overhead/side-macro) — queue row Nov 2 #2 (Series C, polls → decisions), music v0 | Polls that turn into decisions. | due on post | first post on the LAUNCH CTA “Download on the App Store” (app live 2026-10-18, app 6815212070); design loop task 20261018-2209; AI label on |
 
+- 2026-10-18 (nightly, §7 review + LAUNCH): no 48 h reviews due with data — the as-dinner build (10-17) and the earlier builds await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: no attributed social traffic, 0 waitlist sign-ups — the build stays product-focused (as-polls). **The app launched 2026-10-18** (App Store 6815212070, iPhone only, iOS 27+; verified via site-brief + the live "Download on the App Store" badges + docs/messaging.md "Live since 2026-10-18" + docs/positioning.md "Launched 2026-10-18"). Consequences, applied in this run: §2 CTA table flipped to the live row with the messaging.md wording ("Download on the App Store", no "Get notified", no "free" per §5); the claim sheet's "Friends without an iPhone" line is now stale and the web/Android never-claim item widened (messaging.md rule 11 — no web version); **the as-nobody-left-out row (Nov 16 #2) must be reworked before its build night**; the deployed `llms-full.txt` still carries the pre-launch status line — the live site and the repo docs are the current sources of truth.
 - 2026-10-17 (nightly, §7 review): no 48 h reviews due with data — the as-trips-a/b A/B (due 10-14) and the as-match-day / as-halloween-chat builds (10-16) await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: no attributed social traffic, 0 waitlist sign-ups — the build stays product-focused (as-dinner).
 - 2026-10-16 (nightly build, as-halloween-chat): the §6 table hook for row Oct 26 #3
   ("The plan changed four times. The chat has 400 messages.") carries two numbers that are not
