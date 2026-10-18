@@ -35,17 +35,25 @@ can be tested without a browser.
   - `TERMS_VERSION` in `terms.ts` and the app's `Terms.version` move together: a change people
     must accept again bumps both, and the app then asks everyone once more.
 
-## The waitlist form (live)
+## Download links and analytics (live since 2026-10-18, #59)
 
-`LaunchCta` renders `NotifyForm` (name + email to the backend's `waitlist-signup` function,
-`src/lib/waitlist.ts`, contract in 12fdk/after-stories#271) when `PUBLIC_WAITLIST_ENABLED=true` at
-build time, otherwise the "Coming soon" pill. The deploy workflow sets it; a local `pnpm build`
-without it shows the pill. Sign-ups are double opt-in on the backend.
+After Stories is on the App Store (app id **6815212070**). The direct CTA is Apple's official
+"Download on the App Store" badge (`public/badges/app-store-<locale>.svg`), rendered by
+`AppStoreCta` in the header, the hero, after the plan and the closer (the closer adds a QR code
+for desktop visitors). Every link comes from `src/lib/appstore.ts`:
 
-`/privacy/` describes what the form collects, in its website part (`src/data/privacy.ts`). Change
-it (and its date) whenever the form, the backend's storage or the site's hosting or analytics
-change. Fonts are self-hosted in
-`public/fonts/`: don't add third-party font or script hosts without updating the policy.
+- **App Store campaign links:** provider token `pt=127521693` and one `ct=site-<placement>` per
+  place on the page, so App Store Connect › App Analytics › Campaigns shows which button brings
+  downloads. Don't hand-write an App Store link anywhere else.
+- **Umami** (`umami.robert-jensen.dk`, script in `Base.astro`) counts each click as the event
+  `app-store-click` with `placement` and `locale`. Nothing about the visitor goes along.
+- **Smart App Banner:** `<meta name="apple-itunes-app">` in `Base.astro`.
+
+The pre-launch waitlist form is gone; the backend still holds its sign-ups (12fdk/after-stories#271).
+`/privacy/` describes the closed waitlist, the click event and the App Store link, in its website
+part (`src/data/privacy.ts`). Change it (and its date) whenever the download links, the site's
+hosting or analytics change. Fonts are self-hosted in `public/fonts/`: don't add third-party font
+or script hosts without updating the policy.
 
 ## Search and AI visibility (#30)
 
@@ -55,8 +63,9 @@ Every page gets its search and share metadata from `src/layouts/Base.astro`; kee
   the build otherwise. The home page's live in `src/data/home.ts`, the event pages' in `events.ts`.
 - **JSON-LD** is one `@graph` per page from `src/lib/seo.ts`: Organization (12f ApS), WebSite,
   MobileApplication, the WebPage (+ FAQPage when the page has questions) and a BreadcrumbList.
-  No rating, price, offers or App Store link until they're real (messaging rules 3 and 9); add
-  them there at launch, with `sameAs` for any social profiles.
+  The app node links the App Store (`downloadUrl`, `installUrl`, `sameAs`) and a free `Offer`
+  (for search engines only: the pages never mention price, messaging rule 9). No rating until a
+  real one exists (rule 3); add `sameAs` for any social profiles.
 - **Share images** (`/og/<slug>.png`, 1200×630) are rendered at build time from each page's
   headline by `src/pages/og/[card].png.ts`. The fonts in `src/assets/og/` are static instances of
   Anybody for that renderer only; `display-widths.json` is their glyph widths, used to fit the

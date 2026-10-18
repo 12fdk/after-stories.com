@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SiteHeader from "./SiteHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
-import LaunchCta from "./LaunchCta.astro";
+import AppStoreCta from "./AppStoreCta.astro";
 import Poll from "./sections/Poll.astro";
 import PhoneFrame from "./PhoneFrame.astro";
 import Beats from "./sections/Beats.astro";
@@ -49,7 +49,7 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
         <h1>{wakeLine}</h1>
         <p class="lead">{h.hero.lede}</p>
         <div class="cta">
-          <LaunchCta as="link" locale={locale} />
+          <AppStoreCta placement="hero" locale={locale} />
           <p class="small">{h.hero.fineprint}</p>
         </div>
       </div>

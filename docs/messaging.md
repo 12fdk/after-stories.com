@@ -7,6 +7,10 @@ facts the story is built from (the brand script, voice, use cases) live in
 
 Last full audit: 2026-10-03, 9.5/10 (#24, #26). The missing half point is authority: see rule 3.
 
+**Live since 2026-10-18** (App Store app 6815212070, iPhone only, iOS 27 or later). The direct
+CTA is Apple's official "Download on the App Store" badge, not a form. There is no web version:
+never say friends without an iPhone can join from the web (rule 11).
+
 ## Before any copy or layout change
 
 1. Read the brand script in `positioning.md` and this file.
@@ -24,7 +28,7 @@ Last full audit: 2026-10-03, 9.5/10 (#24, #26). The missing half point is author
 | SB7 part | Section | Rule |
 | --- | --- | --- |
 | Hero + desire | Hero `h1` and lede | The one-liner, word for word. One desire, no feature list. |
-| Direct CTA | Header pill, hero button, after the plan, the form in the closer | Same words everywhere: "Get notified (at launch)". All jump to the one form at the end. |
+| Direct CTA | Header, hero, after the plan, the closer | Apple's official "Download on the App Store" badge everywhere, linking to the App Store. The closer has the badge plus a QR code for desktop visitors; no form. |
 | Transitional CTA | "How it works" in the header | Stays lower-commitment than the direct CTA. |
 | Problem (external, internal, philosophical) + villain | "Group chats are where plans go to die." | All three levels in the intro. The villain is **the group chat**, never a competitor by name. |
 | Guide: empathy | Intro to "how it works" | Starts with "We've all…", then what After Stories takes off the hero's hands. |
@@ -47,7 +51,7 @@ Each event page tells the same story for its own hero. The fields map to SB7:
 | `privacy` / `defaultPrivacy` | Agreement plan |
 | `success` | This event's morning after, when it went right |
 | `stakes` | This event's group-chat alternative |
-| `closer` | The closing line before the form |
+| `closer` | The closing line before the App Store badge |
 
 `src/data/events.test.ts` checks that every event has all of these, three beats and the guide
 voice. A new event page fills every field; the test fails if it doesn't.
@@ -60,21 +64,27 @@ voice. A new event page fills every field; the test fails if it doesn't.
 2. **One message per page.** One desire, one villain, one direct CTA. A new section has to fit an
    SB7 part above, or it doesn't go on the page.
 3. **Authority is honest only.** No testimonials, user counts, ratings, logos or press until real
-   ones exist. Authority today = the product's specifics and its promises. After launch, add real
-   proof (an App Store rating, a quote from a real user) to the home page's guide section.
+   ones exist. Authority today = the product's specifics and its promises. The app is live
+   (2026-10-18), but there is no rating yet: add real proof (an App Store rating, a quote from a
+   real user) to the home page's guide section only once it exists.
 4. **Clear beats clever.** A visitor understands what the app is in 5 seconds from the hero alone.
    The jokes go in the details (chat mocks, examples), never instead of the explanation.
-5. **The direct CTA is a button, repeated, in the same words.** Header, hero, after the plan, and
-   the form at the end. The page makes its case before the form (#22): the form stays in the closer.
+5. **The direct CTA is the App Store badge, repeated, in the same words.** Apple's official
+   "Download on the App Store" badge (localized: `ui.appStoreBadge`) in the header, the hero,
+   after the plan and the closer. The closer adds one line above it (`ui.closerCta`) and a QR code
+   for desktop (`ui.qrCaption`). No form, no "get notified".
 6. **Failure is a taste.** One sentence, about the group chat and the missing photos. No fear, no
    fake urgency, no countdowns, no "spots are limited".
 7. **Success is specific.** Name the photo, the line, the decision, the phone. Never "amazing
    memories".
 8. **The 48-hour deletion is always paired with saving the photos** (positioning.md › *What the
    48-hour deletion means*). Never mention one without the other.
-9. **Never say anything about price.**
+9. **Never say anything about price.** Not even "free".
 10. **Voice:** warm and witty, cheeky, never laddish. The office page is calmer: no nightlife or
     hangover jokes.
+11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 27 or later. There
+    is no web client and no plan for one (app repo, docs/distribution.md). Asked whether someone
+    without an iPhone can join, the answer is no. Never promise a web or Android version.
 
 ## Quick check (all must be "yes")
 
@@ -83,5 +93,5 @@ voice. A new event page fills every field; the test fails if it doesn't.
 - [ ] Is the internal problem named, not just the external one?
 - [ ] Is there empathy, and only honest authority?
 - [ ] Is the plan three steps?
-- [ ] Is there one direct CTA, as a button, repeated in the same words?
+- [ ] Is there one direct CTA, the App Store badge, repeated in the same words?
 - [ ] Are both failure and success on the page?

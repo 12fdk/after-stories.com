@@ -1,5 +1,5 @@
 ---
-import LaunchCta from "../LaunchCta.astro";
+import AppStoreCta from "../AppStoreCta.astro";
 import Rich from "../Rich.astro";
 import type { Locale } from "../../lib/i18n";
 import type { Beat } from "../../data/events";
@@ -102,7 +102,7 @@ for (let r = 0; r < 6; r++) {
   </ol>
 
   <div class="beats-cta">
-    <LaunchCta as="link" locale={locale} />
+    <AppStoreCta placement="plan" locale={locale} />
   </div>
 </section>
 

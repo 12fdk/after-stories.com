@@ -1,0 +1,126 @@
+---
+import QRCode from "qrcode";
+import { appStoreUrl, badge, type Placement } from "../lib/appstore";
+import { uiCopy, type Locale } from "../lib/i18n";
+
+// The direct call to action: Apple's official "Download on the App Store" badge, in the page's
+// language, in the same words everywhere (docs/messaging.md, rule 5). Header, hero, after the plan
+// and the closer each link with their own App Store campaign (src/lib/appstore.ts).
+// Umami counts every click as "app-store-click" with the place on the page and the page's
+// language; Umami adds the page path itself. Nothing else goes along (privacy.ts).
+// The closer adds a QR code of the same link for visitors on a computer (with="qr").
+interface Props {
+  placement: Exclude<Placement, "qr">;
+  size?: "small";
+  with?: "qr";
+  locale?: Locale;
+}
+
+const { placement, size, with: extra, locale = "en" } = Astro.props;
+const ui = uiCopy(locale);
+const { src, width } = badge[locale];
+// The badge's native height is 40 px; Apple asks for at least 40, the hero's is larger.
+const height = size === "small" ? 40 : 54;
+const qr =
+  extra === "qr"
+    ? await QRCode.toString(appStoreUrl("qr"), { type: "svg", margin: 0, errorCorrectionLevel: "M", color: { dark: "#0b0c0e", light: "#ffffff" } })
+    : undefined;
+---
+
+<div class:list={["app-store", { "app-store-small": size === "small" }]}>
+  <a
+    class="badge-link"
+    href={appStoreUrl(placement)}
+    data-umami-event="app-store-click"
+    data-umami-event-placement={placement}
+    data-umami-event-locale={locale}
+  >
+    <img src={src} alt={ui.appStoreBadge} width={Math.round((width * height) / 40)} height={height} />
+  </a>
+  {
+    qr && (
+      <a
+        class="qr"
+        href={appStoreUrl("qr")}
+        data-umami-event="app-store-click"
+        data-umami-event-placement="qr"
+        data-umami-event-locale={locale}
+        aria-label={ui.appStoreBadge}
+      >
+        <span class="qr-code" aria-hidden="true" set:html={qr} />
+        <span class="qr-caption">{ui.qrCaption}</span>
+      </a>
+    )
+  }
+</div>
+
+<style>
+  .app-store {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px 28px;
+  }
+
+  .badge-link {
+    display: inline-flex;
+    border-radius: 9px;
+  }
+
+  .badge-link img {
+    display: block;
+    width: auto;
+    height: 54px;
+  }
+
+  .app-store-small .badge-link img {
+    height: 40px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .badge-link {
+      transition: transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .badge-link:hover {
+      transform: translateY(-2px);
+    }
+    .badge-link:active {
+      transform: scale(0.97);
+    }
+  }
+
+  /* The QR code is for a visitor on a computer: a phone taps the badge instead. */
+  .qr {
+    display: none;
+    align-items: center;
+    gap: 14px;
+    color: inherit;
+    text-decoration: none;
+  }
+
+  @media (min-width: 900px) and (hover: hover) {
+    .qr {
+      display: inline-flex;
+    }
+  }
+
+  .qr-code {
+    flex: none;
+    width: 112px;
+    padding: 10px;
+    border-radius: 14px;
+    background: #ffffff;
+  }
+
+  .qr-code :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .qr-caption {
+    max-width: 22ch;
+    font-size: var(--t-small);
+    line-height: 1.4;
+  }
+</style>

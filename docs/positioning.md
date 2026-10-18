@@ -2,6 +2,9 @@
 
 > From the owner interview on 2026-10-03. This is the source for the landing page, the App Store
 > page (app repo #38) and every campaign. When a decision here changes, change this file first.
+>
+> **Launched 2026-10-18** on the App Store (app 6815212070): iPhone only, iOS 27 or later, in
+> Danish, English, French, German and Spanish. There is no web version.
 
 ## The decisions
 
@@ -9,14 +12,14 @@
 | --- | --- |
 | Name | **After Stories** everywhere (app repo #245, #246). Not "AFTER". |
 | Audience | Friend groups, international. Worldwide on day one. **Second audience: colleagues planning an office event** (added 2026-10-03). |
-| Language | **English only** at launch. Localise once install data shows where users come from. |
+| Language | The app ships in Danish, English, French, German and Spanish; so does the site. |
 | The pain | **Planning the event** (it gets lost in the group chat) and **collecting the photos afterwards** (everyone's are stuck on their own phone). |
 | The hook | ***The morning after*** summary: the best photo, the best line, what you decided, and *save all photos*. |
 | Hero use case | **The trip / weekend away.** It needs multi-day events (app repo, new issue). |
 | Ephemerality | **A selling point.** The event is **deleted 48 hours after it ends**. |
 | Voice | **Warm and witty.** Friends first, light humour, broad appeal (#165). Cheeky, never laddish. |
 | Price | Free. **Say nothing about price** in marketing, so a paid tier stays possible. |
-| Non-iPhone friends | A **web version** at launch. Nobody in the group is left out. |
+| Non-iPhone friends | **None.** After Stories is an iPhone app (iOS 27 or later). AFTER has no web client and no plan for one (app repo, docs/distribution.md). Say so honestly; never promise a web or Android version. |
 | Growth | **The invite link** and **App Store search (ASO)**. No paid ads at launch. |
 | 90-day goal | **Raw installs.** |
 
@@ -75,12 +78,12 @@ the night itself.*
 - **48 h deletion is a feature here too:** no permanent chat with your boss, no party photos
   lingering on a company drive.
 - **What could stop it** (check before spending on this audience):
-  1. **Sign in with Apple only, iPhone first.** Colleagues on Android or without a personal
-     Apple ID need the web version (#132) on day one. This audience makes it non-negotiable.
+  1. **Sign in with Apple only, iPhone only.** Colleagues on Android or without a personal
+     Apple ID can't join: there is no web version. The office page says so plainly.
   2. **The 17+ age rating** and the nightlife-flavoured copy. Fine for adults, but the app must
      not read as a party app on a work phone.
   3. **50 members per event.** Covers a team or a small company, not a 200-person Christmas party.
-  4. **Company devices and policies.** IT may block unmanaged apps; the web version helps.
+  4. **Company devices and policies.** IT may block unmanaged apps.
   5. **No calendar invite.** A decided date doesn't land in Outlook. An *Add to calendar* on a
      decision with a day would close the loop (not in the eight steps today).
 
@@ -99,8 +102,8 @@ the app forgets the rest.**
 
 1. **The invite link is the real landing page.** Every event brings 3–15 people who have never
    heard of the app. The invite page (`after.12f.dk`, app repo `web/after-link`) has to say in
-   one screen: who invited you, to what, what the app is, and a big App Store button, plus the web
-   version for non-iPhone friends. **This page matters more than after-stories.com.**
+   one screen: who invited you, to what, what the app is, and *Open in AFTER* / a big App Store
+   button. There is no web version. **This page matters more than after-stories.com.**
 2. **ASO.** People search for the job, not for the brand. Keyword sets, one per use case:
    - Trip: *group trip planner, trip with friends, shared trip photos, travel poll*
    - Planning: *group planner, event poll, plan with friends, group decision, vote*
@@ -138,9 +141,10 @@ The current page sells v1: moment tiles, *I'm going home*, *While you were gone�
    event** (the chip links to its own page, `/office-events`).
 6. **Private by design:** only the people in the event; no location, ever (photos stripped,
    places are venues); Sign in with Apple; deleted 48 h after.
-7. **Get it:** App Store button, and the web version for friends without an iPhone.
+7. **Get it:** the official "Download on the App Store" badge (header, hero, after the plan,
+   closer), and a QR code in the closer for desktop visitors. For iPhone, iOS 27 or later.
 
-No price line. English only. Keep IndexNow and the Umami tracking.
+No price line. Keep IndexNow and the Umami tracking.
 
 ## Brand script (StoryBrand, 2026-10-03)
 
@@ -156,10 +160,10 @@ The site copy follows this. How it maps onto each page, the rules and the pre-PR
 | **Internal problem** | *You're* always the one scrolling up, chasing replies and begging for the pictures. It feels like a second job. |
 | **Philosophical problem** | Getting your friends together shouldn't feel like a second job. |
 | **Guide: empathy** | "We've all been the one holding the group chat together." Every event page opens its plan with its own "We've all…" line (`empathy` in `src/data/events.ts`), then what After Stories takes off the organiser's hands. |
-| **Guide: authority** | Honest only: the product's specifics and its promises. No testimonials, numbers or logos until real ones exist (after launch). |
+| **Guide: authority** | Honest only: the product's specifics and its promises. No testimonials, numbers, ratings or logos until real ones exist (live since 2026-10-18, no rating yet). |
 | **Plan (process)** | 1. Plan it together (create the event, send the link, vote). 2. Live it together (one stream). 3. Wake up to the story. |
-| **Plan (agreement)** | No feed, no followers, no strangers. Never your location. Gone 48 hours after, photos saved first. Nobody left out (web for non-iPhone friends). |
-| **Direct CTA** | Get notified at launch: a small button in the header on every page, the hero button and one after the plan, all jumping to the one form at the end (privacy jumps to the home page's). |
+| **Plan (agreement)** | No feed, no followers, no strangers. Never your location. Gone 48 hours after, photos saved first. No new account: Sign in with Apple, no password. |
+| **Direct CTA** | Apple's official "Download on the App Store" badge, the same words everywhere: in the header on every page, the hero, after the plan and the closer. The closer has one line above it and a QR code for desktop. No form. |
 | **Transitional CTA** | "How it works" in the header. |
 | **Failure** | Another plan in the group chat, and photos that never come. Light, never fear. |
 | **Success** | Waking up the morning after to the whole story: the photo everyone loved, the line everyone's quoting, what you decided, every picture already on your phone. Nobody had to make it. |

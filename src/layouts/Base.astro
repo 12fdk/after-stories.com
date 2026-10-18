@@ -4,6 +4,7 @@ import { absolute, jsonLd, pageGraph, type Crumb, type Question } from "../lib/s
 import { lastModified } from "../lib/lastmod";
 import { homeCard, ogImagePath } from "../lib/og";
 import { localeTag, ogLocale, type Locale } from "../lib/i18n";
+import { SMART_APP_BANNER } from "../lib/appstore";
 
 interface Props {
   title: string;
@@ -92,6 +93,8 @@ const graph = noindex
     <meta name="application-name" content="After Stories" />
     <meta name="apple-mobile-web-app-title" content="After Stories" />
     <meta name="author" content="12f ApS" />
+    <!-- Safari on an iPhone shows the App Store banner, or "Open" once the app is installed. -->
+    <meta name="apple-itunes-app" content={SMART_APP_BANNER} />
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="After Stories" />
