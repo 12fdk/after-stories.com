@@ -60,7 +60,7 @@ export interface HomeCopy {
   closer: { title: string; story: string; stakes: string };
 }
 
-/** The fixed interface strings, localized per locale (header, footer, form, event page labels). */
+/** The fixed interface strings, localized per locale (header, footer, closer, event page labels). */
 export interface UiCopy {
   navHowItWorks: string;
   /** The header's other jump links on the home page. */
@@ -72,9 +72,9 @@ export interface UiCopy {
   /** Captions of the home page's figures: 06:00 and 50. */
   figureMorning: string;
   figurePeople: string;
-  ctaSmall: string;
-  ctaHero: string;
-  ctaPillComingSoon: string;
+  /** The App Store badge's accessible name, in Apple's official localized badge wording
+   * ("Download on the App Store"). The direct CTA: header, hero, after the plan, closer. */
+  appStoreBadge: string;
   footerTagline: string;
   footerHome: string;
   footerPrivacy: string;
@@ -88,15 +88,10 @@ export interface UiCopy {
   decided: string;
   planningSomethingElse: string;
   goodToKnow: string;
-  formTitle: string;
-  formName: string;
-  formEmail: string;
-  formWebsite: string;
-  formSubmit: string;
-  formSending: string;
-  formNote: string;
-  formNoteLink: string;
-  formDone: string;
+  /** The closer's line above the App Store badge. */
+  closerCta: string;
+  /** Next to the closer's QR code, on desktop only: scan it with an iPhone to get the app. */
+  qrCaption: string;
 }
 
 export interface Copy {

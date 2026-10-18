@@ -38,6 +38,10 @@ describe("the privacy policy", () => {
       expect(article).toContain("GitHub Pages");
       expect(article).toContain("Umami");
       expect(article).toMatch(/art\. 6, stk\. 1, litra a|Art\. 6\(1\)\(a\)/);
+      // Launch (#59): the closed waitlist, the download-click event and Apple's App Store.
+      expect(article).toMatch(/Formularen er lukket|The form is closed/);
+      expect(article).toMatch(/Hent i App Store|Download on the App Store/);
+      expect(article).toContain("https://www.apple.com/legal/privacy/");
     }
   });
 

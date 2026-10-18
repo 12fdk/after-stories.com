@@ -1,5 +1,5 @@
 ---
-import LaunchCta from "./LaunchCta.astro";
+import AppStoreCta from "./AppStoreCta.astro";
 import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 
 // StoryBrand: the direct call to action in the header, next to the transitional "How it works".
@@ -8,13 +8,11 @@ import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 interface Props {
   /** The page's locale; defaults to English (the base, unprefixed pages). */
   locale?: Locale;
-  /** Where the header's "Get notified" goes. Pages without the form point at the home page's. */
-  notifyHref?: string;
   /** True when this page has the four sections the links point at. */
   onPage?: boolean;
 }
 
-const { locale = "en", notifyHref = "#notify", onPage = false } = Astro.props;
+const { locale = "en", onPage = false } = Astro.props;
 const ui = uiCopy(locale);
 const homeHref = localizedPath(locale, "/");
 const at = onPage ? "" : homeHref;
@@ -35,7 +33,7 @@ const links = [
   </a>
   <nav class="topbar-nav" aria-label="Main">
     {links.map((l) => <a class:list={["topbar-link", { keep: l.keep }]} href={l.href}>{l.label}</a>)}
-    <LaunchCta as="link" size="small" href={notifyHref} locale={locale} />
+    <AppStoreCta placement="header" size="small" locale={locale} />
   </nav>
 </header>
 

@@ -40,16 +40,18 @@
 // interest), and a suspended person is erased on request by e-mail (#287).
 //
 // The website part ("Hjemmesiden after-stories.com" / "The website after-stories.com") is what
-// this site's own policy said before the merge: the waitlist form (#271, the double opt-in #276),
-// its storage and retention, GitHub Pages, Umami, the self-hosted fonts and the theme choice.
-// Change it whenever the form, the backend's storage or the site's hosting or analytics change
-// (CLAUDE.md › The waitlist form).
+// this site's own policy said before the merge: the waitlist form (#271, the double opt-in #276,
+// closed at launch on 2026-10-18, #59: the sign-ups it stored stay covered until they're deleted),
+// its storage and retention, GitHub Pages, Umami (the "app-store-click" event, #59), the App Store
+// campaign link, the self-hosted fonts and the theme choice. Change it whenever the site's hosting,
+// analytics or download links change, or the backend's waitlist storage does (CLAUDE.md › Download
+// links and analytics).
 //
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "8. oktober 2026";
-export const PRIVACY_UPDATED_EN = "8 October 2026";
+export const PRIVACY_UPDATED_DA = "18. oktober 2026";
+export const PRIVACY_UPDATED_EN = "18 October 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -133,13 +135,13 @@ export const PRIVACY_HTML = `
 <h2 id="da-web">Hjemmesiden after-stories.com</h2>
 <p>Dette afsnit gælder kun hjemmesiden.</p>
 
-<h3>Besked, når vi lancerer</h3>
-<p>Udfylder du formularen “Get an email when we launch” (få en e-mail, når vi lancerer), gemmer vi:</p>
+<h3>Ventelisten før lanceringen</h3>
+<p>Indtil After Stories kom i App Store den 18. oktober 2026, havde hjemmesiden formularen “Get an email when we launch” (få en e-mail, når vi lancerer). Formularen er lukket, og vi tager ikke imod nye tilmeldinger. Udfyldte du den, gemte vi:</p>
 <ul>
   <li>dit <strong>navn</strong> og din <strong>e-mailadresse</strong>;</li>
   <li>den <strong>side</strong>, du tilmeldte dig fra, så vi kan se, hvilken slags event der bragte dig hertil.</li>
 </ul>
-<p>Vi bruger dem til at sende dig <strong>én e-mail for at bekræfte din adresse</strong> og, når du har bekræftet, <strong>én e-mail, når After Stories er i App Store</strong>. Intet andet. Bekræfter du aldrig, får du aldrig lancerings-e-mailen. Vi sælger eller deler ikke dine oplysninger, og vi sætter dig ikke på nogen anden liste.</p>
+<p>Vi bruger dem kun til at sende dig <strong>én e-mail for at bekræfte din adresse</strong> og, når du har bekræftet, <strong>én e-mail, når After Stories er i App Store</strong>. Intet andet. Bekræfter du aldrig, får du aldrig lancerings-e-mailen. Vi sælger eller deler ikke dine oplysninger, og vi sætter dig ikke på nogen anden liste.</p>
 <p>Det gør vi, fordi du har bedt om det (dit samtykke, GDPR art. 6, stk. 1, litra a). Du kan trække det tilbage når som helst.</p>
 
 <h3>Hvor det ligger, og hvor længe</h3>
@@ -156,7 +158,8 @@ export const PRIVACY_HTML = `
 <h3>Når du besøger hjemmesiden</h3>
 <ul>
   <li>Hjemmesiden ligger hos <strong>GitHub Pages</strong>. GitHub behandler din IP-adresse for at levere siderne; se <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs privatlivserklæring</a>.</li>
-  <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig. Tilmeldings-formularen sender også et anonymt hændelsestræk hertil, som kun indeholder, hvilken side, du tilmeldte dig fra.</li>
+  <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig. Trykker du på en “Hent i App Store”-knap, sender knappen også en anonym hændelse hertil, som kun indeholder, hvor på siden knappen sad, og sidens sprog.</li>
+  <li>Knapperne fører til Apples <strong>App Store</strong>, hvor <a href="https://www.apple.com/legal/privacy/">Apples privatlivspolitik</a> gælder. Linket har en kampagnekode, så Apple kan fortælle os, hvor mange der hentede appen via hjemmesiden, aldrig hvem.</li>
   <li>Skrifttyperne hentes fra denne hjemmeside, ikke fra en skrifttjeneste.</li>
   <li>Dit valg af lyst eller mørkt tema huskes i din egen browser og sendes aldrig til os.</li>
 </ul>
@@ -252,13 +255,13 @@ export const PRIVACY_HTML = `
 <h2 id="en-web">The website after-stories.com</h2>
 <p>This part covers only the website.</p>
 
-<h3>Getting notified when we launch</h3>
-<p>If you fill in the “Get an email when we launch” form, we collect:</p>
+<h3>The waitlist before launch</h3>
+<p>Until After Stories came to the App Store on 18 October 2026, this site had a “Get an email when we launch” form. The form is closed, and we take no new sign-ups. If you filled it in, we collected:</p>
 <ul>
   <li>your <strong>name</strong> and <strong>email address</strong>;</li>
   <li>the <strong>page</strong> you signed up from, so we can see which kind of event brought you here.</li>
 </ul>
-<p>We use them to send you <strong>one email to confirm your address</strong>, and once you've confirmed, <strong>one email when After Stories is in the App Store</strong>. Nothing else. If you never confirm, you never get the launch email. We don't sell or share your details, and we don't add you to any other list.</p>
+<p>We use them only to send you <strong>one email to confirm your address</strong>, and once you've confirmed, <strong>one email when After Stories is in the App Store</strong>. Nothing else. If you never confirm, you never get the launch email. We don't sell or share your details, and we don't add you to any other list.</p>
 <p>We do this because you asked us to (your consent, GDPR Art. 6(1)(a)). You can withdraw it at any time.</p>
 
 <h3>Where it's kept, and for how long</h3>
@@ -275,7 +278,8 @@ export const PRIVACY_HTML = `
 <h3>Visiting the website</h3>
 <ul>
   <li>The site is hosted on <strong>GitHub Pages</strong>. GitHub processes your IP address to deliver the pages; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
-  <li>We count visits with <strong>Umami</strong>, which we run ourselves. It sets no cookies and doesn't store your IP address or anything that identifies you. The waitlist form also sends it one anonymous event that contains only which page you signed up from.</li>
+  <li>We count visits with <strong>Umami</strong>, which we run ourselves. It sets no cookies and doesn't store your IP address or anything that identifies you. When you tap a “Download on the App Store” button, the button also sends it one anonymous event that contains only where on the page the button was and the page's language.</li>
+  <li>The buttons take you to Apple's <strong>App Store</strong>, where <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> applies. The link carries a campaign code, so Apple can tell us how many people got the app from this site, never who.</li>
   <li>The fonts are served from this site, not from a font service.</li>
   <li>Your choice of light or dark theme is remembered in your own browser and never sent to us.</li>
 </ul>

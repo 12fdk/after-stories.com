@@ -1,7 +1,10 @@
+import { APP_STORE_URL } from "./appstore";
+
 // Structured data and search snippets for every page (#30). One JSON-LD @graph per page, with
 // stable @ids so search engines and AI answer engines see one entity, "After Stories", made by
-// 12f ApS, behind every page. Keep it to facts that are true today: no ratings, no price, no
-// App Store link until there is one (docs/messaging.md, rules 3 and 9).
+// 12f ApS, behind every page. Keep it to facts that are true today (docs/messaging.md, rules 3
+// and 9): the app is on the App Store and free to download (offers, for search engines only; the
+// pages never mention price), and there is no rating until a real one exists.
 
 export const SITE_URL = "https://after-stories.com";
 export const SITE_NAME = "After Stories";
@@ -18,7 +21,6 @@ export const FEATURES = [
   "Save every photo to your phone with one tap",
   "Deleted for everyone 48 hours after the event",
   "Up to 50 people per event",
-  "Friends without an iPhone join from the web",
   "Photos stripped of location and camera data before upload",
 ];
 
@@ -88,9 +90,15 @@ function siteNodes(): Node[] {
       url: `${SITE_URL}/`,
       image: absolute("/icon-512.png"),
       operatingSystem: "iOS",
+      softwareRequirements: "iOS 27 or later",
       availableOnDevice: "iPhone",
       applicationCategory: "SocialNetworkingApplication",
-      inLanguage: "en",
+      inLanguage: ["en", "da", "de", "fr", "es"],
+      datePublished: "2026-10-18",
+      downloadUrl: APP_STORE_URL,
+      installUrl: APP_STORE_URL,
+      sameAs: [APP_STORE_URL],
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD", availability: "https://schema.org/InStock" },
       featureList: FEATURES,
       publisher: { "@id": ids.organization },
       author: { "@id": ids.organization },

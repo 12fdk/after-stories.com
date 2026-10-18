@@ -1,15 +1,15 @@
 import { events, eventHref, defaultPrivacy } from "../data/events";
 import { homeDescription, homeFaq } from "../data/home";
 import { DEFINITION, FEATURES, SITE_URL, absolute, type Question } from "./seo";
+import { APP_STORE_URL } from "./appstore";
 
 // The site as plain Markdown for AI assistants and answer engines (https://llmstxt.org, #30).
 // llms.txt is the short version: what After Stories is, the facts, and a link to every page.
 // llms-full.txt adds each page's story and questions, so an assistant can answer from one file.
 // Both are built from the data the pages are built from, so they can't drift from the site.
 
-/** Launch posture, without a contact address (that @ belongs only in llms.txt, as plain text). */
-export const LAUNCH_STATUS =
-  "Status: coming soon to the App Store for iPhone, with a web version for friends without an iPhone. English. Made by 12f ApS, Denmark (https://12f.dk).";
+/** Where to get it, without a contact address (that @ belongs only in llms.txt, as plain text). */
+export const LAUNCH_STATUS = `Status: available now on the App Store for iPhone (iOS 27 or later): ${APP_STORE_URL}. In English, Danish, German, French and Spanish. Made by 12f ApS, Denmark (https://12f.dk).`;
 
 const status = `${LAUNCH_STATUS} Contact: support@12f.dk.`;
 

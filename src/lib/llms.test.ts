@@ -18,6 +18,14 @@ describe("llms.txt", () => {
     for (const e of events) expect(txt).toContain(`(https://after-stories.com/${e.slug}/)`);
   });
 
+  it("says where to get the app, and nothing pre-launch (#59)", () => {
+    for (const t of [txt, llmsFullTxt()]) {
+      expect(t).toContain("available now on the App Store for iPhone");
+      expect(t).toContain("https://apps.apple.com/app/id6815212070");
+      expect(t).not.toMatch(/coming soon|when (we|it) launch|get notified|waitlist|from the web|web version/i);
+    }
+  });
+
   it("says nothing about price (messaging rule 9)", () => {
     expect(`${txt}${llmsFullTxt()}`).not.toMatch(/\b(for free|is free|free to|price|pricing|costs?|subscription)\b|[$€]/i);
   });

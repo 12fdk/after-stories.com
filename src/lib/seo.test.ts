@@ -66,9 +66,21 @@ describe("pageGraph", () => {
     expect(page.primaryImageOfPage.url).toBe("https://after-stories.com/og/trips.png");
   });
 
-  it("claims no rating, price or download link before there is one (messaging rules 3 and 9)", () => {
-    const text = JSON.stringify(pageGraph(base));
-    expect(text).not.toMatch(/aggregateRating|offers|price|downloadUrl/i);
+  // Launch (#59): the app is on the App Store, free to download. Still no rating until a real one
+  // exists (messaging rule 3); the price lives only here, for search engines (rule 9).
+  it("links the live App Store page, free to download, and claims no rating", () => {
+    const graph = pageGraph(base);
+    const app = ofType(graph, "MobileApplication")!;
+    expect(app.downloadUrl).toBe("https://apps.apple.com/app/id6815212070");
+    expect(app.installUrl).toBe(app.downloadUrl);
+    expect(app.sameAs).toContain(app.downloadUrl);
+    expect(app.offers).toMatchObject({ "@type": "Offer", price: "0" });
+    expect(app.softwareRequirements).toBe("iOS 27 or later");
+    expect(JSON.stringify(graph)).not.toMatch(/aggregateRating|ratingValue|review/i);
+  });
+
+  it("claims no web version: the app has none", () => {
+    expect(JSON.stringify(pageGraph(base))).not.toMatch(/from the web|web version|browser/i);
   });
 
   it("is a plain WebPage without questions", () => {

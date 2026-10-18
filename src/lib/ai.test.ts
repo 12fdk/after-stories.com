@@ -14,9 +14,12 @@ describe("ai.txt", () => {
     expect(txt).toContain(`Home: ${SITE_URL}/`);
   });
 
-  it("keeps the pre-launch posture and says nothing about price", () => {
-    expect(txt).toMatch(/coming soon/i);
-    expect(txt).not.toMatch(/\b(available now|download on the app store|for free|is free|free to|price|pricing|costs?|subscription)\b|[$€]/i);
+  // Launch (#59): live on the App Store. Still nothing about price (messaging rule 9).
+  it("says the app is on the App Store now, and nothing about price", () => {
+    expect(txt).toMatch(/available now on the App Store/);
+    expect(txt).toContain("https://apps.apple.com/app/id6815212070");
+    expect(txt).not.toMatch(/coming soon|web version/i);
+    expect(txt).not.toMatch(/\b(for free|is free|free to|price|pricing|costs?|subscription)\b|[$€]/i);
   });
 
   it("has no email address for Cloudflare to rewrite", () => {

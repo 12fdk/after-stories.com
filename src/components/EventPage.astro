@@ -2,7 +2,7 @@
 import Base from "../layouts/Base.astro";
 import SiteHeader from "./SiteHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
-import LaunchCta from "./LaunchCta.astro";
+import AppStoreCta from "./AppStoreCta.astro";
 import Icon from "./Icon.astro";
 import Poll from "./sections/Poll.astro";
 import PhoneFrame from "./PhoneFrame.astro";
@@ -64,7 +64,7 @@ const breadcrumb = [
           </h1>
           <p class="lead">{event.lede}</p>
           <div class="cta">
-            <LaunchCta as="link" locale={locale} />
+            <AppStoreCta placement="hero" locale={locale} />
             <p class="small">{event.fineprint}</p>
           </div>
         </div>

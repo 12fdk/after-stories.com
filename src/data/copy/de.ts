@@ -13,7 +13,7 @@ const copy: Copy = {
         },
         {
           q: 'Wann kann ich After Stories bekommen?',
-          a: 'Bald. Die App kommt für das iPhone in den App Store, dazu eine Web-Version für Freund:innen ohne iPhone. Hinterlasst unten auf dieser Seite euren Namen und eure E-Mail-Adresse – dann bekommt ihr genau eine E-Mail, wenn wir starten.',
+          a: 'Jetzt. After Stories ist im App Store, für iPhone ab iOS 27. Holt euch die App über den Button auf dieser Seite.',
         },
         {
           q: 'Worin unterscheidet es sich von einem Gruppenchat und einem gemeinsamen Album?',
@@ -25,7 +25,7 @@ const copy: Copy = {
         },
         {
           q: 'Können Freund:innen ohne iPhone mitmachen?',
-          a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+          a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
         },
         {
           q: 'Wer kann sehen, was wir teilen?',
@@ -43,7 +43,7 @@ const copy: Copy = {
           'Wacht mit der Geschichte auf.',
         ],
         lede: 'Die private App für den Trip, die Party oder den Abend in der Stadt. Entscheidet den Plan gemeinsam, erlebt ihn an einem Ort – und wacht mit den Fotos aller auf. Niemand muss irgendwem hinterherlaufen.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
       },
       pain: {
         title: 'Gruppenchats sind der Ort, an dem Pläne sterben.',
@@ -129,9 +129,7 @@ const copy: Copy = {
       votePrompt: 'Tippe auf eine Antwort, um abzustimmen.',
       figureMorning: 'Das Event endet um 6 Uhr am nächsten Morgen. Dann beginnt die Geschichte.',
       figurePeople: 'Bis zu 50 Personen pro Event.',
-      ctaSmall: 'Benachrichtigen lassen',
-      ctaHero: 'Zum Start benachrichtigen lassen',
-      ctaPillComingSoon: 'Demnächst',
+      appStoreBadge: 'Laden im App Store',
       footerTagline: 'Plant es gemeinsam. Erlebt es gemeinsam. Wacht mit der Geschichte auf.',
       footerHome: 'Start',
       footerPrivacy: 'Datenschutz',
@@ -141,17 +139,10 @@ const copy: Copy = {
       decided: 'Entschieden',
       planningSomethingElse: 'Plant ihr etwas anderes?',
       goodToKnow: 'Gut zu wissen',
-      formTitle: 'Eine E-Mail, wenn wir starten',
-      formName: 'Name',
-      formEmail: 'E-Mail',
-      formWebsite: 'Website',
-      formSubmit: 'Benachrichtige mich',
-      formNote: 'Wir schicken dir eine E-Mail zur Bestätigung und dann genau eine, wenn After Stories im App Store ist. Sonst nichts.',
-      formNoteLink: 'Datenschutzerklärung',
-      formDone: 'Du stehst auf der Liste. Wir schicken {email} eine E-Mail zur Bestätigung und eine weitere, wenn After Stories startet.',
+      closerCta: 'Plant das Nächste in After Stories.',
+      qrCaption: 'Am Computer? Scanne den Code mit der Kamera deines iPhones, um die App zu laden.',
       peopleWord: 'Personen',
       withApp: 'Mit After Stories',
-      formSending: 'Wird gesendet…',
     },
     events: {
       trips: {
@@ -163,7 +154,7 @@ const copy: Copy = {
           'Bringt jedes Foto mit nach Hause.',
         ],
         lede: 'Stimmt ab, an welchem Tag, wohin und wer fährt. Teilt den Ausflug in einem Stream. Dann habt ihr die Fotos aller an einem Ort, bevor alles verschwindet.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Fünf Freund:innen auf der Terrasse eines Seehauses im goldenen Abendlicht, eine von ihnen hält das Handy für ein Foto hoch',
         todayTitle: 'Sechs Handys, ein Ausflug – und niemand hat alle Fotos.',
         problem: 'Und immer ist es dieselbe Person, die das Ziel aussucht, Antworten hinterherläuft und danach um die Fotos bettelt. Ein Tag zusammen sollte der leichte Teil einer Freundschaft sein.',
@@ -216,7 +207,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -240,7 +231,7 @@ const copy: Copy = {
           'Setzt sie am Morgen zusammen.',
         ],
         lede: 'Stimmt über den Treffpunkt und das nächste Ziel ab. Teilt die Nacht in einem privaten Stream. Am Morgen danach wartet die Geschichte: das beste Foto, der Spruch des Abends, jedes Bild. Dann verschwindet sie.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Eine Gruppe Freund:innen lacht nachts auf einer Straße in der Stadt, warm beleuchtete Schaufenster hinter ihnen',
         todayTitle: 'Der Plan hat sich viermal geändert. Der Chat hat 400 Nachrichten.',
         problem: 'Irgendwer übernimmt am Ende immer die Nachtkoordination und tippt „Wo seid ihr?“, statt dabei zu sein. Ein Abend in der Stadt braucht kein Projektmanagement.',
@@ -293,7 +284,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -313,7 +304,7 @@ const copy: Copy = {
           'Alle bekommen die Fotos.',
         ],
         lede: 'Stimmt über Termin und Ort ab und gebt jeder Aufgabe einen Namen: Wer bringt was mit? Teilt die Party in einem privaten Stream. Am Morgen danach bekommen alle jedes Foto der Party – nicht nur die, die sie selbst gemacht haben.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Freund:innen nachts um einen Tisch, ein Geburtstagskuchen mit brennenden Kerzen, darüber Lichterketten',
         todayTitle: 'Ein Geburtstag, drei Chats – und das beste Foto ist auf dem Handy von jemand anderem.',
         problem: 'Und wer organisiert, stellt dieselben Fragen in drei Chats und bettelt danach um die Fotos. Jemanden zu feiern sollte auch denen Spaß machen, die die Party ausrichten.',
@@ -366,7 +357,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -386,7 +377,7 @@ const copy: Copy = {
           'Fotos behalten, Chat vergessen.',
         ],
         lede: 'Eine Organisator:in, ein Dutzend Entscheidungen und eine Gruppe, die nicht antwortet. Jede Abstimmung in einem privaten Event, der Tag in einem Stream und die Fotos gespeichert, bevor 48 Stunden später alles verschwindet.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Eine Gruppe Freund:innen in passenden T-Shirts feiert auf einer Kartbahn',
         todayTitle: 'Eine Organisator:in. Ein Dutzend Entscheidungen. Keine Antworten.',
         problem: 'Die Organisator:in läuft zehn Meinungen hinterher und bekommt keine einzige zurück. Es ist eine Feier, kein Zweitjob.',
@@ -443,7 +434,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
@@ -463,7 +454,7 @@ const copy: Copy = {
           'Behaltet jedes Foto vom Chaos.',
         ],
         lede: 'Stimmt ab, an welchem Tag ihr hingeht und wo ihr euch trefft, wenn jemand verloren geht. Teilt das Festival in einem Stream und habt die Fotos aller an einem Ort, bevor alles verschwindet.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Freund:innen vor einer Festivalmenge in der Dämmerung, Bühnenlichter und Zelte hinter ihnen',
         todayTitle: 'Fünf Handys bei 4 % – und niemand weiß mehr, wo ihr euch trefft.',
         problem: 'Und immer spielt jemand den ganzen Tag das Fundbüro der Gruppe, statt die Bands zu sehen. Ein Festival sollte der eine Ort sein, an dem niemand etwas organisieren muss.',
@@ -520,7 +511,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Kann ein Event das ganze Festival abdecken?',
@@ -541,7 +532,7 @@ const copy: Copy = {
           'Wer kocht?',
         ],
         lede: 'Stellt die Fragen zur Abstimmung und bekommt die Antworten an einem Ort. Plant den Dinner-, Spiele- oder Filmabend, teilt ihn in einem Stream und speichert die Fotos, bevor alles verschwindet.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Freund:innen bei Kerzenlicht um einen Esstisch zu Hause, Essen auf dem Tisch, im Hintergrund läuft ein Film',
         todayTitle: 'Sechs Leute, drei mögliche Abende – und der Termin steht immer noch nicht.',
         problem: 'Einen Abend für sechs Leute auszuwählen sollte keine zwei Wochen Nachrichten kosten. Beim Gastgeben sollte es ums Essen gehen, nicht um Logistik.',
@@ -594,7 +585,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -614,7 +605,7 @@ const copy: Copy = {
           'Spart euch die 30 E-Mails.',
         ],
         lede: 'Stimmt über den Termin ab, entscheidet den Ort, teilt die Fotos. Ein privates Event für das ganze Team – statt Kalenderumfrage, E-Mail-Verlauf und gemeinsamem Ordner. Speichert die Fotos, dann ist alles weg.',
-        fineprint: 'Für iPhone. Kolleg:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone verfügbar. Ab iOS 27.',
         heroAlt: 'Ein Team von Kolleg:innen stößt bei einer Weihnachtsfeier in einem warm beleuchteten Restaurant an',
         todayTitle: 'Vier Tools, eine Party – und niemand weiß, was entschieden wurde.',
         problem: 'Und die Kolleg:in, die es immer organisiert, beantwortet eine Woche lang dieselben drei Fragen. Ein Team-Event sollte Leute zusammenbringen, nicht Postfächer füllen.',
@@ -659,7 +650,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Brauchen meine Kolleg:innen ein iPhone?',
-            a: 'Nein. Alle mit dem Einladungslink können mitmachen. Kolleg:innen mit iPhone nutzen die App, alle anderen nehmen über das Web teil.',
+            a: 'Ja. After Stories ist eine iPhone-App: Alle sind über die App dabei, auf einem iPhone ab iOS 27. Am besten kurz klären, bevor du das ganze Team einlädst.',
           },
           {
             q: 'Muss die IT etwas einrichten?',
@@ -709,7 +700,7 @@ const copy: Copy = {
           'Das Foto des Spiels – gespeichert.',
         ],
         lede: 'Stimmt ab, wer fährt, wer bei wem mitfährt und wo ihr euch trefft. Teilt das Spiel in einem privaten Stream. Am nächsten Morgen wartet das Foto, das allen am besten gefallen hat, und alle speichern jedes Foto. Dann verschwindet alles.',
-        fineprint: 'Für iPhone. Mitspieler:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Ein leerer Fußballplatz im goldenen Morgenlicht, zwei weiße Tore und Hütchen auf dem Rasen, Teamtaschen auf der Bank am Spielfeldrand, geparkte Autos hinter dem Zaun',
         todayTitle: 'Achtzehn Spieler:innen, ein Auswärtsspiel – und die Fahrgemeinschaft steckt im Team-Chat.',
         problem: 'Wer fährt, wer hat noch einen Platz frei, wo trefft ihr euch, wer bringt die Trikots mit – alles vergraben unter hundert Nachrichten. Und das beste Foto vom Tor bleibt auf einem einzigen Handy am Spielfeldrand. Am Spieltag sollte es ums Spiel gehen.',
@@ -766,7 +757,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Mitspieler:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Mitspieler:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Mitspieler:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -786,7 +777,7 @@ const copy: Copy = {
           'Alle bekommen die Fotos.',
         ],
         lede: 'Stimmt über den Termin, den Ort und das Essen ab. Teilt die Party in einem privaten Stream. Am Morgen danach bekommen alle jedes Foto des Tages – nicht nur die, die sie selbst gemacht haben. Dann verschwindet alles.',
-        fineprint: 'Für iPhone. Freund:innen ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Eine Abschlussfeier im sonnigen Park im goldenen Licht: Lichterketten, Luftballons, ein Kuchen und ein Banner auf einer langen Tafel',
         todayTitle: 'Eine Abschlussfeier, drei Chats – und das beste Foto ist auf dem Handy von jemand anderem.',
         problem: 'Und die Freund:innen, die sie organisieren, stellen dieselben Fragen in drei Chats. Jemandes großen Tag zu feiern sollte Freude machen und kein Zweitjob sein.',
@@ -839,7 +830,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -859,7 +850,7 @@ const copy: Copy = {
           'Bringt jedes Foto mit nach Hause.',
         ],
         lede: 'Stimmt über den Tag, den Ort und die Fahrten ab. Haltet jede Entscheidung in einer Zeitleiste fest, teilt den ganzen Tag in einem Stream und speichert die Fotos aller, bevor alles verschwindet.',
-        fineprint: 'Für iPhone. Familienmitglieder ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Eine leere Holzterrasse mit Steg am See im goldenen Licht, warme Lichterketten, ein gedeckter Picknicktisch, dahinter ein ruhiger See',
         todayTitle: 'Vierundzwanzig Leute, ein See – und der Plan steckt im Familienchat.',
         problem: 'Tanten, Onkel und Cousins streiten über den Termin, den Ort und wer fährt – in einem Gruppenchat, den niemand mehr durchscrollen kann. Die Planung sollte nicht der unbeliebteste Teil des Familientreffens sein.',
@@ -912,7 +903,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Familienmitglieder ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Familienmitglieder ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Familienmitglieder sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
@@ -932,7 +923,7 @@ const copy: Copy = {
           'Alle bekommen die Fotos.',
         ],
         lede: 'Freund:innen und Familie kommen zum Zuschauen, und es gibt einen Plan zu klären. Stimmt ab, wo ihr euch vorher trefft und wo ihr danach esst, teilt die Show in einem privaten Stream und bekommt jedes Foto der Aufführung, bevor alles verschwindet.',
-        fineprint: 'Für iPhone. Freund:innen und Familie ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Eine leere Bühne in einem warmen Gemeindesaal, Mikrofon und Notenständer unter einem sanften Scheinwerfer, dahinter leere Stuhlreihen',
         todayTitle: 'Fünfzehn Leute, eine Show – und niemand weiß, wo ihr euch trefft.',
         problem: 'Wer hat das übrige Ticket, wer nimmt wen mit, wo essen wir danach – alles im Familien-Gruppenchat. Am Showabend sollte es um die Aufführung gehen, nicht um Logistik.',
@@ -985,7 +976,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen und Familie ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freund:innen und Familie ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freund:innen und Familie sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -1005,7 +996,7 @@ const copy: Copy = {
           'Fotos speichern, Chat vergessen.',
         ],
         lede: 'Zweiundzwanzig Freiwillige, ein Dutzend Schichten und hundert Dinge zu klären. Holt das Team in ein privates Event: wer welche Schicht hat, wo ihr euch trefft, wer was mitbringt. Speichert die Fotos, bevor alles verschwindet.',
-        fineprint: 'Für iPhone. Freiwillige ohne iPhone nehmen über das Web teil.',
+        fineprint: 'Jetzt für iPhone da. Ab iOS 27.',
         heroAlt: 'Die Startlinie eines 5-km-Spendenlaufs im Park, ein Startbogen und eine Zeitmessungstafel, Hütchen und ein Banner im Gras',
         todayTitle: 'Zweiundzwanzig Freiwillige, ein Dutzend Schichten – und der Plan steckt in einem Gruppenchat.',
         problem: 'Wer hat welche Schicht, wer bringt das Wasser, wo trifft sich das Team – alles verstreut über einen Gruppenchat, für den niemand Zeit hat. Bei einer Spendenaktion sollte es um die gute Sache gehen, nicht um Koordination.',
@@ -1058,7 +1049,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freiwillige ohne iPhone mitmachen?',
-            a: 'Ja. Der Einladungslink funktioniert für alle. Freiwillige ohne iPhone nehmen über das Web teil.',
+            a: 'Nein. After Stories ist eine iPhone-App. Freiwillige sind über die App dabei, auf einem iPhone ab iOS 27.',
           },
           {
             q: 'Wie funktionieren die Schichten?',
@@ -1084,8 +1075,8 @@ const copy: Copy = {
         text: 'Speichert vorher jedes Foto mit einem Tipp. Dann werden der Chat, die Umfragen und die Fotos für alle gelöscht.',
       },
       {
-        title: 'Niemand bleibt außen vor.',
-        text: 'Freund:innen ohne iPhone nehmen über das Web teil. „Mit Apple anmelden“ heißt: keine Passwörter.',
+        title: 'Kein neues Konto.',
+        text: 'Mit Apple anmelden, und ihr seid dabei. Kein Passwort, das ihr euch ausdenken oder merken müsst.',
       },
     ],
   };

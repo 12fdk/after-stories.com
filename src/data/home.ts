@@ -17,7 +17,7 @@ export const homeFaq: Question[] = [
   },
   {
     q: "When can I get After Stories?",
-    a: "Soon. It's coming to the App Store for iPhone, with a web version for friends without one. Leave your name and email at the bottom of this page and you'll get one email when it launches.",
+    a: "Now. After Stories is on the App Store for iPhone, with iOS 27 or later. Get it with the button on this page.",
   },
   {
     q: "How is it different from a group chat and a shared album?",
@@ -29,7 +29,7 @@ export const homeFaq: Question[] = [
   },
   {
     q: "Can friends without an iPhone join?",
-    a: "Yes. The invite link works for everyone. Friends without an iPhone join from the web.",
+    a: "No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.",
   },
   {
     q: "Who can see what we share?",
