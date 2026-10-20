@@ -8,7 +8,13 @@
 //   - identity.md   Sign in with Apple (id, relay email, the once-only name), sessions, in-app
 //                   account deletion (#31); e-mail and password (#492 email-auth, #493 the app:
 //                   the address, Argon2 hash, the verify and reset links via Brevo)
-//   - photos.md     every coordinate and every EXIF/XMP segment stripped on the phone
+//   - photos.md     every coordinate and every EXIF/XMP segment stripped on the phone; on the web
+//                   by the web-photo function, in memory, the original never written (#494)
+//   - product.md    › The web app (#463, #495, #496): app.after-stories.com, the same account and
+//                   rules; its only cookie is Appwrite's HttpOnly session cookie (api.after-stories.com,
+//                   first-party, #491), its only localStorage key the pending invite code; its CSP
+//                   allows only its own origin and the API, so no analytics, fonts or third parties;
+//                   no notifications on the web
 //   - schema.md     what is stored, who can read it (team-only), the deletion cascade, the
 //                   invite/create throttles (expiresAt = window + 1 day, cleaned up on next use)
 //   - product.md    the one-event model (#208/#223: messages, photos, places, @mentions, likes,
@@ -60,7 +66,7 @@ export const PRIVACY_HTML = `
 <article id="da" lang="da">
 <h1>Privatlivspolitik for AFTER</h1>
 <p class="meta">Senest opdateret ${PRIVACY_UPDATED_DA}</p>
-<p>Den gælder appen AFTER og hjemmesiden after-stories.com. Det, der kun gælder hjemmesiden, står under <a href="#da-web">Hjemmesiden after-stories.com</a>.</p>
+<p>Den gælder appen AFTER, webappen på app.after-stories.com og hjemmesiden after-stories.com. Det, der kun gælder webappen, står under <a href="#da-webapp">Webappen app.after-stories.com</a>; det, der kun gælder hjemmesiden, under <a href="#da-web">Hjemmesiden after-stories.com</a>.</p>
 
 <h2>Kort fortalt</h2>
 <ul>
@@ -68,7 +74,7 @@ export const PRIVACY_HTML = `
   <li>Et event slettes for alle 48 timer efter, det er slut.</li>
   <li>Dine data ligger på vores egen server i EU (Stockholm, Sverige).</li>
   <li>Vi bruger aldrig din placering, dine kontakter eller reklame-id'er. Vi sælger ikke data, og vi sporer dig ikke på tværs af apps. Appen sender anonym brugsstatistik, som ikke kan føres tilbage til dig, og du kan slå den fra.</li>
-  <li>Du kan slette din konto og dine beskeder, billeder og likes direkte i appen.</li>
+  <li>Du kan slette din konto og dine beskeder, billeder og likes direkte i appen og i webappen.</li>
 </ul>
 
 <h2>Hvem er ansvarlig</h2>
@@ -77,12 +83,12 @@ export const PRIVACY_HTML = `
 <h2>Hvad vi gemmer, og hvorfor</h2>
 <ul>
   <li><strong>Din konto.</strong> Du logger ind med Apple. Vi får et bruger-id, den e-mailadresse, Apple giver os — ofte en anonym videresendingsadresse fra Apple — og første gang det navn, du deler med Apple, som forslag til dit navn i appen. Vi bruger kun e-mailadressen til at give dig besked, hvis din konto bliver suspenderet eller åbnet igen, og viser den ingen steder.</li>
-  <li><strong>Log ind med e-mail og adgangskode.</strong> Du kan også logge ind med en e-mailadresse og en adgangskode — eller tilføje dem til din Apple-konto i appen under Profil › Konto › <em>Log ind på nettet</em>. Så gemmer vi e-mailadressen og en krypteret (hashet) udgave af adgangskoden, aldrig selve adgangskoden. Vi sender dig en e-mail med et link til at bekræfte adressen, og et link til at nulstille adgangskoden, hvis du beder om det. Ellers bruger vi adressen kun til at give dig besked om en suspendering. Vi viser kun adressen til dig selv, i Profil.</li>
+  <li><strong>Log ind med e-mail og adgangskode.</strong> Du kan også logge ind med en e-mailadresse og en adgangskode — eller tilføje dem til din Apple-konto i appen under Profil › Konto › <em>Log ind på nettet</em>. Så gemmer vi e-mailadressen og en krypteret (hashet) udgave af adgangskoden, aldrig selve adgangskoden. Vi sender dig en e-mail med et link til at bekræfte adressen, og et link til at nulstille adgangskoden, hvis du beder om det. Ellers bruger vi adressen kun til at give dig besked om en suspendering. Vi viser kun adressen til dig selv, i Profil og på webappens Konto-side.</li>
   <li><strong>Tekniske oplysninger.</strong> Når du er logget ind, gemmer serveren din session: IP-adresse, land, enhedens og styresystemets navn og hvornår den sidst blev brugt. Det bruges til login og sikkerhed og slettes, når du logger ud eller sletter kontoen. Serveren fører også tekniske logfiler til drift og fejlfinding.</li>
   <li><strong>Dine indstillinger.</strong> Hvilken version af <a href="/terms/">vilkårene</a> du har accepteret, og hvornår; hvilke beskeder du vil have notifikationer om; og hvilke events du har slået notifikationer fra for eller fjernet fra Hjem. De gemmes på din konto, så en ny telefon kender dem, og slettes med kontoen.</li>
   <li><strong>Din profil.</strong> Det navn, du vælger, og dit profilbillede, hvis du tilføjer et. De kan kun ses af dem, der er med i dine events.</li>
   <li><strong>Events.</strong> Eventets navn, hvem der er med, hvem der oprettede det, hvornår det blev startet og sluttede, og den tidszone, det foregår i.</li>
-  <li><strong>Det, du lægger op.</strong> Beskeder — tekst, billeder og steder — og hvem du nævner med @. Likes. Afstemninger, deres svarmuligheder og stemmerne. Beslutninger og opgaver: hvad I har besluttet, hvem der gør hvad, og om det er klaret. <strong>Alle billeder bliver renset på telefonen, før de sendes</strong>: placering og alle kameraoplysninger fjernes.</li>
+  <li><strong>Det, du lægger op.</strong> Beskeder — tekst, billeder og steder — og hvem du nævner med @. Likes. Afstemninger, deres svarmuligheder og stemmerne. Beslutninger og opgaver: hvad I har besluttet, hvem der gør hvad, og om det er klaret. <strong>Alle billeder bliver renset på telefonen, før de sendes</strong>: placering og alle kameraoplysninger fjernes. I webappen renser vores server billedet, før det gemmes (se <a href="#da-webapp">Webappen</a>).</li>
   <li><strong>Steder.</strong> Et sted er et spisested, en bar eller en adresse, som I selv vælger: et navn, en adresse og et link til Apple Kort. Aldrig nogens position — appen gemmer ingen koordinater.</li>
   <li><strong>Kamera og billeder.</strong> Kun når du selv vælger det — for at tage et billede, vælge billeder eller scanne en invitations-QR-kode. Vi får kun de billeder, du vælger. Trykker du <em>Gem alle billeder</em>, beder appen kun om lov til at lægge billeder i dit billedbibliotek; resten af biblioteket kan den ikke se.</li>
   <li><strong>Blokeringer og rapporter.</strong> Hvem du har blokeret, og beskeder du har rapporteret, med den grund du valgte. Kun du kan se dem — og vi, når vi behandler en rapport. Bliver din besked rapporteret, gemmer vi rapporten med en henvisning til beskeden og dit bruger-id. Fører din rapport til en suspendering, noterer loggen, at den kom fra din rapport.</li>
@@ -134,6 +140,18 @@ export const PRIVACY_HTML = `
 <h2>Retsgrundlag</h2>
 <p>Vi behandler dine data for at levere den tjeneste, du har bedt om (GDPR art. 6, stk. 1, litra b). Beskyttelse mod misbrug, behandling af rapporter, tekniske logfiler og den anonyme brugsstatistik sker på grundlag af vores legitime interesse i en sikker app, der virker (art. 6, stk. 1, litra f).</p>
 
+<h2 id="da-webapp">Webappen app.after-stories.com</h2>
+<p>I webappen kan du være med i et event fra en computer eller en Android-telefon. Det er den samme konto, de samme data og de samme regler som i appen, med disse forskelle:</p>
+<ul>
+  <li><strong>Log ind.</strong> Du logger ind med din e-mailadresse og en adgangskode (se <em>Log ind med e-mail og adgangskode</em> ovenfor). Du laver kontoen fra en invitation og accepterer <a href="/terms/">vilkårene</a> først.</li>
+  <li><strong>Én cookie.</strong> Når du er logget ind, sætter vores server en sessionscookie, så du forbliver logget ind. Den er nødvendig for, at webappen virker, kan ikke læses af sidens scripts og slettes, når du logger ud. Der er ingen andre cookies.</li>
+  <li><strong>I din browser.</strong> Webappen husker koden fra den invitation, du åbnede, i din egen browser, indtil du er med i eventet eller logger ud. Den sendes ikke andre steder hen.</li>
+  <li><strong>Billeder.</strong> Et billede, du lægger op, sendes til vores server, som fjerner placering og alle kameraoplysninger og laver en ny, mindre JPEG, før noget gemmes. Originalen gemmes aldrig.</li>
+  <li><strong>Ingen statistik og ingen tredjeparter.</strong> Webappen sender ingen brugsstatistik og ingen fejlrapporter, og den henter intet fra andre tjenester. Den ligger på vores egen server i Stockholm, ligesom resten af dine data.</li>
+  <li><strong>Ingen notifikationer</strong> fra webappen.</li>
+  <li><strong>Teknisk.</strong> Din session gemmer browserens og styresystemets navn, din IP-adresse og land, som i appen. Du sletter din konto under Konto → Slet min konto.</li>
+</ul>
+
 <h2 id="da-web">Hjemmesiden after-stories.com</h2>
 <p>Dette afsnit gælder kun hjemmesiden.</p>
 
@@ -181,7 +199,7 @@ export const PRIVACY_HTML = `
 <article id="en" lang="en">
 <h2>AFTER privacy policy</h2>
 <p class="meta">Last updated ${PRIVACY_UPDATED_EN}</p>
-<p>It covers the app AFTER and the website after-stories.com. What applies only to the website is under <a href="#en-web">The website after-stories.com</a>.</p>
+<p>It covers the app AFTER, the web app at app.after-stories.com and the website after-stories.com. What applies only to the web app is under <a href="#en-webapp">The web app app.after-stories.com</a>; what applies only to the website, under <a href="#en-web">The website after-stories.com</a>.</p>
 
 <h2>In short</h2>
 <ul>
@@ -189,7 +207,7 @@ export const PRIVACY_HTML = `
   <li>An event is deleted for everyone 48 hours after it ends.</li>
   <li>Your data lives on our own server in the EU (Stockholm, Sweden).</li>
   <li>We never use your location, your contacts or advertising identifiers. We don't sell data, and we don't track you across apps. The app sends anonymous usage statistics that can't be traced back to you, and you can turn them off.</li>
-  <li>You can delete your account and your messages, photos and likes right in the app.</li>
+  <li>You can delete your account and your messages, photos and likes right in the app and in the web app.</li>
 </ul>
 
 <h2>Who is responsible</h2>
@@ -198,12 +216,12 @@ export const PRIVACY_HTML = `
 <h2>What we store, and why</h2>
 <ul>
   <li><strong>Your account.</strong> You sign in with Apple. We receive a user id, the email address Apple gives us — often an anonymous relay address from Apple — and, the first time, the name you share with Apple, as a suggestion for your name in the app. We only use that email address to tell you if your account is suspended or opened again, and never show it.</li>
-  <li><strong>Signing in with an email and a password.</strong> You can also sign in with an email address and a password — or add them to your Apple account in the app under Profile › Account › <em>Sign in on the web</em>. We then store the email address and a hashed form of the password, never the password itself. We email you a link to confirm the address, and a link to reset the password if you ask for one. Otherwise we only use the address to tell you about a suspension. We show the address only to you, in Profile.</li>
+  <li><strong>Signing in with an email and a password.</strong> You can also sign in with an email address and a password — or add them to your Apple account in the app under Profile › Account › <em>Sign in on the web</em>. We then store the email address and a hashed form of the password, never the password itself. We email you a link to confirm the address, and a link to reset the password if you ask for one. Otherwise we only use the address to tell you about a suspension. We show the address only to you, in Profile and on the web app's Account page.</li>
   <li><strong>Technical details.</strong> While you're signed in, the server keeps your session: IP address, country, device and operating-system name, and when it was last used. It's used for sign-in and security, and deleted when you sign out or delete your account. The server also keeps technical logs for operations and troubleshooting.</li>
   <li><strong>Your settings.</strong> Which version of the <a href="/terms/">terms</a> you accepted, and when; which messages you want to be notified about; and which events you've turned notifications off for or removed from Home. They're kept on your account, so a new phone knows them, and deleted with the account.</li>
   <li><strong>Your profile.</strong> The name you choose, and your profile picture if you add one. Only the people in your events can see them.</li>
   <li><strong>Events.</strong> The event's name, who is in it, who created it, when it was started and ended, and the time zone it takes place in.</li>
-  <li><strong>What you post.</strong> Messages — text, photos and places — and who you mention with @. Likes. Polls, their options and the votes. Decisions and tasks: what you decided, who does what, and whether it's done. <strong>Every photo is cleaned on your phone before it is sent</strong>: location and all camera data are removed.</li>
+  <li><strong>What you post.</strong> Messages — text, photos and places — and who you mention with @. Likes. Polls, their options and the votes. Decisions and tasks: what you decided, who does what, and whether it's done. <strong>Every photo is cleaned on your phone before it is sent</strong>: location and all camera data are removed. In the web app our server cleans the photo before it is stored (see <a href="#en-webapp">The web app</a>).</li>
   <li><strong>Places.</strong> A place is a restaurant, a bar or an address that you choose: a name, an address and a link to Apple Maps. Never anybody's position — the app stores no coordinates.</li>
   <li><strong>Camera and photos.</strong> Only when you choose to — to take a photo, pick photos or scan an invite QR code. We only get the photos you pick. If you tap <em>Save all photos</em>, the app only asks to add photos to your library; it can't see the rest of it.</li>
   <li><strong>Blocks and reports.</strong> Who you've blocked, and messages you've reported with the reason you chose. Only you can see them — and we do, when we handle a report. If your message is reported, we keep the report with a reference to the message and your user id. If your report leads to a suspension, the log notes that it came from your report.</li>
@@ -254,6 +272,18 @@ export const PRIVACY_HTML = `
 
 <h2>Legal basis</h2>
 <p>We process your data to provide the service you asked for (GDPR Art. 6(1)(b)). Abuse protection, handling reports, technical logs and the anonymous usage statistics rest on our legitimate interest in a safe app that works (Art. 6(1)(f)).</p>
+
+<h2 id="en-webapp">The web app app.after-stories.com</h2>
+<p>The web app lets you take part in an event from a computer or an Android phone. It is the same account, the same data and the same rules as in the app, with these differences:</p>
+<ul>
+  <li><strong>Signing in.</strong> You sign in with your email address and a password (see <em>Signing in with an email and a password</em> above). You make the account from an invitation and accept the <a href="/terms/">terms</a> first.</li>
+  <li><strong>One cookie.</strong> When you're signed in, our server sets a session cookie so you stay signed in. The web app needs it to work; the page's scripts can't read it, and it is deleted when you sign out. There are no other cookies.</li>
+  <li><strong>In your browser.</strong> The web app remembers the code of the invitation you opened in your own browser, until you have joined the event or signed out. It is sent nowhere else.</li>
+  <li><strong>Photos.</strong> A photo you post is sent to our server, which removes the location and all camera data and makes a new, smaller JPEG before anything is stored. The original is never stored.</li>
+  <li><strong>No statistics and no third parties.</strong> The web app sends no usage statistics and no crash reports, and it loads nothing from other services. It runs on our own server in Stockholm, like the rest of your data.</li>
+  <li><strong>No notifications</strong> from the web app.</li>
+  <li><strong>Technical.</strong> Your session stores the browser's and the operating system's name, your IP address and country, as in the app. You delete your account under Konto → Slet min konto (the web app is in Danish for now).</li>
+</ul>
 
 <h2 id="en-web">The website after-stories.com</h2>
 <p>This part covers only the website.</p>

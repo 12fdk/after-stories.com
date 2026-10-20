@@ -57,9 +57,25 @@ describe("the privacy policy", () => {
     expect(en).toContain('href="#en-statistics"');
   });
 
+  it("covers the web app in both languages (12fdk/after-stories#496)", () => {
+    for (const [article, id] of [[da, "da-webapp"], [en, "en-webapp"]] as const) {
+      expect(article).toContain(`href="#${id}"`);
+      expect(article).toContain(`id="${id}"`);
+      expect(article).toContain("app.after-stories.com");
+    }
+    // One necessary cookie, no statistics, the photo cleaned on the server before it is stored.
+    expect(da).toContain("Én cookie");
+    expect(en).toContain("One cookie");
+    expect(da).toContain("Ingen statistik og ingen tredjeparter");
+    expect(en).toContain("No statistics and no third parties");
+    expect(da).toContain("Originalen gemmes aldrig");
+    expect(en).toContain("The original is never stored");
+  });
+
   it("links the terms on this site and the suspension page on after.12f.dk", () => {
     const links = hrefs(PRIVACY_HTML);
-    expect(links.filter((h) => h === "/terms/")).toHaveLength(2);
+    // Two per language: "your settings" and the web app's sign-up (12fdk/after-stories#496).
+    expect(links.filter((h) => h === "/terms/")).toHaveLength(4);
     expect(links).toContain("https://after.12f.dk/konto/suspenderet");
     expect(links).toContain("https://after.12f.dk/account/suspended");
   });
@@ -85,6 +101,16 @@ describe("the terms", () => {
       expect(text).not.toMatch(/\b17\b/);
       expect(text.toLowerCase()).not.toMatch(/øjeblik|moment|planchat|plan's chat/);
     }
+  });
+
+  it("name the web app, with Apple's EULA for the iOS app only (after-stories#496)", () => {
+    const { da, en } = articles(TERMS_HTML);
+    expect(da).toContain("webappen på app.after-stories.com");
+    expect(en).toContain("the web app at app.after-stories.com");
+    expect(da).toContain("For webappen gælder kun disse vilkår.");
+    expect(en).toContain("Only these terms apply to the web app.");
+    // A scope clarification, not a new duty: nobody is asked to accept again.
+    expect(TERMS_VERSION).toBe(2);
   });
 
   it("keep App Store guideline 1.2's promises", () => {
