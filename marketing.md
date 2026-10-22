@@ -1,6 +1,6 @@
 # After Stories — Marketing Plan (living doc)
 
-Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-21
+Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-22
 
 > Plan for a TikTok content program built to grow organic awareness and installs of the
 > **After Stories** app. Every word of copy in this plan must come from the brand sources named
@@ -77,7 +77,7 @@ Three rules that are not negotiable:
 - **New content, always (Robert, 2026-10-11):** every episode is a fresh shoot. Never reuse
   footage from a video that has been posted — a feed of reordered old clips reads as "the
   same content" and kills organic reach. Vary the film between episodes (place, light,
-  season, props, a different story beat) AND the music bed (§3 "Look, style and sound") so
+  season, props, a different story beat) AND the music (a fresh Openverse track every episode, §3 "The sound") AND the presentation style (§5 "Style rotation") so
   each one reads as brand new; the type stays the brand.
 - **One video per episode (Robert, 2026-10-13):** make a single video per episode, not an
   A/B pair. Two cuts of one shoot may still exist as an A/B test, but the default — and the
@@ -85,7 +85,9 @@ Three rules that are not negotiable:
 - **Truth (motion guideline §4):** every line on screen and in the post comes from the brand
   sources, verbatim or clearly paraphrased. No invented numbers, features, prices, dates or
   testimonials. `aiMedia: true` on every spec (the post file then starts with the AI-label
-  reminder).
+  reminder). One exception (Robert, 2026-10-21, reach first): the post caption may end with
+  one short question to the viewer that states no fact about the product (e.g. "Who's the
+  planner in your group?"). On-screen lines stay verbatim.
 - **No faces, no UI, no logos in AI footage.** The real icon appears only on the end card. If a
   generated still shows a face, a readable screen or a brand logo, regenerate it. (Also the
   standing image rule: no visible faces at all — from behind / blurred, or no people.)
@@ -96,11 +98,13 @@ Three rules that are not negotiable:
 
 ### Look, style and sound — the After Stories video identity
 
-**The look (locked, reused since the approved `as-moments` / corporate cuts):**
+**The brand skin (locked) and the default look:**
 - Reel `bold` look, re-skinned in the brand: **Anybody 800 at 75 % width**
   (`assets/after-stories/anybody-latin.woff2`), **pink `#FF2D6F`** accent bars with near-black
   `#0B0C0E` type (the brand's inverted beat), `#0B0C0E` end card.
-- **Footage style (one shared line in every still prompt):** 35 mm film still, warm tungsten
+- **Default (style S0) footage style** — a style in §5 may set its own footage line
+  (flash snapshot, macro, flat-lay…); the no-faces / no-UI / no-logos rules below hold for
+  every style. **Footage style (one shared line in every still prompt):** 35 mm film still, warm tungsten
   with magenta-pink accents, grain, candid. Golden hour and blue hour are the native light.
   Mood and B-roll only — places, light, motion, hands, backs, silhouettes. **No faces, no
   readable UI, no logos** (the real icon only on the end card). No people with visible faces
@@ -112,23 +116,45 @@ Three rules that are not negotiable:
   screen also fails: keep the camera module clearly lit and unmistakable. Check the animated clip:
   LTX drift can rotate a phone and reveal the screen — review every frame, not just the still.
   Omitting the phone is always safe but no longer required.
-- **Pacing:** 4–6 shots of 2–4 s, cuts on the 0.5 s grid (120 BPM), something new every 2 s.
-  The hook line is on screen at frame 0. The end card holds 1.5 s, clears 0.5 s, loops.
+- **Pacing:** cuts on the 0.5 s grid; the hook line is on screen at frame 0; the end card
+  holds 1.5 s, clears 0.5 s, loops. Shot count and shot length are set by the style (§5);
+  S0 is 4–6 shots of 2–4 s.
 
-**The sound (changed 2026-10-11):**
-- **No more clicky SFX beds.** The `beat` bed (isolated kick/hat/whoosh/chime cues) is what
-  the last few videos shipped with, and it reads as mechanical clicks. Robert dropped it for
-  the After Stories TikToks.
-- **Use `bed: 'music'`** in every spec: a warm, deterministic groove from `music.mjs` in the
-  motion repo — C major at 120 BPM (so it sits on the cut grid), soft kick on the downbeats,
-  light backbeat, eighth-note hats, plucked bass, lo-fi e-piano chord stabs and a sparse
-  marimba lead. The groove stops at the end card: a short riser, one soft hit, a bell chord,
-  then a fade so the loop seam is clean.
-- `clips: false` on the After Stories specs: the music is the voice of the edit; the LTX
-  ambience stays out so the groove is clean (keep `clips: true` only when the clip sound IS
-  the idea, e.g. a splash).
-- The `beat` bed stays in the pipeline for the other brands (SonicSnap, CND, …).
-- Mixes to −14 LUFS, two-pass loudnorm, as before.
+**The sound (changed 2026-10-22 — Robert, 2026-10-21: "the same boring music, and not the
+openverse.org that I have asked you to"). This rule is permanent: do not go back to the synth.**
+- **Every episode uses a real track from Openverse** (openverse.org; music from Jamendo) via
+  the motion repo tooling: `audio: { bed: 'track', track: { file: 'assets/openverse/<file>.mp3',
+  start: <s>, gain: 0 } }`. Never `bed: 'music'` (the music.mjs synth groove) and never `beat`
+  for After Stories, except the last-resort fallback below.
+- **Mood from the §6 Music variant column** (it is now a mood index):
+
+  | # | Mood | Search words (try in order) |
+  |---|---|---|
+  | 0 | upbeat, happy | "upbeat happy pop" · "feel good indie" · "summer pop" |
+  | 1 | chill | "chill lofi hip hop" · "chillhop" · "laid back beats" |
+  | 2 | playful, funky | "funk groove" · "disco funk" · "playful" |
+  | 3 | big, cinematic | "epic cinematic" · "uplifting orchestral" · "trailer" |
+  | 4 | warm acoustic | "acoustic guitar happy" · "folk ukulele" · "warm acoustic" |
+  | 5 | electronic, energetic | "electro house" · "synthwave" · "edm energetic" |
+
+  A mood repeats only ≥ 6 episodes later (the column already rotates).
+- **Pick:** `cd /workspace/motion && node tools/openverse.mjs search "<words>" --min 30 --max 240 --n 12`.
+  Take the first listed result that (a) has an id that is NOT already in
+  `assets/openverse/credits.json` (a track is never reused, by any brand), (b) has a creator
+  different from the last 3 After Stories tracks (§8 log), and (c) has no "corporate",
+  "background", "jingle" or "logo" in the title. Then `node tools/openverse.mjs get <id>`.
+  The tool only accepts CC0 / PDM / CC BY (commercial-safe).
+- **Start:** `start: 0` for a track under 45 s; otherwise skip the intro, start ≈ 30 % into
+  the track, rounded to a whole second (the hook needs sound at frame 0). Log the start.
+- **Credit:** the renderer reads it from `credits.json` and writes `Music: …` into the post
+  file by itself. A missing credit is a render error; never write it by hand.
+- `clips: false` unless the style says otherwise (S5) or the clip sound IS the idea.
+- **Fallback:** Openverse down / rate-limited (429) / no usable hit → the next search word in
+  the row, then the other words of the neighbouring mood (n±1). Only if all fail:
+  `bed: 'music'` with `variant` = the mood index, plus a §8 line "OPENVERSE FALLBACK — <reason>"
+  so Robert sees it.
+- Mixes to −14 LUFS, two-pass loudnorm (the renderer does this). The `beat`/`music` synths
+  stay in the pipeline for the other brands.
 
 ### Hashtags and sound
 
@@ -139,7 +165,10 @@ Three rules that are not negotiable:
 - **Sound:** use a currently trending sound when the hook fits it; the embedded music bed is
   the floor, not the ceiling. Trend sounds are the main organic-reach lever and the one thing a
   spec file cannot hold — so at publish time, prefer the TikTok app's trending audio over the
-  embedded bed when the edit allows (the `-silent.mp4` exists for exactly this).
+  embedded bed when the edit allows (the `-silent.mp4` exists for exactly this). The embedded
+  Openverse track is the floor. If Robert posts the -silent.mp4 with a TikTok sound, delete
+  the "Music: …" line from the post text (it credits the embedded track only). The delivery
+  message says so.
 - Pinned comment on every video: the one-liner + the CTA ("after-stories.com — link in bio"),
   because TikTok search indexes comments too.
 
@@ -157,8 +186,20 @@ Three rules that are not negotiable:
 7. `aiMedia: true`; the AI-label reminder leads the post file.
 8. ffprobe verified 1080×1920/30 fps; human reviewed the contact sheets.
 9. Max 5 hashtags, including `#afterstories`; pinned comment set.
+10. Music: an Openverse track (`bed: 'track'`), new id, mood = the row's Music variant,
+    credit line in the post file (or the fallback logged in §8).
+11. Style: the §5 style differs from the previous build's; style id + track file
+    recorded in the row Status and the §8 line.
 
 ## 4. Cadence
+
+**Reach first (Robert, 2026-10-21):** "The only focus is getting attention to the app, so
+reach is the most important. Style etc could be anything." Every video so far stayed under
+300 views except the first (669). Reach comes from watch time, completion, rewatches,
+shares, comments and profile taps. So a finishable, surprising video ranks above polish,
+and a short video people rewatch beats a pretty one they swipe. The style rotation (§5)
+exists to find what the algorithm promotes. The hard rules (§3) and the claim sheet (§5)
+do not bend for reach.
 
 Organic reach on TikTok is a frequency game: 3–4 posts/week, every series represented, never
 two of the same series back to back.
@@ -171,7 +212,8 @@ cadence):** the nightly job builds the first `queued` row in table order EVERY n
 no due-date gate — and hands it over, so Robert always has a fresh episode to post.
 Built episodes wait in his posting backlog until he posts them. The plan keeps the
 series rotation (two builds in a row never the same series), a fresh shoot per episode,
-the music bed rotating (§5), all pre-launch ("Get notified") until launch is announced.
+a fresh Openverse track per episode (mood rotating, §3) and the presentation style
+rotating (§5 "Style rotation"), all pre-launch ("Get notified") until launch is announced.
 The "week of" column is now a calendar anchor for the moment's timing (post by that
 week's deadline), not a production gate.
 
@@ -202,9 +244,11 @@ week's deadline), not a production gate.
 
 ### The engine: what a TikTok here is
 
-A 15–20 s vertical video (1080×1920, 30 fps) built in the motion repo:
+A 6–20 s vertical video (1080×1920, 30 fps; length set by the style) built in the
+motion repo:
 AI mood footage (ComfyUI) + on-screen type in the brand skin, rendered by the Reel template.
-The proven shape (see the shipped `after-stories-corporate` cuts):
+The default shape, style S0 (see the shipped `after-stories-corporate` cuts); the
+other styles are in "Style rotation" below:
 
 1. **Hook (frame 0):** the pain or the question, in the site's own words, on screen immediately.
 2. **The promise (3–4 shots, ~2 s each):** the life the app enables, as AI mood footage —
@@ -215,8 +259,8 @@ The proven shape (see the shipped `after-stories-corporate` cuts):
 ### Content pillars — the standing series
 
 Organic growth on TikTok comes from a repeatable format people subscribe to, not one-off promos.
-Run four standing series. Each episode is one use case or one feature; the format stays the
-same, the subject changes.
+Run four standing series. Each episode is one use case or one feature; the series is the angle (what the episode says); the style (§5 "Style rotation") is
+how it looks and moves, and rotates independently.
 
 #### Series A — "The group chat" (problem-first)
 - **Format:** the villain story. Opens on the pain line, shows the chaos (plans buried, photos
@@ -267,6 +311,36 @@ same, the subject changes.
 - Anything that implies a social network, a feed, or a following. We are a private app per event.
 - Hangover-porn content as a brand: light humour yes, "cheeky, never laddish".
 
+### Style rotation — how each episode is presented (added 2026-10-22)
+
+Content (hook, scene, claim lines, CTA, series) comes from the §6 row unchanged; the style
+changes presentation only. Every style keeps the hard rules (§3), the end card (icon + CTA,
+brand skin), the hook at frame 0, `aiMedia: true`, and an Openverse track.
+
+| Style | Name | Length | What it looks like | Spec notes |
+|---|---|---|---|---|
+| S0 | Film mood (baseline) | 15–20 s | the default shape above | 35 mm film footage line; the `bold` look |
+| S1 | Type only | 8–12 s | no footage; 4–6 lines from the claim sheet (the row's feature/use case), each 1–1.5 s, hard cuts on the grid, alternating `#0B0C0E` / `#FF2D6F` full-frame backgrounds | backgrounds are PNGs made with `ffmpeg -f lavfi -i color=c=0x0B0C0E:s=1080x1920 -frames:v 1 assets/<slug>/bg-dark.png` (and `0xFF2D6F` → `bg-pink.png`); no ComfyUI; text `at: 'center'`; a length WARN is expected |
+| S2 | One-liner loop | 6–9 s | one LTX clip (one shot, 4–6 s) carrying the hook, then the end card; built to be rewatched | a scene over 4 s gives a WARN (expected); `zoom: true` |
+| S3 | Flash snapshot | 12–16 s | 5–7 shots of 1.5–2.5 s | footage line `direct on-camera flash party snapshot, disposable-camera look, hard shadows, red-eye-free, candid, from behind` (no faces); stills only or ≤ 2 clips; the `bold` look |
+| S4 | Countdown | 12–16 s | the hook, then 3 numbered beats `1.` `2.` `3.`, each one verbatim claim-sheet line over a flat-lay still (paper, table top), then the end card | the numbers are list markers, not claims; needs 3 claim lines that fit the row |
+| S5 | Slow burn / ASMR | 12–16 s | 2 long LTX clips (4–6 s) of a tactile detail (steam, pouring, paper, rain), little type (hook + one line) | `clips: true`, track `gain: -6` so the ambience sounds through |
+| S6 | Question | 10–15 s | frame 0 is a question-form site line (the row's hook if it is a question; otherwise a question-form line from the same use-case page, e.g. "can someone send the pics??", "did anyone actually book the house", "wait which weekend did we land on?"); S0 footage, 3–4 shots | the caption ends with one viewer question (§3 Truth exception) |
+| S7 | Fast montage | 10–14 s | 8–10 cuts of 0.5–1.5 s from the fresh shoot (mostly stills with `zoom: true`), type only on frame 0 and the end card; made for posting the `-silent.mp4` over a trending sound | moods 0, 2 or 5 suit it, but take the row's mood anyway |
+
+**Rotation rules:**
+- Order: `S1 → S7 → S2 → S3 → S4 → S5 → S6 → S0 → S1 …`.
+- The next style is the one after the style in the most recent `built …` Status that has a
+  style tag. If no row has a tag yet (first night after this change), use S1.
+- Never the same style twice in a row.
+- **Fit check:** if the row can't be built in that style without breaking a rule, skip to
+  the next style in order and say why in §8 (examples: S4 can't find 3 claim lines for the
+  row; S6 has no question-form site line; a 48 h row in S1/S2 where the save beat can't come
+  before the deletion line). Skipping doesn't move the rotation pointer further; the next
+  night continues from the style actually used.
+- Every 48 h row keeps the save-first order in every style.
+- Once 8 styles have been posted with views, the §7 scoreboard decides the weights.
+
 ### Claim sheet — what each §6 feature may say (added 2026-10-15)
 
 Verbatim from the live site (home page, the use-case pages and `llms-full.txt`, read
@@ -307,15 +381,17 @@ All production lives in the motion repo (`/workspace/motion`), via the `social-v
 2. **Shotlist** → `docs/<slug>.md` in the motion repo: platform, angle, hook (verbatim line +
    source), 4–6 shots of 2–4 s, which shots move (clip) and which are stills, and the fresh
    shoot's style line (which place/light/season/props this episode uses — different from the
-   last episode's, §3 "New content, always").
-3. **Stills** (one per shot, one shared style, 9:16): `comfy-gen --aspect 9:16 --prompt "…"
+   last episode's, §3 "New content, always"); the style (S0–S7) and its footage line.
+3. **Stills** (one per shot, one shared style, 9:16; S1: no stills, ffmpeg backgrounds
+   instead): `comfy-gen --aspect 9:16 --prompt "…"
    --prefix <slug>-s1 --copy-to /workspace/motion/assets/<slug>/` (~40 s each).
 4. **Clips** (only the moving shots, ≤ 5 per video): `comfy-gen --model ltx --image …
    --seconds 4 --prefix <slug>-c1 …` (~2 min each).
 5. **Spec** → `reels/<slug>.json`: brand skin (Anybody 800 @ 75 % width, accent `#FF2D6F` on
    `#0B0C0E`), `aiMedia: true`, `end.image` = the icon, `post` caption without hashtags,
-   `hashtags` list, audio `bed: 'music'` (the warm groove; never the clicky `beat` bed) with
-   `clips: false` unless the clip sound is the idea (§3).
+   `hashtags` list, audio `bed: 'track'` with the Openverse file picked in §3 "The sound"
+   (fetch it before the spec), `clips: false` unless the style or the clip sound needs it
+   (§3, §5 Style rotation).
 6. **Render:** `motion-render -- npm --prefix remotion run --silent reel -- reels/<slug>.json`
    (~1 min). Fix ERROR lines; fix WARN lines where possible.
 7. **Verify** with ffprobe (1080×1920, 30 fps, h264, yuv420p) — never trust the renderer's PASS
@@ -323,19 +399,20 @@ All production lives in the motion repo (`/workspace/motion`), via the `social-v
 8. **Deliver** to `/nas/spark/videos/<slug>/` (MP4, silent version, review sheets, post file).
 9. **Human review of `contact.png` / `phone.png` before posting** — the agent cannot see images.
 10. **Commit** `docs/<slug>.md`, `reels/<slug>.json`, used `assets/<slug>/` to the motion repo
-    (`master`) and push. Never commit `out/`.
+    (`master`) and push, and the new `assets/openverse/<file>.mp3` + `credits.json`. Never commit `out/`.
 
 **One video per episode (since 2026-10-13):** the default is a single spec — the angle
 that fits the episode (problem-first, payoff-first or feature-twist), not a mandatory A/B
 pair. Two cuts of one shoot remain available as a deliberate A/B test when a hook is worth
 testing; the nightly build (§6) always makes one.
 
-**The music bed rotates (since 2026-10-13):** set `audio.variant` (0–5) in the spec so no
-two episodes share a bed. Take it from the Music variant column of the §6 plan; a
-variant may repeat only ≥ 6 episodes later. `bed` stays `music`, never `beat`.
+**The music mood rotates (since 2026-10-22):** the §6 Music variant column is the mood
+index (§3 "The sound"); a mood repeats only ≥ 6 episodes later, and a track is never
+reused. `bed` is `track`, never `music` or `beat` (fallback only, §3).
 
 **Time budget:** ~45 s per still, 2–6 min per clip, ~1 min per cut. A full episode (6 shots,
-5 clips, 1 cut) ≈ 25–50 min — comfortably inside one nightly window.
+5 clips, 1 cut) ≈ 25–50 min — comfortably inside one nightly window. S1 needs
+no ComfyUI and takes ~10 min; S2 ~15 min.
 
 ## 6. Content plan
 
@@ -415,13 +492,14 @@ festival planning — never state a date or a statistic for them in a post.
 
 ### The plan — what the nightly job reads (episode queue until 2026-10-15)
 
-One row = one TikTok episode: a 15–20 s vertical reel (no carousels on this channel),
+One row = one TikTok episode: a 6–20 s vertical reel (length set by the style, §5; no
+carousels on this channel),
 built by the nightly job and posted by hand by Robert. Rules for every row:
 
 - **Which row is built:** each night the job builds one row: the first row in table order
   whose Status is `queued` (or empty) — **every night, no due-date gate** (Robert's
   2026-10-16 rule: one new video per day). When it is built, the job sets Status to
-  `built <yyyy-mm-dd> <reel slug>`. When Robert tells it an episode is posted, the Status
+  `built <yyyy-mm-dd> <reel slug> · <style id> · <track file name>`. When Robert tells it an episode is posted, the Status
   becomes `posted <yyyy-mm-dd>`; the next prune removes the row, and the history lives in
   the §8 post log, not here.
 - **Posting is Robert's call:** 3–4 rows per week are planned (§4). The `built …, ready`
@@ -431,8 +509,10 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
   row.
 - **One video per episode.** Fresh shoot: the Look / scene column is the start point and
   must differ from the last episodes (§3).
-- **Music bed varies:** the Music variant column is `audio.variant` (0–5) in the spec; no
-  variant repeats within 6 episodes (the column already follows the rotation).
+- **Music mood + style:** the Music variant column is the mood index for the Openverse
+  track (§3 "The sound"); the style comes from the §5 Style rotation, not from the table.
+  The Look / scene column is the scene; the style may restyle it (e.g. S3 flash, S1 no
+  footage).
 - **Series rotate:** two rows in a row never have the same series (A problem-first,
   B payoff-first, C "Gone in 48 hours" / feature spotlight, D "Works for this too", §5).
 - **Copy is verbatim** from the live site (re-check `llms-full.txt` the night of the build —
@@ -518,7 +598,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 
 **When the plan runs short** (fewer than 7 `queued` rows — a week at one per day), the job adds rows
 from the site's use-case pages, the Series C feature list and the next calendar hooks —
-same columns, same verbatim check, the series and variant rotations kept, a new slug and a
+same columns, same verbatim check, the series and mood rotations kept, a new slug and a
 new look per row — and logs it in §8.
 
 ## 7. Review procedure
@@ -535,6 +615,12 @@ new look per row — and logs it in §8.
   one-line log in the motion repo next to each shotlist: what worked, what got cut. The
   "events that reach the summary" metric from PostHog sits next to installs to answer "are
   these installs worth anything".
+- **Reach scoreboard (added 2026-10-22):** the job can't read TikTok metrics, so Robert
+  reports views; the job writes them into that episode's post-log "48 h result" cell (with
+  style + mood in the Video cell). The baseline to beat is 300 views (best so far 669).
+  When every style has ≥ 2 posted episodes with views: the style with the highest median
+  moves to every second build, and a style whose episodes all stayed under 300 leaves the
+  rotation. Record each change as a §8 line.
 
 ## 8. Learnings log
 
@@ -556,6 +642,22 @@ new look per row — and logs it in §8.
 | built 2026-10-19 | **as-office-xmas** (fresh after-hours office shoot — pushed-together desks as one team table, warm-white fairy lights and pink tinsel on pine-green partitions, pale-mint fluorescent spill) — queue row Nov 2 #3 (Series D, office-events · Christmas party), music v1 | Skip the 30 emails. | due on post | post by ~Nov 14; AI label on; launch CTA; second audience (organizer is the buyer) |
 | built 2026-10-20 | **as-friendsgiving-date** (fresh rainy-dusk apartment shoot — rain-streaked window, a stack of mismatched borrowed chairs, wet autumn leaves on the sill, cold grey-violet light with magenta-pink accents; shot 4 is a still — both LTX card-clip takes drifted the card count 3→2, so the design's still fallback was used) — queue row Nov 2 #4 (Series A, dinner-nights · Friendsgiving), music v2 | Friendsgiving: Six people, three possible evenings, and the date still isn't set. | due on post | post by ~Nov 15; AI label on; launch CTA; #hosting swapped in for #potluck (date-picking angle) |
 | built 2026-10-21 | **as-friendsgiving** (fresh loft overhead shoot — three mismatched tables pushed together seen straight down, several amber lamps pooling at frame edges, rust/cream/mulled-wine palette, dishes arriving in hands from behind; s2 a still per the LTX drift lesson, s5 re-rendered once — first take showed a table set for the meal) — queue row Nov 9 #1 (Series D, dinner-nights · Friendsgiving), music v3 | Friendsgiving: Put three evenings to a vote and the group picks one. | due on post | post by ~Nov 15 (Friendsgiving hook); AI label on; launch CTA; #potluck + #planwithfriends in place of #hosting (as-friendsgiving-date already used #hosting) |
+
+- 2026-10-22 (Robert's message 2026-10-21: "All after stories tiktok videos have gone under 300 views,
+  except the first one (669). The videos all use the same boring music, and not the openverse.org
+  that I have asked you to. For the music, save that so it's remembered. For the videos, change
+  them, to try different styles, themes etc, to see if we can break out of the 300 limit. The only
+  focus is getting attention to the app, so reach is the most important. Style etc could be
+  anything. Change the current plan."): plan changed. **Music:** §3 "The sound" replaced: every
+  episode now gets a fresh Openverse track (`bed: 'track'`), mood from the Music variant column
+  (now a mood index), credit added by the renderer. The synth `music.mjs` bed is fallback only.
+  This is permanent. (The motion repo has defaulted to Openverse since 2026-10-17, but this
+  file's `bed: 'music'` rule overrode it; that's why every video sounded the same.) **Styles:**
+  new §5 Style rotation S0–S7 (type only, one-liner loop, flash snapshot, countdown, slow burn,
+  question, fast montage, film baseline), one per build, starting at S1, recorded in the row
+  Status. **Reach first** added to §4; §3 Truth gets one caption-question exception; §3 look/
+  pacing now per style; §7 reach scoreboard. The 71 §6 rows (hooks, looks, values) are
+  unchanged. Hard rules unchanged.
 
 - 2026-10-21 (nightly, §7 review + build as-friendsgiving): no 48 h reviews due with data — the builds since 10-16 await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: 0 attributed social traffic, 0 waitlist sign-ups, 41 pageviews (prev 7d 200) — the build stays product-focused (as-friendsgiving, Series D, dinner-nights · Friendsgiving, music v3; post by ~Nov 15 per the Friendsgiving calendar hook). Production notes: s2 kept as a still (no countable-object clip — LTX drift lesson from 10-20); s5 re-rendered once (first take showed a table set for the meal, not the cleared morning after); 5 stills + 3 clips (c1/c3/c4), every still and 4 frames per clip vision-checked clean. Hashtags: #potluck + #planwithfriends in place of #hosting (as-friendsgiving-date used #hosting; the potluck use case carries the niche tags). Design loop task 20261021-2205.
 - 2026-10-20 (nightly, §7 review + build as-friendsgiving-date): no 48 h reviews due with data — the builds since 10-16 await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: 0 attributed social traffic, 0 waitlist sign-ups, 36 pageviews (prev 7d 200) — the build stays product-focused (as-friendsgiving-date, Series A, dinner-nights · Friendsgiving, music v2; post by ~Nov 15 per the Friendsgiving calendar hook). Production notes: both LTX takes of the shot-4 card clip drifted the card count from three to two mid-clip (a mismatch with the on-screen "Put three evenings to a vote" line), so the design's fallback was used — the verified still s4_00003 with the template slow push-in; the reel is 4 stills + 1 clip (c1, the rain drip, every frame checked clean). Hashtags: #hosting in place of #potluck (this episode is the date-picking angle, not the potluck table).
@@ -619,3 +721,6 @@ new look per row — and logs it in §8.
 - Posting backlog: four built rows (six videos) wait in §6 (`as-halloween-a/b` must go out before
   Oct 31). The job only builds `queued` rows, so a large backlog does not stop it; Robert
   tells it which ones are posted.
+- *Robert:* the 11 built S0-style rows (Status `built …` without a style tag) are the old
+  style. To test the new styles fast, post the new tagged builds first, and report views
+  per video (§7 scoreboard).
