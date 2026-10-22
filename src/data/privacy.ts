@@ -18,8 +18,11 @@
 //   - schema.md     what is stored, who can read it (team-only), the deletion cascade, the
 //                   invite/create throttles (expiresAt = window + 1 day, cleaned up on next use)
 //   - product.md    the one-event model (#208/#223: messages, photos, places, @mentions, likes,
-//                   polls, decisions and tasks — no moments, reactions, going home, cover, RSVP or
-//                   agenda), places as venues (#217: MKLocalSearch with no region, no
+//                   polls, decisions and tasks — no moments, reactions, going home, RSVP or
+//                   agenda), the cover (#526: a stock theme or an own photo in the `covers` bucket)
+//                   and Kampdag's car pool (#527: cars, children's first names typed by a parent,
+//                   their seats; team-only, deleted with the event, a parent's erasure deletes the
+//                   children they added), places as venues (#217: MKLocalSearch with no region, no
 //                   coordinates), saving photos with add-only access (#220), report & block (#29,
 //                   #169), leaving, retention (#221: 48 h after the end, 90 days if never started,
 //                   the 12 h warning push #256; #170: a deleted event's reports are kept 90 days
@@ -57,8 +60,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "20. oktober 2026";
-export const PRIVACY_UPDATED_EN = "20 October 2026";
+export const PRIVACY_UPDATED_DA = "22. oktober 2026";
+export const PRIVACY_UPDATED_EN = "22 October 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -89,6 +92,7 @@ export const PRIVACY_HTML = `
   <li><strong>Din profil.</strong> Det navn, du vælger, og dit profilbillede, hvis du tilføjer et. De kan kun ses af dem, der er med i dine events.</li>
   <li><strong>Events.</strong> Eventets navn, hvem der er med, hvem der oprettede det, hvornår det blev startet og sluttede, og den tidszone, det foregår i.</li>
   <li><strong>Det, du lægger op.</strong> Beskeder — tekst, billeder og steder — og hvem du nævner med @. Likes. Afstemninger, deres svarmuligheder og stemmerne. Beslutninger og opgaver: hvad I har besluttet, hvem der gør hvad, og om det er klaret. <strong>Alle billeder bliver renset på telefonen, før de sendes</strong>: placering og alle kameraoplysninger fjernes. I webappen renser vores server billedet, før det gemmes (se <a href="#da-webapp">Webappen</a>).</li>
+  <li><strong>Kørsel og forsidebillede.</strong> I et <em>Kampdag</em>-event: bilerne (chaufførens navn og antal pladser), børnenes fornavne, som forældrene selv skriver ind, og hvem der sidder i hvilken bil ud og hjem. Og eventets forsidebillede, hvis I vælger et eget billede — det bliver renset som alle andre billeder. Det kan kun ses af dem, der er med i eventet, og slettes med eventet. Børn har ingen konto i AFTER; kun deres fornavn bliver gemt. Sletter en forælder sin konto, slettes de børn, forælderen har skrevet ind.</li>
   <li><strong>Steder.</strong> Et sted er et spisested, en bar eller en adresse, som I selv vælger: et navn, en adresse og et link til Apple Kort. Aldrig nogens position — appen gemmer ingen koordinater.</li>
   <li><strong>Kamera og billeder.</strong> Kun når du selv vælger det — for at tage et billede, vælge billeder eller scanne en invitations-QR-kode. Vi får kun de billeder, du vælger. Trykker du <em>Gem alle billeder</em>, beder appen kun om lov til at lægge billeder i dit billedbibliotek; resten af biblioteket kan den ikke se.</li>
   <li><strong>Blokeringer og rapporter.</strong> Hvem du har blokeret, og beskeder du har rapporteret, med den grund du valgte. Kun du kan se dem — og vi, når vi behandler en rapport. Bliver din besked rapporteret, gemmer vi rapporten med en henvisning til beskeden og dit bruger-id. Fører din rapport til en suspendering, noterer loggen, at den kom fra din rapport.</li>
@@ -222,6 +226,7 @@ export const PRIVACY_HTML = `
   <li><strong>Your profile.</strong> The name you choose, and your profile picture if you add one. Only the people in your events can see them.</li>
   <li><strong>Events.</strong> The event's name, who is in it, who created it, when it was started and ended, and the time zone it takes place in.</li>
   <li><strong>What you post.</strong> Messages — text, photos and places — and who you mention with @. Likes. Polls, their options and the votes. Decisions and tasks: what you decided, who does what, and whether it's done. <strong>Every photo is cleaned on your phone before it is sent</strong>: location and all camera data are removed. In the web app our server cleans the photo before it is stored (see <a href="#en-webapp">The web app</a>).</li>
+  <li><strong>Car pool and cover picture.</strong> In a <em>Game day</em> event: the cars (the driver's name and the number of seats), the children's first names, which their parents type in themselves, and who sits in which car out and home. And the event's cover picture, if you choose a photo of your own — it is cleaned like every other photo. Only the people in the event can see it, and it is deleted with the event. Children have no account in AFTER; only their first name is stored. When a parent deletes their account, the children that parent added are deleted.</li>
   <li><strong>Places.</strong> A place is a restaurant, a bar or an address that you choose: a name, an address and a link to Apple Maps. Never anybody's position — the app stores no coordinates.</li>
   <li><strong>Camera and photos.</strong> Only when you choose to — to take a photo, pick photos or scan an invite QR code. We only get the photos you pick. If you tap <em>Save all photos</em>, the app only asks to add photos to your library; it can't see the rest of it.</li>
   <li><strong>Blocks and reports.</strong> Who you've blocked, and messages you've reported with the reason you chose. Only you can see them — and we do, when we handle a report. If your message is reported, we keep the report with a reference to the message and your user id. If your report leads to a suspension, the log notes that it came from your report.</li>
