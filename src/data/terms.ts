@@ -13,6 +13,8 @@
 // AFTER, with the same rules, and Apple's EULA is said to cover the iOS app. A scope
 // clarification that takes nobody's right away or adds a duty, so still version 2: nobody is
 // asked again. The web app sends the same version at sign-up (web/app/src/lib/emailAuth.ts).
+// 2026-10-22 (12fdk/after-stories#339): the contact address is after-stories@12f.dk (after-stories.com
+// has no MX). A contact change, so still version 2.
 //
 // App Store guideline 1.2 is what this page answers: no tolerance for objectionable content or
 // abusive users, a way to report and to block (both built, #29), and the operator acting on a
@@ -26,8 +28,8 @@
 // not such a change. Change the dates whenever the text changes.
 
 export const TERMS_VERSION = 2;
-export const TERMS_UPDATED_DA = "20. oktober 2026";
-export const TERMS_UPDATED_EN = "20 October 2026";
+export const TERMS_UPDATED_DA = "22. oktober 2026";
+export const TERMS_UPDATED_EN = "22 October 2026";
 
 export const APPLE_EULA = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
@@ -59,7 +61,7 @@ export const TERMS_HTML = `
 <p>Appen AFTER hentes fra App Store, og Apples standardlicensaftale for apps gælder også for den: <a href="${APPLE_EULA}">Licensed Application End User License Agreement</a>. For webappen gælder kun disse vilkår.</p>
 
 <h2>Ændringer og kontakt</h2>
-<p>Ændrer vi vilkårene, så du skal acceptere dem igen, beder appen dig om det. Spørgsmål eller en klage: <a href="mailto:support@after-stories.com">support@after-stories.com</a>. AFTER udgives af 12f ApS, Danmark.</p>
+<p>Ændrer vi vilkårene, så du skal acceptere dem igen, beder appen dig om det. Spørgsmål eller en klage: <a href="mailto:after-stories@12f.dk">after-stories@12f.dk</a>. AFTER udgives af 12f ApS, Danmark.</p>
 </article>
 
 <article id="en" lang="en">
@@ -87,6 +89,6 @@ export const TERMS_HTML = `
 <p>The AFTER app comes from the App Store, and Apple's standard licence for apps applies to it too: <a href="${APPLE_EULA}">Licensed Application End User License Agreement</a>. Only these terms apply to the web app.</p>
 
 <h2>Changes and contact</h2>
-<p>If we change these terms in a way you need to accept again, the app will ask you. Questions or a complaint: <a href="mailto:support@after-stories.com">support@after-stories.com</a>. AFTER is published by 12f ApS, Denmark.</p>
+<p>If we change these terms in a way you need to accept again, the app will ask you. Questions or a complaint: <a href="mailto:after-stories@12f.dk">after-stories@12f.dk</a>. AFTER is published by 12f ApS, Denmark.</p>
 </article>
 `;
