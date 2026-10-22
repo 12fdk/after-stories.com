@@ -32,7 +32,9 @@
 // (Issue numbers above are 12fdk/after-stories issues.)
 //
 // Product analytics (#373, owner 2026-10-07, superseding #33's "no SDK"): the app sends
-// anonymous usage events and crash reports to PostHog (EU cloud, Frankfurt). Never identify()d,
+// anonymous usage events and crash reports to PostHog (EU cloud, Frankfurt), and since #453 a
+// note when a write failed for good (its table, kind and reason; App Store "Other Diagnostic
+// Data", not linked). Never identify()d,
 // never the user id, a name or anything a member wrote; no session replay; the project discards
 // IP addresses and the app disables GeoIP; on by default with an off switch in Profil › Konto
 // (app repo docs/backend.md, CLAUDE.md › Analytics). The server-side daily totals stay.
@@ -115,7 +117,7 @@ export const PRIVACY_HTML = `
 <p>Alt, hvad du lægger op, opbevares i EU. Login, notifikationer og søgning efter steder går gennem Apple, som behandler dem efter sine egne regler og også uden for EU.</p>
 
 <h2 id="da-statistik">Statistik</h2>
-<p>For at se, hvad der virker, og rette fejl, sender appen <strong>anonym brugsstatistik</strong> til PostHog: hvilke trin der bliver brugt (fx at et event er oprettet, at der er stemt, at en besked er sendt med eller uden billede), og <strong>fejlrapporter</strong>, når appen går ned. Med følger appens version, telefonens model, iOS-version og sprog og et tilfældigt id, som appen laver på din telefon.</p>
+<p>For at se, hvad der virker, og rette fejl, sender appen <strong>anonym brugsstatistik</strong> til PostHog: hvilke trin der bliver brugt (fx at et event er oprettet, at der er stemt, at en besked er sendt med eller uden billede), <strong>fejlrapporter</strong>, når appen går ned, og en besked, når noget ikke kunne sendes til serveren: kun hvilken slags ting det var (fx en besked eller en stemme) og hvorfor (fx at eventet er slettet). Med følger appens version, telefonens model, iOS-version og sprog og et tilfældigt id, som appen laver på din telefon.</p>
 <ul>
   <li><strong>Aldrig indhold.</strong> Ingen tekst, ingen billeder, ingen navne, intet events-navn, intet steds-navn og intet andet, nogen har skrevet. Ingen skærmoptagelse.</li>
   <li><strong>Ikke knyttet til dig.</strong> Det tilfældige id er ikke dit bruger-id, og vi forbinder det aldrig med din konto, dit navn eller din e-mail. Din IP-adresse når PostHog som en del af forbindelsen, men gemmes ikke, og der udledes ingen placering af den.</li>
@@ -249,7 +251,7 @@ export const PRIVACY_HTML = `
 <p>Everything you post is stored in the EU. Sign-in, notifications and place search go through Apple, which handles them under its own terms, also outside the EU.</p>
 
 <h2 id="en-statistics">Statistics</h2>
-<p>To see what works and to fix bugs, the app sends <strong>anonymous usage statistics</strong> to PostHog: which steps are used (for example that an event was created, that someone voted, that a message was sent with or without a photo), and <strong>crash reports</strong> when the app fails. With them go the app version, the phone model, the iOS version and language, and a random id the app makes on your phone.</p>
+<p>To see what works and to fix bugs, the app sends <strong>anonymous usage statistics</strong> to PostHog: which steps are used (for example that an event was created, that someone voted, that a message was sent with or without a photo), <strong>crash reports</strong> when the app fails, and a note when something could not be sent to the server: only what kind of thing it was (for example a message or a vote) and why (for example that the event was deleted). With them go the app version, the phone model, the iOS version and language, and a random id the app makes on your phone.</p>
 <ul>
   <li><strong>Never content.</strong> No text, no photos, no names, no event name, no place name and nothing anyone wrote. No screen recording.</li>
   <li><strong>Not linked to you.</strong> The random id is not your user id, and we never connect it to your account, your name or your email. Your IP address reaches PostHog as part of the connection, but it is not stored, and no location is derived from it.</li>
