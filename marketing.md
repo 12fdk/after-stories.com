@@ -677,7 +677,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 9 | 4 | as-likes | C | likes → the most-liked photo | “Tap ❤️ on the ones that matter.” | winter market at night, mulled-wine steam, mittened hands, string lights | 0 | built 2026-10-23 as-likes · S2 · alexzavesa-man-mountain-electro-house-57598aab.mp3 |
 | Nov 16 | 1 | as-reunion | D | family-reunion · US Thanksgiving | “Plan the family reunion together.” | long table, three generations' hands, late-afternoon sun (built) | 1 | built 2026-10-24 as-reunion · S3 · playfulness-b6fb4ded.mp3 |
 | Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | queued |
-| Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | queued |
+| Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | built 2026-10-25 as-office-chat · R1 · prologue-9c2a001e.mp3 |
 | Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | queued |
 | Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | queued |
 | Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | queued |
@@ -791,6 +791,20 @@ new look per row — and logs it in §8.
 | built 2026-10-23 | **as-likes** (fresh winter night-market shoot — mittened hands round a steaming mulled-wine mug, cranberry knit, teal-navy night with gold string-light bokeh, cream steam; style S2 one-liner loop, one 6 s LTX clip; Openverse mood-5 fallback track “Man mountain (Electro House)”, alexzavesa-man-mountain-electro-house-57598aab.mp3) — queue row Nov 9 #4 (Series C, likes → the most-liked photo) | Tap ❤️ on the ones that matter. | due on post | AI label on; launch CTA; the ❤️ renders as a monochrome DejaVu fallback glyph (Anybody has no U+2764 — no tofu, hook kept verbatim); §2 post-text form “after-stories.com (link in bio)” on purpose (CTA on the end card + pinned comment); post the -silent.mp4 over a trending sound if desired (delete the “Music:” line then) |
 | built 2026-10-24 | **as-reunion** (fresh late-autumn farmhouse back-porch shoot — POV down a long trestle table, direct flash against low peach-gold sun through the screen door, sage/powder-blue/peach/red-gingham palette, hands only, a child's pink scooter; style S3 flash snapshot, 6 fresh stills; Openverse mood-2 fallback track “playfulness” by Pan:core, playfulness-b6fb4ded.mp3) — queue row Nov 16 #1 (Series D, family-reunion · US Thanksgiving) | Plan the reunion together. | due on post | post by ~Nov 22 (US Thanksgiving calendar hook); AI label on; launch CTA; hook swapped from the table line to the site's verbatim line per the §9 watch item (llms-full.txt re-checked 2026-10-24); #family #familyreunion #thanksgiving #reunionplanning #afterstories |
 
+- 2026-10-25 (manual, Robert's test video): built **as-office-chat** (Nov 16 #3, series A) as the
+  first **Lane 1 · R1 (story captions)** build from the new format-lane plan — the first R-tagged
+  build (3+1 rule: no prior R tags → R1). Skipped the first queued row **as-nobody-left-out**:
+  its claim ("friends without an iPhone join from the web") is stale since launch 2026-10-18 —
+  the live site answers "No" (claim sheet); the row needs a rework before any build, and the
+  next nightly build must skip it the same way. R1 spec: 8 story beats, frame 0 a scenario with
+  no product claim, twist beats verbatim ("Skip the 30 emails." / "No work chat left behind." —
+  verified on the live /office-events/ page 2026-10-25), raw-feel footage line, `look: 'clean'`,
+  no voice, fresh Openverse track "Prologue" by Hyperreal (mood 3), `hits: false`. 12/12 render
+  checks PASS (18.0 s, -13.9 LUFS); every still and clip frame passed the face/screen/logo
+  guardrail check (s1 and s7 needed three takes — flux crowd shots leak faces; final s7 is the
+  empty-sofa still, so the plan's c4 clip was dropped: 3 LTX clips + 5 stills). Post route: the
+  -silent.mp4 + a trending TikTok sound is the default (§3 Sound) — delete the "Music:" line if
+  the trending sound is used. NAS: /nas/spark/videos/as-office-chat/.
 - 2026-10-25 (Robert's message 2026-10-25: "None of the new after-stories tiktok posts has
   made it above 300. So the change is not good enough. Try something more different.
   Rewrite the marketing plan so it tries new things."): plan rewritten around the **format
