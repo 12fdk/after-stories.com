@@ -1,6 +1,6 @@
 # After Stories — Marketing Plan (living doc)
 
-Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-24
+Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-25
 
 > Plan for a TikTok content program built to grow organic awareness and installs of the
 > **After Stories** app. Every word of copy in this plan must come from the brand sources named
@@ -87,7 +87,13 @@ Three rules that are not negotiable:
   testimonials. `aiMedia: true` on every spec (the post file then starts with the AI-label
   reminder). One exception (Robert, 2026-10-21, reach first): the post caption may end with
   one short question to the viewer that states no fact about the product (e.g. "Who's the
-  planner in your group?"). On-screen lines stay verbatim.
+  planner in your group?"). On-screen product lines stay verbatim; **story and scenario
+  beats may say anything that states no fact about the product** (Robert, 2026-10-25, the
+  reach lane): a narrator's scenario, story beat or question is fine — "my group has been
+  planning the same night for weeks" claims nothing about the app — but the moment a line
+  makes a product fact, it is verbatim from the claim sheet (no invented numbers either,
+  in scenarios or on screen). The caption-question exception applies to video narrative in
+  the same way.
 - **No faces, no UI, no logos in AI footage.** The real icon appears only on the end card. If a
   generated still shows a face, a readable screen or a brand logo, regenerate it. (Also the
   standing image rule: no visible faces at all — from behind / blurred, or no people.)
@@ -162,13 +168,14 @@ openverse.org that I have asked you to"). This rule is permanent: do not go back
   Build the set from the use case's ASO keyword set in positioning.md: one broad tag, 2–3
   niche tags, and `#afterstories` — the searchable home of the series (e.g. trip:
   `#friends #grouptrip #daytrip #tripplanner #afterstories`).
-- **Sound:** use a currently trending sound when the hook fits it; the embedded music bed is
-  the floor, not the ceiling. Trend sounds are the main organic-reach lever and the one thing a
-  spec file cannot hold — so at publish time, prefer the TikTok app's trending audio over the
-  embedded bed when the edit allows (the `-silent.mp4` exists for exactly this). The embedded
-  Openverse track is the floor. If Robert posts the -silent.mp4 with a TikTok sound, delete
-  the "Music: …" line from the post text (it credits the embedded track only). The delivery
-  message says so.
+- **Sound:** the `-silent.mp4` + a currently trending TikTok sound is the **default post
+  route for Lane 1 (reach) builds** (2026-10-25); for Lane 2 posts the embedded track stands
+  and a trending sound is optional when the hook fits it. Trend sounds are the main
+  organic-reach lever and the one thing a spec file cannot hold — at publish time, prefer the
+  TikTok app's trending audio over the embedded bed (the `-silent.mp4` exists for exactly
+  this); the embedded Openverse track is the floor. If Robert posts the -silent.mp4 with a
+  TikTok sound, delete the "Music: …" line from the post text (it credits the embedded
+  track only). The delivery message says so.
 - Pinned comment on every video: the one-liner + the CTA ("after-stories.com — link in bio"),
   because TikTok search indexes comments too.
 
@@ -193,13 +200,42 @@ openverse.org that I have asked you to"). This rule is permanent: do not go back
 
 ## 4. Cadence
 
-**Reach first (Robert, 2026-10-21):** "The only focus is getting attention to the app, so
-reach is the most important. Style etc could be anything." Every video so far stayed under
-300 views except the first (669). Reach comes from watch time, completion, rewatches,
-shares, comments and profile taps. So a finishable, surprising video ranks above polish,
-and a short video people rewatch beats a pretty one they swipe. The style rotation (§5)
-exists to find what the algorithm promotes. The hard rules (§3) and the claim sheet (§5)
-do not bend for reach.
+**Reach first (Robert, 2026-10-21, reinforced 2026-10-25):** "The only focus is getting
+attention to the app, so reach is the most important. Style etc could be anything." Every
+video so far stayed under 300 views except the first (669) — including the whole S0–S7
+rotation built since 2026-10-22. Robert, 2026-10-25: "None of the new after-stories
+tiktok posts has made it above 300. So the change is not good enough. Try something more
+different. Rewrite the marketing plan so it tries new things."
+
+**The diagnosis (2026-10-25):** a polished brand video is recognized as an ad in the first
+second and swiped away — the first test audience never finishes, and the push dies at the
+small-account baseline. Research (directional, not TikTok-sourced — theviralapp.com 2026
+algorithm piece; thecontentlabs.app, 8,500-video study): ~31% of videos from sub-1K
+accounts stall around 300 views, so 300 is partly baseline, not a verdict; but the content
+has to earn the first test audience. The fix is structural: the video has to look like
+content first and marketing second. The §5 **format lanes** do that — Lane 1 (reach
+formats, native) is 3 of 4 builds; Lane 2 (the S0–S7 brand formats) is 1 of 4, kept as the
+baseline. The hard rules (§3) and the claim sheet do not bend for reach.
+
+**The five levers, in order of weight (2026-10-25 research, directional):**
+1. **Native, not polished** — phone-cam feel, natural light, real-environment candid
+   footage, plain big captions; the brand skin survives only in the accent colour, the end
+   card and the font family (§5 "Native look").
+2. **Fast emotion** — humor or curiosity leads every frame-0 hook; warmth comes second
+   (warm/trust content flatlines at 6-7x the rate of humor/curiosity).
+3. **Rewatch engineered in** — a loopable seam + one second-watch detail per build;
+   rewatch/loop is 2026's strongest signal (§5 "Loop and rewatch").
+4. **Watch minutes + completion** — Lane 1 formats run 8-30 s: long enough to earn watch
+   time, short enough to complete; the product appears at the 40-60% mark, never at
+   frame 0 (§5 "Hook doctrine").
+5. **Early engagement** — Robert replies to comments in the first hour (posting rule
+   below); a short reply-video answers a comment natively (the cheapest reach, §9).
+
+**Review window: 7 days, not 48 h** (2026-10-25) — a sub-1K account's push takes longer to
+show; the §7 scoreboard runs on 7-day numbers. Never repost a stalled video: fresh cut,
+new hook archetype, new footage. So a finishable, surprising video ranks above polish,
+and a short video people rewatch beats a pretty one they swipe. The hard rules (§3) and
+the claim sheet (§5) do not bend for reach.
 
 Organic reach on TikTok is a frequency game: 3–4 posts/week, every series represented, never
 two of the same series back to back.
@@ -311,7 +347,93 @@ how it looks and moves, and rotates independently.
 - Anything that implies a social network, a feed, or a following. We are a private app per event.
 - Hangover-porn content as a brand: light humour yes, "cheeky, never laddish".
 
-### Style rotation — how each episode is presented (added 2026-10-22)
+### Format lanes — what a build looks like (added 2026-10-25)
+
+Content (hook, scene, claim lines, CTA, series) comes from the §6 row unchanged; the lane
+and format change the presentation only. Every format keeps the hard rules (§3), the end
+card (icon + CTA, brand skin), `aiMedia` per its spec note, and an Openverse track (Lane 1
+builds deliver the `-silent.mp4` as the default post route, §3 "Sound").
+
+**Lane 1 — Reach formats (native, content-first): 3 of every 4 builds.** The video looks
+like a person's post, not a brand post: content curiosity at frame 0 (§5 "Hook doctrine"),
+the product at the 40-60% mark, a soft end card.
+
+| Format | Name | Length | What it looks like | Spec notes |
+|---|---|---|---|---|
+| R1 | Story captions (group-chat storytime) | 15–30 s | a first-person planning-chaos story told in 6-10 caption beats of 4-7 words (1-2.5 s each) over raw-feel footage; the product twist lands in the last 1-2 beats | footage line `shot on a phone, natural available light, slight handheld wobble, candid, real rooms and streets, from behind, no faces, no readable screens, no logos, grain`; the beats are the scene texts (4-7 words, lower area, minimal styling — §5 "Native look"); 6-10 scenes + the end card; no voice; `aiMedia: true`; the story beats state no product fact (§3 Truth); the twist beats are verbatim claim lines; a length WARN is expected when the total leaves the 15-20 s sweet |
+| R2 | Investigator / the 48 h mystery | 15–25 s | a mystery cold open ("Every group chat has a secret. This one has a deadline."), 4-6 escalating beats, the 48 h deletion is the twist — the save beat comes first, always | same footage line as R1; the mystery beats claim nothing about the product (scenarios only, §3 Truth); the save line and the deletion line are verbatim claim-sheet lines, in that order; `aiMedia: true` |
+| R3 | Meme list / fast humor | 8–15 s | 4-6 punchy beats ("The six stages of planning a night out") over fast 0.5-1.5 s cuts, mostly stills with `zoom: true` | humor-first: the beats are scenario jokes that claim nothing about the product; the punchline beat (the last content beat) is the row's verbatim claim line; stills from the fresh shoot; `aiMedia: true`; a length WARN under 15 s is expected |
+| R4 | Proof Drop | 8–12 s | frame 0 is the concrete proof, not a claim: the most-liked photo (a generated group photo — backs only, no faces), or a decision sitting on top of the event, or the 6 am deletion; then 2-3 fast beats | the proof image is one fresh ComfyUI still (no faces, no screens, no logos); beats 2-4 are verbatim claim lines; `aiMedia: true`; a length WARN is expected |
+| R5 | Voice lane — PAUSED (*Robert) | 20-40 s | the R1 or R2 story with a human voice: Robert records a ~60 s narration on his phone (or a TTS provider once configured — the Hermes TTS 403'd on 2026-10-25); the job pre-mixes the narration over a ducked Openverse bed (-12 LUFS under the narration) into one file and sets it as the spec's `bed: 'track'` file | paused until Robert opts in (§9); his delivery per build: the narration file + the story beats; `aiMedia: true` (AI footage); the Music credit line still comes from credits.json for the bed track |
+
+**Lane 2 — Brand formats (S0–S7): 1 of every 4 build** — the baseline for ASO/search and
+the A/B reference against Lane 1. The S0–S7 table and its rules sit in "Style rotation"
+below, unchanged.
+
+**Rotation (the 3+1 rule):**
+- The nightly build alternates `R, R, R, S`: the reach format rotates
+  `R1 → R2 → R3 → R4 → R1 …` (R5 is paused, §9); every 4th build runs the Lane 2 S
+  rotation (the pointer rule in "Style rotation" below is unchanged).
+- The next reach format is the one after the format in the most recent
+  `built … · R#` Status. If no row carries an R tag yet (first night after this change),
+  the first build is R1 and the 3+1 counter starts there.
+- A format (R or S) repeats only after 4 builds; never the same format twice in a row.
+- **Fit check** (unchanged semantics): if the row can't be built in the due format without
+  breaking a rule, skip to the next format in order and say why in §8 (examples: R2 needs
+  the save beat before the deletion line; R4 needs a proof image the row can honestly
+  show; R5 is paused). Skipping doesn't move the pointer further; the next night continues
+  from the format actually used.
+- Every 48 h row keeps the save-first order in every format.
+
+### Hook doctrine — what frame 0 may be (added 2026-10-25)
+
+Frame 0 is **content curiosity, not a product claim**. A feature-claim cold open is the
+pattern that stalled the S-era builds (ad recognition in the first second). The hook is a
+question, a mystery, a scenario or a proof — and it states no product fact. Product claims
+enter after frame 0, verbatim from the claim sheet.
+
+**Curiosity hook bank (scenario/question openers — none claims a product fact):**
+- Question-form site lines (verbatim): "wait which weekend did we land on?" ·
+  "can someone send the pics??" · "did anyone actually book the house" · "Who's the planner
+  in your group?" (the §3 caption-question bank)
+- Scenario/mystery openers (state no product fact, no invented numbers): "Every group chat
+  has a secret. This one has a deadline." · "POV: 6 am. The plan is already made." ·
+  "My group has been planning the same night for weeks." · "The plan changed again
+  today."
+- Proof-drop openers: the image IS the hook (R4) — the proof image on frame 0, no claim
+  needed in the words.
+
+**Banned openers (stalled in the S era):** a feature claim at frame 0 ("Polls that turn
+into decisions."), teacher/how-to framing ("Here's how to plan a night out"), a bare
+contrarian without setup, and any invented number ("400 messages", "six phones") — in a
+hook, a scenario or on screen.
+
+### Native look — Lane 1's visual rules (added 2026-10-25)
+
+- **Footage:** the phone-cam line (per the format's spec note) replaces the 35 mm film line
+  for Lane 1 — natural available light, real rooms and streets, slight handheld wobble,
+  grain kept in. The no-faces / no-phone-screen / no-UI / no-logo rules hold: they are §3
+  hard rules, not a style choice.
+- **Captions:** 4-7 words per beat, lower area of the safe zone, big and plain — Anybody
+  800, white or `#FF2D6F`, no accent bars and no box (the template enforces ≥ 44 px; the
+  brand floor stays). The brand skin survives in the accent colour, the end card and the
+  font family only.
+- **Imperfections stay:** grain, wobble, an uncomposed frame. A perfectly centred,
+  perfectly graded cut reads as an ad.
+- **Length:** 8-30 s per format (earn watch minutes, still complete). The `-silent.mp4` +
+  trending sound route is the Lane 1 default (§3 "Sound").
+
+### Loop and rewatch (added 2026-10-25)
+
+- **Loopable seam:** the last content beat sets up the first one, so a replay re-opens the
+  story (the end card still holds 1.5 s and clears 0.5 s before the seam, as always).
+- **Second-watch detail:** every build hides one small detail only noticed on replay — a
+  camera module lit on a face-down phone, a note on the table, the same mug in the first
+  and last frame. It is the rewatch bait; rewatch/loop is 2026's strongest signal.
+- A shotlist that has neither a loopable seam nor a second-watch detail fails the design
+  review (§5 pipeline).
+
+### Style rotation — Lane 2 presentation (S0–S7; added 2026-10-22, the table unchanged)
 
 Content (hook, scene, claim lines, CTA, series) comes from the §6 row unchanged; the style
 changes presentation only. Every style keeps the hard rules (§3), the end card (icon + CTA,
@@ -328,10 +450,10 @@ brand skin), the hook at frame 0, `aiMedia: true`, and an Openverse track.
 | S6 | Question | 10–15 s | frame 0 is a question-form site line (the row's hook if it is a question; otherwise a question-form line from the same use-case page, e.g. "can someone send the pics??", "did anyone actually book the house", "wait which weekend did we land on?"); S0 footage, 3–4 shots | the caption ends with one viewer question (§3 Truth exception) |
 | S7 | Fast montage | 10–14 s | 8–10 cuts of 0.5–1.5 s from the fresh shoot (mostly stills with `zoom: true`), type only on frame 0 and the end card; made for posting the `-silent.mp4` over a trending sound | moods 0, 2 or 5 suit it, but take the row's mood anyway |
 
-**Rotation rules:**
+**Rotation rules (Lane 2 pointer — the 3+1 rule above decides WHEN S runs):**
 - Order: `S1 → S7 → S2 → S3 → S4 → S5 → S6 → S0 → S1 …`.
 - The next style is the one after the style in the most recent `built …` Status that has a
-  style tag. If no row has a tag yet (first night after this change), use S1.
+  style tag.
 - Never the same style twice in a row.
 - **Fit check:** if the row can't be built in that style without breaking a rule, skip to
   the next style in order and say why in §8 (examples: S4 can't find 3 claim lines for the
@@ -339,7 +461,8 @@ brand skin), the hook at frame 0, `aiMedia: true`, and an Openverse track.
   before the deletion line). Skipping doesn't move the rotation pointer further; the next
   night continues from the style actually used.
 - Every 48 h row keeps the save-first order in every style.
-- Once 8 styles have been posted with views, the §7 scoreboard decides the weights.
+- The §7 reach scoreboard (lane-aware, 7-day numbers) decides the lane and format weights
+  once a format has ≥ 3 posted episodes with views.
 
 ### Claim sheet — what each §6 feature may say (added 2026-10-15)
 
@@ -499,7 +622,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 - **Which row is built:** each night the job builds one row: the first row in table order
   whose Status is `queued` (or empty) — **every night, no due-date gate** (Robert's
   2026-10-16 rule: one new video per day). When it is built, the job sets Status to
-  `built <yyyy-mm-dd> <reel slug> · <style id> · <track file name>`. When Robert tells it an episode is posted, the Status
+  `built <yyyy-mm-dd> <reel slug> · <format id: R1-R5 or S0-S7> · <track file name>`. When Robert tells it an episode is posted, the Status
   becomes `posted <yyyy-mm-dd>`; the next prune removes the row, and the history lives in
   the §8 post log, not here.
 - **Posting is Robert's call:** 3–4 rows per week are planned (§4). The `built …, ready`
@@ -509,10 +632,10 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
   row.
 - **One video per episode.** Fresh shoot: the Look / scene column is the start point and
   must differ from the last episodes (§3).
-- **Music mood + style:** the Music variant column is the mood index for the Openverse
-  track (§3 "The sound"); the style comes from the §5 Style rotation, not from the table.
-  The Look / scene column is the scene; the style may restyle it (e.g. S3 flash, S1 no
-  footage).
+- **Music mood + format:** the Music variant column is the mood index for the Openverse
+  track (§3 "The sound"); the format comes from the §5 Format lanes (the 3+1 rule: R1-R5
+  reach / S0-S7 brand), not from the table. The Look / scene column is the scene; the
+  format may restyle it (e.g. R1 raw-feel captions, S3 flash, S1 no footage).
 - **Series rotate:** two rows in a row never have the same series (A problem-first,
   B payoff-first, C "Gone in 48 hours" / feature spotlight, D "Works for this too", §5).
 - **Copy is verbatim** from the live site (re-check `llms-full.txt` the night of the build —
@@ -611,22 +734,28 @@ new look per row — and logs it in §8.
 - **Umami:** after-stories.com visits from `tiktok` referrer.
 - **TikTok native:** watch time, follows, profile visits, and — in the waitlist phase — the
   waitlist form's sign-ups attributed to TikTok traffic.
-- **Per-video review after 48 h:** hook rate (views past 3 s), completion, shares. Keep a
-  one-line log in the motion repo next to each shotlist: what worked, what got cut. The
+- **Per-video review after 7 days (was 48 h, changed 2026-10-25):** hook rate (views past
+  3 s), completion, shares. Keep a one-line log in the motion repo next to each shotlist:
+  what worked, what got cut. The
   "events that reach the summary" metric from PostHog sits next to installs to answer "are
   these installs worth anything".
-- **Reach scoreboard (added 2026-10-22):** the job can't read TikTok metrics, so Robert
-  reports views; the job writes them into that episode's post-log "48 h result" cell (with
-  style + mood in the Video cell). The baseline to beat is 300 views (best so far 669).
-  When every style has ≥ 2 posted episodes with views: the style with the highest median
-  moves to every second build, and a style whose episodes all stayed under 300 leaves the
-  rotation. Record each change as a §8 line.
+- **Reach scoreboard (added 2026-10-22, lane-aware since 2026-10-25):** the job can't
+  read TikTok metrics, so Robert reports views; the job writes them into that episode's
+  post-log result cell (with lane + format + mood in the Video cell) on a **7-day window**
+  (the post-log column header is now "7-day result"). The baseline to beat is 300 views
+  (best so far 669) — flagged as the small-account baseline per the 2026-10-25 directional
+  research (theviralapp.com; thecontentlabs.app 8,500-video study), not a verdict on a
+  single video. Lane 1: when a format has ≥ 3 posted episodes with 7-day views, a format
+  whose episodes all stayed under 300 leaves the rotation (a fresh angle, never a repost),
+  and the format with the highest median moves to every second reach build. Lane 2 keeps
+  its S-era rule. Record each change as a §8 line. Never repost a stalled video — fresh
+  cut, new hook archetype.
 
 ## 8. Learnings log
 
 **Post log** (one line per post, updated when each 48 h review lands):
 
-| Date | Video | Hook | 48 h result (hook rate / shares / waitlist) | Verdict |
+| Date | Video | Hook | 7-day result (views / hook rate / shares) | Verdict |
 |---|---|---|---|---|
 | 2026-10-08 | as-moments | Group chats… | — | posted |
 | 2026-10-08 | corporate a/b | Your team event lives in 5 apps. | — | posted |
@@ -647,6 +776,27 @@ new look per row — and logs it in §8.
 | built 2026-10-23 | **as-likes** (fresh winter night-market shoot — mittened hands round a steaming mulled-wine mug, cranberry knit, teal-navy night with gold string-light bokeh, cream steam; style S2 one-liner loop, one 6 s LTX clip; Openverse mood-5 fallback track “Man mountain (Electro House)”, alexzavesa-man-mountain-electro-house-57598aab.mp3) — queue row Nov 9 #4 (Series C, likes → the most-liked photo) | Tap ❤️ on the ones that matter. | due on post | AI label on; launch CTA; the ❤️ renders as a monochrome DejaVu fallback glyph (Anybody has no U+2764 — no tofu, hook kept verbatim); §2 post-text form “after-stories.com (link in bio)” on purpose (CTA on the end card + pinned comment); post the -silent.mp4 over a trending sound if desired (delete the “Music:” line then) |
 | built 2026-10-24 | **as-reunion** (fresh late-autumn farmhouse back-porch shoot — POV down a long trestle table, direct flash against low peach-gold sun through the screen door, sage/powder-blue/peach/red-gingham palette, hands only, a child's pink scooter; style S3 flash snapshot, 6 fresh stills; Openverse mood-2 fallback track “playfulness” by Pan:core, playfulness-b6fb4ded.mp3) — queue row Nov 16 #1 (Series D, family-reunion · US Thanksgiving) | Plan the reunion together. | due on post | post by ~Nov 22 (US Thanksgiving calendar hook); AI label on; launch CTA; hook swapped from the table line to the site's verbatim line per the §9 watch item (llms-full.txt re-checked 2026-10-24); #family #familyreunion #thanksgiving #reunionplanning #afterstories |
 
+- 2026-10-25 (Robert's message 2026-10-25: "None of the new after-stories tiktok posts has
+  made it above 300. So the change is not good enough. Try something more different.
+  Rewrite the marketing plan so it tries new things."): plan rewritten around the **format
+  lanes**. **Diagnosis:** every S0-S7 build (and the S-era film baseline) stayed under 300
+  — the account posts polished brand content, and polished reads as an ad in the first
+  second (research, directional, not TikTok-sourced: theviralapp.com 2026 algorithm piece;
+  thecontentlabs.app 8,500-video study — ~31% of sub-1K account videos stall at ~300 as
+  baseline; rewatch/loop is 2026's strongest signal; fast emotions humor/curiosity beat
+  warm/trust 6-7x; Proof Drop / Investigator hooks escape the stall ~96%; value-first
+  structure; never repost a stalled video). **Changes:** §5 Format lanes — Lane 1 reach
+  formats R1 (story captions), R2 (Investigator / 48 h mystery), R3 (meme list), R4 (Proof
+  Drop), R5 (voice, PAUSED *Robert) at 3 of 4 builds, Lane 2 S0-S7 brand formats at 1 of 4
+  (baseline, table unchanged); new Hook doctrine (frame 0 = content curiosity, no product
+  claim; banned openers), Native look (phone-cam line, plain big captions, brand skin only
+  in accent / end card / font), Loop and rewatch (loopable seam + second-watch detail).
+  §3: Truth clarified (story beats state no product fact) and the -silent + trending-sound
+  route is the Lane 1 default. §4: diagnosis + five levers in order + 7-day review window.
+  §7: scoreboard lane-aware on 7-day numbers. §9: four new *Robert* items (R5 voice,
+  silent+trending default, reply-with-video, phone-filmed lane); the backlog item replaced
+  (old-style backlog posts only on calendar-hook due dates). The 71 §6 rows, the S0-S7
+  table, the claim sheet, calendar hooks, the CTA and the sound rules are unchanged.
 - 2026-10-24 (nightly, §7 review + build as-reunion): no 48 h reviews due with data — the builds since 10-16 await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: 0 attributed social traffic, 0 waitlist sign-ups, 27 pageviews (prev 7d 118) — the build stays product-focused (as-reunion, Series D, family-reunion · US Thanksgiving, style S3, mood-2 fallback; post by ~Nov 22 per the Thanksgiving calendar hook). Production notes: style S3 flash snapshot (rotation pointer after S2 from as-likes, 2026-10-23) — 6 fresh 9:16 stills from one late-autumn farmhouse back-porch shoot (s1d/s2c/s3b/s4/s5b/s6), 14.0 s cut: 6 × 2.0 s stills + 2.0 s end card, all render checks PASS, ffprobe 1080×1920/30 fps/h264/yuv420p. Hook swap: the table hook “Plan the family reunion together.” → the live family-reunion page says “Plan the reunion together.” (llms-full.txt re-checked 2026-10-24; the §9 watch item applied). Re-shoots: the s1 hook takes (s1, s1b, s1c) all showed visible faces → the shipped s1d is a POV down the table with one hand entering from the frame edge and no people in frame; the s2 pie hand-off LTX clip (c1) was generated and frame-checked but frames 3–4 show a third hand drifting in (LTX drift) → the design's still fallback s2c with the template push-in was used; c1 not committed. All six stills plus the 7 clip frames were vision-checked clean (no faces, no screens, no text, no logos; the s5b phone is back-to-camera with the camera module lit). Music: the row's mood 1 (chill) had no usable Openverse track 2026-10-24 (“chill lofi hip hop” 0, “chillhop” 0, “laid back beats” 0) → n+1 mood 2: “playfulness” by Pan:core, CC BY 3.0, via Jamendo, 55 s, start 17, bed 'track'; mood 2 is unused by Openverse tracks so far and creator Pan:core is unused (last 3: AlexZavesa, Kara Square, Jesse Keller). Gate 1 pass; Claude design loop task 20261024-2207 (review round 1 FAIL on bookkeeping only — no content issues — fixed in this run).
 - 2026-10-23 (nightly, §7 review + build as-likes): no 48 h reviews due with data — the builds since 10-16 await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: 0 attributed social traffic, 0 waitlist sign-ups, 32 pageviews (prev 7d 143) — the build stays product-focused (as-likes, Series C feature spotlight, likes → the most-liked photo, style S2, mood-5 fallback). Production notes: S2 one-liner loop (rotation pointer after S7 from as-photos-stuck, 2026-10-22) — one fresh 9:16 still + one 6 s LTX clip (as-likes-s1 → as-likes-c1; still and 8 clip frames vision-checked clean: no faces, no screens, no text, no logos, no morphing); 8.0 s total (6.0 s scene + 2.0 s end card), render checks all PASS with only the two expected S2 WARNs (6 s one-shot scene; total under the 15–20 s sweet spot). Hook “Tap ❤️ on the ones that matter.” verbatim (nights-out page beat, llms-full.txt re-checked 2026-10-23). Glyph: the Anybody font has no U+2764 (fontTools cmap check 2026-10-23) — the heart renders as a monochrome DejaVu Sans fallback glyph in the ink colour (confirmed on the first render's frame 0, no tofu), so the hook stayed verbatim; no swap. Music: the row's mood 0 had no usable Openverse track 2026-10-23 (“upbeat happy pop” returned only the already-used 3d2e7e62; “feel good indie” 0; “summer pop” 0) → n±1 mood-5 word “electro house”: “Man mountain (Electro House)” by AlexZavesa, CC BY 3.0, via Jamendo, 297 s, start 89 (no 30–240 s hit — every usable hit is 297–300 s); the last mood-5 row was as-dinner (10-17), 6 episodes earlier — the ≥6-episodes rule is met; creator AlexZavesa unused. Caption: the §2 post-text form “after-stories.com (link in bio)” is used on purpose (the CTA sits on the end card and the pinned comment) — same as as-polls and as-photos-stuck; the caption carries the hook line, a clear paraphrase of the most-liked-photo morning-after line and the §3 Truth-exception viewer question. Hashtags from the nights-out ASO set in positioning.md: #friends #nightout #partyplanner #groupphotos #afterstories. Design loop task 20261023-2213.
 - 2026-10-22 (nightly, §7 review + build as-photos-stuck): no 48 h reviews due with data — the builds since 10-16 await Robert's posts; TikTok hook/completion/share metrics are not reachable by the job (manual posting, §9). Funnel this week: 0 attributed social traffic, 0 waitlist sign-ups, 41 pageviews (prev 7d 168) — the build stays product-focused (as-photos-stuck, Series A, photos stuck on phones, S7, mood-0 fallback; row Nov 9 #3). Production notes: style S7 fast montage (rotation pointer after S1 — first S7 build), 9 fresh stills from one post-hike cold-golden-hour shoot; s1 re-shot once (first take had 8 phones + an Apple logo), s3 re-shot twice (garbled boot modules, then dark visible screens), s6 re-shot twice (Apple logo on both takes) — final set s1b/s2/s3c/s4/s5/s6c/s7/s8/s9, every still vision-checked clean (no faces, no screens, no logos, no text). Hook swap: the table hook “Hundreds of photos stuck on six phones” is not on the live site and “Hundreds” would be an invented number (llms-full.txt re-checked 2026-10-22) → the shipped hook is the verbatim excerpt “Chasing replies and asking for the photos afterwards.” (trips-page pain line); the table cell stays as the planning line (as-halloween-chat precedent). Music: Openverse mood 5 (the row's mood) returned 0 usable tracks — “electro house” 0 usable, “synthwave” 0, “edm energetic” API 500s — so per the §3 n±1 fallback mood 0: “Super Power Pop Rock” by Kara Square, CC BY 3.0, via Jamendo, 188 s, start 56, bed 'track'; mood 0 repeats 4 episodes after as-polls (10-18), under the ≥6 rule — allowed by the fallback, logged here. Design loop task 20261022-2222.
@@ -730,6 +880,18 @@ new look per row — and logs it in §8.
 - Posting backlog: four built rows (six videos) wait in §6 (`as-halloween-a/b` must go out before
   Oct 31). The job only builds `queued` rows, so a large backlog does not stop it; Robert
   tells it which ones are posted.
-- *Robert:* the 11 built S0-style rows (Status `built …` without a style tag) are the old
-  style. To test the new styles fast, post the new tagged builds first, and report views
-  per video (§7 scoreboard).
+- *Robert (2026-10-25, reach lane):* **R5 voice lane** — record a ~60 s narration on the
+  phone per build, or configure a TTS provider (the Hermes TTS 403'd on 2026-10-25). Until
+  then the lane is paused and the 3+1 rotation skips R5.
+- *Robert (2026-10-25):* **post the Lane 1 `-silent.mp4` with a trending TikTok sound by
+  default** (the §3 sound default); delete the "Music:" line from the post text when the
+  trending sound is used.
+- *Robert (2026-10-25):* **reply to comments with a short video** when a comment is worth
+  answering (the native reply format — the cheapest reach); the job builds a 5-8 s answer
+  cut on request.
+- *Robert (2026-10-25):* optional — **phone-filmed lane**: Robert films 10-30 s on his
+  phone (a real table, a real morning-after coffee, the group from behind) and the job
+  cuts, captions and mixes it. The most native lane of all; paused until he opts in.
+- Backlog (replaces the 2026-10-22 "post the new tagged builds first" item): the old-style
+  backlog videos go out only when their calendar hook is due (Halloween by Oct 31); the
+  reach lane (Lane 1) is the test. Report 7-day views per video (§7 scoreboard).
