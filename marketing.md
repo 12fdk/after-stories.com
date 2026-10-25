@@ -681,7 +681,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | rework needed (stale claim since launch, §5) — not buildable as written |
 | Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | built 2026-10-25 as-office-chat · R1 · prologue-9c2a001e.mp3 |
 | Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | built 2026-10-25 as-private-by-design · R2 · nocturno-no-2-0436564c.mp3 · NO-CTA end card (experiment, §8) |
-| Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | queued |
+| Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | built 2026-10-25 as-thanksgiving-after · R3 · spencer-newton-hey-original-mix-electro-5919437e.mp3 |
 | Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | queued |
 | Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | queued |
 | Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | queued |
@@ -792,7 +792,36 @@ new look per row — and logs it in §8.
 | built 2026-10-22 | **as-photos-stuck** (fresh winter post-hike shoot — six face-down unbranded phones on a weathered bench in cold golden hour as the hero object, slate-blue shadows, mud and moss; style S7 fast montage of 9 stills; Openverse mood-0 fallback track “Super Power Pop Rock”, super-power-pop-rock-3d2e7e62.mp3) — queue row Nov 9 #3 (Series A, photos stuck on phones) | Chasing replies and asking for the photos afterwards. | due on post | hook swapped from the table line (not on the live site + invented number — llms-full.txt re-checked 2026-10-22); Openverse mood 5 had 0 usable tracks (API 500s) → mood-0 fallback per §3; post the -silent.mp4 over a trending sound; AI label on; launch CTA |
 | built 2026-10-23 | **as-likes** (fresh winter night-market shoot — mittened hands round a steaming mulled-wine mug, cranberry knit, teal-navy night with gold string-light bokeh, cream steam; style S2 one-liner loop, one 6 s LTX clip; Openverse mood-5 fallback track “Man mountain (Electro House)”, alexzavesa-man-mountain-electro-house-57598aab.mp3) — queue row Nov 9 #4 (Series C, likes → the most-liked photo) | Tap ❤️ on the ones that matter. | due on post | AI label on; launch CTA; the ❤️ renders as a monochrome DejaVu fallback glyph (Anybody has no U+2764 — no tofu, hook kept verbatim); §2 post-text form “after-stories.com (link in bio)” on purpose (CTA on the end card + pinned comment); post the -silent.mp4 over a trending sound if desired (delete the “Music:” line then) |
 | built 2026-10-24 | **as-reunion** (fresh late-autumn farmhouse back-porch shoot — POV down a long trestle table, direct flash against low peach-gold sun through the screen door, sage/powder-blue/peach/red-gingham palette, hands only, a child's pink scooter; style S3 flash snapshot, 6 fresh stills; Openverse mood-2 fallback track “playfulness” by Pan:core, playfulness-b6fb4ded.mp3) — queue row Nov 16 #1 (Series D, family-reunion · US Thanksgiving) | Plan the reunion together. | due on post | post by ~Nov 22 (US Thanksgiving calendar hook); AI label on; launch CTA; hook swapped from the table line to the site's verbatim line per the §9 watch item (llms-full.txt re-checked 2026-10-24); #family #familyreunion #thanksgiving #reunionplanning #afterstories |
+| built 2026-10-25 | **as-thanksgiving-after** (fresh day-after-kitchen shoot — flat overcast grey November window light, empty quiet kitchen with a pie in crinkled foil, a stack of food containers, a cloth folded unevenly on a chair and an open fridge; one coral-pink enamel mug as the second-watch detail; Lane 1 R3 meme list of 5 fresh stills, no clips; Openverse mood-5 track “Spencer Newton - Hey (Original Mix)(Electro House)”, spencer-newton-hey-original-mix-electro-5919437e.mp3, start 90) — queue row Nov 23 #1 (Series B, family-reunion · US Thanksgiving weekend) | The day after Thanksgiving, ranked. | due on post | post by ~Nov 22 (US Thanksgiving calendar hook); AI label on; launch CTA; the claim-line punchline “The photo of the day, the line of the reunion, what you decided.” is a verbatim excerpt of the /family-reunion/ morning-after line (llms-full.txt re-checked 2026-10-25); #family #familyreunion #thanksgiving #dayafterthanksgiving #afterstories |
 
+- 2026-10-25 (nightly, §7 review + build as-thanksgiving-after): no 7-day reviews due with
+  data — the builds since 10-16 await Robert's posts (TikTok hook/completion/share metrics are
+  not reachable by the job, manual posting, §9). Funnel this week: 0 attributed social traffic,
+  0 waitlist sign-ups, 30 pageviews (prev 7d 36) — the build stays product-focused but
+  reach-first. **Format:** Lane 1 R3 (meme list / fast humor, 8–15 s), chosen by the §5 3+1
+  rule — the three latest builds are as-private-by-design (R2), as-office-chat (R1) and
+  as-reunion (S3) (not all-R → Lane 1); R3 follows R2 in the pointer order and is unused in the
+  last 4 builds. Frame 0 is a curiosity list title (“The day after Thanksgiving, ranked.”, no
+  product fact); beats 2–5 are scenario jokes (no product fact, no invented numbers); the last
+  content beat is the row's verbatim claim line “The photo of the day, the line of the
+  reunion, what you decided.” — a verbatim excerpt of the live /family-reunion/ morning-after
+  sentence “Everyone gets the summary: the photo of the day, the line of the reunion, what you
+  decided.” (llms-full.txt re-checked 2026-10-25). **Production:** 5 fresh 9:16 stills from one
+  day-after-kitchen shoot (s1 wide kitchen reused as frame 0 and the claim beat = the loop seam;
+  s2 pie close-up; s3 Tupperware stack; s4 folded cloth on a chair; s5 open fridge), all
+  `zoom: true`, no LTX clips (R3 is stills-first, `clips: false`); the second-watch detail is
+  the coral-pink enamel mug (the only accent colour), present in s1 and s2; every still
+  vision-checked clean (no faces, screens, logos or text). 10.5 s cut; render checks all PASS
+  except the two expected WARNs (claim-line 64 chars; total under the 15–20 s sweet spot,
+  expected for R3). **Music:** mood 5 (electronic, energetic) — the 30–240 s Openverse search
+  returned 0 usable for all three words (“electro house” / “synthwave” / “edm energetic”), so
+  `--max` was widened to 400 s: “Spencer Newton - Hey (Original Mix)(Electro House)”
+  (spencer-newton-hey-original-mix-electro-5919437e.mp3, 300 s, start 90, gain 0, bed 'track');
+  fresh id (not in credits.json) + fresh creator (not the last 3: Pan:core, Hyperreal, Daniel
+  Bautista; also unused by AlexZavesa / Kara Square), no banned words. **Gate 1** passed all 7
+  items. Claude design loop task 20261025-2212. Post route: the -silent.mp4 + a trending TikTok
+  sound is the Lane 1 default (§3 Sound); delete the “Music:” line if the trending sound is used.
+  NAS: /nas/spark/videos/as-thanksgiving-after/.
 - 2026-10-25 (manual, Robert's test video): built **as-office-chat** (Nov 16 #3, series A) as the
   first **Lane 1 · R1 (story captions)** build from the new format-lane plan — the first R-tagged
   build (3+1 rule: no prior R tags → R1). Skipped the first queued row **as-nobody-left-out**:
