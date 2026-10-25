@@ -269,7 +269,9 @@ week's deadline), not a production gate.
 
 #### Phase 2 — launch (App Store live)
 - Flip every end card to the download CTA the same day.
-- Re-cut the 2–3 best waitlist videos with the new CTA and re-post (fresh hooks).
+- Re-cut the 2–3 best waitlist videos with the new CTA and re-post (fresh hooks) — one-shot,
+  done at the 2026-10-18 launch (every end card now runs the download CTA; see the reel
+  specs). Standing rule: never re-post a stalled video (§7).
 - Post 4×/week for the first month; the invite link and word of mouth are the growth engine —
   the content job is to make new groups *want* the invite.
 
