@@ -678,9 +678,9 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 9 | 3 | as-photos-stuck | A | photos stuck on phones | “Hundreds of photos stuck on six phones” | six phones face-down on a wooden bench after a hike (camera modules lit), muddy boots, cold golden hour | 5 | built 2026-10-22 as-photos-stuck · S7 · super-power-pop-rock-3d2e7e62.mp3 |
 | Nov 9 | 4 | as-likes | C | likes → the most-liked photo | “Tap ❤️ on the ones that matter.” | winter market at night, mulled-wine steam, mittened hands, string lights | 0 | built 2026-10-23 as-likes · S2 · alexzavesa-man-mountain-electro-house-57598aab.mp3 |
 | Nov 16 | 1 | as-reunion | D | family-reunion · US Thanksgiving | “Plan the family reunion together.” | long table, three generations' hands, late-afternoon sun (built) | 1 | built 2026-10-24 as-reunion · S3 · playfulness-b6fb4ded.mp3 |
-| Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | queued |
+| Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | rework needed (stale claim since launch, §5) — not buildable as written |
 | Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | built 2026-10-25 as-office-chat · R1 · prologue-9c2a001e.mp3 |
-| Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | queued |
+| Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | built 2026-10-25 as-private-by-design · R2 · nocturno-no-2-0436564c.mp3 · NO-CTA end card (experiment, §8) |
 | Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | queued |
 | Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | queued |
 | Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | queued |
@@ -909,7 +909,7 @@ new look per row — and logs it in §8.
 - `as-reunion` keeps its queue hook "Plan the family reunion together."; the live page says
   "Plan the reunion together." — the build-night verbatim check should use the site's line.
   Done 2026-10-24: the built reel uses the site's line "Plan the reunion together." on screen.
-- Posting backlog: four built rows (six videos) wait in §6 (`as-halloween-a/b` must go out before
+- Posting backlog: the built rows wait in §6 (`as-halloween-a/b` must go out before
   Oct 31). The job only builds `queued` rows, so a large backlog does not stop it; Robert
   tells it which ones are posted.
 - *Robert (2026-10-25, reach lane):* **R5 voice lane** — record a ≤ 40 s narration on the
@@ -928,3 +928,21 @@ new look per row — and logs it in §8.
   order; calendar post-by dates still win (Halloween by Oct 28). The earlier built rows are
   Lane 2 stock: post at most one of them for every three Lane 1 posts, and never re-post a
   stalled video (§7). Report views at 48 h and 7 days per video (§7).
+
+- *2026-10-25 (experiment — the ~300 ceiling):* every posted video on `@after.stories6` sits
+  in a uniform **256–283 view band** — all styles (S0–S7), both sound routes, and the new
+  native R1 (`as-office-chat`, 283) alike; only the very first post ever got past it (669,
+  likely the new-creator boost). Uniform output across varied inputs → the ceiling is at the
+  account/distribution level, not the content. Two tracks: (a) account work is Robert's
+  (check the account type — Business accounts are limited; engage in-niche 10–20 min/day,
+  post 18:00–21:00, reply to every comment within the hour); (b) controlled content test —
+  **as-private-by-design (R2, built 2026-10-25) ends on a deliberate soft line**
+  (“what's your group's worst planning story?” + after-stories.com, no icon, no
+  “Download on the App Store” anywhere on screen; the CTA moves to the pinned comment) to
+  isolate the end-card CTA as an ad signal. Decision rule: if it also stalls at ~300, the
+  account track is the fix and content keeps running at current quality; if it breaks the
+  band, end cards go soft (question/comment-prompt) across the plan and the CTA lives in
+  the pinned comment by default. Mood-4 music note: “folk ukulele”, “warm acoustic” and
+  “uplifting orchestral” returned 0 usable Openverse hits (2026-10-25) → fell back to
+  “acoustic guitar” (adjacent) and used “Nocturno No. 2” by Daniel Bautista (CC BY 3.0,
+  credited in credits.json).
