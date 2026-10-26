@@ -723,7 +723,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | built 2026-10-25 as-office-chat · R1 · prologue-9c2a001e.mp3 |
 | Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | built 2026-10-25 as-private-by-design · R2 · nocturno-no-2-0436564c.mp3 · NO-CTA end card (experiment, §8) |
 | Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | built 2026-10-25 as-thanksgiving-after · R3 · spencer-newton-hey-original-mix-electro-5919437e.mp3 |
-| Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | queued |
+| Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | built 2026-10-26 as-ski-day · N1 · alexzavesa-lo-squalo-edm-e6e5e10e.mp3 |
 | Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | queued |
 | Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | queued |
 | Nov 30 | 1 | as-friends-xmas | D | dinner-nights · Christmas with friends | “Christmas with friends: Which night? Who's cooking?” (para.) | candlelit long table in a small flat, paper crowns, clementines, fogged window | 3 | queued |
@@ -842,7 +842,40 @@ new look per row — and logs it in §8.
 | built 2026-10-23 | **as-likes** (fresh winter night-market shoot — mittened hands round a steaming mulled-wine mug, cranberry knit, teal-navy night with gold string-light bokeh, cream steam; style S2 one-liner loop, one 6 s LTX clip; Openverse mood-5 fallback track “Man mountain (Electro House)”, alexzavesa-man-mountain-electro-house-57598aab.mp3) — queue row Nov 9 #4 (Series C, likes → the most-liked photo) | Tap ❤️ on the ones that matter. | due on post | AI label on; launch CTA; the ❤️ renders as a monochrome DejaVu fallback glyph (Anybody has no U+2764 — no tofu, hook kept verbatim); §2 post-text form “after-stories.com (link in bio)” on purpose (CTA on the end card + pinned comment); post the -silent.mp4 over a trending sound if desired (delete the “Music:” line then) |
 | built 2026-10-24 | **as-reunion** (fresh late-autumn farmhouse back-porch shoot — POV down a long trestle table, direct flash against low peach-gold sun through the screen door, sage/powder-blue/peach/red-gingham palette, hands only, a child's pink scooter; style S3 flash snapshot, 6 fresh stills; Openverse mood-2 fallback track “playfulness” by Pan:core, playfulness-b6fb4ded.mp3) — queue row Nov 16 #1 (Series D, family-reunion · US Thanksgiving) | Plan the reunion together. | due on post | post by ~Nov 22 (US Thanksgiving calendar hook); AI label on; launch CTA; hook swapped from the table line to the site's verbatim line per the §9 watch item (llms-full.txt re-checked 2026-10-24); #family #familyreunion #thanksgiving #reunionplanning #afterstories |
 | built 2026-10-25 | **as-thanksgiving-after** (fresh day-after-kitchen shoot — flat overcast grey November window light, empty quiet kitchen with a pie in crinkled foil, a stack of food containers, a cloth folded unevenly on a chair and an open fridge; one coral-pink enamel mug as the second-watch detail; Lane 1 R3 meme list of 5 fresh stills, no clips; Openverse mood-5 track “Spencer Newton - Hey (Original Mix)(Electro House)”, spencer-newton-hey-original-mix-electro-5919437e.mp3, start 90) — queue row Nov 23 #1 (Series B, family-reunion · US Thanksgiving weekend) | The day after Thanksgiving, ranked. | due on post | post by ~Nov 22 (US Thanksgiving calendar hook); AI label on; launch CTA; the claim-line punchline “The photo of the day, the line of the reunion, what you decided.” is a verbatim excerpt of the /family-reunion/ morning-after line (llms-full.txt re-checked 2026-10-25); #family #familyreunion #thanksgiving #dayafterthanksgiving #afterstories |
+| built 2026-10-26 | **as-ski-day** (fresh 9:16 blue-hour ski-lift still — skis against a frosted fence, cold deep blue with a pink sunset edge, one small pink bobble hat; plus 3 real app cuts: the “What are we watching?” vote, the “When?” calendar date pick and the “The morning after” summary — first N1 build) — queue row Nov 23 #2 (Series D, trips · Ski day · ski season opens), music v0→v5 fallback | POV: you said you’d plan the trip. | due on post | post by ~Nov 29 (ski season opens); AI label on (1 fresh still); launch CTA; first Lane 0 N1 (rotation after R3); #friends #grouptrip #skiday #skiing #afterstories |
 
+- 2026-10-26 (nightly, §7 review + build as-ski-day): no 7-day reviews due with data — the
+  builds since 10-16 await Robert's posts (TikTok hook/completion/share metrics are not
+  reachable by the job, manual posting, §9). Funnel this week: 0 attributed social traffic,
+  0 sign-ups, 30 pageviews (prev 33) — reach-first, and the first Lane 0 N1 (real app demo)
+  is the strongest product-focused play (§4 2026-10-26 finding). **Format:** N1 (rotation
+  after the most recent `built` Status R3 as-thanksgiving-after, 2026-10-25). **Media:**
+  one fresh 9:16 still (phone-cam line, blue-hour ski lift line, skis on a frosted fence,
+  cold deep blue with a pink sunset edge, one small pink bobble hat as the second-watch
+  detail; comfy-gen --prefix as-social-20261026-ski, vision-checked clean — no faces,
+  screens, logos or text) + 3 real app cuts padded to 1080×1920 on #0B0C0E (logged:
+  03_TheEvent.mp4 3.0–5.5 s the vote; 01_Create.mp4 12.8–14.3 s the “When?” calendar;
+  03_TheEvent.mp4 28.0–30.0 s “The morning after”; all frame-verified 2026-10-26, the
+  calendar cut stays on the “When?” screen — the “Where?” step starts after 14.7 s).
+  10.0 s cut (2.0 + 2.5 + 1.5 + 2.0 + 2.0 end card), `look: 'clean'`, `aiMedia: true`,
+  render checks all PASS except the expected WARNs (10 s inside the N1 7–15 s window;
+  limiter 3.5 dB, true peak −1.4 dBTP PASS). Frame 0 “POV: you said you'd plan the trip”
+  (Hook doctrine, no product fact); captions “somebody says: let's vote” (scenario, no
+  product fact — the review round-1 swap of a riskier line), “Which day, where to, who
+  brings what.” (verbatim trips claim, llms-full.txt re-checked 2026-10-26) and “Wake up
+  to the story.” (claim sheet); end card “Download on the App Store” · after-stories.com
+  (live since 2026-10-18). **Music:** the row's mood 0 had all three search words
+  exhausted (only the already-used 3d2e7e62), mood 4 words returned only the used
+  ea4ef155 and mood 1 had 0 hits → fallback n−1 mood 5, word “edm energetic” (30–400 s
+  window): “AleXZavesa - Lo squalo (EDM)” (alexzavesa-lo-squalo-edm-e6e5e10e.mp3, 303 s,
+  start 91, gain 0, bed 'track', clips false, hits false); fresh id + creator (not in the
+  last 3: Spencer Newton, Daniel Bautista, Hyperreal); mood 5 was last used 2026-10-25 —
+  the ≥6-episode rule is broken, allowed by the fallback (logged here). **Gate 1** passed
+  all 7 items. Claude design loop task 20261026-2237 (review round 1 FAIL on bookkeeping
+  only — marketing.md Status/post-log/§8 bullet — plus a minor caption risk; round 2
+  after the fixes). Post route: the -silent.mp4 + a trending TikTok sound is the Lane 0
+  default (§3 Sound); delete the “Music:” line if the trending sound is used. NAS:
+  /nas/spark/videos/as-ski-day/.
 - 2026-10-26 (Robert's message: "all the tiktok videos for after-stories get below 300 views.
   Any idea what i can do to break that ?" — then "update the social-video skill for the new
   formats … It also has a marketing plan, that also need to be updated.", spark#171): Robert's
