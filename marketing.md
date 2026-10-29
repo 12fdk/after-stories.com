@@ -725,7 +725,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | built 2026-10-25 as-thanksgiving-after · R3 · spencer-newton-hey-original-mix-electro-5919437e.mp3 |
 | Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | built 2026-10-26 as-ski-day · N1 · alexzavesa-lo-squalo-edm-e6e5e10e.mp3 |
 | Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | built 2026-10-27 as-friends-xmas-date · N2 · groove-avec-yollon-pie-funk-f525e0a2.mp3 |
-| Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | queued |
+| Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | built 2026-10-29 as-save-first · R3 · the-groove-experiment-b8d73983.mp3 |
 | Nov 30 | 1 | as-friends-xmas | D | dinner-nights · Christmas with friends | “Christmas with friends: Which night? Who's cooking?” (para.) | candlelit long table in a small flat, paper crowns, clementines, fogged window | 3 | queued |
 | Nov 30 | 2 | as-timeline | C | timeline of decisions | “A timeline of everything the group decided.” | blank paper tickets pinned left to right along a string in warm lamp light, the decisions in order | 4 | queued |
 | Nov 30 | 3 | as-show-night | D | recital (Choir concert) · Christmas concerts | “Plan the show night together. Everyone gets the photos.” | church hall from the back row, folding chairs, fairy lights, sheet music on a stand | 5 | queued |
@@ -1087,3 +1087,22 @@ new look per row — and logs it in §8.
   “uplifting orchestral” returned 0 usable Openverse hits (2026-10-25) → fell back to
   “acoustic guitar” (adjacent) and used “Nocturno No. 2” by Daniel Bautista (CC BY 3.0,
   credited in credits.json).
+
+- *2026-10-29 (nightly, build as-save-first + pacing fix):* **Pipeline gap found and fixed.**
+  The 2026-10-28 run answered `[SILENT]` ("no row due"): the job prompt carried a
+  "week starts within 7 days" due-gate that `marketing.md` §4 has overridden since
+  Robert's 2026-10-16 rule ("every night, no due-date gate"). Result: an 18-day drought
+  (the next `queued` row was Nov 23 #4) with only 1 unposted build left. **Fix (Robert's
+  choice, 2026-10-29):** the job prompt step 5 now says build every night — no due-date
+  gate — and keep a **≥3 unposted build buffer** (a backlog never stops the job);
+  verified on disk. **Build:** as-save-first (R3 Meme list / fast humor, rotation after
+  R2), 9.5 s, 5 fresh stills (one face-down-phone still re-shot twice — Flux drew the
+  screen up, then a second phone + laptop; final take clean), punchline is the verbatim
+  claim line "Save every photo. Then it's gone." (save-first holds), **STANDARD end card
+  (CTA + icon)** — this is the control in Robert's A/B: as-private-by-design (no-CTA
+  soft end card) vs this one isolates the end-card CTA as an ad signal. Music:
+  "The Groove Experiment" by Dust Harvesting (CC BY 3.0, fresh id/creator; mood-0/2
+  search words "playful ukulele"/"funny slapstick"/"quirky bass groove" returned 0
+  usable hits 2026-10-29 → "groove" search). All render checks PASS (9.5 s length WARN
+  expected for R3); contact-sheet review: no faces, phone face-down, no other screens,
+  logo only on the end card. NAS: /nas/spark/videos/as-save-first/.
