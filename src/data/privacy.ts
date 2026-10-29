@@ -292,7 +292,7 @@ export const PRIVACY_HTML = `
   <li><strong>Photos.</strong> A photo you post is sent to our server, which removes the location and all camera data and makes a new JPEG of at most 1600 pixels before anything is stored. The original is never stored.</li>
   <li><strong>No statistics and no third parties.</strong> The web app sends no usage statistics and no crash reports, and it loads nothing from other services. It runs on our own server in Stockholm, like the rest of your data.</li>
   <li><strong>No notifications</strong> from the web app.</li>
-  <li><strong>Technical.</strong> Your session stores the browser's and the operating system's name, your IP address and country, as in the app. You delete your account under Konto → Slet min konto (the web app is in Danish for now).</li>
+  <li><strong>Technical.</strong> Your session stores the browser's and the operating system's name, your IP address and country, as in the app. You delete your account under Account → Delete my account.</li>
 </ul>
 
 <h2 id="en-web">The website after-stories.com</h2>
