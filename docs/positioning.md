@@ -21,7 +21,7 @@
 | Ephemerality | **A selling point.** The event is **deleted 48 hours after it ends**. |
 | Voice | **Warm and witty.** Friends first, light humour, broad appeal (#165). Cheeky, never laddish. |
 | Price | Free. **Say nothing about price** in marketing, so a paid tier stays possible. |
-| Non-iPhone friends | **They join from the browser** (since 2026-10-20, app repo #463, #495). On Android or a computer the invite link opens the web app at `app.after-stories.com`: sign up with an e-mail and a password, then chat, vote, share photos and take tasks. **Only the iPhone app (iOS 26 or later)** creates and starts an event, shows the morning-after summary, saves every photo at once and has the carpool. The web app is Danish only for now. Say all of that honestly; never promise an Android app. |
+| Non-iPhone friends | **They join from the browser** (since 2026-10-20, app repo #463, #495). On Android or a computer the invite link opens the web app at `app.after-stories.com`: sign up with an e-mail and a password, then chat, vote, share photos and take tasks. **Only the iPhone app (iOS 26 or later)** creates and starts an event, shows the morning-after summary, saves every photo at once and has the carpool. The web app speaks the same five languages (app repo #583). Say all of that honestly; never promise an Android app. |
 | Growth | **The invite link** and **App Store search (ASO)**. No paid ads at launch. |
 | 90-day goal | **Raw installs.** |
 
@@ -85,7 +85,7 @@ the night itself.*
   lingering on a company drive.
 - **What could stop it** (check before spending on this audience):
   1. **The organiser needs an iPhone.** Colleagues on Android or a computer join from the
-     browser with an e-mail and a password (Danish only for now); creating the event, the
+     browser with an e-mail and a password, in the same five languages; creating the event, the
      summary and saving every photo at once stay in the iPhone app. The office page says so.
   2. **The 17+ age rating** and the nightlife-flavoured copy. Fine for adults, but the app must
      not read as a party app on a work phone.

@@ -86,7 +86,7 @@ voice. A new event page fills every field; the test fails if it doesn't.
     Since 2026-10-20 friends without an iPhone join an event from its invite link in the browser
     (`app.after-stories.com`, app repo #463): they chat, vote and share photos. Only the iPhone app
     creates and starts an event, shows the morning-after summary, saves every photo at once and
-    has the carpool, and the web app is Danish only for now. Asked whether someone without an
+    has the carpool. The web app speaks the same five languages (app repo #583). Asked whether someone without an
     iPhone can join, the answer is yes, with those limits. The direct CTA stays the App Store badge:
     the browser is how *invited* friends join, never a second CTA. Never promise an Android app.
     When the web app gains a feature or a language, change the answers in every locale

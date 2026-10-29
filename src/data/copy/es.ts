@@ -30,7 +30,7 @@ const copy: Copy = {
         },
         {
           q: '¿Pueden unirse amigos que no tengan iPhone?',
-          a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+          a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
         },
         {
           q: '¿Quién puede ver lo que compartimos?',
@@ -212,7 +212,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Cuántas personas caben en un evento?',
@@ -289,7 +289,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Cuántas personas caben en un evento?',
@@ -362,7 +362,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -439,7 +439,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
@@ -516,7 +516,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Puede un evento cubrir todo el festival?',
@@ -590,7 +590,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -655,7 +655,7 @@ const copy: Copy = {
         faq: [
           {
             q: '¿Mis compañeros necesitan un iPhone?',
-            a: 'No. Los compañeros con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. El evento se crea en la app de iPhone (iOS 26 o posterior), y la historia de la mañana siguiente y guardar todas las fotos a la vez también están en la app. Por ahora, la versión del navegador solo está en danés.',
+            a: 'No. Los compañeros con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. El evento se crea en la app de iPhone (iOS 26 o posterior), y la historia de la mañana siguiente y guardar todas las fotos a la vez también están en la app.',
           },
           {
             q: '¿Tiene que configurar algo el equipo de informática?',
@@ -750,7 +750,7 @@ const copy: Copy = {
         faq: [
           {
             q: '¿Pueden unirse padres que no tengan iPhone?',
-            a: 'Sí. Los padres con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos, pero los coches y las plazas solo están en la app de iPhone por ahora. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los padres con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos, pero los coches y las plazas solo están en la app de iPhone por ahora. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Los niños necesitan la app?',
@@ -857,7 +857,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -930,7 +930,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse familiares que no tengan iPhone?',
-            a: 'Sí. Los familiares con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los familiares con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
@@ -1003,7 +1003,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos y familiares que no tengan iPhone?',
-            a: 'Sí. Los amigos y familiares con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los amigos y familiares con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -1076,7 +1076,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse voluntarios que no tengan iPhone?',
-            a: 'Sí. Los voluntarios con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+            a: 'Sí. Los voluntarios con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez.',
           },
           {
             q: '¿Cómo funcionan los turnos?',

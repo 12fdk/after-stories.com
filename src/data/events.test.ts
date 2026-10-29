@@ -91,12 +91,11 @@ describe("launch copy", () => {
     }
   });
 
-  it.each(Object.entries(sources).filter(([name]) => name !== "copy/da.ts"))(
-    "%s says the browser version is Danish only",
-    (_, source) => {
-      for (const { a } of aboutIphone(source)) expect(a).toMatch(/Danish|Dänisch|danois|danés/);
-    },
-  );
+  // The web app speaks the site's five languages since 2026-10-29 (app repo #583), so no copy
+  // may still say it is Danish only.
+  it.each(Object.entries(sources))("%s no longer says the browser version is Danish only", (_, source) => {
+    for (const s of strings(source)) expect(s).not.toMatch(/Danish|Dänisch|danois|danés|på dansk/);
+  });
 
   it.each(Object.entries(sources))("%s never promises an Android app", (_, source) => {
     for (const s of strings(source)) {

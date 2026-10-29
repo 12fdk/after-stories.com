@@ -84,11 +84,11 @@ export const defaultPrivacy: Fact[] = [
 
 /**
  * The web app's limits (app repo, web/app/README.md › Not on the web yet): creating and starting
- * an event, the summary and saving all photos at once stay in the iPhone app, and it speaks only
- * Danish. Drop a clause here (and in every locale) when the web app gains it.
+ * an event, the summary and saving all photos at once stay in the iPhone app. Since app repo #583
+ * it speaks the site's five languages. Drop a clause here (and in every locale) when the web app gains it.
  */
 const webLimits =
-  "Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.";
+  "Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.";
 
 /**
  * "Can … without an iPhone join?", naming the page's own people (friends, family, teammates…).
@@ -707,7 +707,7 @@ export const events: EventType[] = [
     faq: [
       {
         q: "Do my colleagues need an iPhone?",
-        a: "No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too. The browser version is in Danish for now.",
+        a: "No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too.",
       },
       {
         q: "Does IT need to set anything up?",
@@ -812,7 +812,7 @@ export const events: EventType[] = [
     faq: [
       {
         q: "Can parents without an iPhone join?",
-        a: "Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.",
+        a: "Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.",
       },
       {
         q: "Do the kids need the app?",
