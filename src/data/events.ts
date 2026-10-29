@@ -77,19 +77,27 @@ export const defaultPrivacy: Fact[] = [
     text: "Save every photo with one tap first. Then the chat, the polls and the photos are deleted for everyone.",
   },
   {
-    title: "No new account.",
-    text: "Sign in with Apple and you're in. No password to make up or remember.",
+    title: "Sign in with Apple.",
+    text: "No password to make up on iPhone. Friends without an iPhone sign up with an email in their browser.",
   },
 ];
 
 /**
+ * The web app's limits (app repo, web/app/README.md › Not on the web yet): creating and starting
+ * an event, the summary and saving all photos at once stay in the iPhone app, and it speaks only
+ * Danish. Drop a clause here (and in every locale) when the web app gains it.
+ */
+const webLimits =
+  "Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.";
+
+/**
  * "Can … without an iPhone join?", naming the page's own people (friends, family, teammates…).
- * The honest answer is no: AFTER has no web client and no plan for one (app repo,
- * docs/distribution.md). Never promise a web or Android version here.
+ * Yes since 2026-10-20: the invite link opens the web app (app.after-stories.com) on Android or
+ * a computer (app repo, docs/product.md › The web app). Say what it can't do too.
  */
 const nonIphoneFor = (who: string) => ({
   q: `Can ${who} without an iPhone join?`,
-  a: `No. After Stories is an iPhone app. ${who[0].toUpperCase()}${who.slice(1)} join the event from the app, on an iPhone with iOS 27 or later.`,
+  a: `Yes. ${who[0].toUpperCase()}${who.slice(1)} on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. ${webLimits}`,
 });
 
 const nonIphone = nonIphoneFor("friends");
@@ -123,7 +131,7 @@ export const events: EventType[] = [
       "Plan the day trip together: vote on the day and where to go, keep every decision in one timeline, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the trip together.", "Bring every photo home."],
     lede: "Vote on the day, the place and who drives. Share the trip in one stream. Then get everyone's photos in one place, before the whole thing disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-trips.webp",
       alt: "Five friends on a lake house deck at golden hour, one holding a phone up to take the photo",
@@ -206,7 +214,7 @@ export const events: EventType[] = [
       "Plan the night out together: vote on where to meet and where to go next, share it in one stream, and wake up to the story with every photo saved.",
     headline: ["Plan the night out.", "Piece it together tomorrow."],
     lede: "Vote on where to meet and where to go next. Share the night in one private stream. The morning after, get the story: the best photo, the line of the night, every picture. Then it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-nights-out.webp",
       alt: "A group of friends laughing on a city street at night, warm shop lights behind them",
@@ -288,7 +296,7 @@ export const events: EventType[] = [
       "Plan the birthday together: vote on the date and the venue, share the party in one stream, and give everyone every photo of the party, saved with one tap.",
     headline: ["Plan the birthday together.", "Everyone gets the photos."],
     lede: "Vote on the date and the venue, and put a name on who brings what. Share the party in one private stream. The morning after, everyone gets every photo of the party, not just the ones they took.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-birthdays.webp",
       alt: "Friends around a table at night with a birthday cake with lit candles and string lights",
@@ -373,7 +381,7 @@ export const events: EventType[] = [
       "Plan the bachelor or bachelorette party in one private event: vote on the plan, keep every decision, save the photos, and it's all gone 48 hours later.",
     headline: ["Plan the send-off together.", "Keep the photos. Lose the chat."],
     lede: "One organiser, a dozen decisions and a group that won't answer. Put every vote in one private event, share the day in one stream, and save the photos before everything disappears 48 hours later.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-bachelor-parties.webp",
       alt: "A friend group in matching T-shirts celebrating in a go-kart arena",
@@ -456,7 +464,7 @@ export const events: EventType[] = [
       "Plan the festival day with your group: vote on the day, settle the meeting point, share it in one stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the festival together.", "Keep every photo of the chaos."],
     lede: "Vote on which day to go and where to meet when someone gets lost. Share the festival in one stream, and get everyone's photos in one place before it all disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-festivals.webp",
       alt: "Friends in front of a festival crowd at dusk, stage lights and tents behind them",
@@ -539,7 +547,7 @@ export const events: EventType[] = [
       "Plan the dinner, game or movie night: vote on the day and the film, name who cooks, share the night in one stream and save the photos. Gone 48 hours after.",
     headline: ["Which night?", "Which film?", "Who's cooking?"],
     lede: "Put the questions to a vote and get the answers in one place. Plan the dinner, game or movie night, share it in one stream, and save the photos before it all disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-dinner-nights.webp",
       alt: "Friends around a candlelit dinner table at home, food on the table and a film playing",
@@ -625,7 +633,7 @@ export const events: EventType[] = [
       "Plan the team dinner, holiday party or offsite in one private event: vote on the date, pick the place, save the photos. No email threads. Gone 48 hours after.",
     headline: ["Plan the team event.", "Skip the 30 emails."],
     lede: "Vote on the date, decide the place, share the photos. One private event for the whole team, instead of a calendar poll, an email thread and a shared folder. Save the photos, then it's gone.",
-    fineprint: "Available now for iPhone. Requires iOS 27 or later.",
+    fineprint: "Available now for iPhone. Requires iOS 26 or later.",
     hero: {
       src: "/hero-office-events.webp",
       alt: "A team of colleagues at a holiday party, raising glasses in a warm restaurant room",
@@ -694,16 +702,16 @@ export const events: EventType[] = [
         title: "Never your location.",
         text: "Places are venues you pick. Photos are stripped of GPS and camera data before upload.",
       },
-      { title: "Sign in with Apple.", text: "No new password, no company account." },
+      { title: "Sign in with Apple.", text: "No company account, and no new password on iPhone." },
     ],
     faq: [
       {
         q: "Do my colleagues need an iPhone?",
-        a: "Yes. After Stories is an iPhone app, so everyone joins the event from the app, on an iPhone with iOS 27 or later. Worth a quick check before you invite the whole team.",
+        a: "No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too. The browser version is in Danish for now.",
       },
       {
         q: "Does IT need to set anything up?",
-        a: "No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. Sign in with Apple means nobody makes a new password.",
+        a: "No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. On iPhone, Sign in with Apple means nobody makes a new password. In the browser, people sign up with their email.",
       },
       {
         q: "How many people can join one event?",
@@ -727,92 +735,107 @@ export const events: EventType[] = [
     // An adult amateur team: teammates and the partners and friends who come to watch. Never
     // children: the terms require users to be 18+ and forbid photos of anyone under 18 (#53).
     slug: "match-day",
-    name: "Soccer match day",
+    name: "Kids' game day",
     icon: "Whistle",
-    title: "Soccer Match Day Carpool & Photos | After Stories",
+    title: "Kids' Soccer Game Day Carpool & Photos | After Stories",
     description:
-      "Plan match day with your teammates: sort the carpool, share the game privately, and save the photo of the match and every other one. Gone 48 hours after.",
-    headline: ["The carpool, sorted.", "The photo of the match, saved."],
-    lede: "Vote on who drives, who rides with whom and where you meet. Share the match in one private stream. The next morning, the photo everyone liked most is waiting, and everyone saves every photo. Then it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+      "Sort the carpool for your kids' match: every parent sees which car each child is in, out and home. Share the game privately and save every photo.",
+    headline: ["Every kid in a car.", "Every photo of the game, saved."],
+    lede: "Plan the carpool for your child's match in one private event. Every parent sees the cars and who sits where, out and home, and anyone can move a child. Share the game in one stream, save every photo, then it disappears.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-match-day.webp",
       alt: "An empty community soccer pitch at golden morning light, two white goals and training cones on the grass, team bags on the sideline bench, cars parked on the lot behind the fence",
     },
     mock: {
-      title: "Away at Birkelund",
-      people: 18,
+      title: "Away at Birkelund U10",
+      people: 14,
       question: "Where do we meet?",
       options: [
-        { label: "Clubhouse, 9:15", votes: 9 },
-        { label: "At Birkelund, 10:00", votes: 5 },
+        { label: "Clubhouse, 9:15", votes: 6 },
+        { label: "At Birkelund, 10:00", votes: 4 },
         { label: "Petrol station, 9:30", votes: 2 },
       ],
-      decided: ["Ali and Mette drive: 10 seats", "Kick-off 10:30, pitch 2"],
+      decided: ["Kick-off 10:30, pitch 2", "4 cars, 12 kids: everyone has a seat"],
     },
-    todayTitle: "Eighteen players, one away game, and the carpool is in the team chat.",
+    todayTitle: "Twelve kids, four cars, and the carpool is in the parents' chat.",
     problem:
-      "Who drives, who has a spare seat, where you meet and who brings the kit, all buried under a hundred messages. And the best photo of the goal stays on one partner's phone. Match day should be about the match.",
+      "Who drives, how many seats, who takes Emil home: all buried under a hundred messages in the parents' chat. And somebody always ends up counting seats in the car park. Game day should be about the kids, not the logistics.",
     today: [
-      { icon: "Car", text: "Three cars, fourteen players, and nobody sure who's in which" },
+      { icon: "Car", text: "Four cars, twelve kids, and nobody sure who's in which" },
       { icon: "CalendarX", text: "A meeting time nobody confirmed" },
-      { icon: "MessageCircle", text: "“Anyone got a spare seat?” buried in the team chat" },
-      { icon: "ImageOff", text: "The goal photo, stuck on one partner's phone" },
+      { icon: "MessageCircle", text: "“Can anyone take Emil home?” buried in the parents' chat" },
+      { icon: "ImageOff", text: "The goal photo, stuck on one parent's phone" },
     ],
-    todayOne: "One match.",
+    todayOne: "One game.",
     todayText:
-      "The carpool, the plan and every photo of the match, in one place that's gone 48 hours later.",
-    howTitle: "From who drives to the photo of the match.",
+      "The match, the meeting point, the cars and every photo of the game, in one place. Save the photos, and the rest is gone 48 hours later.",
+    howTitle: "From who drives to the photo of the goal.",
     empathy:
-      "We've all been the teammate counting seats on match morning. After Stories keeps the carpool and the plan in one place, so you get to play the match instead of running the carpool.",
+      "We've all been the parent counting seats in the car park at 8 in the morning. After Stories shows every parent which car each child is in, so you get to watch the game instead of running the carpool.",
     beats: [
       {
         when: "Before",
         name: "Sort the carpool",
-        text: "Who drives, who rides with whom, where you meet, who brings the kit. Every vote becomes a decision on top of the event, so match morning starts with a plan, not a text thread.",
+        text: "Start from Game day: the match, the meeting point, the children and the cars. Every parent sees who sits where, out and home, and anyone can move a child. Nobody counts seats in the car park.",
       },
       {
         when: "During",
-        name: "One stream for the match",
-        text: "“Parked, see you at pitch 2”, the goal, the celebration on the sideline. Every photo from the sideline lands in the same place, for the ones at home too.",
+        name: "One stream for the game",
+        text: "“Parked, see you at pitch 2”, the goal, the celebration on the sideline. Every parent's photos land in the same place, for the ones at home too.",
       },
       {
         when: "The next morning",
-        name: "The photo of the match",
-        text: "The photo everyone liked most is on top, with everything you decided. Save every photo of the game to your phone with one tap. 48 hours after, the event is deleted for everyone.",
+        name: "Every photo of the game",
+        text: "The photo everyone liked most is on top. Save every photo of the game to your phone with one tap. 48 hours after, the event is deleted for everyone.",
       },
     ],
-    occasionsTitle: "Every kind of team match.",
+    occasionsTitle: "Every kind of kids' game.",
     occasions: [
-      { icon: "Flag", name: "Away day" },
-      { icon: "Calendar", name: "Sunday league" },
+      { icon: "Flag", name: "Away game" },
+      { icon: "House", name: "Home game" },
       { icon: "Trophy", name: "Cup match" },
-      { icon: "Goal", name: "Five-a-side" },
       { icon: "Users", name: "Tournament day" },
       { icon: "Whistle", name: "Friendly" },
-      { icon: "Star", name: "Veterans match" },
+      { icon: "Goal", name: "Handball match" },
+      { icon: "Waves", name: "Swim meet" },
     ],
-    privacyTitle: "Just the squad and the people cheering them on.",
+    privacyTitle: "Just the team's parents. Nobody else.",
+    // Parents meet each other here, and their children are only first names (docs/positioning.md
+    // › use case 8), so this page says so instead of the default facts.
+    privacy: [
+      { title: "Only the parents in the event.", text: "No feed, no followers, no strangers." },
+      { title: "First names only.", text: "Children are first names that parents type in. Kids never get an account, and their names are deleted with the event." },
+      { title: "Gone 48 hours after.", text: "Save every photo with one tap first. Then the chat, the cars and the photos are deleted for everyone." },
+      { title: "Never your location.", text: "The meeting point is a place you pick. Photos are stripped of GPS and camera data before upload." },
+    ],
     faq: [
       {
-        q: "Does one event cover the whole season?",
-        a: "One event per match. Each fixture gets a fresh event: the carpool is settled in minutes, the photos are saved first, and 48 hours after the match the event is deleted for everyone.",
+        q: "Can parents without an iPhone join?",
+        a: "Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.",
       },
       {
-        q: "Who picks the photo of the match?",
-        a: "Everyone does. Like the photos you love during the match. The one with the most likes leads the summary the next morning.",
+        q: "Do the kids need the app?",
+        a: "No. The app is for the parents. Children are first names a parent types in, up to 30 per game, and they never get an account.",
+      },
+      {
+        q: "Does one event cover the whole season?",
+        a: "One event per game. Each match gets its own event with its own cars, and 48 hours after the game it's deleted for everyone, once everyone has saved the photos.",
+      },
+      {
+        q: "Who picks the photo of the game?",
+        a: "Everyone does. Like the photos you love during the game. The one with the most likes is on top the next morning.",
       },
       after48,
-      nonIphoneFor("teammates"),
       {
         q: "How many people can join one event?",
-        a: "Up to 50 per event. That fits a squad and the partners and friends who come along, from five-a-side to a club's away day.",
+        a: "Up to 50 per event. That fits a team's parents, with up to 30 children and 10 cars per game.",
       },
     ],
-    closer: "The next away game, with the carpool already sorted.",
+    closer: "The next game, with every kid already in a car.",
     success:
-      "A match day where everyone knew whose car they were in, and the next morning the photo of the match and every other photo, saved with one tap.",
-    stakes: "Or plan it in the team chat again, and keep asking for the goal photo all season.",
+      "A game day where every parent knew which car their child was in, out and home, and the next morning the photo of the goal and every other photo, saved with one tap.",
+    stakes: "Or sort it in the parents' chat again, and count seats in the car park every Saturday.",
   },
   {
     slug: "graduation",
@@ -823,7 +846,7 @@ export const events: EventType[] = [
       "Plan the graduation party together: vote on the date and the venue, share the celebration in one stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the celebration together.", "Everyone gets the photos."],
     lede: "Vote on the date, the venue and the food. Share the party in one private stream. The morning after, everyone gets every photo of the day, not just the ones they took. Then it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-graduation.webp",
       alt: "A graduation celebration set up in a sunny park at golden hour, string lights, balloons, a cake and a banner on a long table",
@@ -909,7 +932,7 @@ export const events: EventType[] = [
       "Plan the family reunion together: vote on the day and the place, keep every decision in one timeline, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the reunion together.", "Bring every photo home."],
     lede: "Vote on the day, the place and who drives. Keep every decision in one timeline, share the whole day in one stream, and save everyone's photos before the whole thing disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-family-reunion.webp",
       alt: "An empty wooden lakeside deck and dock at golden hour with warm string lights, a picnic table set with plates, a calm lake behind",
@@ -993,7 +1016,7 @@ export const events: EventType[] = [
       "Plan the night you watch a friend's concert or show: vote on where to meet and eat, share it in one stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the show night together.", "Everyone gets the photos."],
     lede: "Friends and family coming to watch, and a plan to sort. Vote on where to meet and where to eat after, share the show in one private stream, and get every photo of the performance before it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-recital.webp",
       alt: "An empty stage in a warm community hall with a microphone and a music stand under a soft spotlight, rows of empty seats behind",
@@ -1079,7 +1102,7 @@ export const events: EventType[] = [
       "Plan the volunteer crew for a charity day: hand out the shifts, pick where to meet, share the day in one stream and save the photos. Gone 48 hours after.",
     headline: ["Run the volunteer crew together.", "Save the photos, drop the chat."],
     lede: "Twenty-two volunteers, a dozen shifts and a hundred things to sort. Put the crew in one private event: who's on which shift, where to meet, who brings what. Save the photos before the whole thing disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-fundraiser.webp",
       alt: "The start line of an outdoor charity 5k in a park, a start arch and a timing scoreboard, cones and a banner on the grass",

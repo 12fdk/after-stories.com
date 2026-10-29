@@ -3,8 +3,10 @@
 > From the owner interview on 2026-10-03. This is the source for the landing page, the App Store
 > page (app repo #38) and every campaign. When a decision here changes, change this file first.
 >
-> **Launched 2026-10-18** on the App Store (app 6815212070): iPhone only, iOS 27 or later, in
-> Danish, English, French, German and Spanish. There is no web version.
+> **Launched 2026-10-18** on the App Store (app 6815212070), in Danish, English, French, German
+> and Spanish. **1.1 (2026-10-29)**: iOS 26 or later, the templates (*Plan together*, *Party*,
+> *Game day* with the kids' carpool, *Free form*) and a cover picture per event. Since 2026-10-20
+> friends without an iPhone join from the browser (`app.after-stories.com`, app repo #463).
 
 ## The decisions
 
@@ -19,7 +21,7 @@
 | Ephemerality | **A selling point.** The event is **deleted 48 hours after it ends**. |
 | Voice | **Warm and witty.** Friends first, light humour, broad appeal (#165). Cheeky, never laddish. |
 | Price | Free. **Say nothing about price** in marketing, so a paid tier stays possible. |
-| Non-iPhone friends | **None.** After Stories is an iPhone app (iOS 27 or later). AFTER has no web client and no plan for one (app repo, docs/distribution.md). Say so honestly; never promise a web or Android version. |
+| Non-iPhone friends | **They join from the browser** (since 2026-10-20, app repo #463, #495). On Android or a computer the invite link opens the web app at `app.after-stories.com`: sign up with an e-mail and a password, then chat, vote, share photos and take tasks. **Only the iPhone app (iOS 26 or later)** creates and starts an event, shows the morning-after summary, saves every photo at once and has the carpool. The web app is Danish only for now. Say all of that honestly; never promise an Android app. |
 | Growth | **The invite link** and **App Store search (ASO)**. No paid ads at launch. |
 | 90-day goal | **Raw installs.** |
 
@@ -57,6 +59,10 @@ too" (a row of chips on the site, screenshots 5–8 on the App Store, one ASO ke
 | 5 | **Festival / concert** | Proof | Tickets, meeting point, camp | Chaos, photos everywhere | Needs multi-day for festivals |
 | 6 | **Dinner / game / movie night** | Proof | Which day, which film, who cooks | Light. The poll is the payoff | Yes |
 | 7 | **Office event** (team dinner, Friday bar, summer/Christmas party, offsite) | Proof, **own page** | Outlook + Doodle + a dozen emails | Everyone's photos from the party, and no work chat that lives forever | Yes (≤ 50 people); offsite needs multi-day |
+| 8 | **Kids' game day** (a child's match: away game, cup, tournament day) | Proof, **own page** (`/match-day/`, owner 2026-10-29) | The parents' chat: who drives, how many seats, who takes which child home | The goal photo from every parent's phone | Yes since 1.1: the *Game day* template with the car view (children's first names, cars with seats out and home, anyone moves a child). Not yet: the car view in the browser, *repeat for the next game*, the score |
+
+The hero of use case 8 is **the parent**, not the player: the page talks to parents, the children are
+first names a parent types in and never use the app (18+).
 
 Not marketed: weddings and big events (the 50-member cap, and guests won't accept 48 h
 deletion), and anything public.
@@ -78,8 +84,9 @@ the night itself.*
 - **48 h deletion is a feature here too:** no permanent chat with your boss, no party photos
   lingering on a company drive.
 - **What could stop it** (check before spending on this audience):
-  1. **Sign in with Apple only, iPhone only.** Colleagues on Android or without a personal
-     Apple ID can't join: there is no web version. The office page says so plainly.
+  1. **The organiser needs an iPhone.** Colleagues on Android or a computer join from the
+     browser with an e-mail and a password (Danish only for now); creating the event, the
+     summary and saving every photo at once stay in the iPhone app. The office page says so.
   2. **The 17+ age rating** and the nightlife-flavoured copy. Fine for adults, but the app must
      not read as a party app on a work phone.
   3. **50 members per event.** Covers a team or a small company, not a 200-person Christmas party.
@@ -103,7 +110,8 @@ the app forgets the rest.**
 1. **The invite link is the real landing page.** Every event brings 3–15 people who have never
    heard of the app. The invite page (`after.12f.dk`, app repo `web/after-link`) has to say in
    one screen: who invited you, to what, what the app is, and *Open in AFTER* / a big App Store
-   button. There is no web version. **This page matters more than after-stories.com.**
+   button. On Android or a computer it opens the web app instead (app repo #495). **This page
+   matters more than after-stories.com.**
 2. **ASO.** People search for the job, not for the brand. Keyword sets, one per use case:
    - Trip: *group trip planner, trip with friends, shared trip photos, travel poll*
    - Planning: *group planner, event poll, plan with friends, group decision, vote*
@@ -140,9 +148,10 @@ The current page sells v1: moment tiles, *I'm going home*, *While you were gone�
 5. **Works for:** chips for night out, birthday, bachelorette, festival, dinner night, **office
    event** (the chip links to its own page, `/office-events`).
 6. **Private by design:** only the people in the event; no location, ever (photos stripped,
-   places are venues); Sign in with Apple; deleted 48 h after.
+   places are venues); Sign in with Apple on iPhone, an e-mail in the browser; deleted 48 h
+   after.
 7. **Get it:** the official "Download on the App Store" badge (header, hero, after the plan,
-   closer), and a QR code in the closer for desktop visitors. For iPhone, iOS 27 or later.
+   closer), and a QR code in the closer for desktop visitors. For iPhone, iOS 26 or later.
 
 No price line. Keep IndexNow and the Umami tracking.
 

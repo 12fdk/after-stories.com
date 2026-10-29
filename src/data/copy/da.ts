@@ -13,11 +13,15 @@ const copy: Copy = {
         },
         {
           q: 'Hvornår kan jeg få After Stories?',
-          a: 'Nu. After Stories ligger i App Store til iPhone med iOS 27 eller nyere. Hent den med knappen her på siden.',
+          a: 'Nu. After Stories ligger i App Store til iPhone med iOS 26 eller nyere. Hent den med knappen her på siden.',
         },
         {
           q: 'Hvordan adskiller den sig fra en gruppechat og et fælles album?',
           a: 'I en gruppechat drukner planen, og nogen skal stå for albummet. I After Stories bliver hver afstemning til en beslutning, du kan se med ét blik. Alles billeder lander i samme event, og næste morgen får I historien – uden at nogen skal lave den.',
+        },
+        {
+          q: 'Hvilke slags events kan jeg starte?',
+          a: 'Start fra en skabelon. Planlæg sammen: find dag, sted og plan med vennerne. Fest: inviter, chat og del billederne. Kampdag: kampen, mødestedet og kørslen for børnene, ud og hjem. Fri form: vælg selv, hvad eventet skal have. Hvert event får også et cover-foto, som alle i eventet ser.',
         },
         {
           q: 'Hvad sker der efter 48 timer?',
@@ -25,7 +29,7 @@ const copy: Copy = {
         },
         {
           q: 'Kan venner uden iPhone være med?',
-          a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+          a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
         },
         {
           q: 'Hvem kan se det, vi deler?',
@@ -43,7 +47,7 @@ const copy: Copy = {
           'Vågn op til historien.',
         ],
         lede: 'Den private app til jeres tur, fest eller byaften. Bliv enige om planen, oplev det ét sted, og vågn op til alles billeder. Ingen skal jagte nogen.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
       },
       pain: {
         title: 'I gruppechatten går planerne i sig selv.',
@@ -136,7 +140,7 @@ const copy: Copy = {
       footerTerms: 'Vilkår',
       planning: 'Planlægning',
       votePrefix: 'Stem',
-      decided: 'Besluttet',
+      decided: 'Eventoplysninger',
       planningSomethingElse: 'Planlægger du noget andet?',
       goodToKnow: 'Godt at vide',
       closerCta: 'Planlæg den næste i After Stories.',
@@ -154,7 +158,7 @@ const copy: Copy = {
           'Tag alle billederne med hjem.',
         ],
         lede: 'Stem om dagen, stedet og hvem der kører. Del turen i én strøm. Og få alles billeder samlet ét sted, før det hele forsvinder.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'Fem venner på terrassen ved et hus ved søen i det gyldne aftenlys, én holder telefonen op og tager billedet',
         todayTitle: 'Seks telefoner, én tur – og ingen har alle billederne.',
         problem: 'Og det er altid den samme, der finder stedet, jagter svar og beder om billederne bagefter. En dag ude burde være den nemme del af at have venner.',
@@ -207,7 +211,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -231,7 +235,7 @@ const copy: Copy = {
           'Styk den sammen i morgen.',
         ],
         lede: 'Stem om, hvor I mødes, og hvor I går videre hen. Del aftenen i én privat strøm. Næste morgen får I historien: det bedste billede, aftenens citat, alle billederne. Så forsvinder det hele.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'En vennegruppe, der griner på en gade om aftenen, med varmt lys fra butikkerne bag sig',
         todayTitle: 'Planen skiftede fire gange. Chatten har 400 beskeder.',
         problem: 'Der er altid én, der ender som aftenens koordinator og skriver “hvor er I?” i stedet for at være til stede. En byaften burde ikke kræve en projektleder.',
@@ -284,7 +288,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -304,7 +308,7 @@ const copy: Copy = {
           'Alle får billederne.',
         ],
         lede: 'Stem om dato og sted, og sæt navn på, hvem der tager hvad med. Del festen i én privat strøm. Næste morgen får alle hvert eneste billede fra festen – ikke kun dem, de selv tog.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'Venner om et bord om aftenen med en fødselsdagskage med tændte lys og lyskæder over',
         todayTitle: 'Én fødselsdag, tre chats – og det bedste billede er på en andens telefon.',
         problem: 'Og den, der arrangerer festen, stiller de samme spørgsmål i tre chats og tigger om billederne bagefter. At fejre nogen burde også være sjovt for dem, der holder festen.',
@@ -357,7 +361,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -377,7 +381,7 @@ const copy: Copy = {
           'Gem billederne. Glem chatten.',
         ],
         lede: 'Én arrangør, et dusin beslutninger og en gruppe, der ikke svarer. Saml alle afstemninger i ét privat event, del dagen i én strøm, og gem billederne, før det hele forsvinder 48 timer senere.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'En vennegruppe i ens T-shirts, der fester på en gokartbane',
         todayTitle: 'Én arrangør. Et dusin beslutninger. Ingen svarer.',
         problem: 'Arrangøren jagter ti meninger og får ingen tilbage. Det er en fest, ikke et ekstra job.',
@@ -434,7 +438,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Kan ét event dække en hel weekend?',
@@ -454,7 +458,7 @@ const copy: Copy = {
           'Gem alle billederne fra kaosset.',
         ],
         lede: 'Stem om, hvilken dag I tager af sted, og hvor I mødes, når nogen bliver væk. Del festivalen i én strøm, og få alles billeder samlet ét sted, før det hele forsvinder.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'Venner foran et festivalpublikum i skumringen med scenelys og telte bag sig',
         todayTitle: 'Fem telefoner på 4 % – og ingen kan huske, hvor I skal mødes.',
         problem: 'Og der er altid én, der bruger dagen som gruppens hittegodskontor i stedet for at se koncerterne. En festival burde være det ene sted, hvor du ikke skal organisere noget.',
@@ -511,7 +515,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Kan ét event dække hele festivalen?',
@@ -532,7 +536,7 @@ const copy: Copy = {
           'Hvem laver mad?',
         ],
         lede: 'Sæt spørgsmålene til afstemning, og få svarene samlet ét sted. Planlæg middagen, spilaftenen eller filmaftenen, del den i én strøm, og gem billederne, før det hele forsvinder.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'Venner om et spisebord med levende lys derhjemme, mad på bordet og en film, der kører',
         todayTitle: 'Seks personer, tre mulige aftener – og datoen er stadig ikke på plads.',
         problem: 'At vælge én aften for seks personer burde ikke tage to ugers beskeder. Når man inviterer hjem, skal det handle om maden, ikke om logistikken.',
@@ -585,7 +589,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -605,7 +609,7 @@ const copy: Copy = {
           'Drop de 30 mails.',
         ],
         lede: 'Stem om datoen, vælg stedet, del billederne. Ét privat event for hele teamet – i stedet for en kalenderafstemning, en mailtråd og en delt mappe. Gem billederne, så er det væk.',
-        fineprint: 'Tilgængelig nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Tilgængelig nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'Et team af kolleger til julefrokost, der skåler i et lunt restaurantlokale',
         todayTitle: 'Fire værktøjer, én fest – og ingen ved, hvad der blev besluttet.',
         problem: 'Og den kollega, der altid arrangerer det, bruger en uge på at svare på de samme tre spørgsmål. Et firmaarrangement burde samle folk, ikke fylde indbakker.',
@@ -650,11 +654,11 @@ const copy: Copy = {
         faq: [
           {
             q: 'Skal mine kolleger have en iPhone?',
-            a: 'Ja. After Stories er en iPhone-app, så alle er med i eventet fra appen, på en iPhone med iOS 27 eller nyere. Tjek det gerne, før du inviterer hele teamet.',
+            a: 'Nej. Kolleger med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Du opretter eventet i iPhone-appen (iOS 26 eller nyere), og historien dagen derpå og at gemme alle billeder på én gang ligger også i appen.',
           },
           {
             q: 'Skal IT sætte noget op?',
-            a: 'Nej. Der er ingen firmakonti, licenser eller administratorindstillinger. Du opretter et event, deler linket, og folk er med. Med “Log ind med Apple” skal ingen lave en ny adgangskode.',
+            a: 'Nej. Der er ingen firmakonti, licenser eller administratorindstillinger. Du opretter et event, deler linket, og folk er med. På iPhone betyder “Log ind med Apple”, at ingen skal lave en ny adgangskode. I browseren opretter man sig med sin e-mail.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -687,86 +691,108 @@ const copy: Copy = {
           },
           {
             title: 'Log ind med Apple.',
-            text: 'Ingen ny adgangskode, ingen firmakonto.',
+            text: 'Ingen firmakonto, og ingen ny adgangskode på iPhone.',
           },
         ],
       },
       "match-day": {
-        name: 'Kampdag',
-        title: 'Kampdag i fodbold: samkørsel og billeder | After Stories',
-        description: 'Planlæg kampdagen med holdkammeraterne: aftal samkørslen, del kampen privat, og gem kampens billede og alle de andre. Væk 48 timer efter.',
+        name: 'Kampdag for børn',
+        title: 'Kampdag for børn: kørsel og billeder | After Stories',
+        description: 'Del kørslen til børnenes kamp: alle forældre ser, hvilken bil hvert barn sidder i, ud og hjem. Del kampen privat, og gem alle billeder bagefter.',
         headline: [
-          'Samkørslen – på plads.',
-          'Kampens billede – gemt.',
+          'Alle børn har en plads.',
+          'Alle billeder fra kampen er gemt.',
         ],
-        lede: 'Stem om, hvem der kører, hvem der kører med hvem, og hvor I mødes. Del kampen i én privat strøm. Næste morgen venter det billede, alle kunne bedst lide, og alle gemmer alle billederne. Så forsvinder det hele.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        lede: 'Planlæg kørslen til dit barns kamp i ét privat event. Alle forældre ser bilerne, og hvem der sidder hvor, ud og hjem, og alle kan flytte et barn. Del kampen i én strøm, gem alle billeder, og så forsvinder det hele.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'En tom lokal fodboldbane i gyldent morgenlys, to hvide mål og træningskegler på græsset, holdets tasker på bænken, biler parkeret bag hegnet',
-        todayTitle: 'Atten spillere, én udekamp – og samkørslen ligger i holdets chat.',
-        problem: 'Hvem kører, hvem har en ledig plads, hvor mødes I, og hvem tager spilletøjet med – alt sammen begravet under hundrede beskeder. Og det bedste billede af målet bliver på én kærestes telefon. Kampdagen burde handle om kampen.',
+        todayTitle: 'Tolv børn, fire biler, og kørslen ligger i forældrechatten.',
+        problem: 'Hvem kører, hvor mange pladser, hvem tager Emil med hjem – alt sammen begravet under hundrede beskeder i forældrechatten. Og nogen ender altid med at tælle pladser på parkeringspladsen. Kampdag skal handle om børnene, ikke om logistikken.',
         today: [
-          'Tre biler, fjorten spillere – og ingen ved, hvem der sidder hvor',
+          'Fire biler, tolv børn, og ingen ved, hvem der sidder hvor',
           'Et mødetidspunkt, ingen har bekræftet',
-          '“Er der en ledig plads?” – begravet i holdets chat',
-          'Målbilledet – fast på én kærestes telefon',
+          '“Kan nogen tage Emil med hjem?” begravet i forældrechatten',
+          'Målbilledet, fast på én forælders telefon',
         ],
         todayOne: 'Én kamp.',
-        todayText: 'Samkørslen, planen og alle billeder fra kampen – ét sted, der er væk 48 timer senere.',
-        howTitle: 'Fra hvem der kører til kampens billede.',
-        empathy: 'Vi har alle været holdkammeraten, der tæller sæder på kampmorgenen. After Stories samler samkørslen og planen ét sted, så du kan spille kampen i stedet for at styre samkørslen.',
+        todayText: 'Kampen, mødestedet, bilerne og alle billeder fra kampen ét sted. Gem billederne, så er resten væk 48 timer efter.',
+        howTitle: 'Fra hvem der kører til billedet af målet.',
+        empathy: 'Vi har alle været forælderen, der tæller pladser på parkeringspladsen klokken otte om morgenen. After Stories viser alle forældre, hvilken bil hvert barn sidder i, så du kan se kampen i stedet for at styre kørslen.',
         beats: [
           {
             when: 'Før',
-            name: 'Aftal samkørslen',
-            text: 'Hvem kører, hvem kører med hvem, hvor I mødes, og hvem tager spilletøjet med. Hver afstemning bliver til en beslutning øverst i eventet, så kampmorgenen starter med en plan, ikke en beskedtråd.',
+            name: 'Del kørslen',
+            text: 'Start med Kampdag: kampen, mødestedet, børnene og bilerne. Alle forældre ser, hvem der sidder hvor, ud og hjem, og alle kan flytte et barn. Ingen tæller pladser på parkeringspladsen.',
           },
           {
             when: 'Undervejs',
             name: 'Én strøm til kampen',
-            text: '“Parkeret, vi ses ved bane 2”, målet, jublen på sidelinjen. Alle billeder fra sidelinjen lander samme sted – også for dem, der er hjemme.',
+            text: '“Parkeret, vi ses ved bane 2”, målet, jubelen på sidelinjen. Alle forældres billeder lander samme sted, også for dem derhjemme.',
           },
           {
             when: 'Næste morgen',
-            name: 'Kampens billede',
-            text: 'Det billede, alle kunne bedst lide, ligger øverst sammen med alt det, I besluttede. Gem alle billeder fra kampen på din telefon med ét tryk. 48 timer senere bliver eventet slettet for alle.',
+            name: 'Alle billeder fra kampen',
+            text: 'Billedet med flest likes ligger øverst. Gem alle billeder fra kampen på din telefon med ét tryk. 48 timer efter bliver eventet slettet for alle.',
           },
         ],
-        occasionsTitle: 'Alle slags holdkampe.',
+        occasionsTitle: 'Alle slags kampe for børn.',
         occasions: [
           'Udekamp',
-          'Motionsfodbold',
+          'Hjemmekamp',
           'Pokalkamp',
-          '5-mandsfodbold',
-          'Turneringsdag',
-          'Venskabskamp',
-          'Oldboyskamp',
+          'Stævne',
+          'Træningskamp',
+          'Håndboldkamp',
+          'Svømmestævne',
         ],
-        privacyTitle: 'Kun holdet og dem, der hepper på det.',
+        privacyTitle: 'Kun holdets forældre. Ingen andre.',
         faq: [
           {
+            q: 'Kan forældre uden iPhone være med?',
+            a: 'Ja. Forældre med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre, men bilerne og pladserne findes kun i iPhone-appen indtil videre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+          },
+          {
+            q: 'Skal børnene have appen?',
+            a: 'Nej. Appen er til forældrene. Børnene er fornavne, som en forælder skriver ind, op til 30 pr. kamp, og de får aldrig en konto.',
+          },
+          {
             q: 'Dækker ét event hele sæsonen?',
-            a: 'Ét event pr. kamp. Hver kamp får sit eget event: samkørslen er aftalt på få minutter, billederne bliver gemt først, og 48 timer efter kampen bliver eventet slettet for alle.',
+            a: 'Ét event pr. kamp. Hver kamp får sit eget event med sine egne biler, og 48 timer efter kampen bliver det slettet for alle – når alle har gemt billederne.',
           },
           {
             q: 'Hvem vælger kampens billede?',
-            a: 'Det gør I alle sammen. Giv et hjerte til de billeder, du kan lide, under kampen. Billedet med flest hjerter står øverst i opsummeringen næste morgen.',
+            a: 'Det gør alle. Giv et like til de billeder, du holder af, under kampen. Billedet med flest likes ligger øverst næste morgen.',
           },
-          {
+{
             q: 'Hvad sker der efter 48 timer?',
             a: 'Eventet bliver slettet for alle: chatten, afstemningerne og billederne. Inden da får alle en påmindelse og kan gemme alle billeder på deres egen telefon med ét tryk.',
           },
           {
-            q: 'Kan holdkammerater uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Holdkammerater er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
-          },
-          {
             q: 'Hvor mange kan være med i ét event?',
-            a: 'Op til 50 pr. event. Det dækker et hold og de kærester og venner, der tager med – fra 5-mandsfodbold til klubbens store udebanetur.',
+            a: 'Op til 50 pr. event. Det rækker til et holds forældre, med op til 30 børn og 10 biler pr. kamp.',
           },
         ],
-        closer: 'Den næste udekamp – med samkørslen allerede på plads.',
-        success: 'En kampdag, hvor alle vidste, hvis bil de sad i – og næste morgen kampens billede og alle de andre, gemt med ét tryk.',
-        stakes: 'Eller planlæg det i holdets chat igen, og spørg efter målbilledet hele sæsonen.',
+        closer: 'Næste kamp, hvor alle børn allerede har en plads.',
+        success: 'En kampdag, hvor alle forældre vidste, hvilken bil deres barn sad i, ud og hjem, og næste morgen billedet af målet og alle de andre, gemt med ét tryk.',
+        stakes: 'Eller tag kørslen i forældrechatten igen, og tæl pladser på parkeringspladsen hver lørdag.',
+        privacy: [
+          {
+            title: 'Kun forældrene i eventet.',
+            text: 'Intet feed, ingen følgere, ingen fremmede.',
+          },
+          {
+            title: 'Kun fornavne.',
+            text: 'Børnene er fornavne, som forældrene skriver. Børn får aldrig en konto, og navnene bliver slettet med eventet.',
+          },
+          {
+            title: 'Væk 48 timer efter.',
+            text: 'Gem først alle billeder med ét tryk. Derefter bliver chatten, bilerne og billederne slettet for alle.',
+          },
+          {
+            title: 'Aldrig din placering.',
+            text: 'Mødestedet er et sted, du selv vælger. Billederne bliver renset for GPS- og kameradata, før de uploades.',
+          },
+        ],
       },
       graduation: {
         name: 'Studenterfest',
@@ -777,7 +803,7 @@ const copy: Copy = {
           'Alle får billederne.',
         ],
         lede: 'Stem om dato, sted og mad. Del festen i én privat strøm. Næste morgen får alle hvert eneste billede fra dagen – ikke kun dem, de selv tog. Så forsvinder det hele.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'En studenterfest gjort klar i en solrig park i det gyldne aftenlys med lyskæder, balloner, kage og et banner over et langt bord',
         todayTitle: 'Én studenterfest, tre chats – og det bedste billede er på en andens telefon.',
         problem: 'Og de venner, der arrangerer festen, stiller de samme spørgsmål i tre chats. At fejre nogens store dag burde være en glæde, ikke et ekstra job.',
@@ -830,7 +856,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -850,7 +876,7 @@ const copy: Copy = {
           'Tag alle billederne med hjem.',
         ],
         lede: 'Stem om dagen, stedet og hvem der kører. Saml alle beslutninger i én tidslinje, del hele dagen i én strøm, og gem alles billeder, før det hele forsvinder.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'En tom træterrasse og badebro ved en sø i det gyldne aftenlys med varme lyskæder, et picnicbord dækket med tallerkener og en stille sø bagved',
         todayTitle: 'Fireogtyve personer, én sø – og planen ligger i familiens gruppechat.',
         problem: 'Tanter, onkler, fætre og kusiner, der diskuterer dato, sted og hvem der kører – i en gruppechat, ingen kan scrolle igennem. At planlægge et familietræf burde ikke være det, familien bryder sig mindst om.',
@@ -903,7 +929,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan familiemedlemmer uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Familiemedlemmer er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Familiemedlemmer med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Kan ét event dække en hel weekend?',
@@ -923,7 +949,7 @@ const copy: Copy = {
           'Alle får billederne.',
         ],
         lede: 'Venner og familie, der kommer for at se med, og en plan, der skal på plads. Stem om, hvor I mødes, og hvor I spiser bagefter, del forestillingen i én privat strøm, og få alle billeder fra optrædenen, før det hele forsvinder.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'En tom scene i et lunt forsamlingshus med en mikrofon og et nodestativ i blødt spotlys og rækker af tomme stole bagved',
         todayTitle: 'Femten personer, én forestilling – og ingen ved, hvor I skal mødes.',
         problem: 'Hvem har den ekstra billet, hvem kører med hvem, hvor skal vi spise bagefter – alt sammen i familiens gruppechat. Aftenen burde handle om forestillingen, ikke om logistikken.',
@@ -976,7 +1002,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner og familie uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Venner og familie er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Venner og familie med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -996,7 +1022,7 @@ const copy: Copy = {
           'Gem billederne, drop chatten.',
         ],
         lede: 'Toogtyve frivillige, et dusin vagter og hundrede ting, der skal klares. Saml holdet i ét privat event: hvem der har hvilken vagt, hvor I mødes, hvem der tager hvad med. Gem billederne, før det hele forsvinder.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 27 eller nyere.',
+        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
         heroAlt: 'Startområdet til et 5-km-velgørenhedsløb i en park med en startportal og en tidstavle, kegler og et banner på græsset',
         todayTitle: 'Toogtyve frivillige, et dusin vagter – og planen ligger i en gruppechat.',
         problem: 'Hvem har hvilken vagt, hvem tager vand med, hvor mødes holdet – alt spredt over en gruppechat, ingen har tid til at scrolle igennem. En indsamling burde handle om sagen, ikke om koordineringen.',
@@ -1049,7 +1075,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan frivillige uden iPhone være med?',
-            a: 'Nej. After Stories er en iPhone-app. Frivillige er med i eventet fra appen, på en iPhone med iOS 27 eller nyere.',
+            a: 'Ja. Frivillige med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
           },
           {
             q: 'Hvordan fungerer vagterne?',
@@ -1075,8 +1101,8 @@ const copy: Copy = {
         text: 'Gem først alle billeder med ét tryk. Derefter bliver chatten, afstemningerne og billederne slettet for alle.',
       },
       {
-        title: 'Ingen ny konto.',
-        text: 'Log ind med Apple, og du er med. Ingen adgangskode at finde på eller huske.',
+        title: 'Log ind med Apple.',
+        text: 'På iPhone er der ingen adgangskode at finde på. Venner uden iPhone opretter sig med en e-mail i browseren.',
       },
     ],
   };

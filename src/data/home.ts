@@ -17,11 +17,15 @@ export const homeFaq: Question[] = [
   },
   {
     q: "When can I get After Stories?",
-    a: "Now. After Stories is on the App Store for iPhone, with iOS 27 or later. Get it with the button on this page.",
+    a: "Now. After Stories is on the App Store for iPhone, with iOS 26 or later. Get it with the button on this page.",
   },
   {
     q: "How is it different from a group chat and a shared album?",
     a: "A group chat buries the plan, and somebody has to run the album. In After Stories every poll becomes a decision you can see at a glance, everyone's photos land in the same event, and the morning after you get the story without anyone making it.",
+  },
+  {
+    q: "What kinds of events can I start?",
+    a: "Start from a template. Plan together: find the day, the place and the plan with your friends. Party: invite, chat and share the photos. Game day: the match, the meeting point and the carpool for the kids, out and home. Free form: choose what the event gets. Every event also gets a cover picture that everyone in it sees.",
   },
   {
     q: "What happens after 48 hours?",
@@ -29,7 +33,7 @@ export const homeFaq: Question[] = [
   },
   {
     q: "Can friends without an iPhone join?",
-    a: "No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.",
+    a: "Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.",
   },
   {
     q: "Who can see what we share?",

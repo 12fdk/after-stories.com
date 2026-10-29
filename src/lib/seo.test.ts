@@ -75,12 +75,17 @@ describe("pageGraph", () => {
     expect(app.installUrl).toBe(app.downloadUrl);
     expect(app.sameAs).toContain(app.downloadUrl);
     expect(app.offers).toMatchObject({ "@type": "Offer", price: "0" });
-    expect(app.softwareRequirements).toBe("iOS 27 or later");
+    expect(app.softwareRequirements).toBe("iOS 26 or later");
     expect(JSON.stringify(graph)).not.toMatch(/aggregateRating|ratingValue|review/i);
   });
 
-  it("claims no web version: the app has none", () => {
-    expect(JSON.stringify(pageGraph(base))).not.toMatch(/from the web|web version|browser/i);
+  // Since 2026-10-20 friends without an iPhone join from the browser (app repo #463), but the app
+  // itself stays an iPhone app: the browser is a feature, never a second platform to install.
+  it("names the browser join, and the app is still iPhone only", () => {
+    const app = ofType(pageGraph(base), "MobileApplication")!;
+    expect(app.featureList).toContainEqual(expect.stringMatching(/without an iPhone join .* browser/));
+    expect(app.operatingSystem).toBe("iOS");
+    expect(app.availableOnDevice).toBe("iPhone");
   });
 
   it("is a plain WebPage without questions", () => {

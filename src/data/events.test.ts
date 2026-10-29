@@ -38,9 +38,10 @@ describe("event pages", () => {
   });
 });
 
-// After Stories is live on the App Store (2026-10-18) and is iPhone only: there is no web client
-// and no plan for one (app repo, docs/distribution.md). No copy, in any locale, may promise a web
-// version or still talk pre-launch.
+// After Stories is live on the App Store (1.1 since 2026-10-29, iOS 26 or later). Friends without
+// an iPhone join from the browser since 2026-10-20 (app repo #463), so every "without an iPhone"
+// answer says yes and names its limits (docs/messaging.md rule 11). No copy may still talk
+// pre-launch, name the old iOS 27 minimum or promise an Android app.
 describe("launch copy", () => {
   /** Every reader-facing string under a value, skipping structural file paths (hero.src). */
   const strings = (v: unknown, key = ""): string[] => {
@@ -51,11 +52,17 @@ describe("launch copy", () => {
   };
   const sources = { "events.ts": events, "home.ts": homeFaq, ...copies };
 
-  it.each(Object.entries(sources))("%s never says friends join from the web", (_, source) => {
-    for (const s of strings(source)) {
-      expect(s).not.toMatch(/\bweb\b|browser|navigateur|navegador|nettet/i);
+  /** Every question and answer in a source, at any depth. */
+  const questions = (v: unknown): { q: string; a: string }[] => {
+    if (Array.isArray(v)) return v.flatMap(questions);
+    if (v && typeof v === "object") {
+      const o = v as Record<string, unknown>;
+      if (typeof o.q === "string" && typeof o.a === "string") return [{ q: o.q, a: o.a }];
+      return Object.values(o).flatMap(questions);
     }
-  });
+    return [];
+  };
+  const aboutIphone = (source: unknown) => questions(source).filter((f) => /iPhone/.test(f.q));
 
   it.each(Object.entries(sources))("%s has no pre-launch wording", (_, source) => {
     for (const s of strings(source)) {
@@ -65,8 +72,56 @@ describe("launch copy", () => {
     }
   });
 
-  it.each(Object.entries(copies))("%s fineprint names the iPhone and iOS 27", (_, copy) => {
-    for (const e of Object.values(copy.events)) expect(e.fineprint).toContain("iOS 27");
-    expect(copy.home.hero.fineprint).toContain("iOS 27");
+  it.each(Object.entries(sources))("%s names iOS 26, never iOS 27", (_, source) => {
+    for (const s of strings(source)) expect(s).not.toContain("iOS 27");
+  });
+
+  it.each(Object.entries(copies))("%s fineprint names the iPhone and iOS 26", (_, copy) => {
+    for (const e of Object.values(copy.events)) expect(e.fineprint).toContain("iOS 26");
+    expect(copy.home.hero.fineprint).toContain("iOS 26");
+  });
+
+  it.each(Object.entries(sources))("%s lets friends without an iPhone join from the browser", (_, source) => {
+    const faqs = aboutIphone(source);
+    expect(faqs.length).toBeGreaterThan(0);
+    for (const { a } of faqs) {
+      expect(a).toMatch(/browser|navigateur|navegador/i);
+      // The organiser still needs the app, and says which one.
+      expect(a).toContain("iOS 26");
+    }
+  });
+
+  it.each(Object.entries(sources).filter(([name]) => name !== "copy/da.ts"))(
+    "%s says the browser version is Danish only",
+    (_, source) => {
+      for (const { a } of aboutIphone(source)) expect(a).toMatch(/Danish|Dänisch|danois|danés/);
+    },
+  );
+
+  it.each(Object.entries(sources))("%s never promises an Android app", (_, source) => {
+    for (const s of strings(source)) {
+      expect(s).not.toMatch(/Android[- ]app|app (Android|de Android)|Android-App/i);
+    }
+  });
+});
+
+// /match-day/ is the kids' game day (docs/positioning.md › use case 8): the Game day template's
+// car view, for parents. 1.1 has no "repeat for the next game" and no score, and the browser has
+// no car view yet, so the page must not promise them.
+describe("kids' game day", () => {
+  const pages = { "events.ts": events.find((e) => e.slug === "match-day")!, ...Object.fromEntries(
+    Object.entries(copies).map(([name, copy]) => [name, copy.events["match-day"]]),
+  ) };
+
+  it.each(Object.entries(pages))("%s talks to parents about their children's seats", (_, page) => {
+    expect(page.privacy).toHaveLength(4);
+    const iphone = page.faq.find((f) => /iPhone/.test(f.q))!;
+    // The cars and the seats are only in the iPhone app for now.
+    expect(iphone.a).toMatch(/iPhone-app|iPhone app|app iPhone|app de iPhone|iPhone-App/);
+  });
+
+  it.each(Object.entries(pages))("%s promises nothing 1.1 doesn't have", (_, page) => {
+    const text = JSON.stringify(page);
+    expect(text).not.toMatch(/repeat|gentag|wiederhol|répét|repet|score|resultat|Ergebnis|résultat|resultado/i);
   });
 });

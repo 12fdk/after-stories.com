@@ -15,11 +15,15 @@ const copy: Copy = {
         },
         {
           q: 'When can I get After Stories?',
-          a: 'Now. After Stories is on the App Store for iPhone, with iOS 27 or later. Get it with the button on this page.',
+          a: 'Now. After Stories is on the App Store for iPhone, with iOS 26 or later. Get it with the button on this page.',
         },
         {
           q: 'How is it different from a group chat and a shared album?',
           a: 'A group chat buries the plan, and somebody has to run the album. In After Stories every poll becomes a decision you can see at a glance, everyone\'s photos land in the same event, and the morning after you get the story without anyone making it.',
+        },
+        {
+          q: 'What kinds of events can I start?',
+          a: 'Start from a template. Plan together: find the day, the place and the plan with your friends. Party: invite, chat and share the photos. Game day: the match, the meeting point and the carpool for the kids, out and home. Free form: choose what the event gets. Every event also gets a cover picture that everyone in it sees.',
         },
         {
           q: 'What happens after 48 hours?',
@@ -27,7 +31,7 @@ const copy: Copy = {
         },
         {
           q: 'Can friends without an iPhone join?',
-          a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+          a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
         },
         {
           q: 'Who can see what we share?',
@@ -45,7 +49,7 @@ const copy: Copy = {
           'Wake up to the story.',
         ],
         lede: 'The private app for your group\'s trip, party or night out. Decide the plan together, live it in one place, and wake up to everyone\'s photos. Nobody has to chase anyone.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
       },
       pain: {
         title: 'Group chats are where plans go to die.',
@@ -122,7 +126,7 @@ const copy: Copy = {
       peopleWord: 'people',
       withApp: 'With After Stories',
       votePrefix: 'Vote',
-      decided: 'Decided',
+      decided: 'Event details',
       planningSomethingElse: 'Planning something else?',
       goodToKnow: 'Good to know',
       closerCta: 'Plan your next one in After Stories.',
@@ -132,7 +136,7 @@ const copy: Copy = {
       { title: 'No feed, no followers, no strangers.', text: 'Each event is its own private space.' },
       { title: 'Never your location.', text: 'Places are venues you pick. Photos are stripped of GPS and camera data before upload.' },
       { title: 'Gone 48 hours after.', text: 'Save every photo with one tap first. Then the chat, the polls and the photos are deleted for everyone.' },
-      { title: 'No new account.', text: 'Sign in with Apple and you\'re in. No password to make up or remember.' },
+      { title: 'Sign in with Apple.', text: 'No password to make up on iPhone. Friends without an iPhone sign up with an email in their browser.' },
     ],
     events: {
       trips: {
@@ -144,7 +148,7 @@ const copy: Copy = {
           'Bring every photo home.',
         ],
         lede: 'Vote on the day, the place and who drives. Share the trip in one stream. Then get everyone\'s photos in one place, before the whole thing disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'Five friends on a lake house deck at golden hour, one holding a phone up to take the photo',
         todayTitle: 'Six phones, one trip, and nobody has all the photos.',
         problem: 'And it\'s always the same person picking the place, chasing replies and asking for the photos afterwards. A day away should be the easy part of having friends.',
@@ -197,7 +201,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'How many people can join one event?',
@@ -221,7 +225,7 @@ const copy: Copy = {
           'Piece it together tomorrow.',
         ],
         lede: 'Vote on where to meet and where to go next. Share the night in one private stream. The morning after, get the story: the best photo, the line of the night, every picture. Then it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'A group of friends laughing on a city street at night, warm shop lights behind them',
         todayTitle: 'The plan changed four times. The chat has 400 messages.',
         problem: 'Someone always ends up as the night\'s coordinator, typing “where are you?” instead of being there. A night out shouldn\'t need a project manager.',
@@ -274,7 +278,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'How many people can join one event?',
@@ -294,7 +298,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'Vote on the date and the venue, and put a name on who brings what. Share the party in one private stream. The morning after, everyone gets every photo of the party, not just the ones they took.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'Friends around a table at night with a birthday cake with lit candles and string lights',
         todayTitle: 'One birthday, three chats, and the best photo is on someone else\'s phone.',
         problem: 'And whoever organises it asks the same questions in three chats, then begs for the photos afterwards. Celebrating someone should be fun for the people throwing it too.',
@@ -347,7 +351,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -367,7 +371,7 @@ const copy: Copy = {
           'Keep the photos. Lose the chat.',
         ],
         lede: 'One organiser, a dozen decisions and a group that won\'t answer. Put every vote in one private event, share the day in one stream, and save the photos before everything disappears 48 hours later.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'A friend group in matching T-shirts celebrating in a go-kart arena',
         todayTitle: 'One organiser. A dozen decisions. Nobody answering.',
         problem: 'The organiser chases ten opinions and gets none back. It\'s a celebration, not a second job.',
@@ -424,7 +428,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'Can one event cover a whole weekend?',
@@ -444,7 +448,7 @@ const copy: Copy = {
           'Keep every photo of the chaos.',
         ],
         lede: 'Vote on which day to go and where to meet when someone gets lost. Share the festival in one stream, and get everyone\'s photos in one place before it all disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'Friends in front of a festival crowd at dusk, stage lights and tents behind them',
         todayTitle: 'Five phones on 4%, and nobody remembers where to meet.',
         problem: 'And someone always spends the day as the group\'s lost and found instead of watching the bands. A festival should be the one place you don\'t have to organise anything.',
@@ -501,7 +505,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'Can one event cover the whole festival?',
@@ -522,7 +526,7 @@ const copy: Copy = {
           'Who\'s cooking?',
         ],
         lede: 'Put the questions to a vote and get the answers in one place. Plan the dinner, game or movie night, share it in one stream, and save the photos before it all disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'Friends around a candlelit dinner table at home, food on the table and a film playing',
         todayTitle: 'Six people, three possible evenings, and the date still isn\'t set.',
         problem: 'Picking one evening for six people shouldn\'t take two weeks of messages. Hosting should be about the food, not the logistics.',
@@ -575,7 +579,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -595,7 +599,7 @@ const copy: Copy = {
           'Skip the 30 emails.',
         ],
         lede: 'Vote on the date, decide the place, share the photos. One private event for the whole team, instead of a calendar poll, an email thread and a shared folder. Save the photos, then it\'s gone.',
-        fineprint: 'Available now for iPhone. Requires iOS 27 or later.',
+        fineprint: 'Available now for iPhone. Requires iOS 26 or later.',
         heroAlt: 'A team of colleagues at a holiday party, raising glasses in a warm restaurant room',
         todayTitle: 'Four tools, one party, and nobody knows what was decided.',
         problem: 'And the colleague who always organises it spends a week answering the same three questions. A team event should bring people together, not fill inboxes.',
@@ -640,11 +644,11 @@ const copy: Copy = {
         faq: [
           {
             q: 'Do my colleagues need an iPhone?',
-            a: 'Yes. After Stories is an iPhone app, so everyone joins the event from the app, on an iPhone with iOS 27 or later. Worth a quick check before you invite the whole team.',
+            a: 'No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too. The browser version is in Danish for now.',
           },
           {
             q: 'Does IT need to set anything up?',
-            a: 'No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. Sign in with Apple means nobody makes a new password.',
+            a: 'No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. On iPhone, Sign in with Apple means nobody makes a new password. In the browser, people sign up with their email.',
           },
           {
             q: 'How many people can join one event?',
@@ -677,86 +681,108 @@ const copy: Copy = {
           },
           {
             title: 'Sign in with Apple.',
-            text: 'No new password, no company account.',
+            text: 'No company account, and no new password on iPhone.',
           },
         ],
       },
       "match-day": {
-        name: 'Soccer match day',
-        title: 'Soccer Match Day Carpool & Photos | After Stories',
-        description: 'Plan match day with your teammates: sort the carpool, share the game privately, and save the photo of the match and every other one. Gone 48 hours after.',
+        name: 'Kids\' game day',
+        title: 'Kids\' Soccer Game Day Carpool & Photos | After Stories',
+        description: 'Sort the carpool for your kids\' match: every parent sees which car each child is in, out and home. Share the game privately and save every photo.',
         headline: [
-          'The carpool, sorted.',
-          'The photo of the match, saved.',
+          'Every kid in a car.',
+          'Every photo of the game, saved.',
         ],
-        lede: 'Vote on who drives, who rides with whom and where you meet. Share the match in one private stream. The next morning, the photo everyone liked most is waiting, and everyone saves every photo. Then it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        lede: 'Plan the carpool for your child\'s match in one private event. Every parent sees the cars and who sits where, out and home, and anyone can move a child. Share the game in one stream, save every photo, then it disappears.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'An empty community soccer pitch at golden morning light, two white goals and training cones on the grass, team bags on the sideline bench, cars parked on the lot behind the fence',
-        todayTitle: 'Eighteen players, one away game, and the carpool is in the team chat.',
-        problem: 'Who drives, who has a spare seat, where you meet and who brings the kit, all buried under a hundred messages. And the best photo of the goal stays on one partner\'s phone. Match day should be about the match.',
+        todayTitle: 'Twelve kids, four cars, and the carpool is in the parents\' chat.',
+        problem: 'Who drives, how many seats, who takes Emil home: all buried under a hundred messages in the parents\' chat. And somebody always ends up counting seats in the car park. Game day should be about the kids, not the logistics.',
         today: [
-          'Three cars, fourteen players, and nobody sure who\'s in which',
+          'Four cars, twelve kids, and nobody sure who\'s in which',
           'A meeting time nobody confirmed',
-          '“Anyone got a spare seat?” buried in the team chat',
-          'The goal photo, stuck on one partner\'s phone',
+          '“Can anyone take Emil home?” buried in the parents\' chat',
+          'The goal photo, stuck on one parent\'s phone',
         ],
-        todayOne: 'One match.',
-        todayText: 'The carpool, the plan and every photo of the match, in one place that\'s gone 48 hours later.',
-        howTitle: 'From who drives to the photo of the match.',
-        empathy: 'We\'ve all been the teammate counting seats on match morning. After Stories keeps the carpool and the plan in one place, so you get to play the match instead of running the carpool.',
+        todayOne: 'One game.',
+        todayText: 'The match, the meeting point, the cars and every photo of the game, in one place. Save the photos, and the rest is gone 48 hours later.',
+        howTitle: 'From who drives to the photo of the goal.',
+        empathy: 'We\'ve all been the parent counting seats in the car park at 8 in the morning. After Stories shows every parent which car each child is in, so you get to watch the game instead of running the carpool.',
         beats: [
           {
             when: 'Before',
             name: 'Sort the carpool',
-            text: 'Who drives, who rides with whom, where you meet, who brings the kit. Every vote becomes a decision on top of the event, so match morning starts with a plan, not a text thread.',
+            text: 'Start from Game day: the match, the meeting point, the children and the cars. Every parent sees who sits where, out and home, and anyone can move a child. Nobody counts seats in the car park.',
           },
           {
             when: 'During',
-            name: 'One stream for the match',
-            text: '“Parked, see you at pitch 2”, the goal, the celebration on the sideline. Every photo from the sideline lands in the same place, for the ones at home too.',
+            name: 'One stream for the game',
+            text: '“Parked, see you at pitch 2”, the goal, the celebration on the sideline. Every parent\'s photos land in the same place, for the ones at home too.',
           },
           {
             when: 'The next morning',
-            name: 'The photo of the match',
-            text: 'The photo everyone liked most is on top, with everything you decided. Save every photo of the game to your phone with one tap. 48 hours after, the event is deleted for everyone.',
+            name: 'Every photo of the game',
+            text: 'The photo everyone liked most is on top. Save every photo of the game to your phone with one tap. 48 hours after, the event is deleted for everyone.',
           },
         ],
-        occasionsTitle: 'Every kind of team match.',
+        occasionsTitle: 'Every kind of kids\' game.',
         occasions: [
-          'Away day',
-          'Sunday league',
+          'Away game',
+          'Home game',
           'Cup match',
-          'Five-a-side',
           'Tournament day',
           'Friendly',
-          'Veterans match',
+          'Handball match',
+          'Swim meet',
         ],
-        privacyTitle: 'Just the squad and the people cheering them on.',
+        privacyTitle: 'Just the team\'s parents. Nobody else.',
         faq: [
           {
+            q: 'Can parents without an iPhone join?',
+            a: 'Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
+          },
+          {
+            q: 'Do the kids need the app?',
+            a: 'No. The app is for the parents. Children are first names a parent types in, up to 30 per game, and they never get an account.',
+          },
+          {
             q: 'Does one event cover the whole season?',
-            a: 'One event per match. Each fixture gets a fresh event: the carpool is settled in minutes, the photos are saved first, and 48 hours after the match the event is deleted for everyone.',
+            a: 'One event per game. Each match gets its own event with its own cars, and 48 hours after the game it\'s deleted for everyone, once everyone has saved the photos.',
           },
           {
-            q: 'Who picks the photo of the match?',
-            a: 'Everyone does. Like the photos you love during the match. The one with the most likes leads the summary the next morning.',
+            q: 'Who picks the photo of the game?',
+            a: 'Everyone does. Like the photos you love during the game. The one with the most likes is on top the next morning.',
           },
-          {
+{
             q: 'What happens after 48 hours?',
             a: 'The event is deleted for everyone: the chat, the polls and the photos. Before that, everyone gets a reminder and can save all the photos to their own phone with one tap.',
           },
           {
-            q: 'Can teammates without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Teammates join the event from the app, on an iPhone with iOS 27 or later.',
-          },
-          {
             q: 'How many people can join one event?',
-            a: 'Up to 50 per event. That fits a squad and the partners and friends who come along, from five-a-side to a club\'s away day.',
+            a: 'Up to 50 per event. That fits a team\'s parents, with up to 30 children and 10 cars per game.',
           },
         ],
-        closer: 'The next away game, with the carpool already sorted.',
-        success: 'A match day where everyone knew whose car they were in, and the next morning the photo of the match and every other photo, saved with one tap.',
-        stakes: 'Or plan it in the team chat again, and keep asking for the goal photo all season.',
+        closer: 'The next game, with every kid already in a car.',
+        success: 'A game day where every parent knew which car their child was in, out and home, and the next morning the photo of the goal and every other photo, saved with one tap.',
+        stakes: 'Or sort it in the parents\' chat again, and count seats in the car park every Saturday.',
+        privacy: [
+          {
+            title: 'Only the parents in the event.',
+            text: 'No feed, no followers, no strangers.',
+          },
+          {
+            title: 'First names only.',
+            text: 'Children are first names that parents type in. Kids never get an account, and their names are deleted with the event.',
+          },
+          {
+            title: 'Gone 48 hours after.',
+            text: 'Save every photo with one tap first. Then the chat, the cars and the photos are deleted for everyone.',
+          },
+          {
+            title: 'Never your location.',
+            text: 'The meeting point is a place you pick. Photos are stripped of GPS and camera data before upload.',
+          },
+        ],
       },
       graduation: {
         name: 'Graduation',
@@ -767,7 +793,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'Vote on the date, the venue and the food. Share the party in one private stream. The morning after, everyone gets every photo of the day, not just the ones they took. Then it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'A graduation celebration set up in a sunny park at golden hour, string lights, balloons, a cake and a banner on a long table',
         todayTitle: 'One graduation, three chats, and the best photo is on someone else\'s phone.',
         problem: 'And the friends who organise it ask the same questions in three chats. Celebrating someone\'s big day should be a joy, not a second job.',
@@ -820,7 +846,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -840,7 +866,7 @@ const copy: Copy = {
           'Bring every photo home.',
         ],
         lede: 'Vote on the day, the place and who drives. Keep every decision in one timeline, share the whole day in one stream, and save everyone\'s photos before the whole thing disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'An empty wooden lakeside deck and dock at golden hour with warm string lights, a picnic table set with plates, a calm lake behind',
         todayTitle: 'Twenty-four people, one lake, and the plan is in a family group chat.',
         problem: 'Aunts, uncles and cousins all arguing about the date, the place and who drives, across a group chat nobody can scroll. Planning a reunion shouldn\'t be the family\'s least favourite part.',
@@ -893,7 +919,7 @@ const copy: Copy = {
           },
           {
             q: 'Can family members without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Family members join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Family members on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'Can one event cover a whole weekend?',
@@ -913,7 +939,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'Friends and family coming to watch, and a plan to sort. Vote on where to meet and where to eat after, share the show in one private stream, and get every photo of the performance before it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'An empty stage in a warm community hall with a microphone and a music stand under a soft spotlight, rows of empty seats behind',
         todayTitle: 'Fifteen people, one show, and nobody knows where to meet.',
         problem: 'Who has the spare ticket, who\'s giving whom a lift, where to eat after, all across the family group chat. Show night should be about the performance, not the logistics.',
@@ -966,7 +992,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends and family without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Friends and family join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Friends and family on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -986,7 +1012,7 @@ const copy: Copy = {
           'Save the photos, drop the chat.',
         ],
         lede: 'Twenty-two volunteers, a dozen shifts and a hundred things to sort. Put the crew in one private event: who\'s on which shift, where to meet, who brings what. Save the photos before the whole thing disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 27 or later.',
+        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
         heroAlt: 'The start line of an outdoor charity 5k in a park, a start arch and a timing scoreboard, cones and a banner on the grass',
         todayTitle: 'Twenty-two volunteers, a dozen shifts, and the plan is in a group chat.',
         problem: 'Who\'s on which shift, who\'s bringing the water, where the crew meets, all scattered across a group chat nobody has time to scroll. A fundraiser should be about the cause, not the coordination.',
@@ -1039,7 +1065,7 @@ const copy: Copy = {
           },
           {
             q: 'Can volunteers without an iPhone join?',
-            a: 'No. After Stories is an iPhone app. Volunteers join the event from the app, on an iPhone with iOS 27 or later.',
+            a: 'Yes. Volunteers on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.',
           },
           {
             q: 'How do the shifts work?',

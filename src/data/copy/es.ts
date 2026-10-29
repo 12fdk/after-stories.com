@@ -14,11 +14,15 @@ const copy: Copy = {
         },
         {
           q: '¿Cuándo podré descargar After Stories?',
-          a: 'Ya. After Stories está en la App Store para iPhone, con iOS 27 o posterior. Descárgala con el botón de esta página.',
+          a: 'Ya. After Stories está en la App Store para iPhone, con iOS 26 o posterior. Descárgala con el botón de esta página.',
         },
         {
           q: '¿En qué se diferencia de un chat de grupo y un álbum compartido?',
           a: 'En un chat de grupo el plan se pierde entre mensajes, y alguien tiene que encargarse del álbum. En After Stories cada votación se convierte en una decisión que se ve de un vistazo, las fotos de todos llegan al mismo evento y a la mañana siguiente tenéis la historia sin que nadie tenga que montarla.',
+        },
+        {
+          q: '¿Qué tipos de eventos puedo crear?',
+          a: 'Empezad con una plantilla. Planear juntos: encontrad el día, el lugar y el plan con vuestros amigos. Fiesta: invitad, chatead y compartid las fotos. Día de partido: el partido, el punto de encuentro y el coche compartido de los niños, a la ida y a la vuelta. Formato libre: elegid qué incluye el evento. Cada evento tiene además una foto de portada que ven todos sus participantes.',
         },
         {
           q: '¿Qué pasa a las 48 horas?',
@@ -26,7 +30,7 @@ const copy: Copy = {
         },
         {
           q: '¿Pueden unirse amigos que no tengan iPhone?',
-          a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+          a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
         },
         {
           q: '¿Quién puede ver lo que compartimos?',
@@ -44,7 +48,7 @@ const copy: Copy = {
           'Despertad con la historia.',
         ],
         lede: 'La app privada para el viaje, la fiesta o la salida de tu grupo. Decidid el plan juntos, vividlo en un solo lugar y despertad con las fotos de todos. Nadie tiene que perseguir a nadie.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
       },
       pain: {
         title: 'Los chats de grupo son donde mueren los planes.',
@@ -139,7 +143,7 @@ const copy: Copy = {
       peopleWord: 'personas',
       withApp: 'Con After Stories',
       votePrefix: 'Vota',
-      decided: 'Decidido',
+      decided: 'Detalles del evento',
       planningSomethingElse: '¿Planeáis otra cosa?',
       goodToKnow: 'Conviene saber',
       closerCta: 'Planead el próximo en After Stories.',
@@ -155,7 +159,7 @@ const copy: Copy = {
           'Llevaos cada foto a casa.',
         ],
         lede: 'Votad el día, el sitio y quién conduce. Compartid la excursión en un solo hilo. Después tendréis las fotos de todos en un mismo lugar, antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Cinco amigos en la terraza de madera de una casa junto al lago a la hora dorada; uno sostiene el móvil en alto para hacer la foto',
         todayTitle: 'Seis móviles, una excursión, y nadie tiene todas las fotos.',
         problem: 'Y siempre es la misma persona la que elige el sitio, persigue respuestas y pide las fotos después. Una escapada de un día debería ser lo fácil de tener amigos.',
@@ -208,7 +212,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Cuántas personas caben en un evento?',
@@ -232,7 +236,7 @@ const copy: Copy = {
           'Mañana, la historia entera.',
         ],
         lede: 'Votad dónde quedar y adónde ir después. Compartid la noche en un solo hilo privado. A la mañana siguiente, tenéis la historia: la mejor foto, la frase de la noche, cada imagen. Después desaparece.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Un grupo de amigos riéndose en una calle de la ciudad de noche, con la luz cálida de los escaparates detrás',
         todayTitle: 'El plan ha cambiado cuatro veces. El chat tiene 400 mensajes.',
         problem: 'Siempre hay alguien que acaba coordinando la noche, escribiendo «¿dónde estáis?» en vez de estar ahí. Una noche de fiesta no necesita un jefe de proyecto.',
@@ -285,7 +289,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Cuántas personas caben en un evento?',
@@ -305,7 +309,7 @@ const copy: Copy = {
           'Todos reciben las fotos.',
         ],
         lede: 'Votad la fecha y el sitio, y poned nombre a quién lleva qué. Compartid la fiesta en un solo hilo privado. A la mañana siguiente, todos reciben cada foto de la fiesta, no solo las que hicieron ellos.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Amigos alrededor de una mesa por la noche, con una tarta de cumpleaños con las velas encendidas y guirnaldas de luces',
         todayTitle: 'Un cumpleaños, tres chats, y la mejor foto está en el móvil de otro.',
         problem: 'Y quien lo organiza hace las mismas preguntas en tres chats y luego suplica las fotos. Celebrar a alguien también debería ser divertido para quien monta la fiesta.',
@@ -358,7 +362,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -378,7 +382,7 @@ const copy: Copy = {
           'Fotos a salvo, chat borrado.',
         ],
         lede: 'Un organizador, una docena de decisiones y un grupo que no contesta. Poned cada votación en un evento privado, compartid el día en un solo hilo y guardad las fotos antes de que todo desaparezca a las 48 horas.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Un grupo de amigos con camisetas iguales celebrando en un circuito de karts',
         todayTitle: 'Un organizador. Una docena de decisiones. Nadie contesta.',
         problem: 'El organizador persigue diez opiniones y no recibe ninguna. Es una celebración, no un segundo trabajo.',
@@ -435,7 +439,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
@@ -455,7 +459,7 @@ const copy: Copy = {
           'Guardad cada foto del caos.',
         ],
         lede: 'Votad qué día ir y dónde quedar cuando alguien se pierda. Compartid el festival en un solo hilo, y tened las fotos de todos en un mismo lugar antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Amigos delante del público de un festival al anochecer, con las luces del escenario y tiendas de campaña detrás',
         todayTitle: 'Cinco móviles al 4 %, y nadie se acuerda de dónde habíamos quedado.',
         problem: 'Y siempre hay alguien que se pasa el día haciendo de objetos perdidos del grupo en vez de ver los conciertos. Un festival debería ser el único sitio donde no hay nada que organizar.',
@@ -512,7 +516,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Puede un evento cubrir todo el festival?',
@@ -533,7 +537,7 @@ const copy: Copy = {
           '¿Quién cocina?',
         ],
         lede: 'Someted las preguntas a votación y tened las respuestas en un solo lugar. Planead la cena, los juegos o la peli, compartidlo en un solo hilo y guardad las fotos antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Amigos alrededor de una mesa con velas en casa, comida en la mesa y una película de fondo',
         todayTitle: 'Seis personas, tres noches posibles, y la fecha sigue sin fijar.',
         problem: 'Elegir una noche para seis personas no debería costar dos semanas de mensajes. Ser anfitrión debería ir de la comida, no de la logística.',
@@ -586,7 +590,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -606,7 +610,7 @@ const copy: Copy = {
           'Saltaos los 30 correos.',
         ],
         lede: 'Votad la fecha, decidid el sitio, compartid las fotos. Un solo evento privado para todo el equipo, en vez de una encuesta de calendario, un hilo de correos y una carpeta compartida. Guardad las fotos, y después desaparece.',
-        fineprint: 'Disponible para iPhone. Requiere iOS 27 o posterior.',
+        fineprint: 'Disponible para iPhone. Requiere iOS 26 o posterior.',
         heroAlt: 'Un equipo de compañeros en la cena de Navidad, brindando en el salón acogedor de un restaurante',
         todayTitle: 'Cuatro herramientas, una fiesta, y nadie sabe qué se decidió.',
         problem: 'Y el compañero que siempre lo organiza se pasa una semana contestando las mismas tres preguntas. Un evento de equipo debería unir a la gente, no llenar bandejas de entrada.',
@@ -651,11 +655,11 @@ const copy: Copy = {
         faq: [
           {
             q: '¿Mis compañeros necesitan un iPhone?',
-            a: 'Sí. After Stories es una app de iPhone: todos se unen al evento desde la app, en un iPhone con iOS 27 o posterior. Conviene comprobarlo antes de invitar a todo el equipo.',
+            a: 'No. Los compañeros con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. El evento se crea en la app de iPhone (iOS 26 o posterior), y la historia de la mañana siguiente y guardar todas las fotos a la vez también están en la app. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Tiene que configurar algo el equipo de informática?',
-            a: 'No. No hay cuentas de empresa, licencias ni ajustes de administrador. Creáis un evento, compartís el enlace y la gente se une. Con «Iniciar sesión con Apple», nadie tiene que crear una contraseña nueva.',
+            a: 'No. No hay cuentas de empresa, licencias ni ajustes de administrador. Creáis un evento, compartís el enlace y la gente se une. En iPhone, con «Iniciar sesión con Apple», nadie tiene que crear una contraseña nueva. En el navegador, cada uno se registra con su correo electrónico.',
           },
           {
             q: '¿Cuántas personas caben en un evento?',
@@ -688,86 +692,108 @@ const copy: Copy = {
           },
           {
             title: 'Iniciar sesión con Apple.',
-            text: 'Sin contraseñas nuevas, sin cuenta de empresa.',
+            text: 'Sin cuenta de empresa, y sin contraseñas nuevas en iPhone.',
           },
         ],
       },
       "match-day": {
-        name: 'Día de partido de fútbol',
-        title: 'Día de partido: coches compartidos y fotos | After Stories',
-        description: 'Organizad el partido con vuestros compañeros: los coches, el partido en privado, y la foto del partido y todas las demás, guardadas. Se elimina a las 48 h.',
+        name: 'Partido de los niños',
+        title: 'Partido infantil: coche compartido y fotos | After Stories',
+        description: 'Organiza el coche compartido para el partido de tus hijos: cada padre ve en qué coche va cada niño, ida y vuelta. Comparte el partido y guarda las fotos.',
         headline: [
-          'Los coches, organizados.',
-          'La foto del partido, guardada.',
+          'Cada niño, con su plaza.',
+          'Cada foto del partido, guardada.',
         ],
-        lede: 'Votad quién conduce, quién va con quién y dónde quedáis. Compartid el partido en un hilo privado. A la mañana siguiente os espera la foto que más ha gustado, y cada uno guarda todas las fotos. Después desaparece.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        lede: 'Organiza el coche compartido para el partido de tu hijo en un evento privado. Todos los padres ven los coches y quién va dónde, a la ida y a la vuelta, y cualquiera puede mover a un niño. Comparte el partido en un solo hilo, guarda todas las fotos y luego todo desaparece.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Un campo de fútbol municipal vacío con la luz dorada de la mañana, dos porterías blancas y conos de entrenamiento sobre el césped, bolsas del equipo en el banquillo y coches aparcados detrás de la valla',
-        todayTitle: 'Dieciocho jugadores, un partido fuera, y los coches están en el chat del equipo.',
-        problem: 'Quién conduce, quién tiene una plaza libre, dónde quedáis y quién lleva la equipación, todo enterrado bajo cien mensajes. Y la mejor foto del gol se queda en el móvil de la pareja de alguien. El día de partido debería ir del partido.',
+        todayTitle: 'Doce niños, cuatro coches, y el coche compartido está en el chat de padres.',
+        problem: 'Quién conduce, cuántas plazas, quién trae a Emil de vuelta: todo enterrado bajo cien mensajes en el chat de padres. Y siempre hay alguien contando plazas en el aparcamiento. El día de partido debería tratar de los niños, no de la logística.',
         today: [
-          'Tres coches, catorce jugadores, y nadie sabe quién va en cuál',
-          'Una hora de quedada que nadie ha confirmado',
-          '«¿Alguien tiene una plaza libre?», enterrado en el chat del equipo',
-          'La foto del gol, atrapada en el móvil de la pareja de alguien',
+          'Cuatro coches, doce niños, y nadie sabe quién va en cuál',
+          'Una hora de encuentro que nadie confirmó',
+          '«¿Alguien puede traer a Emil?», enterrado en el chat de padres',
+          'La foto del gol, atrapada en el móvil de un padre',
         ],
         todayOne: 'Un partido.',
-        todayText: 'Los coches, el plan y cada foto del partido, en un lugar que desaparece 48 horas después.',
-        howTitle: 'De quién conduce a la foto del partido.',
-        empathy: 'Todos hemos sido el compañero que cuenta plazas la mañana del partido. After Stories tiene los coches y el plan en un solo lugar, para que juegues el partido en vez de organizar los coches.',
+        todayText: 'El partido, el punto de encuentro, los coches y todas las fotos del partido, en un solo lugar. Guarda las fotos, y lo demás desaparece 48 horas después.',
+        howTitle: 'De quién conduce a la foto del gol.',
+        empathy: 'Todos hemos sido el padre que cuenta plazas en el aparcamiento a las ocho de la mañana. After Stories muestra a cada padre en qué coche va cada niño, para que veas el partido en vez de gestionar el coche compartido.',
         beats: [
           {
             when: 'Antes',
-            name: 'Organizad los coches',
-            text: 'Quién conduce, quién va con quién, dónde quedáis, quién lleva la equipación. Cada votación se convierte en una decisión arriba del evento, para que la mañana del partido empiece con un plan y no con un hilo de mensajes.',
+            name: 'Organiza el coche compartido',
+            text: 'Empieza con Día de partido: el partido, el punto de encuentro, los niños y los coches. Todos los padres ven quién va dónde, a la ida y a la vuelta, y cualquiera puede mover a un niño. Nadie cuenta plazas en el aparcamiento.',
           },
           {
             when: 'Durante',
             name: 'Un solo hilo para el partido',
-            text: '«Aparcados, nos vemos en el campo 2», el gol, la celebración en la banda. Cada foto desde la banda llega al mismo sitio, también para los que están en casa.',
+            text: '«Aparcados, nos vemos en el campo 2», el gol, la celebración en la banda. Las fotos de todos los padres llegan al mismo sitio, también para los que están en casa.',
           },
           {
             when: 'A la mañana siguiente',
-            name: 'La foto del partido',
-            text: 'La foto que más ha gustado aparece arriba, junto con todo lo que decidisteis. Guarda cada foto del partido en tu móvil con un toque. 48 horas después, el evento se elimina para todos.',
+            name: 'Todas las fotos del partido',
+            text: 'La foto con más me gusta está arriba. Guarda todas las fotos del partido en tu móvil con un toque. 48 horas después, el evento se elimina para todos.',
           },
         ],
-        occasionsTitle: 'Todo tipo de partidos de equipo.',
+        occasionsTitle: 'Todo tipo de partidos de niños.',
         occasions: [
           'Partido fuera',
-          'Liga de domingo',
+          'Partido en casa',
           'Partido de copa',
-          'Fútbol sala',
           'Día de torneo',
           'Amistoso',
-          'Partido de veteranos',
+          'Partido de balonmano',
+          'Competición de natación',
         ],
-        privacyTitle: 'Solo el equipo y quienes lo animan.',
+        privacyTitle: 'Solo los padres del equipo. Nadie más.',
         faq: [
           {
+            q: '¿Pueden unirse padres que no tengan iPhone?',
+            a: 'Sí. Los padres con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos, pero los coches y las plazas solo están en la app de iPhone por ahora. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
+          },
+          {
+            q: '¿Los niños necesitan la app?',
+            a: 'No. La app es para los padres. Los niños son nombres de pila que escribe un padre, hasta 30 por partido, y nunca tienen cuenta.',
+          },
+          {
             q: '¿Un evento sirve para toda la temporada?',
-            a: 'Un evento por partido. Cada partido tiene su evento nuevo: los coches se organizan en minutos, las fotos se guardan primero y 48 horas después del partido el evento se elimina para todos.',
+            a: 'Un evento por partido. Cada partido tiene su propio evento con sus propios coches, y 48 horas después del partido se elimina para todos, cuando todos han guardado las fotos.',
           },
           {
             q: '¿Quién elige la foto del partido?',
-            a: 'Todos. Durante el partido, dadle ❤️ a las fotos que os gusten. La que tenga más ❤️ abre el resumen a la mañana siguiente.',
+            a: 'Todos. Dad me gusta a las fotos que os gusten durante el partido. La que tenga más me gusta estará arriba a la mañana siguiente.',
           },
-          {
+{
             q: '¿Qué pasa a las 48 horas?',
             a: 'El evento se elimina para todos: el chat, las votaciones y las fotos. Antes, todos reciben un aviso y pueden guardar todas las fotos en su móvil con un toque.',
           },
           {
-            q: '¿Pueden unirse compañeros de equipo que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los compañeros de equipo se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
-          },
-          {
-            q: '¿Cuántas personas caben en un evento?',
-            a: 'Hasta 50 por evento. Suficiente para un equipo y las parejas y amigos que vienen a verlo, desde un partido de fútbol sala hasta el desplazamiento de un club.',
+            q: '¿Cuántas personas pueden unirse a un evento?',
+            a: 'Hasta 50 por evento. Suficiente para los padres de un equipo, con hasta 30 niños y 10 coches por partido.',
           },
         ],
-        closer: 'El próximo partido fuera, con los coches ya organizados.',
-        success: 'Un día de partido en el que todos sabían en qué coche iban, y a la mañana siguiente la foto del partido y todas las demás, guardadas con un toque.',
-        stakes: 'O volved a organizarlo en el chat del equipo, y pasaos la temporada pidiendo la foto del gol.',
+        closer: 'El próximo partido, con cada niño ya en un coche.',
+        success: 'Un día de partido en el que todos los padres sabían en qué coche iba su hijo, a la ida y a la vuelta, y a la mañana siguiente la foto del gol y todas las demás, guardadas con un toque.',
+        stakes: 'O organízalo otra vez en el chat de padres, y cuenta plazas en el aparcamiento cada sábado.',
+        privacy: [
+          {
+            title: 'Solo los padres del evento.',
+            text: 'Sin feed, sin seguidores, sin desconocidos.',
+          },
+          {
+            title: 'Solo nombres de pila.',
+            text: 'Los niños son nombres de pila que escriben los padres. Los niños nunca tienen cuenta, y los nombres se eliminan con el evento.',
+          },
+          {
+            title: 'Desaparece 48 horas después.',
+            text: 'Primero, guarda todas las fotos con un toque. Después, el chat, los coches y las fotos se eliminan para todos.',
+          },
+          {
+            title: 'Nunca tu ubicación.',
+            text: 'El punto de encuentro es un lugar que elegís. A las fotos se les quitan los datos de GPS y de cámara antes de subirlas.',
+          },
+        ],
       },
       graduation: {
         name: 'Graduación',
@@ -778,7 +804,7 @@ const copy: Copy = {
           'Todos reciben las fotos.',
         ],
         lede: 'Votad la fecha, el sitio y la comida. Compartid la fiesta en un solo hilo privado. A la mañana siguiente, todos reciben cada foto del día, no solo las que hicieron ellos. Después desaparece.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Una celebración de graduación montada en un parque soleado a la hora dorada: guirnaldas de luces, globos, una tarta y una pancarta sobre una mesa larga',
         todayTitle: 'Una graduación, tres chats, y la mejor foto está en el móvil de otro.',
         problem: 'Y los amigos que la organizan hacen las mismas preguntas en tres chats. Celebrar un gran día debería ser una alegría, no un segundo trabajo.',
@@ -831,7 +857,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -851,7 +877,7 @@ const copy: Copy = {
           'Llevaos cada foto a casa.',
         ],
         lede: 'Votad el día, el sitio y quién conduce. Tened cada decisión en una línea de tiempo, compartid todo el día en un solo hilo y guardad las fotos de todos antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Una terraza y un embarcadero de madera vacíos junto a un lago a la hora dorada, con guirnaldas de luces cálidas, una mesa de pícnic puesta y el lago en calma detrás',
         todayTitle: 'Veinticuatro personas, un lago, y el plan está en el chat familiar.',
         problem: 'Tías, tíos y primos discutiendo la fecha, el sitio y quién conduce, en un chat de grupo que nadie consigue leer entero. Organizar una reunión no debería ser lo que menos le gusta a la familia.',
@@ -904,7 +930,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse familiares que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los familiares se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los familiares con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
@@ -924,7 +950,7 @@ const copy: Copy = {
           'Todos reciben las fotos.',
         ],
         lede: 'Amigos y familia que van a verlo, y un plan por organizar. Votad dónde quedar antes y dónde cenar después, compartid la función en un solo hilo privado y tened cada foto de la actuación antes de que desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'Un escenario vacío en un salón de actos acogedor, con un micrófono y un atril bajo un foco suave y filas de butacas vacías detrás',
         todayTitle: 'Quince personas, una función, y nadie sabe dónde quedar.',
         problem: 'Quién tiene la entrada que sobra, quién lleva a quién, dónde cenar después, todo repartido por el chat familiar. La noche de la función debería ir de la actuación, no de la logística.',
@@ -977,7 +1003,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse amigos y familiares que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los amigos y familiares se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los amigos y familiares con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Qué pasa a las 48 horas?',
@@ -997,7 +1023,7 @@ const copy: Copy = {
           'Fotos a salvo, chat borrado.',
         ],
         lede: 'Veintidós voluntarios, una docena de turnos y cien cosas por organizar. Poned al equipo en un evento privado: quién está en cada turno, dónde quedar, quién trae qué. Guardad las fotos antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 27 o posterior.',
+        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
         heroAlt: 'La salida de una carrera benéfica de 5 km en un parque, con un arco de salida, un marcador de tiempos, conos y una pancarta sobre el césped',
         todayTitle: 'Veintidós voluntarios, una docena de turnos, y el plan está en un chat de grupo.',
         problem: 'Quién está en qué turno, quién trae el agua, dónde queda el equipo, todo repartido por un chat de grupo que nadie tiene tiempo de leer. Una jornada benéfica debería ir de la causa, no de la coordinación.',
@@ -1050,7 +1076,7 @@ const copy: Copy = {
           },
           {
             q: '¿Pueden unirse voluntarios que no tengan iPhone?',
-            a: 'No. After Stories es una app de iPhone. Los voluntarios se unen al evento desde la app, en un iPhone con iOS 27 o posterior.',
+            a: 'Sí. Los voluntarios con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico y una contraseña. Escriben, votan y comparten fotos como todos. Solo la app de iPhone (iOS 26 o posterior) puede crear e iniciar el evento, mostrar la historia de la mañana siguiente y guardar todas las fotos a la vez. Por ahora, la versión del navegador solo está en danés.',
           },
           {
             q: '¿Cómo funcionan los turnos?',
@@ -1076,8 +1102,8 @@ const copy: Copy = {
         text: 'Primero, guarda todas las fotos con un toque. Después, el chat, las votaciones y las fotos se eliminan para todos.',
       },
       {
-        title: 'Sin cuenta nueva.',
-        text: 'Inicia sesión con Apple y listo. Ninguna contraseña que inventar ni recordar.',
+        title: 'Iniciar sesión con Apple.',
+        text: 'En iPhone, ninguna contraseña que inventar. Quien no tenga iPhone se registra con su correo electrónico en el navegador.',
       },
     ],
   };
