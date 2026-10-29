@@ -15,6 +15,9 @@
 // asked again. The web app sends the same version at sign-up (web/app/src/lib/emailAuth.ts).
 // 2026-10-22 (12fdk/after-stories#339): the contact address is after-stories@12f.dk (after-stories.com
 // has no MX). A contact change, so still version 2.
+// 2026-10-29 (12fdk/after-stories#549): the "Køb" / "Purchases" section for After Stories Pro and
+// the Event Pass (auto-renewal, cancelling and refunds through Apple, App Store guideline 3.1.2).
+// It describes an optional purchase and asks nothing of anyone who does not buy, so still version 2.
 //
 // App Store guideline 1.2 is what this page answers: no tolerance for objectionable content or
 // abusive users, a way to report and to block (both built, #29), and the operator acting on a
@@ -28,8 +31,8 @@
 // not such a change. Change the dates whenever the text changes.
 
 export const TERMS_VERSION = 2;
-export const TERMS_UPDATED_DA = "22. oktober 2026";
-export const TERMS_UPDATED_EN = "22 October 2026";
+export const TERMS_UPDATED_DA = "29. oktober 2026";
+export const TERMS_UPDATED_EN = "29 October 2026";
 
 export const APPLE_EULA = "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/";
 
@@ -56,6 +59,14 @@ export const TERMS_HTML = `
 
 <h2>Dit indhold</h2>
 <p>Det, du lægger op, er dit. Du giver de andre i eventet lov til at se det i appen, og os lov til at opbevare og vise det for dem, så længe eventet findes, eller indtil du sletter det. Et event slettes for alle 48 timer efter, det er slut. Du kan slette dine egne beskeder, billeder, likes og stemmer — og hele din konto — direkte i appen og i webappen. Hvordan vi behandler data, står i <a href="/privacy/">privatlivspolitikken</a>.</p>
+
+<h2>Køb</h2>
+<p>AFTER er gratis. I iPhone-appen kan du købe to ting, og de giver kun én ting: billeder i original kvalitet.</p>
+<ul>
+  <li><strong>After Stories Pro</strong> er et abonnement på et år. Med Pro kan du opgradere de events, du er med i. Abonnementet fornyes automatisk hvert år til samme pris, til du opsiger det i App Store-indstillingerne senest 24 timer før perioden slutter.</li>
+  <li>Et <strong>Event Pass</strong> er et enkelt køb, der opgraderer ét event.</li>
+</ul>
+<p>Når et event er opgraderet, gemmes alle nye billeder i det i original kvalitet for alle i eventet, og alle kan se, hvem der opgraderede det. Eventet bliver stadig slettet som alle andre events. Prisen står i App Store, før du køber. Apple står for betalingen, og refusion søger du om hos Apple.</p>
 
 <h2>Apples standardvilkår</h2>
 <p>Appen AFTER hentes fra App Store, og Apples standardlicensaftale for apps gælder også for den: <a href="${APPLE_EULA}">Licensed Application End User License Agreement</a>. For webappen gælder kun disse vilkår.</p>
@@ -84,6 +95,14 @@ export const TERMS_HTML = `
 
 <h2>Your content</h2>
 <p>What you post is yours. You let the others in the event see it in the app, and us store it and show it to them for as long as the event exists or until you delete it. An event is deleted for everyone 48 hours after it ends. You can delete your own messages, photos, likes and votes — and your whole account — right in the app and in the web app. How we handle data is in the <a href="/privacy/">privacy policy</a>.</p>
+
+<h2>Purchases</h2>
+<p>AFTER is free. In the iPhone app you can buy two things, and they give you one thing only: photos in original quality.</p>
+<ul>
+  <li><strong>After Stories Pro</strong> is a one-year subscription. With Pro you can upgrade the events you are in. It renews automatically every year at the same price until you cancel it in your App Store settings at least 24 hours before the period ends.</li>
+  <li>An <strong>Event Pass</strong> is a single purchase that upgrades one event.</li>
+</ul>
+<p>Once an event is upgraded, every new photo in it is kept in original quality for everyone in the event, and everyone can see who upgraded it. The event is still deleted like every other event. The price is shown in the App Store before you buy. Apple handles the payment, and you ask Apple for a refund.</p>
 
 <h2>Apple's standard terms</h2>
 <p>The AFTER app comes from the App Store, and Apple's standard licence for apps applies to it too: <a href="${APPLE_EULA}">Licensed Application End User License Agreement</a>. Only these terms apply to the web app.</p>
