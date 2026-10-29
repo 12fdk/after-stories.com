@@ -59,6 +59,10 @@ too" (a row of chips on the site, screenshots 5–8 on the App Store, one ASO ke
 | 5 | **Festival / concert** | Proof | Tickets, meeting point, camp | Chaos, photos everywhere | Needs multi-day for festivals |
 | 6 | **Dinner / game / movie night** | Proof | Which day, which film, who cooks | Light. The poll is the payoff | Yes |
 | 7 | **Office event** (team dinner, Friday bar, summer/Christmas party, offsite) | Proof, **own page** | Outlook + Doodle + a dozen emails | Everyone's photos from the party, and no work chat that lives forever | Yes (≤ 50 people); offsite needs multi-day |
+| 8 | **Kids' game day** (a child's match: away game, cup, tournament day) | Proof, **own page** (`/match-day/`, owner 2026-10-29) | The parents' chat: who drives, how many seats, who takes which child home | The goal photo from every parent's phone | Yes since 1.1: the *Game day* template with the car view (children's first names, cars with seats out and home, anyone moves a child). Not yet: the car view in the browser, *repeat for the next game*, the score |
+
+The hero of use case 8 is **the parent**, not the player: the page talks to parents, the children are
+first names a parent types in and never use the app (18+).
 
 Not marketed: weddings and big events (the 50-member cap, and guests won't accept 48 h
 deletion), and anything public.

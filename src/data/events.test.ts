@@ -104,3 +104,24 @@ describe("launch copy", () => {
     }
   });
 });
+
+// /match-day/ is the kids' game day (docs/positioning.md › use case 8): the Game day template's
+// car view, for parents. 1.1 has no "repeat for the next game" and no score, and the browser has
+// no car view yet, so the page must not promise them.
+describe("kids' game day", () => {
+  const pages = { "events.ts": events.find((e) => e.slug === "match-day")!, ...Object.fromEntries(
+    Object.entries(copies).map(([name, copy]) => [name, copy.events["match-day"]]),
+  ) };
+
+  it.each(Object.entries(pages))("%s talks to parents about their children's seats", (_, page) => {
+    expect(page.privacy).toHaveLength(4);
+    const iphone = page.faq.find((f) => /iPhone/.test(f.q))!;
+    // The cars and the seats are only in the iPhone app for now.
+    expect(iphone.a).toMatch(/iPhone-app|iPhone app|app iPhone|app de iPhone|iPhone-App/);
+  });
+
+  it.each(Object.entries(pages))("%s promises nothing 1.1 doesn't have", (_, page) => {
+    const text = JSON.stringify(page);
+    expect(text).not.toMatch(/repeat|gentag|wiederhol|répét|repet|score|resultat|Ergebnis|résultat|resultado/i);
+  });
+});
