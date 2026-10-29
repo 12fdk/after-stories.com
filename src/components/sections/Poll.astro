@@ -4,7 +4,7 @@ import type { EventType } from "../../data/events";
 import { shares } from "../../lib/poll";
 
 // The live thing: an event of this type while it's being planned, with a poll the visitor can
-// vote in. The vote turns into a decision and joins the "Decided" list, as in the app. Without
+// vote in. The vote turns into a decision and joins the "Event details" list, as in the app (1.1). Without
 // the script the poll still shows its results. The mock's own words are app UI, the same in every
 // locale (src/lib/i18n.ts); the labels around them are translated.
 interface Props {

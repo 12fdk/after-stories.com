@@ -9,9 +9,9 @@ import { APP_STORE_URL } from "./appstore";
 // Both are built from the data the pages are built from, so they can't drift from the site.
 
 /** Where to get it, without a contact address (that @ belongs only in llms.txt, as plain text). */
-export const LAUNCH_STATUS = `Status: available now on the App Store for iPhone (iOS 27 or later): ${APP_STORE_URL}. In English, Danish, German, French and Spanish. Made by 12f ApS, Denmark (https://12f.dk).`;
+export const LAUNCH_STATUS = `Status: available now on the App Store for iPhone (iOS 26 or later): ${APP_STORE_URL}. Friends without an iPhone join an event from its invite link in their browser (app.after-stories.com, in Danish for now); creating an event needs the iPhone app. In English, Danish, German, French and Spanish. Made by 12f ApS, Denmark (https://12f.dk).`;
 
-const status = `${LAUNCH_STATUS} Contact: support@12f.dk.`;
+const status = `${LAUNCH_STATUS} Contact: after-stories@12f.dk.`;
 
 const pages = () => [
   `- [After Stories](${SITE_URL}/): ${homeDescription}`,

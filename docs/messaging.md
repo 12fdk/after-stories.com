@@ -7,9 +7,9 @@ facts the story is built from (the brand script, voice, use cases) live in
 
 Last full audit: 2026-10-03, 9.5/10 (#24, #26). The missing half point is authority: see rule 3.
 
-**Live since 2026-10-18** (App Store app 6815212070, iPhone only, iOS 27 or later). The direct
-CTA is Apple's official "Download on the App Store" badge, not a form. There is no web version:
-never say friends without an iPhone can join from the web (rule 11).
+**Live since 2026-10-18** (App Store app 6815212070); **1.1 since 2026-10-29** (iOS 26 or later,
+templates). The direct CTA is Apple's official "Download on the App Store" badge, not a form.
+Friends without an iPhone join an event from the browser, but the organiser needs the app (rule 11).
 
 ## Before any copy or layout change
 
@@ -82,9 +82,15 @@ voice. A new event page fills every field; the test fails if it doesn't.
 9. **Never say anything about price.** Not even "free".
 10. **Voice:** warm and witty, cheeky, never laddish. The office page is calmer: no nightlife or
     hangover jokes.
-11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 27 or later. There
-    is no web client and no plan for one (app repo, docs/distribution.md). Asked whether someone
-    without an iPhone can join, the answer is no. Never promise a web or Android version.
+11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 26 or later.
+    Since 2026-10-20 friends without an iPhone join an event from its invite link in the browser
+    (`app.after-stories.com`, app repo #463): they chat, vote and share photos. Only the iPhone app
+    creates and starts an event, shows the morning-after summary, saves every photo at once and
+    has the carpool, and the web app is Danish only for now. Asked whether someone without an
+    iPhone can join, the answer is yes, with those limits. The direct CTA stays the App Store badge:
+    the browser is how *invited* friends join, never a second CTA. Never promise an Android app.
+    When the web app gains a feature or a language, change the answers in every locale
+    (`src/data/events.ts` › `webLimits`).
 
 ## Quick check (all must be "yes")
 

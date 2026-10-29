@@ -14,6 +14,7 @@ export const DEFINITION =
   "After Stories is a private iPhone app for one group trip, party or night out: friends vote on the plan, share photos in one stream, and wake up to a morning-after story. Everything is deleted 48 hours after, once everyone has saved the photos.";
 
 export const FEATURES = [
+  "Templates: Plan together, Party, Game day (with a carpool for the kids) and Free form",
   "Polls that turn into decisions",
   "A timeline of everything the group decided",
   "One private stream for messages and photos",
@@ -22,6 +23,7 @@ export const FEATURES = [
   "Deleted for everyone 48 hours after the event",
   "Up to 50 people per event",
   "Photos stripped of location and camera data before upload",
+  "Friends without an iPhone join from the invite link in their browser",
 ];
 
 export const ids = {
@@ -90,7 +92,7 @@ function siteNodes(): Node[] {
       url: `${SITE_URL}/`,
       image: absolute("/icon-512.png"),
       operatingSystem: "iOS",
-      softwareRequirements: "iOS 27 or later",
+      softwareRequirements: "iOS 26 or later",
       availableOnDevice: "iPhone",
       applicationCategory: "SocialNetworkingApplication",
       inLanguage: ["en", "da", "de", "fr", "es"],

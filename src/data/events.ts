@@ -77,19 +77,27 @@ export const defaultPrivacy: Fact[] = [
     text: "Save every photo with one tap first. Then the chat, the polls and the photos are deleted for everyone.",
   },
   {
-    title: "No new account.",
-    text: "Sign in with Apple and you're in. No password to make up or remember.",
+    title: "Sign in with Apple.",
+    text: "No password to make up on iPhone. Friends without an iPhone sign up with an email in their browser.",
   },
 ];
 
 /**
+ * The web app's limits (app repo, web/app/README.md › Not on the web yet): creating and starting
+ * an event, the summary and saving all photos at once stay in the iPhone app, and it speaks only
+ * Danish. Drop a clause here (and in every locale) when the web app gains it.
+ */
+const webLimits =
+  "Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once. The browser version is in Danish for now.";
+
+/**
  * "Can … without an iPhone join?", naming the page's own people (friends, family, teammates…).
- * The honest answer is no: AFTER has no web client and no plan for one (app repo,
- * docs/distribution.md). Never promise a web or Android version here.
+ * Yes since 2026-10-20: the invite link opens the web app (app.after-stories.com) on Android or
+ * a computer (app repo, docs/product.md › The web app). Say what it can't do too.
  */
 const nonIphoneFor = (who: string) => ({
   q: `Can ${who} without an iPhone join?`,
-  a: `No. After Stories is an iPhone app. ${who[0].toUpperCase()}${who.slice(1)} join the event from the app, on an iPhone with iOS 27 or later.`,
+  a: `Yes. ${who[0].toUpperCase()}${who.slice(1)} on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. ${webLimits}`,
 });
 
 const nonIphone = nonIphoneFor("friends");
@@ -123,7 +131,7 @@ export const events: EventType[] = [
       "Plan the day trip together: vote on the day and where to go, keep every decision in one timeline, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the trip together.", "Bring every photo home."],
     lede: "Vote on the day, the place and who drives. Share the trip in one stream. Then get everyone's photos in one place, before the whole thing disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-trips.webp",
       alt: "Five friends on a lake house deck at golden hour, one holding a phone up to take the photo",
@@ -206,7 +214,7 @@ export const events: EventType[] = [
       "Plan the night out together: vote on where to meet and where to go next, share it in one stream, and wake up to the story with every photo saved.",
     headline: ["Plan the night out.", "Piece it together tomorrow."],
     lede: "Vote on where to meet and where to go next. Share the night in one private stream. The morning after, get the story: the best photo, the line of the night, every picture. Then it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-nights-out.webp",
       alt: "A group of friends laughing on a city street at night, warm shop lights behind them",
@@ -288,7 +296,7 @@ export const events: EventType[] = [
       "Plan the birthday together: vote on the date and the venue, share the party in one stream, and give everyone every photo of the party, saved with one tap.",
     headline: ["Plan the birthday together.", "Everyone gets the photos."],
     lede: "Vote on the date and the venue, and put a name on who brings what. Share the party in one private stream. The morning after, everyone gets every photo of the party, not just the ones they took.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-birthdays.webp",
       alt: "Friends around a table at night with a birthday cake with lit candles and string lights",
@@ -373,7 +381,7 @@ export const events: EventType[] = [
       "Plan the bachelor or bachelorette party in one private event: vote on the plan, keep every decision, save the photos, and it's all gone 48 hours later.",
     headline: ["Plan the send-off together.", "Keep the photos. Lose the chat."],
     lede: "One organiser, a dozen decisions and a group that won't answer. Put every vote in one private event, share the day in one stream, and save the photos before everything disappears 48 hours later.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-bachelor-parties.webp",
       alt: "A friend group in matching T-shirts celebrating in a go-kart arena",
@@ -456,7 +464,7 @@ export const events: EventType[] = [
       "Plan the festival day with your group: vote on the day, settle the meeting point, share it in one stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the festival together.", "Keep every photo of the chaos."],
     lede: "Vote on which day to go and where to meet when someone gets lost. Share the festival in one stream, and get everyone's photos in one place before it all disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-festivals.webp",
       alt: "Friends in front of a festival crowd at dusk, stage lights and tents behind them",
@@ -539,7 +547,7 @@ export const events: EventType[] = [
       "Plan the dinner, game or movie night: vote on the day and the film, name who cooks, share the night in one stream and save the photos. Gone 48 hours after.",
     headline: ["Which night?", "Which film?", "Who's cooking?"],
     lede: "Put the questions to a vote and get the answers in one place. Plan the dinner, game or movie night, share it in one stream, and save the photos before it all disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-dinner-nights.webp",
       alt: "Friends around a candlelit dinner table at home, food on the table and a film playing",
@@ -625,7 +633,7 @@ export const events: EventType[] = [
       "Plan the team dinner, holiday party or offsite in one private event: vote on the date, pick the place, save the photos. No email threads. Gone 48 hours after.",
     headline: ["Plan the team event.", "Skip the 30 emails."],
     lede: "Vote on the date, decide the place, share the photos. One private event for the whole team, instead of a calendar poll, an email thread and a shared folder. Save the photos, then it's gone.",
-    fineprint: "Available now for iPhone. Requires iOS 27 or later.",
+    fineprint: "Available now for iPhone. Requires iOS 26 or later.",
     hero: {
       src: "/hero-office-events.webp",
       alt: "A team of colleagues at a holiday party, raising glasses in a warm restaurant room",
@@ -694,16 +702,16 @@ export const events: EventType[] = [
         title: "Never your location.",
         text: "Places are venues you pick. Photos are stripped of GPS and camera data before upload.",
       },
-      { title: "Sign in with Apple.", text: "No new password, no company account." },
+      { title: "Sign in with Apple.", text: "No company account, and no new password on iPhone." },
     ],
     faq: [
       {
         q: "Do my colleagues need an iPhone?",
-        a: "Yes. After Stories is an iPhone app, so everyone joins the event from the app, on an iPhone with iOS 27 or later. Worth a quick check before you invite the whole team.",
+        a: "No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too. The browser version is in Danish for now.",
       },
       {
         q: "Does IT need to set anything up?",
-        a: "No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. Sign in with Apple means nobody makes a new password.",
+        a: "No. There are no company accounts, licences or admin settings. You create an event, share the link, and people join. On iPhone, Sign in with Apple means nobody makes a new password. In the browser, people sign up with their email.",
       },
       {
         q: "How many people can join one event?",
@@ -734,7 +742,7 @@ export const events: EventType[] = [
       "Plan match day with your teammates: sort the carpool, share the game privately, and save the photo of the match and every other one. Gone 48 hours after.",
     headline: ["The carpool, sorted.", "The photo of the match, saved."],
     lede: "Vote on who drives, who rides with whom and where you meet. Share the match in one private stream. The next morning, the photo everyone liked most is waiting, and everyone saves every photo. Then it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-match-day.webp",
       alt: "An empty community soccer pitch at golden morning light, two white goals and training cones on the grass, team bags on the sideline bench, cars parked on the lot behind the fence",
@@ -795,6 +803,10 @@ export const events: EventType[] = [
     privacyTitle: "Just the squad and the people cheering them on.",
     faq: [
       {
+        q: "Is there a carpool for kids' matches?",
+        a: "Yes. Start the event from the Game day template: every parent sees the cars and who sits where, out and home, and anyone can move a child. The carpool is in the iPhone app, not in the browser yet.",
+      },
+      {
         q: "Does one event cover the whole season?",
         a: "One event per match. Each fixture gets a fresh event: the carpool is settled in minutes, the photos are saved first, and 48 hours after the match the event is deleted for everyone.",
       },
@@ -823,7 +835,7 @@ export const events: EventType[] = [
       "Plan the graduation party together: vote on the date and the venue, share the celebration in one stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the celebration together.", "Everyone gets the photos."],
     lede: "Vote on the date, the venue and the food. Share the party in one private stream. The morning after, everyone gets every photo of the day, not just the ones they took. Then it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-graduation.webp",
       alt: "A graduation celebration set up in a sunny park at golden hour, string lights, balloons, a cake and a banner on a long table",
@@ -909,7 +921,7 @@ export const events: EventType[] = [
       "Plan the family reunion together: vote on the day and the place, keep every decision in one timeline, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the reunion together.", "Bring every photo home."],
     lede: "Vote on the day, the place and who drives. Keep every decision in one timeline, share the whole day in one stream, and save everyone's photos before the whole thing disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-family-reunion.webp",
       alt: "An empty wooden lakeside deck and dock at golden hour with warm string lights, a picnic table set with plates, a calm lake behind",
@@ -993,7 +1005,7 @@ export const events: EventType[] = [
       "Plan the night you watch a friend's concert or show: vote on where to meet and eat, share it in one stream, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the show night together.", "Everyone gets the photos."],
     lede: "Friends and family coming to watch, and a plan to sort. Vote on where to meet and where to eat after, share the show in one private stream, and get every photo of the performance before it disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-recital.webp",
       alt: "An empty stage in a warm community hall with a microphone and a music stand under a soft spotlight, rows of empty seats behind",
@@ -1079,7 +1091,7 @@ export const events: EventType[] = [
       "Plan the volunteer crew for a charity day: hand out the shifts, pick where to meet, share the day in one stream and save the photos. Gone 48 hours after.",
     headline: ["Run the volunteer crew together.", "Save the photos, drop the chat."],
     lede: "Twenty-two volunteers, a dozen shifts and a hundred things to sort. Put the crew in one private event: who's on which shift, where to meet, who brings what. Save the photos before the whole thing disappears.",
-    fineprint: "Out now for iPhone. Needs iOS 27 or later.",
+    fineprint: "Out now for iPhone. Needs iOS 26 or later.",
     hero: {
       src: "/hero-fundraiser.webp",
       alt: "The start line of an outdoor charity 5k in a park, a start arch and a timing scoreboard, cones and a banner on the grass",
