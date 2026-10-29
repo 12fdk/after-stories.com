@@ -726,6 +726,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 23 | 2 | as-ski-day | D | trips (Ski day) · ski season opens | “Ski day: Which day, where to, who brings what.” | cable car at blue hour, skis against a fence, frost, cold blue with a pink sunset edge | 0 | built 2026-10-26 as-ski-day · N1 · alexzavesa-lo-squalo-edm-e6e5e10e.mp3 |
 | Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | built 2026-10-27 as-friends-xmas-date · N2 · groove-avec-yollon-pie-funk-f525e0a2.mp3 |
 | Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | built 2026-10-29 as-save-first · R3 · the-groove-experiment-b8d73983.mp3 |
+| Nov 30 | 0 | as-kids-carpool | A | school carpool (Robert request 2026-10-29: next TikTok = the kids carpool) | “The school run, planned as a group.” | school pickup at 3 pm: a line of parked cars by the school gate, a teacher's hand on a door handle (no face), wool coats, cold pink-grey afternoon light | 0 | queued (Robert: build this next) |
 | Nov 30 | 1 | as-friends-xmas | D | dinner-nights · Christmas with friends | “Christmas with friends: Which night? Who's cooking?” (para.) | candlelit long table in a small flat, paper crowns, clementines, fogged window | 3 | queued |
 | Nov 30 | 2 | as-timeline | C | timeline of decisions | “A timeline of everything the group decided.” | blank paper tickets pinned left to right along a string in warm lamp light, the decisions in order | 4 | queued |
 | Nov 30 | 3 | as-show-night | D | recital (Choir concert) · Christmas concerts | “Plan the show night together. Everyone gets the photos.” | church hall from the back row, folding chairs, fairy lights, sheet music on a stand | 5 | queued |
@@ -1106,3 +1107,13 @@ new look per row — and logs it in §8.
   usable hits 2026-10-29 → "groove" search). All render checks PASS (9.5 s length WARN
   expected for R3); contact-sheet review: no faces, phone face-down, no other screens,
   logo only on the end card. NAS: /nas/spark/videos/as-save-first/.
+
+- *2026-10-29 (steer — the kids carpool):* Robert: "Next tiktok movie should focus on the
+  kids car pool." The only carpool row (as-match-day, "The carpool, sorted.") is built
+  (2026-10-16, football) — so a new row **as-kids-carpool** was inserted at the TOP of the
+  queue (Nov 30 #0, queued; the nightly job builds the first queued row → this one is
+  built tonight 22:00). Scene: school pickup at 3 pm, line of parked cars by the gate,
+  cold pink-grey afternoon light; no kids' faces (standing image rule — from behind /
+  no faces), claim from the school-run group angle. Also noted: **After Stories 1.1 is
+  released** (READY_FOR_DISTRIBUTION) and 1.2 is WAITING_FOR_REVIEW (submitted 2026-10-29
+  11:31 UTC) — verified in ASC (app 6815212070).
