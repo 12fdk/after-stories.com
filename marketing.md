@@ -1129,7 +1129,10 @@ new look per row — and logs it in §8.
   from now on = the app icon + `after-stories.com`, no "Download on the App Store"
   (or any other) text** — spec shape: `end.text: 'after-stories.com'`, no `end.sub`,
   `end.image` = the icon, `end.seconds: 2`. The as-save-first build (2026-10-29) was
-  re-cut with this end card (same cuts/track, end card re-rendered); the as-save-first
+  re-cut with this end card (same cuts/track, end card re-rendered);
+  and the as-match-day build (the carpool row Robert pointed to — its end card still ran
+  the pre-launch "Get notified / Coming soon · after-stories.com") was re-cut the same
+  way, same cuts/track (2026-10-29). the as-save-first
   post text and pinned comment are unchanged (they already carried the URL). The
   2026-10-25 A/B now reads: as-private-by-design (soft question end card) vs as-save-first
   (URL + logo end card) — the download-text ad signal is out of both.
