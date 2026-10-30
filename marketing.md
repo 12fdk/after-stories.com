@@ -730,7 +730,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 23 | 3 | as-friends-xmas-date | A | dinner-nights · Christmas with friends | “Picking one evening for six people shouldn't take two weeks of messages.” | coat hooks overloaded with scarves, a paper advent calendar, a door left ajar onto a warm hallway | 1 | built 2026-10-27 as-friends-xmas-date · N2 · groove-avec-yollon-pie-funk-f525e0a2.mp3 |
 | Nov 23 | 4 | as-save-first | C | save all photos, then 48 h | “Save every photo. Then it's gone.” | a hand taps a photo into a phone's gallery (no screen), then the event empties | 2 | built 2026-10-29 as-save-first · R3 · the-groove-experiment-b8d73983.mp3 |
 | Nov 30 | 0 | as-kids-carpool | A | school carpool (Robert request 2026-10-29: next TikTok = the kids carpool) | “The school run, planned as a group.” | school pickup at 3 pm: a line of parked cars by the school gate, a teacher's hand on a door handle (no face), wool coats, cold pink-grey afternoon light | 0 | built 2026-10-29 as-kids-carpool · N1 · synth fallback (mood-0, no Openverse track 2026-10-29) |
-| Nov 30 | 1 | as-friends-xmas | D | dinner-nights · Christmas with friends | “Christmas with friends: Which night? Who's cooking?” (para.) | candlelit long table in a small flat, paper crowns, clementines, fogged window | 3 | queued |
+| Nov 30 | 1 | as-friends-xmas | D | dinner-nights · Christmas with friends | “Christmas with friends: Which night? Who's cooking?” (para.) | candlelit long table in a small flat, paper crowns, clementines, fogged window | 3 | built 2026-10-30 as-friends-xmas (julearrangement one-off, Robert request) · N1 · not-enough-luxury-lim-fdfa68b1.mp3 |
 | Nov 30 | 2 | as-timeline | C | timeline of decisions | “A timeline of everything the group decided.” | blank paper tickets pinned left to right along a string in warm lamp light, the decisions in order | 4 | queued |
 | Nov 30 | 3 | as-show-night | D | recital (Choir concert) · Christmas concerts | “Plan the show night together. Everyone gets the photos.” | church hall from the back row, folding chairs, fairy lights, sheet music on a stand | 5 | queued |
 | Dec 7 | 1 | as-trips-bring | B | trips · the morning after | “Bring every photo home.” | airport → car → home: one day, three lights, the box of photos grows | 0 | queued |
@@ -1123,6 +1123,37 @@ new look per row — and logs it in §8.
   11:31 UTC) — verified in ASC (app 6815212070).
 
 - *2026-10-29 (nightly, §7 review + build as-kids-carpool):* no 7-day reviews due with data — the builds since 10-16 await Robert's posts (TikTok hook/completion/share metrics are not reachable by the job, manual posting, §9). Funnel this week: 0 attributed social traffic, 0 sign-ups, 25 pageviews (prev 7d 43) — reach-first, so the build stays product-focused on the carpool feature. **Format:** N1 (rotation: last built Status is R, as-save-first, 2026-10-29 → the next format in the N1 → N2 → R order is N1), 10.5 s, `look: 'clean'`, `aiMedia: true`. **Row:** Nov 30 #0 as-kids-carpool — the first queued row (the steer inserted it at the top of the queue; as-friends-xmas stays queued for the next build). **Frame 0:** "Who's driving the kids on Thursday?" (6 words, scenario question, no product fact, Hook doctrine). **App cuts:** 02_CarPool.mp4 9.0–11.5 s (the "The cars" list, Way out tab, 3×3 seats, Move controls) and 02_CarPool.mp4 18.5–20.5 s (the chat: "Away game on Sunday! I've made the car list" + likes), both padded 1080×1920 on #0B0C0E, both frame-verified stable 2026-10-29; banned moments (03_TheEvent 3.0–5.5 / 6.0 / 28.0–30.0, 01_Create 12.8–14.3) not used. Demo data (names, seats) never presented as real users. **On-screen lines:** "Nobody counts seats in the car park." and "Every kid in a car." — verbatim /match-day/ lines (llms-full.txt re-checked 2026-10-29); the row hook "The school run, planned as a group." is the row's own line (not on the site — flagged so Robert can swap it). **Music:** OPENVERSE FALLBACK — the row's mood 0 and the mood-1/mood-2 fallback words all returned only already-used ids or 0 hits on 2026-10-29 ("upbeat happy pop" → only the used 3d2e7e62; "feel good indie"/"summer pop"/"chill lofi hip hop"/"chillhop"/"laid back beats"/"funk groove"/"disco funk" → 0; "playful" → only the used b6fb4ded) → the documented last resort, `bed: 'music'` variant 0. **Production:** 1 fresh 9:16 still (comfy-gen --prefix as-kids-carpool-s1, vision-checked clean: no faces, no readable signs/plates/writing, no logos, no phone screens; the red mitten landed on the child's hand, not a wing mirror — the shipped second-watch detail); loop seam: S4 returns to the S1 still; all render checks PASS (10.5 s inside the N1 7–15 s window, only the expected length WARN; -14.2 LUFS, true peak -1.4 dBTP, limiter 0.9 dB); phone.png reviewed: no faces, captions clear of key UI, end card icon + CTA + url. Claude design loop task 20261029-2233 (round 1 FAIL on bookkeeping — pinned comment / brand last line / word count — all fixed; round 2 PASS). Post route: the -silent.mp4 + a trending TikTok sound is the Lane 0 default (§3 Sound); no embedded Openverse track in this build (synth fallback) — nothing to delete if the trending sound is used. NAS: /nas/spark/videos/as-kids-carpool/.
+
+- *2026-10-30 (build as-friends-xmas — julearrangement one-off, Robert request):*
+  Robert's one-off brief (Danish, confirmed English captions): a group of friends/family
+  planning a julearrangement together, chaos over date/place/food/who-brings-what, then
+  After Stories as the solution (vote the date, assign tasks, everything in one place,
+  share photos after). Built as a one-off now (not the nightly queue); it matches the
+  queued Nov 30 #1 as-friends-xmas row, which is now marked built. **Format:** N1
+  (rotation: last built Status is N1 as-kids-carpool, 2026-10-29), 13.5 s,
+  `look: 'clean'`, `aiMedia: true`, `audio.hits: false` (no swish). **Frame 0:**
+  "Christmas dinner. Six people. Zero plans." over 1 fresh 9:16 chaos still
+  (comfy-gen as-friends-xmas-s1 — blank papers + pen + face-down phone + string lights,
+  no faces, no readable writing, vision-checked clean). **App cuts (fresh, all
+  frame-verified stable 2026-10-30):** 01_Create.mp4 12.0–14.5 s (the "When?" calendar
+  date picker, a date selected → "Polls that turn into decisions."), 03_TheEvent.mp4
+  9.0–11.5 s (live event stream: "Live · Next: 17:30 · Back at Mum's", chat with photos
+  + likes → "One stream for the whole event."), 03_TheEvent.mp4 24.0–26.5 s (THE
+  MORNING AFTER: "6 photos · 7 messages · 6 people", Decided — Meet / Bring, All photos
+  grid → "A timeline of everything the group decided."). Demo data never presented as
+  real users. **Claim line:** "Picking one evening for six people shouldn't take two
+  weeks of messages." (verbatim /dinner-nights/ pain line, llms-full.txt re-checked
+  2026-10-30) back over the chaos still. **End card:** after-stories.com + icon only
+  (Robert 2026-10-29 standing rule) — verified. **Music:** fresh Openverse track
+  "Not Enough Luxury" by J1*, CC BY 3.0 (via Jamendo), id fdfa68b1 — the source is
+  mastered loud (0.3 dBFS peak) so it was peak-limited (alimiter limit 0.75) to
+  not-enough-luxury-lim-fdfa68b1.mp3 (credit updated), start 20, gain -1.8, bed
+  'track'; loudness -13.9 LUFS, true peak -1.2 dBTP, limiter 2.5 dB. **Post:**
+  "Christmas dinner, planned in one group. / after-stories.com (link in bio) / What's
+  the worst plan your group chat has produced?" + #christmas #christmasdinner
+  #groupchat #partyplanner #afterstories; AI label on. NAS:
+  /nas/spark/videos/as-friends-xmas/. Motion commit a3602c7.
+
 
 - *2026-10-29 (standing rule — end card):* Robert: "remove the download text in the end.
   Always just finish with after-stories.com and a logo. Nothing else." **Every end card
