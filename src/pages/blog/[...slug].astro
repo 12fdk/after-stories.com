@@ -1,6 +1,8 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import { isPublished, readingTime } from "../../utils/posts";
 import { jsonLd } from "../../lib/seo";
 
@@ -75,10 +77,11 @@ const faqSchema = post.data.faq.length
   breadcrumb={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog/" }, { name: post.data.title, path: canonicalPath }]}
   faq={post.data.faq.map((f) => ({ q: f.question, a: f.answer }))}
 >
-  <slot name="head">
+  <Fragment slot="head">
     <script type="application/ld+json" set:html={jsonLd(articleSchema)} />
     {faqSchema && <script type="application/ld+json" set:html={jsonLd(faqSchema)} />}
-  </slot>
+  </Fragment>
+  <SiteHeader />
   <article class="post">
     <header class="post-head">
       <a href="/blog/" class="post-back">← All articles</a>
@@ -140,6 +143,7 @@ const faqSchema = post.data.faq.length
       </section>
     )}
   </article>
+  <SiteFooter />
 
   <style>
     .post {
