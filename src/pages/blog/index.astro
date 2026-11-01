@@ -1,0 +1,226 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { isPublished, readingTime } from "../../utils/posts";
+import { jsonLd } from "../../lib/seo";
+
+const allPosts = (await getCollection("blog", ({ data }) => isPublished(data))).sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+);
+
+const postsWithMeta = await Promise.all(
+  allPosts.map(async (post) => ({ post, minutes: readingTime(post.body).minutes })),
+);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" });
+
+// The index declares what it is to crawlers: a Blog with a BlogPosting ItemList.
+const siteUrl = Astro.site?.href ?? "https://after-stories.com";
+const blogSchema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": new URL("/blog/", Astro.site).href,
+  name: "After Stories Blog",
+  description:
+    "Practical guides for planning nights out, dinners, birthdays and group trips with friends — and keeping them private.",
+  url: new URL("/blog/", Astro.site).href,
+  inLanguage: "en",
+  publisher: { "@type": "Organization", name: "12f ApS", url: siteUrl },
+  blogPost: postsWithMeta.map(({ post }) => ({
+    "@type": "BlogPosting",
+    headline: post.data.title,
+    description: post.data.description,
+    url: new URL(`/blog/${post.id}/`, siteUrl).href,
+    datePublished: post.data.publishDate.toISOString(),
+    dateModified: (post.data.updatedDate ?? post.data.publishDate).toISOString(),
+    author: { "@type": "Person", name: post.data.author },
+  })),
+};
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "After Stories Blog posts",
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  numberOfItems: postsWithMeta.length,
+  itemListElement: postsWithMeta.map(({ post }, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: new URL(`/blog/${post.id}/`, siteUrl).href,
+    name: post.data.title,
+  })),
+};
+
+const [latest, ...rest] = postsWithMeta;
+---
+
+<Base
+  title="Planning with friends, without the group-chat chaos | After Stories Blog"
+  description="Practical, no-fluff guides on planning nights out, dinners, birthdays and group trips with friends — the coordination, the photos, and the morning after."
+  breadcrumb={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog/" }]}
+>
+  <slot name="head">
+    <script type="application/ld+json" set:html={jsonLd(blogSchema)} />
+    <script type="application/ld+json" set:html={jsonLd(itemListSchema)} />
+  </slot>
+  <main class="blog-wrap">
+    <header class="blog-hero">
+      <h1 class="blog-h1">The planning blog.</h1>
+      <p class="blog-lede">
+        Plan it together, live it together, wake up to the story. Practical guides for the
+        nights out, dinners and trips your group chat was never built for.
+      </p>
+    </header>
+
+    {
+      latest && (
+        <a href={`/blog/${latest.post.id}/`} class="blog-feature">
+          {latest.post.data.cover && (
+            <img
+              src={latest.post.data.cover}
+              alt={latest.post.data.coverAlt ?? ""}
+              width={1200}
+              height={630}
+              loading="eager"
+              decoding="async"
+              class="blog-cover"
+            />
+          )}
+          <div class="blog-feature-copy">
+            <p class="blog-kicker">Newest article</p>
+            <p class="blog-feature-title">{latest.post.data.title}</p>
+            <p class="blog-feature-desc">{latest.post.data.description}</p>
+            <p class="blog-meta">
+              {formatDate(latest.post.data.publishDate)} · {latest.minutes} min read
+            </p>
+          </div>
+        </a>
+      )
+    }
+
+    <section class="blog-list">
+      {rest.length === 0 && !latest ? (
+        <p class="blog-empty">More articles coming soon.</p>
+      ) : (
+        <ul class="blog-rows">
+          {rest.map(({ post, minutes }) => (
+            <li>
+              <a href={`/blog/${post.id}/`} class="blog-row">
+                {post.data.cover && (
+                  <img
+                    src={post.data.cover}
+                    alt={post.data.coverAlt ?? ""}
+                    width={640}
+                    height={400}
+                    loading="lazy"
+                    decoding="async"
+                    class="blog-thumb"
+                  />
+                )}
+                <span class="blog-row-copy">
+                  <span class="blog-row-title">{post.data.title}</span>
+                  <span class="blog-row-desc">{post.data.description}</span>
+                  <span class="blog-meta">
+                    <time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time>
+                    {" · "}{minutes} min
+                    {post.data.tags.length ? ` · ${post.data.tags.slice(0, 2).join(", ")}` : ""}
+                  </span>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  </main>
+
+  <style>
+    .blog-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 48px var(--gutter) 96px;
+    }
+    .blog-hero {
+      margin-bottom: 40px;
+    }
+    .blog-h1 {
+      font-family: var(--display);
+      font-size: clamp(34px, 5vw, 54px);
+      line-height: 1.05;
+      margin: 0 0 12px;
+      color: var(--text-primary);
+    }
+    .blog-lede {
+      max-width: 52ch;
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    .blog-feature {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      margin-bottom: 40px;
+      color: inherit;
+      text-decoration: none;
+    }
+    @media (min-width: 720px) {
+      .blog-feature { grid-template-columns: 5fr 7fr; }
+    }
+    .blog-cover,
+    .blog-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+    .blog-feature-copy { padding: 20px 24px; }
+    .blog-kicker {
+      font-family: var(--display);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 8px;
+    }
+    .blog-feature-title {
+      font-family: var(--display);
+      font-size: clamp(20px, 2.6vw, 26px);
+      line-height: 1.2;
+      color: var(--text-primary);
+      margin: 0 0 8px;
+    }
+    .blog-feature-desc { color: var(--text-secondary); margin: 0 0 8px; }
+    .blog-meta { font-size: 13px; color: var(--text-tertiary); }
+    .blog-empty { color: var(--text-secondary); }
+    .blog-rows { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .blog-row {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+      padding: 14px;
+      color: inherit;
+      text-decoration: none;
+    }
+    .blog-row:hover { border-color: var(--text-tertiary); }
+    @media (min-width: 600px) {
+      .blog-row { grid-template-columns: 220px 1fr; align-items: center; }
+    }
+    .blog-row-copy { display: grid; gap: 4px; }
+    .blog-row-title {
+      font-family: var(--display);
+      font-size: 17px;
+      line-height: 1.25;
+      color: var(--text-primary);
+    }
+    .blog-row-desc { font-size: 14px; color: var(--text-secondary); }
+  </style>
+</Base>

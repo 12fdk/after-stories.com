@@ -1,0 +1,230 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import { isPublished, readingTime } from "../../utils/posts";
+import { jsonLd } from "../../lib/seo";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  allPosts: CollectionEntry<"blog">[];
+}
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog", ({ data }) => isPublished(data));
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post, allPosts: posts } }));
+}
+
+const { post, allPosts } = Astro.props as Props;
+// Astro 7 (loader collections) pre-renders markdown: the entry carries
+// `body` (the markdown source) and `rendered.html` (the article HTML).
+const articleHtml = (post.rendered as { html?: string } | undefined)?.html ?? "";
+const { minutes } = readingTime(post.body ?? "");
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+
+const siteUrl = Astro.site?.href ?? "https://after-stories.com";
+const canonicalPath = `/blog/${post.id}/`;
+const canonicalURL = new URL(canonicalPath, siteUrl).href;
+const modifiedDate = (post.data.updatedDate ?? post.data.publishDate).toISOString();
+
+// Explicit relatedSlugs win. The fallback links on shared tags so a post with
+// no explicit links still lands in the right cluster instead of the newest three.
+const byTag = (a: (typeof allPosts)[number]) =>
+  a.data.tags.filter((t) => post.data.tags.includes(t)).length;
+const related = (
+  post.data.relatedSlugs.length > 0
+    ? allPosts.filter((p) => post.data.relatedSlugs.includes(p.id))
+    : allPosts
+        .filter((p) => p.id !== post.id && byTag(p) > 0)
+        .sort((a, b) => byTag(b) - byTag(a) || b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+).slice(0, 3);
+
+// Article schema: the page declares itself as an article (headline, dates,
+// author), and its FAQ pairs as a FAQPage so the Q&As can be pulled verbatim
+// by search engines and AI answer boxes.
+const articleSchema = {
+  "@context": "https://schema.org",
+  "@type": ["Article", "BlogPosting"],
+  headline: post.data.title,
+  description: post.data.description,
+  url: canonicalURL,
+  mainEntityOfPage: canonicalURL,
+  datePublished: post.data.publishDate.toISOString(),
+  dateModified: modifiedDate,
+  author: { "@type": "Person", name: post.data.author },
+  publisher: { "@type": "Organization", name: "12f ApS", url: siteUrl },
+  image: post.data.cover ? new URL(post.data.cover, siteUrl).href : undefined,
+};
+const faqSchema = post.data.faq.length
+  ? {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: post.data.faq.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    }
+  : undefined;
+---
+
+<Base
+  title={`${post.data.title} | After Stories`}
+  description={post.data.description}
+  breadcrumb={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog/" }, { name: post.data.title, path: canonicalPath }]}
+  faq={post.data.faq.map((f) => ({ q: f.question, a: f.answer }))}
+>
+  <slot name="head">
+    <script type="application/ld+json" set:html={jsonLd(articleSchema)} />
+    {faqSchema && <script type="application/ld+json" set:html={jsonLd(faqSchema)} />}
+  </slot>
+  <article class="post">
+    <header class="post-head">
+      <a href="/blog/" class="post-back">← All articles</a>
+      <h1 class="post-title">{post.data.title}</h1>
+      <p class="post-lede">{post.data.lede}</p>
+      <p class="post-meta">
+        By {post.data.author} · <time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time> · {minutes} min read
+      </p>
+    </header>
+
+    {post.data.cover && (
+      <img
+        src={post.data.cover}
+        alt={post.data.coverAlt ?? ""}
+        width={1200}
+        height={630}
+        loading="eager"
+        decoding="async"
+        class="post-cover"
+      />
+    )}
+
+    <div class="post-body" set:html={articleHtml}></div>
+
+    {post.data.faq.length > 0 && (
+      <section class="post-faq">
+        <h2>FAQ</h2>
+        {post.data.faq.map((f) => (
+          <details>
+            <summary>{f.question}</summary>
+            <p>{f.answer}</p>
+          </details>
+        ))}
+      </section>
+    )}
+
+    <section class="post-cta">
+      <p class="post-cta-head">Ready when the plan is ready.</p>
+      <p>
+        After Stories gives every plan its own private event: vote on the details, keep
+        messages and photos in one stream, and wake up to the story. Deleted for everyone
+        48 hours after the event ends.
+      </p>
+      <a class="post-cta-link" href="https://apps.apple.com/app/after-stories/id6815212070">
+        Get After Stories on the App Store →
+      </a>
+    </section>
+
+    {related.length > 0 && (
+      <section class="post-related">
+        <h2>Related articles</h2>
+        <ul>
+          {related.map((p) => (
+            <li>
+              <a href={`/blog/${p.id}/`}>{p.data.title}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </article>
+
+  <style>
+    .post {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 40px var(--gutter) 96px;
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-primary);
+    }
+    .post-back {
+      display: inline-block;
+      font-size: 14px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      margin-bottom: 24px;
+    }
+    .post-back:hover { color: var(--text-secondary); }
+    .post-title {
+      font-family: var(--display);
+      font-size: clamp(30px, 4.5vw, 44px);
+      line-height: 1.1;
+      margin: 0 0 14px;
+      color: var(--text-primary);
+    }
+    .post-lede { font-size: 18px; line-height: 1.5; color: var(--text-secondary); margin: 0 0 10px; }
+    .post-meta { font-size: 14px; color: var(--text-tertiary); margin: 0 0 24px; }
+    .post-cover {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: var(--radius-card);
+      border: 1px solid var(--hairline);
+      margin-bottom: 32px;
+    }
+    .post-body {
+      font-size: 17px;
+      line-height: 1.65;
+      color: var(--text-primary);
+    }
+    .post-body h2 {
+      font-family: var(--display);
+      font-size: 26px;
+      line-height: 1.2;
+      margin: 40px 0 12px;
+      color: var(--text-primary);
+    }
+    .post-body h3 { font-size: 19px; margin: 28px 0 8px; }
+    .post-body p { margin: 0 0 16px; }
+    .post-body ul, .post-body ol { margin: 0 0 16px; padding-left: 22px; }
+    .post-body li { margin-bottom: 8px; }
+    .post-body strong { color: var(--text-primary); }
+    .post-body a { color: var(--accent); }
+    .post-body img { max-width: 100%; border-radius: 16px; border: 1px solid var(--hairline); margin: 8px 0 16px; }
+    .post-body blockquote {
+      margin: 0 0 16px;
+      padding: 12px 18px;
+      border-left: 3px solid var(--accent);
+      background: var(--surface);
+      border-radius: 0 12px 12px 0;
+    }
+    .post-faq details {
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 10px;
+      background: var(--surface);
+    }
+    .post-faq summary { cursor: pointer; font-weight: 600; }
+    .post-faq p { margin: 10px 0 0; color: var(--text-secondary); }
+    .post-cta {
+      margin-top: 48px;
+      padding: 24px;
+      background: var(--surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-card);
+    }
+    .post-cta-head { font-family: var(--display); font-size: 20px; margin: 0 0 8px; }
+    .post-cta p { color: var(--text-secondary); margin: 0 0 14px; }
+    .post-cta-link { color: var(--accent); font-weight: 600; text-decoration: none; }
+    .post-cta-link:hover { text-decoration: underline; }
+    .post-related h2 { margin-top: 48px; }
+    .post-related ul { list-style: none; padding: 0; margin: 0; }
+    .post-related li { padding: 10px 0; border-bottom: 1px solid var(--hairline); }
+    .post-related a { color: var(--text-primary); text-decoration: none; }
+    .post-related a:hover { color: var(--accent); }
+  </style>
+</Base>
