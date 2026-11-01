@@ -1,6 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import Base from "../../layouts/Base.astro";
+import SiteHeader from "../../components/SiteHeader.astro";
+import SiteFooter from "../../components/SiteFooter.astro";
 import { isPublished, readingTime } from "../../utils/posts";
 import { jsonLd } from "../../lib/seo";
 
@@ -59,10 +61,11 @@ const [latest, ...rest] = postsWithMeta;
   description="Practical, no-fluff guides on planning nights out, dinners, birthdays and group trips with friends — the coordination, the photos, and the morning after."
   breadcrumb={[{ name: "Home", path: "/" }, { name: "Blog", path: "/blog/" }]}
 >
-  <slot name="head">
+  <Fragment slot="head">
     <script type="application/ld+json" set:html={jsonLd(blogSchema)} />
     <script type="application/ld+json" set:html={jsonLd(itemListSchema)} />
-  </slot>
+  </Fragment>
+  <SiteHeader />
   <main class="blog-wrap">
     <header class="blog-hero">
       <h1 class="blog-h1">The planning blog.</h1>
@@ -133,6 +136,7 @@ const [latest, ...rest] = postsWithMeta;
       )}
     </section>
   </main>
+  <SiteFooter />
 
   <style>
     .blog-wrap {
