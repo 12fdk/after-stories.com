@@ -23,7 +23,8 @@ export default defineConfig({
   integrations: [
     sitemap({
       // 404.html must be emitted as a file for GitHub Pages to serve it.
-      filter: (page) => !page.includes("/404"),
+      // /go/ is the social bio-link hop (noindex, #72), not a page.
+      filter: (page) => !page.includes("/404") && !new URL(page).pathname.startsWith("/go/"),
       // The last commit to the page's own files, not the build time (src/lib/lastmod.ts, #30).
       serialize(item) {
         const modified = lastModified(new URL(item.url).pathname);

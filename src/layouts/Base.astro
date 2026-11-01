@@ -5,6 +5,7 @@ import { lastModified } from "../lib/lastmod";
 import { homeCard, ogImagePath } from "../lib/og";
 import { localeTag, ogLocale, type Locale } from "../lib/i18n";
 import { SMART_APP_BANNER } from "../lib/appstore";
+import SourceAttribution from "../components/SourceAttribution.astro";
 
 interface Props {
   title: string;
@@ -122,6 +123,7 @@ const graph = noindex
   </head>
   <body>
     <slot />
+    <SourceAttribution />
     <script>
       import "../scripts/motion";
     </script>

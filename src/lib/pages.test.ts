@@ -25,6 +25,9 @@ const wrapped = (source: string) => /<(HomePage|EventPage)\b/.test(source);
 
 // The 404 page is a full-screen "went home early" scene with one way out; it keeps the header only.
 const footerExempt = new Set(["404.astro"]);
+// /go/ is the social bio-link hop (#72): it tracks the source and redirects within 1.5 s, so it
+// is not a page a visitor reads. It must stay out of search, which the last test checks.
+const redirectHops = new Set(["go.astro"]);
 
 describe("site navigation on every page", () => {
   it("finds the pages, blog included", () => {
@@ -33,14 +36,20 @@ describe("site navigation on every page", () => {
     expect(names).toContain("blog/[...slug].astro");
   });
 
-  it.each(pages.map((p) => [p.name, p.source]))("%s renders the site header", (_, source) => {
+  it.each(pages.filter((p) => !redirectHops.has(p.name)).map((p) => [p.name, p.source]))("%s renders the site header", (_, source) => {
     expect(wrapped(source) || /<SiteHeader\b/.test(source)).toBe(true);
   });
 
-  it.each(pages.filter((p) => !footerExempt.has(p.name)).map((p) => [p.name, p.source]))(
+  it.each(pages.filter((p) => !footerExempt.has(p.name) && !redirectHops.has(p.name)).map((p) => [p.name, p.source]))(
     "%s renders the site footer",
     (_, source) => {
       expect(wrapped(source) || /<SiteFooter\b/.test(source)).toBe(true);
     },
   );
+
+  it.each([...redirectHops])("%s is a noindex redirect hop, not a page", (name) => {
+    const source = pages.find((p) => p.name === name)?.source ?? "";
+    expect(source).toContain('<meta name="robots" content="noindex, nofollow" />');
+    expect(source).toContain("runGo(");
+  });
 });
