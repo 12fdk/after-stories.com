@@ -1,6 +1,6 @@
 # After Stories — Marketing Plan (living doc)
 
-Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-10-31
+Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-11-01
 
 > Plan for a TikTok content program built to grow organic awareness and installs of the
 > **After Stories** app. Every word of copy in this plan must come from the brand sources named
@@ -37,10 +37,19 @@ Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 
   now a pointer) so all three social apps keep their plan in the landing-page
   repo, in the same sections (spark#136). Nothing was dropped.
 - Pipeline: the nightly Hermes job `after-stories-social-content` (shared
-  `social-post` template, channel **manual**) builds the next due §6 episode
-  each night in the motion repo, checks its look with `marketing-post
-  ledger-add`, saves it to the NAS and sends the video + post text to Robert,
-  who posts it on TikTok by hand. Nothing is published automatically.
+  `social-post` template, channel **both** since 2026-11-01 — Robert, spark#192)
+  builds the next due §6 episode each night in the motion repo. The one video
+  goes two routes:
+  - **Instagram + Facebook:** `marketing-post create` puts it on the 12F marketing
+    platform as a Reel for `@afterstoriesapp` and the Facebook Page "After
+    Stories" (12fdk/marketing#101); the platform publishes it by itself. This
+    also records its look.
+  - **TikTok:** the files are saved to the NAS and sent to Robert with the post
+    text; he posts them by hand.
+  - A photo-mode carousel (N2, 9:16 slides) is TikTok-only that night: Instagram
+    crops 9:16 slides.
+  Until 2026-11-01 the channel was **manual** (TikTok only, nothing published
+  automatically).
 - Editing rules for this file:
   - Append-only to §8: never delete or rewrite past log rows.
   - Plan changes go in §6, plus a §8 row that says why. §3 and §4 change only
@@ -61,6 +70,20 @@ Pull the current status from `site-brief https://after-stories.com` (it records 
 > CTA wording follows `docs/messaging.md` (the CTA-wording rulebook): Apple's official
 > "Download on the App Store" badge words, the same everywhere, no form, no "free"
 > (§5 never-claim). Verified live 2026-10-18.
+
+### Instagram + Facebook (since 2026-11-01, Robert)
+
+- **Profile links:** the Instagram bio link is `https://after-stories.com/go/?src=instagram`
+  and the Facebook Page website is `https://after-stories.com/go/?src=facebook` (#72). The
+  `/go/` hop counts the visit in Umami (`social-landing`, property `src`) and tags the App
+  Store clicks on the site with the same `src`; the marketing platform's `collect-metrics`
+  then attaches landing visits and App Store taps to each post.
+- **Same video, same end card and CTA** as TikTok (the table above).
+- **IG caption:** line 1 is the hook (the same §3 Truth rules as the TikTok text), then 1–3
+  short lines, then the hashtags, and the last line `after-stories.com (link in bio)`.
+  Links in Instagram captions are not clickable.
+- **FB caption:** a rewrite, not a copy. Links work on Facebook, so the last line is
+  `https://after-stories.com/go/?src=facebook`.
 
 TikTok URLs in post text are not clickable — the end card carries the destination, the post
 text says "link in bio". Since 2026-10-26 that line is the **last** line of the post text (or
@@ -189,6 +212,11 @@ openverse.org that I have asked you to"). This rule is permanent: do not go back
   track only). The delivery message says so.
 - Pinned comment on every video: the one-liner + the CTA ("after-stories.com — link in bio"),
   because TikTok search indexes comments too.
+- **Instagram / Facebook (Robert, 2026-11-01):** Instagram max 5 hashtags, built the same
+  way, `#afterstories` included; Facebook 0–2 hashtags. The Reel is the **main mp4** with its
+  embedded Openverse track (the platform cannot add a trending sound), so keep the `Music: …`
+  credit line in the IG and FB captions; the `-silent.mp4` is TikTok-only. No pinned
+  comment on Instagram or Facebook.
 
 ### Guardrails — the checklist before anything is posted
 
@@ -1173,3 +1201,12 @@ new look per row — and logs it in §8.
   (URL + logo end card) — the download-text ad signal is out of both.
 
 - *2026-10-30 (nightly, §7 review + build as-timeline):* no 7-day reviews due with data — the builds since 10-16 await Robert's posts (TikTok hook/completion/share metrics are not reachable by the job, manual posting, §9). Funnel this week: 0 attributed social traffic, 0 sign-ups, 40 pageviews (prev 32) — reach-first, so the build stays product-focused. **Format:** N2 photo-mode carousel (rotation after N1 as-friends-xmas, 2026-10-30), 5 slides of 2 s + 2 s end card, 12 s reel (length WARN expected), `look: 'clean'`, `aiMedia: true`, `audio.hits: false`. **Row:** Nov 30 #2 as-timeline (Series C, timeline of decisions). **Slides:** 4 fresh 9:16 stills from one warm lamp-lit paper-tags shoot (comfy-gen --prefix as-timeline-s1..s4; s1 first take FAILED — Flux printed ticket text and a closed laptop in frame — take 2 shipped, vision-checked blank; s2/s3/s4 first takes clean): slide 1 the hook "Wait, who actually decided that?" (scenario question, no product fact) over the wide string shot; slides 2–3 the scenario beats "Somebody said 'sure, whatever works.'" / "Nobody remembers the order we agreed." (no product fact); slide 4 "Scroll up. Scroll up. Scroll up." (format prompt — a photo post is swiped, no product fact; the design round's "Every decision, in one place." was swapped in Claude review round 1 as a product fact not on the claim sheet); slide 5 the **real app frame** 01_Create.mp4 24.0 s (the Office Party "Everything is decided" state with the Event details panel — Meet / Boat leaves / Day — above the chat; frame-verified stable 2026-10-30; padded 1080×1920 on #0B0C0E; the top caption covers the event title and the Event details header — accepted, the decisions list stays readable; the Girls' Night In decisions moment 03_TheEvent ~6 s was NOT used: last night's as-friends-xmas already showed the same claim line over 03_TheEvent 24.0–26.5 s, and 01_Create 24.0 s had never been used). Demo data (Office Party, Maya, Priya) never presented as real users. **Claim line (slide 5, verbatim):** "A timeline of everything the group decided." (claim sheet; llms-full.txt re-checked 2026-10-30). **End card:** after-stories.com + icon only (Robert 2026-10-29 standing rule). **Music:** the row's mood 4 (warm acoustic) had no usable Openverse tracks 2026-10-30 ("acoustic guitar happy" → only the used ea4ef155; "folk ukulele" / "warm acoustic" → 0) → §3 fallback n−1 = mood 3: "Helios Tilt" by CM ONNI (id c265ed6a, 106 s, CC BY 3.0 via Jamendo, fresh id + fresh creator — not J1*, Dust Harvesting or GASNOPROD, the last three), start 32, gain 0, bed 'track'; mood 3 was the previous build's mood (as-friends-xmas) — the ≥6-episode rule is broken, allowed by the fallback (logged here). **Gate 1** passed all 7 items. Claude design loop task 20261030-2230 (review round 1 FAIL: the slide-4 caption was a product fact — fixed to a no-fact format prompt and re-rendered; round 2 pending). Post route: photo mode + a trending sound in the TikTok app (then delete the "Music:" line from the post text). NAS: /nas/spark/videos/as-timeline/.
+
+- *2026-11-01 (channel change — Instagram + Facebook, Robert):* After Stories now has a
+  Facebook Page "After Stories" and the Instagram account `@afterstoriesapp`, connected to the
+  12F marketing platform (12fdk/marketing#101). Robert chose one video, two routes: the
+  nightly job moves from channel `manual` to `both` (spark#192) — `marketing-post create`
+  publishes it as an IG/FB Reel and the TikTok files still come to Robert. §1 pipeline, §2
+  (IG/FB profile links + captions) and §3 (IG/FB hashtags and sound) updated. The `/go/?src=`
+  hop is live on the site (#72), so IG/FB visits and App Store taps are counted by source.
+  The funnel report now counts `app-store-click`, not the closed waitlist.
