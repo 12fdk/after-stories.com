@@ -62,15 +62,18 @@ ATOM = {"a": "http://www.w3.org/2005/Atom"}
 # dinner, a birthday, a weekend away — and their pain lives in coordination:
 # the group chat that drowns the plan, the "what time was it again?" scroll,
 # the photos stuck on everyone's phone, the bill that never gets settled, and
-# the parts that should stay private. r/Hangout and r/planning carry the
-# "how do I get us to actually do something" questions; r/birthday and
-# r/WeddingPlanning carry the hosting logistics; r/groupchat and r/DateNight
-# carry the chat chaos and the awkwardness; the Ask subs are broad but their
+# the parts that should stay private. r/birthday and r/WeddingPlanning carry
+# the hosting logistics; r/DateNight and r/DateIdeas carry the "getting an
+# evening to actually happen" questions; the Ask subs are broad but their
 # "how do I split the bill / keep a surprise secret / stop being the only
 # organizer" threads are exactly this product's reader.
+#
+# 2026-11-02: r/planning (404), r/socializing (404) and r/groupchat (403) never
+# return data; r/DateIdeas came back 200 with zero posts. r/AskWomen replaced
+# the empties.
 SUBREDDITS = [
-    "Hangout", "planning", "birthday", "WeddingPlanning", "groupchat",
-    "DateNight", "AskFem", "AskMen", "socializing", "LifeProTips",
+    "Hangout", "birthday", "WeddingPlanning", "DateNight", "AskFem",
+    "AskMen", "AskWomen", "LifeProTips",
 ]
 # Month only by default: at about one feed a minute, 10 subs x 2 windows cannot
 # finish inside a scheduled run. Pass --windows month,year by hand when you
@@ -121,7 +124,8 @@ THEMES: dict[str, tuple[str, list[str]]] = {
         "hosting", "surprise party", "anniversary", "celebration", "dinner party",
         "guest list", "rs"]),
     "social-awkwardness": ("Social friction: flaking, FOMO and the awkward bits", [
-        "flaked", "flake", "flaking", "no show", "noshow", "stood up", "cancelled",
+        "flaked", "flake", "flaking", "no show", "noshow", "stood up",
+        "cancel", "canceled", "canceling", "cancelled", "cancelling",
         "fomo", "awkward", "embarrassing", "group project", "effort", "always the one",
         "organizer guilt", "planner guilt"]),
 }
