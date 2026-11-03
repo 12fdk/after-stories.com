@@ -69,6 +69,8 @@ export interface UiCopy {
   navFaq: string;
   /** The quiet link to the web app (app.after-stories.com) in the header and the footer. */
   navOpenApp: string;
+  /** The small top line on the "Open app" button, like the badge's "Download on the". */
+  webAppEyebrow: string;
   /** Under the live poll: how to use it. */
   votePrompt: string;
   /** Captions of the home page's figures: 06:00 and 50. */

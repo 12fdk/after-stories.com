@@ -16,7 +16,9 @@ const render = async (component: Parameters<AstroContainer["renderToString"]>[0]
 
 /** Every <a> that points at the web app, with its attributes and its text. */
 const webAppLinks = (out: string) =>
-  [...out.matchAll(/<a\b([^>]*)>([^<]*)<\/a\s*>/g)].filter((m) => m[1].includes(`href="${WEB_APP_URL}"`));
+  [...out.matchAll(/<a\b([^>]*)>([\s\S]*?)<\/a\s*>/g)].filter((m) => m[1].includes(`href="${WEB_APP_URL}"`));
+/** A link's visible text, without its markup. */
+const textOf = (inner: string) => inner.replace(/<svg[\s\S]*?<\/svg>/g, "").replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 
 describe("the web app link", () => {
   it("points at app.after-stories.com over https", () => {
@@ -39,7 +41,7 @@ describe("the web app link", () => {
         const links = webAppLinks(await render(component, locale));
         expect(links, `${name} ${locale}`).toHaveLength(1);
         const [, attrs, text] = links[0];
-        expect(text.trim()).toBe(html(uiCopy(locale).navOpenApp));
+        expect(textOf(text)).toContain(html(uiCopy(locale).navOpenApp));
         expect(attrs).toContain('data-umami-event="web-app-click"');
         expect(attrs).toContain(`data-umami-event-placement="${placement}"`);
         expect(attrs).toContain(`data-umami-event-locale="${locale}"`);
@@ -50,16 +52,29 @@ describe("the web app link", () => {
     });
   }
 
-  it("is a quiet text link, not a second call to action (messaging rule 11)", async () => {
-    const [, attrs] = webAppLinks(await render(SiteHeader, "en"))[0];
-    expect(attrs).toMatch(/class="[^"]*topbar-link/);
-    expect(attrs).not.toMatch(/badge|button|cta/i);
+  it("is a button last in the header, after the App Store badge, which stays first (rule 11)", async () => {
+    const out = await render(SiteHeader, "en");
+    const [, attrs] = webAppLinks(out)[0];
+    expect(attrs).toContain('class="app-button"');
+    const badge = out.indexOf('data-umami-event="app-store-click"');
+    const button = out.indexOf('data-umami-event="web-app-click"');
+    expect(badge).toBeGreaterThan(-1);
+    expect(button).toBeGreaterThan(badge);
+    // Nothing comes after the button in the header.
+    expect(out.slice(button).match(/<a\b/g)).toBeNull();
   });
 
-  it("stays visible on a phone, where the other header links hide", () => {
+  it("shows both lines of the button in every language", async () => {
+    for (const locale of locales) {
+      expect(uiCopy(locale).webAppEyebrow, locale).toBeTruthy();
+      expect(await render(SiteHeader, locale)).toContain(html(uiCopy(locale).webAppEyebrow));
+    }
+  });
+
+  it("stays visible on a phone, where the header's text links hide", () => {
     const css = readFileSync(new URL("../components/SiteHeader.astro", import.meta.url), "utf8");
-    expect(css).toMatch(/\.topbar-link:not\(\.app-link\)\s*{\s*display: none;/);
-    expect(css).not.toMatch(/\.app-link\s*{[^}]*display: none/);
+    expect(css).toMatch(/\.app-button\s*{/);
+    expect(css).not.toMatch(/\.app-button\s*{[^}]*display: none/);
   });
 
   it("is in the privacy policy's Umami paragraph, in Danish and English", () => {
