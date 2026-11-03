@@ -131,6 +131,7 @@ const copy: Copy = {
       navPrivacy: 'Privatliv',
       navFaq: 'Spørgsmål',
       navOpenApp: 'Åbn appen',
+      webAppEyebrow: 'I din browser',
       votePrompt: 'Tryk på et svar for at stemme.',
       figureMorning: 'Eventet slutter kl. 6 næste morgen. Så begynder historien.',
       figurePeople: 'Op til 50 personer pr. event.',

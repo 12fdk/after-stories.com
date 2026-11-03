@@ -88,10 +88,10 @@ voice. A new event page fills every field; the test fails if it doesn't.
     creates and starts an event, shows the morning-after summary, saves every photo at once and
     has the carpool. The web app speaks the same five languages (app repo #583). Asked whether someone without an
     iPhone can join, the answer is yes, with those limits. The direct CTA stays the App Store badge:
-    the browser is how *invited* friends join, never a second CTA. The one exception (#75): a quiet
-    text link "Open app" (`ui.navOpenApp`) to `app.after-stories.com` in the header and the footer,
-    for members who already have an event. It is never a button, a badge or a line of copy that
-    sells the web app. Never promise an Android app.
+    the browser is how *invited* friends join, never a second CTA. The one exception (#75, #78): an "Open app" button
+    (`ui.navOpenApp`) to `app.after-stories.com`, last in the header, styled to pair with Apple's
+    badge, and a text link in the footer, for members who already have an event. The badge stays
+    first and stays the direct CTA; no copy on the page sells the web app. Never promise an Android app.
     When the web app gains a feature or a language, change the answers in every locale
     (`src/data/events.ts` › `webLimits`).
 

@@ -115,6 +115,7 @@ const copy: Copy = {
       navPrivacy: 'Privacy',
       navFaq: 'Questions',
       navOpenApp: 'Open app',
+      webAppEyebrow: 'In your browser',
       votePrompt: 'Tap an answer to vote.',
       figureMorning: 'The event ends at 6 the next morning. Then the story starts.',
       figurePeople: 'Up to 50 people in one event.',

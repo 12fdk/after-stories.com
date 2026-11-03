@@ -131,6 +131,7 @@ const copy: Copy = {
       navPrivacy: 'Confidentialité',
       navFaq: 'Questions',
       navOpenApp: "Ouvrir l'app",
+      webAppEyebrow: 'Dans le navigateur',
       votePrompt: 'Touchez une réponse pour voter.',
       figureMorning: "L'événement se termine à 6 h le lendemain matin. Puis le récit commence.",
       figurePeople: "Jusqu'à 50 personnes par événement.",
