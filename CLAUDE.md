@@ -46,7 +46,10 @@ for desktop visitors). Every link comes from `src/lib/appstore.ts`:
   place on the page, so App Store Connect › App Analytics › Campaigns shows which button brings
   downloads. Don't hand-write an App Store link anywhere else.
 - **Umami** (`umami.robert-jensen.dk`, script in `Base.astro`) counts each click as the event
-  `app-store-click` with `placement` and `locale`. Nothing about the visitor goes along.
+  `app-store-click` with `placement` and `locale`. Nothing about the visitor goes along. Umami has
+  a goal for each click event: "App Store click" and "Web app click". The script has
+  `data-domains="after-stories.com"`, so `pnpm dev`/`preview` on localhost counts nothing
+  (`src/lib/analytics.test.ts`).
 - **Smart App Banner:** `<meta name="apple-itunes-app">` in `Base.astro`.
 - **"Open app" (#75):** a button to the web app (`WEB_APP_URL` in `src/lib/appstore.ts`), last
   in the header and styled like Apple's badge, plus a text link in the footer. Umami event
