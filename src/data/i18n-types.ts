@@ -67,6 +67,8 @@ export interface UiCopy {
   navOccasions: string;
   navPrivacy: string;
   navFaq: string;
+  /** The quiet link to the web app (app.after-stories.com) in the header and the footer. */
+  navOpenApp: string;
   /** Under the live poll: how to use it. */
   votePrompt: string;
   /** Captions of the home page's figures: 06:00 and 50. */

@@ -130,6 +130,7 @@ const copy: Copy = {
       navOccasions: 'Anlässe',
       navPrivacy: 'Privatsphäre',
       navFaq: 'Fragen',
+      navOpenApp: 'App öffnen',
       votePrompt: 'Tippe auf eine Antwort, um abzustimmen.',
       figureMorning: 'Das Event endet um 6 Uhr am nächsten Morgen. Dann beginnt die Geschichte.',
       figurePeople: 'Bis zu 50 Personen pro Event.',
