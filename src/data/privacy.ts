@@ -7,13 +7,17 @@
 // docs/ in the app repo:
 //   - identity.md   Sign in with Apple (id, relay email, the once-only name), sessions, in-app
 //                   account deletion (#31); e-mail and password (#492 email-auth, #493 the app:
-//                   the address, Argon2 hash, the verify and reset links via Brevo)
+//                   the address, Argon2 hash, the verify and reset links via Brevo); the login
+//                   link (#723, #724: 15 min, single use, a hash of each used link's nonce kept
+//                   until 1 h after it expires, no user id); Sign in with Apple on the web (#720:
+//                   Apple's JS from appleid.cdn-apple.com, loaded only on the Apple choice)
 //   - photos.md     every coordinate and every EXIF/XMP segment stripped on the phone; on the web
 //                   by the web-photo function, in memory, the original never written (#494)
 //   - product.md    › The web app (#463, #495, #496): app.after-stories.com, the same account and
 //                   rules; its only cookie is Appwrite's HttpOnly session cookie (api.after-stories.com,
 //                   first-party, #491), its only localStorage key the pending invite code; its CSP
-//                   allows only its own origin and the API, so no analytics, fonts or third parties;
+//                   allows only its own origin, the API and Apple's sign-in script (#720), so no
+//                   analytics, fonts or other third parties;
 //                   no notifications on the web
 //   - schema.md     what is stored, who can read it (team-only), the deletion cascade, the
 //                   invite/create throttles (expiresAt = window + 1 day, cleaned up on next use)
@@ -63,8 +67,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "1. november 2026";
-export const PRIVACY_UPDATED_EN = "1 November 2026";
+export const PRIVACY_UPDATED_DA = "3. november 2026";
+export const PRIVACY_UPDATED_EN = "3 November 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -89,7 +93,7 @@ export const PRIVACY_HTML = `
 <h2>Hvad vi gemmer, og hvorfor</h2>
 <ul>
   <li><strong>Din konto.</strong> Du logger ind med Apple. Vi får et bruger-id, den e-mailadresse, Apple giver os — ofte en anonym videresendingsadresse fra Apple — og første gang det navn, du deler med Apple, som forslag til dit navn i appen. Vi bruger kun e-mailadressen til at give dig besked, hvis din konto bliver suspenderet eller åbnet igen, og viser den ingen steder.</li>
-  <li><strong>Log ind med e-mail og adgangskode.</strong> Du kan også logge ind med en e-mailadresse og en adgangskode — eller tilføje dem til din Apple-konto i appen under Profil › Konto › <em>Log ind på nettet</em>. Så gemmer vi e-mailadressen og en krypteret (hashet) udgave af adgangskoden, aldrig selve adgangskoden. Vi sender dig en e-mail med et link til at bekræfte adressen, og et link til at nulstille adgangskoden, hvis du beder om det. Ellers bruger vi adressen kun til at give dig besked, hvis din konto bliver suspenderet eller åbnet igen, eller hvis en anden prøver at bruge din adresse til en konto. Vi viser kun adressen til dig selv, i Profil og på webappens Konto-side.</li>
+  <li><strong>Log ind med e-mail.</strong> Du kan også logge ind med din e-mailadresse: vi sender dig en e-mail med et login-link, der virker i 15 minutter og kun én gang. For at et link kun kan bruges én gang, gemmer serveren et tilfældigt kendetegn for hvert brugt link — uden din e-mail eller dit bruger-id — og sletter det en time efter, at linket er udløbet. Har du en adgangskode fra før, virker den stadig, og du kan tilføje en til din Apple-konto i appen under Profil › Konto › <em>Log ind på nettet</em>. Så gemmer vi e-mailadressen og en krypteret (hashet) udgave af adgangskoden, aldrig selve adgangskoden. Vi sender dig også et link til at bekræfte adressen, og et link til at nulstille adgangskoden, hvis du beder om det. Ellers bruger vi adressen kun til at give dig besked, hvis din konto bliver suspenderet eller åbnet igen, eller hvis en anden prøver at bruge din adresse til en konto. Vi viser kun adressen til dig selv, i Profil og på webappens Konto-side.</li>
   <li><strong>Tekniske oplysninger.</strong> Når du er logget ind, gemmer serveren din session: IP-adresse, land, enhedens og styresystemets navn og hvornår den sidst blev brugt. Det bruges til login og sikkerhed og slettes, når du logger ud eller sletter kontoen. Serveren fører også tekniske logfiler til drift og fejlfinding.</li>
   <li><strong>Dine indstillinger.</strong> Hvilken version af <a href="/terms/">vilkårene</a> du har accepteret, og hvornår; hvilke beskeder du vil have notifikationer om; og hvilke events du har slået notifikationer fra for eller fjernet fra Hjem. De gemmes på din konto, så en ny telefon kender dem, og slettes med kontoen.</li>
   <li><strong>Din profil.</strong> Det navn, du vælger, og dit profilbillede, hvis du tilføjer et. De kan kun ses af dem, der er med i dine events.</li>
@@ -111,9 +115,9 @@ export const PRIVACY_HTML = `
 <h2>Hvor det ligger, og hvem der hjælper os</h2>
 <ul>
   <li><strong>Vores server</strong> kører i et Oracle Cloud-datacenter i Stockholm, Sverige (EU). Det er her, alle konti, events, beskeder og billeder ligger.</li>
-  <li><strong>Apple</strong> står for login (Log ind med Apple) og leverer notifikationer (Apple Push Notification service). Søger du efter et sted, sendes din søgetekst til Apple Kort — uden din placering. Køber du noget i appen, står Apple for betalingen efter sine egne regler.</li>
+  <li><strong>Apple</strong> står for login (Log ind med Apple, i appen og i webappen) og leverer notifikationer (Apple Push Notification service). Søger du efter et sted, sendes din søgetekst til Apple Kort — uden din placering. Køber du noget i appen, står Apple for betalingen efter sine egne regler.</li>
   <li><strong>Cloudflare</strong> leverer invitationssiden på after.12f.dk og står foran hjemmesiden after-stories.com, hvor denne side ligger, og behandler din IP-adresse for at kunne vise dem. Vi logger intet om dig der.</li>
-  <li><strong>Brevo</strong> (Frankrig, EU) sender e-mailen, hvis din konto bliver suspenderet eller åbnet igen, og e-mails med links til at bekræfte din e-mailadresse og nulstille din adgangskode.</li>
+  <li><strong>Brevo</strong> (Frankrig, EU) sender e-mailen, hvis din konto bliver suspenderet eller åbnet igen, og e-mails med login-links og links til at bekræfte din e-mailadresse og nulstille din adgangskode.</li>
   <li><strong>PostHog</strong> modtager appens anonyme brugsstatistik og fejlrapporter og opbevarer dem i sin EU-sky (Frankfurt, Tyskland). Se <a href="#da-statistik">Statistik</a>.</li>
 </ul>
 <p>Alt, hvad du lægger op, opbevares i EU. Login, notifikationer og søgning efter steder går gennem Apple, som behandler dem efter sine egne regler og også uden for EU.</p>
@@ -151,11 +155,11 @@ export const PRIVACY_HTML = `
 <h2 id="da-webapp">Webappen app.after-stories.com</h2>
 <p>I webappen kan du være med i et event fra en computer eller en Android-telefon. Det er den samme konto, de samme data og de samme regler som i appen, med disse forskelle:</p>
 <ul>
-  <li><strong>Log ind.</strong> Du logger ind med din e-mailadresse og en adgangskode (se <em>Log ind med e-mail og adgangskode</em> ovenfor). Du laver kontoen fra en invitation og accepterer <a href="/terms/">vilkårene</a> først.</li>
+  <li><strong>Log ind.</strong> Du logger ind med Apple eller med et login-link, vi sender til din e-mailadresse (se <em>Log ind med e-mail</em> ovenfor). Har du en adgangskode, virker den også. Du laver kontoen fra en invitation og accepterer <a href="/terms/">vilkårene</a> først.</li>
   <li><strong>Én cookie.</strong> Når du er logget ind, sætter vores server en sessionscookie, så du forbliver logget ind. Den er nødvendig for, at webappen virker, kan ikke læses af sidens scripts og slettes, når du logger ud. Der er ingen andre cookies.</li>
   <li><strong>I din browser.</strong> Webappen husker koden fra den invitation, du åbnede, i din egen browser, indtil du er med i eventet eller logger ud. Den sendes ikke andre steder hen.</li>
   <li><strong>Billeder.</strong> Et billede, du lægger op, sendes til vores server, som fjerner placering og alle kameraoplysninger og laver en ny JPEG på højst 1600 pixel, før noget gemmes. Originalen gemmes aldrig.</li>
-  <li><strong>Ingen statistik og ingen tredjeparter.</strong> Webappen sender ingen brugsstatistik og ingen fejlrapporter, og den henter intet fra andre tjenester. Den ligger på vores egen server i Stockholm, ligesom resten af dine data.</li>
+  <li><strong>Ingen statistik, og kun Apple som tredjepart.</strong> Webappen sender ingen brugsstatistik og ingen fejlrapporter. Den henter kun noget fra en anden tjeneste, hvis du vælger <em>Log ind med Apple</em>: så henter siden Apples login-script fra Apple (appleid.cdn-apple.com), og Apples login åbner i et vindue hos Apple. Apple giver os det samme som i appen: et bruger-id, din e-mailadresse (ofte en anonym videresendingsadresse fra Apple) og første gang dit navn. Webappen ligger på vores egen server i Stockholm, ligesom resten af dine data.</li>
   <li><strong>Ingen notifikationer</strong> fra webappen.</li>
   <li><strong>Teknisk.</strong> Din session gemmer browserens og styresystemets navn, din IP-adresse og land, som i appen. Du sletter din konto under Konto → Slet min konto.</li>
 </ul>
@@ -224,7 +228,7 @@ export const PRIVACY_HTML = `
 <h2>What we store, and why</h2>
 <ul>
   <li><strong>Your account.</strong> You sign in with Apple. We receive a user id, the email address Apple gives us — often an anonymous relay address from Apple — and, the first time, the name you share with Apple, as a suggestion for your name in the app. We only use that email address to tell you if your account is suspended or opened again, and never show it.</li>
-  <li><strong>Signing in with an email and a password.</strong> You can also sign in with an email address and a password — or add them to your Apple account in the app under Profile › Account › <em>Sign in on the web</em>. We then store the email address and a hashed form of the password, never the password itself. We email you a link to confirm the address, and a link to reset the password if you ask for one. Otherwise we only use the address to tell you if your account is suspended or opened again, or if someone else tries to use your address for an account. We show the address only to you, in Profile and on the web app's Account page.</li>
+  <li><strong>Signing in with your email.</strong> You can also sign in with your email address: we email you a login link that works for 15 minutes and only once. So that a link works only once, the server keeps a random marker for each used link — without your email or your user id — and deletes it an hour after the link has expired. If you have a password from before, it still works, and you can add one to your Apple account in the app under Profile › Account › <em>Sign in on the web</em>. We then store the email address and a hashed form of the password, never the password itself. We also email you a link to confirm the address, and a link to reset the password if you ask for one. Otherwise we only use the address to tell you if your account is suspended or opened again, or if someone else tries to use your address for an account. We show the address only to you, in Profile and on the web app's Account page.</li>
   <li><strong>Technical details.</strong> While you're signed in, the server keeps your session: IP address, country, device and operating-system name, and when it was last used. It's used for sign-in and security, and deleted when you sign out or delete your account. The server also keeps technical logs for operations and troubleshooting.</li>
   <li><strong>Your settings.</strong> Which version of the <a href="/terms/">terms</a> you accepted, and when; which messages you want to be notified about; and which events you've turned notifications off for or removed from Home. They're kept on your account, so a new phone knows them, and deleted with the account.</li>
   <li><strong>Your profile.</strong> The name you choose, and your profile picture if you add one. Only the people in your events can see them.</li>
@@ -246,9 +250,9 @@ export const PRIVACY_HTML = `
 <h2>Where it lives, and who helps us</h2>
 <ul>
   <li><strong>Our server</strong> runs in an Oracle Cloud data centre in Stockholm, Sweden (EU). This is where all accounts, events, messages and photos are stored.</li>
-  <li><strong>Apple</strong> provides sign-in (Sign in with Apple) and delivers notifications (Apple Push Notification service). If you search for a place, your search text goes to Apple Maps — without your location. If you buy something in the app, Apple handles the payment under its own terms.</li>
+  <li><strong>Apple</strong> provides sign-in (Sign in with Apple, in the app and in the web app) and delivers notifications (Apple Push Notification service). If you search for a place, your search text goes to Apple Maps — without your location. If you buy something in the app, Apple handles the payment under its own terms.</li>
   <li><strong>Cloudflare</strong> serves the invite page on after.12f.dk and sits in front of the website after-stories.com, where this page lives, and processes your IP address to deliver them. We log nothing about you there.</li>
-  <li><strong>Brevo</strong> (France, EU) sends the email if your account is suspended or opened again, and the emails with links to confirm your email address and reset your password.</li>
+  <li><strong>Brevo</strong> (France, EU) sends the email if your account is suspended or opened again, and the emails with login links and links to confirm your email address and reset your password.</li>
   <li><strong>PostHog</strong> receives the app's anonymous usage statistics and crash reports and stores them in its EU cloud (Frankfurt, Germany). See <a href="#en-statistics">Statistics</a>.</li>
 </ul>
 <p>Everything you post is stored in the EU. Sign-in, notifications and place search go through Apple, which handles them under its own terms, also outside the EU.</p>
@@ -286,11 +290,11 @@ export const PRIVACY_HTML = `
 <h2 id="en-webapp">The web app app.after-stories.com</h2>
 <p>The web app lets you take part in an event from a computer or an Android phone. It is the same account, the same data and the same rules as in the app, with these differences:</p>
 <ul>
-  <li><strong>Signing in.</strong> You sign in with your email address and a password (see <em>Signing in with an email and a password</em> above). You make the account from an invitation and accept the <a href="/terms/">terms</a> first.</li>
+  <li><strong>Signing in.</strong> You sign in with Apple, or with a login link we email to your address (see <em>Signing in with your email</em> above). If you have a password, it works too. You make the account from an invitation and accept the <a href="/terms/">terms</a> first.</li>
   <li><strong>One cookie.</strong> When you're signed in, our server sets a session cookie so you stay signed in. The web app needs it to work; the page's scripts can't read it, and it is deleted when you sign out. There are no other cookies.</li>
   <li><strong>In your browser.</strong> The web app remembers the code of the invitation you opened in your own browser, until you have joined the event or signed out. It is sent nowhere else.</li>
   <li><strong>Photos.</strong> A photo you post is sent to our server, which removes the location and all camera data and makes a new JPEG of at most 1600 pixels before anything is stored. The original is never stored.</li>
-  <li><strong>No statistics and no third parties.</strong> The web app sends no usage statistics and no crash reports, and it loads nothing from other services. It runs on our own server in Stockholm, like the rest of your data.</li>
+  <li><strong>No statistics, and Apple as the only third party.</strong> The web app sends no usage statistics and no crash reports. It loads something from another service only if you choose <em>Sign in with Apple</em>: then the page loads Apple's sign-in script from Apple (appleid.cdn-apple.com), and Apple's sign-in opens in a window at Apple. Apple gives us the same as in the app: a user id, your email address (often an anonymous relay address from Apple) and, the first time, your name. The web app runs on our own server in Stockholm, like the rest of your data.</li>
   <li><strong>No notifications</strong> from the web app.</li>
   <li><strong>Technical.</strong> Your session stores the browser's and the operating system's name, your IP address and country, as in the app. You delete your account under Account → Delete my account.</li>
 </ul>

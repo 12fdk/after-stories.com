@@ -66,8 +66,14 @@ describe("the privacy policy", () => {
     // One necessary cookie, no statistics, the photo cleaned on the server before it is stored.
     expect(da).toContain("Én cookie");
     expect(en).toContain("One cookie");
-    expect(da).toContain("Ingen statistik og ingen tredjeparter");
-    expect(en).toContain("No statistics and no third parties");
+    // Apple is the only third party, and only on the Apple choice (12fdk/after-stories#720).
+    expect(da).toContain("Ingen statistik, og kun Apple som tredjepart");
+    expect(en).toContain("No statistics, and Apple as the only third party");
+    expect(da).toContain("appleid.cdn-apple.com");
+    expect(en).toContain("appleid.cdn-apple.com");
+    // The login link (12fdk/after-stories#723): 15 minutes, one time.
+    expect(da).toContain("login-link, der virker i 15 minutter og kun én gang");
+    expect(en).toContain("login link that works for 15 minutes and only once");
     expect(da).toContain("Originalen gemmes aldrig");
     expect(en).toContain("The original is never stored");
   });
