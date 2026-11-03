@@ -1,10 +1,13 @@
 ---
 import AppStoreCta from "./AppStoreCta.astro";
+import { WEB_APP_URL } from "../lib/appstore";
 import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 
 // StoryBrand: the direct call to action in the header, next to the transitional "How it works".
 // The home page and the event pages have the same four sections (how, occasions, privacy, faq),
 // so their links jump on the page. Pages without them (privacy, terms) jump to the home page's.
+// "Open app" is a quiet text link to the web app for members, never a second call to action
+// (docs/messaging.md, rule 11). It stays on every width; the App Store badge stays the CTA.
 interface Props {
   /** The page's locale; defaults to English (the base, unprefixed pages). */
   locale?: Locale;
@@ -34,6 +37,13 @@ const links = [
   </a>
   <nav class="topbar-nav" aria-label="Main">
     {links.map((l) => <a class:list={["topbar-link", { keep: l.keep }]} href={l.href}>{l.label}</a>)}
+    <a
+      class="topbar-link app-link keep"
+      href={WEB_APP_URL}
+      data-umami-event="web-app-click"
+      data-umami-event-placement="header"
+      data-umami-event-locale={locale}>{ui.navOpenApp}</a
+    >
     <AppStoreCta placement="header" size="small" locale={locale} />
   </nav>
 </header>
@@ -79,6 +89,7 @@ const links = [
     font-size: var(--t-small);
     font-weight: 600;
     padding: 12px 0;
+    white-space: nowrap;
     text-decoration: underline 2px transparent;
     text-underline-offset: 6px;
   }
@@ -101,11 +112,21 @@ const links = [
   }
 
   @media (max-width: 520px) {
-    .topbar-link {
+    .topbar-nav {
+      gap: 16px;
+    }
+    .topbar-link:not(.app-link) {
       display: none;
     }
     .brand span {
       font-size: var(--t-body);
+    }
+  }
+
+  /* The narrowest phones: the icon alone carries the brand, so "Open app" and the badge fit. */
+  @media (max-width: 400px) {
+    .brand span {
+      display: none;
     }
   }
 </style>

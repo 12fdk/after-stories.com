@@ -9,6 +9,7 @@ import {
   localizedPath,
   type Locale,
 } from "../lib/i18n";
+import { WEB_APP_URL } from "../lib/appstore";
 
 interface Props {
   locale?: Locale;
@@ -29,6 +30,12 @@ const termsHref = "/terms/";
     <p class="footer-tagline">{ui.footerTagline}</p>
     <nav class="footer-events" aria-label="Footer">
       <a href={localizedPath(locale, "/")}>{ui.footerHome}</a>
+      <a
+        href={WEB_APP_URL}
+        data-umami-event="web-app-click"
+        data-umami-event-placement="footer"
+        data-umami-event-locale={locale}>{ui.navOpenApp}</a
+      >
       {list.map((e) => <a href={localEventHref(locale, e.slug)}>{e.name}</a>)}
     </nav>
     <div class="footer-side">

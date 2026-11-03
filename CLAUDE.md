@@ -48,6 +48,9 @@ for desktop visitors). Every link comes from `src/lib/appstore.ts`:
 - **Umami** (`umami.robert-jensen.dk`, script in `Base.astro`) counts each click as the event
   `app-store-click` with `placement` and `locale`. Nothing about the visitor goes along.
 - **Smart App Banner:** `<meta name="apple-itunes-app">` in `Base.astro`.
+- **"Open app" link (#75):** a quiet text link to the web app (`WEB_APP_URL` in
+  `src/lib/appstore.ts`) in the header and the footer, Umami event `web-app-click`. Not a second
+  CTA (messaging rule 11).
 
 The pre-launch waitlist form is gone; the backend still holds its sign-ups (12fdk/after-stories#271).
 `/privacy/` describes the closed waitlist, the click event and the App Store link, in its website
