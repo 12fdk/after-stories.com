@@ -22,37 +22,21 @@ After Stories is a **private iPhone app for one group's plan** — a dinner, a
 birthday, a night out, a team party, a group trip. It is **not** a social network
 and **not** a conference/event-tech platform.
 
-**The three promises (use these words, they are the app's own headings):**
-**Plan it together. Live it together. Wake up to the story.**
+**What we say and what is true live in `docs/marketing-guidelines.md`** (Robert,
+2026-11-05, #81). Read §2 (the message), §5 (words) and §8 (the facts) before writing. Only
+features listed as "True today" in §8 may be mentioned; anything under "Not true today" never.
+If a post needs a feature that isn't there, the post is about the wrong topic.
 
-**What the app actually does — these are the ONLY features you may mention**
-(verified against the App Store description, 2026-10-18):
-- **One event per plan.** Create an event — it only needs a name.
-- **Invite with a link, a code or a QR code.**
-- **Vote in the chat** — which film, where to eat, which day.
-- **Decided moves things out of the chat.** The time, the place, who brings what —
-  one clear next step, nobody scrolls back for it.
-- **Share a place as a venue**, with its address and a Maps link.
-- **Start the event:** everything happens in one stream — messages, photos and places.
-- **Like a photo or a message with one tap.**
-- **Wake up to the story:** the morning-after summary — the most-liked photo, the
-  most-liked message, what you decided, and a few numbers.
-- **Save all photos to your phone in one tap.**
-- **Private, then it's gone:** only the people you invite can see an event. No feed,
-  no followers, no strangers, no ads. Photos are stripped of location and camera data
-  **on your phone before upload**. The event is **deleted for everyone 48 hours after
-  it ends** (a save reminder comes first).
-- **Sign in with Apple.** Delete your account in the app at any time.
-- **Up to 50 people per event.**
-- **iPhone, iOS 26 or later.** App Store: `https://apps.apple.com/app/after-stories/id6815212070`.
-- Free (no paywall is published as of 2026-10-18 — do not claim a price).
-
-**❌ NEVER claim features the app does not have:** no Android version, no web
-app with full features (friends join from the web for invites only — check the
-site before writing it), no feed, no followers, no followers-style growth, no
-push-notification promises, no calendar export, no budget tracking, no seating
-charts, no video calls, no messaging outside an event. If a post needs a feature
-the app doesn't have, the post is about the wrong topic.
+- **The first mention of After Stories is the full sentence, word for word** (§2.1):
+  *After Stories is an app for one event with your group: a dinner, a party, a weekend away.
+  Everyone votes on the plan, shares photos in one place, and saves them all with one tap the
+  morning after.* (The examples may be swapped for the article's occasion.)
+- **The second mention, if any, is the one proof** (§2.3) that answers the article's problem:
+  the plan stays on top · everyone's photos in one place · then it's gone (save first).
+- **The FAQ includes "What is After Stories?"**, answered with the full sentence plus: an iPhone
+  app; friends without an iPhone join in their browser from the invite link.
+- **Price:** only the line *Free to plan, chat and share photos.*, at most once. Nothing else.
+- App Store: `https://apps.apple.com/app/after-stories/id6815212070`.
 
 **Who the reader is:** ordinary people planning something with friends — 5–50 of
 them — who hate that "what time was it again?" is 300 messages up in the group
