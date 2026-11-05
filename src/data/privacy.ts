@@ -59,6 +59,7 @@
 // The website part ("Hjemmesiden after-stories.com" / "The website after-stories.com") is what
 // this site's own policy said before the merge: the waitlist form (#271, the double opt-in #276,
 // closed at launch on 2026-10-18, #59: the sign-ups it stored stay covered until they're deleted),
+// the web app's *Giv mig besked* on the same list (12fdk/after-stories#752),
 // its storage and retention, GitHub Pages, Umami (the "app-store-click" event, #59; the "web-app-click" event on the "Open app" link, #75; the social `src` source name from the /go/ hop, #72), the App Store
 // campaign link, the self-hosted fonts and the theme choice. Change it whenever the site's hosting,
 // analytics or download links change, or the backend's waitlist storage does (CLAUDE.md › Download
@@ -67,8 +68,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "3. november 2026";
-export const PRIVACY_UPDATED_EN = "3 November 2026";
+export const PRIVACY_UPDATED_DA = "5. november 2026";
+export const PRIVACY_UPDATED_EN = "5 November 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -166,6 +167,9 @@ export const PRIVACY_HTML = `
 
 <h2 id="da-web">Hjemmesiden after-stories.com</h2>
 <p>Dette afsnit gælder kun hjemmesiden.</p>
+
+<h3>Besked, når du kan oprette events uden iPhone-appen</h3>
+<p>På forsiden af webappen (app.after-stories.com) kan du bede om at få besked, når du kan oprette events uden iPhone-appen. Skriver du dig op, gemmer vi dit <strong>navn</strong> og din <strong>e-mailadresse</strong> og at du kom fra webappen. Vi bruger dem kun til at sende dig <strong>én e-mail for at bekræfte din adresse</strong> og, når du har bekræftet, <strong>én e-mail, når det er muligt</strong>. Bekræfter du aldrig, skriver vi ikke til dig igen. Det gør vi, fordi du har bedt om det (dit samtykke, GDPR art. 6, stk. 1, litra a). Du kan trække det tilbage når som helst. Opbevaring og sletning står nedenfor.</p>
 
 <h3>Ventelisten før lanceringen</h3>
 <p>Indtil After Stories kom i App Store den 18. oktober 2026, havde hjemmesiden formularen “Get an email when we launch” (få en e-mail, når vi lancerer). Formularen er lukket, og vi tager ikke imod nye tilmeldinger. Udfyldte du den, gemte vi:</p>
@@ -301,6 +305,9 @@ export const PRIVACY_HTML = `
 
 <h2 id="en-web">The website after-stories.com</h2>
 <p>This part covers only the website.</p>
+
+<h3>Hearing when you can create events without the iPhone app</h3>
+<p>On the front page of the web app (app.after-stories.com) you can ask to hear when you can create events without the iPhone app. If you sign up, we store your <strong>name</strong> and <strong>email address</strong> and that you came from the web app. We use them only to send you <strong>one email to confirm your address</strong> and, once you've confirmed, <strong>one email when it's possible</strong>. If you never confirm, we don't write to you again. We do this because you asked us to (your consent, GDPR Art. 6(1)(a)). You can withdraw it at any time. Storage and removal are described below.</p>
 
 <h3>The waitlist before launch</h3>
 <p>Until After Stories came to the App Store on 18 October 2026, this site had a “Get an email when we launch” form. The form is closed, and we take no new sign-ups. If you filled it in, we collected:</p>
