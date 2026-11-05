@@ -96,8 +96,18 @@ describe("the web start link", () => {
     }
   });
 
-  it.each(["HomePage", "EventPage", "sections/Closer"])("%s has it right after the badge", (name) => {
+  // After the fine print, or "Needs iOS 26" would read as a condition of the link.
+  it.each(["HomePage", "EventPage"])("%s has it after the badge and the fine print", (name) => {
     const source = readFileSync(new URL(`../components/${name}.astro`, import.meta.url), "utf8");
+    expect(source).toMatch(/<AppStoreCta [^>]*\/>\s*<p class="small">\{[\w.]+\.fineprint\}<\/p>\s*<WebStart locale=\{locale\} \/>/);
+  });
+
+  it("the closer, with no fine print, has it right after the badge", () => {
+    const source = readFileSync(new URL("../components/sections/Closer.astro", import.meta.url), "utf8");
     expect(source).toMatch(/<AppStoreCta [^>]*\/>\s*<WebStart locale=\{locale\} \/>/);
+  });
+
+  it("has words in every language", () => {
+    for (const locale of locales) expect(uiCopy(locale).webStart.trim(), locale).not.toBe("");
   });
 });

@@ -86,17 +86,17 @@ export const defaultPrivacy: Fact[] = [
  * What the web app does beyond joining (app repo #757, web/app/README.md there): it creates and runs
  * an event. Since app repo #583 it speaks the site's five languages. Keep this true in every locale.
  */
-const webLimits =
+const webMore =
   "They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.";
 
 /**
  * "Can … without an iPhone join?", naming the page's own people (friends, family, teammates…).
  * Yes since 2026-10-20: the invite link opens the web app (app.after-stories.com) on Android or
- * a computer (app repo, docs/product.md › The web app). Say what it can't do too.
+ * a computer (app repo, docs/product.md › The web app). RSVP, gifts, a purchase and push stay out of it (docs/messaging.md, rule 11).
  */
 const nonIphoneFor = (who: string) => ({
   q: `Can ${who} without an iPhone join?`,
-  a: `Yes. ${who[0].toUpperCase()}${who.slice(1)} on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. ${webLimits}`,
+  a: `Yes. ${who[0].toUpperCase()}${who.slice(1)} on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. ${webMore}`,
 });
 
 const nonIphone = nonIphoneFor("friends");

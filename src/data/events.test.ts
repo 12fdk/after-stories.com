@@ -91,6 +91,23 @@ describe("launch copy", () => {
     }
   });
 
+  // docs/messaging.md, rule 11: what the browser does is said, and what it doesn't is never promised.
+  it.each(Object.entries(sources))("%s says the browser creates an event, and promises nothing it lacks", (_, source) => {
+    for (const { a } of aboutIphone(source).filter((f) => /browser|navigateur|navegador/i.test(f.a))) {
+      expect(a).toMatch(/create|oprette|erstell|créer|créez|crear|se crea/i);
+      expect(a).not.toMatch(/password|adgangskode|Passwort|mot de passe|contraseña/i);
+      expect(a).not.toMatch(/RSVP|gift|gave|Geschenk|Wunsch|cadeau|regalo|buy|purchase|køb|kauf|acheter|comprar|push/i);
+    }
+    for (const s of strings(source)) {
+      // "In the iPhone app or in the browser" is true; the app alone is not.
+      for (const sentence of s.split(/(?<=\.)\s/)) {
+        if (/(create|opret|erstell|crée|créer|créez|crea)[^.]*(iPhone[- ]app|app iPhone|iPhone-App|app de iPhone)/i.test(sentence)) {
+          expect(sentence).toMatch(/browser|navigateur|navegador/i);
+        }
+      }
+    }
+  });
+
   // The web app speaks the site's five languages since 2026-10-29 (app repo #583), so no copy
   // may still say it is Danish only.
   it.each(Object.entries(sources))("%s no longer says the browser version is Danish only", (_, source) => {

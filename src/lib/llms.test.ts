@@ -1,8 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { events } from "../data/events";
 import { homeFaq } from "../data/home";
-import { llmsFullTxt, llmsTxt } from "./llms";
+import { LAUNCH_STATUS, llmsFullTxt, llmsTxt } from "./llms";
 import { DEFINITION } from "./seo";
+
+describe("the launch status", () => {
+  it("says the browser joins and creates, and the iPhone app needs iOS 26 (rule 11)", () => {
+    expect(LAUNCH_STATUS).toContain("iOS 26");
+    expect(LAUNCH_STATUS).toMatch(/join an event from its invite link, or create one, in their browser/);
+    expect(LAUNCH_STATUS).not.toMatch(/needs the iPhone app|only the iPhone|RSVP|gift|purchase|push/i);
+  });
+});
 
 describe("llms.txt", () => {
   const txt = llmsTxt();

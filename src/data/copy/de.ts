@@ -752,7 +752,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Können Eltern ohne iPhone mitmachen?',
-            a: 'Ja. Eltern mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen, und auch die Autos und Plätze sind dort. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
+            a: 'Ja. Eltern mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen, und auch die Autos und Plätze gibt es dort. Außerdem können sie selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Brauchen die Kinder die App?',

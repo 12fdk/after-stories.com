@@ -753,7 +753,7 @@ const copy: Copy = {
         faq: [
           {
             q: '¿Pueden unirse padres que no tengan iPhone?',
-            a: 'Sí. Los padres con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico. Escriben, votan y comparten fotos como todos, y los coches y las plazas también están ahí. También pueden crear un evento allí, sin iPhone: iniciarlo, ver la historia de la mañana siguiente y guardar las fotos.',
+            a: 'Sí. Los padres con Android o con un ordenador abren el enlace de invitación y se unen desde el navegador, con un correo electrónico. Escriben, votan y comparten fotos como todos, y ahí también están los coches y las plazas. Además, pueden crear un evento, sin iPhone: iniciarlo, ver la historia de la mañana siguiente y guardar las fotos.',
           },
           {
             q: '¿Los niños necesitan la app?',

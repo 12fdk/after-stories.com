@@ -93,14 +93,16 @@ voice. A new event page fills every field; the test fails if it doesn't.
     Since 2026-10-20 friends without an iPhone join an event from its invite link in the browser
     (`app.after-stories.com`, app repo #463), and since 2026-11-05 anyone can sign up and create and
     run an event there too (app repo #757): start it, the summary, the photos, the cars. Asked whether
-    someone without an iPhone can use it, the answer is yes. The web app speaks the same five
+    someone without an iPhone can use it, the answer is yes. **Not on the web, so never claimed:**
+    RSVP and the gift list (on no platform yet), a purchase, and push (the web sends only two
+    e-mails, the summary and the deletion warning). The web app speaks the same five
     languages on this site (app repo #583). The direct CTA stays the App Store badge. Two quiet ways
     to the browser are allowed: an "Open app" button (`ui.navOpenApp`, #75, #78), last in the header
     and a text link in the footer, for members who already have an event; and one text link under the
-    badge in the hero and the closer (`ui.webStart`, `WebStart.astro`, app repo #761), for somebody
+    badge and its fine print in the hero, and under the badge in the closer (`ui.webStart`, `WebStart.astro`, app repo #761), for somebody
     with no iPhone. No other copy sells the web app. Never promise an Android app.
     When the web app gains a feature or a language, change the answers in every locale
-    (`src/data/events.ts` › `webLimits`).
+    (`src/data/events.ts` › `webMore`).
 
 ## Quick check (all must be "yes")
 

@@ -230,7 +230,8 @@ list.
 - An **iPhone app**, iOS 26 or later, on the App Store (app 6815212070).
 - **People without an iPhone use their browser** (app repo #757): they join from the invite link
   or sign up and create an event, chat, vote, share photos, see the morning-after summary and save
-  the photos.
+  the photos. Not on the web: a purchase, and push (only two e-mails, the summary and the deletion
+  warning).
 - **An event needs only a name.** It starts from a template: *Plan together*, *Party*,
   *Game day*, *Free form*.
 - **Invite** with a link, a code or a QR code.
@@ -252,7 +253,9 @@ list.
 **Not true today: never claim**
 
 - RSVP ("are you coming"), a gift list, an invitation text, a program, the match score, *repeat
-  for the next game*. They are built but not released.
+  for the next game*. Parts are drawn on the phone but hidden, and their server side is still to
+  come (app repo, `docs/product.md` › Build order, steps 8–10).
+- A purchase in the browser, or push notifications in the browser.
 - An Android app.
 - Sharing the summary outside the event, a public page, a feed.
 - Live location, a map of where people are.

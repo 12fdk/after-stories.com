@@ -2,8 +2,8 @@
 import { WEB_START_URL } from "../lib/appstore";
 import { uiCopy, type Locale } from "../lib/i18n";
 
-// The way to start with no iPhone (app repo #761): one quiet text link under the App Store badge,
-// which stays the direct call to action (docs/messaging.md, rule 11). No Umami event: the privacy
+// The way to start with no iPhone (app repo #761): one quiet text link under the App Store badge
+// and its fine print ("needs iOS 26" is about the app, so the link answers it). The badge stays the direct call to action (docs/messaging.md, rule 11). No Umami event: the privacy
 // policy names only the badge and "Open app".
 interface Props {
   locale?: Locale;

@@ -752,7 +752,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Les parents sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les parents sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde, et les voitures et les places y sont aussi. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
+            a: 'Oui. Les parents sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde, et ils y retrouvent les voitures et les places. Ils peuvent même y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Les enfants ont-ils besoin de l\'app ?',
