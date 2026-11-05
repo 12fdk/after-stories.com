@@ -1,6 +1,6 @@
 # After Stories — Marketing Plan (living doc)
 
-Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-11-04
+Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-11-05
 
 > Plan for a TikTok content program built to grow organic awareness and installs of the
 > **After Stories** app. Every word of copy in this plan must come from the brand sources named
@@ -8,25 +8,37 @@ Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 
 > never laddish** (owner decision, 2026-10-03).
 
 **Brand sources (read before writing any video):**
+- **`after-stories.com` repo › `docs/marketing-guidelines.md` — first, and it wins** (Robert,
+  2026-11-05, #81): the sentence that says what the app is, the line that leads, the three
+  proofs, the stranger test, the lanes, the price line and **the facts (§8)**. What we say and
+  what is true come from there; this plan decides how it is produced and scheduled.
 - `after-stories.com` repo › `docs/positioning.md` — positioning, use cases, growth rules, the
-  StoryBrand brand script. This file is the single source of truth for what we say.
+  StoryBrand brand script.
 - `after-stories.com` repo › `docs/messaging.md` — the messaging rulebook (who is the hero, the
   villain, the CTA wording).
 - Live site `https://after-stories.com/` (and `llms.txt`) — the verbatim lines on screen.
 
-**Locked marketing decisions (from positioning.md):**
+**Locked marketing decisions (from positioning.md and marketing-guidelines.md):**
+- **Say what it is in every piece:** *The app for one event with your group.* on screen, the
+  full sentence in the caption (guidelines §2.1). **One situation, one proof** per piece
+  (guidelines §2.3): 1 the plan stays on top · 2 everyone's photos in one place · 3 then it's gone.
 - Name: **After Stories** everywhere. Not "AFTER".
 - Audience: friend groups, international, worldwide on day one. Second audience: colleagues
   planning an office event.
 - The pain: **planning the event** (it gets lost in the group chat) and **collecting the photos
   afterwards** (everyone's are stuck on their own phones).
 - The villain: **the group chat** — never a competitor by name.
-- The hook: the **morning after** summary.
-- Hero use case: **the trip / weekend away**.
+- The line that leads: **Plan it together. Everyone gets the photos.** The old one-liner is a
+  sign-off only.
+- Hero use case: **the trip / weekend away** (one event over several days since app 1.3).
 - Ephemerality is a selling point: the event is **deleted 48 hours after it ends** — but never
   mention deletion without first showing **save all photos** (site rule, `events.ts` header).
-- **Say nothing about price.**
-- Non-iPhone friends: a **web version** at launch — "Nobody left out."
+- **Price: one fixed line, nothing else:** *Free to plan, chat and share photos.* (Robert,
+  2026-11-05; it replaces "say nothing about price").
+- Non-iPhone friends **join in their browser** from the invite link (a supporting fact, never a
+  piece's message).
+- **Lanes** (guidelines §6): friends at least half of all builds; parents and colleagues share
+  the rest by season.
 - Growth: the invite link and ASO. **No paid ads at launch.** 90-day goal: raw installs.
 
 ## 1. What this is & how it's updated
@@ -240,6 +252,12 @@ openverse.org that I have asked you to"). This rule is permanent: do not go back
     credit line in the post file (or the fallback logged in §8).
 11. Format: the §5 format (N, R or S) differs from the previous build's; format id + track
     file recorded in the row Status and the §8 line.
+12. **Stranger test** (guidelines §3): someone with only this piece can say what it is, what it
+    does for them and what to do next. The shotlist and the post file carry `Stranger test:`
+    with the three quoted lines. A fail is not delivered.
+13. **What it is, on screen** before the halfway mark (the short sentence), the full sentence
+    as caption line 2, the row's one proof shown in the **real app** for at least 2 s
+    (guidelines §7). A build with no real app footage fails item 12.
 
 ## 4. Cadence
 
@@ -418,8 +436,8 @@ Content (scene, claim lines, CTA, series, mood) comes from the §6 row unchanged
 the row's Hook column is the product beat (placed per the format, never at frame 0), and
 frame 0 comes from the Hook doctrine bank; log the shipped frame-0 line in the post log's
 Hook cell. In Lane 2 the row's hook stays the frame-0 line. The lane and format change the
-presentation only. Every format keeps the hard rules (§3), the end card (icon +
-after-stories.com — no download text since 2026-10-29, brand skin), `aiMedia` per its
+presentation only. Every format keeps the hard rules (§3), the end card (icon + the
+short sentence + after-stories.com since 2026-11-05 — no download text, brand skin), `aiMedia` per its
 spec note, and an Openverse track (Lane 1 builds deliver the
 `-silent.mp4` as the default post route, §3 "Sound").
 
@@ -497,10 +515,10 @@ hook, a scenario or on screen.
 - **Captions:** `look: 'clean'` (scrim, no pink bars), `font` = the brand Anybody face
   with `upper: false`, `accent: '#FF2D6F'`, `ink: '#FFFFFF'`, `bg: '#0B0C0E'`; every
   caption scene has one `text` of 4–7 words, `at: 'bottom'`, no `sub` (the template
-  enforces ≥ 44 px); the end card uses `end.text: 'after-stories.com'`, no `end.sub`,
-  `end.seconds: 2`, `end.image` = the icon — the URL and the logo, nothing else (Robert
-  2026-10-29: no "Download on the App Store" text on any end card; the spec's accent check
-  is skipped without `end.sub`, expected). The brand skin
+  enforces ≥ 44 px); the end card uses `end.text: 'after-stories.com'`,
+  `end.sub: 'The app for one event with your group.'` (Robert 2026-11-05: the end card says what
+  the app is; it replaced the URL-and-logo-only rule of 2026-10-29), `end.seconds: 2`,
+  `end.image` = the icon. Still no "Download on the App Store" text on any end card. The brand skin
   survives in the accent colour, the end card and the font family only.
 - **Imperfections stay:** grain, wobble, an uncomposed frame. A perfectly centred,
   perfectly graded cut reads as an ad.
@@ -550,33 +568,19 @@ brings it back, this pointer picks the style):**
 - The §7 reach scoreboard (lane-aware) decides the lane and format weights (see its
   "Stalled" rule).
 
-### Claim sheet — what each §6 feature may say (added 2026-10-15)
+### Claim sheet — moved to the guidelines (2026-11-05)
 
-Verbatim from the live site (home page, the use-case pages and `llms-full.txt`, read
-2026-10-15). Use these lines, not paraphrased numbers or promises. If a line here and the
-site disagree, the site wins.
+The claim sheet that stood here (2026-10-15) is replaced by `docs/marketing-guidelines.md`
+(#81). Several of its rows had gone wrong: "the web version is gone" (friends join in the
+browser since 2026-10-20), "iOS 27+" (iOS 26), "one event = one day" and "never claim a weekend
+in ONE event" (several days since app 1.3), "never claim an Add to calendar" (it exists).
 
-| Feature | Verbatim line(s) |
-|---|---|
-| Polls → decisions | "Polls that turn into decisions" · "Polls become decisions, jobs get a name, and it all stays on top in order." · "Put three evenings to a vote and the group picks one." |
-| Timeline | "A timeline of everything the group decided" · "It all sits on top of the event, so nobody asks again." |
-| One stream | "One private stream for messages and photos" · "One stream for the whole event" · "Tap ❤️ on the ones that matter." |
-| The morning after | "The morning-after summary: the most-liked photo, the line of the night, the decisions" · "Wake up to the story." · "Nobody had to make it." |
-| Save all photos | "Save every photo to your phone with one tap" · "Save every photo with one tap first." |
-| 48 h deletion (always after the save line) | "Deleted for everyone 48 hours after the event" · "Before that, everyone gets a reminder and can save all the photos to their own phone with one tap." · "You keep the memories. The app forgets the rest." · "What happens on the trip stays in the trip." |
-| Group size | "Up to 50 people per event" · "Up to 50. That fits most groups, from a handful of friends to a big party." |
-| Friends without an iPhone | **STALE since launch 2026-10-18** — the web version is gone (docs/messaging.md rule 11): never claim friends without an iPhone can join. The as-nobody-left-out row (Nov 16 #2) needs a rework before build. |
-| Privacy | "No feed, no followers, no strangers." · "Each event is its own private space." · "Never your location." · "Photos are stripped of GPS and camera data before upload." · "Sign in with Apple means no passwords." |
-| Office events | "Skip the 30 emails." · "No admins, no profiles, no feed." · "No work chat left behind." · "There are no company accounts, licences or admin settings." |
-| One event = one day | "One event covers one day and its night, until 6 the next morning." · "For a weekend away, make one event per day." |
-| Launch status | **LAUNCHED 2026-10-18** (App Store app 6815212070, iPhone only, iOS 27+). CTA: "Download on the App Store" (§2). The deployed `llms-full.txt` still shows the pre-launch status line — the live site + `docs/messaging.md` + `docs/positioning.md` are the current sources of truth. |
-
-**Never claim:** a weekend or a whole festival in ONE event (multi-day is "not yet" —
-one event per day); an Android app **or a web version** (none exists since launch 2026-10-18 — docs/messaging.md rule 11); location sharing,
-maps or "find your friends"; a public feed, sharing out or a share of the summary to other
-apps; more than 50 people; that it works for weddings, big or public events; an "Add to
-calendar"; that photos are kept or backed up after 48 h; a launch date; any price ("free"
-included); any user count, rating, review or testimonial; a competitor by name.
+- **On-screen product lines:** the short sentence (guidelines §2.1), the line that leads
+  (§2.2) and the row's proof line (§2.3), verbatim. A site line may be used only if it passes
+  guidelines rule 5 (it makes sense on its own).
+- **Facts:** only guidelines §8 ("True today" may be said; "Not true today" never).
+- **Re-check §8 against the live App Store description** on the night a new app version goes
+  live; where they disagree, the store wins and the guidelines are corrected in a PR.
 
 ### Production pipeline (per video)
 
@@ -732,6 +736,10 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 - **Phone rule:** never a visible phone screen (face-down / back-to-camera, camera module lit).
 - **Deletion only after the save beat**, in every row that mentions 48 h (§3).
 - If a calendar window opens earlier than planned, its row may move up; note it in §8.
+- **Lane and proof (since 2026-11-05):** every row is built in the lane and on the proof in
+  "Lane and proof per queued row" below. The Hook column stays the frame-0 situation; the product
+  line is the proof's line (guidelines §2.3), not the row's feature. A new row names its lane
+  and proof in that table.
 
 | Week of | # | Slug | Series | Use case / feature (· moment) | Hook (frame 0) | Look / scene (fresh shoot; differs from the last) | Music variant | Status |
 |---|---|---|---|---|---|---|---|---|
@@ -750,7 +758,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Nov 9 | 3 | as-photos-stuck | A | photos stuck on phones | “Hundreds of photos stuck on six phones” | six phones face-down on a wooden bench after a hike (camera modules lit), muddy boots, cold golden hour | 5 | built 2026-10-22 as-photos-stuck · S7 · super-power-pop-rock-3d2e7e62.mp3 |
 | Nov 9 | 4 | as-likes | C | likes → the most-liked photo | “Tap ❤️ on the ones that matter.” | winter market at night, mulled-wine steam, mittened hands, string lights | 0 | built 2026-10-23 as-likes · S2 · alexzavesa-man-mountain-electro-house-57598aab.mp3 |
 | Nov 16 | 1 | as-reunion | D | family-reunion · US Thanksgiving | “Plan the family reunion together.” | long table, three generations' hands, late-afternoon sun (built) | 1 | built 2026-10-24 as-reunion · S3 · playfulness-b6fb4ded.mp3 |
-| Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | rework needed (stale claim since launch, §5) — not buildable as written |
+| Nov 16 | 2 | as-nobody-left-out | C | web for friends without an iPhone | “Friends without an iPhone join from the web.” | mixed group from behind, one person with a laptop, all in the loop | 2 | dropped 2026-11-05 (#81, §6 Lane and proof) |
 | Nov 16 | 3 | as-office-chat | A | office-events · Christmas party | “Four tools, one party, and nobody knows what was decided.” | office kitchenette at 5 pm, tinsel spilling from a drawer, paper cups, cool fluorescent to warm desk lamp | 3 | built 2026-10-25 as-office-chat · R1 · prologue-9c2a001e.mp3 |
 | Nov 16 | 4 | as-private-by-design | C | private by design | “No feed, no followers, no strangers.” | empty private room at dusk, a circle of chairs, no screens at all | 4 | built 2026-10-25 as-private-by-design · R2 · nocturno-no-2-0436564c.mp3 · NO-CTA end card (experiment, §8) |
 | Nov 23 | 1 | as-thanksgiving-after | B | family-reunion · Thanksgiving weekend | “The photo of the day, the line of the reunion, what you decided.” | day-after kitchen, folded tablecloth, leftover pie under foil, flat grey November light | 5 | built 2026-10-25 as-thanksgiving-after · R3 · spencer-newton-hey-original-mix-electro-5919437e.mp3 |
@@ -772,7 +780,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Dec 21 | 3 | as-nye-morning | B | nights-out · the morning after NYE | “New Year's Day: Piece it together tomorrow.” (para.) | Jan 1 morning, streamers on a balcony rail, pale gold light, two cold glasses and a coffee | 4 | queued |
 | Dec 28 | 1 | as-bachelor | D | bachelor-parties · send-off planning season | “Keep the photos. Lose the chat.” | send-off morning, beach, from behind, long shadows | 5 | queued |
 | Dec 28 | 2 | as-which-weekend | A | trips · the plan gets lost | “wait which weekend did we land on?” | wall calendar with three weekends circled in three pens, a cabin key on a hook, low winter sun | 0 | queued |
-| Dec 28 | 3 | as-fifty | C | up to 50 people | “Up to 50. That fits most groups, from a handful of friends to a big party.” | a long hallway lined with coats and boots, from the doorway, warm party glow at the far end | 1 | queued |
+| Dec 28 | 3 | as-fifty | C | up to 50 people | “Up to 50. That fits most groups, from a handful of friends to a big party.” | a long hallway lined with coats and boots, from the doorway, warm party glow at the far end | 1 | dropped 2026-11-05 (#81, §6 Lane and proof) |
 | Jan 4 | 1 | as-new-year-trip | D | trips · New Year getaway | “The next trip, without the 300 messages.” | empty train platform at dawn in snow, backpacks, steam from the engine | 2 | queued |
 | Jan 4 | 2 | as-jobs | C | jobs get a name | “Who brings the cake, who books the table.” | blank paper tags tied to a cake box, a speaker and car keys on a hall table, soft daylight | 3 | queued |
 | Jan 4 | 3 | as-second-job | A | the organiser's second job | “Getting your friends together shouldn't feel like a second job.” | Sunday-night desk lamp, sticky notes curling, a cold tea, rain on the window | 4 | queued |
@@ -790,7 +798,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Jan 25 | 3 | as-six-nations | D | dinner-nights (Watch party) · Six Nations opening weekend | “Six Nations weekend: put a name on who brings what.” | living room with scarves over the sofa back, a rugby ball on the rug, TV glow from behind (screen out of frame) | 4 | queued |
 | Jan 25 | 4 | as-family-chat | A | family-reunion · the family group chat | “Twenty-four people, one lake, and the plan is in a family group chat.” | a winter lake jetty in fog, a row of wellies, a picnic basket under snow | 5 | queued |
 | Feb 1 | 1 | as-galentines | D | birthdays · Galentine's | “Galentine's: Celebrating someone should be fun for the people throwing it too.” | pink-lit brunch table, coupe glasses, carnations, bright window light | 0 | queued |
-| Feb 1 | 2 | as-no-gps | C | photos stripped of GPS and camera data | “Photos are stripped of GPS and camera data before upload.” | blank-backed prints slid into plain paper sleeves on a sunlit desk, a strip of masking tape, no writing | 1 | queued |
+| Feb 1 | 2 | as-no-gps | C | photos stripped of GPS and camera data | “Photos are stripped of GPS and camera data before upload.” | blank-backed prints slid into plain paper sleeves on a sunlit desk, a strip of masking tape, no writing | 1 | dropped 2026-11-05 (#81, §6 Lane and proof) |
 | Feb 1 | 3 | as-half-term-ski | D | trips (Ski day) · Presidents' Day / UK half-term | “Ski day: The day, the place, the plan and every photo, in one place.” | chairlift at noon, hard sun on snow, gloves and goggles on a bench, deep blue sky | 2 | queued |
 | Feb 1 | 4 | as-book-the-house | A | trips · nobody booked | “did anyone actually book the house” | a dark holiday-cottage doorway, a key safe, suitcases on the step, cold dusk | 3 | queued |
 | Feb 8 | 1 | as-super-bowl | D | dinner-nights (Watch party) · Super Bowl LXI | “Watch party: Put the questions to a vote and get the answers in one place.” | game-day snacks on a coffee table, plain foam fingers (no logos), lamp light, backs on a sofa | 4 | queued |
@@ -799,7 +807,7 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Feb 8 | 4 | as-trip-links | A | trips · the plan is buried | “Three links to places, buried in the chat” | a paper map with three coffee-cup rings, a pin, a dark café table, rain outside | 1 | queued |
 | Feb 15 | 1 | as-match-photo | B | match-day · the photo of the match | “The photo of the match, saved.” | floodlit winter pitch from the sideline, steam off a thermos, muddy studs | 2 | queued |
 | Feb 15 | 2 | as-festival | D | festivals · summer plans start | “Plan the festival together. Keep every photo of the chaos.” | festival field, golden hour, flags and haze, hands not faces | 3 | queued |
-| Feb 15 | 3 | as-one-day | C | one event = one day (weekends: one per day) | “One event covers one day and its night, until 6 the next morning.” | a 24-hour time-lapse of a cottage window: noon, dusk, night, 6 am | 4 | queued |
+| Feb 15 | 3 | as-one-day | C | one event = one day (weekends: one per day) — dropped 2026-11-05 (false since 1.3) | “One event covers one day and its night, until 6 the next morning.” | a 24-hour time-lapse of a cottage window: noon, dusk, night, 6 am | 4 | dropped 2026-11-05 (#81, §6 Lane and proof) |
 | Feb 15 | 4 | as-milestone | D | birthdays (Milestone birthday) | “Milestone birthday: Vote on the date and the venue.” | a rented hall being dressed, gold number balloons (no number readable), ladders, afternoon light | 5 | queued |
 | Feb 22 | 1 | as-graduation-chats | A | graduation · three chats | “One graduation, three chats, and the best photo is on someone else's phone.” | an empty mortarboard on a chair, garden bunting, late-spring light | 0 | queued |
 | Feb 22 | 2 | as-st-patricks | D | nights-out (Pub quiz) · St. Patrick's Day | “St. Patrick's Day: Vote on where to meet and where to go next.” | green-lit pub window from the street, a chalkboard (no words), umbrellas, blue hour | 1 | queued |
@@ -810,6 +818,59 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 from the site's use-case pages, the Series C feature list and the next calendar hooks —
 same columns, same verbatim check, the series and mood rotations kept, a new slug and a
 new look per row — and logs it in §8.
+
+### Lane and proof per queued row (2026-11-05, #81)
+
+Proofs (guidelines §2.3): **1** the plan stays on top · **2** everyone's photos in one place ·
+**3** then it's gone (save first). Lanes (§6): F friends · P parents · C colleagues.
+
+| Row | Lane | Proof | Note |
+|---|---|---|---|
+| as-nye-plan | F | 1 | |
+| as-keep-memories | F | 3 | |
+| as-winter-day-trip | F | 2 | |
+| as-nye-chat | F | 1 | |
+| as-never-location | F | 3 | was a privacy spotlight; "Never your location." may be a supporting line only |
+| as-nye-morning | F | 2 | |
+| as-bachelor | F | 3 | |
+| as-which-weekend | F | 1 | |
+| as-fifty | — | — | **dropped**: "up to 50" is a supporting fact, not a message |
+| as-new-year-trip | F | 1 | the hook's "300 messages" is an invented number: use "The next trip, without the group chat." |
+| as-jobs | F | 1 | |
+| as-second-job | F | 1 | |
+| as-night-in | F | 2 | |
+| as-mlk-weekend | F | 1 | one event for the whole weekend (several days, guidelines §8) |
+| as-birthday-chats | F | 2 | |
+| as-kickoff | C | 1 | |
+| as-reminder | F | 3 | |
+| as-burns-night | F | 1 | |
+| as-one-tap | F | 2 | |
+| as-every-phone | F | 2 | |
+| as-hen-chat | F | 1 | |
+| as-lunar-reunion | F | 2 | |
+| as-on-top | F | 1 | |
+| as-six-nations | F | 1 | |
+| as-family-chat | F | 1 | |
+| as-galentines | F | 2 | |
+| as-no-gps | — | — | **dropped**: a supporting fact, not a message |
+| as-half-term-ski | F | 2 | |
+| as-book-the-house | F | 1 | |
+| as-super-bowl | F | 1 | |
+| as-tonight-tomorrow | F | 2 | |
+| as-no-admins | C | 3 | no work chat left behind |
+| as-trip-links | F | 1 | |
+| as-match-photo | P | 2 | |
+| as-festival | F | 2 | the whole festival is one event (several days) |
+| as-one-day | — | — | **dropped**: its line ("One event covers one day…") is false since app 1.3 |
+| as-milestone | F | 1 | |
+| as-graduation-chats | F | 2 | |
+| as-st-patricks | F | 1 | |
+| as-stays-in-trip | F | 3 | |
+| as-spring-break | F | 2 | |
+| as-nobody-left-out | — | — | **dropped**: the browser is a supporting fact (guidelines §2.3) |
+
+A dropped row is skipped by the nightly job (treat its Status as `dropped`). When fewer than 7
+rows are left, new rows follow §6 "When the plan runs short" and name their lane and proof here.
 
 ## 7. Review procedure
 
@@ -1065,6 +1126,14 @@ new look per row — and logs it in §8.
   §4: production wording now follows the dated plan. §1: the old-to-new section map removed
   and every reference in the body updated to the new numbers. Channel unchanged: TikTok
   only, posted by hand.
+
+- *2026-11-05 (Robert, #81 — the message):* Robert: "the marketing is not sharp enough. Users
+  don't understand what it is we do." Adopted `docs/marketing-guidelines.md` (merged #82, the
+  home hero #83, the several-days fix #86): the short sentence on screen and on the end card,
+  the full sentence in the caption, one situation and one proof per build, the real app shown,
+  the stranger test (§3 guardrails 12–13), one price line. §5 claim sheet replaced by a pointer
+  (its stale web / iOS 27 / one-day / calendar rows removed). §6: lane and proof per queued row;
+  as-fifty, as-no-gps, as-one-day and as-nobody-left-out dropped.
 
 ## 9. Open questions & watch items
 
