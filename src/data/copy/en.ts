@@ -7,11 +7,11 @@ import type { Copy } from "../i18n-types";
 const copy: Copy = {
     home: {
       title: 'After Stories: Plan Group Trips, Parties & Nights Out',
-      description: 'A private iPhone app for your group\'s trip, party or night out. Vote on the plan, share photos in one stream, and wake up to the story with every photo saved.',
+      description: 'An iPhone app for one event with your group: a dinner, a party, a weekend away. Vote on the plan, share photos in one place, save them all with one tap.',
       faq: [
         {
           q: 'What is After Stories?',
-          a: 'A private iPhone app for one trip, party or night out. Your group votes on the plan, shares photos in one stream, and wakes up to the morning-after story: the best photo, the line of the night and what you decided. 48 hours later it\'s deleted, after everyone has saved the photos.',
+          a: 'An iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after, when the summary arrives: the most-liked photo, the most-liked message and what you decided. 48 hours after the event ends it\'s deleted, after everyone has saved the photos.',
         },
         {
           q: 'When can I get After Stories?',
@@ -43,13 +43,13 @@ const copy: Copy = {
         },
       ],
       hero: {
+        prelude: 'The app for one event with your group.',
         h1: [
           'Plan it together.',
-          'Live it together.',
-          'Wake up to the story.',
+          'Everyone gets the photos.',
         ],
-        lede: 'The private app for your group\'s trip, party or night out. Decide the plan together, live it in one place, and wake up to everyone\'s photos. Nobody has to chase anyone.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        lede: 'After Stories is an app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after.',
+        fineprint: 'Free to plan, chat and share photos. For iPhone, with iOS 26 or later.',
       },
       pain: {
         title: 'Group chats are where plans go to die.',

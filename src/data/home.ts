@@ -2,18 +2,19 @@ import type { Question } from "../lib/seo";
 
 // The home page's search snippet and questions, here so llms.txt (src/lib/llms.ts) says the same.
 
-// The title carries the search words; the one-liner is the h1 (src/lib/seo.ts has the limits).
+// The title carries the search words; the line that leads is the h1 (docs/marketing-guidelines.md
+// §2; src/lib/seo.ts has the limits).
 export const homeTitle = "After Stories: Plan Group Trips, Parties & Nights Out";
 
 export const homeDescription =
-  "A private iPhone app for your group's trip, party or night out. Vote on the plan, share photos in one stream, and wake up to the story with every photo saved.";
+  "An iPhone app for one event with your group: a dinner, a party, a weekend away. Vote on the plan, share photos in one place, save them all with one tap.";
 
 // The first two answer what people ask an assistant before they know the app: what it is, and
 // when they can have it. Keep the first answer to the definition in src/lib/seo.ts.
 export const homeFaq: Question[] = [
   {
     q: "What is After Stories?",
-    a: "A private iPhone app for one trip, party or night out. Your group votes on the plan, shares photos in one stream, and wakes up to the morning-after story: the best photo, the line of the night and what you decided. 48 hours later it's deleted, after everyone has saved the photos.",
+    a: "An iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after, when the summary arrives: the most-liked photo, the most-liked message and what you decided. 48 hours after the event ends it's deleted, after everyone has saved the photos.",
   },
   {
     q: "When can I get After Stories?",

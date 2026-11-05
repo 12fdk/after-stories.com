@@ -5,11 +5,11 @@ import type { Copy } from "../i18n-types";
 const copy: Copy = {
     home: {
       title: 'After Stories: Plant Gruppentrips & Abende gemeinsam',
-      description: 'Eine private iPhone-App für den Trip, die Party oder den Abend eurer Gruppe: Plant gemeinsam, stimmt ab und teilt alle Fotos in einem gemeinsamen Stream.',
+      description: 'Eine iPhone-App für ein Event mit eurer Gruppe: Abendessen, Party, Wochenende weg. Stimmt über den Plan ab, teilt Fotos an einem Ort, speichert alle.',
       faq: [
         {
           q: 'Was ist After Stories?',
-          a: 'Eine private iPhone-App für einen einzelnen Trip, eine Party oder einen Abend in der Stadt. Eure Gruppe stimmt über den Plan ab, teilt Fotos in einem einzigen Stream und wacht am Morgen danach mit der Geschichte auf: das beste Foto, der Spruch des Abends und was ihr entschieden habt. 48 Stunden später wird das Event gelöscht – nachdem alle die Fotos gespeichert haben.',
+          a: 'Eine iPhone-App für ein Event mit eurer Gruppe: ein Abendessen, eine Party, ein Wochenende weg. Alle stimmen über den Plan ab, teilen Fotos an einem Ort und speichern sie am Morgen danach alle mit einem Tipp, wenn die Zusammenfassung kommt: das Foto und die Nachricht mit den meisten Likes und was ihr entschieden habt. 48 Stunden nach dem Ende wird das Event gelöscht – nachdem alle die Fotos gespeichert haben.',
         },
         {
           q: 'Wann kann ich After Stories bekommen?',
@@ -41,13 +41,13 @@ const copy: Copy = {
         },
       ],
       hero: {
+        prelude: 'Die App für ein Event mit eurer Gruppe.',
         h1: [
           'Plant es gemeinsam.',
-          'Erlebt es gemeinsam.',
-          'Wacht mit der Geschichte auf.',
+          'Alle bekommen die Fotos.',
         ],
-        lede: 'Die private App für den Trip, die Party oder den Abend in der Stadt. Entscheidet den Plan gemeinsam, erlebt ihn an einem Ort – und wacht mit den Fotos aller auf. Niemand muss irgendwem hinterherlaufen.',
-        fineprint: 'Jetzt für iPhone da. Ab iOS 26.',
+        lede: 'After Stories ist eine App für ein Event mit eurer Gruppe: ein Abendessen, eine Party, ein Wochenende weg. Alle stimmen über den Plan ab, teilen Fotos an einem Ort und speichern sie am Morgen danach alle mit einem Tipp.',
+        fineprint: 'Planen, chatten und Fotos teilen ist kostenlos. Für iPhone, ab iOS 26.',
       },
       pain: {
         title: 'Gruppenchats sind der Ort, an dem Pläne sterben.',

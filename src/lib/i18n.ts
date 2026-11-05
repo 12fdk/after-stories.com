@@ -190,6 +190,7 @@ function mergeHome(base: HomeCopy, l: HomeCopy | undefined): HomeCopy {
     description: str(base.description, l.description),
     faq: (base.faq ?? []).map((f, i) => ({ q: str(f.q, l.faq?.[i]?.q), a: str(f.a, l.faq?.[i]?.a) })),
     hero: {
+      prelude: str(base.hero.prelude, l.hero?.prelude),
       h1: strList(base.hero.h1, l.hero?.h1),
       lede: str(base.hero.lede, l.hero?.lede),
       fineprint: str(base.hero.fineprint, l.hero?.fineprint),

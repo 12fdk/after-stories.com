@@ -45,7 +45,7 @@ Learn this section. Everything else in the file is how to use it.
   | | Short | Full |
   | --- | --- | --- |
   | de | Die App für ein Event mit eurer Gruppe. | After Stories ist eine App für ein Event mit eurer Gruppe: ein Abendessen, eine Party, ein Wochenende weg. Alle stimmen über den Plan ab, teilen Fotos an einem Ort und speichern sie am Morgen danach alle mit einem Tipp. |
-  | fr | L'app pour un événement avec votre groupe. | After Stories est une app pour un événement avec votre groupe : un dîner, une fête, un week-end. Tout le monde vote sur le plan, partage ses photos au même endroit et les enregistre toutes d'un seul geste le lendemain matin. |
+  | fr | L'app pour un événement avec votre groupe. | After Stories est une app pour un événement avec votre groupe : un dîner, une fête, un week-end. Tout le monde vote sur le plan, partage ses photos au même endroit et les sauvegarde toutes d'un seul geste le lendemain matin. |
   | es | La app para un evento con tu grupo. | After Stories es una app para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Todos votan el plan, comparten las fotos en un solo lugar y las guardan todas con un toque a la mañana siguiente. |
 - "Event" is the app's own noun, but alone it sounds like a conference. The first time it
   appears in a piece, examples follow it.
@@ -54,7 +54,7 @@ Learn this section. Everything else in the file is how to use it.
 
 > **Plan it together. Everyone gets the photos.**
 > *Planlæg det sammen. Alle får billederne.* · *Plant es gemeinsam. Alle bekommen die Fotos.* ·
-> *Organisez ensemble. Tout le monde récupère les photos.* · *Planeadlo juntos. Todos reciben
+> *Organisez ensemble. Tout le monde a les photos.* · *Planeadlo juntos. Todos reciben
 > las fotos.*
 
 It names the two things people get, in words they use. The occasion pages already work this way

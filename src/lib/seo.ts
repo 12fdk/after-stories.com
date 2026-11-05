@@ -11,7 +11,7 @@ export const SITE_NAME = "After Stories";
 
 /** One sentence that says what After Stories is: the definition answer engines quote. */
 export const DEFINITION =
-  "After Stories is a private iPhone app for one group trip, party or night out: friends vote on the plan, share photos in one stream, and wake up to a morning-after story. Everything is deleted 48 hours after, once everyone has saved the photos.";
+  "After Stories is an iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after. Everything is deleted 48 hours after, once everyone has saved the photos.";
 
 export const FEATURES = [
   "Templates: Plan together, Party, Game day (with a carpool for the kids) and Free form",

@@ -44,7 +44,12 @@ export interface HomeCopy {
   title: string;
   description: string;
   faq: { q: string; a: string }[];
-  hero: { h1: string[]; lede: string; fineprint: string };
+  /**
+   * The hero says what the app is (docs/marketing-guidelines.md §2), word for word: `prelude` is
+   * the short sentence, `h1` the line that leads (one sentence per entry), `lede` the full
+   * sentence, `fineprint` the price line and the platform.
+   */
+  hero: { prelude: string; h1: string[]; lede: string; fineprint: string };
   pain: { title: string; intro: string };
   how: {
     title: string;

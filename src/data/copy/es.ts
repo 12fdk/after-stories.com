@@ -6,11 +6,11 @@ import type { Copy } from "../i18n-types";
 const copy: Copy = {
     home: {
       title: 'After Stories: planifica viajes, fiestas y salidas en grupo',
-      description: 'App privada de iPhone para viajes, fiestas y salidas en grupo: votad el plan, compartid las fotos en un hilo y despertad con la historia y cada foto guardada.',
+      description: 'Una app de iPhone para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Votad el plan, compartid las fotos y guardadlas todas con un toque.',
       faq: [
         {
           q: '¿Qué es After Stories?',
-          a: 'Una app privada de iPhone para un viaje, una fiesta o una salida. Tu grupo vota el plan, comparte las fotos en un solo hilo y se despierta con la historia de la mañana siguiente: la mejor foto, la frase de la noche y lo que decidisteis. A las 48 horas se elimina, cuando todos han guardado las fotos.',
+          a: 'Una app de iPhone para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Todos votan el plan, comparten las fotos en un solo lugar y las guardan todas con un toque a la mañana siguiente, cuando llega el resumen: la foto y el mensaje con más likes y lo que decidisteis. A las 48 horas de terminar, el evento se elimina, cuando todos han guardado las fotos.',
         },
         {
           q: '¿Cuándo podré descargar After Stories?',
@@ -42,13 +42,13 @@ const copy: Copy = {
         },
       ],
       hero: {
+        prelude: 'La app para un evento con tu grupo.',
         h1: [
           'Planeadlo juntos.',
-          'Vividlo juntos.',
-          'Despertad con la historia.',
+          'Todos reciben las fotos.',
         ],
-        lede: 'La app privada para el viaje, la fiesta o la salida de tu grupo. Decidid el plan juntos, vividlo en un solo lugar y despertad con las fotos de todos. Nadie tiene que perseguir a nadie.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        lede: 'After Stories es una app para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Todos votan el plan, comparten las fotos en un solo lugar y las guardan todas con un toque a la mañana siguiente.',
+        fineprint: 'Planear, chatear y compartir fotos es gratis. Para iPhone, con iOS 26 o posterior.',
       },
       pain: {
         title: 'Los chats de grupo son donde mueren los planes.',

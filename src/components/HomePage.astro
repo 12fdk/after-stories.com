@@ -28,8 +28,8 @@ const ui = uiCopy(locale);
 const events = localEvents(locale);
 const chats = h.chats ?? [];
 const trip = events[0];
-// The one-liner, word for word: its last sentence is the headline, the first two lead into it.
-const [planLine, liveLine, wakeLine] = h.hero.h1;
+// The hero says what the app is before anything else (docs/marketing-guidelines.md §2): the short
+// sentence, then the line that leads as the headline, one sentence per line.
 const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
 ---
 
@@ -45,8 +45,8 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
     <section class="hero">
       <SiteHeader locale={locale} onPage />
       <div class="wrap hero-copy">
-        <p class="prelude">{planLine} {liveLine}</p>
-        <h1>{wakeLine}</h1>
+        <p class="prelude">{h.hero.prelude}</p>
+        <h1>{h.hero.h1.map((line) => <span>{line} </span>)}</h1>
         <p class="lead">{h.hero.lede}</p>
         <div class="cta">
           <AppStoreCta placement="hero" locale={locale} />
@@ -59,7 +59,7 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
       <div class="stage">
         <div class="sun"></div>
         <div class="stage-screen">
-          <img src={`/app/${locale}/summary-phone.webp`} alt={h.how.beats[2]?.name ?? wakeLine} width="760" height="1534" fetchpriority="high" decoding="async" />
+          <img src={`/app/${locale}/summary-phone.webp`} alt={h.how.beats[2]?.name ?? h.hero.h1.join(" ")} width="760" height="1534" fetchpriority="high" decoding="async" />
         </div>
       </div>
     </section>
@@ -145,7 +145,7 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
     padding-top: 48px;
   }
 
-  /* The one-liner's first two sentences, leading into the headline. */
+  /* The short sentence that says what the app is, leading into the headline. */
   .prelude {
     font-family: var(--display);
     font-stretch: 85%;
@@ -155,12 +155,22 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
     color: var(--accent-ink);
   }
 
+  /* The line that leads: each sentence starts its own line, and a long one breaks evenly. */
+  /* Two full sentences, so a step smaller than the site's display size: the badge stays above
+     the fold on a 1280×720 laptop, and the line stays clear of the phone at 1024px. */
   .hero h1 {
-    max-width: 9ch;
+    max-width: 18ch;
     margin-top: -8px;
+    font-size: clamp(2.75rem, 5.2vw, 5.75rem);
   }
 
-  .hero .lead {
+  .hero h1 span {
+    display: block;
+    text-wrap: balance;
+  }
+
+  .hero .lead,
+  .hero .cta .small {
     max-width: 36ch;
   }
 
@@ -236,6 +246,13 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
       top: max(24vh, 190px);
       width: 390px;
       margin: 0;
+    }
+  }
+
+  /* A short laptop screen: less air above the copy, so the badge stays on the first screen. */
+  @media (min-width: 900px) and (max-height: 760px) {
+    .hero-copy {
+      padding-top: 4vh;
     }
   }
 
