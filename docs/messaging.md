@@ -12,7 +12,7 @@ Last full audit: 2026-10-03, 9.5/10 (#24, #26). The missing half point is author
 
 **Live since 2026-10-18** (App Store app 6815212070); **1.1 since 2026-10-29** (iOS 26 or later,
 templates). The direct CTA is Apple's official "Download on the App Store" badge, not a form.
-Friends without an iPhone join an event from the browser, but the organiser needs the app (rule 11).
+People without an iPhone join or create an event in the browser since 2026-11-05 (rule 11).
 
 ## Before any copy or layout change
 
@@ -91,16 +91,18 @@ voice. A new event page fills every field; the test fails if it doesn't.
     hangover jokes.
 11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 26 or later.
     Since 2026-10-20 friends without an iPhone join an event from its invite link in the browser
-    (`app.after-stories.com`, app repo #463): they chat, vote and share photos. Only the iPhone app
-    creates and starts an event, shows the morning-after summary, saves every photo at once and
-    has the carpool. The web app speaks the same five languages (app repo #583). Asked whether someone without an
-    iPhone can join, the answer is yes, with those limits. The direct CTA stays the App Store badge:
-    the browser is how *invited* friends join, never a second CTA. The one exception (#75, #78): an "Open app" button
-    (`ui.navOpenApp`) to `app.after-stories.com`, last in the header, styled to pair with Apple's
-    badge, and a text link in the footer, for members who already have an event. The badge stays
-    first and stays the direct CTA; no copy on the page sells the web app. Never promise an Android app.
+    (`app.after-stories.com`, app repo #463), and since 2026-11-05 anyone can sign up and create and
+    run an event there too (app repo #757): start it, the summary, the photos, the cars. Asked whether
+    someone without an iPhone can use it, the answer is yes. **Not on the web, so never claimed:**
+    RSVP and the gift list (on no platform yet), a purchase, and push (the web sends only two
+    e-mails, the summary and the deletion warning). The web app speaks the same five
+    languages on this site (app repo #583). The direct CTA stays the App Store badge. Two quiet ways
+    to the browser are allowed: an "Open app" button (`ui.navOpenApp`, #75, #78), last in the header
+    and a text link in the footer, for members who already have an event; and one text link under the
+    badge and its fine print in the hero, and under the badge in the closer (`ui.webStart`, `WebStart.astro`, app repo #761), for somebody
+    with no iPhone. No other copy sells the web app. Never promise an Android app.
     When the web app gains a feature or a language, change the answers in every locale
-    (`src/data/events.ts` › `webLimits`).
+    (`src/data/events.ts` › `webMore`).
 
 ## Quick check (all must be "yes")
 

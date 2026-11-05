@@ -29,7 +29,7 @@ const copy: Copy = {
         },
         {
           q: 'Kan venner uden iPhone være med?',
-          a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+          a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
         },
         {
           q: 'Hvem kan se det, vi deler?',
@@ -132,6 +132,7 @@ const copy: Copy = {
       navFaq: 'Spørgsmål',
       navOpenApp: 'Åbn appen',
       webAppEyebrow: 'I din browser',
+      webStart: 'Ingen iPhone? Start i din browser',
       votePrompt: 'Tryk på et svar for at stemme.',
       figureMorning: 'Eventet slutter kl. 6 morgenen efter sidste dag. Så begynder historien.',
       figurePeople: 'Op til 50 personer pr. event.',
@@ -213,7 +214,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -290,7 +291,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -363,7 +364,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -440,7 +441,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Kan ét event dække en hel weekend?',
@@ -517,7 +518,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Kan ét event dække hele festivalen?',
@@ -591,7 +592,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -656,7 +657,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Skal mine kolleger have en iPhone?',
-            a: 'Nej. Kolleger med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Du opretter eventet i iPhone-appen (iOS 26 eller nyere), og historien dagen derpå og at gemme alle billeder på én gang ligger også i appen.',
+            a: 'Nej. Kolleger med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. Du kan oprette eventet i iPhone-appen (iOS 26 eller nyere) eller i browseren, og historien dagen derpå og at gemme billederne virker begge steder.',
           },
           {
             q: 'Skal IT sætte noget op?',
@@ -751,7 +752,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Kan forældre uden iPhone være med?',
-            a: 'Ja. Forældre med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre, men bilerne og pladserne findes kun i iPhone-appen indtil videre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Forældre med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre, og bilerne og pladserne er der også. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Skal børnene have appen?',
@@ -858,7 +859,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -931,7 +932,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan familiemedlemmer uden iPhone være med?',
-            a: 'Ja. Familiemedlemmer med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Familiemedlemmer med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Kan ét event dække en hel weekend?',
@@ -1004,7 +1005,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner og familie uden iPhone være med?',
-            a: 'Ja. Venner og familie med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner og familie med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -1077,7 +1078,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan frivillige uden iPhone være med?',
-            a: 'Ja. Frivillige med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Frivillige med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail. De skriver, stemmer og deler billeder som alle andre. De kan også oprette et event der, helt uden iPhone: starte det, se historien dagen derpå og gemme billederne.',
           },
           {
             q: 'Hvordan fungerer vagterne?',

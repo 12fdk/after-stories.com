@@ -3,7 +3,8 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { describe, expect, it } from "vitest";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
-import { WEB_APP_URL } from "./appstore";
+import WebStart from "../components/WebStart.astro";
+import { WEB_APP_URL, WEB_START_URL } from "./appstore";
 import { locales, uiCopy } from "./i18n";
 import { PRIVACY_HTML } from "../data/privacy";
 
@@ -80,5 +81,33 @@ describe("the web app link", () => {
   it("is in the privacy policy's Umami paragraph, in Danish and English", () => {
     expect(PRIVACY_HTML).toContain("“Åbn appen”");
     expect(PRIVACY_HTML).toContain("“Open app”");
+  });
+});
+
+// The way to start with no iPhone (app repo #761): a quiet text link, never a second badge.
+describe("the web start link", () => {
+  it("opens sign-up over https, in every language, and counts nothing", async () => {
+    expect(new URL(WEB_START_URL).href).toBe("https://app.after-stories.com/opret-konto");
+    for (const locale of locales) {
+      const out = await render(WebStart, locale);
+      expect(out, locale).toContain(`href="${WEB_START_URL}"`);
+      expect(out, locale).toContain(html(uiCopy(locale).webStart));
+      expect(out, locale).not.toContain("data-umami-event");
+    }
+  });
+
+  // After the fine print, or "Needs iOS 26" would read as a condition of the link.
+  it.each(["HomePage", "EventPage"])("%s has it after the badge and the fine print", (name) => {
+    const source = readFileSync(new URL(`../components/${name}.astro`, import.meta.url), "utf8");
+    expect(source).toMatch(/<AppStoreCta [^>]*\/>\s*<p class="small">\{[\w.]+\.fineprint\}<\/p>\s*<WebStart locale=\{locale\} \/>/);
+  });
+
+  it("the closer, with no fine print, has it right after the badge", () => {
+    const source = readFileSync(new URL("../components/sections/Closer.astro", import.meta.url), "utf8");
+    expect(source).toMatch(/<AppStoreCta [^>]*\/>\s*<WebStart locale=\{locale\} \/>/);
+  });
+
+  it("has words in every language", () => {
+    for (const locale of locales) expect(uiCopy(locale).webStart.trim(), locale).not.toBe("");
   });
 });

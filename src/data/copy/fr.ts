@@ -29,7 +29,7 @@ const copy: Copy = {
         },
         {
           q: 'Mes amis sans iPhone peuvent-ils participer ?',
-          a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+          a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
         },
         {
           q: 'Qui peut voir ce que nous partageons ?',
@@ -132,6 +132,7 @@ const copy: Copy = {
       navFaq: 'Questions',
       navOpenApp: "Ouvrir l'app",
       webAppEyebrow: 'Dans le navigateur',
+      webStart: 'Pas d\'iPhone ? Commencez dans votre navigateur',
       votePrompt: 'Touchez une réponse pour voter.',
       figureMorning: 'L\'événement se termine à 6 h le lendemain du dernier jour. Puis le récit commence.',
       figurePeople: "Jusqu'à 50 personnes par événement.",
@@ -213,7 +214,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Combien de personnes peuvent rejoindre un événement ?',
@@ -290,7 +291,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Combien de personnes peuvent rejoindre un événement ?',
@@ -363,7 +364,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Que se passe-t-il au bout de 48 heures ?',
@@ -440,7 +441,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Un événement peut-il couvrir tout un week-end ?',
@@ -517,7 +518,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Un événement peut-il couvrir tout le festival ?',
@@ -591,7 +592,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Que se passe-t-il au bout de 48 heures ?',
@@ -656,7 +657,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Mes collègues ont-ils besoin d\'un iPhone ?',
-            a: 'Non. Les collègues sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Vous créez l\'événement dans l\'app iPhone (iOS 26 ou version ultérieure), et le récit du lendemain et la sauvegarde de toutes les photos d\'un coup se trouvent aussi dans l\'app.',
+            a: 'Non. Les collègues sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Vous créez l\'événement dans l\'app iPhone (iOS 26 ou version ultérieure) ou dans le navigateur, et le récit du lendemain et la sauvegarde des photos fonctionnent dans les deux.',
           },
           {
             q: 'Le service informatique doit-il configurer quelque chose ?',
@@ -751,7 +752,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Les parents sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les parents sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde, mais les voitures et les places ne sont pour l\'instant que dans l\'app iPhone. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les parents sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde, et ils y retrouvent les voitures et les places. Ils peuvent même y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Les enfants ont-ils besoin de l\'app ?',
@@ -858,7 +859,7 @@ const copy: Copy = {
           },
           {
             q: 'Mes amis sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Que se passe-t-il au bout de 48 heures ?',
@@ -931,7 +932,7 @@ const copy: Copy = {
           },
           {
             q: 'Les membres de la famille sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les membres de la famille sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les membres de la famille sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Un événement peut-il couvrir tout un week-end ?',
@@ -1004,7 +1005,7 @@ const copy: Copy = {
           },
           {
             q: 'Les amis et la famille sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les amis et la famille sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les amis et la famille sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Que se passe-t-il au bout de 48 heures ?',
@@ -1077,7 +1078,7 @@ const copy: Copy = {
           },
           {
             q: 'Les bénévoles sans iPhone peuvent-ils participer ?',
-            a: 'Oui. Les bénévoles sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail et un mot de passe. Ils discutent, votent et partagent des photos comme tout le monde. Seule l\'app iPhone (iOS 26 ou version ultérieure) permet de créer et de lancer l\'événement, de voir le récit du lendemain et de sauvegarder toutes les photos d\'un coup.',
+            a: 'Oui. Les bénévoles sur Android ou sur ordinateur ouvrent le lien d\'invitation et participent depuis leur navigateur, avec une adresse e-mail. Ils discutent, votent et partagent des photos comme tout le monde. Ils peuvent aussi y créer un événement, sans iPhone : le lancer, voir le récit du lendemain et sauvegarder les photos.',
           },
           {
             q: 'Comment fonctionnent les créneaux ?',

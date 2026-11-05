@@ -56,6 +56,8 @@ for desktop visitors). Every link comes from `src/lib/appstore.ts`:
 - **"Open app" (#75):** a button to the web app (`WEB_APP_URL` in `src/lib/appstore.ts`), last
   in the header and styled like Apple's badge, plus a text link in the footer. Umami event
   `web-app-click`. The badge stays first and stays the direct CTA (messaging rule 11).
+- **"No iPhone? Start in your browser" (app repo #761):** a text link under the badge in the hero
+  and the closer (`WEB_START_URL`, `WebStart.astro`), to open sign-up. It counts nothing in Umami.
 
 The pre-launch waitlist form is gone; the backend still holds its sign-ups (12fdk/after-stories#271).
 `/privacy/` describes the closed waitlist, the click event and the App Store link, in its website
