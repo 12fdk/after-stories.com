@@ -5,11 +5,11 @@ import type { Copy } from "../i18n-types";
 const copy: Copy = {
     home: {
       title: 'After Stories : plan, fêtes et sorties en groupe',
-      description: 'Une app iPhone privée pour le voyage, la fête ou la sortie de votre groupe : votez sur le plan, partagez les photos dans un seul fil et gardez le récit.',
+      description: 'Une app iPhone pour un événement avec votre groupe : un dîner, une fête, un week-end. Votez sur le plan, partagez vos photos et sauvegardez-les toutes.',
       faq: [
         {
           q: 'Qu\'est-ce qu\'After Stories ?',
-          a: 'Une app iPhone privée pour un voyage, une fête ou une sortie. Votre groupe vote sur le plan, partage les photos dans un seul fil et se réveille avec le récit du lendemain : la meilleure photo, la réplique de la soirée et ce que vous avez décidé. Quarante-huit heures plus tard, tout est supprimé, une fois que chacun a sauvegardé les photos.',
+          a: 'Une app iPhone pour un événement avec votre groupe : un dîner, une fête, un week-end. Tout le monde vote sur le plan, partage ses photos au même endroit et les sauvegarde toutes d\'un seul geste le lendemain matin, quand le résumé arrive : la photo et le message les plus aimés, et ce que vous avez décidé. Quarante-huit heures après la fin, l\'événement est supprimé, une fois que chacun a sauvegardé les photos.',
         },
         {
           q: 'Quand pourrai-je télécharger After Stories ?',
@@ -41,13 +41,13 @@ const copy: Copy = {
         },
       ],
       hero: {
+        prelude: 'L\'app pour un événement avec votre groupe.',
         h1: [
           'Organisez ensemble.',
-          'Vivez ensemble.',
-          'Réveillez-vous avec le récit.',
+          'Tout le monde a les photos.',
         ],
-        lede: 'L\'app privée pour le voyage, la fête ou la sortie de votre groupe. Décidez du plan ensemble, vivez tout au même endroit et retrouvez le lendemain les photos de tout le monde. Plus besoin de courir après qui que ce soit.',
-        fineprint: 'Disponible maintenant sur iPhone, avec iOS 26 ou version ultérieure.',
+        lede: 'After Stories est une app pour un événement avec votre groupe : un dîner, une fête, un week-end. Tout le monde vote sur le plan, partage ses photos au même endroit et les sauvegarde toutes d\'un seul geste le lendemain matin.',
+        fineprint: 'Organiser, discuter et partager des photos, c\'est gratuit. Sur iPhone, avec iOS 26 ou version ultérieure.',
       },
       pain: {
         title: 'Le groupe de discussion, c\'est là que les plans meurent.',

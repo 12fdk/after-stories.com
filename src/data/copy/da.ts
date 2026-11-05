@@ -5,11 +5,11 @@ import type { Copy } from "../i18n-types";
 const copy: Copy = {
     home: {
       title: 'After Stories: Planlæg ture, fester og byaftener sammen',
-      description: 'En privat iPhone-app til jeres tur, fest eller byaften. Stem om planen, del billeder i én strøm, og vågn op til historien med alle billeder gemt.',
+      description: 'En iPhone-app til ét event med din gruppe: en middag, en fest, en weekendtur. Stem om planen, del billeder ét sted, og gem dem alle med ét tryk.',
       faq: [
         {
           q: 'Hvad er After Stories?',
-          a: 'En privat iPhone-app til én tur, fest eller byaften. I stemmer om planen, deler billeder i én strøm og vågner op til historien om i går: det bedste billede, aftenens citat og det, I besluttede. 48 timer senere bliver det hele slettet – når alle har gemt billederne.',
+          a: 'En iPhone-app til ét event med din gruppe: en middag, en fest, en weekendtur. Alle stemmer om planen, deler billeder ét sted og gemmer dem alle med ét tryk morgenen efter, når opsummeringen kommer: billedet og beskeden med flest likes og det, I besluttede. 48 timer efter eventet er slut, bliver det slettet – når alle har gemt billederne.',
         },
         {
           q: 'Hvornår kan jeg få After Stories?',
@@ -41,13 +41,13 @@ const copy: Copy = {
         },
       ],
       hero: {
+        prelude: 'Appen til ét event med din gruppe.',
         h1: [
           'Planlæg det sammen.',
-          'Oplev det sammen.',
-          'Vågn op til historien.',
+          'Alle får billederne.',
         ],
-        lede: 'Den private app til jeres tur, fest eller byaften. Bliv enige om planen, oplev det ét sted, og vågn op til alles billeder. Ingen skal jagte nogen.',
-        fineprint: 'Ude nu til iPhone. Kræver iOS 26 eller nyere.',
+        lede: 'After Stories er en app til ét event med din gruppe: en middag, en fest, en weekendtur. Alle stemmer om planen, deler billeder ét sted og gemmer dem alle med ét tryk morgenen efter.',
+        fineprint: 'Gratis at planlægge, chatte og dele billeder. Til iPhone med iOS 26 eller nyere.',
       },
       pain: {
         title: 'I gruppechatten går planerne i sig selv.',

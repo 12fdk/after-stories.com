@@ -19,8 +19,8 @@ export interface OgCard {
 
 export const homeCard: OgCard = {
   slug: "home",
-  lines: ["Plan it together.", "Live it together.", "Wake up to the story."],
-  kicker: "The group planning app for trips, parties and nights out",
+  lines: ["Plan it together.", "Everyone gets the photos."],
+  kicker: "The app for one event with your group",
 };
 
 /** One card per page that has its own share image: the home page and each event page. */

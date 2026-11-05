@@ -1,6 +1,8 @@
 # after-stories.com
 
 The Astro landing site for the After Stories app. Copy and positioning: `docs/positioning.md`.
+**What we say, word for word, and the facts: `docs/marketing-guidelines.md`** (the sentence that
+says what the app is, the line that leads, the price line; #81). The home hero carries them.
 
 **Every copy or layout change follows `docs/messaging.md` (StoryBrand).** Read it before you
 touch a page, run the `mcpmarket-me:storybrand-messaging` skill over the pages you changed, and put
@@ -70,7 +72,7 @@ Every page gets its search and share metadata from `src/layouts/Base.astro`; kee
 - **JSON-LD** is one `@graph` per page from `src/lib/seo.ts`: Organization (12f ApS), WebSite,
   MobileApplication, the WebPage (+ FAQPage when the page has questions) and a BreadcrumbList.
   The app node links the App Store (`downloadUrl`, `installUrl`, `sameAs`) and a free `Offer`
-  (for search engines only: the pages never mention price, messaging rule 9). No rating until a
+  (the pages say one price line and nothing else, under the home hero's badge: messaging rule 9). No rating until a
   real one exists (rule 3); add `sameAs` for any social profiles.
 - **Share images** (`/og/<slug>.png`, 1200×630) are rendered at build time from each page's
   headline by `src/pages/og/[card].png.ts`. The fonts in `src/assets/og/` are static instances of

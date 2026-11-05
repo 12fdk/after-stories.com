@@ -85,7 +85,7 @@ voice. A new event page fills every field; the test fails if it doesn't.
 8. **The 48-hour deletion is always paired with saving the photos** (positioning.md › *What the
    48-hour deletion means*). Never mention one without the other.
 9. **One price line, word for word, and nothing else:** *Free to plan, chat and share photos.*
-   (owner, 2026-11-05; `marketing-guidelines.md` §8). Under the hero's badge only. No amounts,
+   (owner, 2026-11-05; `marketing-guidelines.md` §8). Under the home page hero's badge only. No amounts,
    nothing about Pro, no "free" anywhere else.
 10. **Voice:** warm and witty, cheeky, never laddish. The office page is calmer: no nightlife or
     hangover jokes.
