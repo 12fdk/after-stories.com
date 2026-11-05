@@ -4,6 +4,9 @@ Every page on this site tells one StoryBrand (SB7) story: **the visitor is the h
 is the guide.** This file is the rulebook for any change to copy, sections or page structure. The
 facts the story is built from (the brand script, voice, use cases) live in
 [`positioning.md`](positioning.md) › *Brand script*. This file says how to use them on the page.
+**The fixed lines** (the sentence that says what the app is, the line that leads, the price
+line) and the facts are in [`marketing-guidelines.md`](marketing-guidelines.md), word for word
+in every language (#81).
 
 Last full audit: 2026-10-03, 9.5/10 (#24, #26). The missing half point is authority: see rule 3.
 
@@ -27,7 +30,7 @@ Friends without an iPhone join an event from the browser, but the organiser need
 
 | SB7 part | Section | Rule |
 | --- | --- | --- |
-| Hero + desire | Hero `h1` and lede | The one-liner, word for word. One desire, no feature list. |
+| Hero + desire | Hero prelude, `h1` and lede | The short sentence above the headline, the line that leads as the `h1`, the full sentence as the lede: all three word for word from `marketing-guidelines.md` §2. One desire, no feature list. The old one-liner is the footer's sign-off. |
 | Direct CTA | Header, hero, after the plan, the closer | Apple's official "Download on the App Store" badge everywhere, linking to the App Store. The closer has the badge plus a QR code for desktop visitors; no form. |
 | Transitional CTA | "How it works" in the header | Stays lower-commitment than the direct CTA. |
 | Problem (external, internal, philosophical) + villain | "Group chats are where plans go to die." | All three levels in the intro. The villain is **the group chat**, never a competitor by name. |
@@ -67,8 +70,10 @@ voice. A new event page fills every field; the test fails if it doesn't.
    ones exist. Authority today = the product's specifics and its promises. The app is live
    (2026-10-18), but there is no rating yet: add real proof (an App Store rating, a quote from a
    real user) to the home page's guide section only once it exists.
-4. **Clear beats clever.** A visitor understands what the app is in 5 seconds from the hero alone.
-   The jokes go in the details (chat mocks, examples), never instead of the explanation.
+4. **Clear beats clever.** A visitor understands what the app is in 5 seconds from the hero alone:
+   the hero says "app", who it is for and the two things they get (the stranger test,
+   `marketing-guidelines.md` §3). The jokes go in the details (chat mocks, examples), never
+   instead of the explanation.
 5. **The direct CTA is the App Store badge, repeated, in the same words.** Apple's official
    "Download on the App Store" badge (localized: `ui.appStoreBadge`) in the header, the hero,
    after the plan and the closer. The closer adds one line above it (`ui.closerCta`) and a QR code
@@ -79,7 +84,9 @@ voice. A new event page fills every field; the test fails if it doesn't.
    memories".
 8. **The 48-hour deletion is always paired with saving the photos** (positioning.md › *What the
    48-hour deletion means*). Never mention one without the other.
-9. **Never say anything about price.** Not even "free".
+9. **One price line, word for word, and nothing else:** *Free to plan, chat and share photos.*
+   (owner, 2026-11-05; `marketing-guidelines.md` §8). Under the hero's badge only. No amounts,
+   nothing about Pro, no "free" anywhere else.
 10. **Voice:** warm and witty, cheeky, never laddish. The office page is calmer: no nightlife or
     hangover jokes.
 11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 26 or later.
