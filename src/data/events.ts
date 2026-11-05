@@ -113,22 +113,22 @@ const groupSize = {
 };
 
 /**
- * An event closes at 06:00 on its own clock; multi-day events (12fdk/after-stories#273) aren't
- * built. Pages that are naturally longer say so honestly. Change this when #273 ships.
+ * One event can run over several days since app 1.3 (12fdk/after-stories#273): it closes at 06:00
+ * after its last day. Pages that are naturally longer say so (docs/marketing-guidelines.md §8).
  */
-const oneDay = (q: string, what: string) => ({
+const severalDays = (q: string) => ({
   q,
-  a: `Not yet. One event covers one day and its night, until 6 the next morning. For ${what}, make one event per day.`,
+  a: "Yes. One event can run over several days: a weekend away or a whole festival is one event, and what you decided shows day by day. It ends at 6 the morning after the last day.",
 });
 
 export const events: EventType[] = [
   {
     slug: "trips",
-    name: "Day trip",
+    name: "Trip",
     icon: "MountainSnow",
-    title: "Group Day Trip Planner for Friends | After Stories",
+    title: "Group Trip Planner for Friends | After Stories",
     description:
-      "Plan the day trip together: vote on the day and where to go, keep every decision in one timeline, and save everyone's photos. Gone 48 hours after.",
+      "Plan the trip together, for a day or a weekend: vote on the day and where to go, keep every decision on top, and save everyone's photos. Gone 48 hours after.",
     headline: ["Plan the trip together.", "Bring every photo home."],
     lede: "Vote on the day, the place and who drives. Share the trip in one stream. Then get everyone's photos in one place, before the whole thing disappears.",
     fineprint: "Out now for iPhone. Needs iOS 26 or later.",
@@ -198,7 +198,7 @@ export const events: EventType[] = [
       after48,
       nonIphone,
       groupSize,
-      oneDay("Can one event cover a whole weekend?", "a weekend away"),
+      severalDays("Can one event cover a whole weekend?"),
     ],
     closer: "The next trip, without the 300 messages.",
     success:
@@ -448,7 +448,7 @@ export const events: EventType[] = [
       after48,
       groupSize,
       nonIphone,
-      oneDay("Can one event cover a whole weekend?", "a weekend send-off"),
+      severalDays("Can one event cover a whole weekend?"),
     ],
     closer: "Make the organiser's job the easy part.",
     success:
@@ -531,7 +531,7 @@ export const events: EventType[] = [
       groupSize,
       after48,
       nonIphone,
-      oneDay("Can one event cover the whole festival?", "a three-day festival"),
+      severalDays("Can one event cover the whole festival?"),
     ],
     closer: "The next festival, sorted before you get there.",
     success:
@@ -998,7 +998,7 @@ export const events: EventType[] = [
       },
       after48,
       nonIphoneFor("family members"),
-      oneDay("Can one event cover a whole weekend?", "a reunion weekend"),
+      severalDays("Can one event cover a whole weekend?"),
     ],
     closer: "The next reunion, without the family group chat.",
     success:

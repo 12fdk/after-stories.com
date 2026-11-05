@@ -133,7 +133,7 @@ const copy: Copy = {
       navOpenApp: "Ouvrir l'app",
       webAppEyebrow: 'Dans le navigateur',
       votePrompt: 'Touchez une réponse pour voter.',
-      figureMorning: "L'événement se termine à 6 h le lendemain matin. Puis le récit commence.",
+      figureMorning: 'L\'événement se termine à 6 h le lendemain du dernier jour. Puis le récit commence.',
       figurePeople: "Jusqu'à 50 personnes par événement.",
       appStoreBadge: 'Télécharger dans l\'App Store',
       footerTagline: 'Organisez ensemble. Vivez ensemble. Réveillez-vous avec le récit.',
@@ -152,9 +152,9 @@ const copy: Copy = {
     },
     events: {
       trips: {
-        name: 'Escapade d\'une journée',
-        title: 'Escapade d\'une journée entre amis | After Stories',
-        description: 'Organisez l\'escapade ensemble : mettez au vote le jour et la destination, gardez chaque décision en vue et sauvegardez les photos de tous. Supprimé 48 h après.',
+        name: 'Escapade',
+        title: 'Escapade entre amis | After Stories',
+        description: 'Organisez l\'escapade ensemble, pour une journée ou un week-end : votez sur le jour et la destination, gardez les décisions en vue et sauvegardez les photos.',
         headline: [
           'Organisez l\'escapade ensemble.',
           'Ramenez toutes les photos.',
@@ -221,7 +221,7 @@ const copy: Copy = {
           },
           {
             q: 'Un événement peut-il couvrir tout un week-end ?',
-            a: 'Pas encore. Un événement couvre une journée et sa nuit, jusqu\'à 6 h le lendemain matin. Pour un week-end, créez un événement par jour.',
+            a: 'Oui. Un événement peut durer plusieurs jours : un week-end ou tout un festival forme un seul événement, et ce que vous avez décidé s\'affiche jour par jour. Il se termine à 6 h le lendemain du dernier jour.',
           },
         ],
         closer: 'La prochaine escapade, sans les 300 messages.',
@@ -444,7 +444,7 @@ const copy: Copy = {
           },
           {
             q: 'Un événement peut-il couvrir tout un week-end ?',
-            a: 'Pas encore. Un événement couvre une journée et sa nuit, jusqu\'à 6 h le lendemain matin. Pour un EVG ou un EVJF sur un week-end, créez un événement par jour.',
+            a: 'Oui. Un événement peut durer plusieurs jours : un week-end ou tout un festival forme un seul événement, et ce que vous avez décidé s\'affiche jour par jour. Il se termine à 6 h le lendemain du dernier jour.',
           },
         ],
         closer: 'Faites du rôle d\'organisateur la partie facile.',
@@ -521,7 +521,7 @@ const copy: Copy = {
           },
           {
             q: 'Un événement peut-il couvrir tout le festival ?',
-            a: 'Pas encore. Un événement couvre une journée et sa nuit, jusqu\'à 6 h le lendemain matin. Pour un festival de trois jours, créez un événement par jour.',
+            a: 'Oui. Un événement peut durer plusieurs jours : un week-end ou tout un festival forme un seul événement, et ce que vous avez décidé s\'affiche jour par jour. Il se termine à 6 h le lendemain du dernier jour.',
           },
         ],
         closer: 'Le prochain festival, réglé avant même d\'arriver.',
@@ -935,7 +935,7 @@ const copy: Copy = {
           },
           {
             q: 'Un événement peut-il couvrir tout un week-end ?',
-            a: 'Pas encore. Un événement couvre une journée et sa nuit, jusqu\'à 6 h le lendemain matin. Pour une réunion de famille sur un week-end, créez un événement par jour.',
+            a: 'Oui. Un événement peut durer plusieurs jours : un week-end ou tout un festival forme un seul événement, et ce que vous avez décidé s\'affiche jour par jour. Il se termine à 6 h le lendemain du dernier jour.',
           },
         ],
         closer: 'La prochaine réunion de famille, sans le groupe familial.',

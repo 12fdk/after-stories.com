@@ -134,7 +134,7 @@ const copy: Copy = {
       navOpenApp: 'Abrir la app',
       webAppEyebrow: 'En el navegador',
       votePrompt: 'Toca una respuesta para votar.',
-      figureMorning: 'El evento termina a las 6 de la mañana siguiente. Entonces empieza la historia.',
+      figureMorning: 'El evento termina a las 6 de la mañana siguiente al último día. Entonces empieza la historia.',
       figurePeople: 'Hasta 50 personas por evento.',
       appStoreBadge: 'Descárgalo en el App Store',
       footerTagline: 'Planeadlo juntos. Vividlo juntos. Despertad con la historia.',
@@ -153,9 +153,9 @@ const copy: Copy = {
     },
     events: {
       trips: {
-        name: 'Excursión de un día',
-        title: 'Planificador de excursiones en grupo | After Stories',
-        description: 'Planead la excursión juntos: votad el día y el destino, tened cada decisión en una línea de tiempo y guardad las fotos de todos. Se elimina a las 48 horas.',
+        name: 'Escapada',
+        title: 'Planificador de escapadas en grupo | After Stories',
+        description: 'Planead la escapada juntos, de un día o de fin de semana: votad el día y el destino, tened las decisiones arriba y guardad las fotos de todos.',
         headline: [
           'Planead la excursión juntos.',
           'Llevaos cada foto a casa.',
@@ -222,7 +222,7 @@ const copy: Copy = {
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
-            a: 'Todavía no. Un evento cubre un día y su noche, hasta las 6 de la mañana siguiente. Para un fin de semana fuera, cread un evento por día.',
+            a: 'Sí. Un evento puede durar varios días: un fin de semana fuera o un festival entero es un solo evento, y lo que decidisteis aparece día a día. Termina a las 6 de la mañana siguiente al último día.',
           },
         ],
         closer: 'La próxima excursión, sin los 300 mensajes.',
@@ -445,7 +445,7 @@ const copy: Copy = {
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
-            a: 'Todavía no. Un evento cubre un día y su noche, hasta las 6 de la mañana siguiente. Para una despedida de fin de semana, cread un evento por día.',
+            a: 'Sí. Un evento puede durar varios días: un fin de semana fuera o un festival entero es un solo evento, y lo que decidisteis aparece día a día. Termina a las 6 de la mañana siguiente al último día.',
           },
         ],
         closer: 'Que el trabajo del organizador sea la parte fácil.',
@@ -522,7 +522,7 @@ const copy: Copy = {
           },
           {
             q: '¿Puede un evento cubrir todo el festival?',
-            a: 'Todavía no. Un evento cubre un día y su noche, hasta las 6 de la mañana siguiente. Para un festival de tres días, cread un evento por día.',
+            a: 'Sí. Un evento puede durar varios días: un fin de semana fuera o un festival entero es un solo evento, y lo que decidisteis aparece día a día. Termina a las 6 de la mañana siguiente al último día.',
           },
         ],
         closer: 'El próximo festival, organizado antes de llegar.',
@@ -936,7 +936,7 @@ const copy: Copy = {
           },
           {
             q: '¿Puede un evento durar todo un fin de semana?',
-            a: 'Todavía no. Un evento cubre un día y su noche, hasta las 6 de la mañana siguiente. Para un fin de semana en familia, cread un evento por día.',
+            a: 'Sí. Un evento puede durar varios días: un fin de semana fuera o un festival entero es un solo evento, y lo que decidisteis aparece día a día. Termina a las 6 de la mañana siguiente al último día.',
           },
         ],
         closer: 'La próxima reunión, sin el chat familiar.',
