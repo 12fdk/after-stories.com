@@ -133,7 +133,7 @@ const copy: Copy = {
       navOpenApp: 'Åbn appen',
       webAppEyebrow: 'I din browser',
       votePrompt: 'Tryk på et svar for at stemme.',
-      figureMorning: 'Eventet slutter kl. 6 næste morgen. Så begynder historien.',
+      figureMorning: 'Eventet slutter kl. 6 morgenen efter sidste dag. Så begynder historien.',
       figurePeople: 'Op til 50 personer pr. event.',
       appStoreBadge: 'Hent i App Store',
       footerTagline: 'Planlæg det sammen. Oplev det sammen. Vågn op til historien.',
@@ -152,9 +152,9 @@ const copy: Copy = {
     },
     events: {
       trips: {
-        name: 'Dagstur',
-        title: 'Planlæg dagsturen med vennerne | After Stories',
-        description: 'Planlæg dagsturen sammen: stem om dagen og stedet, saml alle beslutninger i én tidslinje, og gem alles billeder. Væk 48 timer efter.',
+        name: 'Tur',
+        title: 'Planlæg turen med vennerne | After Stories',
+        description: 'Planlæg turen sammen, en dag eller en weekend: stem om dagen og stedet, saml beslutningerne øverst, og gem alles billeder. Væk 48 timer efter.',
         headline: [
           'Planlæg turen sammen.',
           'Tag alle billederne med hjem.',
@@ -221,7 +221,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan ét event dække en hel weekend?',
-            a: 'Ikke endnu. Ét event dækker én dag og natten efter, indtil kl. 6 næste morgen. Skal I væk en hel weekend, så lav ét event pr. dag.',
+            a: 'Ja. Ét event kan vare flere dage: en weekendtur eller en hel festival er ét event, og det, I har besluttet, står dag for dag. Det slutter kl. 6 morgenen efter sidste dag.',
           },
         ],
         closer: 'Den næste tur – uden de 300 beskeder.',
@@ -444,7 +444,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan ét event dække en hel weekend?',
-            a: 'Ikke endnu. Ét event dækker én dag og natten efter, indtil kl. 6 næste morgen. Varer polterabenden en hel weekend, så lav ét event pr. dag.',
+            a: 'Ja. Ét event kan vare flere dage: en weekendtur eller en hel festival er ét event, og det, I har besluttet, står dag for dag. Det slutter kl. 6 morgenen efter sidste dag.',
           },
         ],
         closer: 'Gør arrangørens job til den lette del.',
@@ -521,7 +521,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan ét event dække hele festivalen?',
-            a: 'Ikke endnu. Ét event dækker én dag og natten efter, indtil kl. 6 næste morgen. Til en festival over tre dage laver I ét event pr. dag.',
+            a: 'Ja. Ét event kan vare flere dage: en weekendtur eller en hel festival er ét event, og det, I har besluttet, står dag for dag. Det slutter kl. 6 morgenen efter sidste dag.',
           },
         ],
         closer: 'Den næste festival – klaret, før I når frem.',
@@ -935,7 +935,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan ét event dække en hel weekend?',
-            a: 'Ikke endnu. Ét event dækker én dag og natten efter, indtil kl. 6 næste morgen. Varer familietræffet en hel weekend, så lav ét event pr. dag.',
+            a: 'Ja. Ét event kan vare flere dage: en weekendtur eller en hel festival er ét event, og det, I har besluttet, står dag for dag. Det slutter kl. 6 morgenen efter sidste dag.',
           },
         ],
         closer: 'Det næste familietræf – uden familiens gruppechat.',

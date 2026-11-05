@@ -117,7 +117,7 @@ const copy: Copy = {
       navOpenApp: 'Open app',
       webAppEyebrow: 'In your browser',
       votePrompt: 'Tap an answer to vote.',
-      figureMorning: 'The event ends at 6 the next morning. Then the story starts.',
+      figureMorning: 'The event ends at 6 the morning after its last day. Then the story starts.',
       figurePeople: 'Up to 50 people in one event.',
       appStoreBadge: 'Download on the App Store',
       footerTagline: 'Plan it together. Live it together. Wake up to the story.',
@@ -142,9 +142,9 @@ const copy: Copy = {
     ],
     events: {
       trips: {
-        name: 'Day trip',
-        title: 'Group Day Trip Planner for Friends | After Stories',
-        description: 'Plan the day trip together: vote on the day and where to go, keep every decision in one timeline, and save everyone\'s photos. Gone 48 hours after.',
+        name: 'Trip',
+        title: 'Group Trip Planner for Friends | After Stories',
+        description: 'Plan the trip together, for a day or a weekend: vote on the day and where to go, keep every decision on top, and save everyone\'s photos. Gone 48 hours after.',
         headline: [
           'Plan the trip together.',
           'Bring every photo home.',
@@ -211,7 +211,7 @@ const copy: Copy = {
           },
           {
             q: 'Can one event cover a whole weekend?',
-            a: 'Not yet. One event covers one day and its night, until 6 the next morning. For a weekend away, make one event per day.',
+            a: 'Yes. One event can run over several days: a weekend away or a whole festival is one event, and what you decided shows day by day. It ends at 6 the morning after the last day.',
           },
         ],
         closer: 'The next trip, without the 300 messages.',
@@ -434,7 +434,7 @@ const copy: Copy = {
           },
           {
             q: 'Can one event cover a whole weekend?',
-            a: 'Not yet. One event covers one day and its night, until 6 the next morning. For a weekend send-off, make one event per day.',
+            a: 'Yes. One event can run over several days: a weekend away or a whole festival is one event, and what you decided shows day by day. It ends at 6 the morning after the last day.',
           },
         ],
         closer: 'Make the organiser\'s job the easy part.',
@@ -511,7 +511,7 @@ const copy: Copy = {
           },
           {
             q: 'Can one event cover the whole festival?',
-            a: 'Not yet. One event covers one day and its night, until 6 the next morning. For a three-day festival, make one event per day.',
+            a: 'Yes. One event can run over several days: a weekend away or a whole festival is one event, and what you decided shows day by day. It ends at 6 the morning after the last day.',
           },
         ],
         closer: 'The next festival, sorted before you get there.',
@@ -925,7 +925,7 @@ const copy: Copy = {
           },
           {
             q: 'Can one event cover a whole weekend?',
-            a: 'Not yet. One event covers one day and its night, until 6 the next morning. For a reunion weekend, make one event per day.',
+            a: 'Yes. One event can run over several days: a weekend away or a whole festival is one event, and what you decided shows day by day. It ends at 6 the morning after the last day.',
           },
         ],
         closer: 'The next reunion, without the family group chat.',

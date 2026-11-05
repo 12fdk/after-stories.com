@@ -133,7 +133,7 @@ const copy: Copy = {
       navOpenApp: 'App öffnen',
       webAppEyebrow: 'Im Browser',
       votePrompt: 'Tippe auf eine Antwort, um abzustimmen.',
-      figureMorning: 'Das Event endet um 6 Uhr am nächsten Morgen. Dann beginnt die Geschichte.',
+      figureMorning: 'Das Event endet um 6 Uhr am Morgen nach dem letzten Tag. Dann beginnt die Geschichte.',
       figurePeople: 'Bis zu 50 Personen pro Event.',
       appStoreBadge: 'Laden im App Store',
       footerTagline: 'Plant es gemeinsam. Erlebt es gemeinsam. Wacht mit der Geschichte auf.',
@@ -152,9 +152,9 @@ const copy: Copy = {
     },
     events: {
       trips: {
-        name: 'Tagesausflug',
-        title: 'Tagesausflug mit Freund:innen planen | After Stories',
-        description: 'Plant den Tagesausflug gemeinsam: Stimmt über Tag und Ziel ab, haltet jede Entscheidung in einer Zeitleiste fest und speichert alle Fotos. Nach 48 Stunden weg.',
+        name: 'Ausflug',
+        title: 'Ausflug mit Freund:innen planen | After Stories',
+        description: 'Plant den Ausflug gemeinsam, für einen Tag oder ein Wochenende: Stimmt über Tag und Ziel ab, haltet Entscheidungen oben fest und speichert alle Fotos.',
         headline: [
           'Plant den Ausflug gemeinsam.',
           'Bringt jedes Foto mit nach Hause.',
@@ -221,7 +221,7 @@ const copy: Copy = {
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
-            a: 'Noch nicht. Ein Event umfasst einen Tag und die Nacht danach, bis 6 Uhr am nächsten Morgen. Für ein Wochenende weg erstellt ihr ein Event pro Tag.',
+            a: 'Ja. Ein Event kann mehrere Tage dauern: Ein Wochenende weg oder ein ganzes Festival ist ein Event, und was ihr entschieden habt, steht Tag für Tag da. Es endet um 6 Uhr am Morgen nach dem letzten Tag.',
           },
         ],
         closer: 'Der nächste Ausflug – ohne 300 Nachrichten.',
@@ -444,7 +444,7 @@ const copy: Copy = {
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
-            a: 'Noch nicht. Ein Event umfasst einen Tag und die Nacht danach, bis 6 Uhr am nächsten Morgen. Für einen Abschied übers Wochenende erstellt ihr ein Event pro Tag.',
+            a: 'Ja. Ein Event kann mehrere Tage dauern: Ein Wochenende weg oder ein ganzes Festival ist ein Event, und was ihr entschieden habt, steht Tag für Tag da. Es endet um 6 Uhr am Morgen nach dem letzten Tag.',
           },
         ],
         closer: 'Macht den Job der Organisator:in zum leichten Teil.',
@@ -521,7 +521,7 @@ const copy: Copy = {
           },
           {
             q: 'Kann ein Event das ganze Festival abdecken?',
-            a: 'Noch nicht. Ein Event umfasst einen Tag und die Nacht danach, bis 6 Uhr am nächsten Morgen. Für ein dreitägiges Festival erstellt ihr ein Event pro Tag.',
+            a: 'Ja. Ein Event kann mehrere Tage dauern: Ein Wochenende weg oder ein ganzes Festival ist ein Event, und was ihr entschieden habt, steht Tag für Tag da. Es endet um 6 Uhr am Morgen nach dem letzten Tag.',
           },
         ],
         closer: 'Das nächste Festival – geklärt, bevor ihr ankommt.',
@@ -935,7 +935,7 @@ const copy: Copy = {
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
-            a: 'Noch nicht. Ein Event umfasst einen Tag und die Nacht danach, bis 6 Uhr am nächsten Morgen. Für ein Familienwochenende erstellt ihr ein Event pro Tag.',
+            a: 'Ja. Ein Event kann mehrere Tage dauern: Ein Wochenende weg oder ein ganzes Festival ist ein Event, und was ihr entschieden habt, steht Tag für Tag da. Es endet um 6 Uhr am Morgen nach dem letzten Tag.',
           },
         ],
         closer: 'Das nächste Familientreffen – ohne Familienchat.',
