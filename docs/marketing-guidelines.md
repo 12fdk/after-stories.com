@@ -3,8 +3,8 @@
 > **What we say, in every channel.** For Hermes and anyone else who writes a video, a reel, a
 > carousel, a caption, a blog post, an ad or a store text for After Stories.
 >
-> **Status: proposal, 2026-11-05 (#81).** It binds once Robert merges it. The lines marked
-> *(Robert)* in §11 are his to decide; until he does, the recommended choice stands.
+> **Decided by Robert, 2026-11-05 (#81).** The five decisions behind it are in §11. A change to
+> §2 (the message) or §11 is his; a change to §8 (the facts) follows the app.
 >
 > This file decides **the message and the facts**. `marketing.md` decides how videos are produced
 > and scheduled, `prompt.md` how a blog post is built, `messaging.md` how the site's pages are
@@ -40,13 +40,22 @@ Learn this section. Everything else in the file is how to use it.
 
 - The three examples may be swapped for the piece's own occasion (*a birthday, the kids' match,
   the office party*). Everything else in the sentence stays word for word.
+- German, French and Spanish, for the site and any piece in those languages:
+
+  | | Short | Full |
+  | --- | --- | --- |
+  | de | Die App für ein Event mit eurer Gruppe. | After Stories ist eine App für ein Event mit eurer Gruppe: ein Abendessen, eine Party, ein Wochenende weg. Alle stimmen über den Plan ab, teilen Fotos an einem Ort und speichern sie am Morgen danach alle mit einem Tipp. |
+  | fr | L'app pour un événement avec votre groupe. | After Stories est une app pour un événement avec votre groupe : un dîner, une fête, un week-end. Tout le monde vote sur le plan, partage ses photos au même endroit et les enregistre toutes d'un seul geste le lendemain matin. |
+  | es | La app para un evento con tu grupo. | After Stories es una app para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Todos votan el plan, comparten las fotos en un solo lugar y las guardan todas con un toque a la mañana siguiente. |
 - "Event" is the app's own noun, but alone it sounds like a conference. The first time it
   appears in a piece, examples follow it.
 
 ### 2.2 The promise: the line that leads
 
 > **Plan it together. Everyone gets the photos.**
-> *Planlæg det sammen. Alle får billederne.*
+> *Planlæg det sammen. Alle får billederne.* · *Plant es gemeinsam. Alle bekommen die Fotos.* ·
+> *Organisez ensemble. Tout le monde récupère les photos.* · *Planeadlo juntos. Todos reciben
+> las fotos.*
 
 It names the two things people get, in words they use. The occasion pages already work this way
 (*"Plan the birthday together. Everyone gets the photos."*); this is the same line for every
@@ -127,11 +136,13 @@ the post file, under `Stranger test:`, quoting the line in the piece that gives 
    48-hour deletion means). Never fear, never loss.
 9. **Say the platform plainly.** An iPhone app. Friends without an iPhone join in their browser
    from the invite link. Never promise an Android app.
-10. **End on the next step**, the same every time: the icon and `after-stories.com` on the end
-    card (Robert, 2026-10-29), and the channel's link line as the caption's last line
-    (`marketing.md` §2).
+10. **End on the next step**, the same every time. The end card is the icon, the short sentence
+    and `after-stories.com` (Robert, 2026-11-05; it was the icon and the URL only since
+    2026-10-29). Still no "Download on the App Store" text. The caption's last line is the
+    channel's link line (`marketing.md` §2).
 11. **Only facts from §8.** No invented numbers, quotes, reviews, user counts or dates. No
-    competitor by name. **Nothing about price**, not even "free" (*Robert*, §11).
+    competitor by name. **Price: one fixed line and nothing else** (§8). No amounts, no "100 %
+    free", no "free forever", nothing about Pro.
 12. **Clear first, then funny.** Warm and witty, cheeky, never laddish; the office lane is
     calmer. The joke lives in the situation. The explanation is never a joke.
 
@@ -183,7 +194,7 @@ name a real child.
 | 1. Situation | The opening line, from §2.3 column 3 or the lane's situations | In their words; no product fact |
 | 2. What it is | The short sentence on screen (spoken in full if there is a voice) | Before the halfway mark |
 | 3. The proof | The real app doing the one proof, with its line from §2.3 | At least 2 seconds of the app, readable |
-| 4. End card | The icon and `after-stories.com` | Robert, 2026-10-29 |
+| 4. End card | The icon, the short sentence, `after-stories.com` | Rule 10. A muted, unread video still says what it is |
 
 Caption: line 1 the situation as a question; line 2 the **full** sentence; the last line the
 channel's link line (`marketing.md` §2); then the hashtags. The proof's line is on screen, so the
@@ -199,7 +210,7 @@ article's problem. The FAQ has *"What is After Stories?"*, answered with the ful
 the platform line (rule 9), because FAQ answers are quoted without the article around them.
 
 **Paid ad:** an ad may be an ad. The short sentence is on screen within 3 seconds; then one
-proof; then the App Store.
+proof; then the price line (§8) and the App Store.
 
 **Profile bio:** *The app for one event with your group. Plan it together. Everyone gets the
 photos.* Then the link.
@@ -249,10 +260,20 @@ list.
   public events.
 - That photos are kept or backed up after the 48 hours.
 
+**Price: one line, word for word** (Robert, 2026-11-05; before that we said nothing)
+
+> **Free to plan, chat and share photos.**
+> *Gratis at planlægge, chatte og dele billeder.* · *Planen, chatten und Fotos teilen ist
+> kostenlos.* · *Organiser, discuter et partager des photos, c'est gratuit.* · *Planear, chatear
+> y compartir fotos es gratis.*
+
+It is true because the one paid thing is photo quality (*After Stories Pro*, the *Event Pass*).
+It may appear once in a piece, after the sentence, never as the opening. Nothing else is said
+about price: no amounts, no Pro, no "everything is free".
+
 **True, but not for marketing without Robert's word**
 
-- **Price.** The app is free to use, and photo quality is the one paid thing (*After Stories
-  Pro*, the *Event Pass*). The rule is still: say nothing about price (§11).
+- *After Stories Pro* and the *Event Pass*, and what they cost.
 - The number of languages in the app (the site is in five).
 - Partner templates and unlock codes (1.4, in review).
 
@@ -280,7 +301,7 @@ what now? *the link*. After: all three answered.
 | 1 | "wait, what time was it again?" (a still: coats by a door) |
 | 2 | **The app for one event with your group.** |
 | 3 | The real app: the vote, then *Event details* at the top. "What's decided stays at the top. Nobody scrolls back." |
-| 4 | The icon · after-stories.com |
+| 4 | The icon · The app for one event with your group. · after-stories.com |
 
 ## 10. How this file sits with the others
 
@@ -288,21 +309,19 @@ what now? *the link*. After: all three answered.
 | --- | --- | --- |
 | `marketing.md` | Production, formats, cadence, the calendar, the logs, the guardrails | **Brand sources**: this file first. **§5 Claim sheet**: replaced by a pointer to §8 here. Rows that are wrong today: "Friends without an iPhone: the web version is gone" (they join in the browser), "iOS 27+" (iOS 26), "One event = one day" and "never claim a weekend in ONE event" (several days since 1.3), "never claim an Add to calendar" (it exists). **§5 formats**: every format gets beats 2 and 3 of §7; a format that cannot show the real app leaves the rotation. **§6 queue**: each row names its lane, its situation and its one proof (1, 2 or 3). Rows whose message is a small feature (likes, one stream, the timeline, fifty people, never-location, no-GPS, one event per day) are rewritten onto a proof or dropped. **§3 guardrails**: add the stranger test. |
 | `prompt.md` | Topic selection, structure, images, publishing | **§1** feature list replaced by a pointer to §8 here (its "no web app" and "no paywall" lines are out of date, and it lacks the carpool and several-day events). The first mention is the full sentence (§7). |
-| `messaging.md`, `positioning.md` | The site's StoryBrand structure, the market decisions | Nothing until Robert decides §11; then the one-liner and the home page hero follow in their own issue. |
+| `messaging.md`, `positioning.md` | The site's StoryBrand structure, the market decisions | Changed with this file (#81): the sentence, the line that leads, the tagline as the sign-off, the price line. The home page follows in its own PR. |
 | The live site, `llms.txt` | The verbatim source for site lines | A site line is used only if it passes rule 5. |
 
 The real app recordings are three files from October and their index is marked stale
 (`INDEX.stale.md`). Rule 4 needs a fresh set that shows each of the three proofs, the carpool
 and a several-day event. Until it exists, use only moments checked frame by frame.
 
-## 11. Decisions for Robert
+## 11. The decisions (Robert, 2026-11-05)
 
-Each has a recommendation, which is what this file says until he decides otherwise.
-
-| # | Decision | Recommended | The alternative |
+| # | Decision | Decided | Not chosen |
 | --- | --- | --- | --- |
 | 1 | The sentence (§2.1) | "an app for one event with your group", plus the two outcomes | "A private group chat for one event": understood faster, but it puts us in the category we call the villain |
-| 2 | The line that leads (§2.2) | *Plan it together. Everyone gets the photos.* leads; the tagline becomes the sign-off | Keep the tagline as the headline and put the sentence right under it, everywhere |
-| 3 | The end card | Add the short sentence under the icon: every video then says what it is, even muted and unread | Keep the icon and the URL only (today's rule) |
-| 4 | Price | Allow one fixed line, "Free to plan, chat and share photos", now that Pro exists | Keep saying nothing |
-| 5 | The lane split (§6) | Friends at least half; parents and colleagues share the rest by season | One lane only for the next 30 days, to see which one moves installs |
+| 2 | The line that leads (§2.2) | *Plan it together. Everyone gets the photos.* leads; the tagline is the sign-off | The tagline as the headline, with the sentence under it |
+| 3 | The end card (rule 10) | The icon, the short sentence, the URL | The icon and the URL only (the rule of 2026-10-29) |
+| 4 | Price (§8) | One fixed line: *Free to plan, chat and share photos.* | Saying nothing (the rule since 2026-10-03) |
+| 5 | The lane split (§6) | Friends at least half; parents and colleagues share the rest by season | One lane only for 30 days |

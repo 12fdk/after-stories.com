@@ -7,20 +7,27 @@
 > and Spanish. **1.1 (2026-10-29)**: iOS 26 or later, the templates (*Plan together*, *Party*,
 > *Game day* with the kids' carpool, *Free form*) and a cover picture per event. Since 2026-10-20
 > friends without an iPhone join from the browser (`app.after-stories.com`, app repo #463).
+> **1.3 (2026-10-31)**: one event can run over several days.
+>
+> **What we say in every channel is in [`marketing-guidelines.md`](marketing-guidelines.md)**
+> (#81, owner 2026-11-05): the sentence that says what the app is, the line that leads, the three
+> proofs and the facts. This file keeps the market decisions and the brand script.
 
 ## The decisions
 
 | Topic | Decision |
 | --- | --- |
 | Name | **After Stories** everywhere (app repo #245, #246). Not "AFTER". |
+| What it is | **"An app for one event with your group"**, said the same way every time (owner, 2026-11-05, #81; `marketing-guidelines.md` §2.1). |
+| The line that leads | ***Plan it together. Everyone gets the photos.*** The older one-liner (*Plan it together. Live it together. Wake up to the story.*) is the sign-off: it never stands alone (owner, 2026-11-05). |
 | Audience | Friend groups, international. Worldwide on day one. **Second audience: colleagues planning an office event** (added 2026-10-03). |
 | Language | The app ships in Danish, English, French, German and Spanish; so does the site. |
 | The pain | **Planning the event** (it gets lost in the group chat) and **collecting the photos afterwards** (everyone's are stuck on their own phone). |
 | The hook | ***The morning after*** summary: the best photo, the best line, what you decided, and *save all photos*. |
-| Hero use case | **The trip / weekend away.** It needs multi-day events (app repo, new issue). |
+| Hero use case | **The trip / weekend away.** One event runs over several days since 1.3 (app repo #273). |
 | Ephemerality | **A selling point.** The event is **deleted 48 hours after it ends**. |
 | Voice | **Warm and witty.** Friends first, light humour, broad appeal (#165). Cheeky, never laddish. |
-| Price | Free. **Say nothing about price** in marketing, so a paid tier stays possible. |
+| Price | **One fixed line: *Free to plan, chat and share photos.*** Nothing else about price: no amounts, nothing about Pro (owner, 2026-11-05; until then we said nothing). The one paid thing is photo quality (app repo #547). |
 | Non-iPhone friends | **They join from the browser** (since 2026-10-20, app repo #463, #495). On Android or a computer the invite link opens the web app at `app.after-stories.com`: sign up with an e-mail and a password, then chat, vote, share photos and take tasks. **Only the iPhone app (iOS 26 or later)** creates and starts an event, shows the morning-after summary, saves every photo at once and has the carpool. The web app speaks the same five languages (app repo #583). Say all of that honestly; never promise an Android app. |
 | Growth | **The invite link** and **App Store search (ASO)**. No paid ads at launch. |
 | 90-day goal | **Raw installs.** |
@@ -29,11 +36,13 @@
 
 **For** groups of friends making a plan together,
 **who** lose the plan in the group chat and never see each other's photos afterwards,
-**After Stories** is one private place per event: plan it, live it, and wake up to the story.
+**After Stories** is an app for one event with their group: everyone votes on the plan, shares
+photos in one place, and saves them all with one tap the morning after.
 **Unlike** a group chat plus a shared album, decisions stay visible, everyone's photos land in one
 place, and then the whole thing disappears.
 
-**One-liner:** *Plan it together. Live it together. Wake up to the story.*
+**The line that leads:** *Plan it together. Everyone gets the photos.*
+**The sign-off:** *Plan it together. Live it together. Wake up to the story.*
 
 **Why not WhatsApp + a shared album?** Four answers, in this order:
 
@@ -52,13 +61,13 @@ too" (a row of chips on the site, screenshots 5–8 on the App Store, one ASO ke
 
 | # | Use case | Role | The planning pain | The photo/story payoff | Fits the product today? |
 | --- | --- | --- | --- | --- | --- |
-| 1 | **Trip / weekend away** (cabin, city break, ski) | **Hero** | Dates, house, who drives, what to eat | Hundreds of photos on six phones | **No: needs multi-day events** |
+| 1 | **Trip / weekend away** (cabin, city break, ski) | **Hero** | Dates, house, who drives, what to eat | Hundreds of photos on six phones | Yes since 1.3 (several days in one event) |
 | 2 | **Night out** | Proof | Where to meet, where next | "What happened last night?" | Yes |
 | 3 | **Birthday / celebration** | Proof | Date poll, venue, gift | Everyone's photos of the guest of honour | Yes (≤ 50 people) |
-| 4 | **Bachelor(ette) / hen & stag** | Proof | Lots of decisions, one organiser | Photos you want gone in 48 h | Needs multi-day for weekends |
-| 5 | **Festival / concert** | Proof | Tickets, meeting point, camp | Chaos, photos everywhere | Needs multi-day for festivals |
+| 4 | **Bachelor(ette) / hen & stag** | Proof | Lots of decisions, one organiser | Photos you want gone in 48 h | Yes; a weekend since 1.3 |
+| 5 | **Festival / concert** | Proof | Tickets, meeting point, camp | Chaos, photos everywhere | Yes; several days since 1.3 |
 | 6 | **Dinner / game / movie night** | Proof | Which day, which film, who cooks | Light. The poll is the payoff | Yes |
-| 7 | **Office event** (team dinner, Friday bar, summer/Christmas party, offsite) | Proof, **own page** | Outlook + Doodle + a dozen emails | Everyone's photos from the party, and no work chat that lives forever | Yes (≤ 50 people); offsite needs multi-day |
+| 7 | **Office event** (team dinner, Friday bar, summer/Christmas party, offsite) | Proof, **own page** | Outlook + Doodle + a dozen emails | Everyone's photos from the party, and no work chat that lives forever | Yes (≤ 50 people); an offsite over several days since 1.3 |
 | 8 | **Kids' game day** (a child's match: away game, cup, tournament day) | Proof, **own page** (`/match-day/`, owner 2026-10-29) | The parents' chat: who drives, how many seats, who takes which child home | The goal photo from every parent's phone | Yes since 1.1: the *Game day* template with the car view (children's first names, cars with seats out and home, anyone moves a child). Not yet: the car view in the browser, *repeat for the next game*, the score |
 
 The hero of use case 8 is **the parent**, not the player: the page talks to parents, the children are
@@ -139,8 +148,9 @@ the app forgets the rest.**
 The current page sells v1: moment tiles, *I'm going home*, *While you were gone…*, awards and
 "Log the night". All of that was removed in app repo #208. The new page:
 
-1. **Hero:** the trip. *Plan it together. Live it together. Wake up to the story.* Visual: a
-   *morning after* summary card for a cabin weekend.
+1. **Hero:** the short sentence, then the line that leads (*Plan it together. Everyone gets the
+   photos.*), then the full sentence as the lede (`marketing-guidelines.md` §2). Visual: the
+   app's morning-after screen.
 2. **The pain:** *The plan got lost in the group chat. The photos never left everyone's phone.*
 3. **How it works:** three beats, not eight. *Plan* (polls → decisions), *Live* (one stream,
    photos, likes), *The morning after* (the summary, save all photos).
@@ -153,7 +163,8 @@ The current page sells v1: moment tiles, *I'm going home*, *While you were gone�
 7. **Get it:** the official "Download on the App Store" badge (header, hero, after the plan,
    closer), and a QR code in the closer for desktop visitors. For iPhone, iOS 26 or later.
 
-No price line. Keep IndexNow and the Umami tracking.
+The price line (the decisions above) sits under the hero's badge. Keep IndexNow and the Umami
+tracking.
 
 ## Brand script (StoryBrand, 2026-10-03)
 
@@ -176,6 +187,6 @@ The site copy follows this. How it maps onto each page, the rules and the pre-PR
 | **Transitional CTA** | "How it works" in the header. |
 | **Failure** | Another plan in the group chat, and photos that never come. Light, never fear. |
 | **Success** | Waking up the morning after to the whole story: the photo everyone loved, the line everyone's quoting, what you decided, every picture already on your phone. Nobody had to make it. |
-| **One-liner** | *Plan it together. Live it together. Wake up to the story.* Long form: "After Stories is the private app for your group's trip, party or night out: decide the plan together, live it in one place and wake up to everyone's photos, so nobody has to chase anyone." |
+| **One-liner** | *Plan it together. Everyone gets the photos.* Sign-off: *Plan it together. Live it together. Wake up to the story.* Long form: the sentence in `marketing-guidelines.md` §2.1. Until 2026-11-05: "After Stories is the private app for your group's trip, party or night out: decide the plan together, live it in one place and wake up to everyone's photos, so nobody has to chase anyone." |
 
 Each event page tells the same story for its own hero (`src/data/events.test.ts` checks every part is there): the problem line names how organising *that* event feels, and the closer paints that event's morning after (success) and the group-chat alternative (failure).
