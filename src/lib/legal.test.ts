@@ -66,9 +66,16 @@ describe("the privacy policy", () => {
     // One necessary cookie, no statistics, the photo cleaned on the server before it is stored.
     expect(da).toContain("Én cookie");
     expect(en).toContain("One cookie");
-    // Apple is the only third party, and only on the Apple choice (12fdk/after-stories#720).
-    expect(da).toContain("Ingen statistik, og kun Apple som tredjepart");
-    expect(en).toContain("No statistics, and Apple as the only third party");
+    // Apple on the Apple choice (12fdk/after-stories#720), Cloudflare only on the no-invite form (#761).
+    expect(da).toContain("Ingen statistik, og kun Apple og Cloudflare som tredjeparter");
+    expect(en).toContain("No statistics, and only Apple and Cloudflare as third parties");
+    expect(da).toContain("Scriptet hentes kun på den formular");
+    expect(en).toContain("The script loads only on that form");
+    // The two e-mails hold no group content, and can be turned off (12fdk/after-stories#760).
+    expect(da).toContain("aldrig beskeder, billeder eller andres navne");
+    expect(en).toContain("never messages, photos or other people's names");
+    expect(da).toContain("Slå dem fra under Konto");
+    expect(en).toContain("Turn them off under Account");
     expect(da).toContain("appleid.cdn-apple.com");
     expect(en).toContain("appleid.cdn-apple.com");
     // The login link (12fdk/after-stories#723): 15 minutes, one time.
