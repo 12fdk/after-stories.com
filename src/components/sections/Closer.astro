@@ -1,5 +1,6 @@
 ---
 import AppStoreCta from "../AppStoreCta.astro";
+import WebStart from "../WebStart.astro";
 import { uiCopy, type Locale } from "../../lib/i18n";
 
 // The close: one row of three tiles. The middle one is the sun's pink and holds the success, the
@@ -30,6 +31,7 @@ const ui = uiCopy(locale);
       <p class="closer-stakes">{stakes}</p>
       <p class="closer-cta">{ui.closerCta}</p>
       <AppStoreCta placement="closer" with="qr" locale={locale} />
+      <WebStart locale={locale} />
     </div>
 
     <div class="flank flank-dawn">

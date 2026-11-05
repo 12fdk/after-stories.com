@@ -31,7 +31,7 @@ const copy: Copy = {
         },
         {
           q: 'Can friends without an iPhone join?',
-          a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+          a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
         },
         {
           q: 'Who can see what we share?',
@@ -116,6 +116,7 @@ const copy: Copy = {
       navFaq: 'Questions',
       navOpenApp: 'Open app',
       webAppEyebrow: 'In your browser',
+      webStart: 'No iPhone? Start in your browser',
       votePrompt: 'Tap an answer to vote.',
       figureMorning: 'The event ends at 6 the morning after its last day. Then the story starts.',
       figurePeople: 'Up to 50 people in one event.',
@@ -203,7 +204,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'How many people can join one event?',
@@ -280,7 +281,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'How many people can join one event?',
@@ -353,7 +354,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -430,7 +431,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'Can one event cover a whole weekend?',
@@ -507,7 +508,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'Can one event cover the whole festival?',
@@ -581,7 +582,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -646,7 +647,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Do my colleagues need an iPhone?',
-            a: 'No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too.',
+            a: 'No. Colleagues on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. You can create the event in the iPhone app (iOS 26 or later) or in the browser, and the morning-after story and saving the photos work in both.',
           },
           {
             q: 'Does IT need to set anything up?',
@@ -741,7 +742,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Can parents without an iPhone join?',
-            a: 'Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Parents on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else, and the cars and the seats are there too. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'Do the kids need the app?',
@@ -848,7 +849,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -921,7 +922,7 @@ const copy: Copy = {
           },
           {
             q: 'Can family members without an iPhone join?',
-            a: 'Yes. Family members on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Family members on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'Can one event cover a whole weekend?',
@@ -994,7 +995,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends and family without an iPhone join?',
-            a: 'Yes. Friends and family on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends and family on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -1067,7 +1068,7 @@ const copy: Copy = {
           },
           {
             q: 'Can volunteers without an iPhone join?',
-            a: 'Yes. Volunteers on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Volunteers on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.',
           },
           {
             q: 'How do the shifts work?',

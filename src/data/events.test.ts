@@ -86,8 +86,8 @@ describe("launch copy", () => {
     expect(faqs.length).toBeGreaterThan(0);
     for (const { a } of faqs) {
       expect(a).toMatch(/browser|navigateur|navegador/i);
-      // The organiser still needs the app, and says which one.
-      expect(a).toContain("iOS 26");
+      // Since app repo #757 the browser creates and runs an event too, so nothing says only the app can.
+      expect(a).not.toMatch(/Only the iPhone|Kun iPhone-appen|Nur die iPhone-App|Seule l'app iPhone|Solo la app de iPhone/);
     }
   });
 
@@ -105,8 +105,8 @@ describe("launch copy", () => {
 });
 
 // /match-day/ is the kids' game day (docs/positioning.md › use case 8): the Game day template's
-// car view, for parents. 1.1 has no "repeat for the next game" and no score, and the browser has
-// no car view yet, so the page must not promise them.
+// car view, for parents. 1.1 has no "repeat for the next game" and no score, so the page must not
+// promise them. The browser has the car view since app repo #531.
 describe("kids' game day", () => {
   const pages = { "events.ts": events.find((e) => e.slug === "match-day")!, ...Object.fromEntries(
     Object.entries(copies).map(([name, copy]) => [name, copy.events["match-day"]]),
@@ -115,8 +115,8 @@ describe("kids' game day", () => {
   it.each(Object.entries(pages))("%s talks to parents about their children's seats", (_, page) => {
     expect(page.privacy).toHaveLength(4);
     const iphone = page.faq.find((f) => /iPhone/.test(f.q))!;
-    // The cars and the seats are only in the iPhone app for now.
-    expect(iphone.a).toMatch(/iPhone-app|iPhone app|app iPhone|app de iPhone|iPhone-App/);
+    // The cars and the seats are in the browser too.
+    expect(iphone.a).not.toMatch(/iPhone-app|iPhone app|app iPhone|app de iPhone|iPhone-App/);
   });
 
   it.each(Object.entries(pages))("%s promises nothing 1.1 doesn't have", (_, page) => {

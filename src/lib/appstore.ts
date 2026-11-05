@@ -43,8 +43,12 @@ export const badge: Record<Locale, { src: string; width: number }> = {
 export const SMART_APP_BANNER = `app-id=${APP_STORE_ID}`;
 
 /** The web app (app repo #463): members on a computer or Android open their events there.
- * Only a quiet "Open app" link points at it, in the header and the footer; the App Store badge
+ * A quiet "Open app" link points at it, in the header and the footer; the App Store badge
  * stays the one direct call to action (docs/messaging.md, rule 11). Umami counts each click as
  * "web-app-click" with its place ("header" or "footer") and the page's language. */
 export const WEB_APP_URL = "https://app.after-stories.com/";
 export type WebAppPlacement = "header" | "footer";
+
+/** Where somebody with no iPhone and no invite starts on the web (app repo #757, #761): a text link
+ * under the badge (`WebStart.astro`), which stays the one direct call to action (rule 11). */
+export const WEB_START_URL = "https://app.after-stories.com/opret-konto";

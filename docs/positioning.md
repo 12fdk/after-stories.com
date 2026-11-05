@@ -28,7 +28,7 @@
 | Ephemerality | **A selling point.** The event is **deleted 48 hours after it ends**. |
 | Voice | **Warm and witty.** Friends first, light humour, broad appeal (#165). Cheeky, never laddish. |
 | Price | **One fixed line: *Free to plan, chat and share photos.*** Nothing else about price: no amounts, nothing about Pro (owner, 2026-11-05; until then we said nothing). The one paid thing is photo quality (app repo #547). |
-| Non-iPhone friends | **They join from the browser** (since 2026-10-20, app repo #463, #495). On Android or a computer the invite link opens the web app at `app.after-stories.com`: sign up with an e-mail and a password, then chat, vote, share photos and take tasks. **Only the iPhone app (iOS 26 or later)** creates and starts an event, shows the morning-after summary, saves every photo at once and has the carpool. The web app speaks the same five languages (app repo #583). Say all of that honestly; never promise an Android app. |
+| People without an iPhone | **They use the browser** (join since 2026-10-20, app repo #463, #495; create since 2026-11-05, #757). On Android or a computer the invite link opens the web app at `app.after-stories.com`, and `/opret-konto` makes an account with no invite: then create and run an event, chat, vote, share photos, the carpool, the morning-after summary and saving the photos. The web app speaks the same five languages (app repo #583). Say all of that honestly; never promise an Android app. |
 | Growth | **The invite link** and **App Store search (ASO)**. No paid ads at launch. |
 | 90-day goal | **Raw installs.** |
 
@@ -93,9 +93,8 @@ the night itself.*
 - **48 h deletion is a feature here too:** no permanent chat with your boss, no party photos
   lingering on a company drive.
 - **What could stop it** (check before spending on this audience):
-  1. **The organiser needs an iPhone.** Colleagues on Android or a computer join from the
-     browser with an e-mail and a password, in the same five languages; creating the event, the
-     summary and saving every photo at once stay in the iPhone app. The office page says so.
+  1. **~~The organiser needs an iPhone.~~** Gone since 2026-11-05 (app repo #757): the organiser
+     can create and run the event in the browser, and colleagues join there too.
   2. **The 17+ age rating** and the nightlife-flavoured copy. Fine for adults, but the app must
      not read as a party app on a work phone.
   3. **50 members per event.** Covers a team or a small company, not a 200-person Christmas party.

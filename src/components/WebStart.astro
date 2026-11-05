@@ -1,0 +1,27 @@
+---
+import { WEB_START_URL } from "../lib/appstore";
+import { uiCopy, type Locale } from "../lib/i18n";
+
+// The way to start with no iPhone (app repo #761): one quiet text link under the App Store badge,
+// which stays the direct call to action (docs/messaging.md, rule 11). No Umami event: the privacy
+// policy names only the badge and "Open app".
+interface Props {
+  locale?: Locale;
+}
+
+const { locale = "en" } = Astro.props;
+---
+
+<p class="web-start"><a href={WEB_START_URL}>{uiCopy(locale).webStart}</a></p>
+
+<style>
+  .web-start {
+    margin: 0;
+  }
+
+  .web-start a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

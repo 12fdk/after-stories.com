@@ -34,7 +34,7 @@ export const homeFaq: Question[] = [
   },
   {
     q: "Can friends without an iPhone join?",
-    a: "Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.",
+    a: "Yes. Friends on Android or a computer open the invite link and join from their browser, with an email. They chat, vote and share photos like everyone else. They can also create an event there, with no iPhone at all: start it, see the morning-after story and save the photos.",
   },
   {
     q: "Who can see what we share?",

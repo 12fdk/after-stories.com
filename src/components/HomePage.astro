@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import SiteHeader from "./SiteHeader.astro";
 import SiteFooter from "./SiteFooter.astro";
 import AppStoreCta from "./AppStoreCta.astro";
+import WebStart from "./WebStart.astro";
 import Poll from "./sections/Poll.astro";
 import PhoneFrame from "./PhoneFrame.astro";
 import Beats from "./sections/Beats.astro";
@@ -50,6 +51,7 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
         <p class="lead">{h.hero.lede}</p>
         <div class="cta">
           <AppStoreCta placement="hero" locale={locale} />
+          <WebStart locale={locale} />
           <p class="small">{h.hero.fineprint}</p>
         </div>
       </div>

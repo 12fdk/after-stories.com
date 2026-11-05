@@ -29,7 +29,7 @@ const copy: Copy = {
         },
         {
           q: 'Können Freund:innen ohne iPhone mitmachen?',
-          a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+          a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
         },
         {
           q: 'Wer kann sehen, was wir teilen?',
@@ -132,6 +132,7 @@ const copy: Copy = {
       navFaq: 'Fragen',
       navOpenApp: 'App öffnen',
       webAppEyebrow: 'Im Browser',
+      webStart: 'Kein iPhone? Starte im Browser',
       votePrompt: 'Tippe auf eine Antwort, um abzustimmen.',
       figureMorning: 'Das Event endet um 6 Uhr am Morgen nach dem letzten Tag. Dann beginnt die Geschichte.',
       figurePeople: 'Bis zu 50 Personen pro Event.',
@@ -213,7 +214,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -290,7 +291,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -363,7 +364,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -440,7 +441,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
@@ -517,7 +518,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Kann ein Event das ganze Festival abdecken?',
@@ -591,7 +592,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -656,7 +657,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Brauchen meine Kolleg:innen ein iPhone?',
-            a: 'Nein. Kolleg:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Das Event erstellst du in der iPhone-App (ab iOS 26), und auch die Geschichte am Morgen danach und das Speichern aller Fotos auf einmal gibt es nur in der App.',
+            a: 'Nein. Kolleg:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Das Event erstellst du in der iPhone-App (ab iOS 26) oder im Browser, und die Geschichte am Morgen danach und das Speichern der Fotos funktionieren in beiden.',
           },
           {
             q: 'Muss die IT etwas einrichten?',
@@ -751,7 +752,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Können Eltern ohne iPhone mitmachen?',
-            a: 'Ja. Eltern mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen, aber die Autos und Plätze gibt es vorerst nur in der iPhone-App. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Eltern mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen, und auch die Autos und Plätze sind dort. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Brauchen die Kinder die App?',
@@ -858,7 +859,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -931,7 +932,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Familienmitglieder ohne iPhone mitmachen?',
-            a: 'Ja. Familienmitglieder mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Familienmitglieder mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
@@ -1004,7 +1005,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen und Familie ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen und Familie mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen und Familie mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -1077,7 +1078,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freiwillige ohne iPhone mitmachen?',
-            a: 'Ja. Freiwillige mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freiwillige mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie können dort auch selbst ein Event erstellen, ganz ohne iPhone: es starten, die Geschichte am Morgen danach sehen und die Fotos speichern.',
           },
           {
             q: 'Wie funktionieren die Schichten?',
