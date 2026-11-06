@@ -114,6 +114,7 @@ const copy: Copy = {
       navOccasions: 'Occasions',
       navPrivacy: 'Privacy',
       navFaq: 'Questions',
+      navMenu: 'Menu',
       navOpenApp: 'Open app',
       webAppEyebrow: 'In your browser',
       votePrompt: 'Tap an answer to vote.',

@@ -130,6 +130,7 @@ const copy: Copy = {
       navOccasions: 'Anledninger',
       navPrivacy: 'Privatliv',
       navFaq: 'Spørgsmål',
+      navMenu: 'Menu',
       navOpenApp: 'Åbn appen',
       webAppEyebrow: 'I din browser',
       votePrompt: 'Tryk på et svar for at stemme.',
