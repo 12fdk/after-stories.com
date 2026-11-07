@@ -71,8 +71,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "6. november 2026";
-export const PRIVACY_UPDATED_EN = "6 November 2026";
+export const PRIVACY_UPDATED_DA = "7. november 2026";
+export const PRIVACY_UPDATED_EN = "7 November 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -119,12 +119,12 @@ export const PRIVACY_HTML = `
 <h2>Hvor det ligger, og hvem der hjælper os</h2>
 <ul>
   <li><strong>Vores server</strong> kører i et Oracle Cloud-datacenter i Stockholm, Sverige (EU). Det er her, alle konti, events, beskeder og billeder ligger.</li>
-  <li><strong>Apple</strong> står for login (Log ind med Apple, i appen og i webappen) og leverer notifikationer (Apple Push Notification service). Søger du efter et sted, sendes din søgetekst til Apple Kort — uden din placering. Køber du noget i appen, står Apple for betalingen efter sine egne regler.</li>
+  <li><strong>Apple</strong> står for login (Log ind med Apple, i appen og i webappen) og leverer notifikationer (Apple Push Notification service). Søger du efter et sted, sendes din søgetekst til Apple Kort — uden din placering. Åbner du en beslutning med et sted og en adresse, sendes stedets navn og adresse til Apple Kort for at vise kortet — også uden din placering. Køber du noget i appen, står Apple for betalingen efter sine egne regler.</li>
   <li><strong>Cloudflare</strong> leverer invitationssiden på after.12f.dk og står foran hjemmesiden after-stories.com, hvor denne side ligger, og behandler din IP-adresse for at kunne vise dem. Vi logger intet om dig der.</li>
   <li><strong>Brevo</strong> (Frankrig, EU) sender e-mailen, hvis din konto bliver suspenderet eller åbnet igen, og e-mails med login-links og links til at bekræfte din e-mailadresse og nulstille din adgangskode, og e-mails om opsummeringen og sletningen af et event.</li>
   <li><strong>PostHog</strong> modtager appens anonyme brugsstatistik og fejlrapporter og opbevarer dem i sin EU-sky (Frankfurt, Tyskland). Se <a href="#da-statistik">Statistik</a>.</li>
 </ul>
-<p>Alt, hvad du lægger op, opbevares i EU. Login, notifikationer og søgning efter steder går gennem Apple, som behandler dem efter sine egne regler og også uden for EU. Det samme gælder Apples login-script, som webappen henter fra Apple, når du ikke er logget ind (se <em>Webappen</em>). Sikkerhedstjekket på webappen, når du opretter en konto uden en invitation eller logger ind i e-mailfeltet på forsiden, går gennem Cloudflare, også uden for EU.</p>
+<p>Alt, hvad du lægger op, opbevares i EU. Login, notifikationer, søgning efter steder og kort over steder går gennem Apple, som behandler dem efter sine egne regler og også uden for EU. Det samme gælder Apples login-script, som webappen henter fra Apple, når du ikke er logget ind (se <em>Webappen</em>). Sikkerhedstjekket på webappen, når du opretter en konto uden en invitation eller logger ind i e-mailfeltet på forsiden, går gennem Cloudflare, også uden for EU.</p>
 
 <h2 id="da-statistik">Statistik</h2>
 <p>For at se, hvad der virker, og rette fejl, sender appen <strong>anonym brugsstatistik</strong> til PostHog: hvilke trin der bliver brugt (fx at et event er oprettet, at der er stemt, at en besked er sendt med eller uden billede), og <strong>fejlrapporter</strong>, når appen går ned. Med følger appens version, telefonens model, iOS-version og sprog og et tilfældigt id, som appen laver på din telefon.</p>
@@ -258,12 +258,12 @@ export const PRIVACY_HTML = `
 <h2>Where it lives, and who helps us</h2>
 <ul>
   <li><strong>Our server</strong> runs in an Oracle Cloud data centre in Stockholm, Sweden (EU). This is where all accounts, events, messages and photos are stored.</li>
-  <li><strong>Apple</strong> provides sign-in (Sign in with Apple, in the app and in the web app) and delivers notifications (Apple Push Notification service). If you search for a place, your search text goes to Apple Maps — without your location. If you buy something in the app, Apple handles the payment under its own terms.</li>
+  <li><strong>Apple</strong> provides sign-in (Sign in with Apple, in the app and in the web app) and delivers notifications (Apple Push Notification service). If you search for a place, your search text goes to Apple Maps — without your location. If you open a decision with a place and an address, the place's name and address go to Apple Maps to draw the map — also without your location. If you buy something in the app, Apple handles the payment under its own terms.</li>
   <li><strong>Cloudflare</strong> serves the invite page on after.12f.dk and sits in front of the website after-stories.com, where this page lives, and processes your IP address to deliver them. We log nothing about you there.</li>
   <li><strong>Brevo</strong> (France, EU) sends the email if your account is suspended or opened again, and the emails with login links and links to confirm your email address and reset your password, and emails about an event's summary and deletion.</li>
   <li><strong>PostHog</strong> receives the app's anonymous usage statistics and crash reports and stores them in its EU cloud (Frankfurt, Germany). See <a href="#en-statistics">Statistics</a>.</li>
 </ul>
-<p>Everything you post is stored in the EU. Sign-in, notifications and place search go through Apple, which handles them under its own terms, also outside the EU. The same goes for Apple's sign-in script, which the web app loads from Apple when you are not signed in (see <em>The web app</em>). The security check on the web app, when you create an account without an invitation or sign in through the email box on the front page, goes through Cloudflare, also outside the EU.</p>
+<p>Everything you post is stored in the EU. Sign-in, notifications, place search and place maps go through Apple, which handles them under its own terms, also outside the EU. The same goes for Apple's sign-in script, which the web app loads from Apple when you are not signed in (see <em>The web app</em>). The security check on the web app, when you create an account without an invitation or sign in through the email box on the front page, goes through Cloudflare, also outside the EU.</p>
 
 <h2 id="en-statistics">Statistics</h2>
 <p>To see what works and to fix bugs, the app sends <strong>anonymous usage statistics</strong> to PostHog: which steps are used (for example that an event was created, that someone voted, that a message was sent with or without a photo), and <strong>crash reports</strong> when the app fails. With them go the app version, the phone model, the iOS version and language, and a random id the app makes on your phone.</p>
