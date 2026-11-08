@@ -63,13 +63,20 @@ describe("the privacy policy", () => {
       expect(article).toContain(`id="${id}"`);
       expect(article).toContain("app.after-stories.com");
     }
-    // One necessary cookie, no statistics, the photo cleaned on the server before it is stored.
+    // One necessary cookie, the photo cleaned on the server before it is stored.
     expect(da).toContain("Én cookie");
     expect(en).toContain("One cookie");
     // Apple's script on the signed-out first screens (12fdk/after-stories#720, #804), Cloudflare only on the
     // no-invite forms and the front page's e-mail box (#761, #804).
-    expect(da).toContain("Ingen statistik, og kun Apple og Cloudflare som tredjeparter");
-    expect(en).toContain("No statistics, and only Apple and Cloudflare as third parties");
+    expect(da).toContain("Ellers kun Apple og Cloudflare som tredjeparter");
+    expect(en).toContain("Otherwise only Apple and Cloudflare as third parties");
+    // The web app's statistics (12fdk/after-stories#904): anonymous, nothing kept in the browser, the switch on Konto.
+    expect(da).toContain("Anonym statistik uden noget i din browser");
+    expect(en).toContain("Anonymous statistics with nothing kept in your browser");
+    expect(da).toContain("ingen cookie og intet id");
+    expect(en).toContain("no cookie and no id");
+    expect(da).toContain("Do Not Track eller Global Privacy Control");
+    expect(en).toContain("Do Not Track or Global Privacy Control");
     expect(da).toContain("Scriptet hentes kun på de formularer");
     expect(da).toContain("også selv om du ikke vælger");
     expect(en).toContain("The script loads only on those forms");
