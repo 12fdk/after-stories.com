@@ -85,6 +85,7 @@ const copy: Copy = {
           'Sign in with Apple or your email',
         ],
         note: 'The iPhone app adds notifications. In the browser, you get an email when the summary is ready.',
+        alt: 'The After Stories web app in a browser: the chat of Mum’s 60th with photos and likes, and the event details beside it',
       },
       ends: {
         title: 'What happens on the trip stays in the trip.',

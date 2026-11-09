@@ -209,6 +209,7 @@ function mergeHome(base: HomeCopy, l: HomeCopy | undefined): HomeCopy {
       text: str(base.browser.text, l.browser?.text),
       points: strList(base.browser.points, l.browser?.points),
       note: str(base.browser.note, l.browser?.note),
+      alt: str(base.browser.alt, l.browser?.alt),
     },
     ends: { title: str(base.ends.title, l.ends?.title), text: str(base.ends.text, l.ends?.text) },
     useCases: str(base.useCases, l.useCases),

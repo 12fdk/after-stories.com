@@ -83,6 +83,7 @@ const copy: Copy = {
           '« Se connecter avec Apple » ou votre adresse e-mail',
         ],
         note: 'L\'app iPhone ajoute les notifications. Dans le navigateur, vous recevez un e-mail quand le résumé est prêt.',
+        alt: 'After Stories dans le navigateur : la discussion des 60 ans de maman avec photos et likes, et les détails de l\'événement à côté',
       },
       ends: {
         title: 'Ce qui se passe pendant le voyage reste dans le voyage.',

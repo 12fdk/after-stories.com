@@ -60,8 +60,9 @@ export interface HomeCopy {
    * After Stories in the browser (app.after-stories.com), for someone without an iPhone: they can
    * start the event there too (app repo #757/#761). `points` are three things they get, `note` what
    * the iPhone app adds. Its call to action is the web app's button (docs/messaging.md, rule 5).
+   * `alt` describes the screenshot of the web app beside it.
    */
-  browser: { title: string; text: string; points: string[]; note: string };
+  browser: { title: string; text: string; points: string[]; note: string; alt: string };
   ends: { title: string; text: string };
   useCases: string;
   promise: string;

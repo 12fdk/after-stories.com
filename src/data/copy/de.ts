@@ -83,6 +83,7 @@ const copy: Copy = {
           '„Mit Apple anmelden“ oder mit deiner E-Mail-Adresse',
         ],
         note: 'Die iPhone-App bringt dazu Mitteilungen. Im Browser bekommst du eine E-Mail, wenn die Zusammenfassung fertig ist.',
+        alt: 'After Stories im Browser: der Chat von Mamas 60. Geburtstag mit Fotos und Likes, daneben die Eventdetails',
       },
       ends: {
         title: 'Was auf dem Trip passiert, bleibt auf dem Trip.',
