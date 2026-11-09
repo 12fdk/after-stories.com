@@ -83,6 +83,7 @@ const copy: Copy = {
           'Log ind med Apple eller din e-mail',
         ],
         note: 'iPhone-appen giver også notifikationer. I browseren får du en e-mail, når opsummeringen er klar.',
+        alt: 'After Stories i browseren: chatten fra Mors 60 års fødselsdag med billeder og likes, og eventoplysningerne ved siden af',
       },
       ends: {
         title: 'Hvad der sker på turen, bliver på turen.',

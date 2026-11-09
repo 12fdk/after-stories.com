@@ -1,24 +1,21 @@
 ---
 import Icon from "../Icon.astro";
-import Poll from "./Poll.astro";
 import WebAppCta from "../WebAppCta.astro";
-import type { EventType } from "../../data/events";
 import type { Locale } from "../../lib/i18n";
 
 // No iPhone? The browser (app.after-stories.com): on a computer or Android, someone can start the
 // event there too (app repo #757/#761), and their group joins from the invite link on any phone.
 // StoryBrand: it takes away the last objection to the plan ("not everyone has an iPhone"), so it
 // sits right after it, and its call to action is the web app's button (docs/messaging.md, rule 5).
-// The picture is a live poll in a browser window, the same mock as the event pages, so it can't
-// drift from a screenshot.
+// The picture is the real web app in a browser window, in the visitor's language: a live event's
+// chat and its details (public/app/<locale>/live-browser.webp). It is shot from the production build
+// with the App Store screenshots' demo story (app repo, web/screenshots/README.md).
 interface Props {
-  copy: { title: string; text: string; points: string[]; note: string };
-  /** The event whose poll the browser window shows. */
-  event: EventType;
+  copy: { title: string; text: string; points: string[]; note: string; alt: string };
   locale?: Locale;
 }
 
-const { copy, event, locale = "en" } = Astro.props;
+const { copy, locale = "en" } = Astro.props;
 ---
 
 <section id="browser" class="section wrap browser">
@@ -44,9 +41,15 @@ const { copy, event, locale = "en" } = Astro.props;
       <span class="dots"><i></i><i></i><i></i></span>
       <span class="address">app.after-stories.com</span>
     </div>
-    <div class="window-screen">
-      <Poll mock={event.mock} locale={locale} name={event.name} inPhone />
-    </div>
+    <img
+      class="window-screen"
+      src={`/app/${locale}/live-browser.webp`}
+      alt={copy.alt}
+      width="1600"
+      height="1109"
+      loading="lazy"
+      decoding="async"
+    />
   </div>
 </section>
 
@@ -93,8 +96,8 @@ const { copy, event, locale = "en" } = Astro.props;
     color: var(--text-secondary);
   }
 
-  /* A browser window, drawn in CSS: the bar with its three dots and the address, then the app.
-     The app is dark in both themes (as in PhoneFrame), so the screen keeps the dark tokens. */
+  /* A browser window, drawn in CSS: the bar with its three dots and the address, then the app's
+     screenshot (dark, as the app is in both themes). */
   .window {
     overflow: hidden;
     border: 1px solid var(--hairline);
@@ -135,28 +138,16 @@ const { copy, event, locale = "en" } = Astro.props;
   }
 
   .window-screen {
-    padding: 28px 24px 8px;
+    display: block;
+    width: 100%;
+    height: auto;
     background: #0b0c0e;
-    color: #f7f8f9;
-    --background: #0b0c0e;
-    --surface: #0b0c0e;
-    --surface-elevated: #1f2328;
-    --hairline: #2e343b;
-    --text-primary: #f7f8f9;
-    --text-secondary: #a2aab3;
-    --text-tertiary: #767e88;
-    --accent-ink: #ff2d6f;
-    --accent-disabled: #45202d;
   }
 
   @media (min-width: 900px) {
     .browser {
       grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
       gap: 72px;
-    }
-
-    .window-screen {
-      padding: 40px 56px 16px;
     }
   }
 </style>

@@ -84,6 +84,7 @@ const copy: Copy = {
           '«Iniciar sesión con Apple» o tu correo electrónico',
         ],
         note: 'La app de iPhone añade las notificaciones. En el navegador, recibes un correo cuando el resumen está listo.',
+        alt: 'After Stories en el navegador: el chat de Los 60 de mamá con fotos y me gusta, y los detalles del evento al lado',
       },
       ends: {
         title: 'Lo que pasa en el viaje se queda en el viaje.',

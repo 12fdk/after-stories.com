@@ -5,7 +5,6 @@ import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import AppStoreCta from "../components/AppStoreCta.astro";
 import Browser from "../components/sections/Browser.astro";
-import { events } from "../data/events";
 import { WEB_APP_URL } from "./appstore";
 import { homeCopy, locales, uiCopy } from "./i18n";
 import { PRIVACY_HTML } from "../data/privacy";
@@ -91,7 +90,7 @@ describe("the web app link", () => {
   it("has its own button in the home page's browser section, in every language", async () => {
     for (const locale of locales) {
       const copy = homeCopy(locale).browser;
-      const out = await render(Browser, locale, { copy, event: events[0] });
+      const out = await render(Browser, locale, { copy });
       const links = webAppLinks(out);
       expect(links, locale).toHaveLength(1);
       expect(links[0][1]).toContain('data-umami-event-placement="browser"');
@@ -100,6 +99,11 @@ describe("the web app link", () => {
       // The section names the address and what the iPhone app adds.
       expect(copy.text).toContain("app.after-stories.com");
       expect(copy.note).toMatch(/iPhone/);
+      // The real web app, in the page's language, described for screen readers.
+      expect(out).toContain(`src="/app/${locale}/live-browser.webp"`);
+      expect(copy.alt, locale).toBeTruthy();
+      // In an attribute Astro escapes only `&` and `"`: an apostrophe (French) stays as it is.
+      expect(out).toContain(`alt="${copy.alt.replace(/&/g, "&amp;")}"`);
     }
   });
 

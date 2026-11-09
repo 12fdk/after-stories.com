@@ -2,9 +2,10 @@ import { existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { locales } from "./i18n";
 
-// The pages show the app's real screens in the visitor's language (public/app/<locale>/), copied
-// from the app's App Store screenshots (after-stories/fastlane/screenshots/raw/<locale>/).
-const screens = ["plan", "live", "summary", "save", "private"].map((s) => `${s}-phone`);
+// The pages show the app's real screens in the visitor's language (public/app/<locale>/): the
+// iPhone's copied from the App Store screenshots (after-stories/fastlane/screenshots/raw/<locale>/),
+// the browser's shot from the web app (after-stories/web/screenshots/, README.md there).
+const screens = [...["plan", "live", "summary", "save", "private"].map((s) => `${s}-phone`), "live-browser"];
 
 describe("app screens", () => {
   it.each(locales.map((l) => [l] as const))("[%s] has every screen the pages show", (locale) => {
