@@ -1,11 +1,13 @@
 ---
 import QRCode from "qrcode";
+import WebAppCta from "./WebAppCta.astro";
 import { appStoreUrl, badge, type Placement } from "../lib/appstore";
 import { uiCopy, type Locale } from "../lib/i18n";
 
-// The direct call to action: Apple's official "Download on the App Store" badge, in the page's
-// language, in the same words everywhere (docs/messaging.md, rule 5). Header, hero, after the plan
-// and the closer each link with their own App Store campaign (src/lib/appstore.ts).
+// The call to action, as a pair: Apple's official "Download on the App Store" badge, in the page's
+// language, and beside it its equal, the web app's button (WebAppCta), in the same words everywhere
+// (docs/messaging.md, rule 5). Header, hero, after the plan and the closer each link with their own
+// App Store campaign (src/lib/appstore.ts); the badge always comes first.
 // Umami counts every click as "app-store-click" with the place on the page and the page's
 // language; Umami adds the page path itself. Nothing else goes along (privacy.ts).
 // The closer adds a QR code of the same link for visitors on a computer (with="qr").
@@ -37,6 +39,7 @@ const qr =
   >
     <img src={src} alt={ui.appStoreBadge} width={Math.round((width * height) / 40)} height={height} />
   </a>
+  <WebAppCta placement={placement} size={size} locale={locale} />
   {
     qr && (
       <a
@@ -60,6 +63,23 @@ const qr =
     flex-wrap: wrap;
     align-items: center;
     gap: 16px 28px;
+  }
+
+  /* The badge and the web app's button read as one pair: closer than anything else in the row. */
+  .app-store:not(.app-store-small) .badge-link {
+    margin-right: -14px;
+  }
+
+  .app-store-small {
+    flex-wrap: nowrap;
+    gap: 14px;
+  }
+
+  /* On a phone the header's gaps tighten to fit the menu button (SiteHeader). */
+  @media (max-width: 600px) {
+    .app-store-small {
+      gap: 8px;
+    }
   }
 
   .badge-link {

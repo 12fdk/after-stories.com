@@ -13,7 +13,7 @@ const copy: Copy = {
         },
         {
           q: 'Wann kann ich After Stories bekommen?',
-          a: 'Jetzt. After Stories ist im App Store, für iPhone ab iOS 26. Holt euch die App über den Button auf dieser Seite.',
+          a: 'Jetzt. After Stories ist im App Store, für iPhone ab iOS 26, und im Browser auf app.after-stories.com. Startet mit einem der Buttons auf dieser Seite.',
         },
         {
           q: 'Worin unterscheidet es sich von einem Gruppenchat und einem gemeinsamen Album?',
@@ -29,7 +29,7 @@ const copy: Copy = {
         },
         {
           q: 'Können Freund:innen ohne iPhone mitmachen?',
-          a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+          a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
         },
         {
           q: 'Wer kann sehen, was wir teilen?',
@@ -47,7 +47,7 @@ const copy: Copy = {
           'Alle bekommen die Fotos.',
         ],
         lede: 'After Stories ist eine App für ein Event mit eurer Gruppe: ein Abendessen, eine Party, ein Wochenende weg. Alle stimmen über den Plan ab, teilen Fotos an einem Ort und speichern sie am Morgen danach alle mit einem Tipp.',
-        fineprint: 'Planen, chatten und Fotos teilen ist kostenlos. Für iPhone, ab iOS 26.',
+        fineprint: 'Planen, chatten und Fotos teilen ist kostenlos. Für iPhone, ab iOS 26, und im Browser.',
       },
       pain: {
         title: 'Gruppenchats sind der Ort, an dem Pläne sterben.',
@@ -73,6 +73,16 @@ const copy: Copy = {
             text: 'Alle bekommen die Zusammenfassung: das meistgelikte Foto, der Spruch des Abends, was ihr entschieden habt. Dann speichert ihr jedes Foto mit einem Tipp aufs Handy.',
           },
         ],
+      },
+      browser: {
+        title: 'Kein iPhone? Plant es im Browser.',
+        text: 'Am Computer oder auf einem Android-Handy startest du das Event auf app.after-stories.com. Deine Gruppe macht über den Einladungslink mit, egal mit welchem Handy, und alle sind im selben Event.',
+        points: [
+          'Über den Plan abstimmen, schreiben und Fotos teilen',
+          'Die Zusammenfassung am Morgen danach bekommen und alle Fotos mit einem Klick speichern',
+          '„Mit Apple anmelden“ oder mit deiner E-Mail-Adresse',
+        ],
+        note: 'Die iPhone-App bringt dazu Mitteilungen. Im Browser bekommst du eine E-Mail, wenn die Zusammenfassung fertig ist.',
       },
       ends: {
         title: 'Was auf dem Trip passiert, bleibt auf dem Trip.',
@@ -214,7 +224,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -291,7 +301,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Wie viele Personen können an einem Event teilnehmen?',
@@ -364,7 +374,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -441,7 +451,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
@@ -518,7 +528,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Kann ein Event das ganze Festival abdecken?',
@@ -592,7 +602,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -657,7 +667,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Brauchen meine Kolleg:innen ein iPhone?',
-            a: 'Nein. Kolleg:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Das Event erstellst du in der iPhone-App (ab iOS 26), und auch die Geschichte am Morgen danach und das Speichern aller Fotos auf einmal gibt es nur in der App.',
+            a: 'Nein. Kolleg:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Das Event kannst du auch im Browser erstellen, auf app.after-stories.com, oder in der iPhone-App (ab iOS 26).',
           },
           {
             q: 'Muss die IT etwas einrichten?',
@@ -752,7 +762,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Können Eltern ohne iPhone mitmachen?',
-            a: 'Ja. Eltern mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen, aber die Autos und Plätze gibt es vorerst nur in der iPhone-App. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Eltern mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab, teilen Fotos und besetzen die Autos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Brauchen die Kinder die App?',
@@ -859,7 +869,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -932,7 +942,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Familienmitglieder ohne iPhone mitmachen?',
-            a: 'Ja. Familienmitglieder mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Familienmitglieder mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Kann ein Event ein ganzes Wochenende abdecken?',
@@ -1005,7 +1015,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freund:innen und Familie ohne iPhone mitmachen?',
-            a: 'Ja. Freund:innen und Familie mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freund:innen und Familie mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Was passiert nach 48 Stunden?',
@@ -1078,7 +1088,7 @@ const copy: Copy = {
           },
           {
             q: 'Können Freiwillige ohne iPhone mitmachen?',
-            a: 'Ja. Freiwillige mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit E-Mail-Adresse und Passwort. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Nur die iPhone-App (ab iOS 26) kann das Event erstellen und starten, die Geschichte am Morgen danach zeigen und alle Fotos auf einmal speichern.',
+            a: 'Ja. Freiwillige mit Android oder am Computer öffnen den Einladungslink und machen im Browser mit, mit „Mit Apple anmelden“ oder ihrer E-Mail-Adresse. Sie schreiben, stimmen ab und teilen Fotos wie alle anderen. Sie bekommen auch die Zusammenfassung am Morgen danach und speichern alle Fotos, und jede:r kann im Browser ein Event erstellen, auf app.after-stories.com. Die iPhone-App (ab iOS 26) bringt dazu Mitteilungen.',
           },
           {
             q: 'Wie funktionieren die Schichten?',

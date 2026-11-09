@@ -79,8 +79,9 @@ describe("pageGraph", () => {
     expect(JSON.stringify(graph)).not.toMatch(/aggregateRating|ratingValue|review/i);
   });
 
-  // Since 2026-10-20 friends without an iPhone join from the browser (app repo #463), but the app
-  // itself stays an iPhone app: the browser is a feature, never a second platform to install.
+  // Since 2026-10-20 friends without an iPhone join from the browser (app repo #463), and since
+  // 2026-11-05 anyone can start an event there (#757/#761). The node is still the iPhone app; the
+  // browser is in its feature list, never a second app to install.
   it("names the browser join, and the app is still iPhone only", () => {
     const app = ofType(pageGraph(base), "MobileApplication")!;
     expect(app.featureList).toContainEqual(expect.stringMatching(/without an iPhone join .* browser/));

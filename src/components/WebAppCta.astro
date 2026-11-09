@@ -1,0 +1,140 @@
+---
+import Icon from "./Icon.astro";
+import { WEB_APP_URL, type WebAppPlacement } from "../lib/appstore";
+import { uiCopy, type Locale } from "../lib/i18n";
+
+// The second call to action: After Stories in the browser (app.after-stories.com), on a computer or
+// Android. Since 2026-11-05 anyone can sign up and create an event there (app repo #757/#761), so it
+// stands next to Apple's badge as its equal (docs/messaging.md, rule 5): the same height, black,
+// edge and corners in both themes, two lines like the badge's "Download on the / App Store".
+// Umami counts each click as "web-app-click" with its place and the page's language, nothing else.
+interface Props {
+  placement: Exclude<WebAppPlacement, "footer">;
+  /** The header's 40 px pair; otherwise the hero's 54 px. */
+  size?: "small";
+  locale?: Locale;
+}
+
+const { placement, size, locale = "en" } = Astro.props;
+const ui = uiCopy(locale);
+---
+
+<a
+  class:list={["app-button", { "app-button-small": size === "small" }]}
+  href={WEB_APP_URL}
+  data-umami-event="web-app-click"
+  data-umami-event-placement={placement}
+  data-umami-event-locale={locale}
+>
+  <Icon name="Globe" class="app-button-icon" />
+  <span class="app-button-text">
+    <span class="app-button-eyebrow">{ui.webAppEyebrow}</span>
+    <span class="app-button-label">{ui.navOpenApp}</span>
+  </span>
+</a>
+
+<style>
+  .app-button {
+    display: inline-flex;
+    flex: none;
+    align-items: center;
+    gap: 10px;
+    height: 54px;
+    padding: 0 18px 0 13px;
+    border: 1px solid #a6a6a6;
+    border-radius: 12px;
+    background: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .app-button :global(.app-button-icon) {
+    width: 30px;
+    height: 30px;
+  }
+
+  .app-button-text {
+    display: grid;
+    line-height: 1;
+  }
+
+  .app-button-eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .app-button-label {
+    margin-top: 3px;
+    font-size: 1.4375rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  .app-button-small {
+    gap: 8px;
+    height: 40px;
+    padding: 0 14px 0 10px;
+    border-radius: 9px;
+  }
+
+  .app-button-small :global(.app-button-icon) {
+    width: 22px;
+    height: 22px;
+  }
+
+  .app-button-small .app-button-eyebrow {
+    font-size: 0.625rem;
+  }
+
+  .app-button-small .app-button-label {
+    margin-top: 2px;
+    font-size: 1.0625rem;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .app-button {
+      transition: transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .app-button:hover {
+      transform: translateY(-2px);
+    }
+    .app-button:active {
+      transform: scale(0.97);
+    }
+  }
+
+  .app-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  /* Phones: the header's button is one line with its globe, beside the logo and the badge. */
+  @media (max-width: 600px) {
+    .app-button-small .app-button-eyebrow {
+      display: none;
+    }
+    .app-button-small .app-button-label {
+      margin-top: 0;
+      font-size: 0.9375rem;
+    }
+    .app-button-small {
+      padding: 0 12px 0 9px;
+      gap: 6px;
+    }
+  }
+
+  /* Narrow phones: the header's button without the globe (SiteHeader's breakpoints). */
+  @media (max-width: 400px) {
+    .app-button-small :global(.app-button-icon) {
+      display: none;
+    }
+    .app-button-small {
+      padding: 0 10px;
+    }
+    .app-button-small .app-button-label {
+      font-size: 0.875rem;
+    }
+  }
+</style>

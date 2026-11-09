@@ -42,9 +42,11 @@ export const badge: Record<Locale, { src: string; width: number }> = {
 /** Safari's Smart App Banner (<meta name="apple-itunes-app">) on every page. */
 export const SMART_APP_BANNER = `app-id=${APP_STORE_ID}`;
 
-/** The web app (app repo #463): members on a computer or Android open their events there.
- * Only a quiet "Open app" link points at it, in the header and the footer; the App Store badge
- * stays the one direct call to action (docs/messaging.md, rule 11). Umami counts each click as
- * "web-app-click" with its place ("header" or "footer") and the page's language. */
+/** The web app (app repo #463): an event in the browser, on a computer or Android. Since
+ * 2026-11-05 anyone can sign up and create an event there (#757/#761), so it is the second, equal
+ * call to action (docs/messaging.md, rule 5): its button stands next to every App Store badge
+ * (src/components/WebAppCta.astro), in the home page's browser section, and as a text link in the
+ * footer. Umami counts each click as "web-app-click" with its place and the page's language. */
 export const WEB_APP_URL = "https://app.after-stories.com/";
-export type WebAppPlacement = "header" | "footer";
+export type WebAppPlacement = "header" | "hero" | "plan" | "closer" | "browser" | "footer";
+export const webAppPlacements: WebAppPlacement[] = ["header", "hero", "plan", "closer", "browser", "footer"];

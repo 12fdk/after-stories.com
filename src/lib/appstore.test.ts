@@ -59,7 +59,8 @@ describe("AppStoreCta", () => {
     expect(out).toContain('data-umami-event-locale="da"');
     expect(out).toContain('src="/badges/app-store-da.svg"');
     expect(out).toContain(`alt="${html(uiCopy("da").appStoreBadge)}"`);
-    expect(out).not.toContain("<svg");
+    // No QR code outside the closer (the web app button's globe is the only other drawing).
+    expect(out).not.toContain('class="qr"');
   });
 
   it("adds a QR code of its own campaign in the closer", async () => {

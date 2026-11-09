@@ -24,6 +24,7 @@ export const FEATURES = [
   "Up to 50 people per event",
   "Photos stripped of location and camera data before upload",
   "Friends without an iPhone join from the invite link in their browser",
+  "A web app at app.after-stories.com: start or join an event in the browser, on a computer or Android",
 ];
 
 export const ids = {

@@ -3,16 +3,21 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { describe, expect, it } from "vitest";
 import SiteFooter from "../components/SiteFooter.astro";
 import SiteHeader from "../components/SiteHeader.astro";
+import AppStoreCta from "../components/AppStoreCta.astro";
+import Browser from "../components/sections/Browser.astro";
+import { events } from "../data/events";
 import { WEB_APP_URL } from "./appstore";
-import { locales, uiCopy } from "./i18n";
+import { homeCopy, locales, uiCopy } from "./i18n";
 import { PRIVACY_HTML } from "../data/privacy";
 
-// The "Open app" link to the web app (#75): in the header and the footer, in every language,
-// counted in Umami with only its place and the page's language, and never a second call to action.
+// The web app (app.after-stories.com) is the second, equal call to action since anyone can create
+// an event there (app repo #757/#761; docs/messaging.md, rule 5): its "Open app" button stands next
+// to every App Store badge, the home page's browser section has one, and the footer a text link.
+// Every click is counted in Umami with only its place and the page's language.
 
 const html = (text: string) => text.replace(/&/g, "&amp;").replace(/'/g, "&#39;");
-const render = async (component: Parameters<AstroContainer["renderToString"]>[0], locale: string) =>
-  (await AstroContainer.create()).renderToString(component, { props: { locale } });
+const render = async (component: Parameters<AstroContainer["renderToString"]>[0], locale: string, props = {}) =>
+  (await AstroContainer.create()).renderToString(component, { props: { locale, ...props } });
 
 /** Every <a> that points at the web app, with its attributes and its text. */
 const webAppLinks = (out: string) =>
@@ -52,10 +57,10 @@ describe("the web app link", () => {
     });
   }
 
-  it("is a button last in the header, after the App Store badge, which stays first (rule 11)", async () => {
+  it("is a button last in the header, after the App Store badge, which stays first (rule 5)", async () => {
     const out = await render(SiteHeader, "en");
     const [, attrs] = webAppLinks(out)[0];
-    expect(attrs).toContain('class="app-button"');
+    expect(attrs).toMatch(/class="app-button[ "]/);
     const badge = out.indexOf('data-umami-event="app-store-click"');
     const button = out.indexOf('data-umami-event="web-app-click"');
     expect(badge).toBeGreaterThan(-1);
@@ -71,8 +76,35 @@ describe("the web app link", () => {
     }
   });
 
+  for (const placement of ["hero", "plan", "closer"] as const) {
+    it(`stands right after the App Store badge at the ${placement}, in every language`, async () => {
+      for (const locale of locales) {
+        const out = await render(AppStoreCta, locale, { placement });
+        const links = webAppLinks(out);
+        expect(links, `${placement} ${locale}`).toHaveLength(1);
+        expect(links[0][1]).toContain(`data-umami-event-placement="${placement}"`);
+        expect(out.indexOf('data-umami-event="web-app-click"')).toBeGreaterThan(out.indexOf('data-umami-event="app-store-click"'));
+      }
+    });
+  }
+
+  it("has its own button in the home page's browser section, in every language", async () => {
+    for (const locale of locales) {
+      const copy = homeCopy(locale).browser;
+      const out = await render(Browser, locale, { copy, event: events[0] });
+      const links = webAppLinks(out);
+      expect(links, locale).toHaveLength(1);
+      expect(links[0][1]).toContain('data-umami-event-placement="browser"');
+      expect(out).toContain(html(copy.title));
+      expect(copy.points, locale).toHaveLength(3);
+      // The section names the address and what the iPhone app adds.
+      expect(copy.text).toContain("app.after-stories.com");
+      expect(copy.note).toMatch(/iPhone/);
+    }
+  });
+
   it("stays visible on a phone, where the header's text links hide", () => {
-    const css = readFileSync(new URL("../components/SiteHeader.astro", import.meta.url), "utf8");
+    const css = readFileSync(new URL("../components/WebAppCta.astro", import.meta.url), "utf8");
     expect(css).toMatch(/\.app-button\s*{/);
     expect(css).not.toMatch(/\.app-button\s*{[^}]*display: none/);
   });

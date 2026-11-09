@@ -134,8 +134,9 @@ the post file, under `Stranger test:`, quoting the line in the piece that gives 
 7. **The same word for the same thing**, every time (§5). Variation reads as a different product.
 8. **Deleting always comes after saving**, in the same breath (`positioning.md` › What the
    48-hour deletion means). Never fear, never loss.
-9. **Say the platform plainly.** An iPhone app. Friends without an iPhone join in their browser
-   from the invite link. Never promise an Android app.
+9. **Say the platform plainly.** An iPhone app, and in the browser at `app.after-stories.com`
+   on a computer or Android, where anyone can start an event or join from the invite link (Robert,
+   2026-11-09, §11 decision 6). Never promise an Android app.
 10. **End on the next step**, the same every time. The end card is the icon, the short sentence
     and `after-stories.com` (Robert, 2026-11-05; it was the icon and the URL only since
     2026-10-29). Still no "Download on the App Store" text. The caption's last line is the
@@ -228,9 +229,11 @@ list.
 **True today, and safe to say**
 
 - An **iPhone app**, iOS 26 or later, on the App Store (app 6815212070).
-- **Friends without an iPhone join in their browser** from the invite link: they chat, vote and
-  share photos. Creating an event, the morning-after summary and saving all photos at once need
-  the iPhone app.
+- **In the browser too**, at `app.after-stories.com`, on a computer or Android (app repo #757,
+  #761, live 2026-11-05): sign up with Sign in with Apple or an e-mail login link, create and
+  start an event, chat, vote, share photos, the carpool, the summary the morning after and saving
+  every photo. The invite link opens it for friends without an iPhone. The iPhone app adds
+  notifications (the browser e-mails the summary and the deletion warning only).
 - **An event needs only a name.** It starts from a template: *Plan together*, *Party*,
   *Game day*, *Free form*.
 - **Invite** with a link, a code or a QR code.
@@ -253,7 +256,7 @@ list.
 
 - RSVP ("are you coming"), a gift list, an invitation text, a program, the match score, *repeat
   for the next game*. They are built but not released.
-- An Android app. Creating an event in the browser.
+- An Android app. Push notifications in the browser.
 - Sharing the summary outside the event, a public page, a feed.
 - Live location, a map of where people are.
 - More than 50 people (1.4 raises it for some templates; not before 1.4 is live). Weddings and
@@ -325,3 +328,4 @@ and a several-day event. Until it exists, use only moments checked frame by fram
 | 3 | The end card (rule 10) | The icon, the short sentence, the URL | The icon and the URL only (the rule of 2026-10-29) |
 | 4 | Price (§8) | One fixed line: *Free to plan, chat and share photos.* | Saying nothing (the rule since 2026-10-03) |
 | 5 | The lane split (§6) | Friends at least half; parents and colleagues share the rest by season | One lane only for 30 days |
+| 6 | The browser (Robert, 2026-11-09) | Since anyone can create an event in the browser (app repo #761), the web app is the site's second, equal call to action, beside the App Store badge everywhere, with its own section on the home page | Joining only, with no call to action (the rule until 2026-11-09); the web app as a supporting fact only |

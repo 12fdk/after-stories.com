@@ -204,6 +204,12 @@ function mergeHome(base: HomeCopy, l: HomeCopy | undefined): HomeCopy {
         return { when: str(b.when, lb?.when), name: str(b.name, lb?.name), text: str(b.text, lb?.text) };
       }),
     },
+    browser: {
+      title: str(base.browser.title, l.browser?.title),
+      text: str(base.browser.text, l.browser?.text),
+      points: strList(base.browser.points, l.browser?.points),
+      note: str(base.browser.note, l.browser?.note),
+    },
     ends: { title: str(base.ends.title, l.ends?.title), text: str(base.ends.text, l.ends?.text) },
     useCases: str(base.useCases, l.useCases),
     promise: str(base.promise, l.promise),

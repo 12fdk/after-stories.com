@@ -18,7 +18,7 @@ export const homeFaq: Question[] = [
   },
   {
     q: "When can I get After Stories?",
-    a: "Now. After Stories is on the App Store for iPhone, with iOS 26 or later. Get it with the button on this page.",
+    a: "Now. After Stories is on the App Store for iPhone, with iOS 26 or later, and in your browser at app.after-stories.com. Start with either button on this page.",
   },
   {
     q: "How is it different from a group chat and a shared album?",
@@ -34,7 +34,7 @@ export const homeFaq: Question[] = [
   },
   {
     q: "Can friends without an iPhone join?",
-    a: "Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.",
+    a: "Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.",
   },
   {
     q: "Who can see what we share?",
