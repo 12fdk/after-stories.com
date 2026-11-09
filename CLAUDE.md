@@ -37,6 +37,14 @@ can be tested without a browser.
   - `TERMS_VERSION` in `terms.ts` and the app's `Terms.version` move together: a change people
     must accept again bumps both, and the app then asks everyone once more.
 
+## App screenshots
+
+`public/app/<locale>/` holds the app's real screens in each language. The iPhone's (`*-phone.webp`)
+come from the App Store screenshots. The browser's (`*-browser.webp`) are shot from the web app in
+the app repo (`after-stories/web/screenshots/`, its README) and brought in with
+`python3 tools/browser-screens.py`, which crops and sizes them and fails if their shape no longer
+matches the component. `src/lib/screens.test.ts` requires every one in every locale.
+
 ## Download links and analytics (live since 2026-10-18, #59)
 
 After Stories is on the App Store (app id **6815212070**). The direct CTA is Apple's official

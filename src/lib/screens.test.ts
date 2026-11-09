@@ -4,7 +4,8 @@ import { locales } from "./i18n";
 
 // The pages show the app's real screens in the visitor's language (public/app/<locale>/): the
 // iPhone's copied from the App Store screenshots (after-stories/fastlane/screenshots/raw/<locale>/),
-// the browser's shot from the web app (after-stories/web/screenshots/, README.md there).
+// the browser's shot from the web app (after-stories/web/screenshots/, README.md there) and
+// brought in with tools/browser-screens.py.
 const screens = [...["plan", "live", "summary", "save", "private"].map((s) => `${s}-phone`), "live-browser"];
 
 describe("app screens", () => {
