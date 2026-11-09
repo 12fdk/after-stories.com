@@ -13,7 +13,7 @@ const copy: Copy = {
         },
         {
           q: 'Hvornår kan jeg få After Stories?',
-          a: 'Nu. After Stories ligger i App Store til iPhone med iOS 26 eller nyere. Hent den med knappen her på siden.',
+          a: 'Nu. After Stories ligger i App Store til iPhone med iOS 26 eller nyere og i din browser på app.after-stories.com. Kom i gang med en af knapperne her på siden.',
         },
         {
           q: 'Hvordan adskiller den sig fra en gruppechat og et fælles album?',
@@ -29,7 +29,7 @@ const copy: Copy = {
         },
         {
           q: 'Kan venner uden iPhone være med?',
-          a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+          a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
         },
         {
           q: 'Hvem kan se det, vi deler?',
@@ -47,7 +47,7 @@ const copy: Copy = {
           'Alle får billederne.',
         ],
         lede: 'After Stories er en app til ét event med din gruppe: en middag, en fest, en weekendtur. Alle stemmer om planen, deler billeder ét sted og gemmer dem alle med ét tryk morgenen efter.',
-        fineprint: 'Gratis at planlægge, chatte og dele billeder. Til iPhone med iOS 26 eller nyere.',
+        fineprint: 'Gratis at planlægge, chatte og dele billeder. Til iPhone med iOS 26 eller nyere og i din browser.',
       },
       pain: {
         title: 'I gruppechatten går planerne i sig selv.',
@@ -73,6 +73,16 @@ const copy: Copy = {
             text: 'Alle får opsummeringen: billedet med flest hjerter, aftenens citat, det, I besluttede. Gem derefter alle billeder på din telefon med ét tryk.',
           },
         ],
+      },
+      browser: {
+        title: 'Ingen iPhone? Planlæg det i browseren.',
+        text: 'På en computer eller en Android-telefon starter du eventet på app.after-stories.com. Din gruppe er med fra invitationslinket, uanset hvilken telefon de har, og alle er i det samme event.',
+        points: [
+          'Stem om planen, skriv og del billeder',
+          'Få opsummeringen morgenen efter, og gem alle billeder med ét klik',
+          'Log ind med Apple eller din e-mail',
+        ],
+        note: 'iPhone-appen giver også notifikationer. I browseren får du en e-mail, når opsummeringen er klar.',
       },
       ends: {
         title: 'Hvad der sker på turen, bliver på turen.',
@@ -213,7 +223,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -290,7 +300,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvor mange kan være med i ét event?',
@@ -363,7 +373,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -440,7 +450,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Kan ét event dække en hel weekend?',
@@ -517,7 +527,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Kan ét event dække hele festivalen?',
@@ -591,7 +601,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -656,7 +666,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Skal mine kolleger have en iPhone?',
-            a: 'Nej. Kolleger med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Du opretter eventet i iPhone-appen (iOS 26 eller nyere), og historien dagen derpå og at gemme alle billeder på én gang ligger også i appen.',
+            a: 'Nej. Kolleger med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. Du kan også oprette eventet i browseren, på app.after-stories.com, eller i iPhone-appen (iOS 26 eller nyere).',
           },
           {
             q: 'Skal IT sætte noget op?',
@@ -751,7 +761,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Kan forældre uden iPhone være med?',
-            a: 'Ja. Forældre med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre, men bilerne og pladserne findes kun i iPhone-appen indtil videre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Forældre med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer, deler billeder og fylder bilerne som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Skal børnene have appen?',
@@ -858,7 +868,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner uden iPhone være med?',
-            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -931,7 +941,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan familiemedlemmer uden iPhone være med?',
-            a: 'Ja. Familiemedlemmer med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Familiemedlemmer med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Kan ét event dække en hel weekend?',
@@ -1004,7 +1014,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan venner og familie uden iPhone være med?',
-            a: 'Ja. Venner og familie med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Venner og familie med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvad sker der efter 48 timer?',
@@ -1077,7 +1087,7 @@ const copy: Copy = {
           },
           {
             q: 'Kan frivillige uden iPhone være med?',
-            a: 'Ja. Frivillige med Android eller en computer åbner invitationslinket og er med fra browseren, med en e-mail og en adgangskode. De skriver, stemmer og deler billeder som alle andre. Kun iPhone-appen (iOS 26 eller nyere) kan oprette og starte eventet, vise historien dagen derpå og gemme alle billeder på én gang.',
+            a: 'Ja. Frivillige med Android eller en computer åbner invitationslinket og er med fra browseren, med Log ind med Apple eller deres e-mail. De skriver, stemmer og deler billeder som alle andre. De får også opsummeringen morgenen efter og gemmer alle billeder, og alle kan oprette et event i browseren på app.after-stories.com. iPhone-appen (iOS 26 eller nyere) giver også notifikationer.',
           },
           {
             q: 'Hvordan fungerer vagterne?',

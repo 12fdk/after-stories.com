@@ -63,7 +63,7 @@
 // this site's own policy said before the merge: the waitlist form (#271, the double opt-in #276,
 // closed at launch on 2026-10-18, #59: the sign-ups it stored stay covered until they're deleted),
 // the web app's *Giv mig besked* on the same list (12fdk/after-stories#752),
-// its storage and retention, GitHub Pages, Umami (the "app-store-click" event, #59; the "web-app-click" event on the "Open app" link, #75; the social `src` source name from the /go/ hop, #72), the App Store
+// its storage and retention, GitHub Pages, Umami (the "app-store-click" event, #59; the "web-app-click" event on every "Open app" button and link, #75, beside every App Store badge since the browser became the second call to action; the social `src` source name from the /go/ hop, #72), the App Store
 // campaign link, the self-hosted fonts and the theme choice. Change it whenever the site's hosting,
 // analytics or download links change, or the backend's waitlist storage does (CLAUDE.md › Download
 // links and analytics).
@@ -71,8 +71,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "6. november 2026";
-export const PRIVACY_UPDATED_EN = "6 November 2026";
+export const PRIVACY_UPDATED_DA = "9. november 2026";
+export const PRIVACY_UPDATED_EN = "9 November 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -198,7 +198,7 @@ export const PRIVACY_HTML = `
 <h3>Når du besøger hjemmesiden</h3>
 <ul>
   <li>Hjemmesiden ligger hos <strong>GitHub Pages</strong>. GitHub behandler din IP-adresse for at levere siderne; se <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs privatlivserklæring</a>.</li>
-  <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig. Trykker du på en “Hent i App Store”-knap eller på linket “Åbn appen”, sender den også en anonym hændelse hertil, som kun indeholder, hvor på siden den sad, og sidens sprog. Kommer du fra linket på vores profil på fx Instagram, Facebook eller TikTok, tæller vi besøget med navnet på det sted (fx “instagram”), og det navn følger også med et tryk på en App Store-knap. Navnet står kun i linkets adresse, ikke i en cookie.</li>
+  <li>Vi tæller besøg med <strong>Umami</strong>, som vi selv driver. Det sætter ingen cookies og gemmer hverken din IP-adresse eller noget andet, der kan identificere dig. Trykker du på en “Hent i App Store”-knap eller på en knap eller et link “Åbn appen”, sender den også en anonym hændelse hertil, som kun indeholder, hvor på siden den sad, og sidens sprog. Kommer du fra linket på vores profil på fx Instagram, Facebook eller TikTok, tæller vi besøget med navnet på det sted (fx “instagram”), og det navn følger også med et tryk på en App Store-knap. Navnet står kun i linkets adresse, ikke i en cookie.</li>
   <li>Knapperne fører til Apples <strong>App Store</strong>, hvor <a href="https://www.apple.com/legal/privacy/">Apples privatlivspolitik</a> gælder. Linket har en kampagnekode, så Apple kan fortælle os, hvor mange der hentede appen via hjemmesiden, aldrig hvem.</li>
   <li>Skrifttyperne hentes fra denne hjemmeside, ikke fra en skrifttjeneste.</li>
   <li>Dit valg af lyst eller mørkt tema huskes i din egen browser og sendes aldrig til os.</li>
@@ -337,7 +337,7 @@ export const PRIVACY_HTML = `
 <h3>Visiting the website</h3>
 <ul>
   <li>The site is hosted on <strong>GitHub Pages</strong>. GitHub processes your IP address to deliver the pages; see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's privacy statement</a>.</li>
-  <li>We count visits with <strong>Umami</strong>, which we run ourselves. It sets no cookies and doesn't store your IP address or anything that identifies you. When you tap a “Download on the App Store” button or the “Open app” link, it also sends it one anonymous event that contains only where on the page it was and the page's language. If you come from the link on one of our profiles, for example on Instagram, Facebook or TikTok, we count the visit with the name of that place (for example “instagram”), and that name also goes along with a tap on an App Store button. The name is only in the link's address, not in a cookie.</li>
+  <li>We count visits with <strong>Umami</strong>, which we run ourselves. It sets no cookies and doesn't store your IP address or anything that identifies you. When you tap a “Download on the App Store” button or an “Open app” button or link, it also sends it one anonymous event that contains only where on the page it was and the page's language. If you come from the link on one of our profiles, for example on Instagram, Facebook or TikTok, we count the visit with the name of that place (for example “instagram”), and that name also goes along with a tap on an App Store button. The name is only in the link's address, not in a cookie.</li>
   <li>The buttons take you to Apple's <strong>App Store</strong>, where <a href="https://www.apple.com/legal/privacy/">Apple's privacy policy</a> applies. The link carries a campaign code, so Apple can tell us how many people got the app from this site, never who.</li>
   <li>The fonts are served from this site, not from a font service.</li>
   <li>Your choice of light or dark theme is remembered in your own browser and never sent to us.</li>

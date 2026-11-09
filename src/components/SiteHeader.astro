@@ -1,15 +1,12 @@
 ---
 import AppStoreCta from "./AppStoreCta.astro";
-import Icon from "./Icon.astro";
-import { WEB_APP_URL } from "../lib/appstore";
 import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 
 // StoryBrand: the direct call to action in the header, next to the transitional "How it works".
 // The home page and the event pages have the same four sections (how, occasions, privacy, faq),
 // so their links jump on the page. Pages without them (privacy, terms) jump to the home page's.
-// "Open app" is the web app button for members, last in the header and on every width. It is drawn
-// to sit beside Apple's badge (black, the badge's grey edge, two lines), but the badge stays the
-// direct call to action and comes first (docs/messaging.md, rule 11).
+// The call to action is the pair from AppStoreCta: Apple's badge, then the web app's button, last in
+// the header and on every width (docs/messaging.md, rule 5).
 interface Props {
   /** The page's locale; defaults to English (the base, unprefixed pages). */
   locale?: Locale;
@@ -40,19 +37,6 @@ const links = [
   <nav class="topbar-nav" aria-label="Main">
     {links.map((l) => <a class:list={["topbar-link", { keep: l.keep }]} href={l.href}>{l.label}</a>)}
     <AppStoreCta placement="header" size="small" locale={locale} />
-    <a
-      class="app-button"
-      href={WEB_APP_URL}
-      data-umami-event="web-app-click"
-      data-umami-event-placement="header"
-      data-umami-event-locale={locale}
-    >
-      <Icon name="Globe" class="app-button-icon" />
-      <span class="app-button-text">
-        <span class="app-button-eyebrow">{ui.webAppEyebrow}</span>
-        <span class="app-button-label">{ui.navOpenApp}</span>
-      </span>
-    </a>
   </nav>
 </header>
 
@@ -91,7 +75,7 @@ const links = [
     gap: 28px;
   }
 
-  /* Apple's badge never shrinks below its 40 px size, and the button keeps its size beside it. */
+  /* Apple's badge never shrinks below its 40 px size, and the web app's button keeps its size beside it. */
   .topbar-nav > :global(*) {
     flex: none;
   }
@@ -116,69 +100,6 @@ const links = [
     text-decoration-color: var(--accent);
   }
 
-  /* The web app button: the same height, black, edge and corners as Apple's badge next to it,
-     in both themes, so the two read as a pair. */
-  .app-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    height: 40px;
-    padding: 0 14px 0 10px;
-    border: 1px solid #a6a6a6;
-    border-radius: 9px;
-    background: #000000;
-    color: #ffffff;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .app-button :global(.app-button-icon) {
-    width: 22px;
-    height: 22px;
-  }
-
-  .app-button-text {
-    display: grid;
-    line-height: 1;
-  }
-
-  .app-button-eyebrow {
-    font-size: 0.625rem;
-    font-weight: 500;
-    letter-spacing: 0.01em;
-  }
-
-  .app-button-label {
-    margin-top: 2px;
-    font-size: 1.0625rem;
-    font-weight: 600;
-    letter-spacing: -0.01em;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .app-button {
-      transition: transform 0.16s cubic-bezier(0.2, 0.7, 0.2, 1);
-    }
-    .app-button:hover {
-      transform: translateY(-2px);
-    }
-    .app-button:active {
-      transform: scale(0.97);
-    }
-  }
-
-  /* Closer to the badge than the text links are to each other, so the two read as one pair. */
-  @media (min-width: 761px) {
-    .app-button {
-      margin-left: -14px;
-    }
-  }
-
-  .app-button:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 3px;
-  }
-
   /* Wide screens show every link; a laptop and a tablet keep "How it works"; below that the header is the logo, the badge and "Open app". */
   @media (max-width: 1140px) {
     .topbar-link:not(.keep) {
@@ -195,37 +116,17 @@ const links = [
     }
   }
 
-  /* Phones: the icon alone carries the brand, and "Open app" is one line with its globe. */
+  /* Phones: the icon alone carries the brand (the web app's button shrinks in WebAppCta). */
   @media (max-width: 560px) {
     .brand span {
       display: none;
     }
-    .app-button-eyebrow {
-      display: none;
-    }
-    .app-button-label {
-      margin-top: 0;
-      font-size: 0.9375rem;
-    }
-    .app-button {
-      padding: 0 12px 0 9px;
-      gap: 6px;
-    }
   }
 
-  /* The narrowest phones: "Open app" without the globe, and tighter gaps. */
+  /* The narrowest phones: tighter gaps (the web app's button drops its globe in WebAppCta). */
   @media (max-width: 380px) {
     .topbar-nav {
       gap: 8px;
-    }
-    .app-button :global(.app-button-icon) {
-      display: none;
-    }
-    .app-button {
-      padding: 0 10px;
-    }
-    .app-button-label {
-      font-size: 0.875rem;
     }
   }
 </style>

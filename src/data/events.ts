@@ -83,21 +83,23 @@ export const defaultPrivacy: Fact[] = [
 ];
 
 /**
- * The web app's limits (app repo, web/app/README.md › Not on the web yet): creating and starting
- * an event, the summary and saving all photos at once stay in the iPhone app. Since app repo #583
- * it speaks the site's five languages. Drop a clause here (and in every locale) when the web app gains it.
+ * What the web app does beyond joining, and what the iPhone app adds (app repo, web/app/README.md,
+ * docs/product.md › Web creation, #757/#761): since 2026-11-05 anyone can sign up and create an
+ * event in the browser, with the summary and saving every photo. The browser sends no push, only an
+ * e-mail for the summary and before deletion, so notifications are the iPhone app's. Change this
+ * (and the same sentence in every locale) when that changes.
  */
 const webLimits =
-  "Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.";
+  "They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.";
 
 /**
  * "Can … without an iPhone join?", naming the page's own people (friends, family, teammates…).
  * Yes since 2026-10-20: the invite link opens the web app (app.after-stories.com) on Android or
- * a computer (app repo, docs/product.md › The web app). Say what it can't do too.
+ * a computer (app repo, docs/product.md › The web app). Say what the iPhone app adds too.
  */
 const nonIphoneFor = (who: string) => ({
   q: `Can ${who} without an iPhone join?`,
-  a: `Yes. ${who[0].toUpperCase()}${who.slice(1)} on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. ${webLimits}`,
+  a: `Yes. ${who[0].toUpperCase()}${who.slice(1)} on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. ${webLimits}`,
 });
 
 const nonIphone = nonIphoneFor("friends");
@@ -707,7 +709,7 @@ export const events: EventType[] = [
     faq: [
       {
         q: "Do my colleagues need an iPhone?",
-        a: "No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too.",
+        a: "No. Colleagues on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. You can create the event in the browser too, at app.after-stories.com, or in the iPhone app (iOS 26 or later).",
       },
       {
         q: "Does IT need to set anything up?",
@@ -812,7 +814,7 @@ export const events: EventType[] = [
     faq: [
       {
         q: "Can parents without an iPhone join?",
-        a: "Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.",
+        a: "Yes. Parents on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote, share photos and fill the cars like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.",
       },
       {
         q: "Do the kids need the app?",

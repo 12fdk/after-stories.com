@@ -53,9 +53,11 @@ for desktop visitors). Every link comes from `src/lib/appstore.ts`:
   `data-domains="after-stories.com"`, so `pnpm dev`/`preview` on localhost counts nothing
   (`src/lib/analytics.test.ts`).
 - **Smart App Banner:** `<meta name="apple-itunes-app">` in `Base.astro`.
-- **"Open app" (#75):** a button to the web app (`WEB_APP_URL` in `src/lib/appstore.ts`), last
-  in the header and styled like Apple's badge, plus a text link in the footer. Umami event
-  `web-app-click`. The badge stays first and stays the direct CTA (messaging rule 11).
+- **"Open app" (#75; the second, equal CTA since 2026-11-09):** the web app's button
+  (`WebAppCta`, linking `WEB_APP_URL` in `src/lib/appstore.ts`) stands beside every App Store
+  badge (`AppStoreCta` renders the pair, the badge first), has its own home page section
+  (`sections/Browser.astro`), and a text link in the footer. Umami event `web-app-click` with its
+  placement (messaging rules 5 and 11).
 
 The pre-launch waitlist form is gone; the backend still holds its sign-ups (12fdk/after-stories#271).
 `/privacy/` describes the closed waitlist, the click event and the App Store link, in its website

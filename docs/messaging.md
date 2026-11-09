@@ -11,8 +11,9 @@ in every language (#81).
 Last full audit: 2026-10-03, 9.5/10 (#24, #26). The missing half point is authority: see rule 3.
 
 **Live since 2026-10-18** (App Store app 6815212070); **1.1 since 2026-10-29** (iOS 26 or later,
-templates). The direct CTA is Apple's official "Download on the App Store" badge, not a form.
-Friends without an iPhone join an event from the browser, but the organiser needs the app (rule 11).
+templates). The call to action is a pair: Apple's official "Download on the App Store" badge and, as its
+equal, the web app's "Open app" button (`app.after-stories.com`), since anyone can create an event
+in the browser (2026-11-05, app repo #761; Robert, 2026-11-09). Not a form (rules 5 and 11).
 
 ## Before any copy or layout change
 
@@ -31,11 +32,12 @@ Friends without an iPhone join an event from the browser, but the organiser need
 | SB7 part | Section | Rule |
 | --- | --- | --- |
 | Hero + desire | Hero prelude, `h1` and lede | The short sentence above the headline, the line that leads as the `h1`, the full sentence as the lede: all three word for word from `marketing-guidelines.md` §2. One desire, no feature list. The old one-liner is the footer's sign-off. |
-| Direct CTA | Header, hero, after the plan, the closer | Apple's official "Download on the App Store" badge everywhere, linking to the App Store. The closer has the badge plus a QR code for desktop visitors; no form. |
+| Direct CTA | Header, hero, after the plan, the closer | The pair from `AppStoreCta`: Apple's official "Download on the App Store" badge, then the web app's "Open app" button (`WebAppCta`), everywhere, the badge first. The closer adds a QR code to the App Store for desktop visitors; no form. |
 | Transitional CTA | "How it works" in the header | Stays lower-commitment than the direct CTA. |
 | Problem (external, internal, philosophical) + villain | "Group chats are where plans go to die." | All three levels in the intro. The villain is **the group chat**, never a competitor by name. |
 | Guide: empathy | Intro to "how it works" | Starts with "We've all…", then what After Stories takes off the hero's hands. |
 | Plan (process) | The three beats | **Three steps**, never more. Each named with a verb. |
+| Plan (objection) | "No iPhone? Plan it in your browser." (`sections/Browser.astro`), right after the plan | Takes away the last objection: someone without an iPhone can start the event in the browser, and their group joins on any phone. Three things they get, one line on what the iPhone app adds, and the web app's button. Never a feature tour. |
 | Plan (agreement) | "Only the people in the event. That's a promise." + the 48 h section | Promises the app actually keeps. |
 | Failure | `closer-stakes` | One light sentence. A taste, never fear. |
 | Success | The closer and the morning-after card | Concrete: the photo, the line, the decisions, every picture on your phone. |
@@ -74,10 +76,13 @@ voice. A new event page fills every field; the test fails if it doesn't.
    the hero says "app", who it is for and the two things they get (the stranger test,
    `marketing-guidelines.md` §3). The jokes go in the details (chat mocks, examples), never
    instead of the explanation.
-5. **The direct CTA is the App Store badge, repeated, in the same words.** Apple's official
-   "Download on the App Store" badge (localized: `ui.appStoreBadge`) in the header, the hero,
-   after the plan and the closer. The closer adds one line above it (`ui.closerCta`) and a QR code
-   for desktop (`ui.qrCaption`). No form, no "get notified".
+5. **The direct CTA is a pair, repeated, in the same words** (Robert, 2026-11-09). Apple's
+   official "Download on the App Store" badge (localized: `ui.appStoreBadge`) and, beside it as its
+   equal, the web app's button (`ui.webAppEyebrow` over `ui.navOpenApp`: "In your browser / Open
+   app") in the header, the hero, after the plan and the closer, always from `AppStoreCta`, the
+   badge first. The home page's browser section has the web app's button alone. The closer adds one
+   line above the pair (`ui.closerCta`) and a QR code to the App Store for desktop (`ui.qrCaption`).
+   No form, no "get notified".
 6. **Failure is a taste.** One sentence, about the group chat and the missing photos. No fear, no
    fake urgency, no countdowns, no "spots are limited".
 7. **Success is specific.** Name the photo, the line, the decision, the phone. Never "amazing
@@ -89,18 +94,16 @@ voice. A new event page fills every field; the test fails if it doesn't.
    nothing about Pro, no "free" anywhere else.
 10. **Voice:** warm and witty, cheeky, never laddish. The office page is calmer: no nightlife or
     hangover jokes.
-11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 26 or later.
-    Since 2026-10-20 friends without an iPhone join an event from its invite link in the browser
-    (`app.after-stories.com`, app repo #463): they chat, vote and share photos. Only the iPhone app
-    creates and starts an event, shows the morning-after summary, saves every photo at once and
-    has the carpool. The web app speaks the same five languages (app repo #583). Asked whether someone without an
-    iPhone can join, the answer is yes, with those limits. The direct CTA stays the App Store badge:
-    the browser is how *invited* friends join, never a second CTA. The one exception (#75, #78): an "Open app" button
-    (`ui.navOpenApp`) to `app.after-stories.com`, last in the header, styled to pair with Apple's
-    badge, and a text link in the footer, for members who already have an event. The badge stays
-    first and stays the direct CTA; no copy on the page sells the web app. Never promise an Android app.
-    When the web app gains a feature or a language, change the answers in every locale
-    (`src/data/events.ts` › `webLimits`).
+11. **Say what is true about the platform.** After Stories is an iPhone app, iOS 26 or later, and
+    a web app at `app.after-stories.com` for a computer or an Android phone. Since 2026-11-05
+    anyone can sign up and create an event in the browser (app repo #757, #761), with the chat,
+    votes, photos, the carpool, the summary and saving every photo; the invite link opens it too.
+    What the iPhone app adds: notifications (the browser e-mails the summary and the deletion
+    warning only). Asked whether someone without an iPhone can join, the answer is yes, and they can
+    start the event too. The browser is the second, equal call to action (rule 5); the page leads
+    with the iPhone app and never sells one against the other. Never promise an Android app. When
+    the web app gains or loses something, change the answers in every locale (`src/data/events.ts`
+    › `webLimits`, and the same sentence in `src/data/copy/*.ts`).
 
 ## Quick check (all must be "yes")
 
@@ -109,5 +112,5 @@ voice. A new event page fills every field; the test fails if it doesn't.
 - [ ] Is the internal problem named, not just the external one?
 - [ ] Is there empathy, and only honest authority?
 - [ ] Is the plan three steps?
-- [ ] Is there one direct CTA, the App Store badge, repeated in the same words?
+- [ ] Is there one direct CTA, the App Store badge with the web app's button beside it, repeated in the same words?
 - [ ] Are both failure and success on the page?

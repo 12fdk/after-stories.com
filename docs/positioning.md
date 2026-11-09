@@ -6,7 +6,8 @@
 > **Launched 2026-10-18** on the App Store (app 6815212070), in Danish, English, French, German
 > and Spanish. **1.1 (2026-10-29)**: iOS 26 or later, the templates (*Plan together*, *Party*,
 > *Game day* with the kids' carpool, *Free form*) and a cover picture per event. Since 2026-10-20
-> friends without an iPhone join from the browser (`app.after-stories.com`, app repo #463).
+> friends without an iPhone join from the browser (`app.after-stories.com`, app repo #463), and since
+> 2026-11-05 anyone can sign up and create an event there (app repo #757, #761).
 > **1.3 (2026-10-31)**: one event can run over several days.
 >
 > **What we say in every channel is in [`marketing-guidelines.md`](marketing-guidelines.md)**
@@ -28,7 +29,7 @@
 | Ephemerality | **A selling point.** The event is **deleted 48 hours after it ends**. |
 | Voice | **Warm and witty.** Friends first, light humour, broad appeal (#165). Cheeky, never laddish. |
 | Price | **One fixed line: *Free to plan, chat and share photos.*** Nothing else about price: no amounts, nothing about Pro (owner, 2026-11-05; until then we said nothing). The one paid thing is photo quality (app repo #547). |
-| Non-iPhone friends | **They join from the browser** (since 2026-10-20, app repo #463, #495). On Android or a computer the invite link opens the web app at `app.after-stories.com`: sign up with an e-mail and a password, then chat, vote, share photos and take tasks. **Only the iPhone app (iOS 26 or later)** creates and starts an event, shows the morning-after summary, saves every photo at once and has the carpool. The web app speaks the same five languages (app repo #583). Say all of that honestly; never promise an Android app. |
+| No iPhone | **The browser is the second way in, the App Store's equal** (Robert, 2026-11-09). On Android or a computer, `app.after-stories.com` does what the app does: sign up (Sign in with Apple or an e-mail login link) with or without an invite, create and start an event, chat, vote, share photos, take tasks, the carpool, the summary the morning after and saving every photo (app repo #463, #495, #531, #757, #761). The invite link opens it there. **What the iPhone app (iOS 26 or later) adds:** notifications (the browser sends an e-mail for the summary and before deletion only), place search and scanning a QR code. Say all of that honestly; never promise an Android app. |
 | Growth | **The invite link** and **App Store search (ASO)**. No paid ads at launch. |
 | 90-day goal | **Raw installs.** |
 
@@ -93,9 +94,9 @@ the night itself.*
 - **48 h deletion is a feature here too:** no permanent chat with your boss, no party photos
   lingering on a company drive.
 - **What could stop it** (check before spending on this audience):
-  1. **The organiser needs an iPhone.** Colleagues on Android or a computer join from the
-     browser with an e-mail and a password, in the same five languages; creating the event, the
-     summary and saving every photo at once stay in the iPhone app. The office page says so.
+  1. ~~**The organiser needs an iPhone.**~~ No longer (2026-11-05, app repo #761): the organiser
+     can create the event in the browser too, and colleagues on Android or a computer join there.
+     The office page says so.
   2. **The 17+ age rating** and the nightlife-flavoured copy. Fine for adults, but the app must
      not read as a party app on a work phone.
   3. **50 members per event.** Covers a team or a small company, not a 200-person Christmas party.

@@ -39,8 +39,9 @@ describe("event pages", () => {
 });
 
 // After Stories is live on the App Store (1.1 since 2026-10-29, iOS 26 or later). Friends without
-// an iPhone join from the browser since 2026-10-20 (app repo #463), so every "without an iPhone"
-// answer says yes and names its limits (docs/messaging.md rule 11). No copy may still talk
+// an iPhone join from the browser since 2026-10-20 (app repo #463), and since 2026-11-05 anyone can
+// create an event there too (#757/#761), so every "without an iPhone" answer says yes, names the
+// web app and what the iPhone app adds (docs/messaging.md rule 11). No copy may still talk
 // pre-launch, name the old iOS 27 minimum or promise an Android app.
 describe("launch copy", () => {
   /** Every reader-facing string under a value, skipping structural file paths (hero.src). */
@@ -86,8 +87,11 @@ describe("launch copy", () => {
     expect(faqs.length).toBeGreaterThan(0);
     for (const { a } of faqs) {
       expect(a).toMatch(/browser|navigateur|navegador/i);
-      // The organiser still needs the app, and says which one.
+      // Says where the browser version is, and which iPhone app adds the rest.
+      expect(a).toContain("app.after-stories.com");
       expect(a).toContain("iOS 26");
+      // Creating an event is in the browser since #761: no copy may say it isn't.
+      expect(a).not.toMatch(/Only the iPhone|Kun iPhone|Nur die iPhone|Seule l'app|Solo la app/);
     }
   });
 
@@ -105,8 +109,8 @@ describe("launch copy", () => {
 });
 
 // /match-day/ is the kids' game day (docs/positioning.md › use case 8): the Game day template's
-// car view, for parents. 1.1 has no "repeat for the next game" and no score, and the browser has
-// no car view yet, so the page must not promise them.
+// car view, for parents. 1.1 has no "repeat for the next game" and no score, so the page must not
+// promise them. The browser has the car view since app repo #531.
 describe("kids' game day", () => {
   const pages = { "events.ts": events.find((e) => e.slug === "match-day")!, ...Object.fromEntries(
     Object.entries(copies).map(([name, copy]) => [name, copy.events["match-day"]]),
@@ -115,8 +119,8 @@ describe("kids' game day", () => {
   it.each(Object.entries(pages))("%s talks to parents about their children's seats", (_, page) => {
     expect(page.privacy).toHaveLength(4);
     const iphone = page.faq.find((f) => /iPhone/.test(f.q))!;
-    // The cars and the seats are only in the iPhone app for now.
-    expect(iphone.a).toMatch(/iPhone-app|iPhone app|app iPhone|app de iPhone|iPhone-App/);
+    // Parents in the browser fill the cars too (app repo #531).
+    expect(iphone.a).toMatch(/cars|bilerne|Autos|voitures|coches/);
   });
 
   it.each(Object.entries(pages))("%s promises nothing 1.1 doesn't have", (_, page) => {

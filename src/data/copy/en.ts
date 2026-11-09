@@ -15,7 +15,7 @@ const copy: Copy = {
         },
         {
           q: 'When can I get After Stories?',
-          a: 'Now. After Stories is on the App Store for iPhone, with iOS 26 or later. Get it with the button on this page.',
+          a: 'Now. After Stories is on the App Store for iPhone, with iOS 26 or later, and in your browser at app.after-stories.com. Start with either button on this page.',
         },
         {
           q: 'How is it different from a group chat and a shared album?',
@@ -31,7 +31,7 @@ const copy: Copy = {
         },
         {
           q: 'Can friends without an iPhone join?',
-          a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+          a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
         },
         {
           q: 'Who can see what we share?',
@@ -49,7 +49,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'After Stories is an app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after.',
-        fineprint: 'Free to plan, chat and share photos. For iPhone, with iOS 26 or later.',
+        fineprint: 'Free to plan, chat and share photos. For iPhone, with iOS 26 or later, and in your browser.',
       },
       pain: {
         title: 'Group chats are where plans go to die.',
@@ -75,6 +75,16 @@ const copy: Copy = {
             text: 'Everyone gets the summary: the most-liked photo, the line of the night, what you decided. Then save every photo to your phone with one tap.',
           },
         ],
+      },
+      browser: {
+        title: 'No iPhone? Plan it in your browser.',
+        text: 'On a computer or an Android phone, start the event at app.after-stories.com. Your group joins from the invite link on whatever phone they have, and everyone is in the same event.',
+        points: [
+          'Vote on the plan, chat and share photos',
+          'Get the summary the morning after and save every photo with one click',
+          'Sign in with Apple or your email',
+        ],
+        note: 'The iPhone app adds notifications. In the browser, you get an email when the summary is ready.',
       },
       ends: {
         title: 'What happens on the trip stays in the trip.',
@@ -203,7 +213,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'How many people can join one event?',
@@ -280,7 +290,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'How many people can join one event?',
@@ -353,7 +363,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -430,7 +440,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'Can one event cover a whole weekend?',
@@ -507,7 +517,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'Can one event cover the whole festival?',
@@ -581,7 +591,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -646,7 +656,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Do my colleagues need an iPhone?',
-            a: 'No. Colleagues on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. You create the event in the iPhone app (iOS 26 or later), and the morning-after story and saving every photo at once are in the app too.',
+            a: 'No. Colleagues on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. You can create the event in the browser too, at app.after-stories.com, or in the iPhone app (iOS 26 or later).',
           },
           {
             q: 'Does IT need to set anything up?',
@@ -741,7 +751,7 @@ const copy: Copy = {
         faq: [
           {
             q: 'Can parents without an iPhone join?',
-            a: 'Yes. Parents on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else, but the cars and the seats are only in the iPhone app for now. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Parents on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote, share photos and fill the cars like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'Do the kids need the app?',
@@ -848,7 +858,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends without an iPhone join?',
-            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -921,7 +931,7 @@ const copy: Copy = {
           },
           {
             q: 'Can family members without an iPhone join?',
-            a: 'Yes. Family members on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Family members on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'Can one event cover a whole weekend?',
@@ -994,7 +1004,7 @@ const copy: Copy = {
           },
           {
             q: 'Can friends and family without an iPhone join?',
-            a: 'Yes. Friends and family on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Friends and family on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'What happens after 48 hours?',
@@ -1067,7 +1077,7 @@ const copy: Copy = {
           },
           {
             q: 'Can volunteers without an iPhone join?',
-            a: 'Yes. Volunteers on Android or a computer open the invite link and join from their browser, with an email and a password. They chat, vote and share photos like everyone else. Only the iPhone app (iOS 26 or later) can create and start the event, show the morning-after story and save every photo at once.',
+            a: 'Yes. Volunteers on Android or a computer open the invite link and join from their browser, with Sign in with Apple or their email. They chat, vote and share photos like everyone else. They get the summary the morning after and save every photo too, and anyone can start an event in the browser at app.after-stories.com. The iPhone app (iOS 26 or later) adds notifications.',
           },
           {
             q: 'How do the shifts work?',

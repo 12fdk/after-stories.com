@@ -7,6 +7,7 @@ import Poll from "./sections/Poll.astro";
 import PhoneFrame from "./PhoneFrame.astro";
 import Beats from "./sections/Beats.astro";
 import Figures from "./sections/Figures.astro";
+import Browser from "./sections/Browser.astro";
 import Gallery from "./sections/Gallery.astro";
 import Pledge from "./sections/Promise.astro";
 import Faq from "./sections/Faq.astro";
@@ -105,6 +106,9 @@ const tiles = ["--tile-puked", "--tile-drink", "--tile-went-clubbing"];
         <Poll mock={trip.mock} locale={locale} name={trip.name} inPhone />
       </PhoneFrame>
     </Beats>
+
+    <!-- No iPhone? The browser takes away the last objection to the plan (docs/messaging.md). -->
+    <Browser copy={h.browser} event={events.find((e) => e.slug === "dinner-nights") ?? trip} locale={locale} />
 
     <Figures title={h.ends.title} text={h.ends.text} morning={ui.figureMorning} people={ui.figurePeople} />
 
