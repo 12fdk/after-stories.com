@@ -78,6 +78,8 @@ export interface UiCopy {
   navOccasions: string;
   navPrivacy: string;
   navFaq: string;
+  /** The name of the header's menu button, read by screen readers; the button shows an icon. */
+  navMenu: string;
   /** The quiet link to the web app (app.after-stories.com) in the header and the footer. */
   navOpenApp: string;
   /** The small top line on the "Open app" button, like the badge's "Download on the". */

@@ -111,7 +111,7 @@ const ui = uiCopy(locale);
   }
 
   /* Phones: the header's button is one line with its globe, beside the logo and the badge. */
-  @media (max-width: 560px) {
+  @media (max-width: 600px) {
     .app-button-small .app-button-eyebrow {
       display: none;
     }
@@ -125,8 +125,8 @@ const ui = uiCopy(locale);
     }
   }
 
-  /* The narrowest phones: the header's button without the globe. */
-  @media (max-width: 380px) {
+  /* Narrow phones: the header's button without the globe (SiteHeader's breakpoints). */
+  @media (max-width: 400px) {
     .app-button-small :global(.app-button-icon) {
       display: none;
     }

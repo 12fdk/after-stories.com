@@ -140,6 +140,7 @@ const copy: Copy = {
       navOccasions: 'Occasions',
       navPrivacy: 'Confidentialité',
       navFaq: 'Questions',
+      navMenu: 'Menu',
       navOpenApp: "Ouvrir l'app",
       webAppEyebrow: 'Dans le navigateur',
       votePrompt: 'Touchez une réponse pour voter.',

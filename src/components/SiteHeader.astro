@@ -1,5 +1,6 @@
 ---
 import AppStoreCta from "./AppStoreCta.astro";
+import Icon from "./Icon.astro";
 import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 
 // StoryBrand: the direct call to action in the header, next to the transitional "How it works".
@@ -7,6 +8,8 @@ import { uiCopy, localizedPath, type Locale } from "../lib/i18n";
 // so their links jump on the page. Pages without them (privacy, terms) jump to the home page's.
 // The call to action is the pair from AppStoreCta: Apple's badge, then the web app's button, last in
 // the header and on every width (docs/messaging.md, rule 5).
+// Where the text links don't fit, a menu button before the badge holds all of them. It is a native
+// <details>, so it opens without JavaScript; the script only closes it the way a menu should close.
 interface Props {
   /** The page's locale; defaults to English (the base, unprefixed pages). */
   locale?: Locale;
@@ -35,10 +38,35 @@ const links = [
     <span aria-hidden="true">After Stories</span>
   </a>
   <nav class="topbar-nav" aria-label="Main">
+    <details class="menu">
+      <summary class="menu-button">
+        <Icon name="Menu" class="menu-icon" />
+        <span class="visually-hidden">{ui.navMenu}</span>
+      </summary>
+      <div class="menu-panel">
+        {links.map((l) => <a class="menu-link" href={l.href}>{l.label}</a>)}
+      </div>
+    </details>
     {links.map((l) => <a class:list={["topbar-link", { keep: l.keep }]} href={l.href}>{l.label}</a>)}
     <AppStoreCta placement="header" size="small" locale={locale} />
   </nav>
 </header>
+
+<script>
+  document.querySelectorAll<HTMLDetailsElement>("details.menu").forEach((menu) => {
+    menu.addEventListener("click", (event) => {
+      if ((event.target as Element).closest("a")) menu.open = false;
+    });
+    document.addEventListener("click", (event) => {
+      if (!menu.contains(event.target as Node)) menu.open = false;
+    });
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || !menu.open) return;
+      menu.open = false;
+      menu.querySelector("summary")?.focus();
+    });
+  });
+</script>
 
 <style>
   .topbar {
@@ -75,7 +103,7 @@ const links = [
     gap: 28px;
   }
 
-  /* Apple's badge never shrinks below its 40 px size, and the web app's button keeps its size beside it. */
+  /* Apple's badge never shrinks below its 40 px size, and the button keeps its size beside it. */
   .topbar-nav > :global(*) {
     flex: none;
   }
@@ -100,14 +128,84 @@ const links = [
     text-decoration-color: var(--accent);
   }
 
-  /* Wide screens show every link; a laptop and a tablet keep "How it works"; below that the header is the logo, the badge and "Open app". */
+  /* The menu is for the widths that hide links. It hangs from the header, gutter to gutter on a phone. */
+  .menu {
+    display: none;
+  }
+
+  .menu-button {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid var(--hairline);
+    border-radius: 9px;
+    color: var(--text-primary);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .menu-button::-webkit-details-marker {
+    display: none;
+  }
+
+  .menu-button :global(.menu-icon) {
+    width: 22px;
+    height: 22px;
+  }
+
+  .menu[open] .menu-button {
+    border-color: var(--accent-ink);
+  }
+
+  .menu-button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .menu-panel {
+    position: absolute;
+    top: calc(100% - 12px);
+    right: var(--gutter);
+    left: var(--gutter);
+    display: grid;
+    padding: 8px;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    background: var(--surface-elevated);
+    box-shadow: 0 16px 40px rgb(0 0 0 / 0.25);
+  }
+
+  .menu-link {
+    padding: 13px 12px;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .menu-link:hover {
+    background: var(--surface);
+  }
+
+  /* Wide screens show every link; a laptop and a tablet keep "How it works" and the menu; below that the header is the logo, the menu, the badge and "Open app". */
   @media (max-width: 1140px) {
     .topbar-link:not(.keep) {
       display: none;
     }
+    .menu {
+      display: block;
+    }
   }
 
-  @media (max-width: 760px) {
+  @media (min-width: 601px) and (max-width: 1140px) {
+    .menu-panel {
+      left: auto;
+      width: 280px;
+    }
+  }
+
+  @media (max-width: 800px) {
     .topbar-nav {
       gap: 16px;
     }
@@ -117,16 +215,25 @@ const links = [
   }
 
   /* Phones: the icon alone carries the brand (the web app's button shrinks in WebAppCta). */
-  @media (max-width: 560px) {
+  @media (max-width: 600px) {
+    .topbar {
+      gap: 8px;
+    }
+    .topbar-nav {
+      gap: 8px;
+    }
     .brand span {
       display: none;
     }
   }
 
-  /* The narrowest phones: tighter gaps (the web app's button drops its globe in WebAppCta). */
-  @media (max-width: 380px) {
+  /* The narrowest phones have no room for the logo; the footer still links home. */
+  @media (max-width: 359px) {
+    .brand {
+      display: none;
+    }
     .topbar-nav {
-      gap: 8px;
+      margin-left: auto;
     }
   }
 </style>

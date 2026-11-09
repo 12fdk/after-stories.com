@@ -114,3 +114,19 @@ describe("the web app link", () => {
     expect(PRIVACY_HTML).toContain("“Open app”");
   });
 });
+
+describe("the header menu", () => {
+  it("leaves every text link reachable through the menu, before the badge, where they hide", async () => {
+    const css = readFileSync(new URL("../components/SiteHeader.astro", import.meta.url), "utf8");
+    expect(css).toMatch(/@media \(max-width: 1140px\) {[^@]*\.topbar-link:not\(\.keep\)[^@]*\.menu {\s*display: block/);
+    for (const locale of locales) {
+      const out = await render(SiteHeader, locale);
+      const panel = out.slice(out.indexOf("<details"), out.indexOf("</details>"));
+      const hrefs = (part: string) => [...part.matchAll(/class="(?:menu|topbar)-link[^"]*"[^>]*href="([^"]+)"/g)].map((m) => m[1]);
+      expect(hrefs(panel), locale).toContain("/blog/");
+      expect(hrefs(panel), locale).toEqual(hrefs(out.slice(out.indexOf("</details>"))));
+      expect(panel, locale).toContain(html(uiCopy(locale).navMenu));
+      expect(out.indexOf("</details>"), locale).toBeLessThan(out.indexOf('data-umami-event="app-store-click"'));
+    }
+  });
+});

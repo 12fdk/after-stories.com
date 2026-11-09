@@ -347,6 +347,7 @@ const breadcrumb = [
   /* ---- The occasions: the words alone, the page's one rest ---- */
   .occasions {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
   }
 
@@ -364,6 +365,11 @@ const breadcrumb = [
     line-height: 1;
     letter-spacing: -0.02em;
     color: var(--text-secondary);
+  }
+
+  /* German's longest name and its sun are 11.1em wide: on a phone the type follows the screen. */
+  .occasion-list:lang(de) {
+    font-size: min(var(--t-head), 8vw);
   }
 
   .occasion-list li {
