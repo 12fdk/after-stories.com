@@ -42,7 +42,7 @@ describe("search snippets", () => {
   // docs/messaging.md, rule 8: the deletion is never mentioned without saving the photos.
   it("pairs the 48-hour deletion with saving the photos in the definition", () => {
     expect(DEFINITION).toMatch(/48 hours/);
-    expect(DEFINITION).toMatch(/saved the photos/);
+    expect(DEFINITION).toMatch(/save the photos first/);
   });
 
   it("answers 'What is After Stories?' first on the home page", () => {

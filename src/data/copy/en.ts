@@ -11,7 +11,7 @@ const copy: Copy = {
       faq: [
         {
           q: 'What is After Stories?',
-          a: 'An iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after, when the summary arrives: the most-liked photo, the most-liked message and what you decided. 48 hours after the event ends it\'s deleted, after everyone has saved the photos.',
+          a: 'An iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after, when the summary arrives: the most-liked photo, the most-liked message and what you decided. 48 hours after the event ends, it\'s deleted for everyone. Save the photos first.',
         },
         {
           q: 'When can I get After Stories?',
@@ -62,7 +62,7 @@ const copy: Copy = {
           {
             when: 'Before',
             name: 'Plan it together',
-            text: 'Create the event and send the link. Ask which weekend, which house, who drives. Every vote turns into a decision, and the decisions stay on top as a timeline. Nobody scrolls back to find them.',
+            text: 'Create the event and send the link. Ask which weekend, which house, who drives. Every vote turns into a decision, and what\'s decided stays at the top of the event. Nobody scrolls back to find it.',
           },
           {
             when: 'During',
@@ -162,7 +162,7 @@ const copy: Copy = {
           'Bring every photo home.',
         ],
         lede: 'Vote on the day, the place and who drives. Share the trip in one stream. Then get everyone\'s photos in one place, before the whole thing disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'Five friends on a lake house deck at golden hour, one holding a phone up to take the photo',
         todayTitle: 'Six phones, one trip, and nobody has all the photos.',
         problem: 'And it\'s always the same person picking the place, chasing replies and asking for the photos afterwards. A day away should be the easy part of having friends.',
@@ -239,7 +239,7 @@ const copy: Copy = {
           'Piece it together tomorrow.',
         ],
         lede: 'Vote on where to meet and where to go next. Share the night in one private stream. The morning after, get the story: the best photo, the line of the night, every picture. Then it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'A group of friends laughing on a city street at night, warm shop lights behind them',
         todayTitle: 'The plan changed four times. The chat has 400 messages.',
         problem: 'Someone always ends up as the night\'s coordinator, typing “where are you?” instead of being there. A night out shouldn\'t need a project manager.',
@@ -312,7 +312,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'Vote on the date and the venue, and put a name on who brings what. Share the party in one private stream. The morning after, everyone gets every photo of the party, not just the ones they took.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'Friends around a table at night with a birthday cake with lit candles and string lights',
         todayTitle: 'One birthday, three chats, and the best photo is on someone else\'s phone.',
         problem: 'And whoever organises it asks the same questions in three chats, then begs for the photos afterwards. Celebrating someone should be fun for the people throwing it too.',
@@ -385,7 +385,7 @@ const copy: Copy = {
           'Keep the photos. Lose the chat.',
         ],
         lede: 'One organiser, a dozen decisions and a group that won\'t answer. Put every vote in one private event, share the day in one stream, and save the photos before everything disappears 48 hours later.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'A friend group in matching T-shirts celebrating in a go-kart arena',
         todayTitle: 'One organiser. A dozen decisions. Nobody answering.',
         problem: 'The organiser chases ten opinions and gets none back. It\'s a celebration, not a second job.',
@@ -462,7 +462,7 @@ const copy: Copy = {
           'Keep every photo of the chaos.',
         ],
         lede: 'Vote on which day to go and where to meet when someone gets lost. Share the festival in one stream, and get everyone\'s photos in one place before it all disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'Friends in front of a festival crowd at dusk, stage lights and tents behind them',
         todayTitle: 'Five phones on 4%, and nobody remembers where to meet.',
         problem: 'And someone always spends the day as the group\'s lost and found instead of watching the bands. A festival should be the one place you don\'t have to organise anything.',
@@ -540,7 +540,7 @@ const copy: Copy = {
           'Who\'s cooking?',
         ],
         lede: 'Put the questions to a vote and get the answers in one place. Plan the dinner, game or movie night, share it in one stream, and save the photos before it all disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'Friends around a candlelit dinner table at home, food on the table and a film playing',
         todayTitle: 'Six people, three possible evenings, and the date still isn\'t set.',
         problem: 'Picking one evening for six people shouldn\'t take two weeks of messages. Hosting should be about the food, not the logistics.',
@@ -563,7 +563,7 @@ const copy: Copy = {
           {
             when: 'During',
             name: 'One stream for the night',
-            text: '“Running late, start without me”, the food photos, the final score. All in one place.',
+            text: '“Running late, start without me”, the food photos, the winner\'s face. All in one place.',
           },
           {
             when: 'The morning after',
@@ -601,7 +601,7 @@ const copy: Copy = {
           },
         ],
         closer: 'The next night in, decided in minutes.',
-        success: 'A night that came together in minutes, a table full of people you like, and the next morning the photos of the food and the final score, saved with one tap.',
+        success: 'A night that came together in minutes, a table full of people you like, and the next morning every photo of the food and the table, saved with one tap.',
         stakes: 'Or keep throwing dates into the chat, and watch the plan fizzle out again.',
       },
       "office-events": {
@@ -613,7 +613,7 @@ const copy: Copy = {
           'Skip the 30 emails.',
         ],
         lede: 'Vote on the date, decide the place, share the photos. One private event for the whole team, instead of a calendar poll, an email thread and a shared folder. Save the photos, then it\'s gone.',
-        fineprint: 'Available now for iPhone. Requires iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'A team of colleagues at a holiday party, raising glasses in a warm restaurant room',
         todayTitle: 'Four tools, one party, and nobody knows what was decided.',
         problem: 'And the colleague who always organises it spends a week answering the same three questions. A team event should bring people together, not fill inboxes.',
@@ -670,7 +670,7 @@ const copy: Copy = {
           },
           {
             q: 'Who can see what\'s shared?',
-            a: 'Only the people in the event. There are no admins, no public profiles and no feed. Everyone saves the photos first, and 48 hours after the event ends it\'s deleted for everyone.',
+            a: 'Only the people in the event. There are no company admins, no public profiles and no feed. 48 hours after the event ends, it\'s deleted for everyone, so save the photos first.',
           },
           {
             q: 'How is this better than a calendar poll?',
@@ -683,11 +683,11 @@ const copy: Copy = {
         privacy: [
           {
             title: 'Only the people in the event.',
-            text: 'No admins, no profiles, no feed.',
+            text: 'No feed, no followers, no strangers.',
           },
           {
             title: 'Gone 48 hours after.',
-            text: 'Everyone saves the photos first. Then the chat, the polls and the photos are deleted for everyone.',
+            text: 'Save every photo with one tap first. Then the chat, the polls and the photos are deleted for everyone.',
           },
           {
             title: 'Never your location.',
@@ -708,7 +708,7 @@ const copy: Copy = {
           'Every photo of the game, saved.',
         ],
         lede: 'Plan the carpool for your child\'s match in one private event. Every parent sees the cars and who sits where, out and home, and anyone can move a child. Share the game in one stream, save every photo, then it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'An empty community soccer pitch at golden morning light, two white goals and training cones on the grass, team bags on the sideline bench, cars parked on the lot behind the fence',
         todayTitle: 'Twelve kids, four cars, and the carpool is in the parents\' chat.',
         problem: 'Who drives, how many seats, who takes Emil home: all buried under a hundred messages in the parents\' chat. And somebody always ends up counting seats in the car park. Game day should be about the kids, not the logistics.',
@@ -761,7 +761,7 @@ const copy: Copy = {
           },
           {
             q: 'Does one event cover the whole season?',
-            a: 'One event per game. Each match gets its own event with its own cars, and 48 hours after the game it\'s deleted for everyone, once everyone has saved the photos.',
+            a: 'One event per game. Each match gets its own event with its own cars, and 48 hours after the game it\'s deleted for everyone, so save the photos first.',
           },
           {
             q: 'Who picks the photo of the game?',
@@ -807,7 +807,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'Vote on the date, the venue and the food. Share the party in one private stream. The morning after, everyone gets every photo of the day, not just the ones they took. Then it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'A graduation celebration set up in a sunny park at golden hour, string lights, balloons, a cake and a banner on a long table',
         todayTitle: 'One graduation, three chats, and the best photo is on someone else\'s phone.',
         problem: 'And the friends who organise it ask the same questions in three chats. Celebrating someone\'s big day should be a joy, not a second job.',
@@ -874,13 +874,13 @@ const copy: Copy = {
       "family-reunion": {
         name: 'Family reunion',
         title: 'Family Reunion Planner for Groups | After Stories',
-        description: 'Plan the family reunion together: vote on the day and the place, keep every decision in one timeline, and save everyone\'s photos. Gone 48 hours after.',
+        description: 'Plan the family reunion together: vote on the day and the place, keep what\'s decided at the top, and save everyone\'s photos. Gone 48 hours after.',
         headline: [
           'Plan the reunion together.',
           'Bring every photo home.',
         ],
-        lede: 'Vote on the day, the place and who drives. Keep every decision in one timeline, share the whole day in one stream, and save everyone\'s photos before the whole thing disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        lede: 'Vote on the day, the place and who drives. Keep what\'s decided at the top, share the whole day in one stream, and save everyone\'s photos before the whole thing disappears.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'An empty wooden lakeside deck and dock at golden hour with warm string lights, a picnic table set with plates, a calm lake behind',
         todayTitle: 'Twenty-four people, one lake, and the plan is in a family group chat.',
         problem: 'Aunts, uncles and cousins all arguing about the date, the place and who drives, across a group chat nobody can scroll. Planning a reunion shouldn\'t be the family\'s least favourite part.',
@@ -953,7 +953,7 @@ const copy: Copy = {
           'Everyone gets the photos.',
         ],
         lede: 'Friends and family coming to watch, and a plan to sort. Vote on where to meet and where to eat after, share the show in one private stream, and get every photo of the performance before it disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'An empty stage in a warm community hall with a microphone and a music stand under a soft spotlight, rows of empty seats behind',
         todayTitle: 'Fifteen people, one show, and nobody knows where to meet.',
         problem: 'Who has the spare ticket, who\'s giving whom a lift, where to eat after, all across the family group chat. Show night should be about the performance, not the logistics.',
@@ -1026,7 +1026,7 @@ const copy: Copy = {
           'Save the photos, drop the chat.',
         ],
         lede: 'Twenty-two volunteers, a dozen shifts and a hundred things to sort. Put the crew in one private event: who\'s on which shift, where to meet, who brings what. Save the photos before the whole thing disappears.',
-        fineprint: 'Out now for iPhone. Needs iOS 26 or later.',
+        fineprint: 'For iPhone, with iOS 26 or later, and in your browser.',
         heroAlt: 'The start line of an outdoor charity 5k in a park, a start arch and a timing scoreboard, cones and a banner on the grass',
         todayTitle: 'Twenty-two volunteers, a dozen shifts, and the plan is in a group chat.',
         problem: 'Who\'s on which shift, who\'s bringing the water, where the crew meets, all scattered across a group chat nobody has time to scroll. A fundraiser should be about the cause, not the coordination.',

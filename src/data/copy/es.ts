@@ -10,7 +10,7 @@ const copy: Copy = {
       faq: [
         {
           q: '¿Qué es After Stories?',
-          a: 'Una app de iPhone para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Todos votan el plan, comparten las fotos en un solo lugar y las guardan todas con un toque a la mañana siguiente, cuando llega el resumen: la foto y el mensaje con más likes y lo que decidisteis. A las 48 horas de terminar, el evento se elimina, cuando todos han guardado las fotos.',
+          a: 'Una app de iPhone para un evento con tu grupo: una cena, una fiesta, un fin de semana fuera. Todos votan el plan, comparten las fotos en un solo lugar y las guardan todas con un toque a la mañana siguiente, cuando llega el resumen: la foto y el mensaje con más likes y lo que decidisteis. A las 48 horas de terminar, el evento se elimina para todos. Guardad antes las fotos.',
         },
         {
           q: '¿Cuándo podré descargar After Stories?',
@@ -61,7 +61,7 @@ const copy: Copy = {
           {
             when: 'Antes',
             name: 'Planeadlo juntos',
-            text: 'Crea el evento y envía el enlace. Pregunta qué fin de semana, qué casa, quién conduce. Cada votación se convierte en una decisión, y las decisiones quedan arriba como una línea de tiempo. Nadie tiene que buscarlas.',
+            text: 'Crea el evento y envía el enlace. Pregunta qué fin de semana, qué casa, quién conduce. Cada votación se convierte en una decisión, y lo decidido queda arriba del evento. Nadie tiene que buscarlo.',
           },
           {
             when: 'Durante',
@@ -173,7 +173,7 @@ const copy: Copy = {
           'Llevaos cada foto a casa.',
         ],
         lede: 'Votad el día, el sitio y quién conduce. Compartid la excursión en un solo hilo. Después tendréis las fotos de todos en un mismo lugar, antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Cinco amigos en la terraza de madera de una casa junto al lago a la hora dorada; uno sostiene el móvil en alto para hacer la foto',
         todayTitle: 'Seis móviles, una excursión, y nadie tiene todas las fotos.',
         problem: 'Y siempre es la misma persona la que elige el sitio, persigue respuestas y pide las fotos después. Una escapada de un día debería ser lo fácil de tener amigos.',
@@ -250,7 +250,7 @@ const copy: Copy = {
           'Mañana, la historia entera.',
         ],
         lede: 'Votad dónde quedar y adónde ir después. Compartid la noche en un solo hilo privado. A la mañana siguiente, tenéis la historia: la mejor foto, la frase de la noche, cada imagen. Después desaparece.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Un grupo de amigos riéndose en una calle de la ciudad de noche, con la luz cálida de los escaparates detrás',
         todayTitle: 'El plan ha cambiado cuatro veces. El chat tiene 400 mensajes.',
         problem: 'Siempre hay alguien que acaba coordinando la noche, escribiendo «¿dónde estáis?» en vez de estar ahí. Una noche de fiesta no necesita un jefe de proyecto.',
@@ -323,7 +323,7 @@ const copy: Copy = {
           'Todos reciben las fotos.',
         ],
         lede: 'Votad la fecha y el sitio, y poned nombre a quién lleva qué. Compartid la fiesta en un solo hilo privado. A la mañana siguiente, todos reciben cada foto de la fiesta, no solo las que hicieron ellos.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Amigos alrededor de una mesa por la noche, con una tarta de cumpleaños con las velas encendidas y guirnaldas de luces',
         todayTitle: 'Un cumpleaños, tres chats, y la mejor foto está en el móvil de otro.',
         problem: 'Y quien lo organiza hace las mismas preguntas en tres chats y luego suplica las fotos. Celebrar a alguien también debería ser divertido para quien monta la fiesta.',
@@ -396,7 +396,7 @@ const copy: Copy = {
           'Fotos a salvo, chat borrado.',
         ],
         lede: 'Un organizador, una docena de decisiones y un grupo que no contesta. Poned cada votación en un evento privado, compartid el día en un solo hilo y guardad las fotos antes de que todo desaparezca a las 48 horas.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Un grupo de amigos con camisetas iguales celebrando en un circuito de karts',
         todayTitle: 'Un organizador. Una docena de decisiones. Nadie contesta.',
         problem: 'El organizador persigue diez opiniones y no recibe ninguna. Es una celebración, no un segundo trabajo.',
@@ -473,7 +473,7 @@ const copy: Copy = {
           'Guardad cada foto del caos.',
         ],
         lede: 'Votad qué día ir y dónde quedar cuando alguien se pierda. Compartid el festival en un solo hilo, y tened las fotos de todos en un mismo lugar antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Amigos delante del público de un festival al anochecer, con las luces del escenario y tiendas de campaña detrás',
         todayTitle: 'Cinco móviles al 4 %, y nadie se acuerda de dónde habíamos quedado.',
         problem: 'Y siempre hay alguien que se pasa el día haciendo de objetos perdidos del grupo en vez de ver los conciertos. Un festival debería ser el único sitio donde no hay nada que organizar.',
@@ -551,7 +551,7 @@ const copy: Copy = {
           '¿Quién cocina?',
         ],
         lede: 'Someted las preguntas a votación y tened las respuestas en un solo lugar. Planead la cena, los juegos o la peli, compartidlo en un solo hilo y guardad las fotos antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Amigos alrededor de una mesa con velas en casa, comida en la mesa y una película de fondo',
         todayTitle: 'Seis personas, tres noches posibles, y la fecha sigue sin fijar.',
         problem: 'Elegir una noche para seis personas no debería costar dos semanas de mensajes. Ser anfitrión debería ir de la comida, no de la logística.',
@@ -574,7 +574,7 @@ const copy: Copy = {
           {
             when: 'Durante',
             name: 'Un solo hilo para la noche',
-            text: '«Llego tarde, empezad sin mí», las fotos de la comida, el marcador final. Todo en un solo lugar.',
+            text: '«Llego tarde, empezad sin mí», las fotos de la comida, la cara del ganador. Todo en un solo lugar.',
           },
           {
             when: 'La mañana siguiente',
@@ -612,7 +612,7 @@ const copy: Copy = {
           },
         ],
         closer: 'La próxima noche en casa, decidida en minutos.',
-        success: 'Una noche que se organizó en minutos, una mesa llena de gente que os cae bien, y a la mañana siguiente las fotos de la comida y el marcador final, guardadas con un toque.',
+        success: 'Una noche que se organizó en minutos, una mesa llena de gente que os cae bien, y a la mañana siguiente todas las fotos de la comida y de la mesa, guardadas con un toque.',
         stakes: 'O seguid lanzando fechas al chat, y ved cómo el plan se vuelve a enfriar.',
       },
       "office-events": {
@@ -624,7 +624,7 @@ const copy: Copy = {
           'Saltaos los 30 correos.',
         ],
         lede: 'Votad la fecha, decidid el sitio, compartid las fotos. Un solo evento privado para todo el equipo, en vez de una encuesta de calendario, un hilo de correos y una carpeta compartida. Guardad las fotos, y después desaparece.',
-        fineprint: 'Disponible para iPhone. Requiere iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Un equipo de compañeros en la cena de Navidad, brindando en el salón acogedor de un restaurante',
         todayTitle: 'Cuatro herramientas, una fiesta, y nadie sabe qué se decidió.',
         problem: 'Y el compañero que siempre lo organiza se pasa una semana contestando las mismas tres preguntas. Un evento de equipo debería unir a la gente, no llenar bandejas de entrada.',
@@ -681,7 +681,7 @@ const copy: Copy = {
           },
           {
             q: '¿Quién puede ver lo que se comparte?',
-            a: 'Solo las personas del evento. No hay administradores, ni perfiles públicos, ni feed. Todos guardan antes las fotos, y 48 horas después de que acabe el evento se elimina para todos.',
+            a: 'Solo las personas del evento. No hay administradores de empresa, ni perfiles públicos, ni feed. 48 horas después de que acabe el evento se elimina para todos, así que guardad antes las fotos.',
           },
           {
             q: '¿Por qué es mejor que una encuesta de calendario?',
@@ -694,11 +694,11 @@ const copy: Copy = {
         privacy: [
           {
             title: 'Solo las personas del evento.',
-            text: 'Sin administradores, sin perfiles, sin feed.',
+            text: 'Sin feed, sin seguidores, sin desconocidos.',
           },
           {
             title: 'Desaparece 48 horas después.',
-            text: 'Todos guardan antes las fotos. Después, el chat, las votaciones y las fotos se eliminan para todos.',
+            text: 'Primero, guarda todas las fotos con un toque. Después, el chat, las votaciones y las fotos se eliminan para todos.',
           },
           {
             title: 'Nunca tu ubicación.',
@@ -719,7 +719,7 @@ const copy: Copy = {
           'Cada foto del partido, guardada.',
         ],
         lede: 'Organiza el coche compartido para el partido de tu hijo en un evento privado. Todos los padres ven los coches y quién va dónde, a la ida y a la vuelta, y cualquiera puede mover a un niño. Comparte el partido en un solo hilo, guarda todas las fotos y luego todo desaparece.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Un campo de fútbol municipal vacío con la luz dorada de la mañana, dos porterías blancas y conos de entrenamiento sobre el césped, bolsas del equipo en el banquillo y coches aparcados detrás de la valla',
         todayTitle: 'Doce niños, cuatro coches, y el coche compartido está en el chat de padres.',
         problem: 'Quién conduce, cuántas plazas, quién trae a Emil de vuelta: todo enterrado bajo cien mensajes en el chat de padres. Y siempre hay alguien contando plazas en el aparcamiento. El día de partido debería tratar de los niños, no de la logística.',
@@ -772,7 +772,7 @@ const copy: Copy = {
           },
           {
             q: '¿Un evento sirve para toda la temporada?',
-            a: 'Un evento por partido. Cada partido tiene su propio evento con sus propios coches, y 48 horas después del partido se elimina para todos, cuando todos han guardado las fotos.',
+            a: 'Un evento por partido. Cada partido tiene su propio evento con sus propios coches, y 48 horas después del partido se elimina para todos, así que guardad antes las fotos.',
           },
           {
             q: '¿Quién elige la foto del partido?',
@@ -818,7 +818,7 @@ const copy: Copy = {
           'Todos reciben las fotos.',
         ],
         lede: 'Votad la fecha, el sitio y la comida. Compartid la fiesta en un solo hilo privado. A la mañana siguiente, todos reciben cada foto del día, no solo las que hicieron ellos. Después desaparece.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Una celebración de graduación montada en un parque soleado a la hora dorada: guirnaldas de luces, globos, una tarta y una pancarta sobre una mesa larga',
         todayTitle: 'Una graduación, tres chats, y la mejor foto está en el móvil de otro.',
         problem: 'Y los amigos que la organizan hacen las mismas preguntas en tres chats. Celebrar un gran día debería ser una alegría, no un segundo trabajo.',
@@ -885,13 +885,13 @@ const copy: Copy = {
       "family-reunion": {
         name: 'Reunión familiar',
         title: 'Planificador de reuniones familiares | After Stories',
-        description: 'Planead la reunión familiar: votad el día y el sitio, tened cada decisión en una línea de tiempo y guardad las fotos de todos. Se elimina a las 48 horas.',
+        description: 'Planead la reunión familiar: votad el día y el sitio, tened lo decidido arriba y guardad las fotos de todos. Se elimina a las 48 horas.',
         headline: [
           'Planead la reunión.',
           'Llevaos cada foto a casa.',
         ],
-        lede: 'Votad el día, el sitio y quién conduce. Tened cada decisión en una línea de tiempo, compartid todo el día en un solo hilo y guardad las fotos de todos antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        lede: 'Votad el día, el sitio y quién conduce. Tened lo decidido arriba, compartid todo el día en un solo hilo y guardad las fotos de todos antes de que todo desaparezca.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Una terraza y un embarcadero de madera vacíos junto a un lago a la hora dorada, con guirnaldas de luces cálidas, una mesa de pícnic puesta y el lago en calma detrás',
         todayTitle: 'Veinticuatro personas, un lago, y el plan está en el chat familiar.',
         problem: 'Tías, tíos y primos discutiendo la fecha, el sitio y quién conduce, en un chat de grupo que nadie consigue leer entero. Organizar una reunión no debería ser lo que menos le gusta a la familia.',
@@ -964,7 +964,7 @@ const copy: Copy = {
           'Todos reciben las fotos.',
         ],
         lede: 'Amigos y familia que van a verlo, y un plan por organizar. Votad dónde quedar antes y dónde cenar después, compartid la función en un solo hilo privado y tened cada foto de la actuación antes de que desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'Un escenario vacío en un salón de actos acogedor, con un micrófono y un atril bajo un foco suave y filas de butacas vacías detrás',
         todayTitle: 'Quince personas, una función, y nadie sabe dónde quedar.',
         problem: 'Quién tiene la entrada que sobra, quién lleva a quién, dónde cenar después, todo repartido por el chat familiar. La noche de la función debería ir de la actuación, no de la logística.',
@@ -1037,7 +1037,7 @@ const copy: Copy = {
           'Fotos a salvo, chat borrado.',
         ],
         lede: 'Veintidós voluntarios, una docena de turnos y cien cosas por organizar. Poned al equipo en un evento privado: quién está en cada turno, dónde quedar, quién trae qué. Guardad las fotos antes de que todo desaparezca.',
-        fineprint: 'Ya disponible para iPhone. Necesita iOS 26 o posterior.',
+        fineprint: 'Para iPhone, con iOS 26 o posterior, y en tu navegador.',
         heroAlt: 'La salida de una carrera benéfica de 5 km en un parque, con un arco de salida, un marcador de tiempos, conos y una pancarta sobre el césped',
         todayTitle: 'Veintidós voluntarios, una docena de turnos, y el plan está en un chat de grupo.',
         problem: 'Quién está en qué turno, quién trae el agua, dónde queda el equipo, todo repartido por un chat de grupo que nadie tiene tiempo de leer. Una jornada benéfica debería ir de la causa, no de la coordinación.',

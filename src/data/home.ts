@@ -14,7 +14,7 @@ export const homeDescription =
 export const homeFaq: Question[] = [
   {
     q: "What is After Stories?",
-    a: "An iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after, when the summary arrives: the most-liked photo, the most-liked message and what you decided. 48 hours after the event ends it's deleted, after everyone has saved the photos.",
+    a: "An iPhone app for one event with your group: a dinner, a party, a weekend away. Everyone votes on the plan, shares photos in one place, and saves them all with one tap the morning after, when the summary arrives: the most-liked photo, the most-liked message and what you decided. 48 hours after the event ends, it's deleted for everyone. Save the photos first.",
   },
   {
     q: "When can I get After Stories?",

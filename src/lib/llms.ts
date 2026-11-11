@@ -9,7 +9,7 @@ import { APP_STORE_URL } from "./appstore";
 // Both are built from the data the pages are built from, so they can't drift from the site.
 
 /** Where to get it, without a contact address (that @ belongs only in llms.txt, as plain text). */
-export const LAUNCH_STATUS = `Status: available now on the App Store for iPhone (iOS 26 or later): ${APP_STORE_URL}. Also in the browser at app.after-stories.com, on a computer or an Android phone: anyone can start an event there, and friends without an iPhone join from its invite link. In English, Danish, German, French and Spanish. Made by 12f ApS, Denmark (https://12f.dk).`;
+export const LAUNCH_STATUS = `Status: available now on the App Store for iPhone (iOS 26 or later): ${APP_STORE_URL}. Also in the browser at app.after-stories.com, on a computer or an Android phone: anyone can start an event there, and friends without an iPhone join from its invite link. This website is in English, Danish, German, French and Spanish. Made by 12f ApS, Denmark (https://12f.dk).`;
 
 const status = `${LAUNCH_STATUS} Contact: after-stories@12f.dk.`;
 
