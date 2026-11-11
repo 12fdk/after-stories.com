@@ -38,7 +38,7 @@
 //                   #169), leaving, retention (#221: 48 h after the end, 90 days if never started,
 //                   the 12 h warning push #256; #170: a deleted event's reports are kept 90 days
 //                   more, ids + reason only, and each new report e-mails 12f), pushes (#30, #222, #237, #264,
-//                   #270), the 17+ rating
+//                   #270), the 18+ rating (since 2026-10-07)
 // Hosting: app.12f.dk resolves to Oracle Cloud, Stockholm (checked 2026-09-30).
 // (Issue numbers above are 12fdk/after-stories issues.)
 //
@@ -77,8 +77,8 @@
 // Links to the suspension page stay absolute: /konto/suspenderet is served by after.12f.dk.
 // Change the dates whenever the text changes. src/lib/legal.test.ts checks the shape.
 
-export const PRIVACY_UPDATED_DA = "9. november 2026";
-export const PRIVACY_UPDATED_EN = "9 November 2026";
+export const PRIVACY_UPDATED_DA = "11. november 2026";
+export const PRIVACY_UPDATED_EN = "11 November 2026";
 
 export const PRIVACY_HTML = `
 <nav class="lang"><a href="#da">Dansk</a> · <a href="#en">English</a></nav>
@@ -107,8 +107,9 @@ export const PRIVACY_HTML = `
   <li><strong>Tekniske oplysninger.</strong> Når du er logget ind, gemmer serveren din session: IP-adresse, land, enhedens og styresystemets navn og hvornår den sidst blev brugt. Det bruges til login og sikkerhed og slettes, når du logger ud eller sletter kontoen. Serveren fører også tekniske logfiler til drift og fejlfinding.</li>
   <li><strong>Dine indstillinger.</strong> Hvilken version af <a href="/terms/">vilkårene</a> du har accepteret, og hvornår; hvilke beskeder du vil have notifikationer om; og hvilke events du har slået notifikationer fra for eller fjernet fra Hjem. De gemmes på din konto, så en ny telefon kender dem, og slettes med kontoen.</li>
   <li><strong>Din profil.</strong> Det navn, du vælger, og dit profilbillede, hvis du tilføjer et. De kan kun ses af dem, der er med i dine events.</li>
+  <li><strong>Feedback.</strong> Sender du os feedback fra din profil, gemmer vi det, du skrev (fejl, idé eller andet), appens version, iOS-version, telefonmodel og sprog — dem ser du, før du sender — og vores svar til dig. Kun du og 12f kan se det, ingen i dine events. Det slettes med din konto.</li>
   <li><strong>Events.</strong> Eventets navn, hvem der er med, hvem der oprettede det, hvornår det blev startet og sluttede, og den tidszone, det foregår i.</li>
-  <li><strong>Det, du lægger op.</strong> Beskeder — tekst, billeder og steder — og hvem du nævner med @. Likes. Afstemninger, deres svarmuligheder og stemmerne. Beslutninger og opgaver: hvad I har besluttet, hvem der gør hvad, og om det er klaret. <strong>Alle billeder bliver renset på telefonen, før de sendes</strong>: placering og alle kameraoplysninger fjernes. I webappen renser vores server billedet, før det gemmes (se <a href="#da-webapp">Webappen</a>).</li>
+  <li><strong>Det, du lægger op.</strong> Beskeder — tekst, billeder og steder — og hvem du nævner med @. Likes. Afstemninger, deres svarmuligheder og stemmerne. Beslutninger og opgaver: hvad I har besluttet, hvem der gør hvad, og om det er klaret. Udlæg: hvad du har lagt ud — beløbet, valutaen, en kort tekst og hvem der deler det — og en overførsel, der er markeret <em>Betalt</em>. Kun den, der har lagt ud, kan ændre eller fjerne sit udlæg. Pengene flyttes uden for appen. <strong>Alle billeder bliver renset på telefonen, før de sendes</strong>: placering og alle kameraoplysninger fjernes. I webappen renser vores server billedet, før det gemmes (se <a href="#da-webapp">Webappen</a>).</li>
   <li><strong>Kørsel og forsidebillede.</strong> I et <em>Kampdag</em>-event: bilerne (chaufførens navn og antal pladser), børnenes fornavne, som forældrene selv skriver ind, og hvem der sidder i hvilken bil ud og hjem. Og eventets forsidebillede, hvis I vælger et eget billede — det bliver renset som alle andre billeder. Det kan kun ses af dem, der er med i eventet, og slettes med eventet. Børn har ingen konto i AFTER; kun deres fornavn bliver gemt. Sletter en forælder sin konto, slettes de børn, forælderen har skrevet ind.</li>
   <li><strong>Køb.</strong> Køber du <em>After Stories Pro</em> eller et <em>Event Pass</em> i appen, får vi fra Apple et bevis for købet: produktet, Apples transaktions-id, hvornår det blev købt, og hvornår et abonnement udløber. Vi bruger det til at give dig det, du har købt. Opgraderer du et event, gemmer vi, at eventet er opgraderet, hvem der gjorde det, og med hvad. Alle i eventet kan se, hvem der opgraderede det. Vi får aldrig dine betalingsoplysninger.</li>
   <li><strong>Steder.</strong> Et sted er et spisested, en bar eller en adresse, som I selv vælger: et navn, en adresse og et link til Apple Kort. Aldrig nogens position — appen gemmer ingen koordinater.</li>
@@ -215,7 +216,7 @@ export const PRIVACY_HTML = `
 <p>Du har ret til indsigt, til at få rettet og slettet dine data, til begrænsning af behandlingen, til dataportabilitet og til at gøre indsigelse. Navn og billede retter du selv i appen, og sletning sker direkte i appen. Alt andet: skriv til <a href="mailto:after-stories@12f.dk">after-stories@12f.dk</a>. Du kan klage til Datatilsynet, <a href="https://www.datatilsynet.dk">datatilsynet.dk</a>.</p>
 
 <h2>Alder</h2>
-<p>AFTER er for personer på 17 år og derover.</p>
+<p>AFTER er for personer på 18 år og derover.</p>
 
 <h2>Ændringer</h2>
 <p>Ændrer vi, hvordan vi behandler data, opdaterer vi denne side og datoen øverst.</p>
@@ -247,8 +248,9 @@ export const PRIVACY_HTML = `
   <li><strong>Technical details.</strong> While you're signed in, the server keeps your session: IP address, country, device and operating-system name, and when it was last used. It's used for sign-in and security, and deleted when you sign out or delete your account. The server also keeps technical logs for operations and troubleshooting.</li>
   <li><strong>Your settings.</strong> Which version of the <a href="/terms/">terms</a> you accepted, and when; which messages you want to be notified about; and which events you've turned notifications off for or removed from Home. They're kept on your account, so a new phone knows them, and deleted with the account.</li>
   <li><strong>Your profile.</strong> The name you choose, and your profile picture if you add one. Only the people in your events can see them.</li>
+  <li><strong>Feedback.</strong> If you send us feedback from your profile, we store what you wrote (a bug, an idea or something else), the app version, iOS version, device model and language — shown to you before you send — and our replies to you. Only you and 12f can see it, nobody in your events. It is deleted with your account.</li>
   <li><strong>Events.</strong> The event's name, who is in it, who created it, when it was started and ended, and the time zone it takes place in.</li>
-  <li><strong>What you post.</strong> Messages — text, photos and places — and who you mention with @. Likes. Polls, their options and the votes. Decisions and tasks: what you decided, who does what, and whether it's done. <strong>Every photo is cleaned on your phone before it is sent</strong>: location and all camera data are removed. In the web app our server cleans the photo before it is stored (see <a href="#en-webapp">The web app</a>).</li>
+  <li><strong>What you post.</strong> Messages — text, photos and places — and who you mention with @. Likes. Polls, their options and the votes. Decisions and tasks: what you decided, who does what, and whether it's done. Expenses: what you paid — the amount, the currency, a short text and who shares it — and a transfer marked <em>Paid</em>. Only the person who paid can change or remove their expense. Money moves outside the app. <strong>Every photo is cleaned on your phone before it is sent</strong>: location and all camera data are removed. In the web app our server cleans the photo before it is stored (see <a href="#en-webapp">The web app</a>).</li>
   <li><strong>Car pool and cover picture.</strong> In a <em>Game day</em> event: the cars (the driver's name and the number of seats), the children's first names, which their parents type in themselves, and who sits in which car out and home. And the event's cover picture, if you choose a photo of your own — it is cleaned like every other photo. Only the people in the event can see it, and it is deleted with the event. Children have no account in AFTER; only their first name is stored. When a parent deletes their account, the children that parent added are deleted.</li>
   <li><strong>Purchases.</strong> If you buy <em>After Stories Pro</em> or an <em>Event Pass</em> in the app, Apple sends us proof of the purchase: the product, Apple's transaction id, when it was bought, and when a subscription expires. We use it to give you what you bought. If you upgrade an event, we store that the event is upgraded, who did it, and with what. Everyone in the event can see who upgraded it. We never get your payment details.</li>
   <li><strong>Places.</strong> A place is a restaurant, a bar or an address that you choose: a name, an address and a link to Apple Maps. Never anybody's position — the app stores no coordinates.</li>
@@ -355,7 +357,7 @@ export const PRIVACY_HTML = `
 <p>You have the right to access, rectify and erase your data, to restrict processing, to data portability and to object. You correct your name and photo yourself in the app, and deletion happens right in the app. Anything else: write to <a href="mailto:after-stories@12f.dk">after-stories@12f.dk</a>. You can complain to the Danish Data Protection Agency, <a href="https://www.datatilsynet.dk">datatilsynet.dk</a>.</p>
 
 <h2>Age</h2>
-<p>AFTER is for people aged 17 and over.</p>
+<p>AFTER is for people aged 18 and over.</p>
 
 <h2>Changes</h2>
 <p>If we change how we process data, we update this page and the date at the top.</p>
