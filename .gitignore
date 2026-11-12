@@ -9,6 +9,9 @@ node_modules/
 npm-debug.log*
 pnpm-debug.log*
 
+# tools/reddit-topics.py cache (fetched Reddit RSS, local only)
+.cache/
+
 # macOS
 .DS_Store
 

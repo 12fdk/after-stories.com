@@ -65,12 +65,12 @@ imagine they worry about.
 Derived from the product's own positioning (after-stories.com, 2026-10-18).
 The bracketed phrase is the primary keyword people actually search.
 
-1. **Group chat chaos** — why plans die in iMessage/WhatsApp and how to keep one plan alive · *"group chat for planning a night out"* · (one event, Decided) *(unused)*
-2. **"What time was it again?"** — the coordination problem, with a 5-step fix · *"how to organize a group trip with friends"* · (Decided, venue share) *(unused)*
-3. **The morning after** — why you forget the best photo and how to keep the night · *"photo sharing after party"* · (one stream, save all photos, 48 h) *(unused)*
-4. **Privacy for a party** — why your group shouldn't be on a public feed · *"private group chat app"* · (private, no feed, location stripped) *(unused)*
-5. **Planning a night out with friends** — step by step, from "we should hang out" to the door code · *"how to plan a night out with friends"* · (vote, venue, one stream) *(unused)*
-6. **Birthday party logistics** — the 7 things that go wrong and how to catch them · *"birthday party planning checklist friends"* · (checklist-in-chat, Decided) *(unused)*
+1. **Group chat chaos** — why plans die in iMessage/WhatsApp and how to keep one plan alive · *"group chat for planning a night out"* · (one event, Decided) *(used: group-chat-plans, 2026-11-01)*
+2. **"What time was it again?"** — the coordination problem, with a 5-step fix · *"how to organize a group trip with friends"* · (Decided, venue share) *(used: what-time-was-it-again, 2026-11-03)*
+3. **The morning after** — why you forget the best photo and how to keep the night · *"photo sharing after party"* · (one stream, save all photos, 48 h) *(used: the-morning-after, 2026-11-05)*
+4. **Privacy for a party** — why your group shouldn't be on a public feed · *"private group chat app"* · (private, no feed, location stripped) *(used: privacy-for-a-party, 2026-11-08)*
+5. **Planning a night out with friends** — step by step, from "we should hang out" to the door code · *"how to plan a night out with friends"* · (vote, venue, one stream) *(used: plan-a-night-out-with-friends, 2026-11-10)*
+6. **Birthday party logistics** — the 7 things that go wrong and how to catch them · *"birthday party planning checklist friends"* · (checklist-in-chat, Decided) *(used: birthday-party-logistics, 2026-11-07)*
 7. **Splitting the bill** — decide the format *before* you go · *"how to split the bill with friends"* · (vote, Decided) *(unused)*
 8. **QR invites** — stop typing the address, share a code · *"party invite qr code"* · (QR invite) *(unused)*
 9. **The uninvited** — how to keep a private event private · *"private party invite only"* · (invite-only, no strangers) *(unused)*
