@@ -1,6 +1,6 @@
 # After Stories — Marketing Plan (living doc)
 
-Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-11-11
+Owner: Robert · Maintained by: Hermes (social pipeline agent) · Last updated: 2026-11-12
 
 > Plan for a TikTok content program built to grow organic awareness and installs of the
 > **After Stories** app. Every word of copy in this plan must come from the brand sources named
@@ -650,13 +650,14 @@ family's private ritual are left out or demoted (list below, and §9).
 |---|---|---|---|---|---|
 | **Halloween** | Sat Oct 31, 2026 | Oct 28 | nights-out (costume party / house party) | where to meet, where next; "Piece it together tomorrow." | Oct 19 #1, Oct 26 #3 |
 | **Friendsgiving** | no fixed date; usually the days before Thanksgiving (~Nov 19–25) | Nov 15 | dinner-nights (Potluck) | picking the evening and who brings what — friends, not family | Nov 2 #4, Nov 9 #1 |
-| **Office Christmas party** (second audience) | late Nov – mid Dec; the organiser starts in early Nov | Nov 14 (first row) | office-events (own page, calmer register) | "Skip the 30 emails."; four tools, one party; the morning after with no work chat left behind | Nov 2 #3, Nov 16 #3, Dec 14 #1 (Jan 11 #3: the January kick-off) |
+| **Office Christmas party** (second audience) | late Nov – mid Dec; the organiser starts in early Nov | Nov 14 (first row) | office-events (own page, calmer register) | "Skip the 30 emails."; four tools, one party; the morning after with no work chat left behind | Nov 2 #3, Nov 16 #3, Dec 14 #1 (Jan 11 #3: the January kick-off); Christmas block 2026-11-12: as-office-party-pics, as-office-mail-thread, as-office-no-work-chat |
 | **US Thanksgiving long weekend** | Thu Nov 26, 2026 (+ Fri–Sun) | Nov 22 | family-reunion | the whole family in one plan; the photo of the day afterwards | Nov 16 #1, Nov 23 #1 |
 | **Ski season opens** | late Nov – Dec (resort opening dates vary) | Nov 29 | trips (Ski day chip) | which day, where to, who brings what | Nov 23 #2 |
-| **Christmas with friends** (friends' Christmas dinner, Christmas drinks) | December; Christmas is Fri Dec 25, 2026 | Dec 5 | dinner-nights; nights-out (Friday drinks) | picking one December evening for six people | Nov 23 #3, Nov 30 #1, Dec 7 #3 |
+| **Christmas with friends** (friends' Christmas dinner, Christmas drinks) | December; Christmas is Fri Dec 25, 2026 | Dec 5 | dinner-nights; nights-out (Friday drinks) | picking one December evening for six people | Nov 23 #3, Nov 30 #1, Dec 7 #3; **the Christmas block, built Nov 12–26** (Robert, 2026-11-12) |
 | Christmas concerts (choir, school, amateur shows) | December (pattern) | Dec 6 | recital | friends and family who come to watch; every photo of the performance | Nov 30 #3 |
 | Christmas-break day trips | Dec 24, 2026 – Jan 3, 2027 (pattern) | Dec 20 | trips (Lake day) | the easy day away between the holidays | Dec 14 #4 |
-| **New Year's Eve** | Thu Dec 31, 2026 | Dec 28 | nights-out (New Year's Eve chip) | where to start, where next; the night's coordinator; New Year's Day morning after | Dec 14 #2, Dec 21 #1, #3 |
+| **Winter-holiday ski trips with friends** (Robert, 2026-11-12) | Christmas break; the February winter holidays (DK vinterferie, UK half-term, Presidents' Day) — patterns, no dates in a post | from Dec 25 | trips (Ski day; several days = one event) | which week, where to, who drives, who sleeps where; every photo from the slopes | **the ski block, built Dec 25 – Jan 10**; Feb 1 #3 |
+| **New Year's Eve** | Thu Dec 31, 2026 | Dec 28 | nights-out (New Year's Eve chip) | where to start, where next; the night's coordinator; New Year's Day morning after | Dec 14 #2, Dec 21 #1, #3; **the New Year block, built Nov 27 – Dec 24** (Robert, 2026-11-12) |
 | New Year trips / January weekends away | Jan 2027 (pattern) | Jan 8 | trips (hero) | "The next trip, without the 300 messages." | Dec 28 #2, Jan 4 #1 |
 | **Hen & stag / bachelor(ette) planning** | send-offs for spring–summer get planned in winter (pattern, no figure claimed) | from Dec 28 | bachelor-parties | one organiser, a dozen decisions; keep the photos, lose the chat | Dec 28 #1, Jan 18 #4 |
 | **MLK Day long weekend** (US) | Mon Jan 18, 2027 | Jan 13 | trips (weekend away = one event per day) | vote on the day, the place and who drives | Jan 11 #1 |
@@ -776,13 +777,73 @@ built by the nightly job and posted by hand by Robert. Rules for every row:
 | Dec 14 | 4 | as-winter-day-trip | D | trips (Lake day) · Christmas break | “A day away should be the easy part of having friends.” | frozen lake at golden hour, a thermos, skates on the ice, long shadows | 1 | built 2026-11-07 as-winter-day-trip · N2 · music-synth-v1 (OPENVERSE FALLBACK, mood 1) |
 | Dec 21 | 3 | as-nye-morning | B | nights-out · the morning after NYE | “New Year's Day: Piece it together tomorrow.” (para.) | Jan 1 morning, streamers on a balcony rail, pale gold light, two cold glasses and a coffee | 4 | built 2026-11-10 as-nee-morning · N2 · spencer-newton-bounce-original-mix-elect-50236f3c.mp3 (OPENVERSE FALLBACK, mood 4→5) |
 | Dec 28 | 1 | as-bachelor | D | bachelor-parties · send-off planning season | “Keep the photos. Lose the chat.” | send-off morning, beach, from behind, long shadows | 5 | built 2026-11-11 6af4ebc95e48018dad9b as-bachelor |
-| Dec 28 | 2 | as-which-weekend | A | trips · the plan gets lost | “wait which weekend did we land on?” | wall calendar with three weekends circled in three pens, a cabin key on a hook, low winter sun | 0 | queued |
+| Nov 9 | 1 | as-xmas-which-night | A | dinner-nights · Christmas with friends | “which night are we doing Christmas dinner??” | a December wall calendar with every weekend crossed out in different pens, a wreath on the door, cold blue dusk through the window | 0 | queued |
+| Nov 9 | 2 | as-office-party-pics | B | office-events · Christmas party, the morning after | “can everyone send me their photos from the party?” | the coat rack by an office lift the morning after, one forgotten Santa hat on a hook, flat grey daylight | 1 | queued |
+| Nov 9 | 3 | as-xmas-lunch | D | dinner-nights · Christmas lunch with friends | “Christmas lunch: who's bringing what?” | long table with a white paper runner, small schnapps glasses, rye bread, red-and-white paper hearts in the window, mid-afternoon candlelight | 2 | queued |
+| Nov 9 | 4 | as-secret-santa | C | decided on top · Secret Santa with friends | “wait, what was the budget for Secret Santa?” | a heap of gifts wrapped in brown paper and string (no tags), a bowl of folded paper slips, warm lamp light | 3 | queued |
+| Nov 16 | 1 | as-xmas-drinks-after | B | nights-out (Friday drinks) · Christmas drinks, the morning after | “can someone send the pics from last night??” | Saturday-morning hallway: a sparkly jumper over a chair, glitter on the floorboards, a mug of coffee, low winter sun | 4 | queued |
+| Nov 16 | 2 | as-office-mail-thread | D | office-events · Christmas party | “Christmas party: see the mail thread” | a meeting room after hours, a whiteboard wiped clean, a box of baubles on the table, warm desk lamps, city lights in a dark window | 5 | queued |
+| Nov 16 | 3 | as-xmas-cabin | A | trips · Christmas weekend away with friends (several days, one event) | “did anyone actually book the cabin for Christmas?” | snowy forest cabin at blue hour, an unlit porch, a key box by the door, footprints in fresh snow | 0 | queued |
+| Nov 16 | 4 | as-skating-videos | B | nights-out · ice skating with friends in December | “someone please send the skating videos” | outdoor ice rink at night, skates laced on a bench, breath in the cold air, white bulbs overhead, backs only | 1 | queued |
+| Nov 16 | 5 | as-xmas-last-year | C | 48 h, photos saved first · Christmas party | “last year's Christmas party chat is still on your phone” | an attic box of decorations opened, one old print on top (blank back), cold attic light → fresh daylight | 2 | queued |
+| Nov 16 | 6 | as-xmas-dessert | A | dinner-nights (Potluck) · Christmas with friends | “wait, who's doing the dessert?” | a crowded flat's kitchen counter: foil-covered dishes, oven light, steam, an empty cake stand | 3 | queued |
+| Nov 16 | 7 | as-office-no-work-chat | C | office-events · Christmas party, no work chat left behind | “the party chat is still in your work notifications” | a quiet open-plan office in January daylight, a strand of tinsel on a switched-off monitor, a cleaning cart | 4 | queued |
+| Nov 23 | 1 | as-xmas-jumper-night | D | nights-out (Friday drinks) · Christmas jumper night | “who has the photo of all the jumpers?” | a rail of knitted Christmas jumpers in a hallway (no letters in the patterns), boots, a rainy street through the open door | 5 | queued |
+| Nov 23 | 2 | as-xmas-table-photo | B | dinner-nights · friends' Christmas dinner, the morning after | “who took the photo of the whole table?” | the morning after: pulled crackers, candle stubs, a pine-branch centrepiece, plates stacked by the sink, pale snow light | 0 | queued |
+| Nov 23 | 3 | as-xmas-every-phone | C | everyone's photos in one place · Christmas | “Christmas: every photo is on someone else's phone” | a sofa heaped with coats and scarves, phones face-down on a blanket (camera modules lit), firelight | 1 | queued |
+| Nov 23 | 4 | as-home-for-xmas | D | dinner-nights · the friends' night when everyone's home for Christmas | “who's home for Christmas this year?” | a station arrivals hall: suitcases and scarves, a big wreath, warm light against falling snow outside | 2 | queued |
+| Nov 23 | 5 | as-nye-where | A | nights-out (New Year's Eve) · where to start | “New Year's Eve: so where are we actually going?” | a hallway mirror, a sequin dress on a hanger, heels by the door, coats on hooks, warm bulb light at early dusk | 3 | queued |
+| Nov 23 | 6 | as-nye-midnight-photo | B | nights-out (New Year's Eve) · the photo at midnight | “who got the photo at midnight??” | a balcony at one minute past midnight, sparkler smoke drifting, empty glasses on the rail, far-off fireworks bokeh, backs only | 4 | queued |
+| Nov 23 | 7 | as-nye-host | D | nights-out (New Year's Eve) · the house party | “New Year's Eve: whose place this year?” | a living room being cleared: sofa pushed back, fairy lights coiled on the floor, a stepladder, late-afternoon light | 5 | queued |
+| Nov 30 | 1 | as-nye-gone | C | 48 h, photos saved first · New Year's Eve | “last New Year's chat is still on your phone” | a drawer of old party hats and an empty sparkler box, then the drawer closing, clean January morning light | 0 | queued |
+| Nov 30 | 2 | as-nye-bring | A | nights-out (New Year's Eve) · who brings what | “wait, who's bringing the champagne?” | a kitchen worktop: ice melting in an empty bucket, a roll of bin bags, a packet of confetti, cool fluorescent light | 1 | queued |
+| Nov 30 | 3 | as-nye-fireworks | B | nights-out (New Year's Eve) · the fireworks videos | “send me the fireworks video pls” | a frosty park hill at midnight, silhouettes from behind, fireworks reflected in a frozen puddle | 2 | queued |
+| Nov 30 | 4 | as-nye-dinner-first | D | dinner-nights · New Year's Eve dinner before the party | “New Year's Eve: dinner first, then where?” | a set table with gold napkins, oysters on ice, condensation on a window, 8 pm city glow | 3 | queued |
+| Nov 30 | 5 | as-nye-one-tap | C | save all photos with one tap · New Year's morning | “New Year's morning: the photos are on everyone's phone but yours” | a bed with a sequin jacket thrown over it, curtains drawn, one blade of New Year's Day sun, a glass of water | 4 | queued |
+| Nov 30 | 6 | as-nye-cabin | D | trips · New Year's weekend away (several days, one event) | “New Year's at the cabin: who's driving?” | a car boot packed at dusk: boxed sparklers, sleeping bags, snow chains, a forest road | 5 | queued |
+| Nov 30 | 7 | as-nye-dress-code | A | nights-out (New Year's Eve) · the theme vote | “we still haven't decided the dress code” | a bed covered in options from above: gold, black, a feather boa, a tux jacket, warm lamp | 0 | queued |
+| Dec 7 | 1 | as-nye-day-after | B | nights-out · New Year's Day, the morning after | “what actually happened last night?” | New Year's Day street: confetti in a gutter puddle, a bar's shutter down, pale cold sun, one person from behind with a coffee | 1 | queued |
+| Dec 7 | 2 | as-nye-late | C | the plan stays on top · New Year's Eve latecomers | “where are you guys??” | a crowded street near midnight from behind, one person alone at a corner, wet cobbles reflecting party lights | 2 | queued |
+| Dec 7 | 3 | as-nye-beach | D | trips (Beach day) · New Year's on a summer beach | “New Year's at the beach: send the sunset photos” | a warm beach at dusk, a ring of stones for a fire, flip-flops in the sand, string lights on a driftwood pole | 3 | queued |
+| Dec 7 | 4 | as-nye-plan-changed | A | nights-out (New Year's Eve) · the plan keeps changing | “The plan changed again today.” | a tram stop at night, party coats, a blurred timetable board, cold blue light | 4 | queued |
+| Dec 7 | 5 | as-nye-fresh-start | C | 48 h, photos saved first · after New Year's | “do we really need that New Year's chat forever?” | a hand pulling a party-popper streamer off a lamp, the room tidied, a window opened onto cold morning air | 5 | queued |
+| Dec 7 | 6 | as-nye-karaoke | D | nights-out (Karaoke) · New Year's Eve | “New Year's karaoke: someone filmed that, right?” | a karaoke booth from behind, a mic on a stool, purple and gold light, a tambourine on the seat | 0 | queued |
+| Dec 7 | 7 | as-nye-taxi-home | B | nights-out · the best photo of New Year's | “the best photo of the night is on someone else's phone” | a taxi back seat at 3 am, rain on the window, streaking city lights, two pairs of party shoes on the mat | 1 | queued |
+| Dec 14 | 1 | as-nye-house-or-club | A | nights-out (New Year's Eve) · house party or a club | “house party or the club this year?” | two wristbands and a house key on a doormat, a door half open, party light spilling out | 2 | queued |
+| Dec 14 | 2 | as-nye-what-time | C | the plan stays on top · New Year's Eve: the time, the place | “wait, what time was it again?” | a hallway wall clock at quarter to ten, coats on hooks, a bowl of keys, warm bulb light | 3 | queued |
+| Dec 14 | 3 | as-nye-city-trip | D | trips · New Year's city break with friends (several days, one event) | “New Year's city trip: every photo on a different phone” | suitcases in a small rented flat's doorway, gloves drying on a radiator, snowy rooftops at blue hour | 4 | queued |
+| Dec 14 | 4 | as-nye-group-photo | B | nights-out (New Year's Eve) · the group photo | “did anyone get one of all of us?” | a self-timer set-up: a phone (back to camera, module lit) on a stack of books facing a sofa of party hats, warm lamps | 5 | queued |
+| Dec 14 | 5 | as-nye-food | A | nights-out (New Year's Eve) · the house party food | “so who's actually sorting the food?” | an empty dining table with one bag of crisps and a bowl, the oven door open, a kitchen timer, evening | 0 | queued |
+| Dec 14 | 6 | as-nye-not-sent | C | save all photos with one tap · New Year's | “New Year's photos: who still hasn't sent theirs?” | an open photo album with empty sleeves on a desk, a stack of blank-backed prints beside it, January daylight | 1 | queued |
+| Dec 14 | 7 | as-nye-rooftop | D | nights-out (New Year's Eve) · the rooftop | “New Year's rooftop: how does everyone find it?” | a rooftop door propped open with a brick, a stairwell lit green by an exit sign (no readable text), a blanket and a cool box | 2 | queued |
+| Dec 21 | 1 | as-nye-brunch | B | nights-out · New Year's Day brunch, the summary | “New Year's Day: piece it together.” | New Year's Day brunch café table from above: eggs, sunglasses, coffee, a frosted window | 3 | queued |
+| Dec 21 | 2 | as-nye-new-year | C | 48 h, photos saved first · the new year | “new year, same old group chat” | a fresh notebook on a clean desk, one print tucked inside, January dawn light, a bare room | 4 | queued |
+| Dec 21 | 3 | as-nye-no-plan | A | nights-out (New Year's Eve) · still no plan | “New Year's Eve is this week and there's still no plan” | a phone face-down on a kitchen table (camera module lit) beside unopened party poppers and a cold coffee, late night | 5 | queued |
+| Dec 21 | 4 | as-nye-ski-hut | D | trips (Ski day) · New Year's on the mountain | “New Year's on the mountain: who's booking the hut?” | a wooden ski hut at night with lit windows, skis in a snowbank, lanterns, stars | 0 | queued |
+| Dec 21 | 5 | as-ski-which-week | A | trips (Ski day) · the winter-holiday ski trip with friends | “so which week are we going skiing?” | ski goggles hanging on a snowy window latch, Christmas-tree lights reflected in the glass, evening | 1 | queued |
+| Dec 21 | 6 | as-ski-slope-pics | B | trips (Ski day) · everyone's photos from the slopes | “can someone send the pics from the top?” | a summit plateau, skis crossed in the snow, hard sun, frozen breath, people from behind | 2 | queued |
+| Dec 21 | 7 | as-ski-where | D | trips (Ski day) · where to go | “Ski trip: where are we going this year?” | a paper piste map on a wooden table (no readable text), hot chocolate, wool socks, lamp light | 3 | queued |
+| Dec 28 | 1 | as-ski-last-winter | C | 48 h, photos saved first · the ski trip | “the ski trip chat from last winter is still going” | a ski-boot bag zipped shut in a hallway, a print on top, then an empty hook | 4 | queued |
+| Dec 28 | 2 | as-ski-drivers | A | trips · who drives to the mountains | “who's driving to the mountains?” | two cars in a snowy car park at 5 am, roof boxes open, headlights on, frost | 5 | queued |
+| Dec 28 | 3 | as-ski-apres | B | trips · après-ski, the photos | “who has the video from après?” | a wooden terrace at golden hour, helmets on a table, steaming mugs, boots in a row, backs only | 0 | queued |
+| Dec 28 | 4 | as-ski-week | D | trips · the whole ski week is one event, decided day by day | “Ski week: what are we doing each day?” | a chalet hallway, ski jackets on hooks, gloves piled on a radiator, morning blue light | 1 | queued |
+| Dec 28 | 5 | as-ski-bring | A | trips · who brings what to the chalet | “wait, who's bringing the raclette?” | an empty chalet kitchen counter, a cool box, a bag of groceries, snow on the window ledge | 2 | queued |
+| Dec 28 | 6 | as-ski-home | C | save all photos with one tap · after the ski trip | “home from the ski trip with none of the photos” | a train window on the way home, skis in the rack, a sleeping friend's hood from behind, dusk over snowy fields | 3 | queued |
+| Dec 28 | 7 | as-ski-chalet | D | trips · nobody booked the chalet | “did anyone actually book the chalet?” | a chalet door at night, a key lockbox (no digits), snow piled high, one lantern | 4 | queued |
+| Jan 4 | 1 | as-ski-best-photo | B | trips · the summary after the ski trip | “the best ski photo is on someone else's phone” | the living room the day after the trip: ski socks drying on a radiator, an open duffel bag, pale January light | 5 | queued |
+| Jan 4 | 2 | as-ski-rooms | A | trips · who sleeps where | “Ski trip: who's in which room?” | a chalet landing with three doors ajar, bunk beds just visible, bags on the floor, warm wood light | 0 | queued |
+| Jan 4 | 3 | as-ski-the-fall | C | everyone's photos in one place · the ski trip | “someone filmed the fall, right?” | a beginner slope, a snowboard upside down in the snow, a rope tow, flat white light | 1 | queued |
+| Jan 4 | 4 | as-ski-saturday | D | trips (Ski day) · a day on the slopes from the city | “Ski day from the city: which Saturday?” | a frosty bus stop at dawn, skis leaning on the shelter, a thermos, low sun | 2 | queued |
+| Jan 4 | 5 | as-ski-chat-ends | C | 48 h, photos saved first · the ski trip ends | “the ski trip chat nobody can leave” | a chalet at check-out: an empty boot rack, the door closing, tracks in fresh snow leading away | 3 | queued |
+| Jan 4 | 6 | as-ski-hot-tub | B | trips · the best night of the ski trip | “the best night of the trip and the photos are everywhere” | an empty hot tub on a snowy deck at night, steam, towels on a rail, stars | 4 | queued |
+| Jan 4 | 7 | as-ski-organiser | A | trips · the organiser | “why am I always the one planning the ski trip?” | a closed laptop on a kitchen table, booking papers face-down, a beanie, a late-night lamp | 5 | queued |
+| Jan 11 | 1 | as-mlk-weekend | D | trips · US MLK long weekend (one event per day) | “Long weekend: Vote on the day, the place and who drives.” | snowy cabin porch at blue hour, firewood stack, boots in a row, a lit window | 0 | queued |
+| Dec 28 | 2 | as-which-weekend | A | trips · the plan gets lost | “wait which weekend did we land on?” | wall calendar with three weekends circled in three pens, a cabin key on a hook, low winter sun | 1 | queued |
 | Dec 28 | 3 | as-fifty | C | up to 50 people | “Up to 50. That fits most groups, from a handful of friends to a big party.” | a long hallway lined with coats and boots, from the doorway, warm party glow at the far end | 1 | dropped 2026-11-05 (#81, §6 Lane and proof) |
 | Jan 4 | 1 | as-new-year-trip | D | trips · New Year getaway | “The next trip, without the 300 messages.” | empty train platform at dawn in snow, backpacks, steam from the engine | 2 | queued |
 | Jan 4 | 2 | as-jobs | C | jobs get a name | “Who brings the cake, who books the table.” | blank paper tags tied to a cake box, a speaker and car keys on a hall table, soft daylight | 3 | queued |
 | Jan 4 | 3 | as-second-job | A | the organiser's second job | “Getting your friends together shouldn't feel like a second job.” | Sunday-night desk lamp, sticky notes curling, a cold tea, rain on the window | 4 | queued |
 | Jan 4 | 4 | as-night-in | B | dinner-nights (Game night) · the morning after | “The story of a good night.” | game pieces on a rug the morning after, low winter sun, an empty pizza board | 5 | queued |
-| Jan 11 | 1 | as-mlk-weekend | D | trips · US MLK long weekend (one event per day) | “Long weekend: Vote on the day, the place and who drives.” | snowy cabin porch at blue hour, firewood stack, boots in a row, a lit window | 0 | queued |
 | Jan 11 | 2 | as-birthday-chats | A | birthdays · three chats | “One birthday, three chats, and the best photo is on someone else's phone.” | an unlit birthday cake on a kitchen counter, three coats on three chairs, tungsten and pink fairy lights | 1 | queued |
 | Jan 11 | 3 | as-kickoff | D | office-events (Kick-off) | “Kick-off: Plan the team event.” | meeting room turned into a dinner table, kraft-paper runner, January daylight to candlelight | 2 | queued |
 | Jan 11 | 4 | as-reminder | C | the 48 h reminder, save all first | “Everyone gets a reminder and can save all the photos with one tap.” (para.) | a darkroom-red hallway clock at 47:59 on a paper card, then dawn light through blinds | 3 | queued |
@@ -830,6 +891,66 @@ Proofs (guidelines §2.3): **1** the plan stays on top · **2** everyone's photo
 | as-never-location | F | 3 | was a privacy spotlight; "Never your location." may be a supporting line only |
 | as-nye-morning | F | 2 | |
 | as-bachelor | F | 3 | |
+| as-xmas-which-night | F | 1 | Christmas block (2026-11-12) |
+| as-office-party-pics | C | 2 | Christmas block (2026-11-12) |
+| as-xmas-lunch | F | 1 | Christmas block (2026-11-12) |
+| as-secret-santa | F | 1 | Christmas block (2026-11-12) |
+| as-xmas-drinks-after | F | 2 | Christmas block (2026-11-12) |
+| as-office-mail-thread | C | 1 | Christmas block (2026-11-12) |
+| as-xmas-cabin | F | 1 | Christmas block (2026-11-12) |
+| as-skating-videos | F | 2 | Christmas block (2026-11-12) |
+| as-xmas-last-year | F | 3 | Christmas block (2026-11-12) |
+| as-xmas-dessert | F | 1 | Christmas block (2026-11-12) |
+| as-office-no-work-chat | C | 3 | Christmas block (2026-11-12) |
+| as-xmas-jumper-night | F | 2 | Christmas block (2026-11-12) |
+| as-xmas-table-photo | F | 2 | Christmas block (2026-11-12) |
+| as-xmas-every-phone | F | 2 | Christmas block (2026-11-12) |
+| as-home-for-xmas | F | 1 | Christmas block (2026-11-12) |
+| as-nye-where | F | 1 | New Year block (2026-11-12) |
+| as-nye-midnight-photo | F | 2 | New Year block (2026-11-12) |
+| as-nye-host | F | 1 | New Year block (2026-11-12) |
+| as-nye-gone | F | 3 | New Year block (2026-11-12) |
+| as-nye-bring | F | 1 | New Year block (2026-11-12) |
+| as-nye-fireworks | F | 2 | New Year block (2026-11-12) |
+| as-nye-dinner-first | F | 1 | New Year block (2026-11-12) |
+| as-nye-one-tap | F | 2 | New Year block (2026-11-12) |
+| as-nye-cabin | F | 1 | New Year block (2026-11-12) |
+| as-nye-dress-code | F | 1 | New Year block (2026-11-12) |
+| as-nye-day-after | F | 2 | New Year block (2026-11-12) |
+| as-nye-late | F | 1 | New Year block (2026-11-12) |
+| as-nye-beach | F | 2 | New Year block (2026-11-12) |
+| as-nye-plan-changed | F | 1 | New Year block (2026-11-12) |
+| as-nye-fresh-start | F | 3 | New Year block (2026-11-12) |
+| as-nye-karaoke | F | 2 | New Year block (2026-11-12) |
+| as-nye-taxi-home | F | 2 | New Year block (2026-11-12) |
+| as-nye-house-or-club | F | 1 | New Year block (2026-11-12) |
+| as-nye-what-time | F | 1 | New Year block (2026-11-12) |
+| as-nye-city-trip | F | 2 | New Year block (2026-11-12) |
+| as-nye-group-photo | F | 2 | New Year block (2026-11-12) |
+| as-nye-food | F | 1 | New Year block (2026-11-12) |
+| as-nye-not-sent | F | 2 | New Year block (2026-11-12) |
+| as-nye-rooftop | F | 1 | New Year block (2026-11-12) |
+| as-nye-brunch | F | 2 | New Year block (2026-11-12) |
+| as-nye-new-year | F | 3 | New Year block (2026-11-12) |
+| as-nye-no-plan | F | 1 | New Year block (2026-11-12) |
+| as-nye-ski-hut | F | 1 | New Year block (2026-11-12) |
+| as-ski-which-week | F | 1 | ski block (2026-11-12) |
+| as-ski-slope-pics | F | 2 | ski block (2026-11-12) |
+| as-ski-where | F | 1 | ski block (2026-11-12) |
+| as-ski-last-winter | F | 3 | ski block (2026-11-12) |
+| as-ski-drivers | F | 1 | ski block (2026-11-12) |
+| as-ski-apres | F | 2 | ski block (2026-11-12) |
+| as-ski-week | F | 1 | ski block (2026-11-12) |
+| as-ski-bring | F | 1 | ski block (2026-11-12) |
+| as-ski-home | F | 2 | ski block (2026-11-12) |
+| as-ski-chalet | F | 1 | ski block (2026-11-12) |
+| as-ski-best-photo | F | 2 | ski block (2026-11-12) |
+| as-ski-rooms | F | 1 | ski block (2026-11-12) |
+| as-ski-the-fall | F | 2 | ski block (2026-11-12) |
+| as-ski-saturday | F | 1 | ski block (2026-11-12) |
+| as-ski-chat-ends | F | 3 | ski block (2026-11-12) |
+| as-ski-hot-tub | F | 2 | ski block (2026-11-12) |
+| as-ski-organiser | F | 1 | ski block (2026-11-12) |
 | as-which-weekend | F | 1 | |
 | as-fifty | — | — | **dropped**: "up to 50" is a supporting fact, not a message |
 | as-new-year-trip | F | 1 | the hook's "300 messages" is an invented number: use "The next trip, without the group chat." |
@@ -1147,6 +1268,25 @@ rows are left, new rows follow §6 "When the plan runs short" and name their lan
   the stranger test (§3 guardrails 12–13), one price line. §5 claim sheet replaced by a pointer
   (its stale web / iOS 27 / one-day / calendar rows removed). §6: lane and proof per queued row;
   as-fifty, as-no-gps, as-one-day and as-nobody-left-out dropped.
+
+- *2026-11-12 (Robert — the season's focus):* Robert: "change the schedule so the next 15 days
+  are focus on christmas, and christmas parties, and after that focus on new year party, until 24
+  december. Then start focusing on vinter vacation ski trip with friends." §6 changed: 60 new
+  rows inserted after as-bachelor, at the head of the queue (one build per night):
+  **Christmas, Nov 12–26** (15 rows: Christmas with friends, plus three office Christmas party
+  rows in the colleagues lane), **New Year's Eve, Nov 27 – Dec 24** (28 rows), **winter-holiday
+  ski trips with friends, Dec 25 – Jan 10** (17 rows; the end date is this file's choice, so the
+  ski block runs while groups plan the February winter holidays). The new rows' Week of is their
+  build week. Each names its lane and proof in "Lane and proof per queued row" (Christmas 7×1,
+  6×2, 2×3; New Year 14×1, 11×2, 3×3; ski 9×1, 6×2, 2×3). Hooks are frame-0 situations from
+  the lanes' words, no product fact, no invented number; looks avoid every built shoot
+  (as-office-*, as-friends-xmas*, as-xmas-drinks, as-nye-*, as-ski-day, as-likes,
+  as-keep-memories). Series never repeat back to back; the mood index runs 0–5 from as-bachelor's 5.
+  The old queue continues on Jan 11, with **as-mlk-weekend moved to its head** so it is still built
+  before Mon Jan 18 (as-which-weekend's mood 0 → 1 to keep the rotation). The old queue's later
+  moments are still built before their dates (Burns Night, Lunar New Year, Six Nations, Galentine's,
+  Super Bowl by ~early Feb); it now drops below 7 queued rows around Feb 4 ("When the plan runs short" applies). Calendar hooks: the Christmas, office
+  party and NYE rows point at the blocks; a winter-holiday ski row added.
 
 ## 9. Open questions & watch items
 
