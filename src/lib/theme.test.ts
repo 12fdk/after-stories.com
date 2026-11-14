@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyChoice, readChoice, THEME_KEY } from "./theme";
+import { applyChoice, readChoice, showChoice, THEME_KEY, themeColorMedia } from "./theme";
 
 const memory = (initial: Record<string, string> = {}) => {
   const data = { ...initial };
@@ -67,5 +67,39 @@ describe("applyChoice", () => {
     const el = root();
     expect(() => applyChoice("dark", el, blocked)).not.toThrow();
     expect(el.dataset.theme).toBe("dark");
+  });
+});
+
+describe("themeColorMedia", () => {
+  it("follows the system under auto", () => {
+    expect(themeColorMedia("auto", "dark")).toBe("(prefers-color-scheme: dark)");
+    expect(themeColorMedia("auto", "light")).toBe("(prefers-color-scheme: light)");
+  });
+
+  it("pins the bar colour to a picked light or dark", () => {
+    expect(themeColorMedia("light", "light")).toBe("all");
+    expect(themeColorMedia("light", "dark")).toBe("not all");
+    expect(themeColorMedia("dark", "dark")).toBe("all");
+    expect(themeColorMedia("dark", "light")).toBe("not all");
+  });
+});
+
+describe("showChoice", () => {
+  const page = () => {
+    const metas = (["dark", "light"] as const).map(
+      (scheme) => ({ media: `(prefers-color-scheme: ${scheme})`, dataset: { scheme } }) as unknown as HTMLMetaElement,
+    );
+    const el = { dataset: {} as DOMStringMap, ownerDocument: { querySelectorAll: () => metas } } as unknown as HTMLElement;
+    return { el, metas };
+  };
+
+  it("moves the theme-color tags with the choice and back for auto", () => {
+    const { el, metas } = page();
+    showChoice("light", el);
+    expect(el.dataset.theme).toBe("light");
+    expect(metas.map((m) => m.media)).toEqual(["not all", "all"]);
+    showChoice("auto", el);
+    expect(el.dataset.theme).toBeUndefined();
+    expect(metas.map((m) => m.media)).toEqual(["(prefers-color-scheme: dark)", "(prefers-color-scheme: light)"]);
   });
 });
