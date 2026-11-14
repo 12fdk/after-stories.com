@@ -22,7 +22,7 @@ const choices = [
 </fieldset>
 
 <script>
-  import { applyChoice, readChoice, type ThemeChoice } from "../lib/theme";
+  import { applyChoice, readChoice, showChoice, THEME_KEY, type ThemeChoice } from "../lib/theme";
 
   const storage = (() => {
     try {
@@ -32,15 +32,30 @@ const choices = [
     }
   })();
 
-  for (const group of document.querySelectorAll<HTMLFieldSetElement>("[data-theme-switch]")) {
+  const groups = document.querySelectorAll<HTMLFieldSetElement>("[data-theme-switch]");
+
+  const checkCurrent = () => {
     const current = readChoice(storage);
-    const radio = group.querySelector<HTMLInputElement>(`input[value="${current}"]`);
-    if (radio) radio.checked = true;
+    for (const group of groups) {
+      const radio = group.querySelector<HTMLInputElement>(`input[value="${current}"]`);
+      if (radio) radio.checked = true;
+    }
+  };
+
+  checkCurrent();
+  for (const group of groups) {
     group.addEventListener("change", (event) => {
       const choice = (event.target as HTMLInputElement).value as ThemeChoice;
       applyChoice(choice, document.documentElement, storage);
     });
   }
+
+  // A choice made in another tab of the site (#105). key is null when storage was cleared.
+  window.addEventListener("storage", (event) => {
+    if (event.key !== THEME_KEY && event.key !== null) return;
+    showChoice(readChoice(storage), document.documentElement);
+    checkCurrent();
+  });
 </script>
 
 <style>

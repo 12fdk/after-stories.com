@@ -49,14 +49,19 @@ const graph = noindex
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="dark light" />
-    <meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#0B0C0E" media="(prefers-color-scheme: dark)" data-scheme="dark" />
+    <meta name="theme-color" content="#F6F7F9" media="(prefers-color-scheme: light)" data-scheme="light" />
     <!-- Applies a stored Light/Dark choice before first paint (src/lib/theme.ts). -->
     <script is:inline>
       document.documentElement.classList.add("js");
       try {
         var t = localStorage.getItem("theme");
-        if (t === "light" || t === "dark") document.documentElement.dataset.theme = t;
+        if (t === "light" || t === "dark") {
+          document.documentElement.dataset.theme = t;
+          document.querySelectorAll('meta[name="theme-color"][data-scheme]').forEach(function (m) {
+            m.media = m.dataset.scheme === t ? "all" : "not all";
+          });
+        }
       } catch (e) {}
     </script>
     <title>{title}</title>
