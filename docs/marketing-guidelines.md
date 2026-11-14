@@ -6,7 +6,8 @@
 > **Decided by Robert, 2026-11-05 (#81).** The five decisions behind it are in §11. A change to
 > §2 (the message) or §11 is his; a change to §8 (the facts) follows the app.
 >
-> This file decides **the message and the facts**. `marketing.md` decides how videos are produced
+> This file decides **the message and the facts**. The marketing plan in Trilium (*Claude › Projects ›
+> After Stories › Marketing*, since 2026-11-14; its *Social production* note was `marketing.md`) decides how videos are produced
 > and scheduled, `prompt.md` how a blog post is built, `messaging.md` how the site's pages are
 > structured, `positioning.md` why we chose this market. Where one of them disagrees with this
 > file about what we say or what is true, **this file wins** (§10).
@@ -120,7 +121,7 @@ the post file, under `Stranger test:`, quoting the line in the piece that gives 
 2. **One piece: one situation, one proof.** Not a tour. A second proof is a second piece.
 3. **Open on a situation people recognise, in the words they would type.** The opening is a
    moment one of the three proofs answers (§2.3, column 3). A mood, a season or a pretty table
-   that no proof answers is not an opening. `marketing.md` › Hook doctrine still holds: no
+   that no proof answers is not an opening. *Social production* › Hook doctrine still holds: no
    feature claim at frame 0.
 4. **Show the product.** The proof is shown in the real app (the recordings in
    `/nas/spark/footage/after-stories/app/`, or App Store screenshots). AI footage sets the scene;
@@ -140,7 +141,7 @@ the post file, under `Stranger test:`, quoting the line in the piece that gives 
 10. **End on the next step**, the same every time. The end card is the icon, the short sentence
     and `after-stories.com` (Robert, 2026-11-05; it was the icon and the URL only since
     2026-10-29). Still no "Download on the App Store" text. The caption's last line is the
-    channel's link line (`marketing.md` §2).
+    channel's link line (*Social production* §2).
 11. **Only facts from §8.** No invented numbers, quotes, reviews, user counts or dates. No
     competitor by name. **Price: one fixed line and nothing else** (§8). No amounts, no "100 %
     free", no "free forever", nothing about Pro.
@@ -188,7 +189,7 @@ name a real child.
 
 ## 7. How to build each format
 
-**Short video, Reel, TikTok** (formats and lengths per `marketing.md` §5):
+**Short video, Reel, TikTok** (formats and lengths per *Social production* §5):
 
 | Beat | What | Rule |
 | --- | --- | --- |
@@ -198,7 +199,7 @@ name a real child.
 | 4. End card | The icon, the short sentence, `after-stories.com` | Rule 10. A muted, unread video still says what it is |
 
 Caption: line 1 the situation as a question; line 2 the **full** sentence; the last line the
-channel's link line (`marketing.md` §2); then the hashtags. The proof's line is on screen, so the
+channel's link line (*Social production* §2); then the hashtags. The proof's line is on screen, so the
 caption doesn't repeat it.
 
 **Carousel / photo post:** slide 1 the situation; 2–3 slides the viewer nods at (no product
@@ -310,7 +311,7 @@ what now? *the link*. After: all three answered.
 
 | File | Keeps | Changes when this file is adopted (Hermes makes these in its own files) |
 | --- | --- | --- |
-| `marketing.md` | Production, formats, cadence, the calendar, the logs, the guardrails | **Brand sources**: this file first. **§5 Claim sheet**: replaced by a pointer to §8 here. Rows that are wrong today: "Friends without an iPhone: the web version is gone" (they join in the browser), "iOS 27+" (iOS 26), "One event = one day" and "never claim a weekend in ONE event" (several days since 1.3), "never claim an Add to calendar" (it exists). **§5 formats**: every format gets beats 2 and 3 of §7; a format that cannot show the real app leaves the rotation. **§6 queue**: each row names its lane, its situation and its one proof (1, 2 or 3). Rows whose message is a small feature (likes, one stream, the timeline, fifty people, never-location, no-GPS, one event per day) are rewritten onto a proof or dropped. **§3 guardrails**: add the stranger test. |
+| The Trilium plan (*Social production*, *Content calendar*, *Learnings*; was `marketing.md`) | Production, formats, cadence, the calendar, the logs, the guardrails | **Brand sources**: this file first. **§5 Claim sheet**: replaced by a pointer to §8 here. Rows that are wrong today: "Friends without an iPhone: the web version is gone" (they join in the browser), "iOS 27+" (iOS 26), "One event = one day" and "never claim a weekend in ONE event" (several days since 1.3), "never claim an Add to calendar" (it exists). **§5 formats**: every format gets beats 2 and 3 of §7; a format that cannot show the real app leaves the rotation. **§6 queue**: each row names its lane, its situation and its one proof (1, 2 or 3). Rows whose message is a small feature (likes, one stream, the timeline, fifty people, never-location, no-GPS, one event per day) are rewritten onto a proof or dropped. **§3 guardrails**: add the stranger test. |
 | `prompt.md` | Topic selection, structure, images, publishing | **§1** feature list replaced by a pointer to §8 here (its "no web app" and "no paywall" lines are out of date, and it lacks the carpool and several-day events). The first mention is the full sentence (§7). |
 | `messaging.md`, `positioning.md` | The site's StoryBrand structure, the market decisions | Changed with this file (#81): the sentence, the line that leads, the tagline as the sign-off, the price line. The home page follows in its own PR. |
 | The live site, `llms.txt` | The verbatim source for site lines | A site line is used only if it passes rule 5. |
